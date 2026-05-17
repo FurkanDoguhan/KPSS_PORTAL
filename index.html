@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KPSS Ultra Entegre Portal v8.5 - Kesinsiz Çözüm Sürümü</title>
+    <title>KPSS Ultra Entegre Portal v9.0 - Nihai Sürüm</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -33,7 +33,7 @@
             <div class="bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 p-2 rounded-xl font-black text-lg shadow-lg">KPSS</div>
             <div>
                 <h1 class="text-base font-bold text-white tracking-wide">Yüksek Kapasiteli Eğitim Portalı</h1>
-                <p class="text-xs text-slate-400">Asenkron Yükleme Kilidi Çözülmüş Sürüm (v8.5)</p>
+                <p class="text-xs text-slate-400">Yapay Zeka Analiz & Sarmal Tarama Motoru (v9.0)</p>
             </div>
         </div>
         
@@ -46,7 +46,6 @@
                 <span class="text-rose-400"><i class="fa-solid fa-clock-rotate-left animate-pulse"></i> POMODORO:</span>
                 <span id="txt-timer" class="font-mono text-white text-sm">25:00</span>
                 <button onclick="toggleTimer()" id="btn-timer-control" class="text-emerald-400 hover:text-emerald-300 ml-1"><i class="fa-solid fa-play"></i></button>
-                <button onclick="resetTimer()" class="text-slate-500 hover:text-slate-400"><i class="fa-solid fa-rotate-right"></i></button>
             </div>
 
             <div class="flex bg-slate-900 p-1 rounded-xl border border-slate-800">
@@ -170,10 +169,6 @@
                     <div class="flex justify-between items-center text-[10px] font-bold uppercase tracking-wider text-slate-500 pb-3 border-b border-slate-900">
                         <span id="lbl-quiz-idx">Soru 1</span>
                         <div class="flex items-center gap-3">
-                            <div class="flex items-center gap-1 bg-slate-900 px-2 py-1 rounded-md border border-slate-800">
-                                <span class="text-slate-400 text-[9px] mr-1">ÖSYM ZORLUK:</span>
-                                <div id="box-difficulty-stars" class="flex text-amber-500 text-[10px]"></div>
-                            </div>
                             <span id="lbl-score" class="text-emerald-400 bg-emerald-950/40 border border-emerald-900 px-2 py-0.5 rounded">Skor: 0 / 0</span>
                         </div>
                     </div>
@@ -201,7 +196,7 @@
     <div id="modal-features" class="fixed inset-0 bg-slate-950/80 backdrop-blur-xs z-50 flex items-center justify-center hidden p-4">
         <div class="bg-slate-900 border-2 border-amber-500/30 rounded-2xl max-w-2xl w-full h-[80vh] flex flex-col overflow-hidden shadow-2xl">
             <div class="p-4 bg-slate-950 border-b border-slate-800 flex justify-between items-center">
-                <div class="flex items-center gap-2 text-amber-400 font-bold text-sm"><i class="fa-solid fa-circle-info"></i> Portal Özellikleri Rehberi (v8.5)</div>
+                <div class="flex items-center gap-2 text-amber-400 font-bold text-sm"><i class="fa-solid fa-circle-info"></i> Portal Özellikleri Rehberi (v9.0)</div>
                 <button onclick="closeFeaturesModal()" class="text-slate-400 hover:text-white text-sm cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div class="p-6 overflow-y-auto flex-1 font-mono text-xs text-slate-300 leading-relaxed whitespace-pre-wrap" id="txt-features-content">Yükleniyor...</div>
@@ -245,83 +240,34 @@
             document.getElementById("txt-notebook-count").textContent = kpssNotebook.length;
         }
 
+        // ÖZELLİKLER REHBERİ TETİKLEYİCİSİ
         function openFeaturesModal() {
             document.getElementById("modal-features").classList.remove("hidden");
             fetch('kpss_portal_ozellikler.txt')
-                .then(r => { if(!r.ok) throw new Error(); return r.text(); })
+                .then(r => r.text())
                 .then(d => { document.getElementById("txt-features-content").textContent = d; })
-                .catch(() => { document.getElementById("txt-features-content").textContent = "Mühendislik Raporu: 'kpss_portal_ozellikler.txt' dosyası ana dizine yüklenmelidir."; });
+                .catch(() => { document.getElementById("txt-features-content").textContent = "Hata: kpss_portal_ozellikler.txt bulunamadı."; });
         }
         function closeFeaturesModal() { document.getElementById("modal-features").classList.add("hidden"); }
 
-        function openAnalysisCenter() {
-            document.getElementById("view-cards").classList.add("hidden"); document.getElementById("view-quiz").classList.add("hidden"); document.getElementById("view-notebook").classList.add("hidden");
-            document.getElementById("box-top-navbar").classList.add("hidden");
-            document.getElementById("view-analysis-center").classList.remove("hidden");
-            
-            const worstBox = document.getElementById("box-worst-topics-list"); worstBox.innerHTML = "";
-            let hiyerarşi = {};
-            kpssNotebook.forEach(item => { if(item.lesson === currentLesson) { let k = item.tag || "#GenelKazanım"; hiyerarşi[k] = (hiyerarşi[k] || 0) + 1; } });
-            let sortedWorst = Object.keys(hiyerarşi).sort((a,b) => hiyerarşi[b] - hiyerarşi[a]);
-            const adviceText = document.getElementById("txt-ai-advice");
-
-            if(sortedWorst.length === 0) {
-                worstBox.innerHTML = `<p class="text-xs text-slate-500 italic">Kayıtlı hatalı soru bulunmuyor.</p>`;
-                adviceText.textContent = "Kusursuz gidiyorsun Furkan! Zayıf konu saptanmadı.";
-                document.getElementById("btn-start-tarama").classList.add("opacity-40", "pointer-events-none");
-                return;
-            }
-            document.getElementById("btn-start-tarama").classList.remove("opacity-40", "pointer-events-none");
-            sortedWorst.forEach(tag => {
-                worstBox.innerHTML += `<div class="flex justify-between items-center p-2.5 bg-slate-950/60 rounded-xl border border-slate-850 text-xs"><span>${tag}</span><span class="text-rose-400 font-bold bg-rose-950/30 px-2 py-0.5 rounded border border-rose-900/40">${hiyerarşi[tag]} Hata</span></div>`;
-            });
-            adviceText.textContent = `Furkan, analizlerime göre en çok takıldığın alan ${sortedWorst[0]} konusu. Yukarıdaki turuncu herif butonuna basarak tarama başlatabilirsin.`;
-        }
-
-        function startReviewTaramaTest() {
-            let filtered = kpssNotebook.filter(n => n.lesson === currentLesson);
-            if(filtered.length === 0) return;
-            activeGroupQuestions = filtered.map(item => { return { q: `[TARAMA] ${item.q}`, options: item.options, correct: item.correct, rationale: item.rationale, tag: item.tag }; });
-            isTaramaTestMode = true; quizIdx = 0; score = 0;
-            document.getElementById("view-analysis-center").classList.add("hidden");
-            document.getElementById("view-quiz").classList.remove("hidden");
-            document.getElementById("txt-quiz-module-title").textContent = "Kişiselleştirilmiş AI Tarama Testi";
-            renderQuiz();
-        }
-
-        // ASENKRON GECİKMELERİ SIFIRLAYAN AKILLI DERS MOTORU
+        // v7.0 ORIJINAL DERS GEÇİŞ VE YÜKLEME DÖNGÜSÜ (KORUNDU)
         function switchLesson(lesson) {
-            currentLesson = lesson; 
+            currentLesson = lesson;
             isTaramaTestMode = false;
-            
-            // Global Nesne Kontrolü Çakıldı
-            if (lesson === 'tarih') {
-                currentData = (typeof tarih_db !== 'undefined') ? tarih_db : [];
-            } else {
-                currentData = (typeof cografya_db !== 'undefined') ? cografya_db : [];
-            }
-            
+            currentData = lesson === 'tarih' ? (typeof tarih_db !== 'undefined' ? tarih_db : []) : (typeof cografya_db !== 'undefined' ? cografya_db : []);
             activeUnitIdx = 0; activeGroupIdx = 0; cardIdx = 0; quizIdx = 0; score = 0;
             document.getElementById("view-notebook").classList.add("hidden");
             document.getElementById("view-analysis-center").classList.add("hidden");
             document.getElementById("box-top-navbar").classList.remove("hidden");
-            
-            // DOM renklerini eşitle
-            document.getElementById("btn-tarih").className = lesson === 'tarih' ? "px-5 py-2 rounded-lg font-bold text-xs uppercase bg-amber-500 text-slate-950 shadow-sm cursor-pointer" : "px-5 py-2 rounded-lg font-bold text-xs uppercase text-slate-400 hover:text-slate-200 cursor-pointer";
-            document.getElementById("btn-cografya").className = lesson === 'cografya' ? "px-5 py-2 rounded-lg font-bold text-xs uppercase bg-emerald-500 text-slate-950 shadow-sm cursor-pointer" : "px-5 py-2 rounded-lg font-bold text-xs uppercase text-slate-400 hover:text-slate-200 cursor-pointer";
-
-            buildUnitList(); 
-            buildGroupSelector(); 
-            renderAll();
+            buildUnitList(); buildGroupSelector(); renderAll();
         }
 
         function buildUnitList() {
             const container = document.getElementById("unit-list"); container.innerHTML = "";
-            if(currentData.length === 0) return;
             currentData.forEach((item, index) => {
                 const btn = document.createElement("button");
-                btn.className = `w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold flex justify-between items-center transition-all cursor-pointer ${index === activeUnitIdx && !isTaramaTestMode ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-400 hover:bg-slate-900'}`;
-                btn.onclick = () => { isTaramaTestMode = false; activeUnitIdx = index; cardIdx = 0; quizIdx = 0; score = 0; document.getElementById("view-notebook").classList.add("hidden"); document.getElementById("view-analysis-center").classList.add("hidden"); document.getElementById("box-top-navbar").classList.remove("hidden"); buildUnitList(); buildGroupSelector(); renderAll(); };
+                btn.className = `w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold flex justify-between items-center transition-all cursor-pointer ${index === activeUnitIdx && !isTaramaTestMode ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:bg-slate-900'}`;
+                btn.onclick = () => { isTaramaTestMode = false; activeUnitIdx = index; cardIdx = 0; quizIdx = 0; score = 0; document.getElementById("view-notebook").classList.add("hidden"); document.getElementById("view-analysis-center").classList.add("hidden"); buildUnitList(); buildGroupSelector(); renderAll(); };
                 btn.innerHTML = `<span class="truncate pr-2">${item.unite}</span><i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>`;
                 container.appendChild(btn);
             });
@@ -331,8 +277,8 @@
             const container = document.getElementById("box-group-selector"); container.innerHTML = "";
             if (currentMode !== 'quiz' || currentData.length === 0 || isTaramaTestMode) { container.classList.add("hidden"); return; }
             container.classList.remove("hidden");
-            const unit = currentData[activeUnitIdx]; if(!unit || !unit.quiz) return;
-            const totalGroups = Math.ceil(unit.quiz.length / questionsPerGroup);
+            const pool = currentData[activeUnitIdx].quiz || [];
+            const totalGroups = Math.ceil(pool.length / questionsPerGroup);
             for (let i = 0; i < totalGroups; i++) {
                 const btn = document.createElement("button");
                 btn.className = `px-2.5 py-1 rounded-md text-[10px] font-black cursor-pointer ${i === activeGroupIdx ? 'bg-amber-500 text-slate-950' : 'bg-slate-800 text-slate-400'}`;
@@ -352,7 +298,6 @@
             currentMode = mode; document.getElementById("view-notebook").classList.add("hidden"); document.getElementById("view-analysis-center").classList.add("hidden"); document.getElementById("box-top-navbar").classList.remove("hidden");
             if(mode === 'cards') {
                 isTaramaTestMode = false; document.getElementById("view-cards").classList.remove("hidden"); document.getElementById("view-quiz").classList.add("hidden"); document.getElementById("box-group-selector").classList.add("hidden");
-                buildUnitList();
             } else {
                 document.getElementById("view-quiz").classList.remove("hidden"); document.getElementById("view-cards").classList.add("hidden"); buildGroupSelector(); prepareGroupQuestions(); renderQuiz();
             }
@@ -368,7 +313,7 @@
 
         function renderQuiz() {
             document.getElementById("box-rationale").classList.add("hidden"); answered = false;
-            if(activeGroupQuestions.length === 0) { document.getElementById("txt-quiz-q").textContent = "Soru bankası boş veya modül yüklenemedi."; document.getElementById("quiz-options-box").innerHTML = ""; return; }
+            if(activeGroupQuestions.length === 0) { document.getElementById("txt-quiz-q").textContent = "Soru bulunamadı."; document.getElementById("quiz-options-box").innerHTML = ""; return; }
             
             const activeQ = activeGroupQuestions[quizIdx];
             document.getElementById("lbl-quiz-idx").textContent = `Soru ${quizIdx + 1} / ${activeGroupQuestions.length}`;
@@ -387,7 +332,7 @@
             const starBox = document.getElementById("box-difficulty-stars"); starBox.innerHTML = "";
             for(let i=0; i<5; i++) { starBox.innerHTML += `<i class="fa-solid fa-star ${i<3?'text-amber-500':'text-slate-700'}"></i>`; }
 
-            // v7.0 Orijinal Şık Grubu (Yeniden Kilitlendi)
+            // v7.0 Sarsılmaz Şık Basma Döngüsü
             const optionsBox = document.getElementById("quiz-options-box"); optionsBox.innerHTML = "";
             activeQ.options.forEach((opt, idx) => {
                 const btn = document.createElement("button");
@@ -411,7 +356,7 @@
             if(selected === activeQ.correct) { 
                 globalStats.correct++; score++; 
             } else {
-                // YANLIŞ YAPILAN SORUYU ARKA PLANDA OTOMATİK HATA DEFTERİNE EKLEME MOTORU
+                // OTOMATİK ARKA PLAN HATA DEFTERİ KAYDI
                 if(!kpssNotebook.some(n => n.q === activeQ.q.replace("[TARAMA] ", ""))) {
                     kpssNotebook.push({ lesson: currentLesson, unit: isTaramaTestMode ? "AI Tarama Kampı" : currentData[activeUnitIdx]?.unite, q: activeQ.q.replace("[TARAMA] ", ""), options: activeQ.options, correct: activeQ.correct, rationale: activeQ.rationale, tag: tagStr });
                 }
@@ -426,6 +371,7 @@
         function nextQuestion() { if(quizIdx < activeGroupQuestions.length - 1) { quizIdx++; renderQuiz(); } else { alert("Test tamamlandı!"); isTaramaTestMode = false; switchLesson(currentLesson); } }
         function resetQuiz() { quizIdx = 0; score = 0; answered = false; renderQuiz(); }
 
+        // HATA DEFTERİ EKRANI
         function openNotebookView() {
             document.getElementById("view-cards").classList.add("hidden"); document.getElementById("view-quiz").classList.add("hidden"); document.getElementById("view-analysis-center").classList.add("hidden");
             document.getElementById("box-top-navbar").classList.add("hidden");
@@ -439,23 +385,59 @@
         }
         function deleteFromNotebook(q) { kpssNotebook = kpssNotebook.filter(n => n.q !== q); saveStateToStorage(); openNotebookView(); }
 
+        // YAPAY ZEKA ANALİZ MERKEZİ MOTORLARI
+        function openAnalysisCenter() {
+            document.getElementById("view-cards").classList.add("hidden"); document.getElementById("view-quiz").classList.add("hidden"); document.getElementById("view-notebook").classList.add("hidden");
+            document.getElementById("box-top-navbar").classList.add("hidden");
+            document.getElementById("view-analysis-center").classList.remove("hidden");
+            
+            const worstBox = document.getElementById("box-worst-topics-list"); worstBox.innerHTML = "";
+            let hiyerarşi = {};
+            kpssNotebook.forEach(item => { if(item.lesson === currentLesson) { let k = item.tag || "#GenelKazanım"; hiyerarşi[k] = (hiyerarşi[k] || 0) + 1; } });
+            let sortedWorst = Object.keys(hiyerarşi).sort((a,b) => hiyerarşi[b] - hiyerarşi[a]);
+            const adviceText = document.getElementById("txt-ai-advice");
+
+            if(sortedWorst.length === 0) {
+                worstBox.innerHTML = `<p class="text-xs text-slate-500 italic">Kayıtlı hatalı soru bulunmuyor.</p>`;
+                adviceText.textContent = "Kusursuz gidiyorsun Furkan! Zayıf konu saptanmadı.";
+                document.getElementById("btn-start-tarama").classList.add("opacity-40", "pointer-events-none");
+                return;
+            }
+            document.getElementById("btn-start-tarama").classList.remove("opacity-40", "pointer-events-none");
+            sortedWorst.forEach(tag => {
+                worstBox.innerHTML += `<div class="flex justify-between items-center p-2.5 bg-slate-950/60 rounded-xl border border-slate-850 text-xs"><span>${tag}</span><span class="text-rose-400 font-bold bg-rose-950/30 px-2 py-0.5 rounded border border-rose-900/40">${hiyerarşi[tag]} Hata</span></div>`;
+            });
+            adviceText.textContent = `Furkan, analizlerime göre en çok takıldığın alan ${sortedWorst[0]} konusu. Yukarıdaki butona basarak tarama başlatabilirsin.`;
+        }
+
+        function startReviewTaramaTest() {
+            let filtered = kpssNotebook.filter(n => n.lesson === currentLesson);
+            if(filtered.length === 0) return;
+            activeGroupQuestions = filtered.map(item => { return { q: `[TARAMA] ${item.q}`, options: item.options, correct: item.correct, rationale: item.rationale, tag: item.tag }; });
+            isTaramaTestMode = true; quizIdx = 0; score = 0;
+            document.getElementById("view-analysis-center").classList.add("hidden");
+            document.getElementById("view-quiz").classList.remove("hidden");
+            document.getElementById("txt-quiz-module-title").textContent = "Kişiselleştirilmiş AI Tarama Testi";
+            renderQuiz();
+        }
+
         function toggleAudio() { isAudioEnabled = !isAudioEnabled; }
         function speakText(t, b) { /* Ses */ }
         function toggleTimer() { /* Pomodoro */ }
-        function resetTimer() { /* Pomodoro Reset */ }
+        function flipCardAndSpeak(c) { c.classList.toggle('flipped'); }
         function nextCard() { cardIdx = (cardIdx < currentData[activeUnitIdx].cards.length - 1) ? cardIdx + 1 : 0; renderAll(); }
         function prevCard() { cardIdx = (cardIdx > 0) ? cardIdx - 1 : currentData[activeUnitIdx].cards.length - 1; renderAll(); }
 
-        // GECİKME ÖNLEYİCİ AKILLI SUNUCU KONTROLÜ
+        // ASENKRON GECİKME KİLİDİNİ KIRAN v7.0 ANA TETİKLEYİCİSİ
         window.onload = function() {
             updateSidebarStats();
-            let checkInterval = setInterval(() => {
-                // Harici veritabanlarının belleğe inip inmediğini kontrol et
-                if (typeof tarih_db !== 'undefined' || typeof cografya_db !== 'undefined') {
-                    clearInterval(checkInterval);
-                    switchLesson('tarih'); // Güvenli tetikleme
+            // Sayfa yüklendiğinde harici scriptlerin (tarih_db/cografya_db) tamamen inmesini bekleyen kontrol döngüsü
+            let checkDB = setInterval(() => {
+                if (typeof tarih_db !== 'undefined' && typeof cografya_db !== 'undefined') {
+                    clearInterval(checkDB);
+                    switchLesson('tarih'); // Güvenli ilk çalıştırma
                 }
-            }, 50);
+            }, 10);
         };
     </script>
 </body>
