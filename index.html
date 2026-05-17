@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KPSS Ultra Entegre Portal v6.5 - Harita & Ses Motoru Sürümü</title>
+    <title>KPSS Ultra Entegre Portal v6.6 - Güvenli Ses Motoru Sürümü</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -15,8 +15,6 @@
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #0f172a; }
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
-        @keyframes pulse-map { 0%, 100% { fill: #ef4444; opacity: 1; } 50% { fill: #f87171; opacity: 0.4; } }
-        .map-pulse { animation: pulse-map 1.5s infinite; }
     </style>
     <script src="tarih_db.json"></script>
     <script src="cografya_db.json"></script>
@@ -28,7 +26,7 @@
             <div class="bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 p-2 rounded-xl font-black text-lg shadow-lg">KPSS</div>
             <div>
                 <h1 class="text-base font-bold text-white tracking-wide">Yüksek Kapasiteli Eğitim Portalı</h1>
-                <p class="text-xs text-slate-400">İnteraktif Harita & Güvenli Ses Motoru (v6.5)</p>
+                <p class="text-xs text-slate-400">Güvenli Ses Motoru Sürümü (v6.6)</p>
             </div>
         </div>
         
@@ -88,36 +86,6 @@
 
         <div class="lg:col-span-3 space-y-6">
             
-            <div id="wrapper-kpss-map" class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2 hidden">
-                <div class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider flex items-center gap-1">
-                    <i class="fa-solid fa-map-location-dot"></i> ÖSYM Mekansal Soru Analiz Haritası
-                </div>
-                <div class="w-full bg-slate-900/40 rounded-xl p-2 flex justify-center border border-slate-900">
-                    <svg id="svg-turkey-map" viewBox="0 0 1000 450" class="w-full h-auto max-h-56 stroke-slate-800 stroke-1 fill-slate-800">
-                        <rect id="map-marmara" x="50" y="40" width="180" height="110" rx="10" fill="#334155" class="transition-all duration-300"/>
-                        <text x="140" y="95" fill="#94a3b8" font-size="12" font-weight="bold" text-anchor="middle">Marmara (Boğazlar)</text>
-                        
-                        <rect id="map-ege" x="30" y="160" width="150" height="180" rx="10" fill="#334155" class="transition-all duration-300"/>
-                        <text x="105" y="255" fill="#94a3b8" font-size="12" font-weight="bold" text-anchor="middle">Ege (Enine Kıvrım)</text>
-
-                        <rect id="map-akdeniz" x="190" y="290" width="320" height="100" rx="10" fill="#334155" class="transition-all duration-300"/>
-                        <text x="350" y="345" fill="#94a3b8" font-size="12" font-weight="bold" text-anchor="middle">Akdeniz (Toroslar / Karstik)</text>
-
-                        <rect id="map-icanadolu" x="240" y="160" width="280" height="120" rx="10" fill="#334155" class="transition-all duration-300"/>
-                        <text x="380" y="225" fill="#94a3b8" font-size="12" font-weight="bold" text-anchor="middle">İç Anadolu (Step / Bozkır)</text>
-
-                        <rect id="map-karadeniz" x="240" y="40" width="460" height="110" rx="10" fill="#334155" class="transition-all duration-300"/>
-                        <text x="470" y="95" fill="#94a3b8" font-size="12" font-weight="bold" text-anchor="middle">Karadeniz (Orografik / Yamaç)</text>
-
-                        <rect id="map-doguanadolu" x="530" y="160" width="440" height="180" rx="10" fill="#334155" class="transition-all duration-300"/>
-                        <text x="750" y="255" fill="#94a3b8" font-size="12" font-weight="bold" text-anchor="middle">Doğu Anadolu (Sert Karasal / Volkanik)</text>
-
-                        <rect id="map-guneydogu" x="530" y="290" width="320" height="100" rx="10" fill="#334155" class="transition-all duration-300"/>
-                        <text x="690" y="345" fill="#94a3b8" font-size="12" font-weight="bold" text-anchor="middle">Güneydoğu (Buharlaşma / Karacadağ)</text>
-                    </svg>
-                </div>
-            </div>
-
             <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-3">
                 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                     <h2 id="txt-active-unit" class="text-sm font-black text-white truncate max-w-[60%]">Ünite Yükleniyor...</h2>
@@ -311,7 +279,7 @@
             document.getElementById("txt-notebook-count").textContent = kpssNotebook.length;
         }
 
-        // MÜKEMMELLEŞTİRİLMİŞ TEMİZ SES MOTORU (Regex Kod Süzgeçli)
+        // GÜVENLİ VE FİLTRELİ SES MOTORU
         function toggleAudio() {
             isAudioEnabled = !isAudioEnabled;
             const btn = document.getElementById("btn-audio-toggle");
@@ -330,7 +298,7 @@
             if(!isAudioEnabled && !bypassCheck) return;
             window.speechSynthesis.cancel();
             
-            // GELİŞMİŞ AYIKLAMA SÜZGECİ: HTML, LaTeX, Dolar işaretleri ve Parantez kodlarını temizler.
+            // HTML Etiketleri, LaTeX kodları, Dolar işaretleri ve Parantez içindeki teknik ifadeleri süzme filtresi
             let temizMetin = text.replace(/<\/?[^>]+(>|$)/g, ""); 
             temizMetin = temizMetin.replace(/\$/g, ""); 
             temizMetin = temizMetin.replace(/Soru\s\d+:/gi, "");
@@ -342,40 +310,6 @@
             window.speechSynthesis.speak(utterance);
         }
 
-        // AKILLI HARİTA SEKTÖR ANALİZİ (Sorunun içeriğine göre haritayı yakar)
-        function updateMapFocus(questionText, rationaleText) {
-            const mapWrapper = document.getElementById("wrapper-kpss-map");
-            if(currentLesson !== 'cografya' || currentMode !== 'quiz' || activeGroupQuestions.length === 0) {
-                mapWrapper.classList.add("hidden");
-                return;
-            }
-            mapWrapper.classList.remove("hidden");
-
-            // Tüm harita sektörlerini sıfırla
-            const sectors = ["map-marmara", "map-ege", "map-akdeniz", "map-icanadolu", "map-karadeniz", "map-doguanadolu", "map-guneydogu"];
-            sectors.forEach(id => {
-                const el = document.getElementById(id);
-                if(el) { el.setAttribute("fill", "#334155"); el.classList.remove("map-pulse"); }
-            });
-
-            // Kelime eşleşmesine göre bölgeyi parlat
-            let targetSector = null;
-            const fullText = (questionText + " " + rationaleText).toLowerCase();
-
-            if(fullText.includes("marmara") || fullText.includes("istanbul") || fullText.includes("çanakkale") || fullText.includes("boğaz")) targetSector = "map-marmara";
-            else if(fullText.includes("ege") || fullText.includes("izmir") || fullText.includes("aydın") || fullText.includes("menderes") || fullText.includes("gediz")) targetSector = "map-ege";
-            else if(fullText.includes("akdeniz") || fullText.includes("antalya") || fullText.includes("toros") || fullText.includes("karstik") || fullText.includes("teke") || fullText.includes("taşeli")) targetSector = "map-akdeniz";
-            else if(fullText.includes("karadeniz") || fullText.includes("rize") || fullText.includes("samsun") || fullText.includes("bafra") || fullText.includes("çarşamba") || fullText.includes("yamaç")) targetSector = "map-karadeniz";
-            else if(fullText.includes("iç anadolu") || fullText.includes("konya") || fullText.includes("bozkır") || fullText.includes("step") || fullText.includes("obruk")) targetSector = "map-icanadolu";
-            else if(fullText.includes("doğu anadolu") || fullText.includes("erzurum") || fullText.includes("kars") || fullText.includes("van") || fullText.includes("ağrı") || fullText.includes("volkan")) targetSector = "map-doguanadolu";
-            else if(fullText.includes("güneydoğu") || fullText.includes("şanlıurfa") || fullText.includes("buharlaşma") || fullText.includes("gaziantep")) targetSector = "map-guneydogu";
-
-            if(targetSector) {
-                const activeEl = document.getElementById(targetSector);
-                if(activeEl) { activeEl.setAttribute("fill", "#ef4444"); activeEl.classList.add("map-pulse"); }
-            }
-        }
-
         function flipCardAndSpeak(card) { card.classList.toggle('flipped'); if(isAudioEnabled && card.classList.contains('flipped')) { setTimeout(() => { speakText(document.getElementById("txt-card-a").textContent); }, 400); } }
         function openFeaturesModal() { document.getElementById("modal-features").classList.remove("hidden"); fetch('kpss_portal_ozellikler.txt').then(r => r.text()).then(d => { document.getElementById("txt-features-content").textContent = d; }).catch(() => { document.getElementById("txt-features-content").textContent = "Hata: 'kpss_portal_ozellikler.txt' ana dizinde bulunamadı."; }); }
         function closeFeaturesModal() { document.getElementById("modal-features").classList.add("hidden"); }
@@ -384,7 +318,7 @@
         function addCurrentQuestionToNotebook() { if(activeGroupQuestions.length === 0) return; const activeQ = activeGroupQuestions[quizIdx]; if(!kpssNotebook.some(n => n.q === activeQ.q)) { kpssNotebook.push({ lesson: currentLesson, unit: currentData[activeUnitIdx].unite, q: activeQ.q, options: activeQ.options, correct: activeQ.correct, rationale: activeQ.rationale }); saveStateToStorage(); alert("Deftere eklendi!"); } }
         
         function openNotebookView() {
-            document.getElementById("view-cards").classList.add("hidden"); document.getElementById("view-quiz").classList.add("hidden"); document.getElementById("wrapper-kpss-map").classList.add("hidden");
+            document.getElementById("view-cards").classList.add("hidden"); document.getElementById("view-quiz").classList.add("hidden");
             const notebookView = document.getElementById("view-notebook"); notebookView.classList.remove("hidden");
             const listContainer = document.getElementById("box-notebook-list"); listContainer.innerHTML = "";
             if(kpssNotebook.length === 0) { listContainer.innerHTML = `<p class="text-xs text-slate-500 text-center py-8">Defteriniz boş.</p>`; return; }
@@ -458,7 +392,7 @@
             document.getElementById("view-notebook").classList.add("hidden");
             if(mode === 'cards') {
                 btnCards.className = "px-4 py-1.5 rounded-md bg-slate-800 text-white shadow-xs"; btnQuiz.className = "px-4 py-1.5 rounded-md text-slate-400 hover:text-white";
-                document.getElementById("view-cards").classList.remove("hidden"); document.getElementById("view-quiz").classList.add("hidden"); document.getElementById("box-group-selector").classList.add("hidden"); document.getElementById("wrapper-kpss-map").classList.add("hidden"); filterBox.classList.add("hidden"); window.speechSynthesis.cancel();
+                document.getElementById("view-cards").classList.remove("hidden"); document.getElementById("view-quiz").classList.add("hidden"); document.getElementById("box-group-selector").classList.add("hidden"); filterBox.classList.add("hidden"); window.speechSynthesis.cancel();
             } else {
                 btnQuiz.className = "px-4 py-1.5 rounded-md bg-slate-800 text-white shadow-xs"; btnCards.className = "px-4 py-1.5 rounded-md text-slate-400 hover:text-white";
                 document.getElementById("view-quiz").classList.remove("hidden"); document.getElementById("view-cards").classList.add("hidden"); filterBox.classList.remove("hidden"); buildGroupSelector(); resetQuiz();
@@ -478,7 +412,7 @@
         function renderQuiz() {
             document.getElementById("box-rationale").classList.add("hidden"); document.getElementById("box-analysis-report").classList.add("hidden"); document.getElementById("quiz-card").classList.remove("hidden");
             answered = false;
-            if(activeGroupQuestions.length === 0) { document.getElementById("txt-quiz-q").textContent = "Soru bulunamadı."; document.getElementById("quiz-options-box").innerHTML = ""; document.getElementById("wrapper-kpss-map").classList.add("hidden"); return; }
+            if(activeGroupQuestions.length === 0) { document.getElementById("txt-quiz-q").textContent = "Soru bulunamadı."; document.getElementById("quiz-options-box").innerHTML = ""; return; }
 
             const currentProgressPercent = Math.round((quizIdx / activeGroupQuestions.length) * 100);
             document.getElementById("bar-progress").style.width = `${currentProgressPercent}%`; document.getElementById("txt-progress-percent").textContent = `${currentProgressPercent}%`;
@@ -488,7 +422,6 @@
             document.getElementById("txt-quiz-q").textContent = activeQ.q;
 
             if(isAudioEnabled) speakText(activeQ.q);
-            updateMapFocus(activeQ.q, activeQ.rationale); // Haritayı güncelle
 
             let parsedTag = "#GenelKazanım"; let difficultyStarsCount = 3;
             if(activeQ.rationale.includes("Kut") || activeQ.q.includes("Kut")) { parsedTag = "#KutAnlayışı"; difficultyStarsCount = 4; }
@@ -498,9 +431,6 @@
             document.getElementById("lbl-question-tag").textContent = parsedTag;
             const starBox = document.getElementById("box-difficulty-stars"); starBox.innerHTML = "";
             for(let i=0; i<5; i++) { const star = document.createElement("i"); star.className = i < difficultyStarsCount ? "fa-solid fa-star" : "fa-regular fa-star opacity-30"; starBox.appendChild(star); }
-
-            const focusBadge = document.getElementById("lbl-focus-badge");
-            if(activeQ.isFocusQuestion) focusBadge.classList.remove("hidden"); else focusBadge.classList.add("hidden");
 
             const optionsBox = document.getElementById("quiz-options-box"); optionsBox.innerHTML = "";
             activeQ.options.forEach((opt, idx) => {
@@ -527,7 +457,9 @@
         }
 
         function nextQuestion() { if(quizIdx < activeGroupQuestions.length - 1) { quizIdx++; renderQuiz(); } else { document.getElementById("bar-progress").style.width = `100%`; document.getElementById("txt-progress-percent").textContent = `100%`; window.speechSynthesis.cancel(); renderAIAnalysisReport(); } }
-        function renderAIAnalysisReport() { document.getElementById("quiz-card").classList.add("hidden"); document.getElementById("wrapper-kpss-map").classList.add("hidden"); const reportBox = document.getElementById("box-analysis-report"); const resultsContainer = document.getElementById("analysis-results-container"); const aiCardsContainer = document.getElementById("ai-generated-cards"); resultsContainer.innerHTML = ""; aiCardsContainer.innerHTML = ""; reportBox.classList.remove("hidden"); const successPercent = Math.round((score / activeGroupQuestions.length) * 100); document.getElementById("txt-report-percent").textContent = `${successPercent}%`; document.getElementById("txt-report-raw").textContent = `${score} / ${activeGroupQuestions.length - score}`; const statusLabel = document.getElementById("txt-report-status"); if(successPercent >= 85) { statusLabel.className = "text-xs font-bold text-emerald-400 block mt-1"; statusLabel.textContent = "Kazanımlar Harika!"; } else if(successPercent >= 60) { statusLabel.className = "text-xs font-bold text-amber-400 block mt-1"; statusLabel.textContent = "Tekrar Gerekli"; } else { statusLabel.className = "text-xs font-bold text-rose-500 block mt-1"; statusLabel.textContent = "Kritik Seviye!"; } const missedList = aiMemory[currentLesson][currentData[activeUnitIdx].unite] || []; if(missedList.length > 0) { missedList.forEach(item => { const notBlock = document.createElement("div"); notBlock.className = "p-3 bg-slate-900 border-l-4 border-rose-500 rounded-r-xl text-xs space-y-1"; notBlock.innerHTML = `<p class="font-black text-rose-400 uppercase text-[9px] tracking-wider"><i class="fa-solid fa-circle-exclamation"></i> #<span>${item.kavram}</span></p><p class="text-slate-200 mt-1 bg-slate-950 p-2 rounded border border-slate-800 leading-relaxed">${item.not}</p>`; resultsContainer.appendChild(notBlock); const cardBlock = document.createElement("div"); cardBlock.className = "p-3 bg-indigo-950/20 border border-indigo-900/60 rounded-xl text-xs space-y-1.5"; cardBlock.innerHTML = `<p class="font-black text-emerald-400 text-[9px] tracking-wider uppercase"><i class="fa-solid fa-square-plus"></i> Dinamik Kart</p><div class="bg-slate-950 p-2 rounded border border-slate-900"><span class="text-slate-400 font-bold text-[10px]">ÖSYM:</span> <span class="text-slate-300 font-bold">${item.kavram} analiz mantığı?</span></div><div class="bg-slate-950 p-2 rounded border border-slate-900"><span class="text-slate-400 font-bold text-[10px]">Çözüm:</span> <span class="text-slate-200">${item.not.split('.')[0]}.</span></div>`; aiCardsContainer.appendChild(cardBlock); }); } else { resultsContainer.innerHTML = `<div class="p-4 bg-emerald-950/40 border border-emerald-500/30 rounded-xl text-xs text-emerald-400 font-bold text-center">Tebrikler Furkan!</div>`; aiCardsContainer.innerHTML = `<p class="text-xs text-slate-500 italic text-center p-4">Hata kartı üretilmedi.</p>`; } }
+        function resetQuiz() { quizIdx = 0; score = 0; answered = false; prepareGroupQuestions(); renderQuiz(); }
+
+        function renderAIAnalysisReport() { document.getElementById("quiz-card").classList.add("hidden"); const reportBox = document.getElementById("box-analysis-report"); const resultsContainer = document.getElementById("analysis-results-container"); const aiCardsContainer = document.getElementById("ai-generated-cards"); resultsContainer.innerHTML = ""; aiCardsContainer.innerHTML = ""; reportBox.classList.remove("hidden"); const successPercent = Math.round((score / activeGroupQuestions.length) * 100); document.getElementById("txt-report-percent").textContent = `${successPercent}%`; document.getElementById("txt-report-raw").textContent = `${score} / ${activeGroupQuestions.length - score}`; const statusLabel = document.getElementById("txt-report-status"); if(successPercent >= 85) { statusLabel.className = "text-xs font-bold text-emerald-400 block mt-1"; statusLabel.textContent = "Kazanımlar Harika!"; } else if(successPercent >= 60) { statusLabel.className = "text-xs font-bold text-amber-400 block mt-1"; statusLabel.textContent = "Tekrar Gerekli"; } else { statusLabel.className = "text-xs font-bold text-rose-500 block mt-1"; statusLabel.textContent = "Kritik Seviye!"; } const missedList = aiMemory[currentLesson][currentData[activeUnitIdx].unite] || []; if(missedList.length > 0) { missedList.forEach(item => { const notBlock = document.createElement("div"); notBlock.className = "p-3 bg-slate-900 border-l-4 border-rose-500 rounded-r-xl text-xs space-y-1"; notBlock.innerHTML = `<p class="font-black text-rose-400 uppercase text-[9px] tracking-wider"><i class="fa-solid fa-circle-exclamation"></i> #<span>${item.kavram}</span></p><p class="text-slate-200 mt-1 bg-slate-950 p-2 rounded border border-slate-800 leading-relaxed">${item.not}</p>`; resultsContainer.appendChild(notBlock); const cardBlock = document.createElement("div"); cardBlock.className = "p-3 bg-indigo-950/20 border border-indigo-900/60 rounded-xl text-xs space-y-1.5"; cardBlock.innerHTML = `<p class="font-black text-emerald-400 text-[9px] tracking-wider uppercase"><i class="fa-solid fa-square-plus"></i> Dinamik Kart</p><div class="bg-slate-950 p-2 rounded border border-slate-900"><span class="text-slate-400 font-bold text-[10px]">ÖSYM:</span> <span class="text-slate-300 font-bold">${item.kavram} analiz mantığı?</span></div><div class="bg-slate-950 p-2 rounded border border-slate-900"><span class="text-slate-400 font-bold text-[10px]">Çözüm:</span> <span class="text-slate-200">${item.not.split('.')[0]}.</span></div>`; aiCardsContainer.appendChild(cardBlock); }); } else { resultsContainer.innerHTML = `<div class="p-4 bg-emerald-950/40 border border-emerald-500/30 rounded-xl text-xs text-emerald-400 font-bold text-center">Tebrikler Furkan!</div>`; aiCardsContainer.innerHTML = `<p class="text-xs text-slate-500 italic text-center p-4">Hata kartı üretilmedi.</p>`; } }
         window.onload = function() { updateSidebarStats(); setTimeout(() => { switchLesson('tarih'); }, 300); };
     </script>
 </body>
