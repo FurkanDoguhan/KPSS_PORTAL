@@ -1,0 +1,1915 @@
+const tarih_db = [
+  {
+    "unite": "1. İslamiyet Öncesi Türk Tarihi",
+    "cards": [
+      { "q": "Anav Kültürü'nün en ayırt edici özelliği nedir?", "a": "Orta Asya'nın bilinen en eski kültür merkezidir. Türklerin atalarına ait izler taşır ve at ilk kez bu kültür çevresinde evcilleştirilmiştir." },
+      { "q": "Afanesyevo Kültürü'nün Türk tarihindeki yeri nedir?", "a": "Türklere ait en eski kültür merkezidir. Savaşçı ve avcı bir karaktere sahip olan Altay topluluklarının özgün kültürüdür." },
+      { "q": "Andronova Kültürü'nün temel karakteri nedir?", "a": "Afanesyevo kültürünün daha geniş bir coğrafyaya yayılmış ve gelişmiş halidir. Tunçtan yapılmış araç gereçlere ilk kez çok yoğun şekilde burada rastlanır." },
+      { "q": "Karasuk Kültürü'nün dünyaya katkısı nedir?", "a": "Yenisey Irmağı kenarında gelişmiştir. Dünyada demir madenini ilk kez işleyen ve dört tekerlekli arabaları kullanan kültürlerden biridir." },
+      { "q": "Tagar Kültürü neden en gelişmiş kültür merkezidir?", "a": "Kronolojik olarak İslamiyet öncesi dönemin en son ve en gelişmiş evresidir. 'Hayvan üslubu' Türk sanatının en olgun örnekleri bu dönemde zirveye ulaşmıştır." },
+      { "q": "Kut Anlayışı nedir ve veraset sistemini nasıl olumsuz etkilemiştir?", "a": "Hükümdara devleti yönetme yetkisinin Gök Tanrı tarafından verildiğine inanılan kutsal güçtür. Bu gücün kan bağıyla hanedanın tüm erkek üyelerine geçtiğine inanılması, net bir taht sisteminin oluşmasını engellemiş, her hükümdar ölümünde taht kavgalarına ve devletlerin hızla parçalanmasına yol açmıştır." },
+      { "q": "İkili Teşkilat sistemi nedir, merkezi otoriteyi nasıl etkiler?", "a": "Devletin yönetim kolaylığı sağlamak adına Doğu ve Batı olarak ikiye bölünmesidir. Kutsal sayılan Doğu'da asıl hükümdar (Kağan) otururken, Batı'da iç işlerinde serbest, dış işlerinde merkeze bağlı olarak kardeşi (Yabgu) oturur. Bu durum merkezi otoriteyi zayıflatmış ve federal bir yapı doğurmuştur." },
+      { "q": "Kurultay meclisinin üyelerine ne ad verilir?", "a": "Meclis üyelerine <b>Toygun</b> denir. Kadroya Kağan, Hatun, Yabgu, Boy Beyleri, Tiginler (Şehzadeler) ve yüksek düzeyli devlet görevlileri dahildir." },
+      { "q": "Kurultay hangi yönüyle demokratik, hangi yönüyle danışma meclisidir?", "a": "Son söz kağana ait olduğu için bir <b>danışma meclisi</b> özelliğindedir. Ancak kağan seçimini yapması, töreyi değiştirebilmesi ve gerektiğinde kağanın kararlarını denetleyib onu tahttan indirebilmesi yönüyle demokratik bir <b>yasama/denetim</b> organıdır." },
+      { "q": "Değiştirilemeyen 4 Töre kuralı nedir?", "a": "1. <b>Könilik</b> (Adalet), 2. <b>Uzluk</b> (İyilik/Faydalılık), 3. <b>Tüzlük</b> (Eşitlik), 4. <b>Kişilik</b> (İnsanlık)." },
+      { "q": "Göçebe yaşamın Türk ceza hukukuna etkisi nedir?", "a": "Sürekli hareket halinde olunduğu için uzun süreli hapis cezaları uygulanamamış, cezalar en fazla 10-12 günle sınırlandırılmıştır. Vatana ihanet, ordudan kaçma gibi suçların cezası doğrudan idamdır." },
+      { "q": "Eski Türk toplumsal yapısının hiyerarşisi nasıldır?", "a": "Oguş (Aile) ➔ Urug (Sülale) ➔ Boy (Kabile) ➔ Bodun (Millet) ➔ İl/El (Devlet)." },
+      { "q": "Mete Han'ın dünya askeri tarihine kazandırdığı en önemli sistem nedir?", "a": "Orduyu 10, 100, 1000 ve 10000 kişilik birliklere ayıran <b>Onlu Sistem</b>'dir. Bu sistem günümüz modern kara kuvvetlerinin temelini oluşturur." },
+      { "q": "Uygurların Maniheizm dinini seçmesinin en radikal sonucu nedir?", "a": "Et yemeyi ve savaşmayı yasaklayan bu din nedeniyle Türklerin savaşçı özellikleri zayıflamıştır. Ancak tarım başlamış, ilk kalıcı şehirler (Balık) kurulmuş, saray/tapınak mimarisi doğmuş ve matbaa yaygınlaşmıştır." },
+      { "q": "Orhun Abideleri'nin (Göktürk Kitabeleri) yazarı kimdir?", "a": "Türk tarihinin ilk tarihçisi ve edebiyatçısı kabul edilen <b>Yolluğ Tigin</b>'dir. Vezir Tonyukuk ise kendi kitabesini kendisi yazdırmıştır." },
+      { "q": "Kendi adına para bastıran ilk Türk hükümdarı kimdir?", "a": "Türgişler Devleti hükümdarı <b>Baga Tarkan</b>'dır. Kendi adına sikke bastırarak egemenliğini ve ticari gücünü tescillemiştir." },
+      { "q": "Balbal nedir, neyin kanıtıdır?", "a": "Ölen savaşçının mezarının etrafına, hayattayken öldürdüğü düşman sayısı kadar dikilen taş heykelciklerdir. Ahirette bu kişilerin ona hizmet edeceğine inanılması yönüyle <b>ahiret inancının</b> kesin kanıtıdır." },
+      { "q": "Kurultay kararıyla tahttan indirilen ilk Türk kağanı kimdir?", "a": "Göktürk Devleti'nde, Çin kültürüne özendiği ve Budizm'i halka zorla dayatarak töreye aykırı hareket ettiği gerekçesiyle boy beyleri tarafından tahttan indirilen <b>Tapo Kağan</b>'dır." },
+      { "q": "Asya Hun Devleti'nin parçalanmasının temel dış sebebi nedir?", "a": "Çin'in uyguladığı 'Böl, parçala ve yönet' politikasıdır. Çinli prenseslerin Türk sarayına fitne sokması ve boyları birbirine kışkırtması devletin yıkımını hızlandırmıştır." },
+      { "q": "Kırgızların dünya edebiyatına en büyük katkısı nedir?", "a": "Dünyanın en uzun destanı olan ve hala yazılmaya devam eden, içinde Türk mitolojisi ve kültürüne dair muazzam bilgiler barındıran <b>Manas Destanı</b>'dır." },
+      { "q": "İskitlerin (Sakalar) en ünlü kadın hükümdarı kimdir?", "a": "Tarihte bilinen ilk kadın hükümdar olan ve Pers İmparatorluğu'na karşı büyük zaferler kazanan <b>Tomris Hatun</b>'dur." },
+      { "q": "Eski Türk mimarisinde 'Stupa' ne anlama gelir?", "a": "Uygurlar döneminde Budizm inancının kabul edilmesiyle birlikte inşa edilmeye başlanan kubbeli, kutsal tapınak mimarisidir." },
+      { "q": "Talas Savaşı'nın (751) Türkler açısından en kritik sonucu nedir?", "a": "Türklerin (özellikle Karluk boyunun) kitleler halinde İslamiyet'i kabul etmeye başlaması ve Orta Asya'nın Çinlileşmekten kurtulmasıdır." },
+      { "q": "Hazarların ticari hayata en büyük katkısı nedir?", "a": "Hazar Denizi ile Baltık Denizi arasında uzanan <b>Kürk Yolu</b>'nu tam denetim altına alarak bölgede 200 yıl süren 'Hazar Barış Çağı'nı (Pax Hazaria) yaratmalarıdır." },
+      { "q": "Oksızlık kavramının eski Türkçe hukuki anlamı nedir?", "a": "Türk devlet yapısının temel direği olan <b>bağımsızlık ve özgürlük</b> anlamına gelmektedir." },
+      { "q": "Eski Türklerde hükümet başkanına ne ad verilirdi?", "a": "Bakanlar kuruluna (hükümete) 'Ayukı' denirken, hükümetin başındaki başbakana/vezire <b>Aygucı</b> veya 'Üge' adı verilirdi." },
+      { "q": "Kopuz enstrümanının kültürel değeri nedir?", "a": "Ozanlar ve kamlar tarafından şölenlerde, yuğ törenlerinde çalınan, Türk halk edebiyatının ve bağlamanın atası sayılan telli müzik aletidir." },
+      { "q": "Tüz kavramı neyi ifade eder?", "a": "Eski Türk devlet felsefesinde, devlet (İl) ile halk (Kün) arasında karşılıklı hak ve sorumlulukları belirleyen yazısız toplumsal sözleşmedir." },
+      { "q": "Yelme askeri birliğinin görevi nedir?", "a": "Türk ordularında ana kuvvetlerin önünden giderek istihbarat toplayan ve pusu bölgelerini keşfeden öncü süvari birlikleridir (Akıncıların atası)." },
+      { "q": "12 Hayvanlı Türk Takvimi'nin bilimsel önemi nedir?", a: "Türklerin güneş yılı esaslı olarak tamamen kendi gözlemleriyle oluşturduğu bir takvimdir. Gelişmiş bir astronomi ve matematik bilgisinin kanıtıdır." }
+    ],
+    "quiz": [
+      {
+        "q": "Soru 1: İslamiyet öncesi Türk devlet yapısında boyların bir araya gelmesiyle oluşan ve 'Millet' anlamına gelen sosyal basamak aşağıdakilerden hangisidir?",
+        "options": ["Oguş", "Urug", "Bodun", "İl"],
+        "correct": 2,
+        "rationale": "Toplumsal hiyerarşide Oguş aile, Urug sülale, Boy kabile, Bodun millet, İl ise devlet anlamına gelir."
+      },
+      {
+        "q": "Soru 2: Aşağıdaki Türk devletlerinden hangisi yerleşik hayata geçerek ilk kez kalıcı mimari eserler, kütüphaneler ve matbaa unsurları kullanmıştır?",
+        "options": ["Asya Hun Devleti", "Göktürkler", "Uygurlar", "Avarlar"],
+        "correct": 2,
+        "rationale": "Uygurlar Bögü Kağan döneminde Maniheizm dinini benimseyerek yerleşik hayata geçmiş ve Türk mimarisinin ilk örneklerini vermişlerdir."
+      },
+      {
+        "q": "Soru 3: Eski Türk devletlerinde hükümdarın kurultay kararıyla görevden alınabilmesi ve töre kurallarının hakanı dahi bağlaması aşağıdakilerden hangisinin öncelikli kanıtıdır?",
+        "options": ["Monarşik yapının mutlak güçte olduğu", "Hukukun üstünlüğü ilkesinin benimsendiği", "Dini kuralların devlet yönetiminde belirleyici olduğu", "Merkezi otoritenin tamamen Çin etkisine girdiği"],
+        "correct": 1,
+        "rationale": "Törenin hakanı bağlaması ve meclisin hakanı denetleyebilmesi, eski Türklerde mutlak bir despotizm yerine hukukun üstünlüğü ilkesinin varlığını gösterir."
+      },
+      {
+        "q": "Soru 4: Eski Türklerde mezarların etrafına dikilen taş heykelciklere 'Balbal' denir. Bu heykelciklerin ahirette sahibine hizmet edeceğine inanılması, aşağıdakilerden hangisinin kesin kanıtıdır?",
+        "options": ["Gelişmiş bir mimari yapının", "Ölümden sonraki yaşam (Ahiret) inancının", "Sınıflı toplum yapısının", "Tek tanrılı din anlayışının"],
+        "correct": 1,
+        "rationale": "Öldürülen düşmanların ruhlarının öbür dünyada hizmetçi olacağı inancı, doğrudan ölümden sonra yaşamın devam ettiği fikrine (ahiret) dayanır."
+      },
+      {
+        "q": "Soru 5: Türk adıyla kurulan ilk devlet olma özelliğini taşıyan ve Bizans ile ilk resmi diplomatik ilişkileri başlatan devlet hangisidir?",
+        "options": ["II. Göktürk", "Asya Hunları", "Avarlar", "I. Göktürk"],
+        "correct": 3,
+        "rationale": "I. Göktürk Devleti İstemi Yabgu döneminde İpek Yolu kontrolü için Bizans'a elçi (Maniakh) göndermiş ve diplomatik ilişkileri başlatmıştır."
+      },
+      {
+        "q": "Soru 6: Asya Hun Devleti'nde orduyu onlu sisteme göre düzenleyen, ıslıklı oku icat eden ve tüm Türk boylarını ilk kez tek bayrak altında toplayan hükümdar kimdir?",
+        "options": ["Teoman", "Mete Han", "Ki-ok", "Balamir"],
+        "correct": 1,
+        "rationale": "Mete Han, M.Ö. 209'da tahta çıkarak Onlu Sistemi kurmuş ve modern Türk kara kuvvetlerinin temelini atmıştır."
+      },
+      {
+        "q": "Soru 7: Eski Türk töresinde hiçbir şart altında değiştirilemeyen kurallardan biri olan 'Könilik' kavramının hukuki karşılığı aşağıdakilerden hangisidir?",
+        "options": ["Adalet", "Eşitlik", "İnsanlık", "İyilik"],
+        "correct": 0,
+        "rationale": "Törenin değiştirilemez dört ilkesinden biri olan Könilik, 'Adalet ve Doğruluk' anlamına gelir."
+      },
+      {
+        "q": "Soru 8: Göçebe yaşam tarzının bir sonucu olarak eski Türk hukuk sisteminde aşağıdakilerden hangisinin görülmesi beklenmez?",
+        "options": ["Kısa süreli hapis cezaları", "Yazısız hukuk kuralları (Töre)", "Uzun süreli hapis cezaları ve zindan mimarisi", "İdam cezalarının varlığı"],
+        "correct": 2,
+        "rationale": "Göçebe toplumlar sürekli yer değiştirdiği için suçluları uzun süre gözaltında tutacak zindan veya ağır hapis mimarisi geliştirememişlerdir."
+      },
+      {
+        "q": "Soru 9: Kitabelerinde 'fakir halkın doyurulması, çıplak halkın giydirilmesi' ibarelerine yer vererek Göktürklerin yönetimde hangi devlet anlayışını benimsediğini kanıtlar?",
+        "options": ["Teokratik Devlet", "Sosyal Devlet", "Feodal Devlet", "Otokratik Devlet"],
+        "correct": 1,
+        "rationale": "Devletin halkın refahını, açlığını ve temel ihtiyaçlarını karşılamakla yükümlü olması 'Sosyal Devlet' ilkesinin en net tanımıdır."
+      },
+      {
+        "q": "Soru 10: Kendi adına para bastırarak ekonomide bağımsız bir çizgi çizen ve Araplarla (Emeviler) savaşarak İslamiyet'in Orta Asya'ya yayılmasını geciktiren Türk devleti hangisidir?",
+        "options": ["Hazarlar", "Türgişler", "Kırgızlar", "Karluklar"],
+        "correct": 1,
+        "rationale": "Türgişler, Sulu Kağan döneminde Emevi ordularına karşı direnmiş ve Baga Tarkan döneminde kendi adına para bastırmıştır."
+      },
+      {
+        "q": "Soru 11: Museviliği (Yahudiliği) resmi din olarak kabul eden tek Türk devleti aşağıdakilerden hangisidir?",
+        "options": ["Hazarlar", "Uygurlar", "Peçenekler", "Bulgarlar"],
+        "correct": 0,
+        "rationale": "Hazarlar, yöneticileri seviyesinde Museviliği benimseyen tek Türk devletidir. Ülkelerinde dini hoşgörü hakim olmuştur."
+      },
+      {
+        "q": "Soru 12: Dünyanın en uzun destanı olma özelliğini taşıyan, Kırgız Türklerine ait olan ve günümüzde de eklemelerle yazılmaya devam eden destan hangisidir?",
+        "options": ["Oğuz Kağan Destanı", "Ergenekon Destanı", "Manas Destanı", "Göç Destanı"],
+        "correct": 2,
+        "rationale": "Manas Destanı Kırgızlara aittir ve Türk dünyasının en hacimli edebi eseridir."
+      },
+      {
+        "q": "Soru 13: Avrupa'da devlet kuran, İstanbul'u Sasanilerle ortaklaşa iki kez kuşatan ancak daha sonra Hristiyanlaşarak asimile olan Türk topluluğu hangisidir?",
+        "options": ["Hunlar", "Avarlar", "Macarlar", "Bulgarlar"],
+        "correct": 1,
+        "rationale": "Avarlar hem Orta Asya'da hem de Avrupa'da devlet kurmuş, İstanbul'u tarihte kuşatan ilk Türk devleti olmuştur."
+      },
+      {
+        "q": "Soru 14: İslamiyet'i kabul eden ilk Türk boyu (topluluğu) aşağıdakilerden hangisidir?",
+        "options": ["Karahanlılar", "Karluklar", "Oğuzlar", "Kıpçaklar"],
+        "correct": 1,
+        "rationale": "Talas Savaşı'nda (751) Çin'e karşı Abbasileri destekleyen Karluklar, İslamiyet'i grup halinde kabul eden ilk Türk boyudur."
+      },
+      {
+        "q": "Soru 15: Tarihte ilk kez 'Vezirlik' makamını kurarak Vezir Tonyukuk'u göreve getiren ve 'Türklerin Bismarck'ı' olarak anılan devlet adamını barındıran hanedan hangisidir?",
+        "options": ["Asya Hunları", "II. Göktürk (Kutluk)", "Uygurlar", "Akhunlar"],
+        "correct": 1,
+        "rationale": "Kutluk Kağan tarafından kurulan II. Göktürk Devleti'nde Vezir Tonyukuk, Türk tarihinin ilk büyük veziri ve stratejistidir."
+      },
+      {
+        "q": "Soru 16: Asya Hun Devleti’nin yıkılmasından sonra Batı’ya doğru göç eden Türk boylarının Karadeniz’in kuzeyindeki Germen kavimlerini yerinden oynatarak Avrupa içlerine kadar sürmesiyle başlayan küresel olay hangisidir?",
+        "options": ["Haçlı Seferleri", "Kavimler Göçü", "Coğrafi Keşifler", "Yüzyıl Savaşları"],
+        "correct": 1,
+        "rationale": "M.S. 375 yılında Balamir öncülüğünde gerçekleşen Kavimler Göçü, Roma'yı ikiye bölmüş ve İlk Çağ'ı kapatıp Orta Çağ'ı açmıştır."
+      },
+      {
+        "q": "Soru 17: Avrupa Hun Devleti’nin en parlak dönemini yaşatan, Bizans’ı vergiye bağlayan, Batı dünyasında 'Tanrı’nın Kırbacı' olarak anılan efsanevi Türk hükümdarı kimdir?",
+        "options": ["Balamir", "Uldız", "Rua", "Attila"],
+        "correct": 3,
+        "rationale": "Attila, hem Doğu hem Batı Roma üzerine seferler düzenleyerek Avrupa Hun Devleti'ni zirveye taşımıştır."
+      },
+      {
+        "q": "Soru 18: Sasanilerle ittifak kurarak Akhun Devleti’ni yıkan, daha sonra ise İpek Yolu kontrolü için Bizans ile ittifak kuran I. Göktürk Devleti’nin ünlü batı kanadı yönamentisi kimdir?",
+        "options": ["Bumin Kağan", "Mukan Kağan", "İstemi Yabgu", "Tapo Kağan"],
+        "correct": 2,
+        "rationale": "İstemi Yabgu, dış politikada tamamen pragmatik davranarak İpek Yolu ticaretini ele geçirmek amacıyla ittifaklar kurmuştur."
+      },
+      {
+        "q": "Soru 19: Çin esaretine karşı 39 arkadaşıyla birlikte Çin sarayını basarak Türk tarihindeki ilk milli istiklal ayaklanmasını başlatan kahraman aşağıdakilerden hangisidir?",
+        "options": ["Kutluk Kağan", "Kürşad", "Bayan Han", "Bağa Tarkan"],
+        "correct": 1,
+        "rationale": "639 yılında gerçekleşen Kürşad Ayaklanması başarısız gibi görünse de Türk boyları arasında milli bilinci uyandırmıştır."
+      },
+      {
+        "q": "Soru 20: Çin esaretine son vererek II. Göktürk Devleti’ni kuran ve devleti derleyip topladığı için 'İlteriş' unvanını alan hükümdar kimdir?",
+        "options": ["Kapgan Kağan", "Kutluk Kağan", "Bilge Kağan", "Kültigin"],
+        "correct": 1,
+        "rationale": "Kutluk Kağan, dağınık Türk boylarını tek bayrak altında toplayıp devleti yeniden kurduğu için İlteriş unvanını almıştır."
+      },
+      {
+        "q": "Soru 21: Eski Türk devletlerinde Kurultay meclisine hükümdarın eşi olan Hatun’un da katılması aşağıdakilerden hangisinin kesin bir göstergesidir?",
+        "options": ["Devletin teokratik olduğunun", "Kadının yönetimde ve siyasi hayatta söz hakkı olduğunun", "Veraset sisteminin düzenlendiğinin", "Meclisin sadece kadın sorunları için toplandığının"],
+        "correct": 1,
+        "rationale": "Hatun'un kurultayda yer alması ve imzalarda mührünün bulunması, eski Türk toplumunda kadının yüksek statüsünün kanıtıdır."
+      },
+      {
+        "q": "Soru 22: Uygurların yerleşik hayata geçmesiyle birlikte Türk sanat ve mimari kültüründe derin değişimler yaşanmıştır. Aşağıdakilerden hangisi bu dönemde ortaya çıkan unsurlardan biri 'değildir'?",
+        "options": ["Fresko (Duvar resmi)", "Stupa adı verilen tapınaklar", "Kalıcı saray ve ev mimarisi", "Kurgan adı verilen oda mezarlar"],
+        "correct": 3,
+        "rationale": "Kurgan adı verilen oda mezarlar, Türklerde göçebe dönemden beri var olan eski bir gömme geleneğidir."
+      },
+      {
+        "q": "Soru 23: İslamiyet öncesi Türk devletlerinde ordunun ve halkın dini törenlerini yöneten din adamlarına verilen genel isim aşağıdakilerden hangisidir?",
+        "options": ["Toygun", "Kam / Şaman", "Yuğ", "Kurgan"],
+        "correct": 1,
+        "rationale": "Gök Tanrı ve Şamanizm inanışlarında din adamlarına Kam veya Şaman adı verilir."
+      },
+      {
+        "q": "Soru 24: Kırgızlar tarafından yıkılan ve Moğolların egemenliğini kabul ederek 'Moğollara itaat eden ilk yerleşik Türk devleti' olan topluluk hangisidir?",
+        "options": ["Uygurlar", "Karluklar", "Oğuzlar", "Kıpçaklar"],
+        "correct": 0,
+        "rationale": "Uygurlar, gelişmiş medeniyetleri sayesinde Moğol devlet mekanizmasında görev almış ve onları Türkleştirmişlerdir."
+      },
+      {
+        "q": "Soru 25: Malazgirt Savaşı’nda (1071) Bizans ordusunda ücretli askerlik yaparken, Selçuklu safına geçerek savaşın kaderini değiştiren Türk boyları hangileridir?",
+        "options": ["Peçenekler - Uzlar (Oğuzlar)", "Hazarlar - Kırgızlar", "Uygurlar - Karluklar", "Avarlar - Hunlar"],
+        "correct": 0,
+        "rationale": "Bizans ordusundaki Peçenek ve Uz Türkleri, karşı ordunun Türkçe konuştuğunu duyunca soydaşlarının safına geçmişlerdir."
+      },
+      {
+        "q": "Soru 26: Eski Türk devletlerinde hükümdarın erkek çocuklarının (şehzadelerin) boyların başına gönderilmesine ne ad verilir ve onları eğiten danışmanlara ne denir?",
+        "options": ["Şehzade - Lala", "Tigin - Ataman (İnal/İnanç)", "Melik - Atabey", "Yabgu - Subaşı"],
+        "correct": 1,
+        "rationale": "Eski Türklerde hakanın oğullarına 'Tigin', onları eğiten tecrübeli danışmanlara 'Ataman' veya 'İnal' denir."
+      },
+      {
+        "q": "Soru 27: Eski Türk dini olan Gök Tanrı inancında, ölen bir kişinin ardından düzenlenen dini cenaze törenine verilen isim aşağıdakilerden hangisidir?",
+        "options": ["Yuğ", "Sagu", "Kurgan", "Balbal"],
+        "correct": 0,
+        "rationale": "Cenaze törenlerine 'Yuğ' denir. Arkalarından yakılan ağıtlara ise 'Sagu' adı verilir."
+      },
+      {
+        "q": "Soru 28: Rusların meşhur 'İgor Destanı'na konu olan, 'Codex Cumanicus' adlı bir sözlük oluşturan Türk boyu hangisidir?",
+        "options": ["Kumanlar (Kıpçaklar)", "Kumanlar (Peçenekler)", "Karluklar", "Hazarlar"],
+        "correct": 0,
+        "rationale": "Kumanlar (Kıpçaklar) Doğu Avrupa'da hakimiyet kurmuş ve meşhur Codex Cumanicus sözlüğünü yazmışlardır."
+      },
+      {
+        "q": "Soru 29: Aşağıdakilerden hangisi İslamiyet öncesi Türk devletlerinde hükümdarlık alametleri arasında yer almaz?",
+        "options": ["Örgin (Taht)", "Hutbe Okutmak", "Kotuz (Sorguç)", "Nevbet (Davul)"],
+        "correct": 1,
+        "rationale": "Hutbe okutmak tamamen İslamiyet'in kabulünden sonra gelen bir hükümdarlık alametidir."
+      },
+      {
+        "q": "Soru 30: Abbasi halifeleri tarafından Bizans sınırında kurulan 'Avasım' şehirlerine öncelikle Türklerin yerleştirilme sebebi nedir?",
+        "options": ["Tarım uzmanlıkları", "Savaşçı ve askeri yeteneklerinden sınır güvenliğinde faydalanmak", "Teokratik devlet yapıları", "Ekonomik yardım talepleri"],
+        "correct": 1,
+        "rationale": "Abbasiler, Türklerin üstün savaşçı yeteneklerinden sınır hatlarını korumak amacıyla yararlanmışlardır."
+      },
+      {
+        "q": "Soru 31: Eski Türk devletlerinde adalet işlerinden sorumlu olan örfi mahkeme başkanlarına ne ad verilirdi?",
+        "options": ["Yargucu", "Tarkan", "Aygucı", "Bitigci"],
+        "correct": 0,
+        "rationale": "Eski Türk adalet sisteminde mahkemelere ve yargılama işlerine bakan görevlilere 'Yargucu' denir."
+      },
+      {
+        "q": "Soru 32: Türk tarihinin 'ilk milli alfabesi' olma unvanına sahip olan Göktürk alfabesi kaç harflidir?",
+        "options": ["38 Harfli", "18 Harfli", "28 Harfli", "32 Harfli"],
+        "correct": 0,
+        "rationale": "Türklerin ilk milli alfabesi 38 harften oluşan Göktürk alfabesidir."
+      },
+      {
+        "q": "Soru 33: Eski Türk devletlerinde hükümet işlerinin yürütüldüğü bakanlar kuruluna (Hükümete) ne ad verilirdi?",
+        "options": ["Ayukı", "Aygucı", "Toygun", "Kurultay"],
+        "correct": 0,
+        "rationale": "Eski Türklerde hükümete 'Ayukı', hükümetin başkanına (Vezire) ise 'Aygucı' denirdi."
+      },
+      {
+        "q": "Soru 34: Asya Hun Devleti’nin yıkılışında Çin himayesine girmeyi reddederek bağımsızlık uğruna batıya çekilen Hun lideri kimdir?",
+        "options": ["Teoman", "Çiçi", "Ho-han-yeh", "Balamir"],
+        "correct": 1,
+        "rationale": "Çiçi, kardeşi Ho-han-yeh'in Çin himayesine girme teklifini utanç verici bularak reddetmiştir."
+      },
+      {
+        "q": "Soru 35: Göktürk Kitabeleri'nde hükümdarın yetkilerini doğrudan ilahi bir kaynağa dayandırdığını gösteren kavram aşağıdakilerden hangisidir?",
+        "options": ["Cihan Hakimiyeti", "Kut İnancı", "Töre Hukuku", "Oguş Sistemi"],
+        "correct": 1,
+        "rationale": "Hükümdarın tahta geçişini evrenin yaratıcısı olan Gök Tanrı'ya dayandırması 'Kut' inancıdır."
+      },
+      {
+        "q": "Soru 36: İslamiyet öncesi Türk devletlerinde hükümdarın emrindeki askeri birliklerin komutanlarına, valilere ve vergi toplamakla görevli sivil/askeri memurlara çeşitli unvanlar verilmiştir. Aşağıdaki unvan ve açıklama eşleştirmelerinden hangisi 'yanlıştır'?",
+        "options": [
+          "Tudun: Vergi denetçisi ve idari vali",
+          "Apa: Saray görevlisi, sivil yönetici",
+          "Subaşı: Ordu komutanı, askeri lider",
+          "Bitigci: Mahkeme başkanı, yüksek yargıç"
+        ],
+        "correct": 3,
+        "rationale": "Bitigci, devletin iç ve dış yazışmalarını yapan katip/sekreter anlamına gelir. Yüksek yargıçlara veya mahkeme başkanlarına ise 'Yargucu' adı verilir."
+      },
+      {
+        "q": "Soru 37: Hazarlar Dönemi'nde ülkede Müslüman, Hristiyan, Musevi ve Şamanist topluluklar bir arada yaşamış, her dini inancın davasına bakmak üzere yedi kişiden oluşan bir hakimler kurulu kurulmuştur. Tarihe 'Hazar Barış Çağı' (Pax Hazaria) olarak geçen bu durum aşağıdakilerden hangisinin kesin bir göstergesidir?",
+        "options": [
+          "Devletin teokratik hukuk kurallarını tamamen terk ettiğinin",
+          "Ülkede çok güçlü bir dini hoşgörü ve adalet mekanizmasının bulunduğunun",
+          "Hazar halkının tamamının Museviliği zorunla kabul ettiğinin",
+          "Kurultay meclisinin yetkilerinin hakimler kuruluna devredildiğinin"
+        ],
+        "correct": 1,
+        "rationale": "Farklı dinlerden temsilcilerin yer aldığı bir mahkeme heyetinin kurulması ve inanç özgürlüğünün güvenceye alınması, Hazarlardaki gelişmiş adalet anlayışının ve toplumsal hoşgörünün kanıtıdır."
+      },
+      {
+        "q": "Soru 38: Karluk, Yağma ve Çiğil Türklerinin Abbasi ordusuyla birleşerek Çinlilere karşı savaştığı, Orta Asya'nın Çinlileşmesini engelleyen ve Türklerin kitleler halinde İslamiyet'i kabul etmeye başlamasına zemin hazırlayan 751 tarihli savaş aşağıdakilerden hangisidir?",
+        "options": ["Talas Savaşı", "Pasinler Savaşı", "Katvan Savaşı", "Yassıçemen Savaşı"],
+        "correct": 0,
+        "rationale": "Talas Savaşı, Türk-İslam tarihinin miladı kabul edilir. Bu savaşla kağıt ilk kez Çin dışında (Semerkand) üretilmeye başlanmış ve Türk-Arap dostluğu doğmuştur."
+      },
+      {
+        "q": "Soru 39: Aşağıdaki Türk topluluklarından hangisi, İslamiyet öncesi dönemde Doğu Avrupa ve Balkanlar'da faaliyet göstermesine rağmen kendi adına müstakil bir devlet kuramamış, tamamen boylar federasyonu ve askeri teşkilat şeklinde varlığını sürdürmüştür?",
+        "options": ["Uzlar (Oğuzlar)", "Hazarlar", "Avarlar", "Peçenekler"],
+        "correct": 3,
+        "rationale": "Peçenekler, Karadeniz'in kuzeyi ve Balkanlar'da çok güçlü bir askeri güç haline gelmiş, Bizans'ı baskı altına almışlardır ancak hiçbir zaman teşkilatlı, merkezi bir devlet mekanizması kuramamışlardır."
+      },
+      {
+        "q": "Soru 40: Eski Türk devletlerinde 'Cihan Hakimiyeti' ülküsü doğrultusunda fetihler yapılmıştır. Bu felsefeye göre Kağan, sadece Türklerin değil tüm dünyanın hükümdarı olarak kabul edilir. Kitabelerde geçen 'Güneş bayrağımız, gökyüzü çadırımız olsun' ifadesi doğrudan aşağıdaki kavramlardan hangisiyle ilişkilidir?",
+        "options": ["Türk Cihan Hakimiyeti Mefkuresi", "Kut Anlayışı", "Töre Hukuku", "Oguş Sistemi"],
+        "correct": 0,
+        "rationale": "Güneşin doğduğu yerden baktığı yere kadar olan tüm coğrafyayı Türk idaresi altına alma düşüncesine ve ilahi fetih hakkına 'Türk Cihan Hakimiyeti Mefkuresi' denir."
+      },
+      {
+        "q": "Soru 41: İlk Türk devletlerinde hükümdarın meşruiyet kaynağı Gök Tanrı'dır. Ancak hükümdar mutlak bir teokratik lider değildir. Aşağıdakilerden hangisi Türk devletlerinin tam bir 'teokrasi' (din devleti) olmamasının en temel kanıtıdır?",
+        "options": [
+          "Devletin töre adı verilen laik ve örfi hukuk kurallarına göre yönetilmesi",
+          "Hükümdarın din adamları (Kam/Şaman) arasından seçilmesi",
+          "Kurultay meclisine din adamlarının alınmasının yasak olması",
+          "Savaş kararlarının sadece din adamları tarafından onaylanması"
+        ],
+        "correct": 0,
+        "rationale": "Teokrasilerde devlet kuralları kutsal kitaplara veya dini emirlere dayanır. Eski Türklerde ise devlet, kutsal metinlerle değil, kaynağını sosyal yaşamdan ve akıldan alan örfi hukuk (Töre) kuralları ile yönetilirdi."
+      },
+      {
+        "q": "Soru 42: İslamiyet öncesi Türk sanatında göçebe yaşam tarzına bağlı olarak taşınabilir eşyalar, kemer tokaları, kılıç kınları ve koşum takımları üzerine pars, kurt, kartal ve geyik gibi hayvanların birbirleriyle mücadelesi işlenmiştir. Dünya sanat tarihine Türkler tarafından kazandırılan bu üsluba ne ad verilir?",
+        "options": ["Hayvan Üslubu", "Fresko", "Stupa", "Minyatür"],
+        "correct": 0,
+        "rationale": "Hunlar ve Göktürklerde zirveye ulaşan, doğadaki hayvanların stilize edilerek eşyalara işlenmesi sanatına 'Hayvan Üslubu' denir. Bu üslubun temeli İskitlere (Sakalara) dayanır."
+      },
+      {
+        "q": "Soru 43: Tarihte 'Bozkırın Kuyumcuları' olarak anılan, pantolon, kemer tokası ve ata binmeyi kolaylaştıran üzengiyi ilk kez kullanan, Tomris Hatun gibi ilk kadın hükümdara sahip olan en eski Türk topluluğu hangisidir?",
+        "options": ["İskitler (Sakalar)", "Asya Hunları", "Avrupa Hunları", "Akhunlar"],
+        "correct": 0,
+        "rationale": "M.Ö. VII. yüzyılda tarih sahnesine çıkan İskitler, altını ve madeni çok ustaca işledikleri için 'Bozkırın Kuyumcuları' unvanını almışlardır. Devlet teşkilatı tam kurulmadığı için en eski Türk topluluğu kabul edilirler."
+      },
+      {
+        "q": "Soru 44: Kırgızların egemenliğini kabul etmeyerek batıya göç eden ve Macaristan civarında kurdukları devletle Orta Avrupa'nın etnik yapısını değiştiren, Hristiyanlığı benimseyerek zamanla asimile olan Türk devleti aşağıdakilerden hangisidir?",
+        "options": ["Avarlar", "Macarlar", "Peçenekler", "Bulgarlar"],
+        "correct": 1,
+        "rationale": "Arpad öncülüğünde kurulan Macarlar, Germenlerin doğuya yayılmasını engelleyerek bugünkü Macaristan devletinin temelini atmışlardır."
+      },
+      {
+        "q": "Soru 45: Aşağıdakilerden hangisi eski Türklerde ordunun genel özelliklerinden biri 'değildir'?",
+        "options": [
+          "Ordu-millet anlayışının hakim olması (Her Türk asker doğar)",
+          "Ücretli askerlik sistemine dayanması",
+          "Temel gücün süvarilerden (atlı birliklerden) oluşması",
+          "Onlu teşkilat sistemine göre örgütlenmesi"
+        ],
+        "correct": 1,
+        "rationale": "Eski Türklerde (Hazarlar hariç) ücretli askerlik yoktur. Kadın-erkek her birey gönüllü ve doğal bir askerdir, buna 'Ordu-Millet' anlayışı denir."
+      },
+      {
+        "q": "Soru 46: II. Göktürk Devleti döneminde Çin baskılarına ve asimilasyonuna karşı halkı uyaran, bağımsızlığın önemini anlatan ve Türk tarihinin ilk Türkçe yazılı belgesi olan Orhun Abideleri hangi hükümdar döneminde dikilmeye başlanmıştır?",
+        "options": ["Kutluk Kağan", "Bilge Kağan", "Mukan Kağan", "Bumin Kağan"],
+        "correct": 1,
+        "rationale": "Abideler, II. Göktürklerin hükümdarı Bilge Kağan döneminde (VIII. yüzyıl) Bilge Kağan, kardeşi Kültigin ve Vezir Tonyukuk adına dikilmiştir."
+      },
+      {
+        "q": "Soru 47: Eski Türk devletlerinde devleti oluşturan unsurlar arasında bağımsızlık duygusu çok önemlidir. Kitabelerinde 'Oksızlık' olarak geçen ve Türklerin esaret altında yaşamayı reddetmesini simgeleyen kavramın karşılığı hangisidir?",
+        "options": ["Bağımsızlık / Özgürlük", "Ülke / Toprak", "Halk / Millet", "Kanun / Töre"],
+        "correct": 0,
+        "rationale": "Eski Türkçede 'Oksızlık', bağımsızlık demektir. Türk devlet yapısının 4 temel unsurundan (Oksızlık, Kün, Örgin, Töre) biridir."
+      },
+      {
+        "q": "Soru 48: Karlukların İslamiyet'i kabul etmesinden sonra kurulan ve Türk-İslam sentezinin ilk örneklerini veren Karahanlılar Devleti'nin kurucusu aşağıdakilerden hangisidir?",
+        "options": ["Bilge Kül Kadir Han", "Satuk Buğra Han", "Alp Er Tunga", "Baga Tarkan"],
+        "correct": 0,
+        "rationale": "Karahanlılar Devleti 840 yılında Bilge Kül Kadir Han tarafından kurulmuştur. Devletin İslamiyet'i resmi din olarak kabul etmesi ise Satuk Buğra Han dönemindedir."
+      },
+      {
+        "q": "Soru 49: Asya Hun Devleti'nin dağılmasından sonra Çin entrikalarına karşı duran ancak daha sonra batıya göç ederek Kavimler Göçü'nün başlamasında lokomotif görevi üstlenen Hun lideri hangisidir?",
+        "options": ["Balamir", "Attila", "Uldız", "Rua"],
+        "correct": 0,
+        "rationale": "Balamir, IV. yüzyılda Hun kitlelerini batıya doğru sürükleyerek Avrupa'nın altını üstüne getiren Kavimler Göçü'nü başlatan liderdir."
+      },
+      {
+        "q": "Soru 50: Eski Türklerde ölen kişilerin değerli eşyalarıyla birlikte gömüldüğü, oda şeklindeki yer altı mezarlarına ne ad verilirdi?",
+        "options": ["Kurgan", "Yuğ", "Balbal", "Stupa"],
+        "correct": 0,
+        "rationale": "Oda şeklindeki mezarlara 'Kurgan' denir. Eşyaların buraya gömülmesi, Türklerde ölümden sonraki yaşama (Ahiret hayatına) inanıldığının kesin kanıtıdır."
+      },
+{
+                            q: "Soru 51: Kırgızlar tarafından Ötüken'den çıkarıldıktan sonra Kansu ve Doğu Türkistan bölgelerine yerleşen, buralarda tarım, sanat ve ticarette çok ileri giden, kendilerine özgü 18 harfli bir alfabe kullanan Türk devleti hangisidir?",
+                            options: ["Uygurlar", "Karluklar", "Hazarlar", "Türgişler"],
+                            correct: 0,
+                            rationale: "Uygurlar, Ötüken'deki siyasi varlıklarını kaybettikten sonra yerleşik hayat kültürünü bu yeni bölgelerde (Turfan Uygurları) en üst seviyeye taşımış ve Uygur Alfabesi'ni kullanmışlardır."
+                        },
+                        {
+                            q: "Soru 52: Eski Türk devletlerinde hükümdarın cihan hakimiyeti yetkisini aldığına inanılan Kut gücünün ekonomik boyuttaki yansımasına, yani Tanrı'nın hükümdara verdiği bolluk, bereket ve ekonomik paylaştırma yetkisine ne ad verilir?",
+                            options: ["Üleş", "Küç", "Töre", "Yarlığ"],
+                            correct: 0,
+                            rationale: "Tanrı'nın kağana verdiği askeri güce 'Küç', ekonomik bolluk ve bunu halka adilce paylaştırma yetkisine ise 'Üleş' (Bölüşmek kökünden) adı verilir."
+                        },
+                        {
+                            q: "Soru 53: Cengiz Han liderliğindeki Moğol İmparatorluğu'nun egemenliğini kendi isteğiyle kabul eden 'ilk Müslüman Türk topluluğu' aşağıdakilerden hangisidir?",
+                            options: ["Karluklar", "Uygurlar", "Kırgızlar", "Oğuzlar"],
+                            correct: 0,
+                            rationale: "Moğol hakimiyetine giren ilk Türk boyu Kırgızlar (yerleşik olmayan) iken, İslamiyet'i benimsemiş olan ve Moğollara itaat eden ilk Türk boyu Karluklar olmuştur."
+                        },
+                        {
+                            q: "Soru 54: Hristiyanlığı benimseyerek Tuna boylarında kurdukları devletle Avrupa kültürünü etkileyen, ancak daha sonra Boris Han döneminde tamamen Hristiyanlaşarak Türklük özelliklerini kaybeden kol hangisidir?",
+                            options: ["Tuna Bulgarları", "İtil Bulgarları", "Hazarlar", "Peçenekler"],
+                            correct: 0,
+                            rationale: "Tuna Bulgarları Hristiyanlığı seçerek zamanla Slavlaşmış ve asimile olmuştur. Buna karşın İtil (Volga) Bulgarları Almış Han döneminde İslamiyet'i seçerek benliklerini korumuşlardır."
+                        },
+                        {
+                            q: "Soru 55: Göktürk Kitabeleri'ni ilk kez okumayı başaran ve 1893 yılında dünyaya ilan eden ünlü Danimarkalı dil bilimci aşağıdakilerden hangisidir?",
+                            options: ["Wilhelm Thomsen", "Radloff", "Strahlenberg", "Pritsak"],
+                            correct: 0,
+                            rationale: "Orhun yazıtları üzerindeki çalışmalar neticesinde çözülen ilk kelimeler 'Tengri' ve 'Türk' olmuş, bu büyük başarı Wilhelm Thomsen tarafından gerçekleştirilmiştir."
+                        },
+                        {
+                            q: "Soru 56: İslamiyet öncesi Türk devletlerinde hükümdarın kurultayda veya elçilerin önünde oturduğu, egemenliğin en önemli fiziki sembolü kabul edilen 'Taht' kavramının eski Türkçe karşılığı hangisidir?",
+                            options: ["Örgin", "Kotuz", "Tuğ", "Yarlığ"],
+                            correct: 0,
+                            rationale: "Eski Türk devletlerinde taht anlamına gelen kavram 'Örgin'dir. Kotuz hükümdarın başlığına takılan sorguç, Tuğ sancak, Yarlığ ise fmandır."
+                        },
+                        {
+                            q: "Soru 57: Abbasi Devleti'nin zayıflamasıyla birlikte Mısır'da kurulan ve yöneticileri Türk, halkı ise tamamen Arap olan, bu durum nedeniyle kısa sürede yıkılan 'Mısır'da kurulan ilk Türk devleti' hangisidir?",
+                            options: ["Tolunoğulları", "İhşidiler", "Eyyubiler", "Memlükler"],
+                            correct: 0,
+                            rationale: "Tolunoğlu Ahmet tarafından Mısır'da kurulan Tolunoğulları, Mısır'da kurulan ilk Türk devletidir. Yönetici kadro ile halk arasındaki etnik farklılık kısa ömürlü olmalarına yol açmıştır."
+                        },
+                        {
+                            q: "Soru 58: Eski Türk veraset sisteminde bazı istisnai durumlarda kağanlık makamına doğrudan Kurultay (Meclis) tarafından liyakat esasına göre atama yapılmıştır. Aşağıdakilerden hangisi kurultayın bu yetkiye sahip olduğunun en açık kanıtıdır?",
+                            options: [
+                                "Bumin Kağan'ın ölümünden sonra yerine kardeşi İstemi'nin Yabgu yapılması",
+                                "Kutluk Kağan'ın Çin esaretine isyan ederek devleti sıfırdan kurması",
+                                "İlteriş Kağan'ın ölümünden sonra oğulları Bilge ve Kültigin küçük olduğu için kardeşi Kapgan'ın kurultay kararıyla tahta çıkarılması",
+                                "Mete Han'ın babası Teoman'ı tahttan indirerek ordunun başına geçmesi"
+                            ],
+                            correct: 2,
+                            rationale: "İlteriş Kağan öldüğünde oğulları henüz çocuk yaşta olduğu için, devletin bekası adına kurultay toplanarak hanedanın en tecrübeli askeri lideri olan kardeşi Kapgan'ı kağan ilan etmiştir."
+                        },
+                        {
+                            q: "Soru 59: Aşağıdaki Moğol kökenli devletlerden hangisi zamanla tamamen İslamiyet'i benimseyip Türkleşerek Altın Orda Devleti'nin parçalanmasıyla Rusya'nın güneye inmesini engelleyen bir set görevi görmüştür?",
+                            options: ["Çağatay Hanlığı", "İlhanlılar", "Altın Orda Devleti", "Kubilay Hanlığı"],
+                            correct: 2,
+                            rationale: "Karadeniz'in kuzeyinde kurulan Altın Orda Devleti, Berke Han döneminde İslamiyet'i seçmiş ve tamamen Türkleşmiştir. Bu devletin yıkılması Rus prensliklerinin önünü açmıştır."
+                        },
+                        {
+                            q: "Soru 60: Türk aile yapısında evlenen çocuklara babanın kendi malından pay vererek ve çadır tahsis ederek ayrı bir ekonomik birim kurması sistemine ne ad verilirdi?",
+                            options: ["Ev bark edinme", "Yuğ", "Kurgan", "Tüzlük"],
+                            correct: 0,
+                            rationale: "Evlenen erkek çocuklara aile tarafından çadır ve hayvan verilerek kendi bağımsız çadırı kurdurulurdu. Buna eski Türkçede 'ev-bark edinme' denirdi."
+                        },
+                        {
+                            q: "Soru 61: Bizans kaynaklarında 'Turkia' (Türkiye) ifadesi coğrafi bir terim olarak ilk kez hangi yüzyılda ve hangi bölge için kullanılmıştır?",
+                            options: ["VI. Yüzyıl - Orta Asya", "XI. Yüzyıl - Anadolu", "XIII. Yüzyıl - Mısır", "IX. Yüzyıl - Doğu Avrupa"],
+                            correct: 0,
+                            rationale: "Türkiye (Turkia) ifadesi ilk kez VI. yüzyılda Bizans kaynaklarında Orta Asya (Göktürk coğrafyası) için kullanılmıştır. XI. yüzyıldan itibaren ise Anadolu için kullanılacaktır."
+                        },
+                        {
+                            q: "Soru 62: İslamiyet öncesi Türk ordularında düşman ordusunun durumunu keşfetmek ve istihbarat toplamak amacıyla ana ordunun önünden giden keşif birliklerine ne ad verilirdi?",
+                            options: ["Yelme", "Tarkan", "Subaşı", "Böri"],
+                            correct: 0,
+                            rationale: "Eski Türk ordularında keşif ve istihbarat görevini yürüten öncü süvari birliklerine 'Yelme' adı verilir. Osmanlı'daki karşılığı 'Akıncılar'dır."
+                        },
+                        {
+                            q: "Soru 63: Hunlar ve Göktürkler döneminde ölen devlet büyükleri için mezarların üzerine dikilen balbalların insan formundaki hatları, Türk kültüründe aşağıdaki sanat dallarından hangisinin ilk örnekleri kabul edilir?",
+                            options: ["Heykel", "Fresko", "Minyatür", "Hattatlık"],
+                            correct: 0,
+                            rationale: "Balballar taşın insan şeklinde yontulmasıyla yapıldığı için ilkel düzeyde Türk heykel sanatının en eski ve ilk örnekleri olarak kabul edilmektedir."
+                        },
+                        {
+                            q: "Soru 64: Avrupa Hun Devleti'nin yıkılmasından sonra, Karadeniz'in kuzeyine çekilen Hun kalıntıları ile bölgedeki yerli Türk boylarının birleşmesiyle oluşan ve kelime anlamı 'karışan' olan Türk topluluğu hangisidir?",
+                            options: ["Bulgarlar", "Kutrigurlar", "Utrigurlar", "Sabirler"],
+                            correct: 0,
+                            rationale: "Bulgar kelimesinin kökeni Türkçe 'bulgamak' (karışmak/başkaldırmak) fiiline dayanır. Hunlar ile yerli Oğuz/Kıpçak boylarının karışmasıyla ortaya çıkmışlardır."
+                        },
+                        {
+                            q: "Soru 65: Savaşçı yetenekleri ve hızlarıyla bilinen Sabir (Sabarlar) Türklerinin dünya askeri tarihine en büyük katkısı, Kafkasya seferleri sırasında ilk kez kullandıkları hangi askeri teknoloji olmuştur?",
+                            options: ["Kale kuşatma makineleri ve mancanık", "Zırhlı at süvari kıyafetleri", "Islıklı ok teknolojisi", "Savaş arabaları"],
+                            correct: 0,
+                            rationale: "Sabirler, surları ve kaleleri yıkmakta kullanılan ilkel kuşatma makinelerini (mancanık mekanizmalarını) bozkır kültüründe etkili kullanan ilk topluluklardandır."
+                        },
+                        {
+                            q: "Soru 66: Doğu Avrupa bozkırlarında varlığını sürdüren, ancak Peçeneklerin baskısıyla batıya göç ederek bugünkü Moldova topraklarında Hristiyanlığı benimseyip 'Gagavuz Türkleri' adıyla günümüzde de varlığını sürdüren Türk boyu hangisidir?",
+                            options: ["Uzlar (Oğuzlar)", "Kumanlar", "Hazarlar", "Kırgızlar"],
+                            correct: 0,
+                            rationale: "Balkanlara geçen Oğuz kollarına 'Uz' denir. Hristiyanlığı seçen bu Uz Türklerinin torunları günümüzde Moldova'ya bağlı Gagavuzya Özerk Bölgesi'nde yaşamaktadır."
+                        },
+                        {
+                            q: "Soru 67: İslamiyet öncesi Türk inancında evrendeki dağ, nehir, ağaç ve kaya gibi nesnelerin gizli ruhları olduğuna inanılması felsefesi hangisidir?",
+                            options: ["Yer-Su İnancı", "Kut İnancı", "Atalar Kültü", "Totemizm"],
+                            correct: 0,
+                            rationale: "Doğadaki coğrafi unsurları kutsal sayma ve onlara manevi bir saygı gösterme eylemine 'Yer-Su' kültü adı verilir."
+                        },
+                        {
+                            q: "Soru 68: Çin kaynaklarında 'Yüksek tekerlekliler' olarak anılan, göçebe yaşamda büyük tekerlekli arabaları taşımacılıkta çok yoğun kullanan ve daha sonra Göktürklerin kuruluşunda ana askeri unsuru oluşturan Türk boylar federasyonu hangisidir?",
+                            options: ["Tölesler", "Karluklar", "Basmıllar", "Kenevisler"],
+                            correct: 0,
+                            rationale: "Tölesler, Orta Asya'daki en büyük Türk boy topluluklarından biridir. Göktürk ve Uygur devletlerinin askeri gücünde temel omurgayı oluşturmuşlardır."
+                        },
+                        {
+                            q: "Soru 69: Uygur Devleti'nde ticaretin çok gelişmesi ve yerleşik hayatın oturmasıyla birlikte, üzerinde hükümdarın mühürleri bulunan 'Kuanpoyu' adı verilen kumaş paralara rastlanmıştır. Kuanpoyu kumaş paraların diğer adı nedir?",
+                            options: ["Böz", "Yarmak", "Satir", "Çav"],
+                            correct: 0,
+                            rationale: "Uygurlarda mühürlenmiş keten veya pamuklu kumaş paralara 'Böz' veya 'Kuanpoyu' denirdi. Madeni paralara 'Yarmak', kağıt paralara ise 'Çav' denmiştir."
+                        },
+                        {
+                            q: "Soru 70: Eski Türk devletlerinde hükümdarın tahta çıkma hakkının ilahi kaynaklı olduğunu gösteren Kut, hanedanın ortak malı sayılırdı. Aşağıdakilerden hangisi bu durumun devlet yönetimine getirdiği 'en büyük avantajdır'?",
+                            options: [
+                                "Taht kavgalarını tamamen bitirmesi",
+                                "Kriz anlarında hanedandan yetenekli ve güçlü bir liderin başa geçme şansını artırması",
+                                "Devletin sınırlarının hiçbir zaman bölünmemesini sağlaması",
+                                "Dış saldırılara karşı ordunun tamamen tek merkezden yönetilmesini kolaylaştırması"
+                            ],
+                            correct: 1,
+                            rationale: "Kutun hanedanın tüm erkek üyelerinde olması iç savaşlara yol açsa da, mevcut kağan zayıf veya yetersiz kaldığında hanedandan daha zeki ve güçlü bir şehzadenin başa geçerek devleti ipten almasını sağlamıştır."
+                        },
+                        {
+                            q: "Soru 71: Türk adının anlamı üzerine tarih boyunca birçok yerli ve yabancı bilim insanı araştırmalar yapmıştır. Aşağıdaki eşleştirmelerden hangisi 'yanlıştır'?",
+                            options: [
+                                "Ziya Gökalp: Tüzeli, töreli, kanun sahibi",
+                                "Kaşgarlı Mahmut: Olgunluk çağı",
+                                "Çin Kaynakları: Miğfer",
+                                "Wambery: Deniz kıyısında yaşayan halk"
+                              ],
+                            correct: 3,
+                            rationale: "Macar Türkolog Wambery'e göre Türk adının anlamı 'Türemek, çoğalmak' demektir. Deniz kıyısıyla ilgili bir tanım literatürde yoktur."
+                        },
+                        {
+                            q: "Soru 72: İslamiyet öncesi Türklerde 'Töre' dinamik bir yapıya sahiydi. Töre kurallarının oluşmasında; I. Kurultay kararları, II. Kağanın emirleri (Yarlığ), III. Toplumun örf ve adetleri unsurlarından hangileri doğrudan kaynaklık ederdi?",
+                            options: ["Yalnız III", "I ve II", "I ve III", "I, II ve III"],
+                            correct: 3,
+                            rationale: "Törenin üç temel kaynağı vardır: Halkın yüzyıllardır biriktirdiği örf ve adetler, hakanın çıkardığı emirler (yarlığlar) ve meclisin (kurultay) aldığı kararlar."
+                        },
+                        {
+                            q: "Soru 73: Uygurların matbaayı kullanırken tahta harfler yerine kil ve metal harf kalıpları geliştirmeleri ve kitapları korumak amacıyla kütüphaneler kurmaları, öncelikle aşağıdakilerden hangisinin bir göstergesidir?",
+                            options: [
+                              "Kültürel hayatın ve okuma yazma oranının geliştiğinin",
+                              "Askeri alanda tamamen Çin teknolojisine bağımlı kalındığının",
+                              "Dini inanışların tamamen yasaklandığının",
+                              "Göçebe yaşam tarzının Orta Avrupa'ya taşındığının"
+                            ],
+                            correct: 0,
+                            rationale: "Hareketli harf sistemine dayalı matbaa teknolojisi ve kütüphanecilik faaliyetleri, Uygurlardaki yüksek entelektüel seviyenin ve kalıcı kültürel birikimin kanıtıdır."
+                        },
+                        {
+                            q: "Soru 74: Kendi ülkelerinde adaleti sağlamak amacıyla Hristiyan, Müslüman ve Musevi yargıçlardan oluşan bağımsız bir heyet kuran Hazarların, ticari yolların güvenliğini sağlayarak bölgede barışı tesis etmesi en çok hangi uluslararası ticaret yolunun canlanmasını sağlamıştır?",
+                            options: ["Kürk Yolu", "İpek Yolu", "Baharat Yolu", "Kral Yolu"],
+                            correct: 0,
+                            rationale: "Hazarlar, Hazar Denizi ile Baltık Denizi arasında uzanan ve değerli hayvan kürklerinin ticaretinin yapıldığı 'Kürk Yolu' üzerinde tam bir denetim ve güvenlik (Hazar Barış Çağı) sağlamışlardır."
+                        },
+                        {
+                            q: "Soru 75: Göktürk ve Uygur devletlerinde devletin resmi arşiv belgelerini tutan, anlaşmaları imzalayan ve mühür basma yetkisine sahip olan genel sekreter / dış işleri konumundaki görevliye ne ad verilirdi?",
+                            options: ["Tamgacı / Bitigci", "Tudun", "Yargucu", "Aygucı"],
+                            correct: 0,
+                            rationale: "Devlet mühürlerini (tamga) tutan ve yazışmaları (bitig) yöneten bu yüksek düzey bürokratlara 'Tamgacı' veya 'Bitigci' adı verilirdi."
+                        },
+                        {
+                            q: "Soru 76: İslamiyet öncesi Türk devletlerinde hakanın yanında kurultay delegesi olan, iç ve dış politikada resmi imza yetkisi bulunan Hatun'un (Katun) bu gücü neyin göstergesidir?",
+                            options: ["Kadının yönetimde yüksek otoriteye sahip olduğunun", "Veraset sisteminin belirsizleştiğinin", "Teokratik devlet yapısının", "Ordu-millet anlayışının zayıfladığının"],
+                            correct: 0,
+                            rationale: "Hatun'un elçi kabul etmesi ve kurultay kararlarında mühür hakkının bulunması, eski Türklerde kadının idari statüsünün yüksekliğini kanıtlar."
+                        },
+                        {
+                            q: "Soru 77: Çin kaynaklarında 'Hsiung-nu' olarak adlandırılan, tarihte bilinen ilk teşkilatlı Türk devleti ve Ötüken'i kutsal başkent ilan eden güç hangisidir?",
+                            options: ["Asya Hun Devleti", "I. Göktürk Devleti", "Kutluklar", "Uygurlar"],
+                            correct: 0,
+                            rationale: "Tarihte bilinen ilk teşkilatlı Türk devleti Asya Hun Devleti'dir ve merkezi Ötüken'dir."
+                        },
+                        {
+                            q: "Soru 78: Eski Türk topluluklarının Orta Asya'dan kitlesel olarak göç etmesinde aşağıdakilerden hangisi etkili olmamıştır?",
+                            options: ["Çin ve Moğol baskıları", "Kuraklık ve otlak yetersizliği", "Türk cihan hakimiyeti mefkuresi", "Maniheizm dininin et yeme yasağı"],
+                            correct: 3,
+                            rationale: "Maniheizm dininin et yeme yasağı çok daha sonra Uygurlar döneminde yaşanmıştır; ilk büyük kitlesel göçlerin nedeni ekonomik ve siyasidir."
+                        },
+                        {
+                            q: "Soru 79: Göktürk Devleti'nin kurucusu olan ve Avar (Juan-Juan) egemenliğine son vererek Türk adını ilk kez resmi bir devlet ismi yapan lider kimdir?",
+                            options: ["Bumin Kağan", "Mukan Kağan", "İstemi Yabgu", "Kapgan Kağan"],
+                            correct: 0,
+                            rationale: "552 yılında Ötüken merkezli olarak I. Göktürk Devleti'ni kuran lider Bumin Kağan'dır."
+                        },
+                        {
+                            q: "Soru 80: Uygurlar döneminde Maniheizm ve Budizm terimlerinin Türkçeye çevrilmesi doğrudan neyi korumaya yöneliktir?",
+                            options: ["Milli benlik ve dil bilincini", "Savaşçı askeri yetenekleri", "Çin ile olan ittifakları", "Göçebe yaşam tarzını"],
+                            correct: 0,
+                            rationale: "Yabancı dinlerin kavramlarını Türkçeleştirmek, asimilasyonu engellemek ve milli kültürü korumak amacıyla yapılan milliyetçi bir hamledir."
+                        },
+                        {
+                            q: "Soru 81: Eski Türk devletlerinde hükümdarın mutlak fermanlarına ve kararnamelerine ne ad verilirdi?",
+                            options: ["Yarlığ", "Töre", "Örgin", "Kurultay"],
+                            correct: 0,
+                            rationale: "Hakanın yasama ve yürütme gücünü gösteren mutlak emirlerine 'Yarlığ' adı verilir."
+                        },
+                        {
+                            q: "Soru 82: İskitler (Sakalar) dönemine ait olan ve ünlü Türk hükümdarının İran (Pers) imparatorluğu ile yaptığı savaşları anlatan destan hangisidir?",
+                            options: ["Alp Er Tunga Destanı", "Oğuz Kağan Destanı", "Ergenekon Destanı", "Türeyiş Destanı"],
+                            correct: 0,
+                            rationale: "İranlı şair Firdevsi'nin Şehname adlı eserinde 'Afrasiyab' olarak geçen kahraman Alp Er Tunga'dır ve destanı İskitlere aittir."
+                        },
+                        {
+                            q: "Soru 83: Eski Türk devletlerinde maliyeden, devlet hazinesinin korunmasından sorumlu görevliye ne ad verilirdi?",
+                            options: ["Ağılığ", "Tudun", "Yargucu", "Bitigci"],
+                            correct: 0,
+                            rationale: "Eski Türkçede hazinedardan sorumlu mali memura 'Ağılığ' adı verilir."
+                        },
+                        {
+                            q: "Soru 84: I. Göktürk Devleti'nin en parlak dönemini yaşatan ve Orta Asya'daki tüm Türk boylarını tarihte ikinci kez tek çatı altında toplayan hükümdar kimdir?",
+                            options: ["Mukan Kağan", "Bumin Kağan", "Kutluk Kağan", "Bilge Kağan"],
+                            correct: 0,
+                            rationale: "I. Göktürk Devleti sınırlarını ve gücünü zirveye ulaştıran en parlak dönem Mukan Kağan dönemidir."
+                        },
+                        {
+                            q: "Soru 85: Türk tarihinde ilk kez kütüphanecilik faaliyetlerini başlatan ve yerleşik yaşama bağlı olarak örgün eğitim kurumları açan ilk Türk devleti hangisidir?",
+                            options: ["Uygurlar", "Göktürkler", "Hazarlar", "Kırgızlar"],
+                            correct: 0,
+                            rationale: "Matbaa ve kağıt teknolojisini geliştiren Uygurlar, Türk tarihinde ilk kütüphaneleri ve sivil okulları kurmuşlardır."
+                        },
+                        {
+                            q: "Soru 86: Eski Türk ordularının savaş meydanlarında başarıyla uyguladığı sahte ricat (geri çekilme) ve pusuya dayalı taktiğin adı nedir?",
+                            options: ["Turan Taktiği", "Girişken Hücum", "Meydan Hattı Tahkimi", "Kastel Savunması"],
+                            correct: 0,
+                            rationale: "Düşmanı merkezle kaçıyor gibi yapıp pusuya çekme ve hilal şeklinde kuşatarak yok etme stratejisine Turan (Hilal) Taktiği denir."
+                        },
+                        {
+                            q: "Soru 87: Ölen aile büyüklerinin ve ataların ruhlarının geride kalanları koruduğuna inanılması esasına dayanan inanç yapısı hangisidir?",
+                            options: ["Atalar Kültü", "Totemizm", "Maniheizm", "Şamanizm"],
+                            correct: 0,
+                            rationale: "Ölmüş büyüklere duyulan saygı ve manevi bağların ölümden sonra da devam ettiği inancı 'Atalar Kültü' olarak adlandırılır."
+                        },
+                        {
+                            q: "Soru 88: 840 yılında Uygur Devleti'ni yıkarak Ötüken merkezli kendi devletlerini kuran ve Manas Destanı'nı oluşturan Türk topluluğu hangisidir?",
+                            options: ["Kırgızlar", "Karluklar", "Kıpçaklar", "Türgişler"],
+                            correct: 0,
+                            rationale: "Uygurları yıkan ve Ötüken'e sahip olan son Türk devleti Kırgızlar'dır."
+                        },
+                        {
+                            q: "Soru 90: Eski Türklerin gökbilim (astronomi) ve matematik alanında gelişmediklerinin aksine, güneş yılı esaslı takvim oluşturmaları bunun kanıtıdır. Bu takvim hangisidir?",
+                            options: ["12 Hayvanlı Türk Takvimi", "Celali Takvimi", "Rumi Takvim", "Hicri Takvim"],
+                            correct: 0,
+                            rationale: "Türklerin tamamen kendi gözlemleriyle oluşturduğu güneş yılı esaslı takvim '12 Hayvanlı Türk Takvimi'dir."
+                        },
+                        {
+                            q: "Soru 91: Aşağıdaki destan ve Türk devleti eşleştirmelerinden hangisi 'yanlıştır'?",
+                            options: ["Asya Hun Devleti: Oğuz Kağan", "Göktürkler: Ergenekon", "Uygurlar: Türeyiş", "Hazarlar: Alp Er Tunga"],
+                            correct: 3,
+                            rationale: "Alp Er Tunga Destanı Hazarlara değil, en eski Türk topluluğu kabul edilen İskitlere (Sakalara) aittir."
+                        },
+                        {
+                            q: "Soru 92: Eski Türk toplumunda bayramlarda ve cenaze törenlerinde (Yuğ) şiirler söylenirken çalınan, bağlamanın atası telli müzik aleti hangisidir?",
+                            options: ["Kopuz", "Balaban", "Zurna", "Kös"],
+                            correct: 0,
+                            rationale: "Türk kültürünün en eski sazı ve milli telli müzik aleti 'Kopuz'dur."
+                        },
+                        {
+                            q: "Soru 93: Aşağıdaki Türk devlet veya topluluklarından hangisi Hristiyanlığı benimsemeyip Musevilik (Yahudilik) dinini seçmiştir?",
+                            options: ["Hazarlar", "Avarlar", "Macarlar", "Tuna Bulgarları"],
+                            correct: 0,
+                            rationale: "Avar, Macar ve Bulgarlar Hristiyanlaşırken; Hazarlar Museviliği benimseyen tek Türk devletidir."
+                        },
+                        {
+                            q: "Soru 94: Göktürk Kitabeleri'nen anlaşıldığı üzere eski Türklerde devlet (İl) ile halk (Kün) arasındaki karşılıklı hak ve sorumlulukları belirleyen yazısız sözleşmeye ne ad verilirdi?",
+                            options: ["Tüz", "Töre", "İl", "Könilik"],
+                            correct: 0,
+                            rationale: "Devlet ile vatandaş arasındaki yazısız toplumsal ve hukuki sözleşmeye 'Tüz' adı verilirdi."
+                        },
+                        {
+                            q: "Soru 95: Eski Türk devletlerinde taşrada sivil halktan vergi toplamak ve idari işleri yürütmekle görevli mali/idari memura ne ad verilirdi?",
+                            options: ["Tudun", "Ağıçı", "Yargucu", "Bitigci"],
+                            correct: 0,
+                            rationale: "Taşrada hem idari yöneticilik hem de vergi denetimi yapan devlet görevlilerine 'Tudun' denir."
+                        },
+                        {
+                            q: "Soru 96: Uygurların matbaada kullandıkları ve dünya matbaacılık tarihinde dönüm noktası kabul edilen harf kalıpları tekniği hangisidir?",
+                            options: ["Hareketli Harf Sistemi", "Blok Taş Baskı", "Deri Parşömen Sistemi", "Daktilo Mekanizması"],
+                            correct: 0,
+                            rationale: "Uygurlar, harfleri tek tek dökerek yan yana getirme esasına dayanan modern 'Hareketli Harf Sistemi'ni kullanmışlardır."
+                        },
+                        {
+                            q: "Soru 97: Hunlar ve Göktürkler döneminde keçeden yapılan ve göçebe hayata tam uyumlu olan kubbeli Türk çadırlarına ne ad verilirdi?",
+                            options: ["Yurt / Keregü", "Stupa", "Balik", "Örgin"],
+                            correct: 0,
+                            rationale: "Eski Türk çadırlarına genel olarak 'Yurt' veya ahşap iskeletlilerine 'Keregü' denirdi."
+                        },
+                        {
+                            q: "Soru 98: Asya Hun Devleti'nin yıkılışında Çin korumasına girmeyi savunan kardeşine karşı çıkıp bağımsızlığı kutsal ilan ederek milli direnişi başlatan lider kimdir?",
+                            options: ["Çiçi", "Mete Han", "Teoman", "Attila"],
+                            correct: 0,
+                            rationale: "Çiçi Han, Türk tarihindeki ilk büyük bağımsızlık ve milliyetçilik manifestosunu ilan ederek teslimiyeti reddetmiştir."
+                        },
+                        {
+                            q: "Soru 99: Eski Türklerde toplumu oluşturan en küçük yapı birimi ailedir (Oguş). Ailede babaya 'Kang' denirken, anneye ne ad verilirdi?",
+                            options: ["Ög", "Hatun", "Asena", "Banu"],
+                            correct: 0,
+                            rationale: "Eski Türkçede anneye 'Ög' denirdi. (Annesiz kalma durumu olan 'öksüz' kelimesi buradan türemiştir)."
+                        },
+                        {
+                            q: "Soru 100: İslamiyet öncesi Türk tarihinde tam merkeziyetçi bir imparatorluk yapısının kurulamamasının ve devletlerin hızlı bölünmesinin en temel yapısal sebebi hangisidir?",
+                            options: ["Ülkenin hanedanın ortak malı sayılması ve Kut anlayışı", "Çin'in sürekli askeri saldırıları", "Kurultay meclisinin hakanı engellemesi", "Boyların yerleşik hayata geçmeyi reddetmesi"],
+                            correct: 0,
+                            rationale: "Geleneksel veraset sisteminde ülkenin hanedan üyelerinin ortak mülkü sayılması, taht kavgalarını ve bölünmeleri kaçınılmaz kılmıştır."
+                        },
+{
+                            q: "Soru 101: Eski Türk devletlerinde hükümdarın meşruiyetini pekiştiren 'Kut' inancı, hükümdarın halkına karşı mutlak ve sınırsız bir baskı kurmasını engellerdi. Aşağıdakilerden hangisi Kut anlayışının hükümdarın yetkilerini sınırlayan yönünü en iyi açıklar?",
+                            options: ["Tanrı'nın adil yönetmeyen hükümdardan Kut gücünü geri alacağına (Kutun kaçması) inanılması", "Kurultay meclisinin dini liderler tarafından yönetilmesi", "Hükümdarın her yıl halktan güvenoyu almak zorunda olması", "Töre kurallarının sadece din adamları tarafından değiştirilebilmesi"],
+                            correct: 0,
+                            rationale: "Kut inancına göre yönetme yetkisi ilahi bir lütuftur. Eğer hükümdar adaletli davranmaz, halkı aç ve sefil bırakırsa Tanrı'nın Kut gücünü geri alacağına inanılırdı. Bu durum hakan üzerinde manevi bir otokontrol mekanizması oluştururdu."
+                        },
+                        {
+                            q: "Soru 102: İslamiyet öncesi Türk tarihinin en kapsamlı istihbarat, posta ve haberleşme ağını kurarak ülkenin dört bir yanından gelen sivil-askeri bilgileri başkente ulaştıran, bu amaçla 'Özkent' ve 'Ötüken' hatlarında atlı ulaklar (kuryeler) çalıştıran devlet hangisidir?",
+                            options: ["Göktürkler", "Asya Hunları", "Avarlar", "Uygurlar"],
+                            correct: 0,
+                            rationale: "Göktürkler (Köktürkler), genişleyen imparatorluk sınırlarını kontrol altında tutabilmek amacıyla 'Yelme' birlikleriyle entegre çalışan çok güçlü bir haberleşme ve ilkel posta/istihbarat ağı kurmuşlardır."
+                        },
+                        {
+                            q: "Soru 103: Uygurlar döneminde yerleşik yaşamın oturmasıyla birlikte mülkiyet hukuku, ticaret hukuku ve borçlar hukuku gelişmiştir. Aşağıdakilerden hangisi Uygurlara ait borçlar hukuku belgelerinde yer alan unsurlardan biri 'değildir'?",
+                            options: ["Faiz karşılığı borç para sözleşmeleri", "Kira ve iş sözleşmeleri", "Toprak alım-satım mühürlü senetleri", "Aşar vergisinin peşin ödenme makbuzları"],
+                            correct: 3,
+                            rationale: "Aşar vergisi İslamiyet sonrası dönemde, özellikle Büyük Selçuklu ve Osmanlı Devleti'nde Müslüman köylüden alınan tarım vergisidir. İslam öncesi Uygurlarda bu isimde bir vergi yoktur."
+                        },
+                        {
+                            q: "Soru 104: Hazarların ordularında Musevi, Müslüman ve Hristiyan askerleri bir arada çalıştırmaları ve savaş dışı dönemlerde bu askerlerin dini ibadetlerini özgürce yapmalarına izin vermeleri, dünya askeri tarihinde aşağıdakilerden hangisinin öncüsü kabul edilir?",
+                            options: ["İnanç özgürlüğüne dayalı profesyonel/paralı askerlik sisteminin", "Zorunlu askerlik modelinin", "Dini cihad anlayışının", "Milli ordu yapılanmasının"],
+                            correct: 0,
+                            rationale: "Hazarlar, kendi halkından gönüllü asker toplamak yerine ücretli asker kullanan ilk Türk devletidir. Farklı dinlerden askerlerin haklarını korumaları, inanç özgürlüğüne dayalı paralı askerlik modeline örnektir."
+                        },
+                        {
+                            q: "Soru 105: Eski Türk sanatında koruyucu ruhları simgeleyen ve hükümdarlık çadırlarının (otağ) tepesine yerleştirilen çift başlı kartal motifi, sonraki dönemlerde hangi Türk devletinin resmi arması ve sembolü haline gelmiştir?",
+                            options: ["Büyük Selçuklu Devleti", "Karahanlılar", "Gazneliler", "Osmanlı Devleti"],
+                            correct: 0,
+                            rationale: "İslamiyet öncesi Orta Asya şamanist kültüründe doğu ve batının hakimi, gökyüzünün koruyucusu sayılan çift başlı kartal, Büyük Selçuklu Devleti tarafından devletin resmi sembolü olarak benimsenmiştir."
+                        },
+                        {
+                            q: "Soru 106: Kırgızların egemenliğini kabul etmeyerek güneye inen ve Sirderya nehrinin boylarında Oğuz Yabgu Devleti'ni kuran, daha sonra ise Büyük Selçuklu ve Osmanlı imparatorluklarının kurucu omurgasını oluşturacak olan en kalabalık Türk boyu hangisidir?",
+                            options: ["Oğuzlar (Guzlar)", "Kıpçaklar", "Karluklar", "Kanklılar"],
+                            correct: 0,
+                            rationale: "Oğuzlar, Türk tarihinin hem en kalabalık hem de en çok devlet kuran (Selçuklu, Osmanlı, Safevi vb.) kurucu ve aristokrat Türk boyudur."
+                        },
+                        {
+                            q: "Soru 107: Eski Türklerde, ölen kahramanların ruhlarının doğayı ve geride kalan aile üyelerini koruduğuna inanılan kutsal güce ne ad verilirdi?",
+                            options: ["İduk", "Kut", "Üleş", "Küç"],
+                            correct: 0,
+                            rationale: "Eski Türkçe bir kelime olan 'İduk' (İduq), kutsal, mübarek ve manevi güce sahip nesne veya ruhlar için kullanılan bir tabirdir."
+                        },
+                        {
+                            q: "Soru 108: Çin sarayında rehin tutulan Türk prenslerinin Çin kültürüne adapte olarak kendi soydaşlarına karşı casusluk yapması ve Türk boylarını birbirine düşürmesi politikasını simgeleyen, Çin'in meşhur stratejik raporlarına ne ad verilirdi?",
+                            options: ["I-ching raporları", "Çin Yıllıkları (Şi-ki)", "T'ang Gizli Belgeleri", "Böl-Yönet Doktrini"],
+                            correct: 1,
+                            rationale: "Çin resmi hanedan yıllıkları olan 'Şi-ki' ve sonraki dönem yıllıkları, Türklerin zayıf yönlerini, boy mücadelelerini ve Çin'in onlara karşı uyguladığı asimilasyon taktiklerini içeren en eski yazılı kaynaklardır."
+                        },
+                        {
+                            q: "Soru 109: Eski Türk devletlerinde hukukun kaynağını oluşturan töre kuralları, toplumun ihtiyaçlarına göre kurultayda güncellenirdi. Aşağıdakilerden hangisi törenin değişen ve dinamik yönüne örnek gösterilebilir?",
+                            options: ["Könilik (Adalet) ilkesinin her dönem korunması", "Hakanın ölümünden sonra kurultayın yeni vergi oranları belirlemesi", "İnsanlık (Kişilik) kuralının savaşta bile uygulanması", "Eşitlik (Tüzlük) prensibinin mahkemelerde esas alınması"],
+                            correct: 1,
+                            rationale: "Törenin adalet, eşitlik, insanlık ve iyilik gibi 4 temel ilkesi asla değiştirilemez (statiktir). Ancak vergi oranları, askeri cezaların detayları veya ticari kurallar kurultay kararıyla zamana göre güncellenebilirdi (dinamiktir)."
+                        },
+                        {
+                            q: "Soru 110: Kendi adına altın, gümüş ve bakır olmak üzere üç farklı madenden para bastırarak gelişmiş bir piyasa ekonomisi kuran, hükümdarı Baga Tarkan'ın 'Yarmak' adı verilen paraları bastırdığı Türk devleti hangisidir?",
+                            options: ["Türgişler", "Hazarlar", "Göktürkler", "Uygurlar"],
+                            correct: 0,
+                            rationale: "Türgişler, yerleşik hayata yakın bir ticari düzen kurmuş ve Baga Tarkan döneminde kendi adlarına resmi madeni paraları (Yarmak) tedavüle sokmuşlardır."
+                        },
+                        {
+                            q: "Soru 111: Eski Türk devletlerinde ordunun başında sefere çıkan hükümdara eşlik eden, hükümdar olmadığında ordunun komutasını üstlenen ve doğrudan hanedan üyesi olan askeri valilere veya prenslere hangi unvan verilirdi?",
+                            options: ["Şad", "Tudun", "Yargucu", "Bitigci"],
+                            correct: 0,
+                            rationale: "Hanedan üyesi olan (tigin kökenli) askeri valilere ve yüksek rütbeli ordu komutanlarına 'Şad' unvanı verilirdi."
+                        },
+                        {
+                            q: "Soru 112: İskitlerin (Sakalar) Pers İmparatoru Darius ile yaptıkları devasa savaşları ve bu savaşlarda Türklerin bozkır coğrafyasını bir savunma silahı olarak nasıl kullandıklarını anlatan ünlü destan hangisidir?",
+                            options: ["Şu Destanı", "Alp Er Tunga Destanı", "Oğuz Kağan Destanı", "Göç Destanı"],
+                            correct: 0,
+                            rationale: "İskitlere ait iki büyük destandan biri Alp Er Tunga, diğeri ise Makedonyalı İskender ve Perslerle yapılan mücadeleleri anlatan 'Şu Destanı'dır."
+                        },
+                        {
+                            q: "Soru 113: Eski Türk dini olan Gök Tanrı inancında, kurban kesme törenlerinin yapıldığı, Tanrı'ya daha yakın olunduğuna inanılan yüksek dağ zirvelerine veya kutsal alanlara ne ad verilirdi?",
+                            options: ["Iduk Yer-Su / Ötüken Dağı", "Kurgan", "Stupa", "Balbal"],
+                            correct: 0,
+                            rationale: "Ötüken başta olmak üzere dağların zirveleri kutsal sayılır ve buralarda Tanrı adına kurbanlar kesilirdi. Bu alanlar 'Yer-Su' kültünün merkezidir."
+                        },
+                        {
+                            q: "Soru 114: Uygur Devleti'nin başkenti olan, etrafı devasa surlarla çevrili, içinde saraylar, tapınaklar ve çarşılar barındıran ilk organize Türk şehri aşağıdakilerden hangisidir?",
+                            options: ["Karabalgasun (Ordu-Balık)", "Ötüken", "Semerkand", "Buhara"],
+                            correct: 0,
+                            rationale: "Uygurların kurduğu ilk büyük ve surlarla çevrili başkente Ordubalık veya Karabalgasun adı verilir. 'Balık' eski Türkçede şehir demektir."
+                        },
+                        {
+                            q: "Soru 115: Eski Türk toplumunda sınıfsal ayrılıkların ve köleliğin olmamasının en temel yapısal gerekçesi coğrafya ve ekonomidir. Aşağıdakilerden hangisi bu durumu doğrudan destekler?",
+                            options: ["Toprağın şahıslara değil, devlete ait olması ve göçebe yaşam", "Kurultay meclisine herkesin katılması", "Hapis cezalarının kısa süreli olması", "Orduda ücretli askerlerin bulunmaması"],
+                            correct: 0,
+                            rationale: "Avrupa ve Çin'deki kölelik sisteminin temeli büyük toprak sahiplerine (feodaliteye) dayanır. Türklerde ise toprak devletin ortak mülkü olduğu ve sürekli göçebe yaşandığı için kimse toprak ağası olup insanları köleleştirememiştir."
+                        },
+                        {
+                            q: "Soru 116: Asya Hun Devleti'nin yıkılmasından sonra Çin esaretine girmemek için güneybatıya çekilen ve Hindistan'ın kuzeyinde 'Eftalitler' adıyla çok güçlü bir Türk devleti kurarak Sasani İmparatorluğu'nu vergiye bağlayan topluluk hangisidir?",
+                            options: ["Akhunlar", "göktürkler", "Avarlar", "Hazarlar"],
+                            correct: 0,
+                            rationale: "Akhunlar (Eftalitler), Afganistan ve Kuzey Hindistan bölgesinde kurulmuş, Mazdek İsyanı'nı bastırarak Sasanileri denetim altına almış önemli bir Türk devletidir."
+                        },
+                        {
+                            q: "Soru 117: Sasanilerle gizli bir diplomatik anlaşma imzalayarak İpek Yolu üzerindeki Akhun (Eftalit) Devleti'ni haritadan silen, Türk-İran ittifakının en parlak askeri operasyonunu yürüten I. Göktürk lideri kimdir?",
+                            options: ["İstemi Yabgu", "Bumin Kağan", "Mukan Kağan", "Tapo Kağan"],
+                            correct: 0,
+                            rationale: "İstemi Yabgu, Sasanilerle işbirliği yaparak İpek Yolu'nu kapatan Akhunları ortadan kaldırmış, daha sonra ise Sasanilere karşı Bizans ile anlaşmıştır."
+                        },
+                        {
+                            q: "Soru 118: 639 yılındaki Kürşad ihtilalinden sonra Türk boyları arasında bağımsızlık ateşi sönmemiş ve nihayetinde Çin valilerini öldürerek Ötüken'i geri alan Kutluk Kağan'a rehberlik eden, ihtilalin stratejik beyni olan devlet adamı kimdir?",
+                            options: ["Vezir Tonyukuk", "Yolluğ Tigin", "Kültigin", "Bilge Kağan"],
+                            correct: 0,
+                            rationale: "Vezir Tonyukuk, II. Göktürk Devleti'nin kuruluşunda Kutluk Kağan'ın en büyük yardımcısı, akıl hocası ve ilk büyük Türk veziridir."
+                        },
+                        {
+                            q: "Soru 119: Eski Türk devletlerinde hükümdarın tahta çıkış törenlerinde (Aksakal ayinleri), kağanın bir keçenin üzerine oturtularak dokuz kez göğe doğru kaldırılması ve boy beylerinin ona sadakat yemini etmesi ritüeline ne ad verilirdi?",
+                            options: ["Taht Töreni (Örgin İlanı)", "Yuğ Ayini", "Tüzleşme", "Toygun Seçimi"],
+                            correct: 0,
+                            rationale: "Hükümdarın meşruiyetini halkın ve boyların önünde tescilleyen, keçeyle göğe kaldırma ayini geleneksel Türk tahta çıkma (Örgin) ritüelidir."
+                        },
+                        {
+                            q: "Soru 120: Kıpçak (Kuman) Türklerinin sarışın, uzun boylu ve savaşçı karakterleri nedeniyle Eyyubi ve Memlük devletleri tarafından parayla satın alınarak Nil nehri üzerindeki adalarda özel askeri eğitime tabi tutulmasıyla oluşan elit köle asker ordusuna ne ad verilirdi?",
+                            options: ["Gulam / Memlük", "Cebelü", "Yeniçeri", "Subaşı"],
+                            correct: 0,
+                            rationale: "Mısır'da kurulan Eyyubi ve Memlük ordularının temelini oluşturan, Kafkasya ve Karadeniz'den getirilen Türk kökenli köle askerlere 'Memlük' veya 'Gulam' denirdi. Bu sistem daha sonra Memlük Devleti'ni kuracaktır."
+                        },
+                        {
+                            q: "Soru 121: Eski Türk toplumunda kadının hukuki statüsü çok gelişmişti. Aşağıdakilerden hangisi İslamiyet öncesi Türk aile ve toplum yapısında kadının haklarından biri 'değildir'?",
+                            options: ["Kendi mülküne ve çeyizine (Kalıñ) sahip olma hakkı", "Kocasının vefatından sonra velayet ve miras hakkı", "Kurultay meclisinde tek başına hakanı azletme (görevden alma) hakkı", "Mahkemelerde şahitlik yapma hakkı"],
+                            correct: 2,
+                            rationale: "Hatun kurultay kararlarında etkilidir ancak tek başına hakanı görevden alma yetkisi yoktur; hakanı görevden alma yetkisi boy beylerinden oluşan ortak kurultay iradesine aittir."
+                        },
+                        {
+                            q: "Soru 122: Uygurların yerleşik yaşama geçmesiyle birlikte Türk resim sanatında da büyük bir sıçrama yaşanmıştır. Tapınak duvarlarına yapılan, Türk resim ve fresko sanatının ilk profesyonel ustaları kabul edilen Uygur ressamlarına ne ad verilirdi?",
+                            options: ["Bedizci", "Bitigci", "Tamgacı", "Mücellit"],
+                            correct: 0,
+                            rationale: "Eski Türkçede ressamlara ve duvar resmi (fresko) yapan ustalara 'Bedizci', yaptıkları sanata ise 'Bediz' adı verilirdi."
+                        },
+                        {
+                            q: "Soru 123: Eski Türk inancında ölen kişilerin ruhlarının kötü niyetli yapı organizasyonlarından korunması amacıyla, kurganların (mezarların) içerisine yerleştirilen ve mezar bekçisi olduğuna inanılan mitolojik yaratık kabartmalarına ne ad verilirdi?",
+                            options: ["Ereklik / Ongun", "Balbal", "Stupa", "Yuğ"],
+                            correct: 0,
+                            rationale: "Her boyun kutsal saydığı totem veya koruyucu hayvana 'Ongun' denir ve mezarlara koruyucu olarak bu semboller işlenirdi."
+                        },
+                        {
+                            q: "Soru 124: Moğolların gizli tarihçesinde 'Uygur yazısını ve kültürünü tamamen kopyaladık' itirafı yer alır. Moğolların devlet teşkilatında Uygur Türkçesini resmi yazışma dili yapmalarının ve Uygur Alfabesini kullanmalarının temel nedeni nedir?",
+                            options: ["Uygurların yerleşik kültür, bürokrasi ve hukukta Moğollardan çok daha gelişmiş olması", "Moğol ordusunun tamamının Uygur askerlerinden oluşması", "Cengiz Han'ın Uygur kökenli bir hanedandan gelmesi", "Uygurların Maniheizm dinini Moğollara zorla kabul ettirmesi"],
+                            correct: 0,
+                            rationale: "Uygurlar yerleşik hayata geçtikleri için hukuk, diplomasi, bürokrasi ve yazılı kültürde çok ileri düzeydeydiler. Göçebe Moğollar devlet kurduklarında bu hazır ve gelişmiş bürokratik mekanizmayı (Uygur katiplerini) aynen kullanmışlardır."
+                        },
+                        {
+                            q: "Soru 125: Savaş meydanlarında hafif süvari taktiklerini en iyi uygulayan Türk orduları, ok ve yayı çok uzak mesafelerden isabetli atabilmeleriyle ün salmıştır. At üzerinde geriye doğru dönerek ok atma yeteneği dünya askeri literatürüne hangi isimle geçmiştir?",
+                            options: ["Parth Atışı (Türk Atışı)", "Turan Pusu Atışı", "Onlu Hücum Metodu", "Hilal Kapanı Atışı"],
+                            correct: 0,
+                            rationale: "Dörtnala giden at üzerinde aniden geriye dönerek ok atma tekniğine askeri literatürde 'Parth Atışı' veya genel anlamda 'Bozkır / Türk Atışı' denir."
+                        },
+                        {
+                            q: "Soru 126: Eski Türk devletlerinde hükümdarın erkek çocuklarının (Tigin) eğitimiyle görevli olan, onlara askeri ve siyasi liderlik dersleri veren tecrübeli devlet adamlarına verilen unvan aşağıdakilerden hangisidir?",
+                            options: ["Ataman / İnal / İnanç", "Lala", "Atabey", "Tudun"],
+                            correct: 0,
+                            rationale: "Eski Türklerde tigin eğitmenlerine Ataman, İnal veya İnanç denir. Lala Osmanlı'da, Atabey ise Selçuklu'da kullanılan kavramlardır."
+                        },
+                        {
+                            q: "Soru 127: Gök Tanrı inancında ölen kişinin arkasından yakılan, onun kahramanlıklarını, iyiliklerini ve ölümünden duyulan üzüntüyü dile getiren edebi şir/ağıt türüne ne ad verilir?",
+                            options: ["Sagu", "Koşuk", "Sav", "Destan"],
+                            correct: 0,
+                            rationale: "Cenaze törenlerinde (Yuğ) okunan ölüm ağıtlarına 'Sagu' denir. Sav atasözü, Koşuk ise şiirdir."
+                        },
+                        {
+                            q: "Soru 128: Bizans İmparatorluğu ile doğrudan ticari anlaşma imzalayan, Codex Cumanicus adlı iki ciltlik sözlükleriyle Avrupa dil bilimini etkileyen sarışın Türk boyu hangisidir?",
+                            options: ["Kumanlar (Kıpçaklar)", "Peçenekler", "Hazarlar", "Karluklar"],
+                            correct: 0,
+                            rationale: "Kumanlar (Kıpçaklar) hem savaşçı özellikleri hem de ticari ilişkileriyle öne çıkmış, ünlü Codex Cumanicus sözlüğünü bırakmışlardır."
+                        },
+                        {
+                            q: "Soru 129: Aşağıdakilerden hangisi İslamiyet öncesi Türk devletlerinde kurultay meclisinin (Toy) görev ve yetkilerinden biri 'değiliz'?",
+                            options: ["Yeni kağanın tahta çıkışını onaylamak veya seçmek", "Töre kurallarında değişiklik yapmak", "Savaş ve barış kararlarını görüşmek", "Cuma namazında kağan adına hutbe okutmak"],
+                            correct: 3,
+                            rationale: "Hutbe okutmak İslami döneme ait bir egemenlik alametidir. İslam öncesi kurultayda böyle bir uygulama yoktur."
+                        },
+                        {
+                            q: "Soru 130: Emeviler döneminde İslam ordularının Orta Asya'ya girmesini engellemek amacıyla Maveraünnehir bölgesinde çok sert çarpışmalar yapan ve bölgenin uzun süre Araplaşmasını önleyen Şamanist Türk devleti hangisidir?",
+                            options: ["Türgişler", "Hazarlar", "Göktürkler", "Uygurlar"],
+                            correct: 0,
+                            rationale: "Türgişler (özellikle Sulu Kağan döneminde) Emevilere karşı savaşarak Orta Asya'nın erkenden İslamlaşmasını / Araplaşmasını engellemişlerdir. (Kafkasya'da ise bu görevi Hazarlar yapmıştır)."
+                        },
+                        {
+                            q: "Soru 131: Eski Türk mahkemelerinde hakanın başkanlık ettiği, vatana ihanet ve ordudan kaçma gibi büyük siyasi suçların görüşüldüğü yüksek devlet mahkemesine ne ad verilirdi?",
+                            options: ["Yargu", "Ayukı", "Kurultay", "Tüz"],
+                            correct: 0,
+                            rationale: "Hakanın başkanlık ettiği yüksek devlet mahkemesine 'Yargu' denir. Sıradan halkın davalarına bakan küçük mahkemelere ise 'Yargucu' bakardı."
+                        },
+                        {
+                            q: "Soru 132: II. Göktürk (Kutluk) Devleti'nin resmi yazışmalarında ve Orhun Abideleri'nde kullandığı, Türk tarihinin ilk milli özgün alfabesi kaç harften oluşmaktadır?",
+                            options: ["38", "18", "28", "32"],
+                            correct: 0,
+                            rationale: "İlk milli alfabemiz olan Göktürk (Orhun) alfabesi 38 harften oluşmaktadır (4'ü ünlü, 34'ü ünsüz)."
+                        },
+                        {
+                            q: "Soru 133: Eski Türk devletlerinde yürütme gücünü elinde bulunduran, bakanlar kuruluna (hükümete) 'Ayukı' denirken, bu hükümetin başkanlığını yürüten vezire hangi isim verilirdi?",
+                            options: ["Aygucı / Üge", "Toygun", "Şad", "Tudun"],
+                            correct: 0,
+                            rationale: "Eski Türk hükümet başkanına (başbakana/vezire) Aygucı veya Üge adı verilirdi."
+                        },
+                        {
+                            q: "Soru 134: Asya Hun Devleti'nin Çin baskısıyla zayıfladığı dönemde 'Çin himayesine girmeyi' savunan kardeşi Ho-han-yeh'e karşı çıkarak 'Bağımsızlık bizim karakterimizdir, atalarımıza ihanet edemeyiz' diyen ve milliyetçiliğin ilk temsilcisi sayılan Hun lideri kimdir?",
+                            options: ["Çiçi", "Teoman", "Mete Han", "Balamir"],
+                            correct: 0,
+                            rationale: "Çiçi Han, Çin esaretini kabul etmeyi utanç verici bularak batıya çekilmiş ve bağımsızlık mücadelesi vermiştir."
+                        },
+                        {
+                            q: "Soru 135: Göktürk Kitabeleri'nde geçen 'Üstte mavi gök, altta yağız yer kılındıkta, ikisi arasında insanoğlu kılınmış...' ifadesi hükümdarın egemenlik gücünü doğrudan ilahi bir kaynağa dayandırdığını gösterir. Bu anlayış hangisidir?",
+                            options: ["Kut İnancı", "Cihan Hakimiyeti", "Töre Hukuku", "Oguş Sistemi"],
+                            correct: 0,
+                            rationale: "Yönetme yetkisinin Gök Tanrı tarafından doğrudan hükümdara verilmesi inancına 'Kut' adı verilir."
+                        },
+                        {
+                            q: "Soru 136: Eski Türk toplumunda toplumsal hayatı ve insan ilişkilerini düzenleyen yazısız hukuk kurallarına 'Töre' denirdi. Aşağıdakilerden hangisi töre kurallarının oluşmasında etkili olan kaynaklardan biri 'değildir'?",
+                            options: ["Kurultay kararları (Toy kararları)", "Hakanın emirleri (Yarlığlar)", "Toplumun örf, adet ve gelenekleri", "Kutsal kitapların şeriat emirleri"],
+                            correct: 3,
+                            rationale: "İslamiyet öncesi Türk töresi laik ve örfi bir yapıya sahiptir. Kutsal kitapların veya şeriat emirlerinin töre üzerinde bir etkisi yoktur."
+                        },
+                        {
+                            q: "Soru 137: Uygurlar döneminde Maniheizm dininin kabul edilmesiyle birlikte Türk sanatında taşınabilir ahşap oyma işçiliği yerine, duvar resimleri ve kitapları süslemek amacıyla yapılan derinliksiz küçük resim sanatı gelişmiştir. Bu sanat dalı hangisidir?",
+                            options: ["Minyatür", "Fresko", "Mozaik", "Hat"],
+                            correct: 0,
+                            rationale: "Kitapları süslemek amacıyla yapılan, ışık-gölge ve derinlik sanatı barındırmayan küçük resimlere 'Minyatür' denir ve Türk tarihinde ilk örnekleri Uygurlara aittir."
+                        },
+                        {
+                            q: "Soru 138: Hunlar ve Göktürkler döneminde ölen savaşçıların kurganlarının (mezarlarının) içine atları, kılıçları ve altın süs eşyaları ile birlikte gömülmesi aşağıdakilerden hangisinin kesin bir göstergesidir?",
+                            options: ["Ahiret (Ölümden sonra yaşam) inancının varlığının", "Gelişmiş bir maden sanayisinin", "Sınıflı toplum yapısının", "Göçebe yaşamın tamamen terk edildiğinin"],
+                            correct: 0,
+                            rationale: "Kişinin eşyalarıyla gömülmesi, öbür dünyada bu eşyaları tekrar kullanacağı inancına yani 'Ahiret' hayatına dayanan bir inanıştır."
+                        },
+                        {
+                            q: "Soru 139: Karadeniz'in kuzeyinde kurulan, Museviliği resmi din olarak kabul eden ve Müslümanların Kafkasya üzerinden Rusya içlerine yayılmasını engelleyen (Belencer Savaşı ile) Türk devleti hangisidir?",
+                            options: ["Hazarlar", "Türgişler", "Karluklar", "Peçenekler"],
+                            correct: 0,
+                            rationale: "Hazarlar, Hz. Osman döneminde İslam ordularıyla (Belencer Savaşı) savaşarak İslamiyet'in Kafkasya'da yayılmasını geciktirmişlerdir."
+                        },
+                        {
+                            q: "Soru 140: Türklerin göçebe yaşam tarzına bağlı olarak uzun süreli hapis cezaları uygulayamaması, mimaride kale ve zindan yapılarının gelişmesini engellemiştir. Bu durum Türklerde aşağıdakilerden hangisinin gelişmesini 'hızlandırmıştır'?",
+                            options: ["Pratik, taşınabilir ve hızlı adalet mekanizmasının", "Yazılı anayasa hukukunun", "Ruhban sınıfının otoritesinin", "Feodal senyörlük sisteminin"],
+                            correct: 0,
+                            rationale: "Zindan yapıları olmadığı için Türklerde davalar hızlıca çözülür ve cezalar (hapis için) maksimum 10-12 günle sınırlı tutulurdu. Bu da pratik ve hızlı bir yargı sistemini doğurmuştur."
+                        },
+                        {
+                            q: "Soru 141: Uygurların matbaada kullandıkları harfleri korumak ve seri kitap basımı yapmak amacıyla geliştirdikleri ilk baskı kalıpları, dünya matbaacılık tarihinde hangi sistemin öncüsü kabul edilir?",
+                            options: ["Hareketli Harf Sistemi", "Blok Taş Baskı", "Deri Parşömen Sistemi", "Daktilo Mekanizması"],
+                            correct: 0,
+                            rationale: "Uygurlar, tüm sayfayı tek bir tahtaya oymak yerine harfleri tek tek dökerek yan yana getirme esasına dayanan 'Hareketli Harf Sistemi'ni kullanmışlardır."
+                        },
+                        {
+                            q: "Soru 142: Hunlar ve Göktürkler döneminde keçeden yapılan, göçebe hayata tam uyumlu, tekerlekli arabalar üzerine monte edilerek taşınabilen kubbeli Türk çadırlarına ne ad verilirdi?",
+                            options: ["Yurt / Keregü", "Stupa", "Balik", "Örgin"],
+                            correct: 0,
+                            rationale: "Eski Türk çadırlarına genel olarak 'Yurt' veya ahşap iskeletlilerine 'Keregü' denirdi. Stupa tapınak, Balık ise Uygur şehridir."
+                        },
+                        {
+                            q: "Soru 143: Eski Türklerde toplumu oluşturan en küçük yapı birimi 'Oguş' yani ailedir. Ailenin başında bulunan babaya 'Kang' adı verilirken, anneye ne ad verilirdi?",
+                            options: ["Ög", "Hatun", "Asena", "Banu"],
+                            correct: 0,
+                            rationale: "Eski Türkçede anneye 'Ög' denirdi (Öksüz kelimesi annesiz kalmaktan türemiştir). Babaya ise 'Kang' adı verilirdi."
+                        },
+                        {
+                            q: "Soru 144: İslamiyet öncesi Türk tarihinde tam merkeziyetçi bir imparatorluk yapısının kurulamamasının ve devletlerin hızlı bölünmesinin en temel yapısal sebebi aşağıdakilerden hangisidir?",
+                            options: ["Ülkenin hanedanın ortak malı sayılması ve Kut anlayışı", "Çin'in sürekli askeri saldırıları", "Kurultay meclisinin hakanı engellemesi", "Boyların yerleşik hayata geçmeyi reddetmesi"],
+                            correct: 0,
+                            rationale: "Geleneksel veraset sisteminde ülkenin hanedan üyelerinin ortak mülkü sayılması prensibi, her erkek üyeye yönetim hakkı tanıdığı için bölünmeleri kaçınılmaz kılmıştır."
+                        },
+                        {
+                            q: "Soru 145: Asya Hun Devleti'nin dağılmasıyla başlayan göç dalgaları sonrasında Doğu Avrupa'da mızrak, üzengi ve zırh teknolojisinde Avrupa kavimlerine öğretmenlik yapan, Macaristan merkezli kurulan Türk devleti hangisidir?",
+                            options: ["Avrupa Hun Devleti", "Avarlar", "Bulgarlar", "Hazarlar"],
+                            correct: 0,
+                            rationale: "Balamir ve sonrasında Attila liderliğinde kurulan Avrupa Hun Devleti, Avrupa'ya askeri teknoloji, üzengi ve pantolon kültürü gibi bozkır unsurlarını taşımıştır."
+                        },
+                        {
+                            q: "Soru 146: Eski Türklerde devletin bağımsızlığını simgeleyen ögeler arasında; I. Oksızlık, II. Örgin, III. Nevbet unsurlarından hangileri doğrudan yer alırdı?",
+                            options: ["Yalnız I", "I ve II", "II ve III", "I, II ve III"],
+                            correct: 3,
+                            rationale: "Oksızlık (bağımsızlık), Örgin (taht) ve Nevbet (davul) eski Türk devletlerinde egemenliğin ve bağımsızlığın en temel sembolleridir."
+                        },
+                        {
+                            q: "Soru 147: Kendi adına para bastıran hükümdarı bulunan Türgişler Devleti'nin, yerleşik yaşam izleri taşıyan ve tarımsal sulama amacıyla kurdukları ünlü kanalın adı nedir?",
+                            options: ["Tötü Kanalı", "Kral Kanalı", "Süveyş Kanalı", "Amuderya Hattı"],
+                            correct: 0,
+                            rationale: "Asya Hunları döneminde yapılan ve daha sonra bölgedeki Türk boyları (Göktürk, Türgiş) tarafından kullanılan ünlü sulama kanalına 'Tötü Kanalı' adı verilir."
+                        },
+                        {
+                            q: "Soru 148: Eski Türklerde boyların kendi aralarındaki toprak ve otlak kavgalarını çözen, kurultayda boy beylerinin oturacağı sırayı (Orun) belirleyen ve töre kurallarının sosyal hayattaki adalet dengesini kuran sisteme ne ad verilirdi?",
+                            options: ["Orun / Üleş", "Kut", "Yarlığ", "Ayukı"],
+                            correct: 0,
+                            rationale: "Kurultayda veya şölenlerde boy beylerinin protokol sırasına 'Orun', kesilen etten alacakları paya ise 'Üleş' denirdi. Bu sistem sosyal barışı korurdu."
+                        },
+                        {
+                            q: "Soru 149: Uygurların basım tekniğinde kullandıkları harfleri ahşap bloklar yerine hareketli metal kalıplarla yapmaları, aşağıdakilerden hangisinin dünyadaki en erken örneklerinden biri kabul edilir?",
+                            options: ["Modern tipografi ve hareketli matbaa teknolojisinin", "Deri parşömen imalatının", "Hattatlık sanatının", "Siber arşivleme mantığının"],
+                            correct: 0,
+                            rationale: "Uygurların geliştirdiği harf kalıpları tekniği, modern hareketli matbaa (tipografi) sanatının dünyadaki en eski öncülerinden biridir."
+                        },
+                        {
+                            q: "Soru 150: İslamiyet öncesi Türk tarihinin en hacimli yazılı belgeleri olan Yenisey Kitabeleri hangi Türk topluluğuna aittir?",
+                            options: ["Kırgızlar", "Göktürkler", "Uygurlar", "Oğuzlar"],
+                            correct: 0,
+                            rationale: "Yenisey Kitabeleri Kırgızlara aittir. Ancak Orhun Abideleri kadar gelişmiş bir edebi dil barındırmadığı ve mezar taşı niteliğinde olduğu için ilk edebi belge sayılmazlar."
+                        },
+{
+                            q: "Soru 151: Eski Türk devletlerinde 'Kut' inanışı gereği hükümdarlık yetkisi kan yoluyla hanedanın tüm erkek üyelerine geçerdi. Aşağıdakilerden hangisi bu durumun Türk siyasi tarihi üzerindeki en doğrudan 'olumsuz' sonucudur?",
+                            options: ["Merkezi otoritenin kurulamaması ve taht kavgalarının çıkması", "Boy beylerinin kurultayma katılmayı reddetmesi", "Dini liderlerin devlet yönetiminde baskın hale gelmesi", "Yazılı hukuk kurallarının tamamen ortadan kalkması"],
+                            correct: 0,
+                            rationale: "Kutun hanedanın ortak malı sayılması, tahta kimin geçeceği konusunda kesin bir kural bulunmaması anlamına gelir. Bu belirsizlik, her hükümdar ölümünde kanlı taht kavgalarına ve devletlerin hızla bölünerek yıkılmasına yol açmıştır."
+                        },
+                        {
+                            q: "Soru 152: Asya Hun Devleti'nin yıkılmasının ardından batıya göç eden Türk boylarının, önlerine çıkan Germen kavimlerini yerlerinden oynatarak Avrupa içlerine sürmesiyle başlayan ve Roma İmparatorluğu'nun parçalanmasına neden olan küresel olay hangisidir?",
+                            options: ["Kavimler Göçü", "Haçlı Seferleri", "Coğrafi Keşifler", "Yüzyıl Savaşları"],
+                            correct: 0,
+                            rationale: "M.S. 375 yılında Balamir öncülüğünde gerçekleşen Kavimler Göçü, Avrupa'nın bugünkü etnik ve siyasi yapısını oluşturan, İlk Çağ'ı kapatıp Orta Çağ'ı açan devasa bir tarihi olaydır."
+                        },
+                        {
+                            q: "Soru 153: Avrupa Hun Devleti'ne en parlak dönemini yaşatan, Bizans'ı Margus ve Anatolius antlaşmalarıyla vergiye bağlayan, Batı dünyasında 'Tanrı'nın Kırbacı' olarak anılan meşhur Türk hükümdarı kimdir?",
+                            options: ["Attila", "Balamir", "Uldız", "Rua"],
+                            correct: 0,
+                            rationale: "Attila, Doğu ve Batı Roma imparatorlukları üzerinde kurduğu mutlak askeri üstünlük nedeniyle Hristiyan dünyası tarafından günahlarının cezası olarak gönderilmiş bir ilahi ceza (Tanrı'nın Kırbacı) olarak görülmüştür."
+                        },
+                        {
+                            q: "Soru 154: I. Göktürk Devleti döneminde Sasanilerle ittifak kurarak Akhun Devleti'ni yıkan, ardından İpek Yolu kontrolünü tam sağlamak için Bizans ile ittifak kurarak Sasanileri zayıflatan ünlü batı kanadı yöneticisi (Yabgu) kimdir?",
+                            options: ["İstemi Yabgu", "Bumin Kağan", "Mukan Kağan", "Tapo Kağan"],
+                            correct: 0,
+                            rationale: "İstemi Yabgu, dış politikada tamamen ticari çıkarları ve İpek Yolu egemenliğini gözeterek dönemin küresel güçleriyle (Sasani ve Bizans) dengeye dayalı pragmatik ittifaklar kurmuştur."
+                        },
+                        {
+                            q: "Soru 155: Çin esaretine karşı 39 arkadaşıyla birlikte Çin imparatorluk sarayını basarak Türk tarihindeki ilk milli istiklal ayaklanmasını başlatan ve kendisinden sonraki bağımsızlık hareketlerini tetikleyen kahraman kimdir?",
+                            options: ["Kürşad", "Kutluk Kağan", "Bayan Han", "Bağa Tarkan"],
+                            correct: 0,
+                            rationale: "639 yılında gerçekleşen Kürşad İhtilali, askeri olarak başarısız görünse de Türk boyları arasında milli bilinci ve esarete karşı bağımsızlık ruhunu yeniden uyandıran sembol bir olaydır."
+                        },
+                        {
+                            q: "Soru 156: Dağınık Türk boylarını Çin esaretinden kurtararak bir araya getiren, II. Göktürk Devleti'ni kurduğu için 'İlteriş' (İli/Devleti derleyen) unvanını alan hükümdar kimdir?",
+                            options: ["Kutluk Kağan", "Kapgan Kağan", "Bilge Kağan", "Kültigin"],
+                            correct: 0,
+                            rationale: "Kutluk Kağan, Çin'e karşı başlattığı bağımsızlık savaşını kazanarak II. Göktürk (Kutluk) Devleti'ni kurmuş ve devleti yeniden derlediği için İlteriş unvanıyla ödüllendirilmiştir."
+                        },
+                        {
+                            q: "Soru 157: Eski Türk meclisi olan Kurultay toplantılarına hükümdarın eşi Hatun'un da katılması, siyasi elçileri kabul etmesi ve resmi devlet belgelerinde mühür hakkının bulunması aşağıdakilerden hangisinin kesin göstergesidir?",
+                            options: ["Kadının yönetimde ve siyasi hayatta yüksek söz hakkı olduğunun", "Devletin tamamen teokratik kurallarla yönetildiğinin", "Veraset sisteminin bir düzene oturtulduğunun", "Meclisin sadece kadın haklarını görüşmek için toplandığının"],
+                            correct: 0,
+                            rationale: "Hatun'un siyasi iradeye ortak olması, imza ve kabul yetkilerinin bulunması, İslamiyet öncesi Türk toplumunda kadının idari ve toplumsal konumunun ne kadar güçlü olduğunu kanıtlar."
+                        },
+                        {
+                            q: "Soru 158: Uygurların Maniheizm inancını kabul ederek yerleşik hayata geçmesiyle birlikte Türk sanat ve kültüründe köklü değişimler olmuştur. Aşağıdakilerden hangisi Uygurlarla birlikte Türk kültürüne 'ilk kez' giren unsurlardan biri 'değildir'?",
+                            options: ["Kurgan adı verilen oda mezar mimarisi", "Fresko adı verilen duvar resimleri", "Kalıcı saray, ev ve tapınak mimarisi", "Matbaanın ve hareketli harf sisteminin kullanımı"],
+                            correct: 0,
+                            rationale: "Kurganlar (yer altı oda mezarları), Türklerde en eski dönemlerden (Hunlar, Göktürkler) beri var olan geleneksel göçebe gömme kültürüdür. Yerleşik hayatla ortaya çıkmamıştır."
+                        },
+                        {
+                            q: "Soru 159: İslamiyet öncesi Türk inanç sisteminde, ordunun ve halkın dini törenlerini düzenleyen, cenaze ve şifa süreçlerinde mistik roller üstlenen din adamlarına ne ad verilirdi?",
+                            options: ["Kam / Şaman", "Toygun", "Yuğ", "Kurgan"],
+                            correct: 0,
+                            rationale: "Eski Türk dini inanışlarında din adamlarına Kam, Şaman veya Baksı adı verilirdi. Türklerde ayrıcalıklı bir ruhban sınıfı (din adamları sınıfı) ise yoktu."
+                        },
+                        {
+                            q: "Soru 160: Kırgızlar tarafından yıkıldıktan sonra güneye göç eden, Moğol egemenliğini kabul ederek 'Moğollara itaat eden ilk yerleşik Türk devleti' olan ve Moğol devlet kadrolarında bürokratlık yaparak onların Türkleşmesini sağlayan topluluk hangisidir?",
+                            options: ["Uygurlar", "Karluklar", "Oğuzlar", "Kıpçaklar"],
+                            correct: 0,
+                            rationale: "Uygurlar, yerleşik kültür birikimleri, okuryazarlıkları ve gelişmiş hukuk sistemleri sayesinde Moğol İmparatorluğu'nda katiplik ve öğretmenlik yapmış, Moğolları kültürel olarak sömürmüşlerdir."
+                        },
+                        {
+                            q: "Soru 161: Malazgirt Savaşı'nda (1071) Bizans ordusunda ücretli askerlik yaparken, Selçuklu ordusundaki soydaşlarının Türkçe konuştuğunu duyup saf değiştirerek savaşın kazanılmasını sağlayan Türk boyları hangileridir?",
+                            options: ["Peçenekler - Uzlar (Oğuzlar)", "Hazarlar - Kırgızlar", "Uygurlar - Karluklar", "Avarlar - Hunlar"],
+                            correct: 0,
+                            rationale: "Bizans safındaki Peçenek ve Uz (Oğuz) Türkleri, savaş esnasında karşı ordunun kendi dillerini ve soylarını taşıdığını anlayıp Büyük Selçuklu tarafına geçerek savaşın seyrini değiştirmişlerdir."
+                        },
+                        {
+                            q: "Soru 162: Eski Türk devletlerinde hükümdarın erkek çocuklarının (Tigin) devlet yönetimi ve askeri stratejide deneyim kazanması için eyaletlere gönderilmesine ne ad verilir ve onları eğiten danışmanlara ne denirdi?",
+                            options: ["Tigin - Ataman (İnal / İnanç)", "Şehzade - Lala", "Melik - Atabey", "Yabgu - Subaşı"],
+                            correct: 0,
+                            rationale: "İslam öncesi dönemde hakanın oğullarına 'Tigin', onun usta eğiticilerine 'Ataman', 'İnal' veya 'İnanç' denirdi. Lala ve Atabey kavramları sonraki İslami Türk devletlerine aittir."
+                        },
+                        {
+                            q: "Soru 163: Eski Türklerde, ölen bir kişinin ardından düzenlenen resmi cenaze törenine 'Yuğ' denirken; bu törenlerde ölenin kahramanlıklarını anlatan ölüm ağıtlarına ne ad verilirdi?",
+                            options: ["Sagu", "Koşuk", "Sav", "Destan"],
+                            correct: 0,
+                            rationale: "Cenaze merasimlerinde (Yuğ) okunan hüzünlü ölüm şiirlerine / ağıtlarına 'Sagu' adı verilir. (Osmanlı'daki karşılığı Mersiye, Halk edebiyatındaki karşılığı Ağıttır)."
+                        },
+                        {
+                            q: "Soru 164: Rusların ünlü 'İgor Destanı'na konu olan, sarışın olmalarıyla bilinen, İtalyan ve Alman tüccarlar için 'Codex Cumanicus' adlı iki ciltlik sözlüğü hazırlayan Türk boyu hangisidir?",
+                            options: ["Kumanlar (Kıpçaklar)", "Karluklar", "Hazarlar", "Peçenekler"],
+                            correct: 0,
+                            rationale: "Kumanlar (Kıpçaklar), Karadeniz'in kuzeyinde ve Doğu Avrupa'da uzun süre egemen olmuş, ticari ilişkileri geliştirmek adına meşhur Codex Cumanicus sözlüğünü derlemişlerdir."
+                        },
+                        {
+                            q: "Soru 165: Aşağıdakilerden hangisi İslamiyet öncesi Türk devletlerinde tahta geçiş hakkını bir hükümdarlık alameti olarak simgeleyen unsurlardan biri 'değildir'?",
+                            options: ["Hutbe Okutmak", "Örgin (Taht)", "Kotuz (Sorguç)", "Nevbet (Davul)"],
+                            correct: 0,
+                            rationale: "Hutbe okutmak tamamen İslamiyet'in kabul edilmesinden sonra Türk-İslam devlet yapısına giren bir egemenlik alametidir. İslam öncesinde bulunmaz."
+                        },
+                        {
+                            q: "Soru 166: Abbasi halifeleri tarafından Bizans sınırında güvenliği sağlamak amacıyla kurulan 'Avasım' şehirlerine ve tamamen Türklere tahsis edilen 'Samerra' şehrine Türklerin yerleştirilmesinin temel nedeni nedir?",
+                            options: ["Türklerin üstün savaşçı ve askeri yeteneklerinden sınır savunmasında faydalanmak", "Türklerin tarım ve yerleşik hayattaki uzmanlıklarından yararlanmak", "Türk boylarının Araplardan yoğun ekonomik destek talep etmesi", "Türklerin teokratik hukuk sistemini Abbasi devletine öğretmesi"],
+                            correct: 0,
+                            rationale: "Abbasiler, Türklerin savaşçı kimliğini korumak ve Bizans tehdidine karşı güçlü bir kalkan oluşturmak amacıyla onları sınır hatlarındaki Avasım şehirlerine askeri güç olarak yerleştirmişlerdir."
+                        },
+                        {
+                            q: "Soru 167: Eski Türk devletlerinde örfi hukuk kurallarını (Töre) uygulayan, adalet işlerine bakan ve sivil halkın davalarını çözen mahkeme başkanlarına / yargıçlara ne ad verilirdi?",
+                            options: ["Yargucu", "Tarkan", "Aygucı", "Bitigci"],
+                            correct: 0,
+                            rationale: "Eski Türk yargı mekanizmasında adalet işlerinden sorumlu olan, yargılama yapan görevlilere 'Yargucu' (Yargıç) adı verilirdi."
+                        },
+                        {
+                            q: "Soru 168: II. Göktürk (Kutluk) Devleti'nin Orhun Abideleri'nde kullandığı, Türk tarihinin 'ilk milli alfabesi' olma özelliğine sahip olan yazı sistemi kaç harften oluşur?",
+                            options: ["38 Harfli Göktürk Alfabesi", "18 Harfli Uygur Alfabesi", "28 Harfli Arap Alfabesi", "32 Harfli Kiril Alfabesi"],
+                            correct: 0,
+                            rationale: "Türklerin tarihteki ilk özgün ve milli alfabesi 38 harften oluşan Göktürk (Orhun) alfabesidir. İkinci milli alfabemiz ise 18 harfli Uygur alfabesidir."
+                        },
+                        {
+                            q: "Soru 169: Eski Türk devletlerinde devlet işlerinin yürütüldüğü, bakanlar kuruluna benzeyen yürütme organına (Hükümete) ne ad verilirdi?",
+                            options: ["Ayukı", "Aygucı", "Toygun", "Kurultay"],
+                            correct: 0,
+                            rationale: "Eski Türk devlet teşkilatında hükümete 'Ayukı' denir. Bu hükümetin başkanlığını yapan vezire / başbakana ise 'Aygucı' adı verilir."
+                        },
+                        {
+                            q: "Soru 170: Asya Hun Devleti'nin zayıflama döneminde, Çin esaretine girmeyi savunan kardeşine karşı çıkarak 'Çin'e tabi olmayı atalarımıza bir hakaret sayarım' diyen ve milli bağımsızlık fikrinin ilk savunucusu olan Hun lideri kimdir?",
+                            options: ["Çiçi", "Teoman", "Mete Han", "Balamir"],
+                            correct: 0,
+                            rationale: "Çiçi Han, kardeşi Ho-han-yeh'in teslimiyetçi politikasını sert bir dille reddederek Türk tarihindeki ilk büyük bağımsızlık ve milliyetçilik direnişini başlatmıştır."
+                        },
+                        {
+                            q: "Soru 171: Göktürk Kitabeleri'nde geçen 'Üstte mavi gök, altta yağız yer kılındıkta, ikisi arasında insanoğlu kılınmış...' ifadesi hükümdarın egemenlik gücünü doğrudan hangi inanışa dayandırdığını gösterir?",
+                            options: ["Kut İnancı", "Cihan Hakimiyeti", "Töre Hukuku", "Oguş Sistemi"],
+                            correct: 0,
+                            rationale: "Hükümdarın tahta geçişini ve yönetim yetkisini evrenin yaratıcısı olan Gök Tanrı'ya dayandırması, 'Kut' inancının en somut edebi ifadesidir."
+                        },
+                        {
+                            q: "Soru 172: Eski Türk toplumunda toplumsal hayatı düzenleyen yazısız hukuk kurallarına 'Töre' denirdi. Aşağıdakilerden hangisi töre kurallarının oluşmasında etkili olan ana kaynaklardan biri 'değildir'?",
+                            options: ["Kutsal kitapların şeriat emirleri", "Kurultay (Toy) kararları", "Hakanın çıkardığı emirler (Yarlığlar)", "Toplumun yüzyıllardır biriktirdiği örf ve adetler"],
+                            correct: 0,
+                            rationale: "İslamiyet öncesi Türk töresi örfi ve laiktir. Kutsal kitapların, şeriat hükümlerinin veya dogmatik dini kuralların töre hukukuku üzerinde hiçbir etkisi yoktur."
+                        },
+                        {
+                            q: "Soru 173: Uygurlar döneminde Maniheizm dininin kabul edilmesiyle birlikte Türk sanatında taşınabilir eşya işçiliği yerine, tapınak duvarlarına yapılan büyük resimler ve kitapları süsleyen derinliksiz resim sanatı gelişmiştir. Bu sanat dalı hangisidir?",
+                            options: ["Minyatür", "Fresko", "Mozaik", "Hat"],
+                            correct: 0,
+                            rationale: "Kitapları süslemek amacıyla yapılan, ışık-gölge ve derinlik sanatı barındırmayan küçük resimlere 'Minyatür' denir ve Türk sanat tarihindeki ilk örnekleri Uygurlara aittir."
+                        },
+                        {
+                            q: "Soru 174: Hunlar ve Göktürkler döneminde ölen savaşçıların kurganlarının (mezarlarının) içine atları, kılıçları ve kıymetli eşyaları ile birlikte gömülmesi aşağıdakilerden hangisinin kesin göstergesidir?",
+                            options: ["Ahiret (Ölümden sonra yaşam) inancının", "Gelişmiş bir maden sanayisinin", "Sınıflı toplum yapısının", "Göçebe yaşamın tamamen terk edildiğinin"],
+                            correct: 0,
+                            rationale: "Kişinin dünyalık eşyaları ve silahlarıyla gömülmesi, öbür dünyada bu eşyaları tekrar kullanacağı fikrine yani 'Ahiret' hayatı inancına kesin bir kanıttır."
+                        },
+                        {
+                            q: "Soru 175: Karadeniz'in kuzeyinde kurulan, Museviliği resmi din olarak kabul eden ve Hz. Osman döneminde İslam ordularıyla (Belencer Savaşı) savaşarak İslamiyet'in Kafkasya'da yayılmasını geciktiren Türk devleti hangisidir?",
+                            options: ["Hazarlar", "Türgişler", "Karluklar", "Peçenekler"],
+                            correct: 0,
+                            rationale: "Hazarlar, Kafkasya bölgesinde güçlü bir set oluşturarak İslam ordularının kuzeye (Rusya içlerine) erken dönemde yayılmasını engellemişlerdir."
+                        },
+                        {
+                            q: "Soru 176: Türklerin göçebe yaşam tarzına bağlı olarak uzun süreli hapis cezaları uygulayamaması ve zindan yapılarının bulunmaması, adalet sistemine nasıl yansımıştır?",
+                            options: ["Pratik, taşınabilir ve hızlı çözülen bir yargı mekanizmasının gelişmesine", "Yazılı anayasa hukukunun erkenden doğmasına", "Ruhban sınıfının mahkemeleri ele geçirmesine", "Feodal hukuk kurallarının katılaşmasına"],
+                            correct: 0,
+                            rationale: "Zindan yapıları olmadığı için Türklerde davalar hızlıca karara bağlanır ve hapis cezaları maksimum 10-12 günle sınırlı tutulurdu. Bu durum pratik ve dinamik bir yargı sistemini doğurmuştur."
+                        },
+                        {
+                            q: "Soru 177: Uygurların matbaada kullandıkları harfleri korumak ve seri kitap basımı yapmak amacıyla geliştirdikleri ilk metal baskı kalıpları, dünya matbaacılık tarihinde hangi sistemin öncüsü kabul edilir?",
+                            options: ["Hareketli Harf Sistemi", "Blok Taş Baskı", "Deri Parşömen Sistemi", "Daktilo Mekanizması"],
+                            correct: 0,
+                            rationale: "Uygurlar, tüm sayfayı tek bir tahtaya oymak yerine harfleri tek tek dökerek yan yana getirme esasına dayanan 'Hareketli Harf Sistemi'ni (Tipografi) dünyada ilk kullananlardandır."
+                        },
+                        {
+                            q: "Soru 178: Hunlar ve Göktürkler döneminde keçeden yapılan, göçebe hayata tam uyumlu, tekerlekli arabalar üzerine monte edilerek taşınabilen kubbeli Türk çadırlarına ne ad verilirdi?",
+                            options: ["Yurt / Keregü", "Stupa", "Balik", "Örgin"],
+                            correct: 0,
+                            rationale: "Eski Türk çadırlarına genel olarak 'Yurt' veya ahşap iskeletlilerine 'Keregü' denirdi. Stupa tapınak, Balık ise şehirdir."
+                        },
+                        {
+                            q: "Soru 179: Eski Türklerde toplumu oluşturan en küçük yapı birimi 'Oguş' yani ailedir. Ailenin başında bulunan babaya 'Kang' adı verilirken, anneye ne ad verilirdi?",
+                            options: ["Ög", "Hatun", "Asena", "Banu"],
+                            correct: 0,
+                            rationale: "Eski Türkçede anneye 'Ög' denirdi (Annesiz kalma durumu olan 'öksüz' kelimesi buradan türemiştir). Babaya ise 'Kang' adı verilirdi."
+                        },
+                        {
+                            q: "Soru 180: İslamiyet öncesi Türk tarihinde tam merkeziyetçi bir imparatorluk yapısının kurulamamasının ve devletlerin hızlı bölünmesinin en temel yapısal sebebi aşağıdakilerden hangisidir?",
+                            options: ["Ülkenin hanedanın ortak malı sayılması ve Kut anlayışı", "Çin'in sürekli askeri saldırıları", "Kurultay meclisinin hakanı engellemesi", "Boyların yerleşik hayata geçmeyi reddetmesi"],
+                            correct: 0,
+                            rationale: "Geleneksel veraset sisteminde ülkenin hanedan üyelerinin ortak mülkü sayılması prensibi, her erkek üyeye yönetim hakkı tanıdığı için iç savaşları ve bölünmeleri kaçınılmaz kılmıştır."
+                        },
+                        {
+                            q: "Soru 181: Asya Hun Devleti'nin dağılmasıyla başlayan göç dalgaları sonrasında Doğu Avrupa'da mızrak, üzengi ve zırh teknolojisinde Avrupa kavimlerine öğretmenlik yapan, Macaristan merkezli kurulan Türk devlet yapısı hangisidir?",
+                            options: ["Avrupa Hun Devleti", "Avarlar", "Bulgarlar", "Hazarlar"],
+                            correct: 0,
+                            rationale: "Balamir ve sonrasında Attila liderliğinde kurulan Avrupa Hun Devleti, Avrupa'ya askeri teknoloji, üzengi ve pantolon kültürü gibi bozkır unsurlarını taşımıştır."
+                        },
+                        {
+                            q: "Soru 182: Eski Türklerde devletin bağımsızlığını simgeleyen ögeler arasında; I. Oksızlık, II. Örgin, III. Nevbet unsurlarından hangileri doğrudan yer alırdı?",
+                            options: ["Yalnız I", "I ve II", "II ve III", "I, II ve III"],
+                            correct: 3,
+                            rationale: "Oksızlık (bağımsızlık), Örgin (taht) ve Nevbet (davul) eski Türk devletlerinde egemenliğin ve bağımsızlığın en temel sembolleridir."
+                        },
+                        {
+                            q: "Soru 183: Kendi adına para bastıran hükümdarı bulunan Türgişler Devleti'nin, yerleşik yaşam izleri taşıyan ve tarımsal sulama amacıyla kurdukları ünlü kanalın adı nedir?",
+                            options: ["Tötü Kanalı", "Kral Kanalı", "Süveyş Kanalı", "Amuderya Hattı"],
+                            correct: 0,
+                            rationale: "Asya Hunları döneminde yapılan ve daha sonra bölgedeki Türk boyları (Göktürk, Türgiş) tarafından kullanılan ünlü sulama kanalına 'Tötü Kanalı' adı verilir."
+                        },
+                        {
+                            q: "Soru 184: Eski Türklerde boyların kendi aralarındaki toprak ve otlak kavgalarını çözen, kurultayda boy beylerinin oturacağı sırayı (Orun) belirleyen adalet dengesini kuran sisteme ne ad verilirdi?",
+                            options: ["Orun / Üleş", "Kut", "Yarlığ", "Ayukı"],
+                            correct: 0,
+                            rationale: "Kurultayda veya şölenlerde boy beylerinin protokol sırasına 'Orun', kesilen etten alacakları paya ise 'Üleş' denirdi. Bu sistem sosyal barışı korurdu."
+                        },
+                        {
+                            q: "Soru 185: Uygurların basım tekniğinde kullandıkları harfleri ahşap bloklar yerine hareketli metal kalıplarla yapmaları, aşağıdakilerden hangisinin dünyadaki en erken örneklerinden biri kabul edilir?",
+                            options: ["Modern tipografi ve hareketli matbaa teknolojisinin", "Deri parşömen imalatının", "Hattatlık sanatının", "Siber arşivleme mantığının"],
+                            correct: 0,
+                            rationale: "Uygurların geliştirdiği harf kalıpları tekniği, modern hareketli matbaa (tipografi) sanatının dünyadaki en eski öncülerinden biridir."
+                        },
+                        {
+                            q: "Soru 186: İslamiyet öncesi Türk tarihinin en hacimli yazılı belgeleri olan Yenisey Kitabeleri hangi Türk topluluğuna aittir?",
+                            options: ["Kırgızlar", "Göktürkler", "Uygurlar", "Oğuzlar"],
+                            correct: 0,
+                            rationale: "Yenisey Kitabeleri Kırgızlara aittir. Ancak Orhun Abideleri kadar gelişmiş bir edebi dil barındırmadığı ve mezar taşı niteliğinde olduğu için ilk resmi edebi belge sayılmazlar."
+                        },
+                        {
+                            q: "Soru 187: Eski Türk toplumunda düğünlerde, bayramlarda ve toy şölenlerinde kesilen hayvanların etlerinin boyların rütbelerine ve güçlerine göre adilce dağıtılması töresine ne ad verilirdi?",
+                            options: ["Üleş", "Örgin", "Tüz", "Könilik"],
+                            correct: 0,
+                            rationale: "Ekonomik nimetlerin veya kesilen kurban etlerinin boylar arasında hiyerarşik ve adil paylaşımına 'Üleş' ilkesi adı verilir. Sosyal adaleti sağlar."
+                        },
+                        {
+                            q: "Soru 188: Orhun Abideleri'nde geçen 'Ey Türk Budun! Ert Reze, kendine dön! Özüne dönersen yükselirsin...' şeklindeki ifadeler, abidelerin öncelikle hangi niteliğe sahip olduğunu kanıtlar?",
+                            options: ["Milli bilinci uyandıran ulusalcı ve siyasi bir beyanname olduğunun", "Tamamen dini ve şamanist öğütler içerdiğinin", "Çin ile olan ekonomik anlaşmaların şartlarını yansıttığının", "Sadece askeri taktikleri içeren bir el kitapçığı olduğunun"],
+                            correct: 0,
+                            rationale: "Abideler halka ve yöneticilere hitap eden, Çin asimilasyonuna karşı uyaran, Türk adını ve birliğini savunan ilk büyük milli ve siyasi 'Siyasetname' metnidir."
+                        },
+                        {
+                            q: "Soru 189: İskitler (Sakalar) döneminde yaşamış, adlarına destanlar yazılmış, Pers ordularını bozguna uğratan ünlü 'ilk Türk kadın hükümdar' aşağıdakilerden hangisidir?",
+                            options: ["Tomris Hatun", "Asena", "Terken Hatun", "Banu Çiçek"],
+                            correct: 0,
+                            rationale: "Tarihte bilinen ilk kadın hükümdar İskitlerin lideri olan Tomris Hatun'dur. Pers hükümdarı Kiros'u savaş meydanında yenmiştir."
+                        },
+                        {
+                            q: "Soru 190: Eski Türk devlet yapısında resmi makamların 'Cihan Hakimiyeti' ülküsüyle hareket etmesi, Türk devletlerinin dış politikasında en çok aşağıdakilerden hangisine neden olmuştur?",
+                            options: ["Sürekli fetih hareketlerinin yapılmasına ve sınırların genişletilmesine", "Çin ile barış anlaşmalarının kalıcı hale gelmesine", "Kurultay meclisinin kapatılarak mutlak despotizme geçilmesine", "Yerleşik hayata geçişin tamamen yasaklanmasına"],
+                            correct: 0,
+                            rationale: "Cihan hakimiyeti mefkuresi, Tanrı'nın dünyayı yönetme görevini Türklere verdiği inancıdır. Bu ideal, Türk devletlerini sürekli bir fetih ve cihan devleti kurma arayışına (dinamik dış politkayalara) itmiştir."
+                        },
+                        {
+                            q: "Soru 191: Uygurlar döneminde Maniheizm dininin kabul edilmesiyle birlikte 'Balık' adı verilen ilk organize Türk şehirleri kurulmuştur. Aşağıdakilerden hangisi bu şehirleşme hamlesinin Türk hukuk sistemine getirdiği yeniliktir?",
+                            options: ["Yazılı hukuk kurallarının ve sözleşme belgelerinin başlaması", "Örfi hukukun tamamen iptal edilmesi", "Mahkemelerin sadece din adamları tarafından yönetilmesi", "Yargıçlık makamının tamamen kaldırılması"],
+                            correct: 0,
+                            rationale: "Yerleşik hayata geçiş; ticaret, mülkiyet ve borç ilişkilerini doğurmuş, bu da sözlü olan töre kurallarının yanı sıra ilk kez 'yazılı sözleşme ve hukuk' belgelerinin ortaya çıkmasını zorunlu kılmıştır."
+                        },
+                        {
+                            q: "Soru 192: Eski Türk toplumunda toplumsal hiyerarşinin en üst basamağında yer alan, bağımsız devleti ve egemenliği ifade eden kavram aşağıdakilerden hangisidir?",
+                            options: ["İl / El", "Bodun", "Boy", "Urug"],
+                            correct: 0,
+                            rationale: "Toplumsal yapının en üst noktası, bağımsız siyasi organizasyon olan 'İl' veya 'El' yani devlettir."
+                        },
+                        {
+                            q: "Soru 193: Asya Hun Devleti'nin parçalanma sürecinde Çin himayesini savunan kardeşi Ho-han-yeh'e karşı çıkarak 'Bağımsızlık bizim karakterimizdir' diyen ünlü Hun lideri kimdir?",
+                            options: ["Çiçi Han", "Teoman", "Mete Han", "Balamir"],
+                            correct: 0,
+                            rationale: "Çiçi Han, Türk tarihinde milliyetçiliğin ve bağımsızlık fikrinin ilk bayraktarı kabul edilen tarihi şahsiyettir."
+                        },
+                        {
+                            q: "Soru 194: Göktürk Kitabeleri'nde geçen 'Açları doyurdum, çıplakları giydirdim' ifadesi, eski Türk devlet yapısında hangi yönetim ilkesinin benimsendiğini gösterir?",
+                            options: ["Sosyal Devlet anlayışının", "Teokratik yönetim modelinin", "Feodal toprak düzeninin", "Otokratik diktatörlük sisteminin"],
+                            correct: 0,
+                            rationale: "Devletin halkın refahından, açlığından ve temel ihtiyaçlarından sorumlu olması doğrudan 'Sosyal Devlet' ilkesinin göstergesidir."
+                        },
+                        {
+                            q: "Soru 195: Eski Türk ordularının savaş meydanlarında yüzyıllar boyunca başarıyla uyguladığı, sahte geri çekilme ve pusuya dayanan askeri stratejiye ne ad verilir?",
+                            options: ["Turan Taktiği (Hilal / Kurt Kapanı)", "Meydan Tahkimi", "Yelme Taarruzu", "Kastel Kuşatması"],
+                            correct: 0,
+                            rationale: "Merkez birliklerin kaçıyor gibi yaparak düşmanı pusuya çekmesi ve yan kolların düşmanı hilal şeklinde sararak yok etmesi stratejisine Turan Taktiği denir."
+                        },
+                        {
+                            q: "Soru 196: İslamiyet öncesi Türk inancında ölen kişilerin değerli eşyalarıyla birlikte gömüldüğü, oda şeklindeki yer altı mezarlarına ne ad verilirdi?",
+                            options: ["Kurgan", "Yuğ", "Balbal", "Stupa"],
+                            correct: 0,
+                            rationale: "Oda şeklindeki yer altı mezarlarına 'Kurgan' denir. Kişinin eşyalarıyla gömülmesi ahiret inancının kanıtıdır."
+                        },
+                        {
+                            q: "Soru 197: 840 yılında Uygur Devleti'ni yıkarak Ötüken merkezli kendi devletlerini kuran ve dünya edebiyat tarihinin en uzun destanı olan Manas Destanı'nı oluşturan Türk topluluğu hangisidir?",
+                            options: ["Kırgızlar", "Karluklar", "Kıpçaklar", "Türgişler"],
+                            correct: 0,
+                            rationale: "Uygurları yıkan ve Ötüken'e sahip olan son büyük Türk devleti Kırgızlar'dır."
+                        },
+                        {
+                            q: "Soru 198: Eski Türklerin astronomi ve matematik alanında gelişmediklerinin aksine, güneş yılı esaslı takvim oluşturmaları bunun kanıtıdır. Bu takvim hangisidir?",
+                            options: ["12 Hayvanlı Türk Takvimi", "Celali Takvimi", "Rumi Takvim", "Hicri Takvim"],
+                            correct: 0,
+                            rationale: "Türklerin tamamen kendi gözlemleriyle oluşturduğu güneş yılı esaslı takvim '12 Hayvanlı Türk Takvimi'dir."
+                        },
+                        {
+                            q: "Soru 199: Aşağıdaki destan ve Türk devleti eşleştirmelerinden hangisi 'yanlıştır'?",
+                            options: [
+                              "Asya Hun Devleti: Oğuz Kağan Destanı",
+                              "Göktürkler: Ergenekon ve Bozkurt Destanları",
+                              "Uygurlar: Türeyiş ve Göç Destanları",
+                              "Hazarlar: Alper Tunga Destanı"
+                            ],
+                            correct: 3,
+                            rationale: "Alp Er Tunga Destanı Hazarlara değil, en eski Türk topluluğu kabul edilen İskitlere (Sakalara) aittir."
+                        },
+                        {
+                            q: "Soru 200: Geleneksel Türk veraset sisteminde ülkenin hanedan üyelerinin ortak mülkü sayılması prensibi, uzun vadede en çok hangisine neden olmuştur?",
+                            options: ["Taht kavgalarına ve devletlerin hızlı parçalanarak yıkılmasına", "Merkezi otoritenin mutlak olarak güçlenmesine", "Dış saldırıların tamamen sona ermesine", "Yazılı anayasa hukukuna geçilmesine"],
+                            correct: 0,
+                            rationale: "Ülkenin ortak malı sayılması, hanedandaki her erkek üyeye yönetim hakkı (Kut) tanıdığı için iç savaşları, bölünmeleri ve hızlı yıkımları beraberinde getirmiştir."
+                        },
+                    ]
+                },
+{
+    "unite": "2. İlk Türk-İslam Devletleri",
+    "cards": [
+      { "q": "Orta Asya'da İslamiyet'i kabul eden ilk Türk devleti hangisidir?", "a": "840 yılında kurulan ve Satuk Buğra Han döneminde İslamiyet'i resmi din ilan eden <b>Karahanlılar</b> Devleti'dir." },
+      { "q": "İslamiyet'i kabul eden ilk Türk hükümdarı kimdir ve hangi unvanı almıştır?", "a": "Karahanlılar hükümdarı <b>Satuk Buğra Han</b>'dır. İslamiyet'i kabul edince 'Abdülkerim' adını ve 'El-Mücahid' unvanını almıştır." },
+      { "q": "Mısır'da kurulan ilk Türk-İslam devleti hangisidir?", "a": "Tolunoğlu Ahmet tarafından kurulan <b>Tolunoğulları</b>'dır. (868-905)" },
+      { "q": "Ribat adı verilen ilk gelişmiş kervansarayları hangi devlet kurmuştur?", "a": "<b>Karahanlılar</b> kurmuştur. Hem ticari güvenliği sağlamış hem de sınır hatlarında askeri karakol (Gazi yurdu) olarak kullanılmıştır." },
+      { "q": "Büyük Selçuklu Devleti'nin resmi kuruluşu hangi savaşla olmuştur?", "a": "1040 yılında Gaznelilere karşı kazanılan <b>Dandanakan Savaşı</b> ile devlet resmen kurulmuştur." },
+      { "q": "Anadolu'nun kapılarını Türklere açan ve Alp Arslan'ın kazandığı büyük zafer hangisidir?", "a": "26 Ağustos 1071 tarihinde Bizans İmparatorluğu'na karşı kazanılan <b>Malazgirt Zaferi</b>'dir." },
+      { "q": "Büyük Selçuklu Devleti'nin en parlak dönemi hangi hükümdar zamanıdır?", "a": "Sultan <b>Melikşah</b> dönemidir. Sınırlar Seyhun Nehri'nden Akdeniz'e kadar genişlemiştir." },
+      { "q": "Büyük Selçuklu Devleti'nin yıkılışında etkili olan batıni terör örgütünün lideri kimdir?", "a": "Alamut Kalesi'nde üslenen ve Vezir Nizamülmülk dahil manyak suikastlarla devlet adamlarını öldüren <b>Hasan Sabbah</b>'tır." },
+      { "q": "Gulam Sistemi nedir, Osmanlı'daki karşılığı hangisidir?", "a": "Savaş esirlerinin veya satın alınan köle çocukların sarayda özel askeri ve idari eğitime tabi tutulmasıdır. Osmanlı'daki karşılığı <b>Devşirme (Kapıkulu)</b> sistemidir." },
+      { "q": "İkta Sistemi nedir, devlete ve orduya faydası nedir?", "a": "Toprakların mülkiyetinin devlette, kullanım hakkının halkta olduğu, vergilerle asker (Cebelü) yetiştirilen sistemdir. Hazineden para çıkmadan dev bir ordu kurulmasını ve taşrada güvenliği sağlar. Osmanlı'daki adı <b>Tımar</b>'dır." },
+      { "q": "İlk Türk-İslam edebi eseri olan Kutadgu Bilig'in yazarı ve anlamı nedir?", "a": "<b>Yusuf Has Hacib</b> tarafından yazılmıştır. 'Mutuluk Veren Bilgi' anlamına gelir ve Karahanlı hükümdarı Tabgaç Buğra Han'a sunulmuş bir siyasetnamedir." },
+      { "q": "Türk dilinin ilk sözlüğü ve ansiklopedisi olan Divânu Lugâti't-Türk'ün yazarı kimdir?", "a": "<b>Kaşgarlı Mahmut</b>'tur. Araplara Türkçe öğretmek ve Türkçenin zenginliğini kanıtlamak amacıyla yazılmış, halifeye sunulmuştur." },
+      { "q": "Tasavvuf edebiyatının ilk örneği olan Divan-ı Hikmet'in yazarı kimdir?", "a": "Türk dünyasının ilk büyük mutasavvıfı kabul edilen <b>Ahmet Yesevi</b>'dir." },
+      { "q": "Gazneli Mahmut'un sarayında 'Sarayımın en değerli hazinesidir' dediği ünlü bilim insanı kimdir?", "a": "Astronomi, matematik ve coğrafya alanında devrim yapan <b>El-Biruni</b>'dir." },
+      { "q": "Nizamiye Medreseleri'nin kurucusu ve dünyanın ilk büyük başbakanı/veziri kimdir?", "a": "Büyük Selçuklu Devleti'nin efsanevi veziri <b>Nizamülmülk</b>'tür. Siyasetname adlı eseri çok ünlüdür." },
+      { "q": "Abbasi halifesini Şii Büveyhoğulları baskısından kurtararak 'Doğu'nun ve Batı'nın Sultanı' unvanını alan Selçuklu lideri kimdir?", "a": "1055 Bağdat Seferi ile İslam dünyasının siyasi liderliğini Türklerin eline geçiren <b>Tuğrul Bey</b>'dir." },
+      { "q": "Mısır'da kurulan ve Kutsal Topraklara (Hicaz: Mekke-Medine) egemen olan ilk Türk devleti hangisidir?", "a": "Muhammed bin Togaç tarafından kurulan <b>Akşitler (İhşidiler)</b> Devleti'dir." },
+      { "q": "Kutsal Toprakları Haçlı istilasından kurtaran ve Hıttin Savaşı ile Kudüs'ü geri alan Türk İslam kahramanı kimdir?", "a": "Eyyubiler Devleti'nin kurucusu olan <b>Selahaddin Eyyubi</b>'dir." },
+      { "q": "Veraset sisteminde 'Ülke hanedanın ortak malıdır' kuralını uygulamayarak, sadece güçlü olan komutanın tahta geçebileceği kuralını getiren tek Türk devleti hangisidir?", "a": "Mısır'da kurulan ve Moğolları tarihte ilk kez durduran (Ayn Calut Savaşı) <b>Memlükler (Devletü't-Türkiyye)</b> Devleti'dir." },
+      { "q": "Büyük Selçuklu Devleti'nin çöküşünü hızlandıran ve Karahitaylara karşı kaybedilen 1141 tarihli savaş hangisidir?", "a": "Sultan Sencer döneminde kaybedilen ve devletin yıkılış sürecine girmesine yol açan <b>Katvan Savaşı</b>'dir." },
+      { "q": "İlk Türk-İslam devletlerinde hükümdarın şemsiyesine verilen isim nedir?", "a": "Egemenlik alametlerinden biri olan saltanat şemsiyesine <b>Çetr</b> adı verilir." },
+      { "q": "Divan-ı Saltanat nedir, Büyük Selçuklu'da devlet işlerinin görüşüldüğü ana divana bağlı alt divanlar nelerdir?", "a": "Ana divandır. Alt divanlar: <b>Divan-ı İnşa</b> (Yazışma), <b>Divan-ı İstifa</b> (Maliye), <b>Divan-ı İşraf</b> (Denetim), <b>Divan-ı Arz</b> (Askeri işler)." },
+      { "q": "Hükümdarın kıyafetlerinden ve gardırobundan sorumlu saray görevlisi kimdir?", "a": "Saray teşkilatındaki bu görevliye <b>Câmedâr</b> adı verilir." },
+      { "q": "Atabey kime denir, Türk tarihindeki zararı nedir?", "a": "Selçuklu şehzadelerini (Melik) eğitmekle görevli tecrübeli devlet adamlarıdır. Devlet zayıfladığında bulundukları bölgelerde bağımsızlıklarını ilan ederek devletin parçalanmasını hızlandırmışlardır." },
+      { "q": "Büyük Selçuklu Devleti'nde ordu komutanlarına genel olarak ne ad verilirdi?", "a": "Ordu komutanlarına, yüksek rütbeli askeri liderlere <b>Salar / Sipehsalar</b> adı verilirdi." },
+      { "q": "Türk-İslam mimarisinde ilk medrese örneklerini hangi devlet vermiştir?", "a": "Semerkand Medresesi başta olmak üzere ilk örnekleri <b>Karahanlılar</b> vermiştir." },
+      { "q": "Karahanlılar Devleti'nin ordusunda ve yönetiminde tamamen Türkçe kullanması neyin kanıtıdır?", "a": "Ulusçu (Milliyetçi) bir devlet yapısına sahip olduklarının ve Orta Asya'da saf Türk nüfusa dayandıklarının kanıtıdır." },
+      { "q": "Gulamhanede yetişen hükümdarın özel muhafız ordusuna ne ad verilir?", "a": "Doğrudan sultana bağlı, maaşlı ve elit atlı birliklerden oluşan <b>Gulâmân-ı Saray</b> ordusudur." },
+      { "q": "Türk-İslam devletlerinde şer'i davalara kim bakar, en yüksek yargıç kimdir?", "a": "Şer'i davalara Kadılar bakar. En yüksek yargıç ise başkentte oturan <b>Kadılkudat</b>'tır." },
+      { "q": "Büyük Selçuklu Devleti'nde askeri davalara bakan özel hakime ne ad verilirdi?", "a": "Ordu içindeki adalet işlerinden sorumlu askeri yargıca <b>Kadıasker (Kadı-ı Leşker)</b> adı verilirdi." }
+    ],
+    "quiz": [
+      {
+        "q": "Soru 1: Orta Asya'da kurulup İslamiyet'i resmi din olarak kabul eden ilk Türk devleti olan ve ulusçu karakterini korumak için resmi dilini Türkçe ilan eden hanedan hangisidir?",
+        "options": ["Karahanlılar", "Gazneliler", "Büyük Selçuklu", "Tolunoğulları"],
+        "correct": 0,
+        "rationale": "Karahanlılar, Orta Asya'da İslamiyet'i kabul eden ilk Türk devletidir. Karluk, Yağma ve Çiğil boyları tarafından kurulmuş, resmi dillerini Türkçe ilan ederek ulusçu kimliklerini korumuşlardır."
+      },
+      {
+        "q": "Soru 2: Gazneli Mahmut döneminde Hindistan üzerine düzenlenen ve bölgede İslamiyet'in yayılmasını sağlayarak bugünkü Pakistan ve Bangladeş'in temelini atan askeri seferlerin toplam sayısı kaçtır?",
+        "options": ["12 Sefer", "17 Sefer", "7 Sefer", "21 Sefer"],
+        "correct": 1,
+        "rationale": "Gazneli Mahmut İslamiyet'i yaymak ve Hindistan'ın zenginliklerini ele geçirmek amacıyla tam 17 sefer düzenlemiştir. Bu seferler Hindistan'daki kast sistemine büyük darbe vurmuştur."
+      },
+      {
+        "q": "Soru 3: 1040 yılında Selçuklular ile Gazneliler arasında yapılan, Gazne Devleti'nin yıkılış sürecine girmesine yol açarken Büyük Selçuklu Devleti'nin resmen kurulmasını sağlayan savaş hangisidir?",
+        "options": ["Dandanakan Savaşı", "Pasinler Savaşı", "Malazgirt Savaşı", "Katvan Savaşı"],
+        "correct": 0,
+        "rationale": "Dandanakan Savaşı (1040), Büyük Selçuklu Devleti'nin istiklalini kazandığı ve Horasan'da resmen kurulduğu, Gaznelilerin ise çöküşünü başlatan kritik bir dönüm noktasıdır."
+      },
+      {
+        "q": "Soru 4: Büyük Selçuklu Devleti ile Bizans İmparatorluğu arasında yapılan ve Selçukluların Bizans'a karşı kazandığı 'ilk büyük zafer ve keşif savaşı' kabul edilen 1048 tarihli savaş hangisidir?",
+        "options": ["Pasinler Savaşı", "Malazgirt Savaşı", "Dandanakan Savaşı", "Yassıçemen Savaşı"],
+        "correct": 0,
+        "rationale": "Pasinler Savaşı (1048), Selçuklular ile Bizans Gürcü ittifakı arasında yapılan ve Anadolu'yu tanıma/keşif amacı taşıyan ilk büyük galibiyettir."
+      },
+      {
+        "q": "Soru 5: 1071 Malazgirt Savaşı öncesinde Bizans ordusunda ücretli askerlik yaparken Selçuklu safına geçerek savaşı soydaşlarının kazanmasını sağlayan Türk boyları hangileridir?",
+        "options": ["Peçenekler - Uzlar", "Karluklar - Yağmalar", "Kırgızlar - Kıpçaklar", "Hazarlar - Türgişler"],
+        "correct": 0,
+        "rationale": "Bizans ordusunda görev alan Peçenek ve Uz Türkleri, savaş esnasında karşı tarafın da Türk olduğunu (Alp Arslan'ın ordusu) fark edince saf değiştirerek zaferde büyük rol oynamışlardır."
+      },
+      {
+        "q": "Soru 6: Selçuklu devlet teşkilatında eyaletleri yöneten şehzadelerin (Melik) yanına danışman ve eğitmen olarak atanan, devlet zayıfladığında bağımsızlık ilan eden görevlilere ne ad verilir?",
+        "options": ["Atabey", "Lala", "Ataman", "Muhtesip"],
+        "correct": 0,
+        "rationale": "Atabeyler tecrübeli devlet adamlarıdır ve şehzadeleri eğitirler. Merkezi otorite bozulduğunda bulundukları yerlerde bağımsızlık ilan ederek devletin parçalanmasını hızlandırmışlardır. (Osmanlı'daki adı Lala'dır)."
+      },
+      {
+        "q": "Soru 7: Büyük Selçuklu Devleti'nde arazi kayıtlarını tutan, fethedilen toprakları mülk ve ikta olarak dağıtan ve devletin iç-dış yazışmalarını yürüten divan hangisidir?",
+        "options": ["Divan-ı İnşa (Tuğra)", "Divan-ı İstifa", "Divan-ı Arz", "Divan-ı İşraf"],
+        "correct": 0,
+        "rationale": "Divan-ı İnşa veya diğer adıyla Tuğra Divanı, devletin tüm iç ve dış yazışmalarından sorumludur, aynı zamanda resmi arazi ve mülk kayıtlarını tutar."
+      },
+      {
+        "q": "Soru 8: İlk Türk-İslam devletlerinde devlet hazinesinden para çıkmadan dev bir ordu kurulmasını sağlayan, taşrada güvenliği koruyan ve üretimin sürekliliğini sağlayan toprak sisteminin adı nedir?",
+        "options": ["İkta Sistemi", "Gulam Sistemi", "Müsadere", "Vakıf Düzeni"],
+        "correct": 0,
+        "rationale": "İkta sistemi sayesinde devlet, memur ve asker maaşlarını doğrudan hazineden ödemez, toprak gelirlerini dağıtır. Bu gelir karşılığında atlı asker (Cebelü) yetiştirilir."
+      },
+      {
+        "q": "Soru 9: Karahanlılar döneminde Yusuf Has Hacib tarafından yazılan, hükümdara devlet yönetimi konusunda öğütler veren ve Türk-İslam tarihinin 'ilk siyasetnamesi' kabul edilen eser hangisidir?",
+        "options": ["Kutadgu Bilig", "Divânu Lugâti't-Türk", "Divan-ı Hikmet", "Atabetü'l-Hakayık"],
+        "correct": 0,
+        "rationale": "Kutadgu Bilig (Mutluluk Veren Bilgi), Karahanlı hükümdarı Tabgaç Buğra Han'a sunulmuş, ideal devlet düzenini ve yöneticilerin özelliklerini anlatan ilk siyasetnamedir."
+      },
+      {
+        "q": "Soru 10: Savaş esirlerinin veya satın alınan köle çocukların sarayda özel askeri ve idari eğitime tabi tutularak doğrudan sultana bağlı profesyonel bir ordu kurulması sistemine ne ad verilir?",
+        "options": ["Gulam Sistemi", "İkta Sistemi", "Cizye Sistemi", "Tımar Düzeni"],
+        "correct": 0,
+        "rationale": "Gulam sistemi, küçük yaştaki çocukların yeteneklerine göre sarayda yetiştirilmesidir. Doğrudan merkeze bağlı maaşlı askeri birlikleri (Gulamân-ı Saray) oluşturur. Osmanlı'daki devşirmenin temelidir."
+      },
+      {
+        "q": "Soru 11: Abbasi halifesini Şii Büveyhoğulları baskısından kurtardığı için halife tarafından 'Doğu'nun ve Batı'nın Sultanı' unvanı verilerek İslam dünyasının siyasi lideri ilan edilen Selçuklu hükümdarı kimdir?",
+        "options": ["Tuğrul Bey", "Alp Arslan", "Melikşah", "Sultan Sencer"],
+        "correct": 0,
+        "rationale": "1055 yılında Bağdat Seferi'ni düzenleyen Tuğrul Bey, halifeyi baskıdan kurtarmış; halife de ona siyasi liderliği simgeleyen bu efsanevi unvanı vermiştir."
+      },
+      {
+        "q": "Soru 12: Büyük Selçuklu Devleti'nin çöküşünde rol oynayan, Nizamiye medreselerinin açılmasına neden olan ve Hasan Sabbah liderliğinde yürütülen yıkıcı dini-siyasi gizli faaliyetlere ne ad verilir?",
+        "options": ["Batınilik Faaliyetleri", "Babailer İsyanı", "Şiilik Hareketi", "Muhtezile Akımı"],
+        "correct": 0,
+        "rationale": "Hasan Sabbah'ın Alamut Kalesi merkezli kurduğu haşhaşi örgütü, Şii-Batıni fikirleri yayarak Selçuklu'nun önde gelen devlet adamlarına (Nizamülmülk dahil) suikastlar düzenlemiştir."
+      },
+      {
+        "q": "Soru 13: Mısır'da kurulan ilk Türk-İslam devleti olan, 'Maristan' adı verilen gelişmiş hastaneler kurarak halka ücretsiz sağlık hizmeti veren ve sosyal devlet anlayışını uygulayan devlet hangisidir?",
+        "options": ["Tolunoğulları", "İhşidiler", "Eyyubiler", "Memlükler"],
+        "correct": 0,
+        "rationale": "Tolunoğulları (868-905), Mısır'da kurulan ilk Türk devletidir. Kurdukları Maristan adı verilen hastanelerde din ve ırk ayrımı gözetmeksizin ücretsiz ilaç ve tedavi sağlamışlardır."
+      },
+      {
+        "q": "Soru 14: Veraset sisteminde geleneksel 'Ülke hanedanın ortak malıdır' kuralını uygulamayıp, 'Emrindeki ordusu güçlü olan her Türk komutanı tahta geçebilir' kuralını getiren tek Türk devleti hangisidir?",
+        "options": ["Memlükler", "Eyyubiler", "Gazneliler", "Karahanlılar"],
+        "correct": 0,
+        "rationale": "Memlükler Devleti'nde mutlak bir hanedan anlayışı yoktur. Güçlü olan emirler/komutanlar sultanlık yapabilmiştir. Bu yüzden sık sık sultan değiştirmişlerdir."
+      },
+      {
+        "q": "Soru 15: Dünyanın ilk tam teşekküllü üniversitelerinden sayılan, Şii fâtımi propagandasına karşı sunni inancı korumak ve devlet memuru yetiştirmek amacıyla Vezir Nizamülmülk tarafından açılan kurum hangisidir?",
+        "options": ["Nizamiye Medreseleri", "Sahn-ı Seman", "Semerkand Medresesi", "Bağdat Beytülhikme"],
+        "correct": 0,
+        "rationale": "Nizamiye Medreseleri (özellikle Bağdat'taki), hem Batınilik tehlikesine karşı ideolojik/akademik mücadele yürütmek hem de Selçuklu bürokrasisine sadık memurlar yetiştirmek için kurulmuştur."
+      },
+      {
+        "q": "Soru 16: Kaşgarlı Mahmut tarafından yazılan, Araplara Türkçe'nin zenginliğini göstermek ve Türkçe öğretmek amacıyla halifeye sunulan ilk dil sözlüğü hangisidir?",
+        "options": ["Divânu Lugâti't-Türk", "Atabetü'l-Hakayık", "Muhakemetü'l-Lugateyn", "Şehname"],
+        "correct": 0,
+        "rationale": "Divânu Lugâti't-Türk (1072), Türk dillerinin ilk sözlüğüdür. Abbasi halifesi El-Muktedi Billah'a sunulmuştur ve arkasında bir Türk dünyası haritası barındırır."
+      },
+      {
+        "q": "Soru 17: Karahanlılar döneminde Edip Ahmet Yükneki tarafından yazılan, dini ve ahlaki öğütler barındıran, kelime anlamı 'Hakikatlerin Eşiği' olan ünlü Türk-İslam eseri hangisidir?",
+        "options": ["Atabetü'l-Hakayık", "Divan-ı Hikmet", "Kutadgu Bilig", "Siyasetname"],
+        "correct": 0,
+        "rationale": "Atabetü'l-Hakayık, Karahanlılar dönemi hakaniye lehçesiyle yazılmış, ahlaki erdemleri, bilginin faydasını ve İslam ahlakını anlatan didaktik bir eserdir."
+      },
+      {
+        "q": "Soru 18: 1187 yılında Hıttin Savaşı ile Haçlı ordularını bozguna uğratarak mukaddes şehir Kudüs'ü 88 yıl sonra Hristiyan işgalinden kurtaran büyük Türk İslam lideri kimdir?",
+        "options": ["Selahaddin Eyyubi", "Baybars", "Kutuz", "Alp Arslan"],
+        "correct": 0,
+        "rationale": "Eyyubiler Devleti'nin kurucusu Selahaddin Eyyubi, Hıttin Savaşı ile Kudüs'ü Haçlılardan geri alarak İslam dünyasında büyük bir saygınlık kazanmış ve 3. Haçlı Seferi'ni tetiklemiştir."
+      },
+      {
+        "q": "Soru 19: 1260 Ayn Calut ve 1277 Elbistan savaşlarıyla yenilmez olarak bilinen Moğol (İlhanlı) ordularını dünya tarihinde ilk kez askeri meydanda durduran ve mağlup eden Türk devleti hangisidir?",
+        "options": ["Memlükler", "Büyük Selçuklu", "Eyyubiler", "Harezmşahlar"],
+        "correct": 0,
+        "rationale": "Sultan Seyfeddin Kutuz ve Sultan Baybars dönemlerinde Memlükler, durdurulamaz denilen Moğolları Ayn Calut (1260) ve Elbistan (1277) savaşlarında ağır yenilgiye uğratmıştır."
+      },
+      {
+        "q": "Soru 20: Büyük Selçuklu Devleti'nin çöküş döneminde Sultan Sencer zamanında Orta Asya kökenli Karahitaylara karşı kaybedilen ve devletin yıkılmasına zemin hazırlayan 1141 tarihli savaş hangisidir?",
+        "options": ["Katvan Savaşı", "Dandanakan Savaşı", "Yassıçemen Savaşı", "Ankara Savaşı"],
+        "correct": 0,
+        "rationale": "Katvan Savaşı (1141), Büyük Selçuklu Devleti hükümdarı Sultan Sencer'in Moğol kökenli Karahitaylara yenilmesiyle sonuçlanmış ve Selçuklu'nun çöküş dönemini kesinleştirmiştir."
+      },
+      {
+        "q": "Soru 21: Türk-İslam devletlerinde hükümdarın egemenlik alametleri arasında yer alan, halife tarafından hükümdarlığın onaylandığını gösteren resmi belge veya fermana ne ad verilir?",
+        "options": ["Menşur", "Traz", "Hilat", "Gâşiye"],
+        "correct": 0,
+        "rationale": "Menşur, Abbasi halifesinin Türk hükümdarlarının tahtını onayladığını gösteren dini ve hukuki meşruiyet belgesidir."
+      },
+      {
+        "q": "Soru 22: İlk Türk-İslam devletlerinde çarşı, pazar, esnaf ve ticaret hayatını denetleyen, eksik ölçü ve tartı yapılmasını engelleyen, fiyatları kontrol eden belediye görevlisine ne ad verilir?",
+        "options": ["Muhtesip", "Subaşı", "Amil", "Hacib"],
+        "correct": 0,
+        "rationale": "Muhtesip, ticari hayatta dürüstlüğü denetleyen, bugünkü zabıta teşkilatının görevlerini yerine getiren önemli bir kamu görevlisidir."
+      },
+      {
+        "q": "Soru 23: Büyük Selçuklu Devleti'nde mali işlerden, devletin gelir ve gider hesaplarının tutulmasından sorumlu olan ve başında 'Müstevfi' unvanlı devlet adamının bulunduğu divan hangisidir?",
+        "options": ["Divan-ı İstifa", "Divan-ı Arz", "Divan-ı İşraf", "Divan-ı Tuğra"],
+        "correct": 0,
+        "rationale": "Divan-ı İstifa devletin maliye bakanlığıdır. Bu divanın başındaki en yetkili bürokrat ise Müstevfi adını alır."
+      },
+      {
+        "q": "Soru 24: İlk Türk-İslam devletlerinde hükümdar ile halk, hükümdar ile devlet daireleri arasındaki ilişkileri ve protokolü düzenleyen, sarayın en yüksek idari görevlisi kimdir?",
+        "options": ["Hâcibü'l-Hüccâb (Hacib)", "Câmedâr", "Silahtar", "Çaşnigir"],
+        "correct": 0,
+        "rationale": "Hâcibü'l-Hüccâb (Haciplerin başı), saray teşkilatında hükümdardan sonra gelen, devlet protokolünü idare eden ve elçileri kabul eden en kıdemli görevlidir."
+      },
+      {
+        "q": "Soru 25: Gazneli Mahmut'un sarayında koruma altına aldığı, 'Sarayımın en değerli hazinesidir' unvanıyla taltif ettiği, astronomi ve coğrafya alanında eserler veren dahi bilim insanı kimdir?",
+        "options": ["El-Biruni", "İbn-i Sina", "Farabi", "Harezmi"],
+        "correct": 0,
+        "rationale": "Gazneli Mahmut, El-Biruni'ye büyük değer vermiş, Asar-ül Bakiye gibi devasa eserleri yazabilmesi için sarayında onu korumuş ve bu ünlü sözü söylemiştir."
+      },
+      {
+        "q": "Soru 26: Büyük Selçuklu Devleti'nde askeri davalara örfi hukuk kapsamında bakan, ordu içindeki adalet işlerini yürütmekle görevli yargı mensubu hangisidir?",
+        "options": ["Kadıasker (Kadı-ı Leşker)", "Kadılkudat", "Emir-i Dad", "Muhtesip"],
+        "correct": 0,
+        "rationale": "Kadıasker (Kadı-ı Leşker), Selçuklu ordusundaki askeri personelin davalarına bakan, ordu disiplin ve adaletini sağlayan yargıçtır."
+      },
+      {
+        "q": "Soru 27: Karahanlılar Devleti'nde ticari yollar üzerine kurulan, hem kervanların güvenliğini sağlayan hem de sınır hatlarında askeri karakol vazifesi gören ilk kervansaray yapılarına ne ad verilir?",
+        "options": ["Ribat", "Kapan", "Bedesten", "Kümbet"],
+        "correct": 0,
+        "rationale": "Ribatlar, ilk Türk-İslam devletlerinde askeri amaçlı sınır karakolu olarak yapılmış, sınırlar genişleyince ticari kervansaray işlevi kazanmıştır."
+      },
+      {
+        "q": "Soru 28: İlk Türk-İslam devletlerinde hükümdarın içeceklerini hazırlayan, güvenliğini denetleyen ve zehirlenme riskine karşı içecekleri ilk tadan saray görevlisi kimdir?",
+        "options": ["Şarabdar / İdişçibaşı", "Çaşnigir", "Câmedâr", "Candar"],
+        "correct": 0,
+        "rationale": "Şarabdar veya İdişçibaşı, sultanın ziyafetlerindeki şerbet ve içeceklerin hazırlanmasından ve saray mahzeninin güvenliğinden sorumludur."
+      },
+      {
+        "q": "Soru 29: Kendilerini Büyük Selçuklu Devleti'nin resmi ve hukuki mirasçısı kabul eden, Moğol istilası önünden kaçarak Anadolu'ya gelen ve Moğollarla Yassıçemen Savaşı'nı yapan devlet hangisidir?",
+        "options": ["Harezmşahlar", "Karahanlılar", "Eyyubiler", "Gazneliler"],
+        "correct": 0,
+        "rationale": "Harezmşahlar, Selçuklu mirasına sahip çıkmış ancak Anadolu Selçuklu Devleti ile yaptıkları talihsiz Yassıçemen Savaşı (1230) sonucu zayıflayıp Moğol istilasına açık hale gelmişlerdir."
+      },
+      {
+        "q": "Soru 30: Türk-İslam mimarisinde anıt mezar niteliği taşıyan, altı genellikle oda veya mezar, üstü ise silindirik ya da çokgen çatıyla kapatılan özgün yapılara ne ad verilir?",
+        "options": ["Kümbet", "Külliye", "Kapan", "Arasta"],
+        "correct": 0,
+        "rationale": "Kümbetler, Selçuklu kültürünün en özgün mimari ürünleridir. Önemli devlet adamları ve din alimleri için yapılan çadır formundaki anıt mezarlardır."
+      },
+      {
+        "q": "Soru 31: Karahanlılar Devleti'nde kurulan ve tarihte 'burslu öğrencilik' sistemini ilk kez resmi olarak uygulayan yüksek eğitim kurumu hangisidir?",
+        "options": ["Semerkand Medresesi", "Bağdat Nizamiye", "Sahn-ı Seman", "Gevher Nesibe"],
+        "correct": 0,
+        "rationale": "Karahanlılar tarafından Semerkand'da açılan medreselerde öğrencilerin yeme, içme, barınma gibi ihtiyaçları karşılanmış ve tarihin ilk burslu eğitim modeli uygulanmıştır."
+      },
+      {
+        "q": "Soru 32: İlk Türk-İslam devletlerinde hükümdarın saray muhafızlığını yapan, onu korumakla görevli elit askeri sınıfa ne ad verilir?",
+        "options": ["Candar", "Câmedâr", "Alemdar", "Hacib"],
+        "correct": 0,
+        "rationale": "Candarlar, saray teşkilatında doğrudan hükümdarın ve saray binalarının can güvenliğini geceli gündüzlü koruyan muhafız birlikleridir."
+      },
+      {
+        "q": "Soru 33: Divan-ı Saltanat'a bağlı olan ve devletin iç ve dış gizli istihbarat işlerini yürüten, haberleşmeyi sağlayan alt divan hangisidir?",
+        "options": ["Divan-ı Berid", "Divan-ı İnşa", "Divan-ı İşraf", "Divan-ı Arz"],
+        "correct": 0,
+        "rationale": "Divan-ı Berid, Türk-İslam devletlerindeki posta, haberleşme ve resmi gizli istihbarat teşkilatıdır."
+      },
+      {
+        "q": "Soru 34: İlk Türk-İslam devletlerinde adalet işlerinden sorumlu olan, örfi hukukun başı kabul edilen ve hükümdardan sonra örfi davaları karara bağlayan görevli kimdir?",
+        "options": ["Emir-i Dad", "Kadılkudat", "Kadıasker", "Muhtesip"],
+        "correct": 0,
+        "rationale": "Emir-i Dad, örfi yargının başındaki yöneticidir. Adalet bakanı gibi çalışır, gerektiğinde vezirleri bile yargılama yetkisine sahiptir."
+      },
+      {
+        "q": "Soru 35: Karahanlılar Devleti'nin ikiye bölünmesinden sonra Batı Karahanlılara son veren ve Orta Asya'da büyük güç kazanan Şii karakterli hanedan hangisidir?",
+        "options": ["Harzemşahlar", "Karahitaylar", "Gazneliler", "Samanoğulları"],
+        "correct": 0,
+        "rationale": "Batı Karahanlı Devleti, 1212 yılında Harzemşahlar tarafından ortadan kaldırılmıştır."
+      },
+      {
+        "q": "Soru 36: Büyük Selçuklu Devleti'nde askeri işlerden, ordunun her türlü lojistik, maaş ve silah ihtiyacını karşılamaktan sorumlu olan divan hangisidir?",
+        "options": ["Divan-ı Arz", "Divan-ı İnşa", "Divan-ı İstifa", "Divan-ı İşraf"],
+        "correct": 0,
+        "rationale": "Divan-ı Arz (Divan-ı Ceyş), ordunun ihtiyaçlarını gören askeri divandır. Başındaki görevliye Ariz-i Ceyş denir."
+      },
+      {
+        "q": "Soru 37: Türk-İslam tasavvuf tarihinin kurucusu kabul edilen ve 'Divan-ı Hikmet' adlı eseriyle geniş kitleleri etkileyen Pir-i Türkistan unvanlı mutasavvıf kimdir?",
+        "options": ["Ahmet Yesevi", "Mevlana", "Hacı Bektaş Veli", "Yunus Emre"],
+        "correct": 0,
+        "rationale": "Hoca Ahmet Yesevi, Orta Asya'da yetiştirdiği dervişlerle Türklerin İslamlaşmasında en büyük paya sahip, ilk büyük Türk mutasavvıfıdır."
+      },
+      {
+        "q": "Soru 38: Mısır'da kurulan ve Kutsal Topraklar olan Hicaz bölgesini (Mekke-Medine) ilk kez hakimiyeti altına alan Türk devleti hangisidir?",
+        "options": ["Akşitler (İhşidiler)", "Tolunoğulları", "Eyyubiler", "Memlükler"],
+        "correct": 0,
+        "rationale": "Akşitler (İhşidiler), Muhammed bin Togaç tarafından Mısır'da kurulmuş ve Hicaz bölgesine hükmeden ilk Türk devleti unvanını almıştır."
+      },
+      {
+        "q": "Soru 39: Türk-İslam mimarisinin temel taşlarından olan, birden fazla dükkanın yan yana sıralandığı, değerli kumaş ve mücevherlerin satıldığı kapalı çarşılara ne ad verilir?",
+        "options": ["Bedesten", "Kapan", "Arasta", "Ribat"],
+        "correct": 0,
+        "rationale": "Bedestenler, şehir ticaretinin kalbi olan, kıymetli eşyaların, kumaşların ticaretinin döndüğü korunaklı kapalı çarşılardır."
+      },
+      {
+        "q": "Soru 40: Büyük Selçuklu Devleti'nde idari ve hukuki kurumların denetlenmesini yürüten, bir nevi devlet denetleme kurulu gibi çalışan divan hangisidir?",
+        "options": ["Divan-ı İşraf", "Divan-ı İstifa", "Divan-ı İnşa", "Divan-ı Arz"],
+        "correct": 0,
+        "rationale": "Divan-ı İşraf, devletin mali ve idari kurumlarını denetleyen teftiş kuruludur. Mübşrif adı verilen müfettişler bu divana bağlıdır."
+      },
+      {
+        "q": "Soru 41: Batı tıp dünyasında 'Avicenna' adıyla tanınan, 'El-Kanun fi't-Tıbb' adlı eseri Avrupa üniversitelerinde asırlarca ders kitabı olarak okutulan büyük Türk-İslam hekimi kimdir?",
+        "options": ["İbn-i Sina", "Farabi", "Zekeriya er-Razi", "Akşemseddin"],
+        "correct": 0,
+        "rationale": "İbn-i Sina, tıp ve felsefe alanındaki çalışmalarıyla dünya tarihine geçmiş bir dahidir. Kanun eseri modern tıbbın temel referanslarındandır."
+      },
+      {
+        "q": "Soru 42: İslam felsefesini Aristo mantığı çerçevesinde yorumlayan, Batı'da 'Alpharabius' olarak bilinen ve dünyada Aristoteles'ten sonra 'İkinci Öğretmen' (Muallim-i Sani) unvanını alan filozof kimdir?",
+        "options": ["Farabi", "İbn-i Rüşd", "Gazali", "Uluğ Bey"],
+        "correct": 0,
+        "rationale": "Farabi, felsefe, matematik ve müzik alanındaki dehasıyla bilinir. Pozitif bilimlerin kurucularındandır ve Muallim-i Sani unvanına sahiptir."
+      },
+      {
+        "q": "Soru 43: İlk Türk-İslam devletlerinde saray mutfağından, yemeklerin pişirilmesinden ve sultanın sofrasının güvenliğinden sorumlu olan saray görevlisi hangisidir?",
+        "options": ["Çaşnigir", "Câmedâr", "Şarabdar", "Hacib"],
+        "correct": 0,
+        "rationale": "Çaşnigir, sultanın yiyeceği yemekleri denetleyen, mutfak organizasyonunu yürüten ve zehirlenmeye karşı yemekleri tadan başaşçıdır."
+      },
+      {
+        "q": "Soru 44: Büyük Selçuklu Devleti'nde hükümdarın resmi bayrak ve sancaklarını taşımak, korumakla görevli olan saray görevlisine ne ad verilir?",
+        "options": ["Alemdar", "Silahtar", "Candar", "Câmedâr"],
+        "correct": 0,
+        "rationale": "Alemdar, savaşta ve törenlerde devletin bağımsızlık alameti olan kutsal sancağı (alem) taşımakla yükümlü güvenilir komutandır."
+      },
+      {
+        "q": "Soru 45: Karahanlılar döneminde yazılan ve kelime anlamı 'Ata yadigarı, hakikatlerin eşiği' olan Atabetü'l-Hakayık eseri hangi Karahanlı beyine sunulmuştur?",
+        "options": ["Dad Sipehsalar Muhammed Bey", "Tabgaç Buğra Han", "Satuk Buğra Han", "Sultan Sencer"],
+        "correct": 0,
+        "rationale": "Edip Ahmet Yükneki, Atabetü'l Hakayık adlı ahlaki ve edebi eserini Karahanlı emirlerinden Dad Sipehsalar Muhammed Bey'e takdim etmiştir."
+      },
+      {
+        "q": "Soru 46: Selçuklu Devleti'nde esnaf ve zanaatkarların kendi aralarında kurdukları, ticari ahlakı ve üretimi denetleyen dini-ekonomik teşkilatın temeli hangisidir?",
+        "options": ["Fütüvvet Teşkilatı", "İkta Teşkilatı", "Gulam Sistemi", "Müsadere Usulü"],
+        "correct": 0,
+        "rationale": "Fütüvvet, Selçuklularda esnaf dayanışmasını sağlayan, helal kazancı ve ahlakı savunan örgüttür. Osmanlı'daki Ahilik ve Lonca sisteminin çekirdeğidir."
+      },
+      {
+        "q": "Soru 47: İlk Türk-İslam devletlerinde şer'i mahkemelerin başında bulunan, evlenme, boşanma, miras ve vakıf davalarına bakan başyargıç kimdir?",
+        "options": ["Kadılkudat", "Emir-i Dad", "Kadıasker", "Müstevfi"],
+        "correct": 0,
+        "rationale": "Kadılkudat (Kadıların Kadısı), ülkedeki tüm adli kadıların atamasını yapan ve en yüksek şer'i mahkemeye başkanlık eden hukuk lideridir."
+      },
+      {
+        "q": "Soru 48: Büyük Selçuklu Devleti'nin resmi dil olarak Farsça'yı, bilim dili olarak Arapça'yı seçmesi aşağıdakilerden hangisine neden olmuştur?",
+        "options": ["Türkçe'nin gelişiminin yavaşlamasına ve saray ile halk arasında kopukluk yaşanmasına", "Devletin daha uzun ömürlü olmasına", "İkta sisteminin bozulmasına", "Gulam ordusunun isyan etmesine"],
+        "correct": 0,
+        "rationale": "Selçukluların İran coğrafyasında kurulması sonucu Farsça resmi dil olmuştur. Bu durum Türkçe'nin edebi gelişim hızını kesmiş, bürokrasi ile halkın dilini ayrıştırmıştır."
+      },
+      {
+        "q": "Soru 49: Tolunoğulları ve Akşitler devletlerinin kısa sürede yıkılmalarının en temel gerekçesi aşağıdakilerden hangisidir?",
+        "options": ["Yöneticilerinin Türk, halkının ise tamamen Arap kökenli olması", "İkta sistemini uygulamamaları", "Moğol istilasına maruz kalmaları", "Haçlı seferleriyle savaşmaları"],
+        "correct": 0,
+        "rationale": "Mısır'da kurulan bu devletlerin kurucu kadroları ve orduları Türk iken, üzerinde yaşadıkları tebaa Araptır. Bu etnik doku uyuşmazlığı milli bir bağ kurulmasını engellemiş ve erken yıkılmalarına neden olmuştur."
+      },
+      {
+        "q": "Soru 50: Büyük Selçuklu Devleti'nde merkezi otoritenin zayıflamasıyla birlikte Atabeylerin bulundukları eyaletlerde bağımsızlık ilan etmesi, aşağıdakilerden hangisinin kesin bir göstergesidir?",
+        "options": ["Merkeziyetçi devlet yapısının korunamadığının ve feodal parçalanmanın yaşandığının", "İkta sisteminin başarıyla tamamlandığının", "Gulam ordusunun sultana bağlılığının arttığının", "Şer'i hukukun örfi hukukun önüne geçtiğinin"],
+        "correct": 0,
+        "rationale": "Atabeylerin bağımsızlık ilan etmesi merkezi otoritenin yok olduğunu ve ülkenin feodal parçalanmaya (Zengiler, Böriler gibi atabeylikler) maruz kaldığını gösterir."
+      },
+{
+        "q": "Soru 51: Karahanlılar döneminde cami, medrese ve kervansaray gibi yapıların duvarlarını süslemek amacıyla geliştirilen, renkli taş veya fırınlanmış toprak levhaların yan yana getirilmesiyle oluşan Türk-İslam süsleme sanatı hangisidir?",
+        "options": ["Çinicilik", "Minyatür", "Hat", "Ebru"],
+        "correct": 0,
+        "rationale": "Çini sanatı, Karahanlılar ve sonrasında Büyük Selçuklular tarafından mimari yapıların iç ve dış yüzeylerini renklendirmek, estetik değer katmak amacıyla çok yoğun kullanılmıştır."
+      },
+      {
+        "q": "Soru 52: Büyük Selçuklu Devleti'nde hükümdarın av partilerini, av köpeklerini ve av kuşlarını eğitip organize etmekle görevli olan saray yöneticisine ne ad verilir?",
+        "options": ["Emir-i Şikar", "Emir-i Ahur", "Emir-i Alem", "Candar"],
+        "correct": 0,
+        "rationale": "Emir-i Şikar, Türk devlet geleneğinde hükümdarın prestij ve askeri talim faaliyeti sayılan av organizasyonlarından sorumlu yüksek rütbeli saray görevlisidir."
+      },
+      {
+        "q": "Soru 53: Gazneliler Devleti'nin çok uluslu ($Gurlu, Hintli, Afgan, Pers, Türk$) bir ordu ve halk yapısına sahip olması, aşağıdakilerden hangisi üzerinde doğrudan bir 'olumsuz' etki yaratmıştır?",
+        "options": ["Devletin uzun ömürlü olamaması ve iç isyanlarla hızla zayıflaması", "Hindistan seferlerinin başarısızlıkla sonuçlanması", "İkta sisteminin tamamen terk edilmesi", "Resmi dilin Türkçe ilan edilmesi"],
+        "correct": 0,
+        "rationale": "Orduda ve tebaada etnik birliğin olmaması, ortak bir milli şuur kurulmasını zorlaştırmış, bu da Gaznelilerin iç sarsıntılarla hızlıca parçalanmasına zemin hazırlamıştır."
+      },
+      {
+        "q": "Soru 54: İlk Türk-İslam devletlerinde gayrimüslim erkek halktan, askere gitmemeleri karşılığında ve can-mal güvenliklerinin devlet güvencesinde olması şartıyla yılda bir kez alınan vergi hangisidir?",
+        "options": ["Cizye", "Öşür", "Haraç", "Zekat"],
+        "correct": 0,
+        "rationale": "Cizye, İslam hukukuna göre askeri muafiyet vergisi olup, sadece sağlıklı ve kazanç sahibi gayrimüslim erkeklerden tahsil edilirdi."
+      },
+      {
+        "q": "Soru 55: Büyük Selçuklu Devleti'nde sınır boylarını korumak, fetih hareketlerini süreklileştirmek amacıyla uç bölgelere yerleştirilen ve merkeze bağlı olarak çalışan yarı bağımsız askeri birliklere ne ad verilir?",
+        "options": ["Uç Beylikleri / Türkmenler", "Gulamân-ı Saray", "İkta Askerleri", "Hassa Ordusu"],
+        "correct": 0,
+        "rationale": "Selçuklular, sınır güvenliğini sağlamak ve konargöçer Türkmen nüfusu askeri güce dönüştürmek için sınır hatlarında Uç Beylikleri sistemini kullanmışlardır."
+      },
+      {
+        "q": "Soru 56: Türk-İslam devletlerinde kervanların geceyi güvenle geçirmesi, hayvanların bakımı ve tüccarların ücretsiz konaklaması için Ribat ve Kervansaraylarda kurulan, ilk sigortacılık modeline benzeyen sistemin amacı nedir?",
+        "options": ["Ticareti canlandırmak ve uluslararası tüccarları ülkeye çekmek", "Gulam ordusuna yeni esir toplamak", "Tarım üretimini zorla artırmak", "Şer'i mahkemelerin sayısını azaltmak"],
+        "correct": 0,
+        "rationale": "Kervansaraylarda uğranılan zararların devlet tarafından karşılanması (ilkel sigorta), ticari yolların cazibesini ve devletin gümrük gelirlerini artırmaya yöneliktir."
+      },
+      {
+        "q": "Soru 57: Büyük Selçuklu Devleti'nde başkent dışındaki eyaletlerde örfi mahkemelerin adalet işlerini denetleyen ve doğrudan merkeze bağlı çalışan yüksek yargı bürokratı hangisidir?",
+        "options": ["Emir-i Dad", "Kadılkudat", "Subaşı", "Amil"],
+        "correct": 0,
+        "rationale": "Emir-i Dad, örfi hukukun adalet bakanı yetkisine sahip en üst yöneticisidir ve taşradaki asayiş ile adli işlerin hukuka uygunluğunu denetler."
+      },
+      {
+        "q": "Soru 58: İlk Türk-İslam devletlerinde saray teşkilatında yer alan ve hükümdarın silahlarının bakımından, korunmasından ve savaş meydanındaki kuşanma ritüellerinden sorumlu görevli kimdir?",
+        "options": ["Silahtar", "Candar", "Alemdar", "Câmedâr"],
+        "correct": 0,
+        "rationale": "Silahtar, sultanın cephaneliğinden, kişisel silahlarının muhafazasından sorumlu ve savaş anında hakanın en yakınında bulunan elit görevlidir."
+      },
+      {
+        "q": "Soru 59: Karahanlılar döneminde tıp biliminin ve eczacılığın geliştiğini gösteren, medreselerin yanında açılan ve halka şifalı bitkilerle ilaç hazırlayan ilk eczane/hastane yapılarına ne ad verilirdi?",
+        "options": ["Bimaristan / Darüşşifa", "Maristan", "Ribat", "Kümbet"],
+        "correct": 0,
+        "rationale": "Karahanlılar ve Selçuklular döneminde kurulan Bimaristanlar veya Darüşşifalar, tıp eğitiminin de uygulamalı olarak verildiği gelişmiş hastane organizasyonlarıdır."
+      },
+      {
+        "q": "Soru 60: Büyük Selçuklu Devleti'nde Melikşah döneminde Ömer Hayyam başkanlığındaki bir komisyona hazırlatılan, güneş yılı esaslı olan ve tarım vergilerinin toplanmasını düzene sokmayı amaçlayan takvim hangisidir?",
+        "options": ["Celali Takvimi", "Hicri Takvim", "Rumi Takvim", "Mali Takvim"],
+        "correct": 0,
+        "rationale": "Celali Takvimi, Sultan Melikşah'ın (Celaleddin) unvanına atfen Ömer Hayyam tarafından hazırlanan, ekonomik/mali takvim işlevli güneş yılı esaslı bir takvimdir."
+      },
+      {
+        "q": "Soru 61: Karahanlılar Devleti'nde kurulan 'Divan-ı Âli' meclisinin devlet yönetimindeki temel fonksiyonu ve yetki alanı aşağıdakilerden hangisidir?",
+        "options": ["Devletin genel yönetim işlerinin görüşüldüğü ve başında vezirin bulunduğu ana divandır", "Yalnızca askeri maaşları belirleyen meclistir", "Yabancı elçilerin yargılandığı mahkemedir", "Sadece vakıf kayıtlarını tutan bir arşiv dairesidir"],
+        "correct": 0,
+        "rationale": "Divan-ı Âli, Karahanlılarda büyük devlet işlerinin ve yürütmenin başı olan, vezirin başkanlık ettiği en yüksek idari divandır."
+      },
+      {
+        "q": "Soru 62: İlk Türk-İslam devletlerinde Müslüman çiftçilerden ürettikleri tarım ürünleri üzerinden oranında alınan şer'i vergi aşağıdakilerden hangisidir?",
+        "options": ["Öşür", "Haraç", "Cizye", "Ağıl"],
+        "correct": 0,
+        "rationale": "Öşür, Müslüman köylünün topraktan elde ettiği ürün karşılığında devlete ödediği temel şer'i vergidir; gayrimüslimlerdeki karşılığı haraçtır."
+      },
+      {
+        "q": "Soru 63: Büyük Selçuklu Devleti'nde hanedan üyeleri ve yüksek rütbeli devlet adamları için inşa edilen, üzeri konik bir külahla kapatılan çadır formundaki mimari anıt mezarlara ne ad verilir?",
+        "options": ["Kümbet", "Külliye", "Türbe", "Medrese"],
+        "correct": 0,
+        "rationale": "Kümbetler, eski Türk çadır sanatının ve geleneğinin İslam mimarisine taş duvarlarla yansıtılmış anıt mezar biçimidir."
+      },
+      {
+        "q": "Soru 64: Gazneliler Devleti hükümdarı Alp Tigin tarafından kurulan ve ismini Afganistan'ın başkentliğini yapmış olan stratejik şehrinden alan bu hanedanın yıkılmasında hangi büyük savaş etkili olmuştur?",
+        "options": ["Dandanakan Savaşı", "Pasinler Savaşı", "Katvan Savaşı", "Yassıçemen Savaşı"],
+        "correct": 0,
+        "rationale": "Gazneliler, 1040 Dandanakan Savaşı'nda Selçuklulara yenilince Hindistan bölgesine çekilmek zorunda kalmış ve yıkılış sürecine girmişlerdir."
+      },
+      {
+        "q": "Soru 65: İlk Türk-İslam devletlerinde saray mutfağında sultanın sofrasına gelecek yemeklerin lezzetini, temizliğini ve zehirlenme riskini kontrol eden görevlilerin başındaki şefe ne ad verilirdi?",
+        "options": ["Çaşnigirbaşı", "Hacib", "Câmedâr", "Şarabdar"],
+        "correct": 0,
+        "rationale": "Çaşnigirbaşı, saray mutfağının en güvenilir idarecisidir ve sultanın yiyeceği tüm yemeklerin güvenliğinden bizzat sorumludur."
+      },
+      {
+        "q": "Soru 66: Büyük Selçuklu Devleti'nde ordunun genel denetimini yapan, askeri kayıtları tutan ve eyalet askerlerinin (İkta süvarilerinin) lojistik durumunu kontrol eden 'Divan-ı Arz'ın başındaki görevliye ne unvan verilirdi?",
+        "options": ["Ariz-i Ceyş (Emir-i Arz)", "Müstevfi", "Tuğrai", "Müşrif"],
+        "correct": 0,
+        "rationale": "Ariz-i Ceyş, ordu divanının başbakanıdır ve ordunun savaşa hazırlık durumunu, maaş (Bistegani) ödemelerini koordine eder."
+      },
+      {
+        "q": "Soru 67: Mısır'da Tolunoğullarından sonra kurulan, 'İhşid' (Prens/Melik) unvanını kullanan yöneticilere sahip olan ve Hicaz bölgesine egemen olan ikinci Türk-İslam devleti hangisidir?",
+        "options": ["Akşitler (İhşidiler)", "Eyyubiler", "Memlükler", "Fatımiler"],
+        "correct": 0,
+        "rationale": "Akşitler (İhşidiler), Muhammed bin Togaç tarafından kurulan ve Kutsal Toprakları (Mekke-Medine) yönetimi altına alan ilk Türk devletidir."
+      },
+      {
+        "q": "Soru 68: İlk Türk-İslam devletlerinde vakıf arazilerinin ve kurumlarının (Cami, hastane, medrese) tüzüklerini, şartnamelerini belirleyen ve resmi vakıf sözleşmesi niteliği taşıyan hukuki belgelere ne ad verilir?",
+        "options": ["Vakfiye", "Menşur", "Yarlığ", "Berat"],
+        "correct": 0,
+        "rationale": "Vakfiye, bir vakfın hangi hayır işlerinde kullanılacağını, gelirlerinin nasıl paylaştırılacağını kadı huzurunda tescilleyen resmi hukuki senettir."
+      },
+      {
+        "q": "Soru 69: Büyük Selçuklu Devleti'nde adalet sisteminin iki ana direğinden biri olan ve kaynağını tamamen İslam dininin fıkıh kurallarından alan şer'i mahkemelerin en yüksek yargıcına ne ad verilirdi?",
+        "options": ["Kadılkudat", "Emir-i Dad", "Kadı-ı Leşker", "Muhtesip"],
+        "correct": 0,
+        "rationale": "Kadılkudat (Kadıların kadısı), başkentte oturan ve ülkedeki tüm şer'i hakimlerin (kadıların) başı ve atayıcısı olan en yüksek adli makamdır."
+      },
+      {
+        "q": "Soru 70: Karahanlılar döneminde hakaniye lehçesiyle yazılan, insana bilginin değerini, dilini korumanın önemini ve ahlaki erdemleri ayet ve hadisler ışığında anlatan 'Atabetü'l-Hakayık' adlı eserin yazarı kimdir?",
+        "options": ["Edip Ahmet Yükneki", "Yusuf Has Hacib", "Ahmet Yesevi", "Kaşgarlı Mahmut"],
+        "correct": 0,
+        "rationale": "Edip Ahmet Yükneki, 12. yüzyılın başlarında yazdığı bu didaktik ahlak eseriyle Türk-İslam edebi kültürünün geçiş dönemine muazzam bir katkı sunmuştur."
+      },
+      {
+        "q": "Soru 71: Büyük Selçuklu Devleti'nde hükümdarın seyahatlerinde, seferlerinde veya resmi törenlerinde sultanın başının üzerinde tutulan ve devlet egemenliğini simgeleyen saltanat şemsiyesine ne ad verilir?",
+        "options": ["Çetr", "Hilat", "Tuğ", "Örgin"],
+        "correct": 0,
+        "rationale": "Çetr, İslamiyet'in kabulünden sonra Türk hükümdarlık alametleri arasına giren, değerli kumaşlardan yapılan kubbe biçimli saltanat şemsiyesidir."
+      },
+      {
+        "q": "Soru 72: İlk Türk-İslam devletlerinde saray teşkilatında yer alan, devletin ve hakanın resmi törenlerde kullandığı büyük bayrak, sancak ve alemleri muhafaza etmekle görevli olan askeri memur kimdir?",
+        "options": ["Alemdar", "Silahtar", "Candar", "Hacib"],
+        "correct": 0,
+        "rationale": "Alemdar, savaş meydanında ve törenlerde devletin ve ordunun onuru sayılan sancağı (alemi) taşımak ve korumakla görevli en güvenilir komutanlardandır."
+      },
+      {
+        "q": "Soru 73: Büyük Selçuklu Devleti'nde devlet dairelerinin mali ve idari işlemlerini denetleyen, yolsuzlukları ve usulsüzlükleri teftiş eden 'Divan-ı İşraf'ın başındaki yüksek bürokrata ne ad verilir?",
+        "options": ["Müşrif-i Memalik", "Müstevfi", "Tuğrai", "Ariz"],
+        "correct": 0,
+        "rationale": "Müşrif-i Memalik, devletin teftiş kurulu başkanı gibi çalışır ve askeri konular hariç tüm devlet kurumlarını sultan adına denetler."
+      },
+      {
+        "q": "Soru 74: Karahanlılar döneminde Kaşgarlı Mahmut tarafından kaleme alınan Divânu Lugâti't-Türk adlı eserin en arkasında yer alan ve Türk boylarının yaşadığı coğrafyayı gösteren görsel materyalin tarihi önemi nedir?",
+        "options": ["İlk Türk dünyası haritası olması", "İlk askeri taktik krokisi olması", "İlk denizcilik portolanı olması", "İlk tapu kadastro planı olması"],
+        "correct": 0,
+        "rationale": "Eserin arkasındaki dairesel harita, Türk boylarının yerleşim alanlarını, Orta Asya coğrafyasını ve İpek Yolu hatlarını gösteren ilk milli Türk dünyası haritasıdır."
+      },
+      {
+        "q": "Soru 75: İlk Türk-İslam devletlerinde hükümdarın giydiği resmi kıyafetlerin, saray gardırobunun dikiminden, temizliğinden ve muhafazasından sorumlu olan saray görevlisine ne ad verilirdi?",
+        "options": ["Câmedâr", "Silahtar", "Çaşnigir", "Şarabdar"],
+        "correct": 0,
+        "rationale": "Câmedâr, sultanın giysilerini koruyan, törenlerde hakanın kıyafet protokolünü yöneten saray teşkilatının güvenilir bir memurudur."
+      },
+      {
+        "q": "Soru 76: 1230 yılında Anadolu Selçuklu Devleti ile Harezmşahlar arasında yapılan, Harezmşahlar Devleti'nin yenilerek yıkılış sürecine girmesine yol açan ve Moğolların Anadolu sınırına dayanmasına neden olan savaş hangisidir?",
+        "options": ["Yassıçemen Savaşı", "Pasinler Savaşı", "Kösedağ Savaşı", "Katvan Savaşı"],
+        "correct": 0,
+        "rationale": "Yassıçemen Savaşı, iki Türk devletini karşı karşıya getirmiş, tampon bölge olan Harezmşahlar yıkılınca Anadolu Moğol istilasına (Kösedağ'a) açık hale gelmiştir."
+      },
+      {
+        "q": "Soru 77: Türk-İslam kültüründe, ortasında bir avlu bulunan ve etrafında talebe odaları ile dersliklerin sıralandığı, dini ve pozitif bilimlerin bir arada okutulduğu yüksek eğitim mimarisine ne ad verilir?",
+        "options": ["Medrese", "Ribat", "Kümbet", "Külliye"],
+        "correct": 0,
+        "rationale": "Medreseler, Türk-İslam dünyasının üniversiteleridir. Karahanlılar, Gazneliler ve Selçuklular döneminde bilimsel uyanışın merkezi olmuşlardır."
+      },
+      {
+        "q": "Soru 78: Büyük Selçuklu Devleti'nde doğrudan sultana bağlı olan, gulamhanede yetiştirilen ve senede dört kez devletten nakit maaş ($Bistegani$) alan elit atlı muhafız ordusuna ne ad verilir?",
+        "options": ["Gulâmân-ı Saray", "İkta Askerleri", "Eyalet Askerleri", "Türkmen Süvarileri"],
+        "correct": 0,
+        "rationale": "Gulâmân-ı Saray, sarayda doğrudan hükümdarı korumakla görevli, milliyetine bakılmaksızın gulam eğitimiyle yetiştirilmiş maaşlı profesyonel merkez ordusudur."
+      },
+      {
+        "q": "Soru 79: İlk Türk-İslam devletlerinde vakıf gelirlerinin amacı dışında kullanılmasını engellemek, hayır kurumlarının tüzüklerini denetlemek amacıyla kadıların yürüttüğü hukuki denetim alanı hangisidir?",
+        "options": ["Vakıf Hukuku ve Kadılık Denetimi", "Örfi Yargı Teşkilatı", "Divan-ı Arz Kontrolü", "Muhtesip Emirleri"],
+        "correct": 0,
+        "rationale": "Vakıflar şer'i hukuka bağlı kurumlardır ve her vakfın işleyişi, gelir-gider dengesi o bölgenin resmi kadısı tarafından titizlikle denetlenirdi."
+      },
+      {
+        "q": "Soru 80: Büyük Selçuklu Devleti'nin zayıflamasıyla birlikte Suriye, Irak, Filistin ve Fars bölgelerinde kurulan; Şam Atabeyliği (Böriler) ve Musul Atabeyliği (Zengiler) gibi yapıların ortaya çıkmasının temel nedeni nedir?",
+        "options": ["Merkezi otoritenin yok olması ve veraset sistemindeki belirsizliklerin Atabeyleri cesaretlendirmesi", "İkta sisteminin tamamen millileştirilmesi", "Haçlı seferlerinin Selçuklu ordusunu tamamen yok etmesi", "Gulam sisteminin yasaklanması"],
+        "correct": 0,
+        "rationale": "Merkezdeki sultanlar zayıflayıp taht kavgaları çıkınca, şehzadeleri eğiten güçlü Atabeyler bulundukları bölgelerde bağımsız hanedanlar kurmuşlardır."
+      },
+      {
+        "q": "Soru 81: Türk-İslam edebiyatında tasavvuf akımının ilk edebi dili sayılan ve Hoca Ahmet Yesevi tarafından söylenen hikmetli şiirlerin toplandığı dev şaheser aşağıdakilerden hangisidir?",
+        "options": ["Divan-ı Hikmet", "Kutadgu Bilig", "Atabetü'l-Hakayık", "Mesnevi"],
+        "correct": 0,
+        "rationale": "Divan-ı Hikmet, Ahmet Yesevi'nin sade bir Türkçe ile yazdığı, tasavvuf ahlakını ve İslamiyet'i Türklere sevdiren ilk büyük tasavvufi eserdir."
+      },
+      {
+        "q": "Soru 82: İlk Türk-İslam devletlerinde saray binalarının, kapılarının ve sultanın şahsi çadırının asayişinden, gece-gündüz fiziki emniyetinden sorumlu olan en üst rütbeli askeri görevliye ne ad verilirdi?",
+        "options": ["Emir-i Candar", "Emir-i Ahur", "Emir-i Alem", "Hacib"],
+        "correct": 0,
+        "rationale": "Emir-i Candar, saray muhafızlarının komutanıdır. Doğrudan hakanın can güvenliğinden sorumlu olan en kritik askeri makamdır."
+      },
+      {
+        "q": "Soru 83: Büyük Selçuklu Devleti'nde devletin resmi emirlerini, fermanlarını (yarlığlarını) yazan ve altına sultanın resmi tuğrasını (mührünü) çekmekle görevli olan divan başkanı kimdir?",
+        "options": ["Tuğrai / Münşi", "Müstevfi", "Müşrif", "Ariz"],
+        "correct": 0,
+        "rationale": "Tuğrai veya Münşi, Divan-ı Tuğra'nın (İnşa) başıdır ve fermanlara hakanın resmi imzasını / tuğrasını çekme yetkisine sahip tek kişidir."
+      },
+      {
+        "q": "Soru 84: Karahanlılar Devleti'nin kurucu omurgasını oluşturan, Talas Savaşı'nda Abbasilere destek vererek Orta Asya tarihini değiştiren ve İslamiyet'i grup halinde kabul eden ilk Türk boyu hangisidir?",
+        "options": ["Karluklar", "Yağmalar", "Çiğiller", "Tölesler"],
+        "correct": 0,
+        "rationale": "Karluk Türkleri, Karahanlı Devleti'nin kurucu ve egemen boyudur. İslamiyet'i kitle halinde benimseyen ilk Türk topluluğudur."
+      },
+      {
+        "q": "Soru 85: İlk Türk-İslam devletlerinde hükümdarın atlarının bakımından, saray ahırlarının idaresinden ve süvari birliklerinin at ihtiyacının karşılanmasından sorumlu saray memuru kimdir?",
+        "options": ["Emir-i Ahur", "Emir-i Şikar", "Emir-i Alem", "Câmedâr"],
+        "correct": 0,
+        "rationale": "Emir-i Ahur, saray atlarının, seyislerin ve saltanat bineklerinin bakım ve idaresinden sorumlu yüksek rütbeli saray görevlisidir."
+      },
+      {
+        "q": "Soru 86: Büyük Selçuklu Devleti'nde askeri personelin örfi suçlarına, ordu içindeki uyuşmazlıklara bakmak amacıyla kurulan askeri mahkemenin başındaki hakime ne ad verilirdi?",
+        "options": ["Kadı-ı Leşker (Kadıasker)", "Kadılkudat", "Emir-i Dad", "Muhtesip"],
+        "correct": 0,
+        "rationale": "Kadı-ı Leşker, ordu mensuplarının davalarını karara bağlayan, askeri hukuku uygulayan kurumsal Selçuklu yargıcıdır."
+      },
+      {
+        "q": "Soru 87: Mısır'da Selahaddin Eyyubi tarafından kurulan ve Haçlı istilalarına karşı İslam dünyasını başarıyla savunan Eyyubiler Devleti'nin ordusunda yer alan Kafkas kökenli Türk askerler daha sonra hangi devleti kuracaktır?",
+        "options": ["Memlükler", "Akşitler", "Tolunoğulları", "Osmanlılar"],
+        "correct": 0,
+        "rationale": "Eyyubi ordusundaki Kıpçak ve Kafkas kökenli Memlük (köle) askerleri zamanla güçlenerek Eyyubileri yıkmış ve kendi adlarıyla Memlük Devleti'nden tahta geçmişlerdir."
+      },
+      {
+        "q": "Soru 88: İlk Türk-İslam şehir mimarisinde, aynı cins ticaret mallarının (Örn: İpek, un, yağ, pamuk) toptan satıldığı ve depolandığı büyük ticari hallere / pazarlara ne ad verilirdi?",
+        "options": ["Kapan Hanı", "Bedesten", "Arasta", "Ribat"],
+        "correct": 0,
+        "rationale": "Kapan ovaları veya Kapan hanları, şehre gelen tek cins ticari malın toplandığı, adilce tartılıp toptan esnafa dağıtıldığı hal binalarıdır. (Unkapanı ismi buradan gelir)."
+      },
+      {
+        "q": "Soru 89: Büyük Selçuklu Devleti'nde gayrimüslim tebaanın evlenme, boşanma ve miras gibi aile hukuku davalarında aşağıdakilerden hangisinin kararı esas alınırdı?",
+        "options": ["Kendi dini cemaat mahkemelerinin kuralları ve hakimleri", "Başkentteki Kadılkudat'ın mutlak emri", "Emir-i Dad'ın örfi yarlığı", "Nizamiye medresesi hocalarının kararı"],
+        "correct": 0,
+        "rationale": "İslam hukukuna göre zımmi ($gayrimüslim$) halk, aile ve şahıs hukukunda inanç özgürlüğü gereği kendi dini mahkemelerine ve liderlerine tabi bırakılmıştır."
+      },
+      {
+        "q": "Soru 90: Karahanlılar döneminde yazılan Kutadgu Bilig eseri, adaleti, devleti, akılı ve kanaati simgeleyen dört hayali karakterin karşılıklı konuşmalarına dayanır. Bu edebi üslup türü hangisidir?",
+        "options": ["Alegorik (Sembolik) Eser", "Didaktik Tarih", "Lirik Şiir", "Monografi"],
+        "correct": 0,
+        "rationale": "Kutadgu Bilig, soyut kavramları (Adalet=Kün Togdı, Mutluluk=Ay Togdı gibi) karakterize ederek anlatan dünyadaki ilk büyük alegorik siyasetnamelerdendir."
+      },
+      {
+        "q": "Soru 91: İlk Türk-İslam devletlerinde hükümdarın resmi unvanları arasında yer alan ve İslam diniyle birlikte kullanılmaya başlanan siyasi egemenlik tabiri hangisidir?",
+        "options": ["Sultan / Melik", "Kağan", "Hakan", "Yabgu"],
+        "correct": 0,
+        "rationale": "Sultan, Gazneli Mahmut'tan itibaren Türk hükümdarlarının resmi olarak kullandığı İslami ve siyasi güç unvanıdır."
+      },
+      {
+        "q": "Soru 92: Büyük Selçuklu Devleti'nde posta, resmi haberleşme ve devlet istihbarat ağını koordine eden 'Divan-ı Berid'in taşradaki atlı ulak istasyonlarına ne ad verilirdi?",
+        "options": ["Ribat / Menzil", "Kapan", "Bedesten", "Kümbet"],
+        "correct": 0,
+        "rationale": "Posta ve haberleşme hatları üzerindeki duraklara, at değiştirme ve ulak dinlenme istasyonlarına Ribat veya Menzil hatları adı verilirdi."
+      },
+      {
+        "q": "Soru 93: İlk Türk-İslam devletlerinde örfi mahkemelerin aldığı kararların töreye ve kanunlara uygunluğunu denetleyen, adalet bakanlığı gibi çalışan en yüksek örfi yargıç kimdir?",
+        "options": ["Emir-i Dad", "Kadılkudat", "Kadıasker", "Muhtesip"],
+        "correct": 0,
+        "rationale": "Emir-i Dad, örfi hukukun adli başkanıdır. Devlet düzenini koruyan davalara bakar ve haksızlık yapan büyük memurları bile cezalandırabilir."
+      },
+      {
+        "q": "Soru 94: Karahanlılar Devleti'nin resmi yazı dili olarak Türkçe'yi (Hakaniye lehçesi) seçmesi ve Uygur alfabesini kullanmaya devam etmesi aşağıdakilerden hangisinin kesin bir göstergesidir?",
+        "options": ["Milli benliklerini ve Türk kültürünü korumaya büyük önem verdiklerinin", "Arap kültürünü tamamen kopyaladıklarının", "İkita sistemini terk ettiklerinin", "Gulam ordusunu kuramadıklarının"],
+        "correct": 0,
+        "rationale": "Karahanlılar, İslamiyet'i kabul etmelerine rağmen Türk diline, alfabesine ve boy geleneklerine sadık kalarak milliyetçi bir çizgi izlemişlerdir."
+      },
+      {
+        "q": "Soru 95: İlk Türk-İslam devletlerinde hükümdarın av partilerini organize eden, av kuşlarının (doğan, şahin) bakımından ve saray av köpeklerinin idaresinden sorumlu memur kimdir?",
+        "options": ["Emir-i Şikar", "Emir-i Ahur", "Emir-i Alem", "Câmedâr"],
+        "correct": 0,
+        "rationale": "Emir-i Şikar, saray av teşkilatının başıdır ve av partilerinde sultanın güvenliğini ve protokolünü de koordine eder."
+      },
+      {
+        "q": "Soru 96: Büyük Selçuklu Devleti'nde ordu mensuplarının maaşlarına ne ad verilir ve bu maaşlar yılda kaç kez ödenirdi?",
+        "options": ["Bistegani - Yılda 4 kez", "Ulufe - Ayda 1 kez", "Cülus - Tahta çıkınca", "İkta - Her ay peşin"],
+        "correct": 0,
+        "rationale": "Selçuklularda gulam askerlerine senede 4 kez (üç ayda bir) verilen nakit askeri maaşa Bistegani adı verilir. (Osmanlı'daki karşılığı Ulufe'dir)."
+      },
+      {
+        "q": "Soru 97: Mısır'da kurulan ve Kutsal Topraklara egemen olan Eyyubiler Devleti'nin en meşhur hükümdarı olan, Kudüs fatihi unvanına sahip büyük komutan kimdir?",
+        "options": ["Selahaddin Eyyubi", "Muhammed bin Togaç", "Tolunoğlu Ahmet", "Sultan Baybars"],
+        "correct": 0,
+        "rationale": "Selahaddin Eyyubi, Eyyubiler Devleti'nin kurucusu ve Haçlıları Hıttin Savaşı ile yenerek Kudüs'ü İslam dünyasına geri kazandıran efsanevi liderdir."
+      },
+      {
+        "q": "Soru 98: İlk Türk-İslam şehirlerinde aynı meslek grubuna ait dükkanların (Örn: Bakırcılar, kuyumcular, sahaflar) bir sokak boyunca karşılıklı sıralandığı üstü açık veya kapalı çarşı mimarisine ne ad verilir?",
+        "options": ["Arasta", "Bedesten", "Kapan", "Ribat"],
+        "correct": 0,
+        "rationale": "Arastalar, genellikle bir külliyenin parçası olan, aynı zanaat koluna mensup esnafların toplandığı çarşı sokaklarıdır."
+      },
+      {
+        "q": "Soru 99: Büyük Selçuklu Devleti'nde devletin genel maliye ve muhasebe işlerini yürüten 'Divan-ı İstifa'nın başındaki bakana ne unvan verilirdi?",
+        "options": ["Müstevfi", "Tuğrai", "Müşrif", "Ariz"],
+        "correct": 0,
+        "rationale": "Müstevfi, Selçuklu hazinesinin baş sorumlusudur, günümüz maliye bakanının tüm yetki ve sorumluluklarını üstlenmiştir."
+      },
+      {
+        "q": "Soru 100: Geleneksel Türk veraset sisteminde yer alan 'Ülke hanedanın ortak malıdır' anlayışının İlk Türk-İslam devletlerinde de aynen devam etmesi en çok aşağıdakilerden hangisine neden olmuştur?",
+        "options": ["Taht kavgalarının çıkmasına ve devletlerin kısa sürede parçalanarak yıkılmasına", "Merkezi otoritenin mutlak olarak güçlenmesine", "Türkçe'nin resmi dil ilan edilmesine", "İkta sisteminin bozulmasına"],
+        "correct": 0,
+        "rationale": "Veraset sistemindeki bu belirsizlik, her hükümdar ölümünde şehzadeleri birbirine düşürmüş, iç savaşlara ve Selçuklu gibi dev imparatorlukların hızla bölünmesine yol açmıştır."
+      }
+    ]
+  }
+            ]
