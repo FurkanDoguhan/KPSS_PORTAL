@@ -56,7 +56,7 @@
     <main class="max-w-7xl mx-auto p-4 md:p-6 grid grid-cols-1 lg:grid-cols-4 gap-6">
         
         <div class="lg:col-span-1 space-y-4">
-            <div class="bg-slate-950/40 p-4 rounded-2xl border border-slate-800 h-[calc(100vh-280px)] overflow-y-auto">
+            <div class="bg-slate-950/40 p-4 rounded-2xl border border-slate-800 h-[calc(100vh-340px)] overflow-y-auto">
                 <h2 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3 px-2">Müfredat Üniteleri</h2>
                 <div id="unit-list" class="space-y-1"></div>
             </div>
@@ -73,8 +73,13 @@
                         <span id="stats-ratio" class="font-black text-emerald-400 text-sm">0%</span>
                     </div>
                 </div>
+                
                 <button onclick="openNotebookView()" class="w-full py-2 bg-indigo-950/40 hover:bg-indigo-900/40 border border-indigo-900/60 text-indigo-300 font-bold text-[11px] rounded-xl transition-all flex justify-center items-center gap-1.5">
                     <i class="fa-solid fa-book-bookmark"></i> Furkan'ın Hata Defteri (<span id="txt-notebook-count">0</span>)
+                </button>
+                
+                <button onclick="openFeaturesModal()" class="w-full py-2 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-amber-400 font-bold text-[11px] rounded-xl transition-all flex justify-center items-center gap-1.5">
+                    <i class="fa-solid fa-circle-info text-amber-500"></i> Portal Özellikleri Rehberi
                 </button>
             </div>
         </div>
@@ -225,6 +230,23 @@
         </div>
     </main>
 
+    <div id="modal-features" class="fixed inset-0 bg-slate-950/80 backdrop-blur-xs z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-slate-900 border-2 border-amber-500/30 rounded-2xl max-w-2xl w-full h-[80vh] flex flex-col overflow-hidden shadow-2xl">
+            <div class="p-4 bg-slate-950 border-b border-slate-800 flex justify-between items-center">
+                <div class="flex items-center gap-2 text-amber-400 font-bold text-sm">
+                    <i class="fa-solid fa-circle-info"></i> KPSS Ultra Sistem Özellikleri Rehberi (v6.0)
+                </div>
+                <button onclick="closeFeaturesModal()" class="text-slate-400 hover:text-white transition-colors text-sm"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="p-6 overflow-y-auto flex-1 font-mono text-xs text-slate-300 leading-relaxed whitespace-pre-wrap selection:bg-amber-500 selection:text-slate-950" id="txt-features-content">
+                Sistem dosyası yükleniyor...
+            </div>
+            <div class="p-3 bg-slate-950 border-t border-slate-800 flex justify-end">
+                <button onclick="closeFeaturesModal()" class="px-4 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold rounded-lg transition-all">Kapat</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         let currentLesson = "tarih";
         let currentData = [];
@@ -260,6 +282,26 @@
             const ratio = globalStats.solved > 0 ? Math.round((globalStats.correct / globalStats.solved) * 100) : 0;
             document.getElementById("stats-ratio").textContent = `${ratio}%`;
             document.getElementById("txt-notebook-count").textContent = kpssNotebook.length;
+        }
+
+        // YENİ: TXT Dosyasını Dinamik Okuyan Modal Fonksiyonları
+        function openFeaturesModal() {
+            document.getElementById("modal-features").classList.remove("hidden");
+            fetch('kpss_portal_ozellikler.txt')
+                .then(response => {
+                    if(!response.ok) throw new Error("Dosya bulunamadı");
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById("txt-features-content").textContent = data;
+                })
+                .catch(err => {
+                    document.getElementById("txt-features-content").textContent = "Hata: 'kpss_portal_ozellikler.txt' dosyası GitHub deposunun ana dizininde bulunamadı.\nLütfen oluşturulan TXT dosyasını deponuza index.html ile yan yana olacak şekilde yükleyin.";
+                });
+        }
+
+        function closeFeaturesModal() {
+            document.getElementById("modal-features").classList.add("hidden");
         }
 
         function toggleAudio() {
