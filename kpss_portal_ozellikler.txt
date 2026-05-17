@@ -1,0 +1,85 @@
+======================================================================
+KPSS ULTRA ENTEGRE PORTAL v6.0 - YAPAY ZEKA DERSHANESİ
+SİSTEM ÖZELLİKLERİ VE KULLANIM REHBERİ
+======================================================================
+
+Furkan'ın KPSS Hazırlık Süreci İçin Özel Olarak Tasarlanmış, 
+Yapay Zeka Destekli, Dinamik ve Modüler Eğitim Otomasyonu.
+
+----------------------------------------------------------------------
+1. TEKNİK MİMARİ VE MODÜLER YAPI (3-DOSYA SİSTEMİ)
+----------------------------------------------------------------------
+• Tam Bağımsızlık ve Esneklik: Sistem, kod motoru ve veritabanlarını 
+  birbirinden tamamen ayıran modüler bir mimariye sahiptir.
+• index.html: Tüm görsel arayüzü, animasyonları, ses motorunu, 
+  istatistik hesaplayıcılarını ve çalışma mantığını barındıran ana motor.
+• tarih_db.json: Tarih dersine ait tüm müfredat ünitelerini, flaş kart 
+  kazanımlarını ve ÖSYM tarzı çoktan seçmeli soruları barındıran veri havuzu.
+• cografya_db.json: Coğrafya dersine ait tüm üniteleri ve coğrafi 
+  analiz sorularını barındıran veri havuzu.
+• Performans Avantajı: Dosyaların ayrılması sayesinde veri eklenirken 
+  ana kod yapısı bozulmaz, çökme yaşanmaz ve yükleme hızları maksimize edilir.
+
+----------------------------------------------------------------------
+2. SESLİ ASİSTAN MOTORU (AKILLI SESLENDİRME)
+----------------------------------------------------------------------
+• İnteraktif Öğrenme: "Sesli Asistan" butonu aktif edildiğinde, sistem 
+  ekrandaki tüm soru metinlerini ve flaş kart cevaplarını sesli okur.
+• Web Speech API Entegrasyonu: Tamamen yerel, tarayıcı tabanlı Türkçe (tr-TR) 
+  ses sentezleyici motoru kullanır; harici internet paketlerine ihtiyaç duymaz.
+• Dinamik Çözüm Dinleme: Soru bankası modülünde bir soru çözüldükten sonra, 
+  "Akademik Çözüm Rehberi" başlığı altındaki detaylı çözüm metni tek bir 
+  tıklamayla sesli olarak dinlenebilir.
+
+----------------------------------------------------------------------
+3. YAPAY ZEKA DESTEKLİ HATA ODAKLI ÇALIŞMA MOTORU (AI MEMORY)
+----------------------------------------------------------------------
+• Akıllı Hafıza (Local Storage): Furkan'ın yanlış çözdüğü tüm soruların 
+  kök analizi, kavramsal etiketleri ve akademik çözümleri tarayıcı hafızasına 
+  (#KutAnlayışı, #BakıEtkisi vb.) anlık olarak kaydedilir.
+• Soru Önceliklendirme: Bir modüle girildiğinde, yapay zeka hafızası 
+  devreye girer ve geçmişte yanlış yapılan kavramlarla ilgili soruları 
+  "Hata Odaklı" (#Focus Badge) etiketiyle listenin en başına taşır.
+• ÖSYM Müfredat Analiz Raporu: Test bittiğinde dinamik bir rapor üretilir. 
+  Eksik saptanan konular listelenir ve bu eksiklerden yola çıkarak 
+  "AI Hafıza Flaş Kartları" otomatik olarak oluşturulur.
+
+----------------------------------------------------------------------
+4. AKILLI SORU BANKASI VE MODÜLER GRUPLAMA
+----------------------------------------------------------------------
+• 20'şerli Soru Grupları (Modüller): Her ünitenin soru havuzu karmaşa 
+  yaratmaması adına otomatik olarak 20'şer soruluk kompakt modüllere bölünür.
+• Akıllı Soru Tipi Filtresi: Olumsuz köklü ÖSYM sorularını ("değildir", 
+  "olmaz", "yanlıştır", "beklenmez") tek tıkla süzen filtreleme sistemi mevcuttur.
+• ÖSYM Zorluk Derecesi Yıldızları: Soru içerisindeki anahtar kelimelere göre 
+  (Kut, Bakı, Enlem, Töre vb.) akademik zorluk derecesi 1'den 5'e kadar 
+  yıldızlarla dinamik olarak hesaplanır ve ekranda parlar.
+• Canlı İlerleme Çubuğu: Çözülen soru miktarına göre dolan anlık ilerleme barı.
+
+----------------------------------------------------------------------
+5. ÇİFT YÖNLÜ FLAŞ KART MOTORU (CARDS VIEW)
+----------------------------------------------------------------------
+• ÖSYM Analitik Yanıtları: Kartın ön yüzünde net kazanım tanımı sorulurken, 
+  tıklandığında 3D animasyonla dönen arka yüzde akademik ÖSYM cevabı yer alır.
+• Klavye ve Dokunmatik Dostu: Sağ/sol butonları veya tıklama hareketleriyle 
+  kartlar arası geçiş anında sağlanır, akıcılık korunur.
+
+----------------------------------------------------------------------
+6. FURKAN'IN ÖZEL HATA DEFTERİ (MY NOTEBOOK)
+----------------------------------------------------------------------
+• Manuel Kayıt İmkanı: Soru çözerken çok beğenilen veya tekrar edilmek 
+  istenen herhangi bir soru, "Deftere Ekle" butonuyla Furkan'ın özel 
+  hata defterine kalıcı olarak kaydedilir.
+• Bağımsız İnceleme Ekranı: Sol paneldeki buton yardımıyla test ortamından 
+  çıkılarak kaydedilen tüm hatalı sorular, doğru şıkları ve çözümleriyle 
+  birlikte listelenebilir, analiz edildikten sonra defterden silinebilir.
+
+----------------------------------------------------------------------
+7. POMODORO ÇALIŞMA SAYAÇI VE GENEL İSTATİSTİK PANELİ
+----------------------------------------------------------------------
+• Odaklanma Yönetimi: Sağ üst köşede yer alan 25 dakikalık akademik 
+  Pomodoro sayacı ile çalışma ve mola süreleri disipline edilir.
+• Canlı Başarı Takibi: Sol panelde, sistem ilk açıldığı andan itibaren 
+  çözülen toplam soru sayısı ve Furkan'ın genel doğru cevap oranı 
+  yüzdesel olarak anlık hesaplanıp gösterilir.
+======================================================================
