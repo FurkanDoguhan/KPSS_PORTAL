@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KPSS Ultra Entegre Portal v14.0 - Ders Notu Entegre</title>
+    <title>KPSS Ultra Entegre Portal v15.0 - Butonsuz Otomatik Sürüm</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -35,7 +35,7 @@
             <div class="bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 p-2 rounded-xl font-black text-lg shadow-lg">KPSS</div>
             <div>
                 <h1 class="text-base font-bold text-white tracking-wide">Yüksek Kapasiteli Eğitim Portalı</h1>
-                <p class="text-xs text-slate-400">Yapısal Güvence & ÖSYM Bilgi Notu Motoru (v14.0)</p>
+                <p class="text-xs text-slate-400">Butonsuz Otomatik Ders Notu Birleştirme (v15.0)</p>
             </div>
         </div>
         
@@ -178,27 +178,15 @@
 
                     <div id="quiz-options-box" class="space-y-2.5"></div>
                     
-                    <div id="box-rationale" class="p-4 bg-slate-900 border border-slate-800 rounded-xl hidden space-y-3">
-                        <div class="flex justify-between items-center border-b border-slate-800 pb-1.5">
-                            <h4 class="text-xs font-bold text-amber-400 flex items-center gap-1.5"><i class="fa-solid fa-lightbulb"></i> Çözüm Rehberi:</h4>
-                            <button onclick="openNoteFromTag(document.getElementById('lbl-question-tag').textContent)" class="text-[10px] bg-emerald-950 border border-emerald-800 text-emerald-400 px-3 py-1 rounded-md font-black hover:text-white cursor-pointer transition-all">
-                                <i class="fa-solid fa-graduation-cap"></i> ÖSYM Bilgi Notunu Aç
-                            </button>
+                    <div id="box-rationale" class="p-4 bg-slate-900 border border-slate-800 rounded-xl hidden space-y-4">
+                        <div>
+                            <h4 class="text-xs font-bold text-amber-400 flex items-center gap-1.5 border-b border-slate-800 pb-1.5"><i class="fa-solid fa-lightbulb"></i> Soru Çözüm Açıklaması:</h4>
+                            <p id="txt-quiz-rationale" class="text-xs text-slate-300 leading-relaxed mt-1.5"></p>
                         </div>
-                        <p id="txt-quiz-rationale" class="text-xs text-slate-300 leading-relaxed"></p>
-                    </div>
-
-                    <div id="box-embedded-note" class="p-4 bg-slate-950 border border-indigo-900/50 rounded-xl hidden space-y-2">
-                        <div class="flex justify-between items-center border-b border-slate-900 pb-1">
-                            <span class="text-xs font-black text-indigo-400 uppercase tracking-wider"><i class="fa-solid fa-book-open"></i> ÖSYM Detaylı Konu Anlatım Kitapçığı</span>
-                            <button onclick="document.getElementById('box-embedded-note').classList.add('hidden')" class="text-slate-500 hover:text-slate-300 text-xs cursor-pointer"><i class="fa-solid fa-minus"></i> Gizle</button>
+                        <div class="pt-3 border-t border-slate-800/60">
+                            <h5 class="text-xs font-black text-emerald-400 flex items-center gap-1.5"><i class="fa-solid fa-graduation-cap"></i> ÖSYM Derin Müfredat Bilgi Notu:</h5>
+                            <p id="txt-quiz-combined-note" class="text-xs text-slate-400 leading-relaxed mt-2 whitespace-pre-wrap bg-slate-950 p-3 rounded-xl border border-slate-900"></p>
                         </div>
-                        <p id="txt-embedded-note-html" class="text-xs text-slate-300 leading-relaxed whitespace-pre-wrap"></p>
-                    </div>
-
-                    <div class="flex justify-between pt-4 border-t border-slate-900">
-                        <button onclick="resetQuiz()" class="text-xs font-bold text-slate-500 hover:text-slate-300 cursor-pointer">Sıfırla</button>
-                        <button onclick="nextQuestion()" class="px-4 py-2 bg-slate-900 border border-slate-800 hover:bg-slate-800 rounded-xl text-xs font-bold flex items-center gap-2 cursor-pointer">Sonraki Soru <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
                     </div>
                 </div>
             </div>
@@ -236,33 +224,8 @@
             document.getElementById("txt-notebook-count").textContent = kpssNotebook.length;
         }
 
-        // HARİCİ DERS NOTU VERİTABANINDAN VERİ ÇEKEN ENTEGRE MOTOR
-        function openNoteFromTag(tag) {
-            let pureTag = tag.replace("#", "").trim();
-            // Derse göre not db seçimini doğrula
-            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
-            
-            let targetContent = null;
-            activeNoteDb.forEach(box => {
-                if(box.kavramlar && box.kavramlar[pureTag]) {
-                    targetContent = box.kavramlar[pureTag];
-                }
-            });
-
-            const embedPanel = document.getElementById("box-embedded-note");
-            const embedText = document.getElementById("txt-embedded-note-html");
-
-            if(targetContent) {
-                embedPanel.classList.remove("hidden");
-                embedText.innerHTML = targetContent;
-                embedPanel.scrollIntoView({ behavior: 'smooth' });
-            } else {
-                alert(`ℹ️ #${pureTag} etiketi için ek ders notu özeti henüz yazılmamış veya veritabanı dosyası eksik.`);
-            }
-        }
-
         function openAnalysisCenter() {
-            document.getElementById("view-cards").classList.add("hidden"); document.getElementById("view-quiz").classList.add("hidden"); document.getElementById("view-notebook").classList.add("hidden"); document.getElementById("box-embedded-note").classList.add("hidden");
+            document.getElementById("view-cards").classList.add("hidden"); document.getElementById("view-quiz").classList.add("hidden"); document.getElementById("view-notebook").classList.add("hidden");
             document.getElementById("box-top-navbar").classList.add("hidden");
             document.getElementById("view-analysis-center").classList.remove("hidden");
             
@@ -280,9 +243,9 @@
             }
             document.getElementById("btn-start-tarama").classList.remove("opacity-40", "pointer-events-none");
             sortedWorst.forEach(tag => {
-                worstBox.innerHTML += `<div class="flex justify-between items-center p-2.5 bg-slate-900 rounded-xl text-xs mb-2"><span>${tag}</span><span class="text-rose-400 font-bold bg-rose-950/30 px-2 py-0.5 rounded">${hiyerarşi[tag]} Hata</span></div>`;
+                worstBox.innerHTML += `<div class="flex justify-between items-center p-2.5 bg-slate-950/60 rounded-xl text-xs mb-2"><span>${tag}</span><span class="text-rose-400 font-bold bg-rose-950/30 px-2 py-0.5 rounded">${hiyerarşi[tag]} Hata</span></div>`;
             });
-            adviceText.textContent = `Furkan, analizlerime göre en çok takıldığın alan ${sortedWorst[0]} konusu. Yukarıdaki butona basarak tarama başlatabilirsin.`;
+            adviceText.textContent = `Furkan, analizlerime göre en çok takıldığın alan ${sortedWorst[0]} konusu. Yukarıdaki butona basarak sarmal tarama başlatabilirsin.`;
         }
 
         function startReviewTaramaTest() {
@@ -303,7 +266,6 @@
             
             document.getElementById("view-notebook").classList.add("hidden");
             document.getElementById("view-analysis-center").classList.add("hidden");
-            document.getElementById("box-embedded-note").classList.add("hidden");
             document.getElementById("box-top-navbar").classList.remove("hidden");
             
             document.getElementById("btn-tarih").className = lesson === 'tarih' ? "px-5 py-2 rounded-lg font-bold text-xs uppercase bg-amber-500 text-slate-950 shadow-sm cursor-pointer" : "px-5 py-2 rounded-lg font-bold text-xs uppercase text-slate-400 hover:text-slate-200 cursor-pointer";
@@ -320,7 +282,7 @@
             currentData.forEach((item, index) => {
                 const btn = document.createElement("button");
                 btn.className = `w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold flex justify-between items-center transition-all cursor-pointer ${index === activeUnitIdx && !isTaramaTestMode ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-400 hover:bg-slate-900'}`;
-                btn.onclick = () => { isTaramaTestMode = false; activeUnitIdx = index; cardIdx = 0; quizIdx = 0; score = 0; document.getElementById("view-notebook").classList.add("hidden"); document.getElementById("view-analysis-center").classList.add("hidden"); document.getElementById("box-embedded-note").classList.add("hidden"); buildUnitList(); buildGroupSelector(); renderAll(); };
+                btn.onclick = () => { isTaramaTestMode = false; activeUnitIdx = index; cardIdx = 0; quizIdx = 0; score = 0; document.getElementById("view-notebook").classList.add("hidden"); document.getElementById("view-analysis-center").classList.add("hidden"); buildUnitList(); buildGroupSelector(); renderAll(); };
                 btn.innerHTML = `<span class="truncate pr-2">${item.unite}</span><i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>`;
                 container.appendChild(btn);
             });
@@ -348,7 +310,7 @@
         }
 
         function switchMode(mode) {
-            currentMode = mode; document.getElementById("view-notebook").classList.add("hidden"); document.getElementById("view-analysis-center").classList.add("hidden"); document.getElementById("box-top-navbar").classList.remove("hidden"); document.getElementById("box-embedded-note").classList.add("hidden");
+            currentMode = mode; document.getElementById("view-notebook").classList.add("hidden"); document.getElementById("view-analysis-center").classList.add("hidden"); document.getElementById("box-top-navbar").classList.remove("hidden");
             if(mode === 'cards') {
                 isTaramaTestMode = false; document.getElementById("view-cards").classList.remove("hidden"); document.getElementById("view-quiz").classList.add("hidden"); document.getElementById("box-group-selector").classList.add("hidden");
                 buildUnitList();
@@ -366,7 +328,7 @@
         }
 
         function renderQuiz() {
-            document.getElementById("box-rationale").classList.add("hidden"); document.getElementById("box-embedded-note").classList.add("hidden"); answered = false;
+            document.getElementById("box-rationale").classList.add("hidden"); answered = false;
             if(activeGroupQuestions.length === 0) { document.getElementById("txt-quiz-q").textContent = "Soru bulunamadı."; document.getElementById("quiz-options-box").innerHTML = ""; return; }
             
             const activeQ = activeGroupQuestions[quizIdx];
@@ -386,7 +348,7 @@
             const starBox = document.getElementById("box-difficulty-stars"); starBox.innerHTML = "";
             for(let i=0; i<5; i++) { starBox.innerHTML += `<i class="fa-solid fa-star ${i<3?'text-amber-500':'text-slate-700'}"></i>`; }
 
-            // v12.0 Sarsılmaz Hatasız Şık Döngüsü (Tamamen Korundu)
+            // v12.0 Sarsılmaz Şık Yapısı (Aynen Korundu)
             const optionsBox = document.getElementById("quiz-options-box"); optionsBox.innerHTML = "";
             activeQ.options.forEach((opt, idx) => {
                 const btn = document.createElement("button");
@@ -410,12 +372,28 @@
             if(selected === activeQ.correct) { 
                 globalStats.correct++; score++; 
             } else {
+                // OTOMATİK ARKA PLAN HATA DEFTERİ KAYDI
                 if(!kpssNotebook.some(n => n.q === activeQ.q.replace("[TARAMA] ", ""))) {
                     kpssNotebook.push({ lesson: currentLesson, unit: isTaramaTestMode ? "AI Tarama Kampı" : currentData[activeUnitIdx]?.unite || "Genel", q: activeQ.q.replace("[TARAMA] ", ""), options: activeQ.options, correct: activeQ.correct, rationale: activeQ.rationale, tag: tagStr });
                 }
             }
             saveStateToStorage();
+            
+            // ÇÖZÜM REHBERİNİ DOLDURMA
             document.getElementById("txt-quiz-rationale").innerHTML = activeQ.rationale;
+            
+            // ARKA PLANDA BUTONSUZ DERS NOTU ÇEKME VE BİRLEŞTİRME DÖNGÜSÜ (YENİ)
+            let pureTag = tagStr.replace("#", "").trim();
+            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
+            let foundText = "Bu konu başlığına ait ek ÖSYM müfredat notu henüz tanımlanmamış.";
+            
+            activeNoteDb.forEach(box => {
+                if(box.kavramlar && box.kavramlar[pureTag]) {
+                    foundText = box.kavramlar[pureTag];
+                }
+            });
+            
+            document.getElementById("txt-quiz-combined-note").innerHTML = foundText;
             document.getElementById("box-rationale").classList.remove("hidden");
         }
 
@@ -423,14 +401,14 @@
         function resetQuiz() { quizIdx = 0; score = 0; answered = false; renderQuiz(); }
 
         function openNotebookView() {
-            document.getElementById("view-cards").classList.add("hidden"); document.getElementById("view-quiz").classList.add("hidden"); document.getElementById("view-analysis-center").classList.add("hidden"); document.getElementById("box-embedded-note").classList.add("hidden");
+            document.getElementById("view-cards").classList.add("hidden"); document.getElementById("view-quiz").classList.add("hidden"); document.getElementById("view-analysis-center").classList.add("hidden");
             document.getElementById("box-top-navbar").classList.add("hidden");
             const notebookView = document.getElementById("view-notebook"); notebookView.classList.remove("hidden");
             const listContainer = document.getElementById("box-notebook-list"); listContainer.innerHTML = "";
             let filtered = kpssNotebook.filter(n => n.lesson === currentLesson);
             if(filtered.length === 0) { listContainer.innerHTML = `<p class="text-xs text-slate-500 text-center py-8">Hata defteriniz boş.</p>`; return; }
             filtered.forEach(item => {
-                listContainer.innerHTML += `<div class="p-5 bg-slate-900 border border-slate-800 rounded-xl space-y-2 text-xs print-card"><div class="flex justify-between text-[10px] text-slate-500 border-b border-slate-800 pb-1"><span>${item.unit}</span><button onclick="deleteFromNotebook('${item.q}')" class="text-rose-400 no-print cursor-pointer">Sil</button></div><p class="font-bold text-slate-200 text-sm leading-relaxed">${item.q}</p><p class="text-emerald-400 font-bold">Cevap: ${item.options[item.correct]}</p><p class="text-slate-400 mt-1 leading-relaxed">${item.rationale}</p></div>`;
+                listContainer.innerHTML += `<div class="p-5 bg-slate-900 border border-slate-800 rounded-xl space-y-2 text-xs print-card"><div class="flex justify-between text-[10px] text-slate-500 border-b border-slate-800 pb-1"><span>${item.unit} (${item.tag})</span><button onclick="deleteFromNotebook('${item.q}')" class="text-rose-400 no-print cursor-pointer">Sil</button></div><p class="font-bold text-slate-200 text-sm leading-relaxed">${item.q}</p><p class="text-emerald-400 font-bold">Cevap: ${item.options[item.correct]}</p><p class="text-slate-400 mt-1 leading-relaxed">${item.rationale}</p></div>`;
             });
         }
         function deleteFromNotebook(q) { kpssNotebook = kpssNotebook.filter(n => n.q !== q); saveStateToStorage(); openNotebookView(); }
@@ -439,7 +417,7 @@
         function nextCard() { cardIdx = (cardIdx < currentData[activeUnitIdx].cards.length - 1) ? cardIdx + 1 : 0; renderAll(); }
         function prevCard() { cardIdx = (cardIdx > 0) ? cardIdx - 1 : currentData[activeUnitIdx].cards.length - 1; renderAll(); }
 
-        // MÜKEMMEL DOM VE DB OKUMA BAĞLANTISI (v12.0 GÜVENCESİ)
+        // SARSILMAZ ASENKRON v12.0 BAĞLANTI SİGORTASI
         document.addEventListener("DOMContentLoaded", () => {
             updateSidebarStats();
             let checkDB = setInterval(() => {
