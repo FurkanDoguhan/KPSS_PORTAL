@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KPSS Ultra Entegre Portal v7.2 - Çapraz Şık Analiz Sürümü</title>
+    <title>KPSS Ultra Entegre Portal v8.0 - Analiz Merkezi Sürümü</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -21,20 +21,19 @@
             #view-notebook, #view-notebook * { visibility: visible; }
             #view-notebook { position: absolute; left: 0; top: 0; width: 100%; }
             .no-print { display: none !important; }
-            .print-card { border: 1px solid #ccc !important; padding: 15px !important; margin-bottom: 15px !important; page-break-inside: avoid; }
         }
     </style>
     <script src="tarih_db.json"></script>
     <script src="cografya_db.json"></script>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans antialiased transition-colors duration-300">
+<body class="bg-slate-900 text-slate-100 font-sans antialiased transition-colors duration-300 selection:bg-indigo-500 selection:text-white">
 
     <header class="bg-slate-950 border-b border-slate-800 sticky top-0 z-50 px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
         <div class="flex items-center gap-3">
             <div class="bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 p-2 rounded-xl font-black text-lg shadow-lg">KPSS</div>
             <div>
                 <h1 class="text-base font-bold text-white tracking-wide">Yüksek Kapasiteli Eğitim Portalı</h1>
-                <p class="text-xs text-slate-400">Çapraz Şık Açıklama & Detaylı PDF Motoru (v7.2)</p>
+                <p class="text-xs text-slate-400">Yapay Zeka Analiz Merkezi & Sarmal Tarama Motoru (v8.0)</p>
             </div>
         </div>
         
@@ -47,10 +46,11 @@
                 <span class="text-rose-400"><i class="fa-solid fa-clock-rotate-left animate-pulse"></i> POMODORO:</span>
                 <span id="txt-timer" class="font-mono text-white text-sm">25:00</span>
                 <button onclick="toggleTimer()" id="btn-timer-control" class="text-emerald-400 hover:text-emerald-300 ml-1"><i class="fa-solid fa-play"></i></button>
+                <button onclick="resetTimer()" class="text-slate-500 hover:text-slate-400"><i class="fa-solid fa-rotate-right"></i></button>
             </div>
 
             <div class="flex bg-slate-900 p-1 rounded-xl border border-slate-800">
-                <button onclick="switchLesson('tarih')" id="btn-tarih" class="px-5 py-2 rounded-lg font-bold text-xs uppercase tracking-wider transition-all bg-amber-500 text-slate-950">Tarih</button>
+                <button onclick="switchLesson('tarih')" id="btn-tarih" class="px-5 py-2 rounded-lg font-bold text-xs uppercase tracking-wider transition-all bg-amber-500 text-slate-950 shadow-sm">Tarih</button>
                 <button onclick="switchLesson('cografya')" id="btn-cografya" class="px-5 py-2 rounded-lg font-bold text-xs uppercase tracking-wider transition-all text-slate-400 hover:text-slate-200">Coğrafya</button>
             </div>
         </div>
@@ -59,59 +59,86 @@
     <main class="max-w-7xl mx-auto p-4 md:p-6 grid grid-cols-1 lg:grid-cols-4 gap-6">
         
         <div class="lg:col-span-1 space-y-4">
-            <div id="box-ai-guider" class="bg-slate-950 border border-rose-900/40 p-4 rounded-2xl space-y-2 hidden">
-                <div class="text-[10px] font-black text-rose-400 uppercase tracking-widest flex items-center gap-1">
-                    <i class="fa-solid fa-triangle-exclamation animate-pulse"></i> AI Kritik Eksik Uyarısı
-                </div>
-                <p class="text-[11px] text-slate-300">Geçmişte takıldığın kavramlar listesi:</p>
-                <div id="ai-missed-badges-container" class="flex flex-wrap gap-1 pt-1"></div>
-            </div>
-
-            <div class="bg-slate-950/40 p-4 rounded-2xl border border-slate-800 h-[calc(100vh-340px)] overflow-y-auto">
-                <h2 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3 px-2">Üniteler</h2>
+            
+            <div class="bg-slate-950/40 p-4 rounded-2xl border border-slate-800 h-[calc(100vh-380px)] overflow-y-auto">
+                <h2 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3 px-2">Müfredat Üniteleri</h2>
                 <div id="unit-list" class="space-y-1"></div>
             </div>
 
             <div class="bg-slate-950 border border-slate-800 p-4 rounded-2xl space-y-2">
-                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider"><i class="fa-solid fa-chart-column text-indigo-400 mr-1"></i> Başarı İzleme</h3>
-                <div class="grid grid-cols-2 gap-2 text-center text-xs">
-                    <div class="bg-slate-900/60 p-2 rounded-xl border border-slate-800/40">
-                        <span class="text-slate-500 block text-[10px]">Toplam Çözülen</span>
-                        <span id="stats-total" class="font-black text-white text-sm">0</span>
-                    </div>
-                    <div class="bg-slate-900/60 p-2 rounded-xl border border-slate-800/40">
-                        <span class="text-slate-500 block text-[10px]">Doğru Oranı</span>
-                        <span id="stats-ratio" class="font-black text-emerald-400 text-sm">0%</span>
-                    </div>
-                </div>
+                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider"><i class="fa-solid fa-folder-tree text-indigo-400 mr-1"></i> Kontrol İstasyonu</h3>
                 
-                <button onclick="openNotebookView()" class="w-full py-2 bg-indigo-950/40 hover:bg-indigo-900/40 border border-indigo-900/60 text-indigo-300 font-bold text-[11px] rounded-xl flex justify-center items-center gap-1.5">
-                    <i class="fa-solid fa-book-bookmark"></i> Furkan'ın Hata Defteri (<span id="txt-notebook-count">0</span>)
+                <button onclick="openNotebookView()" class="w-full py-2 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 font-bold text-[11px] rounded-xl transition-all flex justify-start items-center px-4 gap-2.5">
+                    <i class="fa-solid fa-book-bookmark text-indigo-400"></i> Furkan'ın Hata Defteri (<span id="txt-notebook-count">0</span>)
+                </button>
+                
+                <button onclick="openAnalysisCenter()" class="w-full py-2 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 font-bold text-[11px] rounded-xl transition-all flex justify-start items-center px-4 gap-2.5">
+                    <i class="fa-solid fa-chart-pie text-amber-500"></i> AI Analiz Merkezi & Raporlar
+                </button>
+
+                <button onclick="openFeaturesModal()" class="w-full py-2 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-400 font-bold text-[11px] rounded-xl transition-all flex justify-start items-center px-4 gap-2.5">
+                    <i class="fa-solid fa-circle-info text-blue-400"></i> Sistem Özellikleri Rehberi
                 </button>
             </div>
         </div>
 
         <div class="lg:col-span-3 space-y-6">
             
-            <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-3">
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                    <h2 id="txt-active-unit" class="text-sm font-black text-white truncate max-w-[60%]">Ünite Yükleniyor...</h2>
-                    <div class="flex bg-slate-900 p-1 rounded-lg border border-slate-800 text-xs font-bold w-full sm:w-auto">
-                        <button onclick="switchMode('cards')" id="btn-mode-cards" class="flex-1 sm:flex-none px-4 py-1.5 rounded-md bg-slate-800 text-white shadow-xs">Kartlar</button>
-                        <button onclick="switchMode('quiz')" id="btn-mode-quiz" class="flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white">Soru Bankası</button>
+            <div id="box-top-navbar" class="bg-slate-950 p-4 rounded-2xl border border-slate-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div class="max-w-full sm:max-w-[60%]">
+                    <h2 id="txt-active-unit" class="text-sm font-black text-white truncate">Ünite Yükleniyor...</h2>
+                    <div id="box-group-selector" class="mt-3 flex flex-wrap gap-1.5 hidden"></div>
+                </div>
+                <div class="flex bg-slate-900 p-1 rounded-lg border border-slate-800 text-xs font-bold w-full sm:w-auto">
+                    <button onclick="switchMode('cards')" id="btn-mode-cards" class="flex-1 sm:flex-none px-4 py-1.5 rounded-md bg-slate-800 text-white shadow-xs">Kartlar</button>
+                    <button onclick="switchMode('quiz')" id="btn-mode-quiz" class="flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white">Soru Bankası</button>
+                </div>
+            </div>
+
+            <div id="view-analysis-center" class="hidden bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-800 pb-4">
+                    <div>
+                        <h3 class="text-base font-black text-white flex items-center gap-2"><i class="fa-solid fa-brain text-amber-500"></i> Yapay Zeka Analiz Paneli</h3>
+                        <p class="text-[11px] text-slate-400">Geçmişteki tüm hatalarınız analiz edilerek çıkarılmış eksik listesidir.</p>
+                    </div>
+                    
+                    <button onclick="startReviewTaramaTest()" id="btn-start-tarama" class="px-5 py-2.5 bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 text-xs font-black rounded-xl shadow-lg shadow-orange-500/10 hover:from-amber-400 hover:to-orange-400 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-bolt text-sm"></i> HATALARINDAN TARAMA TESTİ BAŞLAT
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 bg-slate-900 rounded-xl border border-slate-800 space-y-3">
+                        <h4 class="text-xs font-bold text-rose-400 uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-bolt-lightning"></i> En Çok Zorlandığın Konular</h4>
+                        <div id="box-worst-topics-list" class="space-y-2"></div>
+                    </div>
+                    <div class="p-4 bg-slate-900 rounded-xl border border-slate-800 space-y-3 flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xs font-bold text-indigo-400 uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-graduation-cap"></i> AI Gelişim Tavsiyesi</h4>
+                            <p id="txt-ai-advice" class="text-xs text-slate-300 leading-relaxed mt-2 italic">Veriler işleniyor...</p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800/60 grid grid-cols-2 text-center text-xs">
+                            <div>
+                                <span class="text-slate-500 block text-[10px]">Toplam Yanlış Kaydı</span>
+                                <span id="lbl-report-total-missed" class="text-lg font-black text-rose-400">0</span>
+                            </div>
+                            <div class="border-l border-slate-800">
+                                <span class="text-slate-500 block text-[10px]">Kurtarılabilir Net</span>
+                                <span id="lbl-report-potential-nets" class="text-lg font-black text-emerald-400">0</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="box-group-selector" class="flex flex-wrap gap-1.5 hidden pt-2 border-t border-slate-900"></div>
             </div>
 
             <div id="view-notebook" class="hidden bg-slate-950 p-6 rounded-2xl border-2 border-indigo-500/30 space-y-4">
                 <div class="flex justify-between items-center border-b border-slate-800 pb-3">
                     <h3 class="text-base font-black text-white flex items-center gap-2">
-                        <i class="fa-solid fa-book-bookmark text-indigo-400"></i> Furkan'ın Hata Defteri & Çapraz Analiz Notları
+                        <i class="fa-solid fa-book-bookmark text-indigo-400"></i> Furkan'ın Hata Defteri (Yanlış Sorular)
                     </h3>
                     <div class="flex items-center gap-2 no-print">
                         <button onclick="window.print()" class="px-3 py-1.5 bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs font-bold rounded-xl shadow-md flex items-center gap-1.5">
-                            <i class="fa-solid fa-file-pdf"></i> Detaylı Analiz Notlarını PDF Yap
+                            <i class="fa-solid fa-file-pdf"></i> Notları PDF Yap
                         </button>
                         <button onclick="switchMode('quiz')" class="text-xs text-slate-400 hover:text-slate-200 ml-2">Kapat</button>
                     </div>
@@ -124,9 +151,9 @@
                     <div id="card-container" class="flashcard w-full max-w-2xl h-80 cursor-pointer" onclick="flipCardAndSpeak(this)">
                         <div class="flashcard-inner relative w-full h-full duration-300">
                             <div class="flashcard-front bg-slate-950 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between shadow-lg">
-                                <span class="text-[10px] font-bold text-indigo-400 bg-indigo-950/50 border border-indigo-900/40 px-2 py-0.5 rounded w-fit uppercase">Kazanım</span>
+                                <span class="text-[10px] font-bold text-indigo-400 bg-indigo-950/50 border border-indigo-900/40 px-2 py-0.5 rounded w-fit uppercase">Kazanım Tanımı</span>
                                 <p id="txt-card-q" class="text-base font-bold text-slate-200 text-center my-auto px-4">Soru...</p>
-                                <span class="text-[10px] text-slate-500 text-center">Çevirmek için tıkla</span>
+                                <span class="text-[10px] text-slate-500 text-center"><i class="fa-solid fa-rotate mr-1"></i> Çevirmek için tıkla</span>
                             </div>
                             <div class="flashcard-back bg-slate-950 border-2 border-emerald-900/50 rounded-2xl p-6 flex flex-col justify-between shadow-xl">
                                 <span class="text-[10px] font-bold text-emerald-400 bg-emerald-950/50 border border-emerald-900/40 px-2 py-0.5 rounded w-fit uppercase">ÖSYM Analitik Yanıt</span>
@@ -136,17 +163,32 @@
                     </div>
                 </div>
                 <div class="flex justify-center items-center gap-4">
-                    <button onclick="prevCard()" class="w-10 h-10 rounded-xl bg-slate-950 border border-slate-800 hover:bg-slate-900"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button onclick="prevCard()" class="w-10 h-10 rounded-xl bg-slate-950 border border-slate-800 hover:bg-slate-900 text-sm"><i class="fa-solid fa-chevron-left"></i></button>
                     <span id="lbl-card-idx" class="text-xs font-bold text-slate-400 bg-slate-950 border border-slate-800 px-4 py-2 rounded-xl">0 / 0</span>
-                    <button onclick="nextCard()" class="w-10 h-10 rounded-xl bg-slate-950 border border-slate-800 hover:bg-slate-900"><i class="fa-solid fa-chevron-right"></i></button>
+                    <button onclick="nextCard()" class="w-10 h-10 rounded-xl bg-slate-950 border border-slate-800 hover:bg-slate-900 text-sm"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </div>
 
             <div id="view-quiz" class="hidden space-y-4">
+                <div class="w-full bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1.5">
+                    <div class="flex justify-between text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                        <span id="txt-quiz-module-title">Modül İlerleme Durumu</span>
+                        <span id="txt-progress-percent">0%</span>
+                    </div>
+                    <div class="w-full bg-slate-900 h-2 rounded-full overflow-hidden border border-slate-800">
+                        <div id="bar-progress" class="bg-gradient-to-r from-indigo-500 to-purple-500 h-full w-0 transition-all duration-300"></div>
+                    </div>
+                </div>
+
                 <div id="quiz-card" class="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-6">
-                    <div class="flex justify-between items-center text-[10px] font-bold uppercase text-slate-500 pb-3 border-b border-slate-900">
+                    <div class="flex justify-between items-center text-[10px] font-bold uppercase tracking-wider text-slate-500 pb-3 border-b border-slate-900">
                         <span id="lbl-quiz-idx">Soru 1</span>
+                        
                         <div class="flex items-center gap-3">
+                            <div class="flex items-center gap-1 bg-slate-900 px-2 py-1 rounded-md border border-slate-800">
+                                <span class="text-slate-400 text-[9px] mr-1">ÖSYM ZORLUK:</span>
+                                <div id="box-difficulty-stars" class="flex text-amber-500 text-[10px]"></div>
+                            </div>
                             <span id="lbl-score" class="text-emerald-400 bg-emerald-950/40 border border-emerald-900 px-2 py-0.5 rounded">Skor: 0 / 0</span>
                         </div>
                     </div>
@@ -158,22 +200,34 @@
 
                     <div id="quiz-options-box" class="space-y-2.5"></div>
                     
-                    <div id="box-rationale" class="p-4 bg-slate-900 border border-slate-800 rounded-xl hidden space-y-3">
-                        <h4 class="text-xs font-bold text-amber-400 flex items-center gap-1.5 border-b border-slate-800 pb-2">
-                            <i class="fa-solid fa-layer-group"></i> ÖSYM Akademik Çapraz Şık Analiz Raporu:
+                    <div id="box-rationale" class="p-4 bg-slate-900 border border-slate-800 rounded-xl hidden">
+                        <h4 class="text-xs font-bold text-amber-400 mb-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-lightbulb"></i> Akademik Çözüm Rehberi:
+                            <button onclick="speakText(document.getElementById('txt-quiz-rationale').textContent, true)" class="text-[10px] bg-slate-950 border border-slate-800 text-slate-300 px-2 py-0.5 rounded hover:text-white"><i class="fa-solid fa-volume-high"></i> Dinle</button>
                         </h4>
-                        <div id="txt-options-breakdown" class="space-y-2 text-xs">
-                            </div>
+                        <p id="txt-quiz-rationale" class="text-xs text-slate-300 leading-relaxed"></p>
                     </div>
-
                     <div class="flex justify-between pt-4 border-t border-slate-900">
-                        <button onclick="resetQuiz()" class="text-xs font-bold text-slate-500 hover:text-slate-300">Modülü Sıfırla</button>
+                        <button onclick="resetQuiz()" class="text-xs font-bold text-slate-500 hover:text-slate-300">Sıfırla</button>
                         <button onclick="nextQuestion()" class="px-4 py-2 bg-slate-900 border border-slate-800 hover:bg-slate-800 rounded-xl text-xs font-bold flex items-center gap-2">Sonraki Soru <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <div id="modal-features" class="fixed inset-0 bg-slate-950/80 backdrop-blur-xs z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-slate-900 border-2 border-amber-500/30 rounded-2xl max-w-2xl w-full h-[80vh] flex flex-col overflow-hidden shadow-2xl">
+            <div class="p-4 bg-slate-950 border-b border-slate-800 flex justify-between items-center">
+                <div class="flex items-center gap-2 text-amber-400 font-bold text-sm"><i class="fa-solid fa-circle-info"></i> Sistem Özellikleri</div>
+                <button onclick="closeFeaturesModal()" class="text-slate-400 hover:text-white text-sm"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="p-6 overflow-y-auto flex-1 font-mono text-xs text-slate-300 leading-relaxed whitespace-pre-wrap" id="txt-features-content"></div>
+            <div class="p-3 bg-slate-950 border-t border-slate-800 flex justify-end">
+                <button onclick="closeFeaturesModal()" class="px-4 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold rounded-lg">Kapat</button>
+            </div>
+        </div>
+    </div>
 
     <script>
         let currentLesson = "tarih";
@@ -184,10 +238,18 @@
         let score = 0;
         let answered = false;
         let currentMode = "cards";
+        
+        let activeGroupIdx = 0;
         let activeGroupQuestions = [];
         const questionsPerGroup = 20;
+        let timerInstance = null;
+        let timerSeconds = 1500;
         let isAudioEnabled = false;
+        let currentActiveFilter = "all";
+        
+        let isTaramaTestMode = false; // Tarama testi modu kontrolü
 
+        // LOCAL STORAGE KALICI VERİ DEPOLARI
         let aiMemory = JSON.parse(localStorage.getItem('kpss_ai_memory')) || { tarih: {}, cografya: {} };
         let kpssNotebook = JSON.parse(localStorage.getItem('kpss_furkan_notebook')) || [];
         let globalStats = JSON.parse(localStorage.getItem('kpss_global_stats')) || { solved: 0, correct: 0 };
@@ -197,7 +259,6 @@
             localStorage.setItem('kpss_furkan_notebook', JSON.stringify(kpssNotebook));
             localStorage.setItem('kpss_global_stats', JSON.stringify(globalStats));
             updateSidebarStats();
-            renderAIGuider();
         }
 
         function updateSidebarStats() {
@@ -207,44 +268,141 @@
             document.getElementById("txt-notebook-count").textContent = kpssNotebook.length;
         }
 
-        function renderAIGuider() {
-            const guiderBox = document.getElementById("box-ai-guider");
-            const badgeContainer = document.getElementById("ai-missed-badges-container");
-            badgeContainer.innerHTML = "";
-            let allMissed = [];
-            Object.keys(aiMemory[currentLesson]).forEach(u => {
-                aiMemory[currentLesson][u].forEach(item => { if(!allMissed.includes(item.kavram)) allMissed.push(item.kavram); });
+        // YENİ: YAPAY ZEKA Gelişmiş Analiz Merkezi Veri Derleme Fonksiyonu
+        function openAnalysisCenter() {
+            document.getElementById("view-cards").classList.add("hidden");
+            document.getElementById("view-quiz").classList.add("hidden");
+            document.getElementById("view-notebook").classList.add("hidden");
+            document.getElementById("view-analysis-center").classList.remove("hidden");
+            
+            const worstBox = document.getElementById("box-worst-topics-list");
+            worstBox.innerHTML = "";
+
+            // Hata istatistik haritası çıkar
+            let hiyerarşi = {};
+            kpssNotebook.forEach(item => {
+                if(item.lesson === currentLesson) {
+                    let k = item.tag || "#GenelKazanım";
+                    hiyerarşi[k] = (hiyerarşi[k] || 0) + 1;
+                }
             });
-            if(allMissed.length > 0) {
-                guiderBox.classList.remove("hidden");
-                allMissed.slice(0, 5).forEach(k => {
-                    badgeContainer.innerHTML += `<span class="text-[9px] bg-rose-950 text-rose-300 font-bold px-2 py-0.5 rounded border border-rose-900/50 uppercase">#${k}</span>`;
-                });
-            } else { guiderBox.classList.add("hidden"); }
+
+            // Sırala
+            let sortedWorst = Object.keys(hiyerarşi).sort((a,b) => hiyerarşi[b] - hiyerarşi[a]);
+
+            document.getElementById("lbl-report-total-missed").textContent = kpssNotebook.filter(n => n.lesson === currentLesson).length;
+            document.getElementById("lbl-report-potential-nets").textContent = `+${kpssNotebook.filter(n => n.lesson === currentLesson).length}`;
+
+            const adviceText = document.getElementById("txt-ai-advice");
+
+            if(sortedWorst.length === 0) {
+                worstBox.innerHTML = `<p class="text-xs text-slate-500 italic">Şu an bu ders için kayıtlı hata verisi bulunmuyor. Test çözdükçe analizler burada birikecek Furkan.</p>`;
+                adviceText.textContent = "Harika gidiyorsun Furkan! Şu an için kritik bir zayıf halka saptanmadı. Genel tekrarlara devam et.";
+                document.getElementById("btn-start-tarama").classList.add("opacity-50", "pointer-events-none");
+                return;
+            }
+            
+            document.getElementById("btn-start-tarama").classList.remove("opacity-50", "pointer-events-none");
+
+            // Listeleme
+            sortedWorst.forEach(tag => {
+                constcount = hiyerarşi[tag];
+                const itemRow = document.createElement("div");
+                itemRow.className = "flex justify-between items-center p-2 bg-slate-950/60 rounded-lg border border-slate-850 text-xs";
+                itemRow.innerHTML = `
+                    <span class="font-bold text-slate-300 uppercase">${tag}</span>
+                    <span class="px-2 py-0.5 rounded bg-rose-950 text-rose-400 font-black border border-rose-900/40">${constcount} Yanlış</span>
+                `;
+                worstBox.appendChild(itemRow);
+            });
+
+            adviceText.textContent = `Furkan, yaptığın hatalara göre en kritik eksiğin ${sortedWorst[0]} konusu olarak görünüyor. Hemen yukarıdaki 'Tarama Testi Başlat' butonuna basarak sadece bu hatalardan oluşan özel testi çözebilirsin!`;
         }
 
+        // YENİ: DİNAMİK SARMAL TARAMA TESTİ MOTORU
+        function startReviewTaramaTest() {
+            let filteredNotebook = kpssNotebook.filter(n => n.lesson === currentLesson);
+            if(filteredNotebook.length === 0) {
+                alert("Tarama testi oluşturabilmek için hata defterinizde soru olması gerekir!");
+                return;
+            }
+
+            // Tarama testini normal soru bankası formatına map et
+            activeGroupQuestions = filteredNotebook.map(item => {
+                return {
+                    q: `[TARAMA] ${item.q}`,
+                    options: item.options,
+                    correct: item.correct,
+                    rationale: item.rationale,
+                    tag: item.tag || "#TaramaKazanımı"
+                };
+            });
+
+            isTaramaTestMode = true;
+            quizIdx = 0;
+            score = 0;
+
+            // Görünümü ayarla
+            document.getElementById("view-analysis-center").classList.add("hidden");
+            document.getElementById("view-quiz").classList.remove("hidden");
+            document.getElementById("box-group-selector").classList.add("hidden");
+            document.getElementById("txt-quiz-module-title").textContent = "Kişiselleştirilmiş AI Tarama Testi";
+            
+            renderQuiz();
+        }
+
+        // GÜVENLİ SES MOTORU
+        function toggleAudio() {
+            isAudioEnabled = !isAudioEnabled;
+            const btn = document.getElementById("btn-audio-toggle");
+            if(isAudioEnabled) {
+                btn.className = "bg-slate-900 border border-emerald-800 px-3 py-1.5 rounded-xl text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-all flex items-center gap-1.5";
+                btn.innerHTML = `<i class="fa-solid fa-volume-high"></i> Sesli Asistan Aktif`;
+                speakText("Ses sistemi devrede.", true);
+            } else {
+                btn.className = "bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white transition-all flex items-center gap-1.5";
+                btn.innerHTML = `<i class="fa-solid fa-volume-xmark text-rose-400"></i> Sesli Asistan Kapalı`;
+                window.speechSynthesis.cancel();
+            }
+        }
+
+        function speakText(text, bypassCheck = false) {
+            if(!isAudioEnabled && !bypassCheck) return;
+            window.speechSynthesis.cancel();
+            let temizMetin = text.replace(/<\/?[^>]+(>|$)/g, "").replace(/\$/g, "").replace(/Soru\s\d+:/gi, "").replace(/\([^)]*\)/g, ""); 
+            let utterance = new SpeechSynthesisUtterance(temizMetin);
+            utterance.lang = 'tr-TR';
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function flipCardAndSpeak(card) { card.classList.toggle('flipped'); if(isAudioEnabled && card.classList.contains('flipped')) { setTimeout(() => { speakText(document.getElementById("txt-card-a").textContent); }, 400); } }
+        function openFeaturesModal() { document.getElementById("modal-features").classList.remove("hidden"); fetch('kpss_portal_ozellikler.txt').then(r => r.text()).then(d => { document.getElementById("txt-features-content").textContent = d; }).catch(() => { document.getElementById("txt-features-content").textContent = "Hata: Özellikler belgesi bulunamadı."; }); }
+        function closeFeaturesModal() { document.getElementById("modal-features").classList.add("hidden"); }
+        
         function switchLesson(lesson) {
             currentLesson = lesson;
+            isTaramaTestMode = false;
             if(lesson === 'tarih') {
-                document.getElementById("btn-tarih").className = "px-5 py-2 rounded-lg font-bold text-xs uppercase bg-amber-500 text-slate-950";
-                document.getElementById("btn-cografya").className = "px-5 py-2 rounded-lg font-bold text-xs uppercase text-slate-400 hover:text-slate-200";
+                document.getElementById("btn-tarih").className = "px-5 py-2 rounded-lg font-bold text-xs uppercase transition-all bg-amber-500 text-slate-950 shadow-sm";
+                document.getElementById("btn-cografya").className = "px-5 py-2 rounded-lg font-bold text-xs uppercase transition-all text-slate-400 hover:text-slate-200";
                 currentData = typeof tarih_db !== 'undefined' ? tarih_db : [];
             } else {
-                document.getElementById("btn-cografya").className = "px-5 py-2 rounded-lg font-bold text-xs uppercase bg-emerald-500 text-slate-950";
-                document.getElementById("btn-tarih").className = "px-5 py-2 rounded-lg font-bold text-xs uppercase text-slate-400 hover:text-slate-200";
+                document.getElementById("btn-cografya").className = "px-5 py-2 rounded-lg font-bold text-xs uppercase transition-all bg-emerald-500 text-slate-950 shadow-sm";
+                document.getElementById("btn-tarih").className = "px-5 py-2 rounded-lg font-bold text-xs uppercase transition-all text-slate-400 hover:text-slate-200";
                 currentData = typeof cografya_db !== 'undefined' ? cografya_db : [];
             }
-            activeUnitIdx = 0; cardIdx = 0; quizIdx = 0; score = 0;
+            activeUnitIdx = 0; activeGroupIdx = 0; cardIdx = 0; quizIdx = 0; score = 0;
             document.getElementById("view-notebook").classList.add("hidden");
-            buildUnitList(); buildGroupSelector(); renderAll(); renderAIGuider();
+            document.getElementById("view-analysis-center").classList.add("hidden");
+            buildUnitList(); buildGroupSelector(); renderAll();
         }
 
         function buildUnitList() {
             const container = document.getElementById("unit-list"); container.innerHTML = "";
             currentData.forEach((item, index) => {
                 const btn = document.createElement("button");
-                btn.className = `w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold flex justify-between items-center ${index === activeUnitIdx ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:bg-slate-900'}`;
-                btn.onclick = () => { activeUnitIdx = index; cardIdx = 0; quizIdx = 0; score = 0; document.getElementById("view-notebook").classList.add("hidden"); buildUnitList(); buildGroupSelector(); renderAll(); };
+                btn.className = `w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex justify-between items-center ${index === activeUnitIdx && !isTaramaTestMode ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-400 hover:bg-slate-900 hover:text-slate-200'}`;
+                btn.onclick = () => { isTaramaTestMode = false; activeUnitIdx = index; activeGroupIdx = 0; cardIdx = 0; quizIdx = 0; score = 0; document.getElementById("view-notebook").classList.add("hidden"); document.getElementById("view-analysis-center").classList.add("hidden"); buildUnitList(); buildGroupSelector(); renderAll(); };
                 btn.innerHTML = `<span class="truncate pr-2">${item.unite}</span><i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>`;
                 container.appendChild(btn);
             });
@@ -252,171 +410,172 @@
 
         function buildGroupSelector() {
             const container = document.getElementById("box-group-selector"); container.innerHTML = "";
-            if (currentMode !== 'quiz' || currentData.length === 0) { container.classList.add("hidden"); return; }
+            if (currentMode !== 'quiz' || currentData.length === 0 || isTaramaTestMode) { container.classList.add("hidden"); return; }
             container.classList.remove("hidden");
-            const pool = currentData[activeUnitIdx].quiz || [];
-            const totalGroups = Math.ceil(pool.length / questionsPerGroup);
+            const unit = currentData[activeUnitIdx]; if(!unit || !unit.quiz) return;
+            const totalGroups = Math.ceil(unit.quiz.length / questionsPerGroup);
             for (let i = 0; i < totalGroups; i++) {
-                const btn = document.createElement("button");
-                btn.className = `px-2.5 py-1 rounded-md text-[10px] font-black ${i === 0 ? 'bg-amber-500 text-slate-950' : 'bg-slate-800 text-slate-400'}`;
-                btn.textContent = `MODÜL ${i + 1}`;
-                btn.onclick = () => { quizIdx = 0; score = 0; document.getElementById("view-notebook").classList.add("hidden"); prepareGroupQuestions(); renderQuiz(); };
+                const btn = document.createElement("button"); btn.className = `px-2.5 py-1 rounded-md text-[10px] font-black transition-all ${i === activeGroupIdx ? 'bg-amber-500 text-slate-950 shadow-sm' : 'bg-slate-800 text-slate-400 hover:bg-slate-700'}`; btn.textContent = `MODÜL ${i + 1}`;
+                btn.onclick = () => { activeGroupIdx = i; quizIdx = 0; score = 0; document.getElementById("view-notebook").classList.add("hidden"); document.getElementById("view-analysis-center").classList.add("hidden"); buildGroupSelector(); prepareGroupQuestions(); renderQuiz(); };
                 container.appendChild(btn);
             }
         }
 
         function prepareGroupQuestions() {
-            const unit = currentData[activeUnitIdx]; if (!unit || !unit.quiz) return;
-            activeGroupQuestions = unit.quiz.slice(0, questionsPerGroup);
+            if(isTaramaTestMode) return;
+            const unit = currentData[activeUnitIdx]; if (!unit || !unit.quiz || unit.quiz.length === 0) return;
+            const startIdx = activeGroupIdx * questionsPerGroup; const endIdx = Math.min(startIdx + questionsPerGroup, unit.quiz.length);
+            activeGroupQuestions = unit.quiz.slice(startIdx, endIdx);
         }
 
         function switchMode(mode) {
             currentMode = mode;
             document.getElementById("view-notebook").classList.add("hidden");
+            document.getElementById("view-analysis-center").classList.add("hidden");
+            document.getElementById("box-top-navbar").classList.remove("hidden");
             if(mode === 'cards') {
+                isTaramaTestMode = false;
                 document.getElementById("view-cards").classList.remove("hidden"); document.getElementById("view-quiz").classList.add("hidden"); document.getElementById("box-group-selector").classList.add("hidden");
+                window.speechSynthesis.cancel();
+                buildUnitList();
             } else {
-                document.getElementById("view-quiz").classList.remove("hidden"); document.getElementById("view-cards").classList.add("hidden"); buildGroupSelector(); prepareGroupQuestions(); renderQuiz();
+                document.getElementById("view-quiz").classList.remove("hidden"); document.getElementById("view-cards").classList.add("hidden"); 
+                document.getElementById("txt-quiz-module-title").textContent = "Modül İlerleme Durumu";
+                buildGroupSelector(); prepareGroupQuestions(); renderQuiz();
             }
         }
 
         function renderAll() {
-            if(currentData.length === 0) return;
+            if(currentData.length === 0 || isTaramaTestMode) return;
             const unit = currentData[activeUnitIdx]; document.getElementById("txt-active-unit").textContent = unit.unite;
+            document.getElementById("card-container").classList.remove("flipped");
             if(unit.cards && unit.cards.length > 0) { document.getElementById("txt-card-q").innerHTML = unit.cards[cardIdx].q; document.getElementById("txt-card-a").innerHTML = unit.cards[cardIdx].a; document.getElementById("lbl-card-idx").textContent = `${cardIdx + 1} / ${unit.cards.length}`; }
-            prepareGroupQuestions();
+            prepareGroupQuestions(); renderQuiz();
         }
+        function nextCard() { cardIdx = (cardIdx < currentData[activeUnitIdx].cards.length - 1) ? cardIdx + 1 : 0; renderAll(); }
+        function prevCard() { cardIdx = (cardIdx > 0) ? cardIdx - 1 : currentData[activeUnitIdx].cards.length - 1; renderAll(); }
 
         function renderQuiz() {
             document.getElementById("box-rationale").classList.add("hidden");
             answered = false;
-            if(activeGroupQuestions.length === 0) return;
+            if(activeGroupQuestions.length === 0) { document.getElementById("txt-quiz-q").textContent = "Soru bankası boş veya modül yüklenemedi."; document.getElementById("quiz-options-box").innerHTML = ""; return; }
+
+            const currentProgressPercent = Math.round((quizIdx / activeGroupQuestions.length) * 100);
+            document.getElementById("bar-progress").style.width = `${currentProgressPercent}%`; document.getElementById("txt-progress-percent").textContent = `${currentProgressPercent}%`;
 
             const activeQ = activeGroupQuestions[quizIdx];
-            document.getElementById("lbl-quiz-idx").textContent = `Soru ${quizIdx + 1} / ${activeGroupQuestions.length}`;
-            document.getElementById("lbl-score").textContent = `Skor: ${score} / ${activeGroupQuestions.length}`;
+            document.getElementById("lbl-quiz-idx").textContent = `Soru ${quizIdx + 1} / ${activeGroupQuestions.length}`; document.getElementById("lbl-score").textContent = `Skor: ${score} / ${activeGroupQuestions.length}`;
             document.getElementById("txt-quiz-q").textContent = activeQ.q;
 
-            let tag = activeQ.tag || "#MüfredatKazanımı";
-            document.getElementById("lbl-question-tag").textContent = tag;
+            if(isAudioEnabled) speakText(activeQ.q);
+
+            let parsedTag = activeQ.tag || "#GenelKazanım";
+            // Dinamik etiket yakalama (Geri getirildi)
+            if(!activeQ.tag) {
+                if(activeQ.rationale.includes("Kut") || activeQ.q.includes("Kut")) parsedTag = "#KutAnlayışı";
+                else if(activeQ.rationale.includes("enlem") || activeQ.q.includes("Enlem")) parsedTag = "#EnlemEtkisi";
+                else if(activeQ.rationale.includes("bakı") || activeQ.q.includes("Bakı")) parsedTag = "#BakıEtkisi";
+                else if(activeQ.rationale.includes("Ahi") || activeQ.q.includes("Ahi")) parsedTag = "#AhilikTeşkilatı";
+            }
+
+            document.getElementById("lbl-question-tag").textContent = parsedTag;
+            
+            // Yıldız Skalası
+            const starBox = document.getElementById("box-difficulty-stars"); starBox.innerHTML = "";
+            let stars = parsedTag === "#BakıEtkisi" || parsedTag === "#KutAnlayışı" ? 5 : 3;
+            for(let i=0; i<5; i++) { const star = document.createElement("i"); star.className = i < stars ? "fa-solid fa-star" : "fa-regular fa-star opacity-30"; starBox.appendChild(star); }
 
             const optionsBox = document.getElementById("quiz-options-box"); optionsBox.innerHTML = "";
             activeQ.options.forEach((opt, idx) => {
-                const btn = document.createElement("button");
-                btn.className = "w-full text-left px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold hover:bg-slate-800/60 transition-all flex justify-between items-center cursor-pointer";
+                const btn = document.createElement("button"); btn.className = "w-full text-left px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold hover:bg-slate-800/60 transition-all flex justify-between items-center cursor-pointer";
                 btn.innerHTML = `<span><b class="text-slate-500 mr-2">${String.fromCharCode(65+idx)}</b> ${opt}</span>`;
-                btn.onclick = () => checkAnswer(idx, btn, activeQ);
+                btn.onclick = () => checkAnswer(idx, btn, activeQ, parsedTag);
                 optionsBox.appendChild(btn);
             });
         }
 
-        // DİNAMİK YAPAY ZEKA ÇAPRAZ ŞIK ANALİZ MOTORU
-        function checkAnswer(selected, btn, activeQ) {
-            if(answered) return; answered = true;
+        function checkAnswer(selected, btn, activeQ, tagStr) {
+            if(answered) return; answered = true; window.speechSynthesis.cancel();
             const buttons = document.getElementById("quiz-options-box").querySelectorAll("button");
             
             buttons.forEach((b, idx) => {
-                if(idx === activeQ.correct) {
-                    b.className = "w-full text-left px-4 py-3 bg-emerald-950/60 border-2 border-emerald-500 rounded-xl text-xs font-bold text-emerald-200 flex justify-between items-center";
-                } else if(idx === selected) {
-                    b.className = "w-full text-left px-4 py-3 bg-rose-950/60 border-2 border-rose-500 rounded-xl text-xs font-bold text-rose-200 flex justify-between items-center";
-                } else {
-                    b.className = "w-full text-left px-4 py-3 bg-slate-950 text-slate-600 border border-slate-900 rounded-xl text-xs pointer-events-none";
-                }
+                if(idx === activeQ.correct) { b.className = "w-full text-left px-4 py-3 bg-emerald-950/60 border-2 border-emerald-500 rounded-xl text-xs font-bold text-emerald-200 flex justify-between items-center"; b.innerHTML += `<i class="fa-solid fa-check-circle text-emerald-400 text-sm"></i>`; }
+                else if(idx === selected) { b.className = "w-full text-left px-4 py-3 bg-rose-950/60 border-2 border-rose-500 rounded-xl text-xs font-bold text-rose-200 flex justify-between items-center"; b.innerHTML += `<i class="fa-solid fa-times-circle text-rose-400 text-sm"></i>`; }
+                else { b.className = "w-full text-left px-4 py-3 bg-slate-950 text-slate-600 border border-slate-900 rounded-xl text-xs pointer-events-none"; }
             });
 
             globalStats.solved++;
-            let tagStr = activeQ.tag || "#GenelKazanım";
-
-            // Eğer yanlış yaptıysan otomatik olarak kalıcı hata defterine ekle!
             if(selected === activeQ.correct) {
                 score++; globalStats.correct++;
+                if(isAudioEnabled) speakText("Tebrikler, doğru cevap.");
             } else {
-                // HATA DEFTERİNE YAPAY ZEKA ŞIK ANALİZİYLE BİRLİKTE KAYDET
-                if(!kpssNotebook.some(n => n.q === activeQ.q)) {
+                if(isAudioEnabled) speakText("Hatalı cevap.");
+                // YANLIŞ YAPILAN SORUYU ŞIK AÇIKLAMASIZ TAMAMEN ORİJİNAL FORMATTA HATA DEFTERİNE EKLE
+                if(!kpssNotebook.some(n => n.q === activeQ.q.replace("[TARAMA] ", ""))) {
                     kpssNotebook.push({
                         lesson: currentLesson,
-                        unit: currentData[activeUnitIdx].unite,
-                        q: activeQ.q,
+                        unit: isTaramaTestMode ? "Yapay Zeka Tarama Hattı" : currentData[activeUnitIdx].unite,
+                        q: activeQ.q.replace("[TARAMA] ", ""),
                         options: activeQ.options,
                         correct: activeQ.correct,
-                        tag: tagStr,
-                        breakdown: activeQ.breakdown || {} 
+                        rationale: activeQ.rationale,
+                        tag: tagStr
                     });
                 }
                 
-                // AI Hafızasına ekle (Yönlendirme Paneli İçin)
+                // AI Memory Kaydı (Üst Yönlendirme ve Analiz İçin)
                 if(!aiMemory[currentLesson][currentData[activeUnitIdx].unite]) aiMemory[currentLesson][currentData[activeUnitIdx].unite] = [];
                 if(!aiMemory[currentLesson][currentData[activeUnitIdx].unite].some(m => m.soru === activeQ.q)) {
                     aiMemory[currentLesson][currentData[activeUnitIdx].unite].push({ kavram: tagStr.substring(1), soru: activeQ.q });
                 }
             }
-            
             saveStateToStorage();
-
-            // HER ŞIKKIN ANALİZİNİ EKRANA BASAN DÖNGÜ
-            const breakdownBox = document.getElementById("txt-options-breakdown");
-            breakdownBox.innerHTML = "";
-            
-            activeQ.options.forEach((opt, idx) => {
-                const char = String.fromCharCode(65+idx);
-                const isThisCorrect = idx === activeQ.correct;
-                // Veritabanında şık açıklaması yoksa dinamik alternatif oluştur
-                const explanation = (activeQ.breakdown && activeQ.breakdown[char]) ? activeQ.breakdown[char] : `${opt} seçeneği ÖSYM kriterlerine göre elenmiştir.`;
-                
-                const row = document.createElement("div");
-                row.className = `p-2.5 rounded-lg border ${isThisCorrect ? 'bg-emerald-950/30 border-emerald-900/50 text-emerald-200' : 'bg-slate-950/60 border-slate-800 text-slate-300'}`;
-                row.innerHTML = `<b class="px-1.5 py-0.5 rounded ${isThisCorrect ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800 text-slate-400'} mr-2">${char}</b> ${explanation}`;
-                breakdownBox.appendChild(row);
-            });
-
+            document.getElementById("txt-quiz-rationale").innerHTML = activeQ.rationale;
             document.getElementById("box-rationale").classList.remove("hidden");
         }
 
-        function nextQuestion() { if(quizIdx < activeGroupQuestions.length - 1) { quizIdx++; renderQuiz(); } else { alert("Modül tamamlandı!"); resetQuiz(); } }
-        function resetQuiz() { quizIdx = 0; score = 0; answered = false; renderQuiz(); }
+        function nextQuestion() { 
+            if(quizIdx < activeGroupQuestions.length - 1) { 
+                quizIdx++; renderQuiz(); 
+            } else { 
+                alert(isTaramaTestMode ? "🎉 AI Tarama Testini Başarıyla Bitirdin Furkan! Eksikler analiz merkezinde güncellendi." : "Modül tamamlandı!"); 
+                isTaramaTestMode = false;
+                switchLesson(currentLesson);
+            } 
+        }
 
-        // GELİŞTİRİLMİŞ HATA DEFTERİ VE DETAYLI PDF TASARIMI
         function openNotebookView() {
-            document.getElementById("view-cards").classList.add("hidden"); document.getElementById("view-quiz").classList.add("hidden");
-            document.getElementById("view-notebook").classList.remove("hidden");
+            document.getElementById("view-cards").classList.add("hidden"); document.getElementById("view-quiz").classList.add("hidden"); document.getElementById("view-analysis-center").classList.add("hidden");
+            document.getElementById("box-top-navbar").classList.add("hidden");
+            const notebookView = document.getElementById("view-notebook"); notebookView.classList.remove("hidden");
             const listContainer = document.getElementById("box-notebook-list"); listContainer.innerHTML = "";
             
-            if(kpssNotebook.length === 0) { listContainer.innerHTML = `<p class="text-xs text-slate-500 text-center py-8">Hata defteriniz henüz boş. Yanlış yaptığınız sorular buraya otomatik eklenecektir.</p>`; return; }
+            let filteredNotes = kpssNotebook.filter(n => n.lesson === currentLesson);
+            if(filteredNotes.length === 0) { listContainer.innerHTML = `<p class="text-xs text-slate-500 text-center py-8">Hata defteriniz boş. Yanlış çözdüğünüz sorular buraya otomatik kaydedilir.</p>`; return; }
             
-            kpssNotebook.forEach((item, index) => {
-                const card = document.createElement("div"); 
-                card.className = "p-5 bg-slate-900 border border-slate-800 rounded-xl space-y-3 text-xs print-card";
-                
-                let breakdownHTML = "";
-                item.options.forEach((opt, idx) => {
-                    const char = String.fromCharCode(65+idx);
-                    const isCorrect = idx === item.correct;
-                    const exp = (item.breakdown && item.breakdown[char]) ? item.breakdown[char] : `${opt} analizi.`;
-                    breakdownHTML += `<div class="p-2 bg-slate-950 border border-slate-850 rounded mt-1 ${isCorrect ? 'border-emerald-900 text-emerald-300' : 'text-slate-400'}"><b>${char})</b> ${exp}</div>`;
-                });
-
+            filteredNotes.forEach((item, index) => {
+                const card = document.createElement("div"); card.className = "p-5 bg-slate-900 border border-slate-800 rounded-xl space-y-2 text-xs print-card";
                 card.innerHTML = `
                     <div class="flex justify-between font-bold text-slate-500 border-b border-slate-800 pb-1 text-[10px]">
                         <span>${item.lesson.toUpperCase()} - ${item.unit} (${item.tag})</span>
-                        <button onclick="removeFromNotebook(${index})" class="text-rose-400 hover:text-rose-300 no-print"><i class="fa-solid fa-trash"></i> Defterden Sil</button>
+                        <button onclick="deleteFromNotebook('${item.q}')" class="text-rose-400 hover:text-rose-300 no-print"><i class="fa-solid fa-trash"></i> Sil</button>
                     </div>
-                    <p class="font-bold text-slate-200 text-sm">${item.q}</p>
-                    <div class="space-y-1 mt-2">
-                        <span class="text-[10px] font-bold text-amber-400 block uppercase tracking-wider"><i class="fa-solid fa-code-branch"></i> Şık Analiz Notları:</span>
-                        ${breakdownHTML}
-                    </div>
+                    <p class="font-bold text-slate-200 text-sm leading-relaxed">${item.q}</p>
+                    <p class="text-emerald-400 font-bold"><i class="fa-solid fa-circle-check"></i> Doğru Cevap: ${item.options[item.correct]}</p>
+                    <p class="text-slate-400 bg-slate-950 p-2.5 rounded border border-slate-850 mt-1 leading-relaxed">${item.rationale}</p>
                 `;
                 listContainer.appendChild(card);
             });
         }
-        
-        function removeFromNotebook(index) { kpssNotebook.splice(index, 1); saveStateToStorage(); openNotebookView(); }
-        function toggleAudio() { isAudioEnabled = !isAudioEnabled; }
-        function toggleTimer() { /* Pomodoro Temel Mantık */ }
-        function flipCardAndSpeak(c) { c.classList.toggle('flipped'); }
-        function nextCard() { cardIdx++; renderAll(); }
-        function prevCard() { cardIdx--; renderAll(); }
+
+        function deleteFromNotebook(questionText) {
+            kpssNotebook = kpssNotebook.filter(n => n.q !== questionText);
+            saveStateToStorage();
+            openNotebookView();
+        }
+
+        function toggleAudio() { /* Ses Aç Kapa */ }
+        function toggleTimer() { /* Pomodoro Kontrolü */ }
 
         window.onload = function() { updateSidebarStats(); switchLesson('tarih'); };
     </script>
