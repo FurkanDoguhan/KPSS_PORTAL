@@ -127,29 +127,42 @@
                 <div class="flex bg-slate-900 p-1 rounded-lg border border-slate-800 text-xs font-bold w-full sm:w-auto">
                     <button onclick="switchMode('cards')" id="btn-mode-cards" class="flex-1 sm:flex-none px-4 py-1.5 rounded-md bg-slate-800 text-white shadow-xs cursor-pointer">Kartlar</button>
                     <button onclick="switchMode('quiz')" id="btn-mode-quiz" class="flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer">Soru Bankası</button>
+                    <button onclick="switchMode('notes')" id="btn-mode-notes" class="flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer">Konu Özetleri</button>
                 </div>
             </div>
 
-            <div id="view-analysis-center" class="hidden bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-6">
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-800 pb-4">
+            <div id="view-analysis-center" class="hidden bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-6 animate-fadeIn">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 border-b border-slate-800 pb-4">
                     <div>
-                        <h3 class="text-base font-black text-white flex items-center gap-2"><i class="fa-solid fa-brain text-amber-500"></i> Yapay Zeka Analiz Paneli</h3>
-                        <p class="text-[11px] text-slate-400">Hatalarınız analiz edilerek listelenen zayıf konulardır.</p>
+                        <h3 class="text-base font-black text-white flex items-center gap-2"><i class="fa-solid fa-brain text-amber-500 animate-pulse"></i> Yapay Zeka Analiz Paneli & Raporlar</h3>
+                        <p class="text-[11px] text-slate-400">Zayıf konularınız ve hata istatistikleriniz analiz edilerek size özel gelişim yolları sunulur.</p>
                     </div>
-                    <button onclick="startReviewTaramaTest()" id="btn-start-tarama" class="px-5 py-2.5 bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 text-xs font-black rounded-xl shadow-lg hover:from-amber-400 hover:to-orange-400 transition-all flex items-center gap-2 cursor-pointer">
-                        <i class="fa-solid fa-bolt text-sm"></i> HATALARINDAN TARAMA TESTİ BAŞLAT
-                    </button>
+                    <div class="flex flex-wrap gap-2.5 w-full lg:w-auto">
+                        <button onclick="startReviewTaramaTest()" id="btn-start-tarama" class="flex-1 lg:flex-none px-4.5 py-2.5 bg-slate-905/80 border border-slate-800 text-amber-400 text-[10px] font-black rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer hover-glow">
+                            <i class="fa-solid fa-clock-rotate-left"></i> HATALI SORULARI TEKRAR ÇÖZ
+                        </button>
+                        <button onclick="startTopicTaramaTest()" id="btn-start-topic-tarama" class="flex-1 lg:flex-none px-4.5 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-[10px] font-black rounded-xl shadow-lg hover:from-indigo-500 hover:to-purple-500 transition-all flex items-center justify-center gap-2 cursor-pointer hover-glow">
+                            <i class="fa-solid fa-bolt"></i> ZAYIF KONULARDAN YENİ SORULARLA TARAMA (AI)
+                        </button>
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="p-4 bg-slate-900 rounded-xl border border-slate-800 space-y-3">
-                        <h4 class="text-xs font-bold text-rose-400 uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-bolt-lightning"></i> En Çok Zorlandığın Konular</h4>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                    <div class="lg:col-span-2 p-4 bg-slate-900 rounded-xl border border-slate-800 space-y-3">
+                        <h4 class="text-xs font-bold text-rose-400 uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-bolt-lightning"></i> En Çok Zorlandığın Konular ve Hata Dağılımı</h4>
                         <div id="box-worst-topics-list" class="space-y-2"></div>
                     </div>
-                    <div class="p-4 bg-slate-900 rounded-xl border border-slate-800 space-y-3 flex flex-col justify-between">
+                    <div class="p-4 bg-slate-900 rounded-xl border border-slate-800 space-y-4 flex flex-col justify-between border-l-4 border-l-indigo-500">
                         <div>
                             <h4 class="text-xs font-bold text-indigo-400 uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-graduation-cap"></i> AI Gelişim Tavsiyesi</h4>
-                            <p id="txt-ai-advice" class="text-xs text-slate-300 leading-relaxed mt-2 italic">Veriler işleniyor...</p>
+                            <p id="txt-ai-advice" class="text-xs text-slate-300 leading-relaxed mt-2.5 italic">Veriler işleniyor...</p>
+                        </div>
+                        <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800/60 text-center space-y-1">
+                            <div class="text-[9px] text-slate-500 font-bold uppercase tracking-wider">Hata Defteri Doluluk Oranı</div>
+                            <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden mt-1.5 border border-slate-800">
+                                <div id="bar-notebook-capacity" class="bg-rose-500 h-full w-0 transition-all duration-300"></div>
+                            </div>
+                            <span id="txt-notebook-capacity" class="text-[10px] text-slate-400 font-mono mt-1 block">0 Soru</span>
                         </div>
                     </div>
                 </div>
@@ -166,6 +179,20 @@
                     </div>
                 </div>
                 <div id="box-notebook-list" class="space-y-4 max-h-120 overflow-y-auto pr-2"></div>
+            </div>
+
+            <div id="view-notes" class="hidden space-y-4">
+                <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <div>
+                        <h3 class="text-sm font-black text-white flex items-center gap-2"><i class="fa-solid fa-book text-indigo-400 animate-pulse"></i> ÖSYM Detaylı Konu Anlatım Kitapçığı</h3>
+                        <p class="text-[10px] text-slate-400">Seçili üniteye ait kavramları ve ÖSYM ders notlarını buradan inceleyebilirsiniz.</p>
+                    </div>
+                    <div class="relative w-full sm:w-64">
+                        <input type="text" id="search-notes-input" oninput="renderNotesView()" placeholder="Kavramlarda ara..." class="w-full bg-slate-900 border border-slate-800 text-xs px-3.5 py-1.5 rounded-xl text-slate-300 placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-all">
+                        <i class="fa-solid fa-magnifying-glass absolute right-3.5 top-2.5 text-slate-500 text-[10px]"></i>
+                    </div>
+                </div>
+                <div id="box-notes-list" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
             </div>
 
             <div id="view-cards" class="space-y-6">
@@ -224,7 +251,7 @@
                     </div>
                     
                     <div>
-                        <span id="lbl-question-tag" class="inline-block text-[10px] font-black text-indigo-400 bg-indigo-950/40 border border-indigo-900/60 px-2 py-0.5 rounded-md mb-2">#Kazanım</span>
+                        <span id="lbl-question-tag" onclick="openNoteFromTag(this.textContent)" class="inline-block text-[10px] font-black text-indigo-400 bg-indigo-950/40 border border-indigo-900/60 px-2 py-0.5 rounded-md mb-2 cursor-pointer hover:bg-indigo-600 hover:text-white transition-all duration-200" title="ÖSYM Bilgi Notunu Aç">#Kazanım</span>
                         <h3 id="txt-quiz-q" class="text-sm sm:text-base font-bold text-slate-100 leading-relaxed">Soru Metni...</h3>
                     </div>
 
@@ -555,14 +582,18 @@
         // ==========================================
         function openNoteFromTag(tag) {
             let pureTag = tag.replace("#", "").trim();
-            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
             
             let targetContent = null;
-            activeNoteDb.forEach(box => {
-                if(box.kavramlar && box.kavramlar[pureTag]) {
-                    targetContent = box.kavramlar[pureTag];
-                }
-            });
+            if (pureTag === "GenelKazanım") {
+                targetContent = `<b>ÖSYM GENEL KAZANIM REHBERİ</b><br><br>Bu soru, ilgili ünitenin genel müfredat kazanımlarını ve temel kavramlarını ölçmektedir.<br><br><b>Detaylı Analiz:</b> Şıkların tek tek analizini ve sorunun akademik çözümünü görmek için sorunun altındaki <b>Çözüm Rehberini</b> inceleyebilirsiniz.<br><br><b>Çalışma Tavsiyesi:</b> Konuyu pekiştirmek için flaş kartları kaydırmaya devam edebilir ve AI Analiz Paneli'nden gelişim durumunu takip edebilirsin. Başarılar dileriz!`;
+            } else {
+                let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
+                activeNoteDb.forEach(box => {
+                    if(box.kavramlar && box.kavramlar[pureTag]) {
+                        targetContent = box.kavramlar[pureTag];
+                    }
+                });
+            }
 
             const embedPanel = document.getElementById("box-embedded-note");
             const embedText = document.getElementById("txt-embedded-note-html");
@@ -578,27 +609,66 @@
 
         function openAnalysisCenter() {
             if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-            document.getElementById("view-cards").classList.add("hidden"); document.getElementById("view-quiz").classList.add("hidden"); document.getElementById("view-notebook").classList.add("hidden"); document.getElementById("box-embedded-note").classList.add("hidden");
+            document.getElementById("view-cards").classList.add("hidden"); 
+            document.getElementById("view-quiz").classList.add("hidden"); 
+            document.getElementById("view-notebook").classList.add("hidden"); 
+            document.getElementById("view-notes").classList.add("hidden"); 
+            document.getElementById("box-embedded-note").classList.add("hidden");
             document.getElementById("box-top-navbar").classList.add("hidden");
             document.getElementById("view-analysis-center").classList.remove("hidden");
             
             const worstBox = document.getElementById("box-worst-topics-list"); worstBox.innerHTML = "";
             let hiyerarşi = {};
-            kpssNotebook.forEach(item => { if(item.lesson === currentLesson) { let k = item.tag || "#GenelKazanım"; hiyerarşi[k] = (hiyerarşi[k] || 0) + 1; } });
+            let totalErrors = 0;
+            kpssNotebook.forEach(item => { 
+                if(item.lesson === currentLesson) { 
+                    totalErrors++;
+                    let k = item.tag || "#GenelKazanım"; 
+                    hiyerarşi[k] = (hiyerarşi[k] || 0) + 1; 
+                } 
+            });
             let sortedWorst = Object.keys(hiyerarşi).sort((a,b) => hiyerarşi[b] - hiyerarşi[a]);
             const adviceText = document.getElementById("txt-ai-advice");
 
+            // Update Notebook Capacity UI
+            const capacityBar = document.getElementById("bar-notebook-capacity");
+            const capacityTxt = document.getElementById("txt-notebook-capacity");
+            let capPercent = Math.min(100, Math.round((totalErrors / 50) * 100));
+            if (capacityBar) capacityBar.style.width = `${capPercent}%`;
+            if (capacityTxt) capacityTxt.textContent = `${totalErrors} Soru / %${capPercent} Doluluk`;
+
+            const btnTarama = document.getElementById("btn-start-tarama");
+            const btnTopicTarama = document.getElementById("btn-start-topic-tarama");
+
             if(sortedWorst.length === 0) {
-                worstBox.innerHTML = `<p class="text-xs text-slate-500 italic">Kayıtlı hatalı soru bulunmuyor.</p>`;
-                adviceText.textContent = "Kusursuz gidiyorsun Furkan! Zayıf konu saptanmadı.";
-                document.getElementById("btn-start-tarama").classList.add("opacity-40", "pointer-events-none");
+                worstBox.innerHTML = `<p class="text-xs text-slate-500 italic py-8 text-center w-full">Kayıtlı hatalı soru bulunmuyor.</p>`;
+                adviceText.textContent = "Harika gidiyorsun Furkan! Şu an için zayıf olduğun bir konu tespit edilmedi. Portalda soru çözmeye devam ederek gelişimini sürdürebilirsin.";
+                if (btnTarama) btnTarama.classList.add("opacity-40", "pointer-events-none");
+                if (btnTopicTarama) btnTopicTarama.classList.add("opacity-40", "pointer-events-none");
                 return;
             }
-            document.getElementById("btn-start-tarama").classList.remove("opacity-40", "pointer-events-none");
+            
+            if (btnTarama) btnTarama.classList.remove("opacity-40", "pointer-events-none");
+            if (btnTopicTarama) btnTopicTarama.classList.remove("opacity-40", "pointer-events-none");
+            
+            let maxErrorsForTag = hiyerarşi[sortedWorst[0]];
+
             sortedWorst.forEach(tag => {
-                worstBox.innerHTML += `<div class="flex justify-between items-center p-2.5 bg-slate-900/60 rounded-xl text-xs mb-2 border border-slate-800"><span>${tag}</span><span class="text-rose-400 font-bold bg-rose-950/30 px-2 py-0.5 rounded border border-rose-900/40">${hiyerarşi[tag]} Hata</span></div>`;
+                let errCount = hiyerarşi[tag];
+                let barWidth = Math.round((errCount / maxErrorsForTag) * 100);
+                worstBox.innerHTML += `
+                    <div class="p-3 bg-slate-950/60 rounded-xl border border-slate-800 space-y-2">
+                        <div class="flex justify-between items-center text-xs">
+                            <span class="font-bold text-slate-300">${tag}</span>
+                            <span class="text-rose-400 font-bold bg-rose-950/30 px-2 py-0.5 rounded border border-rose-900/40">${errCount} Hata</span>
+                        </div>
+                        <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden border border-slate-850">
+                            <div class="bg-rose-500 h-full" style="width: ${barWidth}%"></div>
+                        </div>
+                    </div>`;
             });
-            adviceText.textContent = `Furkan, analizlerime göre en çok takıldığın alan ${sortedWorst[0]} konusu. Yukarıdaki butona basarak tarama başlatabilirsin.`;
+            
+            adviceText.textContent = `Furkan, analizlerime göre en çok takıldığın alan ${sortedWorst[0]} konusu (${maxErrorsForTag} hatalı soru). Sana tavsiyem, "Zayıf Konulardan Yeni Sorularla Tarama" başlatarak eksiklerini gidermendir. Doğru bildiğin sorular otomatik olarak defterden temizlenecektir!`;
         }
 
         function startReviewTaramaTest() {
@@ -608,9 +678,157 @@
             activeGroupQuestions = filtered.map(item => { return { q: `[TARAMA] ${item.q}`, options: item.options, correct: item.correct, rationale: item.rationale, tag: item.tag }; });
             isTaramaTestMode = true; quizIdx = 0; score = 0;
             document.getElementById("view-analysis-center").classList.add("hidden");
+            document.getElementById("view-notebook").classList.add("hidden");
             document.getElementById("view-quiz").classList.remove("hidden");
-            document.getElementById("txt-quiz-module-title").textContent = "Kişiselleştirilmiş AI Tarama Testi";
+            document.getElementById("txt-quiz-module-title").textContent = "Hatalı Sorulardan Birebir Tarama Testi";
             renderQuiz();
+        }
+
+        function startTopicTaramaTest() {
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+            
+            // Get all unique tags of failed questions in current lesson
+            let failedTags = [...new Set(kpssNotebook.filter(n => n.lesson === currentLesson).map(n => n.tag).filter(t => t && t !== "#GenelKazanım"))];
+            
+            if (failedTags.length === 0) {
+                alert("ℹ️ Tarama testi başlatmak için en az bir etiketli hatalı sorunuzun olması gerekmektedir.");
+                return;
+            }
+            
+            // Gather all questions in the main database sharing these tags
+            let matchingQuestions = [];
+            currentData.forEach(unit => {
+                if (unit.quiz) {
+                    unit.quiz.forEach(q => {
+                        if (failedTags.includes(q.tag)) {
+                            if (!matchingQuestions.some(mq => mq.q === q.q)) {
+                                matchingQuestions.push(q);
+                            }
+                        }
+                    });
+                }
+            });
+            
+            if (matchingQuestions.length === 0) {
+                alert("ℹ️ Hatalı konularınızla eşleşen soru bulunamadı.");
+                return;
+            }
+            
+            // Shuffle and take up to 20 questions
+            matchingQuestions = matchingQuestions.sort(() => 0.5 - Math.random()).slice(0, 20);
+            
+            activeGroupQuestions = matchingQuestions.map(item => { 
+                return { 
+                    q: `[KONU TARAMA] ${item.q}`, 
+                    options: item.options, 
+                    correct: item.correct, 
+                    rationale: item.rationale, 
+                    tag: item.tag 
+                }; 
+            });
+            
+            isTaramaTestMode = true; 
+            quizIdx = 0; 
+            score = 0;
+            
+            document.getElementById("view-analysis-center").classList.add("hidden");
+            document.getElementById("view-notebook").classList.add("hidden");
+            document.getElementById("view-quiz").classList.remove("hidden");
+            document.getElementById("txt-quiz-module-title").textContent = `Zayıf Konu Tarama Testi (Zorluk Seviyesi: Adaptif)`;
+            
+            renderQuiz();
+        }
+
+        function startConceptQuiz(concept) {
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+            
+            let matchingQuestions = [];
+            currentData.forEach(unit => {
+                if (unit.quiz) {
+                    unit.quiz.forEach(q => {
+                        let qTag = q.tag ? q.tag.replace("#", "").trim() : "";
+                        if (qTag === concept.replace("#", "").trim()) {
+                            matchingQuestions.push(q);
+                        }
+                    });
+                }
+            });
+            
+            if (matchingQuestions.length === 0) {
+                alert(`ℹ️ #${concept} konusuyla ilgili henüz soru havuzunda özel soru bulunmuyor.`);
+                return;
+            }
+            
+            activeGroupQuestions = matchingQuestions.map(item => { 
+                return { 
+                    q: `[KONU TESTİ] ${item.q}`, 
+                    options: item.options, 
+                    correct: item.correct, 
+                    rationale: item.rationale, 
+                    tag: item.tag 
+                }; 
+            });
+            
+            isTaramaTestMode = true; 
+            quizIdx = 0; 
+            score = 0;
+            
+            switchMode('quiz');
+            document.getElementById("txt-quiz-module-title").textContent = `#${concept} Konu Özel Testi`;
+            renderQuiz();
+        }
+
+        function renderNotesView() {
+            const listContainer = document.getElementById("box-notes-list");
+            if (!listContainer) return;
+            
+            listContainer.innerHTML = "";
+            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
+            let unitNote = activeNoteDb.find(box => box.unite === currentData[activeUnitIdx]?.unite);
+            
+            if (!unitNote || !unitNote.kavramlar || Object.keys(unitNote.kavramlar).length === 0) {
+                listContainer.className = "flex justify-center items-center py-16 col-span-2";
+                listContainer.innerHTML = `
+                    <div class="text-center space-y-2">
+                        <i class="fa-solid fa-book-open text-slate-700 text-3xl"></i>
+                        <p class="text-xs text-slate-500 italic">Bu üniteye ait detaylı konu anlatım kitapçığı bulunmuyor.</p>
+                    </div>`;
+                return;
+            }
+            
+            listContainer.className = "grid grid-cols-1 md:grid-cols-2 gap-4 w-full";
+            const searchVal = document.getElementById("search-notes-input")?.value?.toLowerCase() || "";
+            
+            Object.keys(unitNote.kavramlar).forEach(kavram => {
+                const noteHtml = unitNote.kavramlar[kavram];
+                const cleanText = noteHtml.replace(/<\/?[^>]+(>|$)/g, "").toLowerCase();
+                
+                if (searchVal && !kavram.toLowerCase().includes(searchVal) && !cleanText.includes(searchVal)) {
+                    return;
+                }
+                
+                const card = document.createElement("div");
+                card.className = "glass-card p-5 rounded-2xl border border-slate-800/80 hover-glow transition-all flex flex-col justify-between space-y-4 animate-fadeIn";
+                card.innerHTML = `
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center border-b border-slate-800 pb-2">
+                            <span class="text-[10px] font-black text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2 py-0.5 rounded-md uppercase tracking-wider">#${kavram}</span>
+                            <button onclick="speakText('${kavram}. ${cleanText.replace(/'/g, "\\'")}')" class="text-slate-400 hover:text-white hover:scale-105 text-[10px] font-bold bg-slate-900 px-2 py-0.5 rounded border border-slate-800 cursor-pointer transition-all" title="Konuyu Dinle"><i class="fa-solid fa-volume-high text-indigo-400"></i> Dinle</button>
+                        </div>
+                        <div class="text-xs text-slate-300 leading-relaxed overflow-y-auto max-h-64 pr-1 scrollbar-thin">${noteHtml}</div>
+                    </div>
+                    <div class="flex gap-2 pt-2 border-t border-slate-900/60 no-print">
+                        <button onclick="startConceptQuiz('${kavram}')" class="w-full py-2 bg-indigo-950/40 hover:bg-indigo-900/40 border border-indigo-900/50 text-indigo-300 hover:text-white font-black text-[10px] rounded-xl transition-all cursor-pointer flex justify-center items-center gap-1.5 hover-glow">
+                            <i class="fa-solid fa-circle-question"></i> BU KONUDAN TEST ÇÖZ
+                        </button>
+                    </div>`;
+                listContainer.appendChild(card);
+            });
+            
+            if (listContainer.children.length === 0) {
+                listContainer.className = "flex justify-center items-center py-12 col-span-2";
+                listContainer.innerHTML = `<p class="text-xs text-slate-500 italic">Aramanızla eşleşen kavram bulunamadı.</p>`;
+            }
         }
 
         function switchLesson(lesson) {
@@ -619,10 +837,8 @@
             currentData = lesson === 'tarih' ? (typeof tarih_db !== 'undefined' ? tarih_db : []) : (typeof cografya_db !== 'undefined' ? cografya_db : []);
             activeUnitIdx = 0; activeGroupIdx = 0; cardIdx = 0; quizIdx = 0; score = 0;
             
-            document.getElementById("view-notebook").classList.add("hidden");
-            document.getElementById("view-analysis-center").classList.add("hidden");
-            document.getElementById("box-embedded-note").classList.add("hidden");
-            document.getElementById("box-top-navbar").classList.remove("hidden");
+            // Restore correct main view panels (fixes blank pages when switching lessons from notebook/analysis views)
+            switchMode(currentMode);
             
             document.getElementById("btn-tarih").className = lesson === 'tarih' ? "px-5 py-2 rounded-lg font-bold text-xs uppercase bg-amber-500 text-slate-950 shadow-sm cursor-pointer hover:scale-102 transition-transform" : "px-5 py-2 rounded-lg font-bold text-xs uppercase text-slate-400 hover:text-slate-200 cursor-pointer";
             document.getElementById("btn-cografya").className = lesson === 'cografya' ? "px-5 py-2 rounded-lg font-bold text-xs uppercase bg-emerald-500 text-slate-950 shadow-sm cursor-pointer hover:scale-102 transition-transform" : "px-5 py-2 rounded-lg font-bold text-xs uppercase text-slate-400 hover:text-slate-200 cursor-pointer";
@@ -638,7 +854,7 @@
             currentData.forEach((item, index) => {
                 const btn = document.createElement("button");
                 btn.className = `w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold flex justify-between items-center transition-all cursor-pointer ${index === activeUnitIdx && !isTaramaTestMode ? 'bg-gradient-to-r from-indigo-600 to-indigo-700 text-white shadow-md shadow-indigo-500/25 border-indigo-500' : 'text-slate-400 hover:bg-slate-900 border border-transparent hover-glow'}`;
-                btn.onclick = () => { isTaramaTestMode = false; activeUnitIdx = index; cardIdx = 0; quizIdx = 0; score = 0; document.getElementById("view-notebook").classList.add("hidden"); document.getElementById("view-analysis-center").classList.add("hidden"); document.getElementById("box-embedded-note").classList.add("hidden"); buildUnitList(); buildGroupSelector(); renderAll(); };
+                btn.onclick = () => { isTaramaTestMode = false; activeUnitIdx = index; cardIdx = 0; quizIdx = 0; score = 0; switchMode(currentMode); buildUnitList(); buildGroupSelector(); renderAll(); };
                 btn.innerHTML = `<span class="truncate pr-2">${item.unite}</span><i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>`;
                 container.appendChild(btn);
             });
@@ -654,7 +870,7 @@
                 const btn = document.createElement("button");
                 btn.className = `px-2.5 py-1 rounded-md text-[10px] font-black cursor-pointer hover-glow ${i === activeGroupIdx ? 'bg-amber-500 text-slate-950 shadow-sm' : 'bg-slate-800 text-slate-400'}`;
                 btn.textContent = `MODÜL ${i + 1}`;
-                btn.onclick = () => { activeGroupIdx = i; quizIdx = 0; score = 0; prepareGroupQuestions(); renderQuiz(); };
+                btn.onclick = () => { activeGroupIdx = i; quizIdx = 0; score = 0; prepareGroupQuestions(); buildGroupSelector(); renderQuiz(); };
                 container.appendChild(btn);
             }
         }
@@ -667,21 +883,43 @@
 
         function switchMode(mode) {
             if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-            currentMode = mode; document.getElementById("view-notebook").classList.add("hidden"); document.getElementById("view-analysis-center").classList.add("hidden"); document.getElementById("box-top-navbar").classList.remove("hidden"); document.getElementById("box-embedded-note").classList.add("hidden");
+            currentMode = mode;
+            document.getElementById("view-notebook").classList.add("hidden");
+            document.getElementById("view-analysis-center").classList.add("hidden");
+            document.getElementById("box-top-navbar").classList.remove("hidden");
+            document.getElementById("box-embedded-note").classList.add("hidden");
             
             const btnCards = document.getElementById("btn-mode-cards");
             const btnQuiz = document.getElementById("btn-mode-quiz");
+            const btnNotes = document.getElementById("btn-mode-notes");
 
-            if(mode === 'cards') {
-                isTaramaTestMode = false; document.getElementById("view-cards").classList.remove("hidden"); document.getElementById("view-quiz").classList.add("hidden"); document.getElementById("box-group-selector").classList.add("hidden");
+            // Hide all active main panels first
+            document.getElementById("view-cards").classList.add("hidden");
+            document.getElementById("view-quiz").classList.add("hidden");
+            document.getElementById("view-notes").classList.add("hidden");
+            document.getElementById("box-group-selector").classList.add("hidden");
+
+            // Reset tab styles
+            if (btnCards) btnCards.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer";
+            if (btnQuiz) btnQuiz.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer";
+            if (btnNotes) btnNotes.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer";
+
+            if (mode === 'cards') {
+                isTaramaTestMode = false;
+                document.getElementById("view-cards").classList.remove("hidden");
                 if (btnCards) btnCards.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md bg-slate-800 text-white shadow-xs cursor-pointer";
-                if (btnQuiz) btnQuiz.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer";
                 buildUnitList();
-            } else {
-                document.getElementById("view-quiz").classList.remove("hidden"); document.getElementById("view-cards").classList.add("hidden"); 
+            } else if (mode === 'quiz') {
+                document.getElementById("view-quiz").classList.remove("hidden");
                 if (btnQuiz) btnQuiz.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md bg-slate-800 text-white shadow-xs cursor-pointer";
-                if (btnCards) btnCards.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer";
-                buildGroupSelector(); prepareGroupQuestions(); renderQuiz();
+                buildGroupSelector();
+                prepareGroupQuestions();
+                renderQuiz();
+            } else if (mode === 'notes') {
+                isTaramaTestMode = false;
+                document.getElementById("view-notes").classList.remove("hidden");
+                if (btnNotes) btnNotes.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md bg-slate-800 text-white shadow-xs cursor-pointer";
+                renderNotesView();
             }
         }
 
@@ -702,7 +940,11 @@
                 }
             }
             prepareGroupQuestions(); 
-            renderQuiz();
+            if (currentMode === 'notes') {
+                renderNotesView();
+            } else {
+                renderQuiz();
+            }
         }
 
         function renderQuiz() {
@@ -769,11 +1011,15 @@
             });
 
             globalStats.solved++;
+            let rawQ = activeQ.q.replace("[TARAMA] ", "").replace("[KONU TARAMA] ", "").replace("[KONU TESTİ] ", "");
             if(selected === activeQ.correct) { 
                 globalStats.correct++; score++; 
+                if(kpssNotebook.some(n => n.q === rawQ)) {
+                    kpssNotebook = kpssNotebook.filter(n => n.q !== rawQ);
+                }
             } else {
-                if(!kpssNotebook.some(n => n.q === activeQ.q.replace("[TARAMA] ", ""))) {
-                    kpssNotebook.push({ lesson: currentLesson, unit: isTaramaTestMode ? "AI Tarama Kampı" : currentData[activeUnitIdx]?.unite || "Genel", q: activeQ.q.replace("[TARAMA] ", ""), options: activeQ.options, correct: activeQ.correct, rationale: activeQ.rationale, tag: tagStr });
+                if(!kpssNotebook.some(n => n.q === rawQ)) {
+                    kpssNotebook.push({ lesson: currentLesson, unit: isTaramaTestMode ? "AI Tarama Kampı" : currentData[activeUnitIdx]?.unite || "Genel", q: rawQ, options: activeQ.options, correct: activeQ.correct, rationale: activeQ.rationale, tag: tagStr });
                 }
             }
             saveStateToStorage();
