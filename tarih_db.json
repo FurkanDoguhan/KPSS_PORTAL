@@ -5884,6 +5884,726 @@ const tarih_db = [
         "correct": 2,
         "rationale": "<b>Doğru Cevap: C şıkkıdır.</b> Fatih, yerel beylerin çocuklarını Enderun'da veya sarayda Türk-İslam terbiyesiyle büyüterek devlete sadakatle bağlamıştır. Bu çocuklar büyüyüp ülkelerine vali olarak döndüklerinde, hem halkı memnun etmiş hem de Osmanlı'ya sadık kalarak isyan çıkmasını engellemişlerdir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Soylu sınıfları yok etmek değil, aksine soyluların çocuklarını devlete bağlayarak sistemi içeriden yönetmek amaçlanmıştır.<br>• <b>B Şıkkı (Yanlış):</b> Amaç vergi tahsilatını zorlaştırmak veya işkence yapmak değildir, tamamen idari entegrasyondur.<br>• <b>C Şıkkı (Doğru):</b> Yerel soylu çocuklarının devlete sadık vali yapılması, balkanlarda fetihten sonra asayişin çok hızlı kurulmasının sırrıdır.<br>• <b>D Şıkkı (Yanlış):</b> Osmanlı merkeziyetçi bir imparatorluktur, federasyon kurma niyeti yoktur.",
         "tag": "#BalkanYönetimi"
+      },
+      {
+        "q": "Soru 41: Fatih Sultan Mehmet'in Bosna Hersek'i fethettikten sonra 1478 yılında Latin rahiplerine (Fransiskenler) verdiği ferman olan Ahidname, devletin tebaasına karşı uyguladığı egemenlik hukukunun önemli bir belgesidir. Bu belgede rahiplerin can ve mal güvenliklerinin teminat altına alınması ve dinlerini özgürce yaşayabilmelerinin taahhüt edilmesi, Osmanlı Devleti'nin aşağıdaki yönetim ilkelerinden hangisini kurumsallaştırdığının en doğrudan kanıtıdır?",
+        "options": [
+          "İstimalet (Hoşgörü ve Adalet) Politikası",
+          "Asimilasyon ve Zorunlu Din Değiştirme Sistemi",
+          "Padişahın mutlak dini yetkilerinin rahiplere devredilmesi",
+          "Merkezi idarenin eyaletlerdeki askeri kontrolü azaltma kararı"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Ahidname, Osmanlı Devleti'nin fethettiği bölgelerdeki gayrimüslim halkın inanç, can ve mal güvenliğini koruma altına alan tarihi bir vesikadır. Bu politika 'istimalet' (hoşgörü ve ısındırma) politikası olarak adlandırılır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Ahidname rahiplerin ve halkın haklarını koruyarak Osmanlı hoşgörü ve adalet (istimalet) politikasını kurumsallaştırmıştır.<br>• <b>B Şıkkı (Yanlış):</b> Osmanlı Devleti hiçbir zaman asimilasyon ve zorunlu din değiştirme uygulamamıştır; bu durum fermanla da ilan edilmiştir.<br>• <b>C Şıkkı (Yanlış):</b> Padişah kendi dini yetkilerini rahiplere devretmemiş, sadece onların ibadet hürriyetini güvence altına almıştır.<br>• <b>D Şıkkı (Yanlış):</b> Askeri kontrolün azaltılması söz konusu değildir, devlet otoritesi fetih sonrası aynen kurulmuştur.",
+        "tag": "#Ahidname"
+      },
+      {
+        "q": "Soru 42: Osmanlı Devleti'nin kuruluş döneminde Rumeli'de gerçekleştirdiği Balkan fetihleri, salt askeri bir taarruz hareketi olmanın ötesinde, fethin kalıcı olmasını sağlayan sosyal ve demografik politikalarla desteklenmiştir. Osmanlıların Balkan fetihlerini kalıcı kılmak adına fethettiği bölgelerde uyguladığı en stratejik idari hamle aşağıdakilerden hangisidir?",
+        "options": [
+          "Anadolu'daki göçebe Türkmen nüfusunu fethedilen yerlere yerleştirme (İskan Siyaseti)",
+          "Balkanlar'daki Hristiyan nüfusun tamamını Anadolu'ya sürme",
+          "Balkan devletleriyle ortak bir konfederasyon meclisi kurma",
+          "Balkan krallıklarının askeri ve idari yasalarını aynen koruma"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Balkan fetihlerinin kalıcı olması için izlenen 'iskan siyaseti', fethedilen topraklara Anadolu'dan getirilen Türk nüfusunun planlı şekilde yerleştirilmesidir. Bu sayede bölgenin Türkleşmesi ve İslamlaşması sağlanmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> İskan siyaseti ile Anadolu'dan getirilen aileler Balkanlar'a yerleştirilmiş ve buralardaki Türk egemenliği kalıcı hale getirilmiştir.<br>• <b>B Şıkkı (Yanlış):</b> Osmanlı Hristiyan nüfusu Anadolu'ya sürmemiş, onları yerlerinde bırakarak vergiye bağlamıştır.<br>• <b>C Şıkkı (Yanlış):</b> Osmanlı merkeziyetçi bir devlettir ve Balkanlar'da herhangi bir federasyon veya konfederasyon kurmamıştır.<br>• <b>D Şıkkı (Yanlış):</b> Yerel kanunlar geçici olarak gözetilse de Osmanlı kendi adil hukuk sistemini ve yönetim mekanizmasını kurmuştur.",
+        "tag": "#BalkanFetihleri"
+      },
+      {
+        "q": "Soru 43: Osmanlı Devleti, fethettiği Balkan topraklarında yerel feodal beylerin köylü üzerindeki ağır angaryalarını kaldırmış, adil bir vergi sistemi getirerek yerel kiliselerin özerkliğini korumuştur. Bu Balkan yönetim anlayışı sayesinde yüzyıllar boyunca çok az sayıda Yeniçeri askeriyle Balkanlar'da barış ve asayiş (Pax Ottomanica) korunabilmiştir. Bu durum Osmanlı Devleti hakkında aşağıdakilerden hangisinin göstergesidir?",
+        "options": [
+          "Balkan halklarının asimilasyona karşı direnç gösteremediğinin",
+          "Vergi gelirlerinin tamamen askeri harcamalara ayrıldığının",
+          "Adalete dayalı ve inançlara saygılı bir yönetim modeli uygulandığının",
+          "Balkanlar'da yerel krallıkların bağımsız idarelerinin devam ettiğinin"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Osmanlı Devleti'nin Balkanlar'daki adil yönetimi, ağır vergileri hafifletmesi ve din hürriyeti sağlaması halkın devlete sadakatini artırmıştır. Bu durum askeri güce dayalı bir baskı yerine rızaya dayalı adil bir idare kurulduğunu gösterir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Osmanlı asimilasyon yapmadığı için balkan halklarının direnç göstermesi gibi bir durum söz konusu olmamıştır.<br>• <b>B Şıkkı (Yanlış):</b> Vergi gelirleri sadece askeri harcamalara değil, sosyal, kültürel ve bayındırlık işlerine de harcanmıştır.<br>• <b>C Şıkkı (Doğru):</b> Adaletli yönetim ve din özgürlüğü, Balkanlar'da yüzyıllarca süren huzur ortamının (Pax Ottomanica) temel anahtarıdır.<br>• <b>D Şıkkı (Yanlış):</b> Yerel krallıklar tamamen ortadan kaldırılarak Osmanlı'ya bağlı sancaklar haline getirilmiştir.",
+        "tag": "#BalkanYönetimi"
+      },
+      {
+        "q": "Soru 44: Osmanlı Devleti'nin sınırlarının batı yönünde hızla genişlemesi üzerine, I. Murat döneminde idari yapıyı kolaylaştırmak ve sınırları daha etkin denetlemek amacıyla Manastır merkezli 'Rumeli Beylerbeyliği' kurulmuştur. Bu idari birimin kurulması ve zamanla Anadolu Beylerbeyliği'nin de eklenmesi, Osmanlı idari teşkilatlanmasında aşağıdakilerden hangisinin doğrudan bir göstergesidir?",
+        "options": [
+          "Devlet sınırlarının büyümesine paralel olarak idari ve askeri teşkilatın genişletildiğinin",
+          "Rumeli Beylerbeyliği'nin Anadolu'dan daha değersiz görüldüğünün",
+          "Eyalet yönetimlerinde sivil otoritenin tamamen askeri otoriteye devredildiğinin",
+          "Merkeziyetçi devlet yapısının eyalet beyleri lehine gevşetildiğinin"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Sınırların genişlemesiyle tek merkezden (başkentten) tüm ülkeyi yönetmek zorlaşmıştır. I. Murat bu doğrultuda eyalet sisteminin temelini atarak Rumeli Beylerbeyliği'ni kurmuştur. Bu durum genişleyen sınırlara uygun idari yapılanmadır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Sınırların genişlemesi askeri ve sivil idareyi kolaylaştıracak beylerbeylik makamlarının kurulmasını zorunlu kılmıştır.<br>• <b>B Şıkkı (Yanlış):</b> Rumeli Beylerbeyliği protokolde Anadolu Beylerbeyliği'nden üstündür, bu da batı yönündeki fetihlerin ve toprakların önemini gösterir.<br>• <b>C Şıkkı (Yanlış):</b> Eyaletlerde sivil ve askeri otorite dengelenmiştir, adalet işleri bağımsız kadılara verilmiştir.<br>• <b>D Şıkkı (Yanlış):</b> Osmanlı beylerbeylikleri doğrudan merkeze bağlı tutarak merkezi otoriteyi zayıflatmamış, tam aksine güçlendirmiştir.",
+        "tag": "#Beylerbeylik"
+      },
+      {
+        "q": "Soru 45: Fatih Sultan Mehmet'in vefatı sonrasında tahta çıkan II. Bayezid'e karşı kardeşi Cem Sultan'ın isyan etmesi olayı, öncelikle bir hanedan içi taht kavgası olarak başlamıştır. Ancak Cem Sultan'ın mağlubiyeti sonrası Rodos Şövalyelerine, ardından Papalık ve Fransa'ya sığınması bu meseleyi Osmanlı Devleti açısından farklı bir boyuta taşımıştır. Cem Sultan Olayı'nın Osmanlı Devleti üzerindeki en yıkıcı diplomatik ve askeri sonucu aşağıdakilerden hangisidir?",
+        "options": [
+          "İstanbul'un fethinin gecikmesine yol açması",
+          "İç meseleyken dış soruna dönüşerek batı yönündeki fetihleri durdurması ve Safevi tehlikesine karşı devleti pasifleştirmesi",
+          "Osmanlı Devleti'nin taht veraset sistemini tamamen ortadan kaldırması",
+          "Balkan eyaletlerinin bağımsızlıklarını ilan etmelerine neden olması"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Cem Sultan'ın Avrupalı devletlerin ve Papalığın elinde bir koz olarak bulunması, II. Bayezid'in batı siyasetinde elini kolunu bağlamış, fetihleri durdurmuştur. Aynı dönemde doğuda gelişen Safevi propagandasına karşı da aktif askeri hamle yapılamamıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> İstanbul bu olaydan önce (1453'te) fethedilmiştir.<br>• <b>B Şıkkı (Doğru):</b> Cem Sultan'ın Hristiyan dünyasında rehin kalması, Osmanlı'nın dış politikada pasif kalmasına ve batı fetihlerinin kilitlenmesine neden olmuştur.<br>• <b>C Şıkkı (Yanlış):</b> Veraset sistemi kaldırılmamış, hanedan egemenliği devam etmiştir.<br>• <b>D Şıkkı (Yanlış):</b> Cem Sultan olayı balkanlarda toprak kaybına veya isyanlara yol açmamıştır.",
+        "tag": "#CemSultan"
+      },
+      {
+        "q": "Soru 46: Osmanlı Devleti'nde idari, askeri, mali ve hukuki işlerin görüşüldüğü en yüksek merci Divan-ı Hümayun'dur. Orhan Bey döneminde kurulan divanda, Fatih Sultan Mehmet dönemine kadar padişahlar bizzat başkanlık etmişlerdir. Ancak Fatih Sultan Mehmet, Divan başkanlığını sadrazama (veziriazam) bırakarak kendisi toplantıları 'Kasr-ı Adl' adı verilen kafesli pencerenin arkasından takip etmeye başlamıştır. Fatih'in bu reformla ulaşmak istediği temel idari amaç nedir?",
+        "options": [
+          "Padişahı günlük siyasi tartışmaların üstünde tutarak karizmasını kutsallaştırmak ve mutlak karar yetkisinin kendisinde olduğunu hissettirerek merkezi otoriteyi zirveye taşımak",
+          "Divan-ı Hümayun'un yetkilerini tamamen feshedip meclisi kapatmak",
+          "Sadrazamı devletin tek ve mutlak egemeni ilan etmek",
+          "Halkın divan kararlarına karşı şikayetlerini iletmesini engellemek"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Fatih, padişahı doğrudan divanın rutin tartışmalarından uzaklaştırarak üst bir otorite konumuna yerleştirmiştir. Kararlar veziriazam başkanlığında alınsa da padişahın onayına sunulmaktadır. Bu durum padişahın mutlak egemenliğini pekiştirmiştir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Divan başkanlığının sadrazama devredilmesi padişahı tartışmaların üstünde tutarak merkezi otoritesini güçlendirmiştir.<br>• <b>B Şıkkı (Yanlış):</b> Divan kapatılmamış, aksine sadrazam başkanlığında daha kurumsal ve sık toplanır hale getirilmiştir.<br>• <b>C Şıkkı (Yanlış):</b> Sadrazam mutlak egemen olmamış, sadece padişahın mutlak vekili olarak yetki kullanmıştır.<br>• <b>D Şıkkı (Yanlış):</b> Halkın şikayet hakkı (hak arama hürriyeti) divanda en üst düzeyde korunmaya devam edilmiştir.",
+        "tag": "#DivanıHümayun"
+      },
+      {
+        "q": "Soru 47: Fatih Sultan Mehmet, beylikten imparatorluğa geçiş sürecinde örfi hukuk kurallarını yazılı ve sistemli hale getirmek amacıyla Kanunname-i Âli Osman'ı (Fatih Kanunnamesi) hazırlatmıştır. Bu kanunnamede yer alan 'Evladımdan her kime saltanat müyesser ola, nizâm-ı âlem içün karındaşların katletmek münasibdir...' hükmüyle kardeş katline yasal zemin kazandırılmıştır. Fatih'in bu radikal düzenlemeyi kanunnameye ekletmesindeki temel devlet felsefesi aşağıdakilerden hangisidir?",
+        "options": [
+          "Taht kavgalarını önleyerek bölünmeleri engellemek, devletin bekasını ve merkezi otoritenin tekliğini korumak",
+          "Padişahların yetkilerini sınırlayarak meclis hükümetini kurmak",
+          "Hanedanın egemenlik hakkını tamamen kaldırıp cumhuriyeti getirmek",
+          "Balkan soylularının Osmanlı hanedanına girmesini kolaylaştırmak"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Fatih'in buradaki temel amacı taht kavgaları yüzünden devletin zayıflamasını veya bölünmesini engellemektir. 'Nizam-ı Alem' (dünya düzeni ve devletin birliği) için hanedanın bir üyesinin feda edilmesi ilkesi benimsenerek merkezi otorite mutlak kılınmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Kardeş katli yasası, devletin bölünmesini engellemek ve merkezi otoritenin tekliğini korumak amacıyla getirilmiştir.<br>• <b>B Şıkkı (Yanlış):</b> Kanunname padişahın yetkilerini sınırlamamış, aksine mutlak yetkilerini pekiştirmiştir.<br>• <b>C Şıkkı (Yanlış):</b> Hanedan egemenliği sonlandırılmamış, aksine tek bir hükümdarın elinde merkezileştirilmiştir.<br>• <b>D Şıkkı (Yanlış):</b> Balkan soylularıyla bu konunun hiçbir ilişkisi yoktur, tamamen hanedan içi bir veraset düzenlemesidir.",
+        "tag": "#FatihKanunnamesi"
+      },
+      {
+        "q": "Soru 48: 1402 Ankara Savaşı'nda Yıldırım Bayezid'in Timur'a mağlup olup esir düşmesiyle Osmanlı Devleti'nde 11 yıl süren 'Fetret Devri' (1402-1413) başlamıştır. Yıldırım'ın oğulları arasında kanlı taht kavgaları yaşanmış, Anadolu'daki Türk beylikleri bağımsızlıklarını ilan etmiştir. Ancak bu otorite boşluğuna ve kargaşaya rağmen Balkanlar'da neredeyse hiç toprak kaybı ve büyük isyan yaşanmamıştır. Balkanlar'da Fetret Devri boyunca Osmanlı egemenliğinin sarsılmamasının en temel nedeni nedir?",
+        "options": [
+          "Balkan halklarının tamamının zorla Müslüman yapılması",
+          "Balkanlar'da uygulanan adil istimalet (hoşgörü) politikası ve feodal angaryaların kaldırılmasıyla halkın yönetimden memnun olması",
+          "Avrupa devletlerinin Osmanlı'ya büyük askeri yardımlar göndermesi",
+          "Yeniçerilerin Balkan eyaletlerindeki nüfusu tamamen sürgüne göndermesi"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Osmanlı'nın Balkanlar'da uyguladığı hoşgörülü istimalet siyaseti ve eski feodal baskıcı düzen yerine getirdiği adil vergilendirme, Balkan köylüsünün isyan etmesini önlemiştir. Hristiyan tebaa, kendi soylularının boyunduruğu yerine Osmanlı'nın adil yönetimini tercih etmiştir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Osmanlı hiçbir zaman Balkanlar'da zorla Müslümanlaştırma veya asimilasyon yapmamıştır.<br>• <b>B Şıkkı (Doğru):</b> İstimalet politikası ve adil yönetim, Fetret Devri gibi büyük bir krizde Balkanlar'ın devlete sadık kalmasını sağlamıştır.<br>• <b>C Şıkkı (Yanlış):</b> Avrupalı devletler Osmanlı'ya yardım etmemiş, tam aksine bu krizden yararlanmaya çalışmışlardır ancak başarılı olamamışlardır.<br>• <b>D Şıkkı (Yanlış):</b> Yeniçerilerin halkı sürgün etmesi söz konusu değildir; adalet ve barış düzeni sürdürülmüştür.",
+        "tag": "#FetretDevri"
+      },
+      {
+        "q": "Soru 49: Kanuni Sultan Süleyman döneminde Hint Okyanusu'nda askeri ve ticari üstünlük kuran Portekizlileri bölgeden uzaklaştırmak, gümrük gelirlerini korumak ve Gücerat Müslüman Sultanlığı'na yardım etmek amacıyla 4 büyük 'Hint Deniz Seferleri' düzenlenmiştir. Hadım Süleyman Paşa, Piri Reis, Murat Reis ve Seydi Ali Reis gibi önemli amirallerin katıldığı bu seferler askeri açıdan tam başarıya ulaşamamıştır. Hint Deniz Seferleri'nin başarısızlıkla sonuçlanmasının en temel teknik ve lojistik nedeni aşağıdakilerden hangisidir?",
+        "options": [
+          "Osmanlı donanmasındaki kadırgaların açık deniz ve okyanus şartlarına dayanıksız olması, seferlere gereken stratejik önemin verilmemesi ve bölgedeki Müslüman sultanlıkların yeterli desteği sunmaması",
+          "Hint denizinde hiçbir Osmanlı limanının bulunmaması",
+          "Portekizlilerin Osmanlı amirallerine suikastlar düzenlemesi",
+          "Padişahın seferlerin ortasında donanmayı geri çağırması"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Osmanlı donanması iç denizler (Akdeniz, Karadeniz) için tasarlanmış kadırga tipindeydi ve okyanus dalgalarına dayanıksızdı. Ayrıca Osmanlı yönetimi batı fetihlerine (Avrupa) daha çok odaklandığından seferlere gereken bütçe ve önemi vermemiş, Gücerat Müslümanları da Osmanlı'ya sadık kalıp askeri destek vermemişlerdir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Kadırgaların okyanus şartlarına dayanıksızlığı, lojistik eksiklikler ve yerel destek yetersizliği başarısızlığın temel sebepleridir.<br>• <b>B Şıkkı (Yanlış):</b> Yemen, Aden ve Kızıldeniz kıyıları kontrol altındaydı ancak okyanus aşırı üsler yetersizdi.<br>• <b>C Şıkkı (Yanlış):</b> Portekiz suikastları gibi bir olay askeri başarısızlığın temel teknik sebebi değildir.<br>• <b>D Şıkkı (Yanlış):</b> Padişah donanmayı keyfi olarak geri çağırmamış, aksine amiraller zor şartlar altında mücadele etmiştir.",
+        "tag": "#HintDenizSeferleri"
+      },
+      {
+        "q": "Soru 50: Osmanlı Devleti, en güçlü olduğu yükselme döneminde batılı devletlere (ilk kapsamlı olarak Fatih döneminde Venedik'e, Kanuni döneminde Fransa'ya) kapitülasyon adı verilen ticari, mali ve hukuki imtiyazlar tanımıştır. Güçlü bir imparatorluğun başka devletlere bu tarz imtiyazlar vermesinin ardındaki temel diplomatik ve jeopolitik amaç aşağıdakilerden hangisidir?",
+        "options": [
+          "Akdeniz ticaretini canlandırmak ve Avrupa'da Osmanlı'ya karşı oluşabilecek Hristiyan ittifakını (Haçlı Birliği) bölmek",
+          "Osmanlı ekonomisinin iflas ettiğini kabul ederek dış borç aramak",
+          "Hristiyan devletlerin Osmanlı iç işlerine müdahale etmesini kolaylaştırmak",
+          "Avrupa devletlerinin askeri üstünlüğünü kabul ederek barış istemek"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Yükselme döneminde kapitülasyonlar çaresizlikten değil, bilinçli ve üstün konumdayken verilmiştir. Amaç, Coğrafi Keşifler ile zayıflayan Akdeniz limanlarını canlandırmak ve Fransa/Venedik gibi devletleri yanına çekerek Avrupa'daki Haçlı ittifaklarını diplomatik olarak parçalamaktır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Akdeniz ticaretini canlandırma ve Hristiyan birliğini bölme hedefleri kapitülasyonların temel jeopolitik sebebidir.<br>• <b>B Şıkkı (Yanlış):</b> Yükselme devrinde Osmanlı bütçesi zirvededir, iflas veya borç arayışı yoktur.<br>• <b>C Şıkkı (Yanlış):</b> Osmanlı iç işlerine müdahaleyi kesinlikle yasaklamıştır; kapitülasyonlar padişahın tek taraflı iradesiyle yürürlükte kalmıştır.<br>• <b>D Şıkkı (Yanlış):</b> Osmanlı bu dönemde dünyanın en büyük askeri gücüdür; Avrupa'nın askeri üstünlüğü söz konusu değildir.",
+        "tag": "#Kapitülasyonlar"
+      },
+      {
+        "q": "Soru 51: Fatih Sultan Mehmet, Karadeniz ticaret yollarını tam kontrol altına almak amacıyla Cenevizlilerden Amasra'yı, Candaroğullarından Sinop'u almış ve Trabzon Rum İmparatorluğu'na son vermiştir. Ancak Karadeniz'in tam bir 'Türk Gölü' haline gelmesi ve kuzey ticaret hattının güvenliği kesin olarak başka bir fethin tamamlanmasıyla gerçekleşmiştir. Karadeniz'i kesin olarak Türk gölü yapan bu nihai fetih aşağıdakilerden hangisidir?",
+        "options": [
+          "Kırım Hanlığı'nın Osmanlı'ya bağlanması (1475)",
+          "İstanbul'un Fethi (1453)",
+          "Belgrad'ın Fethi (1521)",
+          "Mısır'ın Fethi (1517)"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> 1475 yılında Gedik Ahmet Paşa komutasındaki donanmanın Kırım'ı fethederek Ceneviz kolonilerine son vermesi ve Kırım Hanlığı'nı Osmanlı'ya bağlamasıyla Karadeniz'in tüm kıyıları Türk kontrolüne geçmiş ve Karadeniz bir Türk gölü olmuştur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Kırım'ın fethi Karadeniz'in bir Türk gölü haline gelmesini sağlayan nihai ve en önemli askeri hamledir.<br>• <b>B Şıkkı (Yanlış):</b> İstanbul'un fethi boğazları kontrol altına almıştır ancak Karadeniz'in kuzey kıyılarının (Kırım) fethi olmadan Karadeniz göl haline gelememiştir.<br>• <b>C Şıkkı (Yanlış):</b> Belgrad karasal bir fetihtir, balkanların kapısını açmıştır.<br>• <b>D Şıkkı (Yanlış):</b> Mısır seferi güney denizleri ve Akdeniz ticaretiyle ilgilidir.",
+        "tag": "#KaradenizFethi"
+      },
+      {
+        "q": "Soru 52: I. Murat döneminde, 1389 yılında Osmanlı ordusu ile balkan devletlerinin oluşturduğu büyük müttefik ordu arasında yapılan I. Kosova Savaşı, Osmanlı askeri tarihi açısından birçok ilke sahne olmuştur. Bu zaferle Balkanlar'daki Türk varlığı kesinleşirken, savaşın sonunda I. Murat'ın savaş alanını gezerken yaralı bir Sırp askeri (Miloş Obiliç) tarafından şehit edilmesiyle de tarihe geçmiştir. I. Kosova Savaşı'nın askeri tarih açısından en önemli teknik özelliği aşağıdakilerden hangisidir?",
+        "options": [
+          "Osmanlı ordusunda düşman atlarını ürkütmek amacıyla ilk kez savaş meydanında top kullanılması",
+          "İlk kez tımarlı sipahilerin savaşa katılması",
+          "Savaşta ilk kez barış antlaşmasının imzalanması",
+          "Osmanlı donanmasının nehir üzerinden askeri destek sağlaması"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> I. Kosova Savaşı'nda Osmanlı ordusu, savaş meydanında ses çıkartarak düşman kuvvetlerinin ve özellikle süvari atlarının panik yapmasını sağlamak amacıyla ilk kez ilkel topçu birliğini (hafif topları) kullanmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> I. Kosova Savaşı, Osmanlı tarihinde savaş meydanında ilk kez topun kullanıldığı muharebedir.<br>• <b>B Şıkkı (Yanlış):</b> Tımarlı sipahiler daha önceki küçük çatışmalarda da görev almıştır.<br>• <b>C Şıkkı (Yanlış):</b> Barış antlaşması bu meydan savaşıyla ilgili teknik bir askeri ilk değildir.<br>• <b>D Şıkkı (Yanlış):</b> Kosova kara savaşıdır, donanma desteği söz konusu değildir.",
+        "tag": "#KosovaSavaş"
+      },
+      {
+        "q": "Soru 53: Osmanlı Beyliği'nin kuruluş aşamasında sınırlarını Bizans yönünde genişleten Osman Gazi, bölgedeki Bizans tekfurlarını (sınır valilerini) endişelendirmiştir. Bu durum üzerine tekfurların kurduğu birleşik ordu ile Osman Gazi komutasındaki gönüllü alpler ve aşiret kuvvetleri 1302 yılında karşı karşıya gelmiştir. Ünlü tarihçi Halil İnalcık'a göre, Osmanlı'nın bağımsız bir devlet/beylik kimliği kazanmasını tescilleyen bu ilk büyük askeri zafer aşağıdakilerden hangisidir?",
+        "options": [
+          "Koyunhisar (Bafeus) Savaşı",
+          "Sazlıdere Savaşı",
+          "Pelekanon (Maltepe) Savaşı",
+          "Çirmen Savaşı"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> 1302 Koyunhisar (Bafeus) Savaşı, Osmanlıların Bizans kuvvetlerine karşı kazandığı ilk büyük ve organize meydan savaşı zaferidir. Halil İnalcık, beyliğin rüştünü ispat ettiği ve bağımsızlığını kazandığı tarihi milat olarak bu savaşı kabul eder.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Koyunhisar Savaşı, Bizans ile yapılan ilk büyük meydan muharebesidir ve beyliğin kuruluşunu tescillemiştir.<br>• <b>B Şıkkı (Yanlış):</b> Sazlıdere Savaşı I. Murat döneminde Edirne'nin fethiyle sonuçlanan savaştır.<br>• <b>C Şıkkı (Yanlış):</b> Pelekanon Savaşı Orhan Bey döneminde Bizans imparatoruna karşı kazanılmıştır.<br>• <b>D Şıkkı (Yanlış):</b> Çirmen Savaşı balkanlarda Sırplara karşı kazanılmış bir zaferdir.",
+        "tag": "#Koyunhisar"
+      },
+      {
+        "q": "Soru 54: Osmanlı Devleti'nin 600 yıl boyunca tek bir hanedan tarafından bölünmeden yönetilebilmesinin en büyük sırrı, merkezi otoritenin kusursuz bir şekilde korunmasıdır. Padişahlar, yetkilerine ortak olabilecek hiçbir gücün doğmasına izin vermemişlerdir. Aşağıdakilerden hangisi Fatih Sultan Mehmet döneminde doğrudan merkezi otoriteyi mutlaklaştırmak ve yerel güçlü Türk ailelerinin gücünü kırmak amacıyla uygulanan sistemdir?",
+        "options": [
+          "Müsadere Sistemi (Devlet memurlarının mallarına el koyma hürriyeti) ve Devşirme kökenli sadrazamların tercih edilmesi",
+          "Veraset sisteminin tamamen kaldırılarak yerine seçim sisteminin getirilmesi",
+          "Toprakların mülkiyetinin eyalet beylerine devredilmesi",
+          "Enderun Mektebi'nin kapatılarak medreselerin tek eğitim kurumu yapılması"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Fatih, Çandarlı Halil Paşa gibi güçlü Türk ailelerinin saray üzerindeki vesayetini kırmak için devşirme kökenli sadrazamları göreve getirmiş ve ölen veya azledilen zengin devlet adamlarının mallarına el koyma yöntemi olan 'müsadere'yi yasallaştırmıştır. Bu sayede saraya rakip zengin aristokrat ailelerin oluşması önlenmiştir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Müsadere ve devşirme sadrazam kullanımı saraya rakip çıkmasını önleyerek merkezi otoriteyi zirveye taşımıştır.<br>• <b>B Şıkkı (Yanlış):</b> Veraset sistemi kaldırılmamış, aksine 'ülke sadece padişahındır' denilerek tekleştirilmiştir.<br>• <b>C Şıkkı (Yanlış):</b> Toprakların mülkiyeti devlete (miri) aittir, beylere devredilmesi feodaliteye yol açardı ki bu Osmanlı felsefesine aykırıdır.<br>• <b>D Şıkkı (Yanlış):</b> Enderun kapatılmamış, aksine Fatih döneminde en parlak dönemine girmiştir.",
+        "tag": "#MerkeziOtorite"
+      },
+      {
+        "q": "Soru 55: Kanuni Sultan Süleyman komutasındaki Osmanlı ordusu ile Macaristan Krallığı ordusu arasında 1526 yılında yapılan Mohaç Meydan Savaşı, askeri taktik ve ateş gücü kullanımı açısından dünya savaş tarihinin en dikkat çekici çarpışmalarından biridir. Osmanlı ordusunun topçu ve tüfekli piyade (Yeniçeri) gücünü hilal taktiğiyle birleştirmesi sonucunda Macar ordusu çok kısa sürede tamamen imha edilmiştir. Mohaç Meydan Savaşı'nın askeri tarih literatüründeki en büyük rekoru nedir?",
+        "options": [
+          "Dünya savaş tarihinin en kısa sürede (yaklaşık 2 saatte) kesin zaferle sonuçlanan meydan savaşı olması",
+          "Tarihte ilk kez zırhlı süvarilerin kullanıldığı savaş olması",
+          "Tarihin en çok can kaybının yaşandığı deniz savaşı olması",
+          "İlk kez barutun Çin dışında bir savaşta kullanılması"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Mohaç Meydan Savaşı, Osmanlı'nın muazzam ateş gücü koordinasyonu (özellikle zincirlenmiş 300 top ve Yeniçerilerin tüfek voleybol atışları) sayesinde Macar şövalyelerini ovada kıskaca almış ve Macar ordusunu yaklaşık 2 saatte tamamen tasfiye etmiştir. Bu süre meydan savaşları tarihinde bir rekordur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Mohaç, 2 saat gibi çok kısa bir sürede devasa bir ordunun yok edildiği en hızlı meydan savaşı zaferidir.<br>• <b>B Şıkkı (Yanlış):</b> Zırhlı süvariler Orta Çağ boyunca Avrupa'da çok yoğun kullanılmıştır, bu savaş bir ilk değildir.<br>• <b>C Şıkkı (Yanlış):</b> Mohaç bir kara meydan savaşıdır, deniz savaşı değildir.<br>• <b>D Şıkkı (Yanlış):</b> Barut daha önceki yüzyıllarda da hem Avrupa'da hem İslam dünyasında yoğun olarak kullanılmıştır.",
+        "tag": "#MohaçSavaş"
+      },
+      {
+        "q": "Soru 56: Yavuz Sultan Selim döneminde Memlük Devleti üzerine gerçekleştirilen Mısır Seferi (1516 Mercidabık ve 1517 Ridaniye Savaşları), Osmanlı Devleti'nin sadece sınırlarını genişletmekle kalmamış, devletin teokratik ve ekonomik yapısında da köklü değişimler yaratmıştır. Aşağıdakilerden hangisi Mısır Seferi sonucunda Osmanlı Devleti'nin elde ettiği en kritik kazanımlardan biri 'değildir'?",
+        "options": [
+          "Halifelik makamının Osmanlı hanedanına geçmesi",
+          "Kutsal emanetlerin İstanbul'a getirilmesi ve Hicaz bölgesinin Osmanlı'ya bağlanması",
+          "Baharat Yolu'nun kontrolünün Osmanlı'ya geçmesi ve devlet hazinesinin altınla dolması",
+          "Avrupalı devletlerin Osmanlı'ya karşı ilk kez kapitülasyon fermanı vermesi"
+        ],
+        "correct": 3,
+        "rationale": "<b>Doğru Cevap: D Şıkkıdır.</b> Kapitülasyon fermanları Osmanlı tarafından Avrupalı devletlere verilen ticari tavizlerdir, Avrupalıların Osmanlı'ya vermesi gibi bir durum yoktur. Diğer şıklar Mısır Seferi'nin doğrudan ve en büyük sonuçlarıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Halifelik Memlüklerin elinden alınarak Osmanlı padişahlarına geçmiş, devletin teokratik karakteri pekişmiştir.<br>• <b>B Şıkkı (Yanlış):</b> Kutsal emanetler Topkapı Sarayı'na getirilmiş, Mekke ve Medine'nin anahtarları Yavuz'a sunulmuştur.<br>• <b>C Şıkkı (Yanlış):</b> Mısır'ın fethiyle Baharat Yolu tamamen kontrol altına alınmış ve Memlük hazinesi İstanbul'a taşınmıştır.<br>• <b>D Şıkkı (Doğru):</b> Mısır Seferi sonrasında Osmanlı'ya herhangi bir dış kapitülasyon verilmesi söz konusu değildir; bu şık yanlış bir ifadedir.",
+        "tag": "#MısırSeferi"
+      },
+      {
+        "q": "Soru 57: Yıldırım Bayezid'in Bizans'ı (İstanbul) yoğun bir şekilde kuşattığı dönemde, Bizans'ın çağrısıyla Avrupa'nın en seçkin şövalyelerinden ve krallarından oluşan devasa bir Haçlı ordusu Osmanlı üzerine yürümüştür. Yıldırım Bayezid kuşatmayı kaldırarak süratle hareket etmiş ve 1396 yılında Niğbolu Kalesi önünde Haçlıları ağır bir bozguna uğratmıştır. Bu muazzam zafer sonrasında Abbasi Halifesi tarafından Yıldırım Bayezid'e verilen resmi unvan aşağıdakilerden hangisidir?",
+        "options": [
+          "Sultan-ı İklim-i Rum (Anadolu Coğrafyasının Sultanı)",
+          "Hadimü'l-Haremeyni'ş-Şerifeyn (Mekke ve Medine'nin Hizmetkarı)",
+          "Muallim-i Sani (İkinci Öğretmen)",
+          "Kayser-i Rum (Roma İmparatoru)"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> 1396 Niğbolu zaferinden sonra Bağdat'taki Abbasi Halifesi, İslam dünyasında Yıldırım Bayezid'in itibarını tescillemek amacıyla ona 'Sultan-ı İklim-i Rum' (Anadolu Coğrafyasının / Diyarının Sultanı) unvanını vermiştir. Bu durum beyliğin İslam dünyasındaki askeri ve siyasi liderliğini pekiştirmiştir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Halife Niğbolu zaferi sonrası Yıldırım Bayezid'e 'Sultan-ı İklim-i Rum' unvanını takdim etmiştir.<br>• <b>B Şıkkı (Yanlış):</b> 'Hadimü'l-Haremeyn' unvanı Mısır Seferi sonrasında Yavuz Sultan Selim tarafından alınmıştır.<br>• <b>C Şıkkı (Yanlış):</b> 'Muallim-i Sani' ünlü İslam filozofu Farabi'ye verilen bilimsel bir unvandır.<br>• <b>D Şıkkı (Yanlış):</b> 'Kayser-i Rum' unvanı İstanbul'un fethinden sonra Fatih Sultan Mehmet tarafından Roma mirasçılığı adına kullanılmıştır.",
+        "tag": "#Niğbolu"
+      },
+      {
+        "q": "Soru 58: Osmanlı Beyliği'nin kurucusu Osman Gazi dönemi (1299-1326), göçebe aşiret yapısından yavaş yavaş beylik teşkilatlanmasına geçişin yaşandığı ilk evredir. Bu dönemde kurumsal devlet organları henüz tam şekillenmemiştir. Osman Gazi döneminde devletleşme yolunda atılan ilk adımlar arasında aşağıdakilerden hangisi yer almaz?",
+        "options": [
+          "Beyliğin ilk bakır parasının (mangır) bastırılması",
+          "İlk kez pazarlardan Bac (ticaret) vergisinin alınmaya başlanması",
+          "Yaya ve Müsellem adıyla ilk düzenli ve maaşlı ordunun kurulması",
+          "Fethin dini ve hukuki meşruiyeti için ilk kadı (Dursun Fakih) atamasının yapılması"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Yaya ve Müsellem adıyla ilk düzenli, daimi ve maaşlı Osmanlı ordusu Osman Gazi döneminde değil, onun oğlu Orhan Bey döneminde kurulmuştur. Osman Gazi döneminde ordu tamamen gönüllü alplerden, gazilerden ve aşiret süvarilerinden oluşmaktaydı.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Osman Gazi bağımsızlık alameti olarak ilk bakır Osmanlı parasını (mangır) bastırmıştır.<br>• <b>B Şıkkı (Yanlış):</b> Devlet maliyesinin ilk geliri olarak Bac adı verilen pazar vergisi bu dönemde yürürlüğe girmiştir.<br>• <b>C Şıkkı (Doğru):</b> Düzenli ordu Orhan Bey döneminde kurulmuş olup, Osman Gazi döneminde düzenli askeri teşkilat yoktur.<br>• <b>D Şıkkı (Yanlış):</b> İlk kadı olarak Karacahisar'a Dursun Fakih atanmıştır, bu da beyliğin hukuki bağımsızlığının adımıdır.",
+        "tag": "#OsmanGazi"
+      },
+      {
+        "q": "Soru 59: Osmanlı Devleti'nin Balkanlar ve Avrupa yönünde genişlemesini engellemek ve Türkleri balkanlardan tamamen atmak amacıyla Papa'nın çağrısıyla Avrupalı krallıkların ve prensliklerin katılımıyla 'Haçlı İttifakları' kurulmuştur. Osmanlı Devleti kuruluş döneminde bu Haçlı ordularıyla birçok büyük meydan muharebesi yapmıştır. Aşağıdakilerden hangisi Osmanlı Devleti'nin kuruluş döneminde doğrudan Haçlı ittifakıyla yaptığı ilk savaş olma özelliğine sahiptir?",
+        "options": [
+          "Sırpsındığı Savaşı (1364)",
+          "Ankara Savaşı (1402)",
+          "Çaldıran Savaşı (1514)",
+          "Mohaç Savaşı (1526)"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> 1364 Sırpsındığı Savaşı, Osmanlı Devleti'nin Balkanlar'da ilerlemesi üzerine Papa'nın teşvikiyle Macar, Sırp, Bulgar ve Eflak kuvvetlerinden oluşan ilk büyük müttefik Haçlı ordusuna karşı Hacı İlbeyi komutasındaki öncü kuvvetlerin kazandığı ilk Osmanlı-Haçlı savaşı zaferidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Sırpsındığı, tarihteki ilk organize Osmanlı-Haçlı muharebesidir ve zaferle sonuçlanmıştır.<br>• <b>B Şıkkı (Yanlış):</b> Ankara Savaşı bir Haçlı savaşı değil, iki Müslüman Türk hükümdarı (Yıldırım Bayezid ve Timur) arasında yapılmıştır.<br>• <b>C Şıkkı (Yanlış):</b> Çaldıran Savaşı Safevi Devleti (Şah İsmail) ile yapılan bir doğu sınır savaşıdır.<br>• <b>D Şıkkı (Yanlış):</b> Mohaç Savaşı Yükselme döneminde Macar Krallığı'na karşı yapılmıştır, kuruluş devri Haçlı ittifakı değildir.",
+        "tag": "#OsmanlıHaçlı"
+      },
+      {
+        "q": "Soru 60: Osmanlı Devleti, egemenliği altına aldığı farklı din, mezhep ve ırktan toplulukları 'Millet Sistemi' adı verilen hukuki ve sosyal bir çerçevede yönetmiştir. Bu sistemde toplum, etnik kökenlerine göre değil inandıkları din esasına göre (Müslümanlar, Ortodokslar, Museviler vb.) sınıflandırılmıştır. Her dini grup kendi iç işlerinde ve ibadetlerinde serbest bırakılmıştır. Osmanlı millet sisteminin imparatorluğa sağladığı en büyük tarihi fayda aşağıdakilerden hangisidir?",
+        "options": [
+          "Gayrimüslimlerin çok kısa sürede tamamen asimile olup Türkleşmesini sağlaması",
+          "Farklı inançların yüzyıllarca kendi dillerini, dinlerini ve milli kimliklerini koruyarak barış içinde bir arada yaşamasını (hoşgörü ortamını) güvenceye alması",
+          "Devlette dini ikiliği kaldırarak tamamen seküler (laik) bir hukuk sistemi yaratması",
+          "Gayrimüslimlerin askeri Yeniçeri teşkilatının tamamını oluşturmasına zemin hazırlaması"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Osmanlı Millet Sistemi, dini topluluklara kendi dini mahkemelerini kurma, kendi kültürlerini yaşatma ve din hürriyeti tanıma imkanı vermiştir. Bu adil ve esnek yapı, imparatorluk sınırları içindeki halkların milli kimliklerini kaybetmeden günümüze kadar ulaşmasını ve toplumsal huzurun sürdürülmesini sağlamıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Osmanlı millet sistemi asimilasyoncu değildir; herkes dinini korumuştur, Türkleştirme amaçlanmamıştır.<br>• <b>B Şıkkı (Doğru):</b> İnanç özgürlüğü ve kültürel özerklik, imparatorluktaki çok dinli yapının yüzyıllarca huzurla yaşamasının temelidir.<br>• <b>C Şıkkı (Yanlış):</b> Sistem laik veya seküler değildir, tamamen şer'i ve dini cemaat hukukuna dayanmaktadır.<br>• <b>D Şıkkı (Yanlış):</b> Yeniçeriler devşirme sistemiyle yetiştirilir, doğrudan gayrimüslim tebaa olarak askere alınmazlar; askere alınırken Müslüman olurlar.",
+        "tag": "#OsmanlıHoşgörüsü"
+      },
+      {
+        "q": "Soru 61: Osmanlı Devleti'nin kuruluş döneminde I. Murat tarafından yürürlüğe konan Pençik Sistemi (savaşta ele geçirilen gayrimüslim esirlerin beşte birinin orduya kazandırılması) Yeniçeri Ocağı'nın ilk insan kaynağını oluşturmuştur. Ancak 1402 Ankara Savaşı sonrasında yaşanan Fetret Devri ve fetihlerin durması, esir akışını tamamen keserek askeri bir insan gücü krizine yol açmıştır. Osmanlı Devleti bu krizi aşmak ve ordunun asker ihtiyacını barışçıl bir şekilde karşılamak adına aşağıdaki hangi sistemi devreye sokmuştur?",
+        "options": [
+          "Devşirme Sistemi (Kendi Hristiyan tebaasının yetenekli çocuklarını eğitme)",
+          "İltizam Sistemi (Vergileri ihale yoluyla peşin toplama)",
+          "Cizye Sistemi (Gayrimüslimlerden askere gitmeme karşılığı baş vergisi alma)",
+          "Mülazemet Sistemi (Medrese mezunlarının nöbet sırasına girmesi)"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Pençik sistemi savaş esirlerine dayanmaktaydı ve Fetret Devri'nde fetihler durunca işlevsiz kaldı. Devlet bu krizi çözmek amacıyla, barış zamanında kendi tebaası olan Hristiyan ailelerin çocuklarının liyakat esasına göre seçilip eğitilmesine dayanan 'Devşirme Sistemi'ni (Çelebi Mehmet ve II. Murat dönemlerinde) kurumsallaştırmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Devşirme sistemi, Pençik sisteminin işlemez hale gelmesiyle ortaya çıkan askeri insan kaynağı krizini çözmüştür.<br>• <b>B Şıkkı (Yanlış):</b> İltizam mali bir sistemdir, vergi toplama ihalesidir ve orduya asker yetiştirmez.<br>• <b>C Şıkkı (Yanlış):</b> Cizye vergidir, gayrimüslim erkeklerin orduya katılmamaları karşılığında devlete ödediği can ve mal güvenliği harcıdır.<br>• <b>D Şıkkı (Yanlış):</b> Mülazemet, ilmiye sınıfında medrese mezunlarının kadılık veya öğretmenlik sırası beklemesidir.",
+        "tag": "#PençikSistemi"
+      },
+      {
+        "q": "Soru 62: Kaptan-ı Derya Barbaros Hayreddin Paşa komutasındaki Osmanlı donanması ile Andrea Doria liderliğindeki devasa birleşik Haçlı donanması arasında 1538 yılında yapılan Preveze Deniz Savaşı, Türk denizcilik tarihinin en parlak zaferidir. Osmanlı donanmasının sayıca çok üstün olan Haçlı donanmasını taktiksel manevralarla mağlup ettiği bu zaferin Osmanlı Devleti açısından en kritik tarihi ve jeopolitik sonucu aşağıdakilerden hangisidir?",
+        "options": [
+          "Karadeniz'in ilk kez bir Türk gölü haline gelmesi",
+          "Akdeniz'in kesin ve mutlak olarak bir 'Türk Gölü' haline gelmesi ve Akdeniz'deki Türk üstünlüğünün tescillenmesi",
+          "Cenevizlilerin boğazlardaki ticari üstünlüklerine son verilmesi",
+          "Hint deniz ticaret yolunun Portekizlilerden tamamen geri alınması"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Preveze Deniz Zaferi, Haçlıların Akdeniz'deki askeri hegemonyasını kırmış ve Akdeniz'de Osmanlı Devleti'ni en üstün deniz gücü haline getirerek Akdeniz'i bir Türk gölü yapmıştır. Bu zaferin kazanıldığı 28 Eylül günü günümüzde Türk Deniz Kuvvetleri Günü olarak kutlanır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Karadeniz, Fatih döneminde Kırım'ın fethiyle (1475) Türk gölü olmuştur; Preveze ise Akdeniz ile ilgilidir.<br>• <b>B Şıkkı (Doğru):</b> Preveze Deniz Zaferi, Akdeniz'de Türk gölü dönemini başlatan ve Türk egemenliğini tescilleyen kutlu zaferdir.<br>• <b>C Şıkkı (Yanlış):</b> Cenevizlilerin boğazlardaki üstünlüğü İstanbul'un ve Kırım'ın fethiyle kırılmıştır.<br>• <b>D Şıkkı (Yanlış):</b> Preveze Akdeniz'dedir; Hint Okyanusu'ndaki Portekiz üstünlüğüne son verememiştir.",
+        "tag": "#PrevezeZaferi"
+      },
+      {
+        "q": "Soru 63: Orhan Bey'in büyük oğlu ve Osmanlı ordularının başkomutanı olan Şehzade Süleyman Paşa, Bizans'taki iç taht kavgalarına askeri yardım sunulması karşılığında 1353 yılında Çimpe Kalesi'ni teslim alarak Osmanlı'nın Rumeli topraklarındaki ilk askeri üssünü kurmuştur. Süleyman Paşa'nın Rumeli'de yaptığı hızlı fetihler ve Anadolu'dan getirdiği Türkmenleri balkanlara yerleştirmesi nedeniyle tarihte aldığı unvan aşağıdakilerden hangisidir?",
+        "options": [
+          "Rumeli Fatihi",
+          "Sultan-ı İklim-i Rum",
+          "Hayreddin Paşa",
+          "Kayser-i Rum"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Şehzade Süleyman Paşa, Osmanlı Devleti'nin Rumeli'ye geçişini sağlayan, Çimpe Kalesi'ni üs yapıp Gelibolu ve çevresini fetheden tarihi kahramandır. Rumeli'deki üstün askeri başarıları ve iskan faaliyetleri nedeniyle 'Rumeli Fatihi' olarak anılır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Şehzade Süleyman Paşa, Rumeli'de fethettiği topraklar ve kurduğu köprübaşı nedeniyle 'Rumeli Fatihi' unvanını kazanmıştır.<br>• <b>B Şıkkı (Yanlış):</b> 'Sultan-ı İklim-i Rum' unvanı Niğbolu zaferinden sonra halife tarafından Yıldırım Bayezid'e verilmiştir.<br>• <b>C Şıkkı (Yanlış):</b> 'Hayreddin Paşa' Barbaros Hayreddin Paşa'dır, okyanus denizcisidir.<br>• <b>D Şıkkı (Yanlış):</b> 'Kayser-i Rum' Roma İmparatoru anlamına gelir ve Fatih Sultan Mehmet tarafından kullanılmıştır.",
+        "tag": "#SüleymanPaşa"
+      },
+      {
+        "q": "Soru 64: Osmanlı Devleti'nin yükselme döneminde İpek Yolu ve Baharat Yolu gibi dünya ticaretinin can damarlarını kontrolü altına alması, devlete muazzam bir zenginlik sağlamıştır. Ancak 15. yüzyılın sonlarından itibaren Avrupalıların okyanus aşırı yeni rotalar keşfetmesi (Coğrafi Keşifler), Akdeniz limanlarının ve Osmanlı kontrolündeki geleneksel kara ticaret yollarının önemini kaybetmesine neden olmuştur. Osmanlı Devleti, bu ekonomik gerilemeyi önlemek ve Akdeniz ticaretini yeniden canlandırmak amacıyla öncelikle aşağıdaki hangi politikaya ağırlık vermiştir?",
+        "options": [
+          "Yabancı devletlere (özellikle Fransa ve İngiltere'ye) geniş kapitülasyonlar (ticari imtiyazlar) tanımak",
+          "Ülkedeki tüm dış ticareti yasaklayarak içe kapalı ekonomi modeline geçmek",
+          "Yeniçeri Ocağı'nı tamamen kapatarak askeri harcamaları kısmak",
+          "Baharat Yolu'nu Avrupalıların kullanımına tamamen kapatmak"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Coğrafi Keşiflerin olumsuz ekonomik etkilerini (gümrük vergisi düşüşlerini) önlemek isteyen Osmanlı Devleti, Akdeniz limanlarını cazip kılmak adına Avrupalı tüccarlara düşük gümrük vergileri ve ticari kolaylıklar içeren geniş kapitülasyonlar tanımıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Kapitülasyonların verilmesinin en temel ekonomik gerekçesi, Coğrafi Keşiflerle önemi azalan Akdeniz ticaretini yeniden canlandırmaktır.<br>• <b>B Şıkkı (Yanlış):</b> Osmanlı dış ticareti yasaklamamış, aksine gümrük gelirlerini artırmak için teşvik etmiştir.<br>• <b>C Şıkkı (Yanlış):</b> Yeniçeri Ocağı yükselme döneminde en güçlü dönemindedir ve ekonomiyi kurtarmak amacıyla kapatılmamıştır.<br>• <b>D Şıkkı (Yanlış):</b> Baharat Yolu'nu kapatmak değil, tam aksine oradan geçen tüccar sayısını artırmak amaçlanmıştır.",
+        "tag": "#TicaretYolları"
+      },
+      {
+        "q": "Soru 65: Yavuz Sultan Selim'in doğu seferleri sırasında, 1515 yılında Maraş ve çevresinde egemen olan Dulkadiroğulları Beyliği'ne karşı kazandığı Turnadağ Savaşı, Türk siyasi tarihi açısından kurucu bir öneme sahiptir. Bu savaşın kazanılması ve Dulkadiroğulları Beyliği'nin Osmanlı'ya bağlanmasının en kritik tarihi sonucu aşağıdakilerden hangisidir?",
+        "options": [
+          "Anadolu Türk siyasi birliğinin (ATSB) kesin, eksiksiz ve nihai olarak tamamlanması",
+          "Safevi Devleti'nin tamamen yıkılması",
+          "Halifeliğin ilk kez Osmanlı'ya geçmesi",
+          "Bizans İmparatorluğu'nun Anadolu'daki son kalesinin fethedilmesi"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> 1515 Turnadağ Savaşı ile Dulkadiroğulları Beyliği'nin ortadan kaldırılması, Anadolu'da Osmanlı egemenliğine girmeyen hiçbir bağımsız Türk beyliğinin kalmamasını sağlamıştır. Böylece Anadolu Türk Siyasi Birliği kesin olarak tamamlanmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Turnadağ Savaşı, Anadolu Türk siyasi birliğini (ATSB) eksiksiz olarak tamamlayan son askeri hamledir.<br>• <b>B Şıkkı (Yanlış):</b> Safevi Devleti Çaldıran Savaşı ile geriletilmiştir ancak yıkılmamıştır.<br>• <b>C Şıkkı (Yanlış):</b> Halifelik, Turnadağ'dan sonra yapılan Mısır Seferi ile Osmanlı'ya geçmiştir.<br>• <b>D Şıkkı (Yanlış):</b> Bizans İmparatorluğu 1453 yılında Fatih tarafından yıkılmıştır; 1515'te Bizans yoktur.",
+        "tag": "#Turnadağ"
+      },
+      {
+        "q": "Soru 66: Osmanlı eyalet ordusunun en kalabalık ve en dinamik unsurunu oluşturan Tümarlı Sipahiler (Tımarlı Sipahiler), dirlik sahiplerinin topladıkları vergilere karşılık beslemek ve orduya katmak zorunda oldukları süvari birlikleridir. Bu atlı askerler doğrudan devlet hazinesine yük olmadan yetiştirilmekteydi. Aşağıdakilerden hangisi Tümarlı Sipahi sisteminin devlete sağladığı yararlardan biri 'değildir'?",
+        "options": [
+          "Hazineye sıfır maliyetle devasa ve daimi bir eyalet ordusunun kurulması",
+          "Taşrada (eyaletlerde) asayişin ve iç güvenliğin kesintisiz sağlanması",
+          "Tarımsal üretimde sürekliliğin sağlanması ve vergilerin yerinde düzenli toplanması",
+          "Devletten doğrudan üç ayda bir 'Ulufe' adı verilen maaş alarak merkezi ekonomiyi korumaları"
+        ],
+        "correct": 3,
+        "rationale": "<b>Doğru Cevap: D Şıkkıdır.</b> Tümarlı Sipahiler (Tımarlı Sipahiler) eyalet askeridir ve kesinlikle devlet hazinesinden maaş (ulufe) almazlar. Onlar dirlik arazilerinin vergi gelirleriyle (cebelü yetiştirerek) beslenirler. Maaş (ulufe) alanlar merkez ordusu olan Yeniçerilerdir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Tımar sistemi hazineden nakit para çıkmadan büyük bir süvari ordusu (cebelü) kurulmasını sağlamıştır.<br>• <b>B Şıkkı (Yanlış):</b> Sipahiler barış zamanında kendi bölgelerinin güvenliğini ve asayişini korumakla yükümlüydüler.<br>• <b>C Şıkkı (Yanlış):</b> Köylüyü denetleyerek üretimin kesintiye uğramasını önlemişler ve vergileri devlet adına toplamışlardır.<br>• <b>D Şıkkı (Doğru):</b> Tımarlı Sipahilerin hazineden ulufe maaşı alması söz konusu değildir; bu şık yanlış bir ifadedir.",
+        "tag": "#TümarlıSipahiler"
+      },
+      {
+        "q": "Soru 67: Osmanlı Devleti'nde padişahtan sonraki en yetkili devlet görevlisi, padişahın mutlak vekili ve devlet mührünün (Mühr-ü Hümayun) koruyucusu olan Veziriazamdır (Sadrazam). Veziriazam, padişah bizzat sefere çıkmadığı durumlarda ordunun başkomutanı olarak savaşa komuta ederdi. Veziriazamın ordunun başında başkomutan olarak sefere çıktığında aldığı resmi askeri unvan aşağıdakilerden hangisidir?",
+        "options": [
+          "Serdar-ı Ekrem",
+          "Kaptan-ı Derya",
+          "Nişancı",
+          "Beylerbeyi"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Veziriazam (Sadrazam) padişahın yerine ordunun başına geçip başkomutanlık ettiğinde 'Serdar-ı Ekrem' (En Büyük Komutan / Ordu Komutanı) unvanını alır ve kararları padişah adına doğrudan infaz ederdi.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Veziriazamın başkomutanlık ettiği durumlarda kullandığı resmi unvan 'Serdar-ı Ekrem'dir.<br>• <b>B Şıkkı (Yanlış):</b> 'Kaptan-ı Derya' Osmanlı donanmasının başkomutanı ve deniz kuvvetleri bakanıdır.<br>• <b>C Şıkkı (Yanlış):</b> 'Nişancı' padişahın tuğrasını çeken, tapu kadastro ve yazışma işlerine bakan bürokratik divan üyesidir.<br>• <b>D Şıkkı (Yanlış):</b> 'Beylerbeyi' eyaletin askeri ve sivil en üst valisidir.",
+        "tag": "#Veziriazam"
+      },
+      {
+        "q": "Soru 68: Osmanlı padişahı Yavuz Sultan Selim dönemi (1512-1520), sadece 8 yıl sürmesine rağmen devletin doğu sınırlarını tamamen güvence altına almış, Memlük Devleti'ne son vererek imparatorluğu zirveye taşımıştır. Yavuz Sultan Selim, babası II. Bayezid'i tahttan indirerek tahta geçmiş ve yaptığı doğu fetihlerinden topladığı muazzam ganimetlerle hazineyi ağzına kadar doldurmuştur. Yavuz Sultan Selim'in hazine kapısına vurdurduğu ve imparatorluğun yıkılışına kadar hiçbir padişahın kıramadığı meşhur vasiyet ve mühür felsefesi nedir?",
+        "options": [
+          "Her kim hazineyi benim doldurduğum kadar altınla doldurabilirse hazine onun mührüyle mühürlensin, yoksa benim mührümle mühürlenmeye devam etsin vasiyeti",
+          "Hazine gelirlerinin tamamının halka bedava dağıtılması vasiyeti",
+          "Devşirme askerlerin hazine gelirlerine ortak edilmesi yasası",
+          "Hazine kapısının hiçbir şart altında yabancı elçilere gösterilmemesi kuralı"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Yavuz Sultan Selim, özellikle Mısır ve Safevi seferlerinden elde edilen ganimetlerle devlet hazinesini tarihin en yüksek doluluk seviyesine ulaştırmıştır. Kapıyı kendi mührüyle kilitleyen Yavuz, 'Her kim ki hazineyi benim kadar altınla doldurabilirse kapı onun mührüyle açılsın, akdi takdirde benim mührümle mühürlensin' demiştir ve yıkılışa kadar hazine hep Yavuz'un mührüyle mühürlenmiştir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Yavuz'un hazineyi doldurma rekoru ve vasiyeti, Osmanlı maliyesinin en parlak dönemini simgeler.<br>• <b>B Şıkkı (Yanlış):</b> Hazine altınları halka dağıtılmamış, devletin askeri, idari ve sosyal gücünün teminatı olarak korunmuştur.<br>• <b>C Şıkkı (Yanlış):</b> Devşirme askerler maaş alır, hazinenin yönetimine veya ortaklığına sahip değildirler.<br>• <b>D Şıkkı (Yanlış):</b> Yabancı elçilere ihtişam göstermek amacıyla hazine sergilenirdi ancak mühür vasiyetinin bununla alakası yoktur.",
+        "tag": "#YavuzSultan"
+      },
+      {
+        "q": "Soru 69: I. Murat döneminde kurulan Yeniçeri Ocağı, doğrudan padişahın canını, sarayını ve merkezi otoriteyi korumakla görevli profesyonel merkez yaya ordusudur. Bu askerlerin evlenmesi, başka bir ticaretle uğraşması kesinlikle yasak olup, devletten üç ayda bir 'Ulufe' adı verilen maaş alırlardı. Yeniçerilerin tahta çıkan her yeni padişahtan aldıkları bahşiş ve padişah değişikliğinde yapılan askeri tören aşağıdakilerden hangisidir?",
+        "options": [
+          "Cülus Bahşişi ve Biat Töreni",
+          "Bistegani Maaşı ve Gulam Töreni",
+          "Gedik Bahşişi ve Narh Töreni",
+          "Pençik Bahşişi ve Şıhne Töreni"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Yeniçeriler padişah değişikliklerinde tahta yeni çıkan hükümdara bağlılıklarını bildirir (Biat töreni - Cülus) ve bunun karşılığında kanuni hakları olan 'Cülus Bahşişi'ni alırlardı. Bu bahşiş geleneği yükselme döneminde padişahın cömertliğini gösterirken, duraklama ve gerileme dönemlerinde askerin padişahları tahttan indirme kozuna dönüşmüştür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Padişahın tahta çıkması şerefine Yeniçerilere dağıtılan bahşişe 'Cülus Bahşişi' adı verilir.<br>• <b>B Şıkkı (Yanlış):</b> 'Bistegani' ilk Türk-İslam devletlerinde (örneğin Selçuklu'da) gulam askerlerinin aldığı maaştır.<br>• <b>C Şıkkı (Yanlış):</b> 'Gedik' dükkan açma ruhsatıdır, Ahilik sistemiyle ilgilidir.<br>• <b>D Şıkkı (Yanlış):</b> 'Pençik' esirlerin orduya alınmasıdır, cülus ile bir ilgisi yoktur.",
+        "tag": "#Yeniçeriler"
+      },
+      {
+        "q": "Soru 70: Yavuz Sultan Selim'in 1514 yılında Safevi Devleti Şahı Şah İsmail'e karşı gerçekleştirdiği Çaldıran Savaşı, Osmanlı'nın doğu sınır güvenliğini sağlayan en kritik askeri çarpışmalardan biridir. Osmanlı ordusunun askeri disiplini ve teknik lojistik ateş üstünlüğü, Safevilerin geleneksel süvari ordusunu mağlup etmiştir. Çaldıran Savaşı'nda Osmanlı'nın kesin zafer kazanmasını sağlayan en önemli teknik/askeri unsur aşağıdakilerden hangisidir?",
+        "options": [
+          "Ateşli silahların (sahra topları ve Yeniçerilerin tüfek voleybol atışlarının) etkin ve organize kullanımı",
+          "Safevi ordusunda çıkan ani isyanlar",
+          "Bizans İmparatorluğu'nun Osmanlı'ya gönderdiği zırhlı süvari desteği",
+          "Savaşın tamamen deniz donanmaları arasında yapılması"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Çaldıran Savaşı'nda Osmanlı ordusu, Şah İsmail'in hızlı ve savaşçı Safevi süvarilerine karşı sahra toplarını zincirleyerek sabit bir ateş hattı kurmuş ve Yeniçerilerin tüfekli atış koordinasyonu sayesinde süvarileri yaklaşamadan imha etmiştir. Bu savaş ateşli silahların meydan savaşlarındaki kurucu rolünü kanıtlamıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Osmanlı'nın ateşli silah gücü (top ve tüfek) Çaldıran'daki kesin zaferin en temel askeri sebebidir.<br>• <b>B Şıkkı (Yanlış):</b> Safevi ordusunda savaş öncesi veya sırasında büyük bir isyan çıkmamıştır, Şah İsmail bizzat savaşmıştır.<br>• <b>C Şıkkı (Yanlış):</b> Bizans 1453'te yıkılmıştır; 1514'teki bu savaşla bir ilişkisi yoktur.<br>• <b>D Şıkkı (Yanlış):</b> Çaldıran, Doğu Anadolu'da (Van yakınlarında) yapılan büyük bir kara meydan muharebesidir.",
+        "tag": "#ÇaldıranSavaş"
+      },
+      {
+        "q": "Soru 71: 1402 Ankara Savaşı sonrasında Yıldırım Bayezid'in oğulları arasında başlayan 11 yıllık taht kavgalarını (Fetret Devri) bitiren ve kardeşlerini tek tek mağlup ederek devleti uçurumun kenarından kurtaran I. Mehmet (Çelebi Mehmet), devleti yeniden derleyip topladığı için tarihçiler tarafından 'Osmanlı Devleti'nin İkinci Kurucusu' kabul edilir. I. Mehmet'in saltanatı döneminde, devleti içten sarsan ve Osmanlı tarihinin ilk dini-sosyal nitelikli ayaklanması olma özelliğine sahip isyan aşağıdakilerden hangisidir?",
+        "options": [
+          "Şeyh Bedreddin İsyanı",
+          "Baba İshak İsyanı",
+          "Patrona Halil İsyanı",
+          "Celali İsyanları"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Çelebi Mehmet döneminde yaşanan Şeyh Bedreddin İsyanı, Fetret Devri'nin yarattığı derin sosyal, ekonomik ve manevi buhranları kullanarak geniş bir taraftar kitlesi toplayan, Osmanlı tarihinin dini-sosyal içerikli ilk büyük halk ayaklanmasıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Şeyh Bedreddin İsyanı, Osmanlı tarihinin ilk dini ve toplumsal nitelikli isyanı olup Çelebi Mehmet döneminde bastırılmıştır.<br>• <b>B Şıkkı (Yanlış):</b> Baba İshak İsyanı, Anadolu Selçuklu Devleti döneminde (1240) çıkan dini-sosyal nitelikli isyandır.<br>• <b>C Şıkkı (Yanlış):</b> Patrona Halil İsyanı, Lale Devri'ni (1730) sona erdiren askeri ayaklanmadır.<br>• <b>D Şıkkı (Yanlış):</b> Celali İsyanları, 16. ve 17. yüzyıllarda Anadolu'da ekonomik ve idari bozulmalar nedeniyle çıkan halk isyanlarıdır.",
+        "tag": "#ÇelebiMehmet"
+      },
+      {
+        "q": "Soru 72: Orhan Bey döneminde, Bizans İmparatoru Kantakuzen'in Sırp ve Bulgar saldırılarına karşı Osmanlı'dan askeri yardım istemesi üzerine, Şehzade Süleyman Paşa komutasındaki Osmanlı kuvvetleri Bizans'a askeri yardım göndermiştir. Bizans imparatoru bu yardımlara karşılık olarak 1353 yılında Gelibolu yarımadasındaki Çimpe Kalesi'ni Osmanlı'ya vermiştir. Çimpe Kalesi'nin Osmanlı'ya geçmesinin tarihi önemi nedir?",
+        "options": [
+          "Osmanlıların Rumeli topraklarındaki ilk askeri üssü ve köprübaşını elde etmesi",
+          "Bizans İmparatorluğu'nun resmen sona ermesi",
+          "Balkan Haçlı ittifaklarının tamamen çökertilmesi",
+          "İstanbul'un fethinin tamamlanması"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Çimpe Kalesi, Osmanlı Devleti'nin Rumeli'ye (Avrupa topraklarına) geçişinde elde ettiği ilk fiziki kaledir. Bu kale askeri bir üs olarak kullanılmış, sonraki balkan fetihlerinin lojistik ve stratejik merkezi olmuştur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Çimpe Kalesi'nin alınması, Osmanlı'nın Rumeli topraklarına ilk adımını atmasını ve üs kurmasını sağlamıştır.<br>• <b>B Şıkkı (Yanlış):</b> Bizans 1453'te yıkılmıştır; Çimpe Kalesi'nin alınması Bizans'ı yıkmamış, sadece sınırda toprak kaybettirmiştir.<br>• <b>C Şıkkı (Yanlış):</b> Haçlı ittifakları bu dönemden sonra daha da aktif hale gelmiştir.<br>• <b>D Şıkkı (Yanlış):</b> İstanbul bu olaydan 100 yıl sonra fethedilmiştir.",
+        "tag": "#ÇimpeKalesi"
+      },
+      {
+        "q": "Soru 73: Osmanlı Devleti'nin Rumeli ve Balkan fetihlerinin ardından uyguladığı 'İskan Siyareti' (planlı nüfus yerleştirme), fethin kalıcı olmasında hayati rol oynamıştır. Devlet, Anadolu'dan getirdiği göçebe Türkmen aileleri balkan topraklarına yerleştirirken belirli sosyal ve hukuki kurallar koymuştur. Aşağıdakilerden hangisi Osmanlı iskan siyasetinin toplumsal barışı ve üretimi korumak adına koyduğu kurallardan biridir?",
+        "options": [
+          "Aralarında husumet (kan davası) bulunan ailelerin birinin balkanlara göç ettirilmesi, göç edenlere ücretsiz tarım arazisi ve araç gereç verilmesi, ilk birkaç yıl vergi alınmaması",
+          "Göç eden ailelerin istedikleri zaman Anadolu'daki eski köylerine geri dönebilmeleri",
+          "Sadece Hristiyan soylu ailelerin iskan edilerek Anadolu'ya yerleştirilmesi",
+          "Göç ettirilen ailelerin silah taşımalarının kesinlikle yasaklanması"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> İskan siyasetinde Anadolu'daki kavgalı (kan davalı) ailelerin biri göç ettirilerek Anadolu'da asayiş sağlanmış, göç eden ailelere teşvik amacıyla ücretsiz toprak, tohum ve araç sunulmuş ve üretimin sürekliliğini sağlamak adına ilk yıllarda vergiden muaf tutulmuşlardır. Ayrıca göç edenlerin yerlerini terk etmeleri yasaklanarak düzen korunmuştur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Kavgalı ailelerin göç ettirilmesi, vergi muafiyeti ve ücretsiz toprak iskanın temel stratejik kurallarıdır.<br>• <b>B Şıkkı (Yanlış):</b> Göç edenlerin yerlerini bırakıp geri dönmeleri kesinlikle yasaktır, amaç kalıcı nüfus dengesi kurmaktır.<br>• <b>C Şıkkı (Yanlış):</b> İskan edilenler gayrimüslim değil, Anadolu'daki Müslüman Türkmen nüfusudur.<br>• <b>D Şıkkı (Yanlış):</b> Göç eden Türkmenler sınır boylarında aynı zamanda askeri koruma sağladıkları için silah taşımaları yasaklanmamıştır.",
+        "tag": "#İskanSiyaseti"
+      },
+      {
+        "q": "Soru 74: Fatih Sultan Mehmet tarafından 29 Mayıs 1453 yılında gerçekleştirilen İstanbul'un Fethi, dünya tarihi ve Türk tarihi açısından çağ açıcı bir dönüm noktasıdır. İstanbul'un fethinin dünya tarihi açısından feodalite (derebeylik) sisteminin çöküşünü hızlandıran ve mutlak krallıkların güçlenmesini sağlayan en önemli askeri-teknik sonucu aşağıdakilerden hangisidir?",
+        "options": [
+          "Büyük şahi toplarının en güçlü surları dahi yıkabileceğinin anlaşılması ve bu teknolojinin Avrupa kralları tarafından derebeylerin şatolarına karşı kullanılması",
+          "Bizans bilim insanlarının İtalya'ya kaçarak Rönesans'ı başlatması",
+          "İpek Yolu'nun kontrolünün Osmanlı'ya geçmesiyle Avrupalıların Coğrafi Keşiflere yönelmesi",
+          "Hristiyan dünyasının dini liderliğinin Osmanlı padişahına geçmesi"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> İstanbul'un fethinde kullanılan devasa 'şahi' topları, Orta Çağ boyunca aşılmaz sanılan kalın kale surlarının ve şatoların yıkılabileceğini kanıtlamıştır. Bu teknolojiyi öğrenen Avrupa kralları, kendi ülkelerindeki bağımsız derebeylerin (feodal beylerin) şatolarını yıkarak merkezi krallıklarını güçlendirmişler ve feodalizmi tasfiye etmişlerdir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Şahi topları surları yıkarak Avrupa'da feodalitenin (şatoların) çöküşünü ve mutlak krallıkların yükselişini tetiklemiştir.<br>• <b>B Şıkkı (Yanlış):</b> Bilim insanlarının İtalya'ya kaçması kültürel/entelektüel bir sonuçtur, askeri-teknik derebeylik sonucu değildir.<br>• <b>C Şıkkı (Yanlış):</b> Ticaret yollarının kontrolü ekonomik ve jeopolitik bir sonuçtur, askeri kale surlarıyla doğrudan ilişkili değildir.<br>• <b>D Şıkkı (Yanlış):</b> Hristiyan dini liderliği padişaha geçmemiştir; Fatih, Ortodoks patrikhanesini koruma altına almıştır.",
+        "tag": "#İstanbulunFethi"
+      },
+      {
+        "q": "Soru 75: Osmanlı Devleti'nin Balkan fetihlerinde askeri güç kadar etkili olan bir diğer silahı, fethin öncesinde ve sonrasında yerel halkın gönlünü kazanmaya, can ve mal güvenliğini korumaya dayanan 'İstimalet' (ısındırma ve hoşgörü) politikasıdır. Bu politika doğrultusunda gayrimüslim halka dini hürriyet tanınmış, eski idarecilerin ağır vergileri hafifletilmiştir. Aşağıdakilerden hangisi istimalet politikasının doğrudan bir sonucu 'olamaz'?",
+        "options": [
+          "Balkan halklarının Osmanlı fethine karşı direnç göstermeyip idareyi kolayca benimsemesi",
+          "Fetret Devri gibi kriz dönemlerinde balkan halklarının isyan etmeyip devlete sadık kalması",
+          "Balkanlar'daki Hristiyan nüfusun tamamının kısa sürede Türkçe konuşup Müslümanlaşması",
+          "Osmanlı adalet anlayışına duyulan güven sayesinde uzun süreli bölgesel istikrarın kurulması"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> İstimalet politikası inançlara, dillere ve kültürlere kesinlikle müdahale etmemeyi taahhüt eder. Bu nedenle Hristiyan nüfusun zorla veya baskıyla Müslümanlaşması veya Türkçe konuşmaya zorlanması söz konusu değildir. Nitekim balkan halkları kimliklerini korumuştur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Adil yönetim yerel halkın Osmanlı idaresini direnmeden kabul etmesini kolaylaştırmıştır.<br>• <b>B Şıkkı (Yanlış):</b> Fetret Devri krizinde Balkanlar'da adil düzen (istimalet) sayesinde isyan çıkmamıştır.<br>• <b>C Şıkkı (Doğru):</b> İstimalet politikası asimilasyoncu olmadığı için gayrimüslimlerin Müslümanlaştırılması bu politikanın sonucu olamaz.<br>• <b>D Şıkkı (Yanlış):</b> Güven ve adalet düzeni balkanlarda yüzyıllarca süren istikrarı (Pax Ottomanica) beraberinde getirmiştir.",
+        "tag": "#İstimalet"
+      },
+      {
+        "q": "Soru 76: Fatih Sultan Mehmet'in İstanbul kuşatması için bizzat mühendisliğini yaptığı, döküm teknolojisinde döneminin zirvesi olan devasa boyutlardaki 'Şahi' topları, askeri tarih kitaplarında topçuluk tarihinin başlangıcı kabul edilir. Fatih'in bu topları döktürürken getirdiği mühendislik yeniliği ve ulaştığı döküm başarısı aşağıdakilerden hangisinin göstergesidir?",
+        "options": [
+          "Osmanlıların döneminin en ileri balistik, matematik ve metalürji bilgisine sahip olduğunun",
+          "Top döküm işlerinin tamamen Bizanslı esirlere yaptırıldığının",
+          "Ateşli silahların ilk kez İstanbul kuşatmasında keşfedildiğinin",
+          "Osmanlı ordusunun geleneksel ok ve yay kullanımını tamamen yasakladığının"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Şahi toplarının tasarımı, ağırlık hesapları ve namlu döküm teknikleri yüksek düzeyde matematik, metalürji (metal işleme) ve balistik bilgisi gerektirmekteydi. Fatih'in bu tasarımlara bizzat katılması, Osmanlı bilim ve mühendislik düzeyinin o dönem dünyada öncü olduğunu gösterir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Devasa şahi toplarının başarılı dökümü ve kullanımı, Osmanlı döneminin ileri fen ve metalürji bilgisine sahip olduğunu kanıtlar.<br>• <b>B Şıkkı (Yanlış):</b> Macar Urban gibi yabancı dökümcüler çalışsa da ana plan ve mühendislik koordinasyonu bizzat Fatih ve Türk mühendislerince (Mimar Muslihiddin vb.) yapılmıştır.<br>• <b>C Şıkkı (Yanlış):</b> Ateşli silahlar daha önce de mevcuttu ancak bu boyuttaki kuşatma topları ilk kez bu düzeyde üretilmiştir.<br>• <b>D Şıkkı (Yanlış):</b> Ok ve yay kullanımı orduda 19. yüzyıla kadar hafif kuvvetlerce sürdürülmüştür.",
+        "tag": "#ŞahiTopu"
+      },
+      {
+        "q": "Soru 77: Fatih Sultan Mehmet'in Bosna Hersek Fransisken rahiplerine verdiği meşhur Ahidname belgesinde, '...kilise ve manastırlarınıza kimse mani olmaya, can ve mallarınız emin ola...' şeklinde kesin güvenceler yer almıştır. Padişahın örfi hukukun üstünde bir dini fermanla gayrimüslim rahiplerin ibadet haklarını kendi güvencesine alması, Osmanlı devlet idaresinde aşağıdakilerden hangisinin tescilidir?",
+        "options": [
+          "Hukukun ve adaletin padişahın şahsi güvencesiyle inanç özgürlüğünü koruduğunun",
+          "Fransisken rahiplerinin Osmanlı ordusunda askerlik yapacağının",
+          "Bosna'da Hristiyan din devletinin kurulacağının",
+          "Fatih'in batıdaki askeri fetihlerden vazgeçtiğinin"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Ahidname, devletin tebaasının inanç özgürlüğünü en üst düzeyde koruduğunun ve adaleti padişahın mutlak sözüyle güvence altına aldığının en somut tarihi kanıtıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Ahidname, inanç özgürlüğünü koruyan, adaletin ve din hürriyetinin padişah güvencesinde olduğunu tescilleyen hukuki belgedir.<br>• <b>B Şıkkı (Yanlış):</b> Rahipler din adamı oldukları için hiçbir zaman askere alınmamışlardır.<br>• <b>C Şıkkı (Yanlış):</b> Bosna Osmanlı sancağı olmuştur, bağımsız bir din devleti kurulmamıştır.<br>• <b>D Şıkkı (Yanlış):</b> Fatih batı fetihlerine ve Roma vizyonuna hayatı boyunca kararlılıkla devam etmiştir.",
+        "tag": "#Ahidname"
+      },
+      {
+        "q": "Soru 78: Osmanlı Devleti'nin Rumeli'ye geçişiyle başlayan Balkan Fetihleri (1. Kosova, Niğbolu, Varna ve 2. Kosova Savaşları), balkan coğrafyasında Türk nüfusunun kalıcı yerleşimini sağlamıştır. Aşağıdakilerden hangisi balkan fetihlerinin Osmanlı Devleti'nin jeopolitik konumuna sağladığı en büyük stratejik faydadır?",
+        "options": [
+          "Bizans İmparatorluğu'nun batı (Avrupa) ile karasal bağlantısını keserek İstanbul'un fethini kolaylaştırması",
+          "Safevi Devleti'nin balkanlar üzerinden Anadolu'ya sızmasını önlemesi",
+          "İpek Yolu'nun kuzey ticaret hattını tamamen kapatması",
+          "Akdeniz donanmasının tamamının Balkan nehirlerinde kurulması"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Balkan fetihleriyle Bizans'ın arkasındaki Avrupa karasal hattı Osmanlı kontrolüne geçmiş ve Bizans tamamen kuşatılarak batıdan gelebilecek yardımların önü kesilmiştir. Bu durum İstanbul'un fethini askeri olarak kolaylaştıran en büyük jeopolitik etkendir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Bizans'ın arkasının sarılması ve batı desteğinin kesilmesi balkan fetihlerinin en büyük jeopolitik sonucudur.<br>• <b>B Şıkkı (Yanlış):</b> Safevi Devleti doğudadır (İran), balkanlarla bir coğrafi ilişkisi yoktur.<br>• <b>C Şıkkı (Yanlış):</b> İpek Yolu boğazlar ve Kırım fethiyle denetlenmiştir; balkan fetihleri kuzey hattını kapatmamıştır.<br>• <b>D Şıkkı (Yanlış):</b> Akdeniz donanması İstanbul, Gelibolu ve Akdeniz tersanelerinde inşa edilmiştir.",
+        "tag": "#BalkanFetihleri"
+      },
+      {
+        "q": "Soru 79: Osmanlı Devleti'nin Balkanlar'daki egemenliği, yerel derebeylerin halk üzerindeki ağır vergilerini kaldırıp, tek bir adil vergi (Cizye, Öşür, Haraç) sistemine dayanmaktaydı. Köylüye toprak kullanım hakkı (çiftlik) verilerek toprak ağalığı önlenmiştir. Bu balkan idare modeli hakkında aşağıdakilerden hangisi söylenebilir?",
+        "options": [
+          "Toplumsal barışı ve vergi adaletini koruyarak isyanların çıkmasını önlediği",
+          "Balkanlar'da tarımsal üretimi tamamen bitirdiği",
+          "Balkan soylularının köylüleri köle yapmasına izin verildiği",
+          "Sadece Müslüman nüfusun toprak sahibi olabildiği"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Osmanlı'nın balkanlarda feodal sömürüyü yıkması ve adil toprak düzeni (miri arazi sistemi) kurması, köylülerin haklarını korumuş, toplumsal barışı tescillemiş ve böylece isyanların çıkmasını yüzyıllar boyunca önlemiştir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Adil toprak ve vergi düzeni Balkanlar'da huzur ortamı ve asayiş yaratmıştır.<br>• <b>B Şıkkı (Yanlış):</b> Tarımsal üretim bitmemiş, aksine mülkiyet güvencesiyle üretimde büyük artış yaşanmıştır.<br>• <b>C Şıkkı (Yanlış):</b> Toprak ağalığı ve kölelik Osmanlı miri arazi rejimiyle tamamen yasaklanmıştır.<br>• <b>D Şıkkı (Yanlış):</b> Gayrimüslim tebaa da miri arazileri kullanma ve miras bırakma hakkına eşit şekilde sahipti.",
+        "tag": "#BalkanYönetimi"
+      },
+      {
+        "q": "Soru 80: Fatih Sultan Mehmet'in ölümü sonrası yaşanan Cem Sultan Olayı'nda, Cem Sultan'ın batılı güçlerin (Rodos Şövalyeleri, Fransa ve Papalık) eline geçmesi, Osmanlı Yükselme dönemi içinde adeta geçici bir duraklama devrinin yaşanmasına yol açmıştır. Aşağıdakilerden hangisi bu esaret döneminde yaşanan pasifliğin en net göstergelerinden biridir?",
+        "options": [
+          "II. Bayezid döneminde batı yönündeki fetihlerin neredeyse tamamen durması ve İspanya'daki Endülüs Müslümanlarına gerekli büyük askeri yardımın gönderilememesi",
+          "İstanbul'un Bizans tarafından geri alınması",
+          "Yeniçeri Ocağı'nın tamamen lağvedilmesi",
+          "Anadolu'da tüm Türk beyliklerinin Osmanlı'dan ayrılarak bağımsız olması"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Cem Sultan'ın rehin tutulması sebebiyle II. Bayezid, batılı güçleri tahrik etmemek için barışçıl ve pasif bir dış politika izlemiştir. Bu dönemde Endülüs'te katliama uğrayan Müslümanlara büyük bir askeri donanma gönderilememiş, sadece gemilerle mülteciler kurtarılabilmiştir. Bu durum dış politika felcidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Cem Sultan'ın esareti batı fetihlerini kilitlemiş ve Endülüs'e hak edilen askeri yardımın yapılmasını engellemiştir.<br>• <b>B Şıkkı (Yanlış):</b> Bizans 1453'te yıkılmıştır; Cem Sultan döneminde Bizans yoktur.<br>• <b>C Şıkkı (Yanlış):</b> Yeniçeriler bu dönemde de devletin ana askeri gücü olarak kalmıştır.<br>• <b>D Şıkkı (Yanlış):</b> Anadolu beyliklerinin bağımsız olması Ankara Savaşı sonrası Fetret devrinde yaşanmıştır; bu olayda yaşanmamıştır.",
+        "tag": "#CemSultan"
+      },
+      {
+        "q": "Soru 81: Osmanlı Devleti'nde Divan-ı Hümayun, sadece devlet işlerinin görüşüldüğü bir bakanlar kurulu değil, aynı zamanda hangi dinden olursa olsun haksızlığa uğradığını düşünen her tebaanın doğrudan padişaha başvurabildiği en yüksek temyiz ve şikayet mahkemesiydi. Divan-ı Hümayun'un bu üst düzey hukuki ve yargısal niteliği aşağıdakilerden hangisinin göstergesidir?",
+        "options": [
+          "Hukuk devletine, adalete ve tebaanın hak arama hürriyetine verilen büyük önemin",
+          "Padişahın tüm yasama yetkilerini divan üyelerine devrettiğinin",
+          "Divanın sadece gayrimüslim tebaanın davalarına baktığının",
+          "Osmanlı'da şer'i mahkemelerin tamamen lağvedildiğinin"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Divan-ı Hümayun'un halktan gelen şikayetleri doğrudan kabul etmesi ve valilere, kadılara karşı tebaayı koruması, Osmanlı'nın adalete ve hak aramaya verdiği önemi gösterir. Divan bu yönüyle en üst adalet meclisidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Divanın şikayetleri kabul eden en üst mahkeme olması, adalete ve hak arama hürriyetine verilen önemin en net kanıtıdır.<br>• <b>B Şıkkı (Yanlış):</b> Padişah yasama yetkisini devretmemiş, son söz hakkını elinde tutmuştur.<br>• <b>C Şıkkı (Yanlış):</b> Divan ayrım yapmaksızın hem Müslüman hem gayrimüslim tüm tebaanın şikayetlerine bakmıştır.<br>• <b>D Şıkkı (Yanlış):</b> Şer'i ve örfi mahkemeler taşrada kesintisiz çalışmaya devam etmiştir; divan en üst temyiz merciidir.",
+        "tag": "#DivanıHümayun"
+      },
+      {
+        "q": "Soru 82: Fatih Sultan Mehmet, hazırlattığı Kanunname-i Âli Osman'da 'nizam-ı alem' (devletin bekası ve kamu düzeni) ilkesini örfi hukukun en üst kuralı haline getirmiştir. Kanunnamede yer alan 'Devletin birliği için taht kavgalarını engelleyecek kardeş katli münasiptir' hükmü, şer'i ve örfi hukuk otoritelerince onaylanmıştır. Fatih'in bu sert kanuni tedbirle önlemeyi amaçladığı en büyük tehdit aşağıdakilerden hangisidir?",
+        "options": [
+          "Şehzadelerin yabancı devletler ve beylikler tarafından kışkırtılarak devleti iç savaşa sürüklemesi ve bölünme tehlikesi yaratması",
+          "Eyalet valilerinin kendi bağımsızlıklarını ilan etmesi",
+          "Yeniçerilerin maaşlarına zam istemesi",
+          "Balkanlar'da Hristiyan din meclislerinin kurulması"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Fatih Sultan Mehmet, özellikle Fetret Devri'ndeki 11 yıllık iç savaşı ve Cem Sultan gibi şehzadelerin dış güçlerin elinde oyuncak olma tehlikesini bizzat analiz etmiştir. Kardeş katli yasası, taht kavgalarının devleti parçalamasını önlemek için alınmış radikal bir tedbirdir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Şehzadelerin isyan etmesi ve dış güçlerin bunu kullanması devletin bölünmesine yol açabilirdi; yasa bu tehdide yöneliktir.<br>• <b>B Şıkkı (Yanlış):</b> Eyalet valilerinin isyanı bu yasanın konusu değildir; yasa hanedan üyelerini kapsamaktadır.<br>• <b>C Şıkkı (Yanlış):</b> Yeniçerilerin maaş talepleri askeri bir taleptir, veraset düzenlemesiyle ilgisi yoktur.<br>• <b>D Şıkkı (Yanlış):</b> Balkanlar'daki dini yapılanmalar bu yasanın veya kanunnamenin kapsamı dışındadır.",
+        "tag": "#FatihKanunnamesi"
+      },
+      {
+        "q": "Soru 83: Kanuni Sultan Süleyman döneminde Hint Okyanusu'nda Portekiz donanmasına karşı yapılan Hint Deniz Seferleri, büyük donanmalar gönderilmesine rağmen hedeflenen ticari ve askeri başarıyı tam sağlayamamıştır. Osmanlı donanmasının bu seferlerde okyanus aşırı lojistik destek alamaması ve gemilerin okyanus dalgalarına dayanamaması başarısızlık getirmiştir. Hint Deniz Seferleri'nin başarısız olmasının en kritik küresel ekonomik sonucu aşağıdakilerden hangisidir?",
+        "options": [
+          "Avrupalıların Baharat Yolu'na bağımlılığının tamamen bitmesi ve Ümit Burnu üzerinden okyanus ticaretini tekelleştirmeleri",
+          "Akdeniz donanmasının tamamının Portekizlilerce yakılması",
+          "Osmanlı Devleti'nin Mısır eyaletini tamamen kaybetmesi",
+          "Hint baharatlarının Osmanlı pazarlarında tamamen yasaklanması"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Seferlerin başarısızlığı, Portekiz'in Hint Okyanusu'ndaki hegemonyasını kıramamıştır. Avrupalılar, Ümit Burnu rotası (okyanus yolları) üzerinden Uzak Doğu mallarını doğrudan Avrupa'ya taşımış, bu da Baharat Yolu'nu ve Osmanlı limanlarını bypass ederek Osmanlı gümrük gelirlerine ağır darbe vurmuştur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Başarısızlık, okyanus ticaretinin Avrupalılar elinde tekelleşmesini ve Baharat Yolu'nun önemini kaybetmesini hızlandırmıştır.<br>• <b>B Şıkkı (Yanlış):</b> Akdeniz donanması bu seferlerde yakılmamıştır; çarpışmalar Hint Okyanusu'nda küçük filolar arasında olmuştur.<br>• <b>C Şıkkı (Yanlış):</b> Mısır Osmanlı egemenliğinde 19. yüzyıla kadar kalmıştır, toprak kaybı olmamıştır.<br>• <b>D Şıkkı (Yanlış):</b> Baharat ticareti devam etmiştir ancak gümrük gelirleri ve ticaret hacmi okyanusa kaymıştır.",
+        "tag": "#HintDenizSeferleri"
+      },
+      {
+        "q": "Soru 84: Osmanlı Devleti'nin yükselme döneminde batılı devletlere tanıdığı kapitülasyonlar, başlangıçta padişahın tek taraflı iradesiyle yürürlükte kalan ve iki hükümdarın ömrüyle sınırlı olan geçici imtiyazlardı. Ancak zamanla bu durum değişmiş ve kapitülasyonlar devletin aleyhine dönmüştür. Osmanlı Devleti'nin en güçlü döneminde kapitülasyonları 'iki hükümdarın ömrüyle sınırlı' tutmasındaki temel hukuki ve egemenlik amacı nedir?",
+        "options": [
+          "İmtiyazların kalıcı hale gelerek devletin egemenlik haklarını ve bağımsızlığını zedelemesini önlemek",
+          "Avrupa devletlerinin Osmanlı'ya borç vermesini kolaylaştırmak",
+          "Yeniçerilerin yabancı tüccarlarla iş birliği yapmasını engellemek",
+          "Gümrük gelirlerini tamamen sıfırlamak"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Osmanlı padişahları, kapitülasyonların gelecekte devleti bağlayacak kalıcı bir yükümlülüğe dönüşmesini engellemek için bunları şahsi ve geçici tutmuşlardır. Yeni padişah tahta çıktığında kapitülasyon antlaşmasını yenileyip yenilememe hakkına sahipti. Bu durum egemenlik haklarının korunmasıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Ömürle sınırlı tutma, imtiyazların kalıcı haklara dönüşüp devletin bağımsızlığını zedelemesini önlemek için getirilmiş hukuki bir sigortadır.<br>• <b>B Şıkkı (Yanlış):</b> Bu dönemde dış borçlanma yoktur, devlet bütçesi son derece güçlüdür.<br>• <b>C Şıkkı (Yanlış):</b> Yeniçerilerin ticaretle uğraşması zaten yasaktır, kapitülasyonların onlarla bir ilgisi yoktur.<br>• <b>D Şıkkı (Yanlış):</b> Amaç gümrük vergilerini sıfırlamak değil, ticareti hareketlendirerek makul vergiler toplamaktır.",
+        "tag": "#Kapitülasyonlar"
+      },
+      {
+        "q": "Soru 85: Fatih Sultan Mehmet, Karadeniz'i bir 'Türk Gölü' haline getirmek amacıyla planlı fetihler gerçekleştirmiştir. Bu doğrultuda Trabzon Rum İmparatorluğu'na son verilmiş (1461), Amasra ve Sinop alınmış ve en son Kırım Hanlığı (1475) Osmanlı egemenliğine bağlanmıştır. Karadeniz'in Türk gölü haline gelmesinin Osmanlı Devleti'ne sağladığı en büyük jeopolitik ve ekonomik fayda aşağıdakilerden hangisidir?",
+        "options": [
+          "Kuzey İpek Yolu ticaret güzergahının tamamen Osmanlı kontrolüne girmesi ve Cenevizlilerin Karadeniz'deki sömürgeci askeri varlığına son verilmesi",
+          "Akdeniz donanmasının Karadeniz'de Portekizlilere karşı savaşması",
+          "Mısır ve Suriye ticaret yollarının tamamen güvenliğe kavuşması",
+          "Anadolu'da Türk siyasi birliğinin bozulması"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Kırım'ın fethi ve Karadeniz'in göl olması, kuzey İpek Yolu hattını (Kefe, Azak limanlarını) Osmanlı'ya bağlamış, Cenevizlilerin Karadeniz'deki ticari ve askeri kolonilerini tasfiye etmiştir. Bu durum Karadeniz'i tamamen Osmanlı iç denizine dönüştürmüştür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> İpek Yolu kuzey hattının denetimi ve Cenevizlilerin temizlenmesi Karadeniz fethinin en büyük jeopolitik sonucudur.<br>• <b>B Şıkkı (Yanlış):</b> Portekizliler Karadeniz'de değil, Hint Okyanusu'nda faaliyet göstermekteydiler.<br>• <b>C Şıkkı (Yanlış):</b> Mısır ve Suriye güneydedir, Karadeniz ise kuzeydedir.<br>• <b>D Şıkkı (Yanlış):</b> Karadeniz'in fethi Anadolu'da birliği bozmamış, aksine devleti güçlendirmiştir.",
+        "tag": "#KaradenizFethi"
+      },
+      {
+        "q": "Soru 86: II. Murat döneminde, 1448 yılında Osmanlı ordusu ile Macaristan liderliğindeki Haçlı ordusu arasında yapılan II. Kosova Savaşı, Osmanlıların balkanlardaki egemenliğini tescilleyen tarihi bir zaferdir. Bu zaferin kazanılmasıyla birlikte, Bizans'ın balkanlardan gelebilecek askeri yardımlarla kurtulma umutları tamamen sönmüştür. II. Kosova Zaferi'nin balkan tarihi açısından en önemli jeopolitik sonucu aşağıdakilerden hangisidir?",
+        "options": [
+          "Balkanlar'ın kesin ve tartışmasız bir Türk yurdu haline gelmesi ve Avrupalıların Türkleri balkanlardan atma umutlarının ebediyen sona ermesi",
+          "Avrupa Hun Devleti'nin kurulması",
+          "Balkanlar'da Hristiyanlığın tamamen yasaklanması",
+          "Bizans İmparatorluğu'nun Osmanlı'ya bağlanarak vergi ödemeyi durdurması"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> II. Kosova Savaşı, Avrupalıların Türkleri Balkanlar'dan atmak amacıyla düzenlediği son büyük taarruz (Haçlı) seferidir. Bu zaferle Avrupalılar savunmaya çekilmiş, Osmanlı ise Balkanlar'da mutlak taarruz pozisyonuna geçmiştir. Balkanlar kesin Türk yurdu olmuştur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> II. Kosova Zaferi, balkanlardaki Türk varlığını kalıcı kılan ve Haçlı taarruz dönemini kapatan nihai zaferdir.<br>• <b>B Şıkkı (Yanlış):</b> Avrupa Hun Devleti 4. yüzyılda kurulmuştur; bu savaş 15. yüzyıldadır.<br>• <b>C Şıkkı (Yanlış):</b> Osmanlı din özgürlüğünü korumuştur, Hristiyanlığı yasaklamamıştır.<br>• <b>D Şıkkı (Yanlış):</b> Bizans vergi ödemeye devam etmiş ve kısa süre sonra (1453) tamamen fethedilmiştir.",
+        "tag": "#KosovaSavaş"
+      },
+      {
+        "q": "Soru 87: Osmanlı Beyliği'nin kuruluşu döneminde, 1302 Koyunhisar (Bafeus) Savaşı'nın kazanılması, Osman Gazi'nin karizmatik liderliğini ve askeri gücünü pekiştirmiştir. Bu zafer sonrasında Bizans sınırındaki diğer gaziler ve aşiretler kitleler halinde Osman Gazi'nin bayrağı altına katılmıştır. Koyunhisar Zaferi'nin Osmanlı idari tarihi açısından en önemli sonucu aşağıdakilerden hangisidir?",
+        "options": [
+          "Beyliğin bağımsız bir siyasi varlık olarak tarih sahnesine çıkışının tescillenmesi ve kurumsallaşma sürecinin hızlanması",
+          "İç savaşa (taht kavgalarına) yol açması",
+          "Sınırların Avusturya sınırına kadar genişlemesi",
+          "Enderun Mektebi'nin kurulması"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Koyunhisar Savaşı, Osmanlı'nın Bizans merkezi ordusuna/tekfur ordusuna karşı kazandığı ilk büyük organize zaferdir. Bu zafer, beyliğin sadece küçük bir aşiret değil, bağımsız ve meşru bir siyasi güç olarak çevre beylikler ve Bizans tarafından tanınmasını sağlamıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Koyunhisar Zaferi, beyliğin bağımsızlığını tescilleyen ve tarih sahnesine çıkışını ilan eden askeri-idari milattır.<br>• <b>B Şıkkı (Yanlış):</b> Savaş taht kavgasına yol açmamış, aksine Osman Gazi'nin otoritesini rakipsiz kılmıştır.<br>• <b>C Şıkkı (Yanlış):</b> Sınırların Avusturya'ya ulaşması yükselme döneminde (Kanuni) olmuştur; bu dönemde henüz Bursa dahi fethedilmemiştir.<br>• <b>D Şıkkı (Yanlış):</b> Enderun Mektebi II. Murat ve Fatih döneminde kurulmuş ve geliştirilmiştir.",
+        "tag": "#Koyunhisar"
+      },
+      {
+        "q": "Soru 88: Fatih Sultan Mehmet, devletin beylik karakterinden merkeziyetçi bir dünya imparatorluğuna geçişini sağlamak için idari alanda devrim niteliğinde hamleler yapmıştır. Kul sistemini (devşirmeleri) bürokraside egemen kılmış, müsadereyi getirmiş ve divan başkanlığını sadrazama devretmiştir. Fatih'in bu reformlarla kırmak istediği temel iç siyasi vesayet odağı aşağıdakilerden hangisidir?",
+        "options": [
+          "Padişahın mutlak otoritesine ortak olabilecek zengin ve güçlü geleneksel Türk ailelerinin (aristokrasinin) gücü",
+          "Yeniçerilerin askeri maaş talepleri",
+          "Balkan rahiplerinin dini özerklik istekleri",
+          "Enderun'da eğitim gören yabancı elçilerin casusluk faaliyetleri"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Fatih, Çandarlı ailesinin gücünü ve nüfuzunu görerek, devlete ortak olabilecek yerel aristokrat ailelerin gücünü kırmayı amaçlamıştır. Bu amaçla devşirmeleri (arkalarında hiçbir aile desteği olmayan kulları) sadrazamlığa getirmiş ve müsadereyle zengin aile birikimlerini önlemiştir. Bu durum merkezi otoriteyi mutlaklaştırmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Padişah saray üzerindeki güçlü Türk ailelerinin nüfuzunu ve vesayetini kırarak mutlak karar verici olmuştur.<br>• <b>B Şıkkı (Yanlış):</b> Yeniçerilerin maaş isyanları bu idari/bürokratik aristokrasi tasfiyesinin konusu değildir.<br>• <b>C Şıkkı (Yanlış):</b> Balkan rahipleri sivil dini topluluklardır, saray bürokrasisinde vesayet kurma güçleri yoktur.<br>• <b>D Şıkkı (Yanlış):</b> Enderun'da casusluk gibi bir gerekçe bu büyük idari reformun temel hedefi olamaz.",
+        "tag": "#MerkeziOtorite"
+      },
+      {
+        "q": "Soru 89: Yavuz Sultan Selim'in Ridaniye Savaşı'nı kazanarak Memlük Devleti'ni yıkması ve Mısır'ı fethetmesi, Osmanlı bütçesine ve devlet yapısına muazzam katkılar sağlamıştır. Aşağıdakilerden hangisi Mısır'ın fethinin Osmanlı Devleti'nin İslam dünyasındaki konumuna sağladığı en büyük manevi ve siyasi kazanımdır?",
+        "options": [
+          "Halifeliğin Osmanlı hanedanına geçmesiyle padişahların dini liderliği ele alması ve İslam dünyasının lideri konumuna yükselmeleri",
+          "Kudüs'ün ilk kez Hristiyanlar tarafından işgal edilmesi",
+          "Memlük askeri teşkilatının Yeniçeri Ocağı'na aynen dahil edilmesi",
+          "Şii mezhebinin Osmanlı sınırları içinde resmi din ilan edilmesi"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Mısır'ın fethiyle birlikte Kahire'deki Abbasi halifeliği ve halifelik makamı resmen Osmanlı padişahlarına geçmiştir. Yavuz Sultan Selim 'Hadimü'l-Haremeyni'ş-Şerifeyn' (Mekke ve Medine'nin Hizmetkarı) unvanını almış, devlet yapısı teokratik nitelik kazanmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Halifeliğin Osmanlı'ya geçmesi, padişahların İslam dünyasındaki siyasi ve dini otoritesini en üst seviyeye taşımıştır.<br>• <b>B Şıkkı (Yanlış):</b> Kudüs Haçlı işgaline uğramamış, aksine Osmanlı idaresinde huzura kavuşmuştur.<br>• <b>C Şıkkı (Yanlış):</b> Memlük ordusu lağvedilmiştir; Yeniçeri ocağı kendi devşirme sistemiyle kalmıştır.<br>• <b>D Şıkkı (Yanlış):</b> Osmanlı sünni inancını korumuş ve savunmuştur; Şiilik resmi din yapılmamıştır.",
+        "tag": "#MısırSeferi"
+      },
+      {
+        "q": "Soru 90: Barbaros Hayreddin Paşa komutasındaki Osmanlı donanmasının 1538 yılında Preveze önlerinde kazandığı büyük deniz zaferi, Akdeniz ticaretini ve askeri dengeleri tamamen değiştirmiştir. Preveze zaferinden sonra, Avrupalıların Akdeniz'de Osmanlı izni olmadan büyük askeri ve ticari faaliyet yapması engellenmiştir. Bu zaferin denizcilik tarihi açısından en önemli askeri özelliği nedir?",
+        "options": [
+          "Sayıca çok az olan Osmanlı donanmasının taktiksel manevralar, rüzgar avantajı ve hücum gücüyle devasa Haçlı armadasını bozguna uğratması",
+          "Tarihte ilk kez denizaltıların kullanılması",
+          "Savaşın tamamen kürek çekmeyen buharlı gemilerle yapılması",
+          "Haçlı donanmasının tamamının savaşmadan teslim olması"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Preveze Deniz Savaşı'nda Andrea Doria komutasındaki Haçlı donanması sayıca ve gemi boyutu olarak çok üstündü. Ancak Barbaros Hayreddin Paşa'nın manevra kabiliyeti yüksek kadırgaları ve uyguladığı taktiksel hücumlar, rüzgarsız havada Haçlı kalyonlarını hareketsiz yakalayarak imha etmiştir. Bu bir taktik zaferdir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Preveze, Barbaros'un askeri dehası ve üstün taktiksel manevraları sayesinde kazanılmış büyük bir deniz zaferidir.<br>• <b>B Şıkkı (Yanlış):</b> Denizaltı teknolojisi 19. ve 20. yüzyıl teknolojisidir.<br>• <b>C Şıkkı (Yanlış):</b> Gemi tipleri kadırga (kürekli) ve kalyondur (yelkenli), buharlı gemiler henüz icat edilmemiştir.<br>• <b>D Şıkkı (Yanlış):</b> Haçlılar yoğun şekilde savaşmış ancak ağır kayıplar vererek geri çekilmek zorunda kalmışlardır.",
+        "tag": "#PrevezeZaferi"
+      },
+      {
+        "q": "Soru 91: Osmanlı Devleti'nin Rumeli'deki fetih hareketlerinin öncüsü olan Süleyman Paşa, Çimpe Kalesi'ni aldıktan sonra Gelibolu'yu fethetmiş ve balkanlara geçiş yollarını açmıştır. Süleyman Paşa'nın balkanlardaki iskan politikası kapsamında uyguladığı en önemli sosyal strateji aşağıdakilerden hangisidir?",
+        "options": [
+          "Anadolu'daki göçebe nüfusu yerleşik hayata geçirmek amacıyla balkanlara yerleştirmesi ve tarımsal üretimi başlatması",
+          "Balkanlar'daki tüm yerel köyleri yakıp yıkması",
+          "Hristiyan halkın tamamını İslamiyet'e geçmeye zorlaması",
+          "Rumeli'deki Hristiyan topraklarını tamamen boş bırakarak askeri yasak bölge yapması"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Süleyman Paşa, göçebe Türkmenleri Rumeli'ye yerleştirerek hem onları disiplin altına almış ve yerleşik hayata alıştırmış hem de boş arazileri tarıma açarak üretimi patlatmıştır. Bu akılcı yerleşim fethin kalıcı olmasının temel taşıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Süleyman Paşa göçebe nüfusu iskan ederek yerleşik hayata geçirmiş ve bölgeyi tarımsal üretime açmıştır.<br>• <b>B Şıkkı (Yanlış):</b> Osmanlı hiçbir zaman yerel köyleri yıkmamış, aksine imar etmiştir.<br>• <b>C Şıkkı (Yanlış):</b> Zorla din değiştirme veya asimilasyon uygulanmamıştır.<br>• <b>D Şıkkı (Yanlış):</b> Topraklar boş bırakılmamış, tarımsal ve sosyal hayat geliştirilmiştir.",
+        "tag": "#SüleymanPaşa"
+      },
+      {
+        "q": "Soru 92: Yavuz Sultan Selim'in 1515 Turnadağ Savaşı'yla Dulkadiroğulları Beyliği'ni yıkması, Anadolu'daki Türk siyasi birliğini (ATSB) eksiksiz olarak tamamlamıştır. Bu siyasi birleşmenin Osmanlı Devleti'nin doğu ve güney seferleri üzerindeki en büyük stratejik askeri faydası aşağıdakilerden hangisidir?",
+        "options": [
+          "Güney ve doğu seferlerinde Osmanlı ordusunun arkasında hiçbir tehdit kalmaması ve lojistik geçiş yollarının tamamen güvenliğe kavuşması",
+          "Bizans'ın doğudan ordu göndermesinin engellenmesi",
+          "Avrupalıların Haçlı seferlerini tamamen sonlandırması",
+          "Tımarlı sipahi ordusunun tamamen lağvedilmesi"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Dulkadiroğulları'nın Osmanlı'ya bağlanması, doğudaki Safevi ve güneydeki Memlük seferlerinde Osmanlı ordusunun arkasını emniyete almıştır. Güzergah üzerindeki askeri ve lojistik geçiş yolları (Toros geçitleri vb.) tamamen denetim altına alınmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Siyasi birliğin sağlanması arkadaki tehditleri temizlemiş ve doğu/güney seferlerinin lojistik güvenliğini kurmuştur.<br>• <b>B Şıkkı (Yanlış):</b> Bizans bu savaştan önce yıkılmıştır.<br>• <b>C Şıkkı (Yanlış):</b> Turnadağ Savaşı iç birleşmedir, Haçlı seferlerini doğrudan bitiren dış askeri etken değildir.<br>• <b>D Şıkkı (Yanlış):</b> Tımarlı sipahiler bu zaferle yeni dirlikler kazanarak daha da güçlenmiştir.",
+        "tag": "#Turnadağ"
+      },
+      {
+        "q": "Soru 93: Osmanlı Devleti'nin askeri ve sosyal omurgasını oluşturan Tımarlı Sipahiler (Tümarlı Sipahiler), barış zamanında kendi dirlik bölgelerinde tarımsal üretimi denetler, vergileri toplar ve güvenliği sağlarlardı. Tımar sisteminin toprak rejimiyle birleşen bu yapısı sayesinde taşrada (eyaletlerde) hiçbir güvenlik ve asayiş boşluğu yaşanmamıştır. Tımarlı Sipahilerin taşradaki bu idari ve askeri rolü aşağıdakilerden hangisinin engellenmesinde en büyük etkendir?",
+        "options": [
+          "Avrupa'dakine benzer feodal toprak ağalarının (derebeylerin) doğmasının ve merkeze rakip mahalli güçlerin oluşmasının önlenmesi",
+          "Yeniçerilerin sarayda isyan çıkarmasının engellenmesi",
+          "Gayrimüslimlerin ticaret yapmasının yasaklanması",
+          "Divan-ı Hümayun'un kararlarının eyaletlerde uygulanmasının engellenmesi"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Osmanlı Devleti'nde toprağın mülkiyeti devlete (miri), kullanım hakkı köylüye, vergi geliri ise sipahiye aittir. Sipahi toprağı satamaz, köylüyü köle yapamazdı. Bu dahi denge, eyaletlerde Avrupa'daki gibi monarşiyi ve merkezi otoriteyi tehdit edecek derebeylerin (feodal sınıfların) doğmasını kesinlikle engellemiştir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Tımar sistemi toprağı devlet elinde tutarak feodal derebeylerin doğmasını ve merkeze rakip güç çıkmasını önlemiştir.<br>• <b>B Şıkkı (Yanlış):</b> Sipahiler taşrada bulunur; saraydaki Yeniçeri isyanlarını doğrudan önleme güçleri konumları gereği sınırlıdır.<br>• <b>C Şıkkı (Yanlış):</b> Gayrimüslimler ticarette serbesttirler ve tımar sistemi ticaret yasağı getirmemiştir.<br>• <b>D Şıkkı (Yanlış):</b> Sipahiler divan kararlarını taşrada en hızlı ve sadık şekilde uygulayan askeri memurlardır.",
+        "tag": "#TümarlıSipahiler"
+      },
+      {
+        "q": "Soru 94: Sadrazam (Veziriazam), padişahın mutlak vekili olarak devletin tüm yönetim çarkını idare ederdi. Sadrazamın makamı olan 'Bab-ı Ali' (Yüksek Kapı), zamanla Osmanlı bürokrasisinin ve hükümetinin merkezi haline gelmiştir. Sadrazamın padişah adına mutlak emir ve karar verebilmesinin en somut hukuki nişanesi aşağıdakilerden hangisidir?",
+        "options": [
+          "Padişahın şahsi mührünü (Mühr-ü Hümayun) üzerinde taşıması ve padişah adına doğrudan ferman yazabilmesi",
+          "Kendi adına altın para bastırabilmesi",
+          "Yeniçeri Ocağı'nı padişahın izni olmadan tamamen kapatabilmesi",
+          "Yabancı devletlerle padişahı dışlayarak bağımsız antlaşmalar imzalaması"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Veziriazam (Sadrazam), padişahın mutlak vekili olduğunu gösteren devlet mührünü (Mühr-ü Hümayun) taşır. Bu mühür sadrazamın verdiği kararların doğrudan padişahın emri hükmünde olduğunu kanıtlar. Mühür geri alındığında sadrazamın görevi sona ererdi.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Mühr-ü Hümayun'u taşımak, sadrazamın padişah adına mutlak vekil olarak yetkilendirildiğinin en net yasal kanıtıdır.<br>• <b>B Şıkkı (Yanlış):</b> Para bastırmak sadece padişahın şahsına ait egemenlik alametidir, sadrazam para bastıramazdı.<br>• <b>C Şıkkı (Yanlış):</b> Yeniçeri Ocağı'nı kapatmak sadrazamın yetkisinde değildir; ocak ancak padişah kararıyla (1826'da) kaldırılmıştır.<br>• <b>D Şıkkı (Yanlış):</b> Sadrazam tüm antlaşmaları padişah adına ve onun onayıyla imzalamak zorundaydı.",
+        "tag": "#Veziriazam"
+      },
+      {
+        "q": "Soru 95: Yavuz Sultan Selim dönemi, Osmanlı İmparatorluğu'nun yönünü tamamen doğuya ve güneye çevirdiği, Safevi ve Memlük güçlerine karşı mutlak askeri zaferler kazandığı altın bir çağdır. Yavuz Sultan Selim'in doğu sınır politikasındaki temel jeopolitik amaç aşağıdakilerden hangisidir?",
+        "options": [
+          "İslam dünyasındaki Şii-Safevi propagandasını engellemek, doğu sınır güvenliğini kurmak ve doğu ticaret yollarını güvenceye almak",
+          "Avrupa devletleriyle birleşerek Rusya'ya saldırmak",
+          "Balkanlar'da yeni sancaklar kurmak",
+          "Hristiyan dünyasını İslam dinine davet etmek"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Yavuz Sultan Selim, Şah İsmail'in Anadolu'da yürüttüğü Şii kökenli propaganda ve isyanları (Şahkulu vb.) devletin bekasına en büyük tehdit görmüştür. Çaldıran seferiyle bu tehdidi ezmiş, doğu ticaret yollarını denetlemiş ve doğu sınır güvenliğini mutlak kılmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Safevi propagandasını durdurmak, doğu sınırlarını korumak ve ipek yolunu denetlemek Yavuz'un temel doğu politikası hedefidir.<br>• <b>B Şıkkı (Yanlış):</b> Rusya bu dönemde henüz büyük bir tehdit değildir ve Yavuz'un Rusya'ya yönelik bir sefer planı olmamıştır.<br>• <b>C Şıkkı (Yanlış):</b> Yavuz yönünü tamamen doğuya çevirmiştir, batı (balkan) yönünde sefer yapmamıştır.<br>• <b>D Şıkkı (Yanlış):</b> Temel amaç dini tebliğden ziyade siyasi, askeri ve jeopolitik sınır güvenliğini kurmaktır.",
+        "tag": "#YavuzSultan"
+      },
+      {
+        "q": "Soru 96: Yeniçeri Ocağı'na alınacak devşirme çocukları, titizlikle seçildikten sonra doğrudan askeri birliğe verilmezlerdi. Önce Anadolu'daki Müslüman Türk ailelerinin yanına yerleştirilirler (Türkçe ve İslam adetlerini öğrenmeleri için), ardından 'Acemi Ocağı'na alınarak askeri temel eğitime tabi tutulurlardı. Devşirme çocuklarının öncelikle Türk ailelerin yanına verilmesindeki temel amaç aşağıdakilerden hangisidir?",
+        "options": [
+          "Türk-İslam kültürünü, dilini ve adetlerini yaşayarak öğrenmelerini (temsil edilmelerini) sağlamak",
+          "Tarım üretiminde ücretsiz işçi olarak çalıştırılmaları",
+          "Hristiyan aileleriyle haberleşmelerini kolaylaştırmak",
+          "Eyalet sipahilerine hizmetçi yapılmaları"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Devşirilen gayrimüslim çocukların doğrudan saraya veya orduya alınması kültürel uyumsuzluk yaratırdı. Bu nedenle, önce Türk köylü ailelerinin yanında Türkçe öğrenmeleri, İslam ahlakını benimsemeleri ve Türk-İslam kültürünü yaşayarak özümsemeleri (temsil) amaçlanmıştır. Bu sürece 'Türk'e verme' denirdi.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Türk ailelerin yanına yerleştirilme, çocukların milli ve dini kültüre uyum sağlamalarını (kültürleşme) amaçlayan pedagojik bir adımdır.<br>• <b>B Şıkkı (Yanlış):</b> Amaç ücretsiz işçilik değil, tamamen kültürel ve ahlaki eğitimdir.<br>• <b>C Şıkkı (Yanlış):</b> Aileleriyle bağları tamamen kesilirdi, haberleşmeleri önlenirdi.<br>• <b>D Şıkkı (Yanlış):</b> Sipahilere hizmetçi yapılmazlar, doğrudan Acemi Ocağı'na geçiş yaparlardı.",
+        "tag": "#Yeniçeriler"
+      },
+      {
+        "q": "Soru 97: 1514 Çaldıran Savaşı'nda Yavuz Sultan Selim'in Safevi ordusuna karşı kazandığı zafer, Doğu Anadolu topraklarının (Erzurum, Van, Kars çevresinin) Osmanlı egemenliğine girmesini kolaylaştırmıştır. Çaldıran Zaferi'nin Osmanlı iç siyaseti üzerindeki en rahatlatıcı ve düzenleyici tarihi etkisi aşağıdakilerden hangisidir?",
+        "options": [
+          "Anadolu'da Safevi destekli Şii propagandalarının ve mezhep kökenli büyük iç isyanların uzun süre tamamen engellenmesi",
+          "Yeniçerilerin padişaha karşı ayaklanması",
+          "Anadolu'daki tüm medreselerin kapatılması",
+          "Bizans tekfurlarının Osmanlı'ya sığınması"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Çaldıran Zaferi, Anadolu'daki Şii propagandasının askeri ve ideolojik merkezi olan Şah İsmail'i ağır yenilgiye uğratmıştır. Bu durum Anadolu'da devleti sarsan mezhep kökenli sosyal ayaklanmaların (Safevi kışkırtmalarının) önünü kesmiş ve iç huzuru tesis etmiştir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Çaldıran zaferi Anadolu'daki Safevi propagandasını çökerterek iç güvenliği ve mezhepsel barışı uzun süre korumuştur.<br>• <b>B Şıkkı (Yanlış):</b> Zafer sonrasında Yeniçeriler ganimet almış ve itaatleri pekişmiştir, isyan etmemişlerdir.<br>• <b>C Şıkkı (Yanlış):</b> Medreseler kapatılmamış, aksine doğudan getirilen alimlerle daha da geliştirilmiştir.<br>• <b>D Şıkkı (Yanlış):</b> Bizans bu savaştan 61 yıl önce yıkılmıştır.",
+        "tag": "#ÇaldıranSavaş"
+      },
+      {
+        "q": "Soru 98: Orhan Bey döneminde 1353 yılında Çimpe Kalesi'nin alınmasıyla Rumeli'ye ilk adımı atan Osmanlı Devleti, bu kaleyi fatih Süleyman Paşa önderliğinde askeri bir üs haline getirmiştir. Çimpe Kalesi'nin üs yapılması, sonraki Rumeli fetihlerinde orduya sağladığı lojistik kolaylıklar yönüyle büyük tarihi öneme sahiptir. Çimpe Kalesi'nin fethi Osmanlı askeri stratejisine nasıl bir boyut kazandırmıştır?",
+        "options": [
+          "Balkan fetihleri için karasal bir sıçrama tahtası ve lojistik yığınak merkezi işlevi görmesi",
+          "Donanmanın Karadeniz'e çıkışını engellemesi",
+          "Anadolu'daki askeri birliklerin tamamının terhis edilmesine yol açması",
+          "Avrupa devletleriyle ilk diplomatik antlaşmanın imzalanmasını sağlaması"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Çimpe Kalesi, Gelibolu yarımadasında yer alan küçük bir kale olmasına rağmen, Osmanlı'ya Avrupa topraklarında kalıcı bir fiziki üs vermiştir. Bu üs sayesinde Anadolu'dan getirilen kuvvetler burada toplanmış, yığınak yapılmış ve Balkan fetihlerinde karasal sıçrama tahtası olarak kullanılmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Çimpe Kalesi Rumeli'de askeri yığınak ve sıçrama tahtası rolü oynayarak fetihleri hızlandırmıştır.<br>• <b>B Şıkkı (Yanlış):</b> Karadeniz'e çıkışı engellememiş, aksine boğazların kontrolünü kolaylaştırmıştır.<br>• <b>C Şıkkı (Yanlış):</b> Anadolu'da askeri ihtiyaç devam etmiştir, ordunun terhisi söz konusu değildir.<br>• <b>D Şıkkı (Yanlış):</b> İlk diplomatik antlaşma daha önce de yapılmıştır; kalenin rolü askeridir.",
+        "tag": "#ÇimpeKalesi"
+      },
+      {
+        "q": "Soru 99: Osmanlı Devleti'nin Balkanlar'daki iskan siyaseti, sadece rastgele bir yerleşim değil, fethin kalıcı olmasını hedefleyen planlı bir toplumsal mühendisliktir. Devlet, yerleşimleri düzenlerken üretimin devamlılığını korumak adına tarım arazilerini boş bırakan veya toprağı üç yıl üst üste ekmeyen köylünün toprağını elinden almıştır. Osmanlı hukukunda toprağı boş bırakana kesilen bu idari ceza/vergi aşağıdakilerden hangisidir?",
+        "options": [
+          "Çiftbozan Akçesi",
+          "Avarız Akçesi",
+          "Cizye Vergisi",
+          "Öşür Vergisi"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Osmanlı tarım hukukunda tarımsal üretimin kesintiye uğramasını önlemek en üst önceliktir. Toprağını mazeretsiz olarak boş bırakan veya terk eden köylüden 'Çiftbozan Akçesi' (Çiftbozan vergisi) adı verilen bir ceza vergisi alınır, üç yıl üst üste boş bırakırsa toprak elinden alınıp başkasına verilirdi.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Çiftbozan akçesi, tarımsal üretimin sürekliliğini korumak amacıyla toprağını ekmeyen köylüye kesilen yasal cezadır.<br>• <b>B Şıkkı (Yanlış):</b> 'Avarız' olağanüstü durumlarda (savaş, deprem vb.) devlet tarafından toplanan geçici vergidir.<br>• <b>C Şıkkı (Yanlış):</b> 'Cizye' gayrimüslim tebaanın sağlıklı erkeklerinden askere gitmemeleri karşılığı alınan vergidir.<br>• <b>D Şıkkı (Yanlış):</b> 'Öşür' Müslüman çiftçinin ürettiği ürün üzerinden alınan 1/10 oranındaki olağan tarım vergisidir.",
+        "tag": "#İskanSiyaseti"
+      },
+      {
+        "q": "Soru 100: İstanbul'un Fethi (1453), Osmanlı Devleti'ni cihanşümul (küresel) bir imparatorluk kimliğine kavuşturmuştur. Bu fethin sonucunda Osmanlı padişahı Fatih Sultan Mehmet, Doğu Roma (Bizans) İmparatorluğu'nun meşru mirasçısı olduğunu ilan etmek ve Hristiyan tebaa üzerindeki hakimiyetini pekiştirmek amacıyla aşağıdaki unvanlardan hangisini resmi olarak kullanmaya başlamıştır?",
+        "options": [
+          "Kayser-i Rum (Roma İmparatoru)",
+          "Hadimü'l-Haremeyni'ş-Şerifeyn",
+          "Sultan-ı İklim-i Rum",
+          "Şah-ı Cihan"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Fatih Sultan Mehmet, İstanbul'u fethederek Roma İmparatorluğu'nun başkentini ele geçirmiş ve kendini Roma imparatorlarının meşru halefi görerek 'Kayser-i Rum' (Roma İmparatoru / Sezarı) unvanını almıştır. Bu unvan Osmanlı'nın evrensel imparatorluk vizyonunun ifadesidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Fatih, Bizans'ın fethinden sonra Roma tahtının mirasçılığı adına 'Kayser-i Rum' unvanını kullanmıştır.<br>• <b>B Şıkkı (Yanlış):</b> 'Hadimü'l-Haremeyn' (Mekke ve Medine'nin Hizmetkarı) unvanı Yavuz Sultan Selim'e aittir.<br>• <b>C Şıkkı (Yanlış):</b> 'Sultan-ı İklim-i Rum' unvanı Niğbolu zaferinden sonra Yıldırım Bayezid'e verilmiştir.<br>• <b>D Şıkkı (Yanlış):</b> 'Şah-ı Cihan' Babür İmparatorluğu hükümdarlarına ait doğu kökenli bir unvandır.",
+        "tag": "#İstanbulunFethi"
       }
     ]
   },
@@ -6431,6 +7151,726 @@ const tarih_db = [
         "correct": 1,
         "rationale": "<b>Doğru Cevap: B şıkkıdır.</b> Dirlik sahiplerinin yetiştirdiği bu atlı askerlere 'Cebelü' (Zırhlı Süvari) denir. Tımarlı Sipahi ordusu bu cebelülerden oluşur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Yeniçeriler eyalet ordusu değil, merkez yaya ordusudur.<br>• <b>B Şıkkı (Doğru):</b> Cebelü, devlet hazinesinden para çıkmadan taşra toprak gelirleriyle beslenen daimi süvarilerdir.<br>• <b>C Şıkkı (Yanlış):</b> Azaplar, eyalet ordusunun önünde savaşan bekar Türk gençlerinden oluşan yaya birliklerdir.<br>• <b>D Şıkkı (Yanlış):</b> Gönüllüler, sınır kalelerini koruyan yerel hafif kuvvetlerdir.",
         "tag": "#EyaletOrdusu"
+      },
+      {
+        "q": "Soru 41: Osmanlı Devleti'nin veraset sisteminde I. Ahmet döneminde yapılan düzenlemeyle hanedanın en yaşlı ve en olgun (akli dengesi yerinde olan) üyesinin tahta geçmesi kuralı getirilmiştir. Bu sisteme 'Ekber ve Erşed' sistemi adı verilmektedir. I. Ahmet'in bu düzenlemeyle doğrudan çözmek istediği ve kuruluş döneminden beri devam eden en kritik devlet idaresi sorunu aşağıdakilerden hangisidir?",
+        "options": [
+          "Taht kavgalarını tamamen önleyerek merkezi otoriteyi korumak ve hanedan içi kan dökülmesini engellemek",
+          "Padişahların yetkilerini tamamen meclise devretmek",
+          "Halkın padişah seçimlerine katılmasını kolaylaştırmak",
+          "Eyalet valilerinin taht üzerinde hak iddia etmesini engellemek"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Ekber ve Erşed sistemi, tahta kimin geçeceğini kesin bir kurala bağlayarak padişah öldüğünde hanedan üyeleri arasında yaşanacak taht kavgalarını önlemiştir. Bu sistem tahta çıkış sırasını belirlediği için kardeş katli uygulamasını da büyük oranda sona erdirmiştir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Ekber ve Erşed sistemi, taht veraset belirsizliğini ortadan kaldırarak taht kavgalarını bitirmeyi ve devletin birliğini korumayı hedeflemiştir.<br>• <b>B Şıkkı (Yanlış):</b> Padişahın mutlak egemenlik yetkileri bu sistemle kısıtlanmamıştır, sadece veliaht belirleme kuralı netleşmiştir.<br>• <b>C Şıkkı (Yanlış):</b> Osmanlı'da demokratik seçim yoktur; sistem tamamen hanedan içi tahta geçiş kuralıdır.<br>• <b>D Şıkkı (Yanlış):</b> Eyalet valilerinin (gayrimüslim veya devşirmelerin) zaten taht üzerinde hak iddia etme hakları yoktur, taht sadece Osmanlı hanedanının erkek üyelerine aittir.",
+        "tag": "#VerasetSistemi"
+      },
+      {
+        "q": "Soru 42: Osmanlı Saray Teşkilatı; padişahın şahsi hayatının geçtiği iç saray (Harem), devlet işlerinin yürütüldüğü dış saray (Birun) ve üst düzey devlet yöneticilerinin ile memurların yetiştirildiği saray okulu (Enderun) olmak üzere üç temel bölümden oluşmaktaydı. Aşağıdakilerden hangisi doğrudan saray teşkilatının dış saray (Birun) bölümünde görev alan devlet görevlilerinden biri 'değildir'?",
+        "options": [
+          "Haseki Sultan (Padişahın eşleri)",
+          "Hekimbaşı (Saray doktorlarının başı)",
+          "Müneccimbaşı (Saray astronomu)",
+          "Yeniçeri Ağası (Merkez ordusu komutanı)"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Haseki Sultan, padişahın eşi olup padişahın özel aile hayatının geçtiği iç saray olan 'Harem' bölümünde yaşar ve orada statü sahibidir. Birun ise sarayın dış hizmetlilerinin, doktorların, korumaların ve bürokratların yer aldığı kamusal bölümdür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Haseki Sultan Birun'da değil, özel aile alanı olan Harem'de bulunur ve yaşar.<br>• <b>B Şıkkı (Yanlış):</b> Hekimbaşı dış sarayda (Birun'da) padişahın ve saray halkının sağlık hizmetlerini yönetirdi.<br>• <b>C Şıkkı (Yanlış):</b> Müneccimbaşı saray gözlemevi işlerini ve takvimleri dış sarayda (Birun bünyesinde) yürütürdü.<br>• <b>D Şıkkı (Yanlış):</b> Yeniçeri Ağası sarayın güvenliğinden de sorumlu olan dış saray (Birun) görevlisi ve askeri idarecisidir.",
+        "tag": "#SarayTeşkilatı"
+      },
+      {
+        "q": "Soru 43: Osmanlı Devleti'nde idari, mali ve bürokratik kararların alındığı Divan-ı Hümayun'da, farklı uzmanlık sınıflarına mensup devlet adamları (divan üyeleri) görev yapmaktaydı. Bu divan üyeleri arasında padişahın resmi yazılarına tuğra çekmek, fethedilen toprakları tapu tahrir defterlerine kaydetmek ve arazi dağıtımını denetlemekle görevli bürokratik divan üyesi aşağıdakilerden hangisidir?",
+        "options": [
+          "Nişancı",
+          "Reisülküttab",
+          "Defterdar",
+          "Kazasker"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Nişancı, divanın en önemli bürokratik üyesidir. Padişah adına çekilen tuğranın (imzanın) tek yetkilisidir. Ayrıca Tapu Tahrir Defterlerini tutarak miri arazi sınırlarını, dirlik dağıtımlarını (tımar, zeamet, has) yasal olarak kayıt altına alırdı.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Padişahın tuğrasını çekme ve toprak tapu kayıtlarını (Tahrir) tutma yetkisi doğrudan Nişancı'ya aittir.<br>• <b>B Şıkkı (Yanlış):</b> Reisülküttab, başlangıçta Nişancı'ya bağlı kâtiplerin şefi iken sonradan dış ilişkilerden sorumlu divan üyesi (Dışişleri Bakanı) olmuştur.<br>• <b>C Şıkkı (Yanlış):</b> Defterdar, devletin maliyesinden, bütçesinden ve gelir-gider hesaplarından sorumlu divan üyesidir (Maliye Bakanı).<br>• <b>D Şıkkı (Yanlış):</b> Kazasker, askeri davalara bakan, hakimlerin (kadı) ve öğretmenlerin (müderris) atamalarını yapan yargı ve eğitim yöneticisidir.",
+        "tag": "#DivanÜyeleri"
+      },
+      {
+        "q": "Soru 44: Osmanlı toplumunda ve devlet teşkilatında bürokrasi, askeriye ve yargı organları belirli sınıflara ayrılmıştır. Bu sınıflar arasında adalet (yargı), eğitim (akademi) ve din (fetva) işlerini yürüten, köken olarak mutlaka Müslüman olmak ve medrese eğitimi almak zorunda olan seçkin zümreye 'İlmiye Sınıfı' denirdi. Aşağıdaki devlet görevlilerinden hangisi doğrudan ilmiye sınıfının en üst temsilcilerinden biridir?",
+        "options": [
+          "Şeyhülislam ve Kazasker",
+          "Sadrazam ve Kubbealtı Vezirleri",
+          "Nişancı ve Defterdar",
+          "Yeniçeri Ağası ve Kapıkulu Süvarileri"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> İlmiye sınıfı eğitim, hukuk ve din alanlarını yönetir. Şeyhülislam (din işleri ve fetva makamı) ve Kazasker (hukuk ve eğitim bürokrasisinin başı) bu sınıfın en üst düzey liderleridir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Şeyhülislam ve Kazasker medrese kökenli olup doğrudan yargı ve din alanını temsil eden ilmiye sınıfı üyeleridir.<br>• <b>B Şıkkı (Yanlış):</b> Sadrazam ve vezirler yönetim ve askeriye kökenli olan 'Seyfiye' sınıfına mensupturlar.<br>• <b>C Şıkkı (Yanlış):</b> Nişancı ve Defterdar yazışma, bürokrasi ve diplomasiyi temsil eden 'Kalemiye' sınıfına mensupturlar.<br>• <b>D Şıkkı (Yanlış):</b> Yeniçeri Ağası ve süvariler doğrudan askeri gücü temsil eden 'Seyfiye' sınıfına dahildir.",
+        "tag": "#İlmiyeSınıfı"
+      },
+      {
+        "q": "Soru 45: Osmanlı devlet teşkilatında yürütme, askeri idare ve savaş gücünü temsil eden, kılıç ehli olarak da adlandırılan zümreye 'Seyfiye Sınıfı' denirdi. Bu sınıf, padişahın otoritesini askeri alanda doğrudan temsil ederdi. Aşağıdakilerden hangisi seyfiye sınıfının taşradaki en üst düzey askeri ve idari yöneticilerinden biridir?",
+        "options": [
+          "Beylerbeyi ve Sancakbeyi",
+          "Kadı ve Müderris",
+          "Kâtip ve Reisülküttab",
+          "Muhtesib ve Ahi Evran"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Seyfiye sınıfının taşra teşkilatındaki en üst temsilcileri, eyaleti yöneten ve ordunun taşra kanadına komuta eden Beylerbeyi (Eyalet Valisi) ile sancağı yöneten Sancakbeyi'dir (İl Valisi). Kadı ve Müderris İlmiye; Reisülküttab ise Kalemiye sınıfındandır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Beylerbeyi ve Sancakbeyi taşrada hem mülki idareyi hem de askeri gücü elinde tutan seyfiye sınıfı üyeleridir.<br>• <b>B Şıkkı (Yanlış):</b> Kadı ve müderris adalet ve eğitim işlerine bakan ilmiye sınıfı üyeleridir.<br>• <b>C Şıkkı (Yanlış):</b> Kâtip ve Reisülküttab devlet yazışmalarını yapan kalemiye sınıfı üyeleridir.<br>• <b>D Şıkkı (Yanlış):</b> Muhtesib belediye denetçisidir; Ahi esnaf lideridir, idari askeri askeri sınıf değillerdir.",
+        "tag": "#SeyfiyeSınıfı"
+      },
+      {
+        "q": "Soru 46: Osmanlı Devleti'nin merkez bürokrasisini, iç ve dış yazışmalarını, maliye defterlerinin tutulmasını ve uluslararası diplomatik belgelerin hazırlanmasını yürüten, bürokrasi ehli sınıfa 'Kalemiye Sınıfı' adı verilirdi. Kalemiye sınıfı devletin kurumsal hafızası ve idari çarkıydı. Aşağıdaki divan üyelerinden hangisi doğrudan kalemiye sınıfına liderlik eden bürokratlardan biridir?",
+        "options": [
+          "Defterdar ve Nişancı",
+          "Sadrazam ve Yeniçeri Ağası",
+          "Kazasker ve Şeyhülislam",
+          "Beylerbeyi ve Kaptan-ı Derya"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Kalemiye sınıfı kâtiplerden, maliye bürokratlarından ve yazıcılardan oluşur. Defterdar (maliye defterlerini tutan) ve Nişancı (tuğra çeken ve yazışmaları yöneten) bu bürokratik sınıfın divandaki en üst liderleridir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Defterdar ve Nişancı kalemiye (bürokrasi) sınıfının divandaki en üst düzey temsilcileridir.<br>• <b>B Şıkkı (Yanlış):</b> Sadrazam ve Yeniçeri Ağası yürütme ve askeri gücü temsil eden seyfiye sınıfındandır.<br>• <b>C Şıkkı (Yanlış):</b> Kazasker ve Şeyhülislam hukuk ve din işlerine bakan ilmiye sınıfındandır.<br>• <b>D Şıkkı (Yanlış):</b> Beylerbeyi askeri vali; Kaptan-ı Derya ise donanma komutanı olarak seyfiye sınıfındandır.",
+        "tag": "#KalemiyeSınıfı"
+      },
+      {
+        "q": "Soru 47: Osmanlı Devleti'nin doğrudan başkentte bulunan, padişahın merkezi otoritesini korumakla görevli, maaşlarını doğrudan devlet hazinesinden üç ayda bir 'Ulufe' adıyla alan profesyonel daimi ordusuna 'Merkez Ordusu' (Kapıkulu Ocağı) denirdi. Aşağıdakilerden hangisi doğrudan merkez ordusunun atlı birliklerinden (Kapıkulu Süvarilerinden) biridir?",
+        "options": [
+          "Sipahiler ve Silahtarlar",
+          "Yeniçeriler ve Acemi Oğlanlar",
+          "Cebelüler ve Tımarlı Sipahiler",
+          "Azaplar ve Akıncılar"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Kapıkulu ordusu yaya (Yeniçeriler vb.) ve atlı (süvariler) olmak üzere ikiye ayrılırdı. Kapıkulu Süvarileri altı bölükten oluşurdu; bunların en önemlileri padişahın çadırını ve sancaklarını koruyan Sipahiler ve Silahtarlar'dır. Tımarlı Sipahiler eyalet ordusudur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Sipahiler ve Silahtarlar, Kapıkulu ordusunun doğrudan ulufe maaşı alan elit atlı birlikleridir (Kapıkulu Süvarileri).<br>• <b>B Şıkkı (Yanlış):</b> Yeniçeriler ve Acemi Oğlanlar merkez ordusunun yaya (piyade) kısmını oluştururlar.<br>• <b>C Şıkkı (Yanlış):</b> Cebelü ve Tımarlı Sipahiler merkezde bulunmayan, taşra eyalet ordusu süvarileridir.<br>• <b>D Şıkkı (Yanlış):</b> Azaplar ve Akıncılar eyalet ordusunun hafif ve öncü yardımcı yaya/atlı kuvvetleridir.",
+        "tag": "#MerkezOrdusu"
+      },
+      {
+        "q": "Soru 48: Osmanlı eyalet ordusunun en büyük ve en hareketli askeri gücü, sınır güvenliğini koruyan ve sefer zamanlarında orduya katılan hafif atlı birliklerden oluşan 'Eyalet Ordusu'dur. Eyalet ordusu hazineye yük olmadan yetiştirilmekteydi. Aşağıdaki askeri sınıflardan hangisi doğrudan eyalet ordusunun (taşra kuvvetlerinin) sınır boylarında keşif ve istihbarat yapmakla görevli ünlü öncü süvari birliğidir?",
+        "options": [
+          "Akıncılar",
+          "Yeniçeriler",
+          "Humbaracılar",
+          "Cebeciler"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Akıncılar, eyalet ordusunun (taşra) en stratejik süvari birliğidir. Sınır boylarında yaşarlar, düşman topraklarına akınlar düzenleyerek istihbarat toplar ve düşman ordularının lojistik yollarını sabote ederek ana ordunun ilerlemesini kolaylaştırırlardı.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Akıncılar, sınır hatlarını koruyan ve keşif yapan eyalet ordusunun öncü hafif süvarileridir.<br>• <b>B Şıkkı (Yanlış):</b> Yeniçeriler eyalet ordusu değil, merkez piyade (yaya) ordusudur.<br>• <b>C Şıkkı (Yanlış):</b> Humbaracılar havan topları ve el bombaları üreten merkez teknik ocağıdır (Kapıkulu piyadelerindendir).<br>• <b>D Şıkkı (Yanlış):</b> Cebeciler ordu silahlarının bakımını, onarımını ve lojistiğini sağlayan merkez Kapıkulu piyade birliğidir.",
+        "tag": "#EyaletOrdusu"
+      },
+      {
+        "q": "Soru 49: Osmanlı Toprak Sistemi'nde ülkedeki toprakların büyük kısmının mülkiyeti doğrudan devlete aitti. Bu topraklara 'Miri Arazi' denirdi. Devlet, miri arazileri kişilere satmaz veya devretmez, sadece kullanım hakkını verirdi. Osmanlı Devleti'nin toprak mülkiyetini kendi elinde tutmasındaki temel sosyo-ekonomik ve idari gerekçe aşağıdakilerden hangisidir?",
+        "options": [
+          "Toprakların zengin kişilerin elinde toplanarak Avrupa'dakine benzer feodal beylerin (toprak ağalığı/derebeylik) doğmasını engellemek ve merkezi otoriteyi korumak",
+          "Tarımsal üretimi tamamen durdurarak hayvancılığı teşvik etmek",
+          "Köylüleri zorla askere alarak tarım topraklarını boş bırakmak",
+          "Yabancı devlet tüccarlarının ülkeden toprak satın almasını kolaylaştırmak"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Osmanlı Devlet felsefesi, saraya rakip olabilecek bağımsız zengin toprak aristokratlarının oluşmasını kesinlikle yasaklamıştır. Toprağın mülkiyetinin devlette (miri) kalması, feodaliteyi engellemiş ve köylünün topraksız kalarak köleleşmesini önlemiştir. Bu durum mutlak monarşinin teminatıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Toprağın mülkiyetinin devlette tutulması, feodal derebeylerin oluşmasını önleyen ve köylü haklarını koruyan en büyük idari-sosyal önlemdir.<br>• <b>B Şıkkı (Yanlış):</b> Üretimin devamlılığı en temel esastır, tarım üretimi devlet tarafından sürekli teşvik edilmiştir.<br>• <b>C Şıkkı (Yanlış):</b> Köylünün askere alınması tarımı aksatmasın diye, tarımla uğraşan köylü tebaa zorunlu askere alınmaz, vergisiyle asker beslenirdi.<br>• <b>D Şıkkı (Yanlış):</b> Yabancıların toprak satın alması miri arazi rejimiyle tamamen imkansız kılınmıştır.",
+        "tag": "#ToprakSistemi"
+      },
+      {
+        "q": "Soru 50: Osmanlı Devleti'nde Miri Arazi rejimi çerçevesinde uygulanan Tımar Sistemi, devletin hem askeri hem de ekonomik omurgasını oluşturmaktaydı. Devlet, bazı arazilerin vergi gelirlerini doğrudan memurlarına ve komutanlarına dirlik olarak dağıtırdı. Tımar sahibi topladığı vergilerle devlete savaşa hazır atlı asker yetiştirmek zorundaydı. Tımar sahibinin yetiştirmekle yükümlü olduğu bu atlı askere ne ad verilirdi?",
+        "options": [
+          "Cebelü",
+          "Ulufe",
+          "Gulam",
+          "Mülazım"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Tımar sahibi, topladığı verginin her belirli dilimi (örneğin 3000 akçesi) için savaşa hazır, zırhlı ve atlı bir asker beslemek zorundaydı. Bu eyalet süvarilerine 'Cebelü' adı verilir. Tümarlı Sipahi ordusu bu cebelülerden meydana gelirdi.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Tımar sisteminde dirlik sahibinin yetiştirdiği atlı ve zırhlı süvari askerine 'Cebelü' denir.<br>• <b>B Şıkkı (Yanlış):</b> 'Ulufe' merkez ordusunun (Yeniçerilerin) aldığı üç aylık nakit devlet maaşıdır.<br>• <b>C Şıkkı (Yanlış):</b> 'Gulam' ilk Türk-İslam devletlerinde sarayda yetiştirilen köle kökenli muhafız askerlerdir.<br>• <b>D Şıkkı (Yanlış):</b> 'Mülazım' stajyer memur veya rütbe bekleyen kadı adayıdır.",
+        "tag": "#TımarSistemi"
+      },
+      {
+        "q": "Soru 51: Osmanlı Devleti'nin gerileme döneminde tımar sisteminin bozulmasıyla birlikte, devletin nakit para ihtiyacını karşılamak amacıyla vergilerin doğrudan peşin para karşılığında ihale yoluyla şahıslara kiralanması sistemine 'İltizam' adı verilmiştir. İhaleyi alan kişiye ise 'Mültezim' denirdi. Zamanla iltizam topraklarının mültezimlere ömür boyu kiralanması sistemine geçilmiştir. Bu ömür boyu kiralama sistemine ne ad verilir?",
+        "options": [
+          "Malikâne Sistemi",
+          "Dirlik Sistemi",
+          "Gedik Sistemi",
+          "Müsadere Sistemi"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> 17. yüzyılın sonlarında (1695) devlet bütçe açıklarını kapatmak ve mültezimlerin toprağı daha iyi korumasını sağlamak amacıyla iltizam ihaleleri ömür boyu verilmeye başlanmıştır. Bu sisteme 'Malikâne Sistemi' denir. Bu durum taşrada ayan adı verilen güçlü yerel ailelerin doğmasına yol açmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Malikâne sistemi, iltizam topraklarının ömür boyu kiraya verilmesi yöntemidir ve taşrada yerel feodal güçlerin doğmasını tetiklemiştir.<br>• <b>B Şıkkı (Yanlış):</b> Dirlik sistemi tımarın genel adıdır, toprağın maaş karşılığı memurlara verilmesidir.<br>• <b>C Şıkkı (Yanlış):</b> Gedik esnafın dükkan açma ruhsatıdır.<br>• <b>D Şıkkı (Yanlış):</b> Müsadere devlet memurlarının mallarına el konulması sistemidir.",
+        "tag": "#İltizamVeMalikane"
+      },
+      {
+        "q": "Soru 52: Osmanlı Maliyesi'nin en büyük gelir kaynakları vergiler, gümrük gelirleri, maden işletmeleri ve savaş ganimetleridir. Devlet, vergileri şer'i (dini esaslı) ve örfi (padişah kararlı) olmak üzere iki temel hukuki kategoride toplamaktaydı. Aşağıdakilerden hangisi doğrudan gayrimüslim tebaanın sağlıklı ve gelir sahibi erkeklerinden, askere gitmemeleri karşılığında can ve mal güvenliklerinin korunması için yılda bir kez alınan şer'i baş vergisidir?",
+        "options": [
+          "Cizye",
+          "Öşür",
+          "Haraç",
+          "Avarız"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Cizye, İslam hukukunda gayrimüslim tebaanın sağlıklı erkeklerinden askere katılmamaları ve devlet koruması altında yaşamaları karşılığında yılda bir kez alınan şer'i baş vergisidir. Kadınlar, çocuklar, engelliler ve din adamları bu vergiden muaftı.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Cizye, gayrimüslim erkeklerden askere gitmeme karşılığında alınan şer'i vergidir.<br>• <b>B Şıkkı (Yanlış):</b> Öşür Müslüman köylüden alınan 1/10 oranındaki ürün vergisidir.<br>• <b>C Şıkkı (Yanlış):</b> Haraç gayrimüslim çiftçiden alınan ürün/toprak vergisidir.<br>• <b>D Şıkkı (Yanlış):</b> Avarız olağanüstü dönemlerde (savaş, doğal afet) toplanan geçici örfi vergidir.",
+        "tag": "#OsmanlıMaliyesi"
+      },
+      {
+        "q": "Soru 53: Osmanlı Eğitim Sistemi'nin temel direği medreselerdir. İlk Osmanlı medresesi Orhan Bey döneminde İznik'te açılmıştır. Medreselerde dini bilimlerin yanı sıra matematik, astronomi ve tıp gibi pozitif bilimler de okutulurdu. Medreselerde ders veren, günümüz profesörlük unvanına sahip yüksek akademik öğretmenlere ne ad verilirdi?",
+        "options": [
+          "Müderris",
+          "Muid",
+          "Danişmend",
+          "Lala"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Medreselerde ders veren akademisyenlere/öğretmenlere 'Müderris' denirdi. Müderrisler ilmiye sınıfının üyesi olup, atamaları kazasker tarafından yapılırdı. Müderris yardımcılarına ise 'Muid' denirdi.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Müderris medresedeki ders veren yüksek düzeyli öğretmenlerin/akademisyenlerin adıdır.<br>• <b>B Şıkkı (Yanlış):</b> 'Muid' müderrisin ders tekrarı yaptıran asistanıdır/yardımcısıdır.<br>• <b>C Şıkkı (Yanlış):</b> 'Danişmend' yüksek düzeyli medrese öğrencisidir.<br>• <b>D Şıkkı (Yanlış):</b> 'Lala' şehzadeleri eyaletlerde eğiten tecrübeli devlet adamıdır.",
+        "tag": "#EğitimSistemi"
+      },
+      {
+        "q": "Soru 54: Osmanlı esnaf ve zanaatkarlarının mesleki, ahlaki ve dini örgütlenmesi olan Lonca Teşkilatı (Ahilik teşkilatının klasik Osmanlı dönemi şekli), ticari hayatı düzenleyen sıkı kurallara sahipti. Loncalar tüketicileri korumak ve haksız rekabeti önlemek amacıyla malların tavan ve taban fiyatlarını belirlerdi. Osmanlı ticari hayatındaki bu fiyat belirleme sistemine ne ad verilirdi?",
+        "options": [
+          "Narh Sistemi",
+          "Gedik Usulü",
+          "Fütüvvet Sistemi",
+          "İhtisab Sistemi"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Narh Sistemi, devletin esnaf teşkilatıyla (loncalarla) ortaklaşa olarak, çarşı pazar ürünlerine belirlediği resmi fiyat standardıdır. Bu sayede fahiş fiyat artışları, karaborsacılık önlenmiş ve tüketici hakları korunmuştur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Narh Sistemi, esnaf ürünlerinin fiyat sınırlarının devlet tarafından resmen belirlenmesi sistemidir.<br>• <b>B Şıkkı (Yanlış):</b> 'Gedik Usulü' esnafa dükkan açma ruhsatı ve imtiyazı verilmesi kuralıdır.<br>• <b>C Şıkkı (Yanlış):</b> 'Fütüvvet' lonca teşkilatının temelini oluşturan ahlaki-dini esnaf felsefesidir.<br>• <b>D Şıkkı (Yanlış):</b> 'İhtisab' pazarların zabıta (muhtesib) tarafından denetlenmesi sistemidir.",
+        "tag": "#LoncaTeşkilatı"
+      },
+      {
+        "q": "Soru 55: Osmanlı Hukuk Sistemi; şer'i hukuk (İslam hukuku esasları) ve örfi hukuk (padişah fermanları ve töre) olmak üzere iki ana temel üzerine kurulmuştur. Hukuk sisteminin bağımsızlığını korumak adına yargı organı kadılara bırakılmıştır. Kadıların kararlarına ve yargılamalarına padişah dahil kimse doğrudan müdahale edemezdi. Osmanlı adalet teşkilatında örfi hukuk kurallarının şer'i hukuk kurallarına aykırı olmamasını denetleyen en üst dini/hukuki onay makamı aşağıdakilerden hangisidir?",
+        "options": [
+          "Şeyhülislam (Fetva Makamı)",
+          "Sadrazam (Yürütme Makamı)",
+          "Nişancı (Bürokrasi Makamı)",
+          "Defterdar (Maliye Makamı)"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Şeyhülislam, devlet işlerinin ve kanunların İslam dinine (şer'i hukuka) uygun olup olmadığına dair yazılı onay (fetva) veren en yüksek ilmiye makamıdır. Örfi kuralların şer'i hukuka aykırı olmamasını denetleyen nihai ideolojik merciiydi.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Şeyhülislam, fetva yetkisiyle çıkarılan kanunların şeriata uygunluğunu denetleyen en üst makamdır.<br>• <b>B Şıkkı (Yanlış):</b> Sadrazam yürütmenin başıdır, kanunların şer'i denetimini yapacak dini eğitim yetkisi yoktur.<br>• <b>C Şıkkı (Yanlış):</b> Nişancı kanunları yazar ve kaydeder ancak dini uygunluk denetimi (fetva) yapamaz.<br>• <b>D Şıkkı (Yanlış):</b> Defterdar mali işleri yönetir, hukuki/dini fetva yetkisi yoktur.",
+        "tag": "#HukukSistemi"
+      },
+      {
+        "q": "Soru 56: Osmanlı Sanatı, geleneksel Türk-İslam motifleri ile imparatorluğun çok kültürlü estetik değerlerini harmanlayan zengin bir mirasa sahiptir. Tasvir yasağı (putperestlik endişesi) nedeniyle resim ve heykel gibi sanatlar gelişemezken, yazı ve süsleme sanatları zirveye ulaşmıştır. Aşağıdakilerden hangisi doğrudan kağıt veya kitap süslemede kullanılan, altın tozu ve boyalarla yapılan ince el sanatı (kitap resmi) türüdür?",
+        "options": [
+          "Minyatür ve Tezhip",
+          "Hüsn-i Hat ve Kündekari",
+          "Çinicilik ve Kakmacılık",
+          "Fresko ve Heykel"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Osmanlı kitap sanatlarında en yaygın olanlar 'Minyatür' (perspektifsiz, boyalı ince el yapımı kitap resmi) ve 'Tezhip' (kitap sayfalarının kenarlarını altın tozu ve lacivert boyayla süsleme sanatı) sanatlarıdır. Bu sanatlarla uğraşanlara sırasıyla nakkaş ve müzehhip denirdi.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Minyatür ve Tezhip doğrudan el yazması kitapları süsleyen ünlü kitap/kağıt sanatlarıdır.<br>• <b>B Şıkkı (Yanlış):</b> Hat güzel yazı yazma sanatıdır; Kündekari ise ahşap parçaları çivisiz birleştirme ahşap işçiliğidir.<br>• <b>C Şıkkı (Yanlış):</b> Çinicilik seramik pişirme sanatıdır; Kakmacılık metal veya ahşap içine değerli taş yerleştirme sanatıdır.<br>• <b>D Şıkkı (Yanlış):</b> Fresko duvar resmidir; heykel sanatı ise Osmanlı klasik döneminde tasvir hassasiyeti nedeniyle yapılmamıştır.",
+        "tag": "#OsmanlıSanatı"
+      },
+      {
+        "q": "Soru 57: Osmanlı veraset sisteminde Fatih Sultan Mehmet döneminde hazırlanan Kanunname-i Âli Osman ile 'Devlet padişahın mutlak malıdır' anlayışı getirilmiştir. Bu durum I. Murat dönemindeki 'Devlet padişah ve oğullarınındır' anlayışını daha da daraltmıştır. Fatih'in veraset hakkını sadece tek bir padişahın şahsına indirgemesindeki temel siyasi amaç aşağıdakilerden hangisidir?",
+        "options": [
+          "Merkezi otoriteyi padişahın elinde mutlaklaştırarak devletteki ortak egemenlik iddialarını tamamen yok etmek",
+          "Şehzadelerin sancaklara vali olarak gönderilmesini yasaklamak",
+          "Veraset sistemine Avrupalı kralları dahil etmek",
+          "Taht kavgalarını tamamen bitirmek için cumhuriyet ilan etmek"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Fatih, 'Devlet padişahındır' diyerek hanedanın diğer erkek üyelerinin taht üzerindeki idari ortaklık iddialarını hukuken kesmiştir. Böylece padişah tek ve mutlak karar verici haline gelmiş, merkeziyetçilik zirveye ulaşmıştır. Bu durum taht kavgalarını önlemeyi de kolaylaştırmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Egemenliğin bölünmezliği ilkesini getirerek padişahın mutlak otoritesini sarayda tek odak yapmayı amaçlamıştır.<br>• <b>B Şıkkı (Yanlış):</b> Şehzadelerin sancağa gönderilmesi bu dönemde de devam etmiştir; sancağa çıkma I. Ahmet döneminde kaldırılmıştır.<br>• <b>C Şıkkı (Yanlış):</b> Yabancı hanedanların verasete katılması Osmanlı hukukuna tamamen aykırıdır.<br>• <b>D Şıkkı (Yanlış):</b> Osmanlı teokratik monarşidir; cumhuriyet gibi bir yönetim biçimi söz konusu değildir.",
+        "tag": "#VerasetSistemi"
+      },
+      {
+        "q": "Soru 58: Osmanlı saray teşkilatının dış saray (Birun) ile iç saray (Harem) arasındaki geçiş kapısında yer alan, devlet işlerinin görüşüldüğü Divan-ı Hümayun toplantılarının yapıldığı ve elçilerin kabul edildiği bölüm 'Babüssaade' (Saadet Kapısı) kapısının hemen arkasındaydı. Dış sarayda idari protokolün ve törenlerin düzenlendiği bu alana ne ad verilirdi?",
+        "options": [
+          "Kubbealtı ve Divan Meydanı",
+          "Enderun Mektebi",
+          "Harem-i Hümayun",
+          "Arz Odası"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Kubbealtı, sadrazam ve vezirlerin divan toplantılarını yaptığı kubbeli salonun adıdır. Bu salonun önündeki meydanda elçiler kabul edilir, cülus törenleri düzenlenirdi. Burası dış sarayın kalbidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Kubbealtı vezirlerin toplandığı, devlet idaresinin yürütüldüğü dış saray (Birun) alanıdır.<br>• <b>B Şıkkı (Yanlış):</b> Enderun Mektebi iç sarayda (Harem sınırında) yer alan elit bürokrat okuludur.<br>• <b>C Şıkkı (Yanlış):</b> Harem padişahın özel aile dairesidir.<br>• <b>D Şıkkı (Yanlış):</b> Arz Odası padişahın divan heyetini kabul edip rapor dinlediği iç saray eşiğindeki özel odadır.",
+        "tag": "#SarayTeşkilatı"
+      },
+      {
+        "q": "Soru 59: Divan-ı Hümayun üyeleri arasında, sadrazamdan sonra en yetkili olan ve devlet işlerinde sadrazama yardımcı olan Kubbealtı Vezirleri yer alırdı. Vezir sayısı devletin büyümesine paralel olarak zamanla artırılmıştır. Aşağıdakilerden hangisi Kubbealtı Vezirlerinin divandaki temel işlevi ve idari yetkisidir?",
+        "options": [
+          "Sadrazam tarafından kendilerine verilen askeri ve idari görevleri yerine getirmek ve tecrübeleriyle divanda danışmanlık yapmak",
+          "Padişahın yerine doğrudan kanun ilan etmek",
+          "Devlet bütçesini tek başlarına hazırlayıp onaylamak",
+          "Kadı atamalarını doğrudan gerçekleştirmek"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Kubbealtı Vezirleri bugünkü devlet bakanları gibi çalışırlardı. Kendi başlarına kanun yapamaz veya bütçe onaylayamazlardı. Sadrazamın veya padişahın verdiği özel askeri (ordu komutanlığı), idari (sancak denetimi) işleri yürütürler ve divanda oy hakkına sahiptiler.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Vezirler sadrazamın yardımcıları olup, askeri ve idari konularda danışmanlık ve uygulayıcılık yaparlardı.<br>• <b>B Şıkkı (Yanlış):</b> Kanun yapma yetkisi sadece padişaha aittir (Nişancı tarafından kaleme alınır).<br>• <b>C Şıkkı (Yanlış):</b> Bütçeyi Defterdar hazırlar ve sadrazam kanalıyla padişah onaylar.<br>• <b>D Şıkkı (Yanlış):</b> Kadı atamaları Kazasker tarafından yapılır; vezirlerin yargı atama yetkisi yoktur.",
+        "tag": "#DivanÜyeleri"
+      },
+      {
+        "q": "Soru 60: Osmanlı ilmiye sınıfının taşra teşkilatındaki en önemli temsilcisi Kadılardır. Kadılar sadece mahkemelerde davalara bakmaz, aynı zamanda bulundukları ilçenin (kazanın) en üst idari ve mülki yöneticisiydiler. Kadıların adalet dağıtırken verdikleri kararları kaydettikleri tarihi defterlere ne ad verilirdi?",
+        "options": [
+          "Şer'iyye Sicilleri",
+          "Tapu Tahrir Defterleri",
+          "Mühimme Defterleri",
+          "Bütçe Defterleri"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Kadıların mahkeme kararlarını, nikah, miras, vakıf tescillerini ve merkezden gelen fermanları kaydettikleri defterlere 'Şer'iyye Sicilleri' denir. Bu defterler Osmanlı sosyal ve hukuki tarihinin en değerli birincil kaynaklarıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Şer'iyye Sicilleri, kadıların mahkeme kararlarını ve yerel idari yazışmaları kaydettikleri resmi defterlerdir.<br>• <b>B Şıkkı (Yanlış):</b> Tapu Tahrir Defterleri Nişancı tarafından tutulan arazi kayıt defterleridir.<br>• <b>C Şıkkı (Yanlış):</b> Mühimme Defterleri Divan-ı Hümayun kararlarının (ferman ve beratların) kaydedildiği divan defterleridir.<br>• <b>D Şıkkı (Yanlış):</b> Bütçe defterleri Defterdar tarafından tutulan mali kayıt defterleridir.",
+        "tag": "#İlmiyeSınıfı"
+      },
+      {
+        "q": "Soru 61: Osmanlı seyfiye (askeri ve idari yürütme) sınıfının en önemli üyeleri devşirme kökenli kullardır. Devşirme kanunu çerçevesinde Hristiyan tebaadan seçilen bu çocuklar Acemi Ocağı'ndaki eğitimlerinin ardından yeteneklerine göre saray okuluna (Enderun) veya askeri Yeniçeri Ocağı'na yönlendirilirlerdi. Yetenekli devşirme çocuklarının bürokrasiye ve saray idaresine kazandırıldığı bu meşhur okul aşağıdakilerden hangisidir?",
+        "options": [
+          "Enderun Mektebi",
+          "Sahn-ı Seman Medresesi",
+          "Nizamiye Medresesi",
+          "Hendesehane"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Enderun Mektebi, Topkapı Sarayı'nda yer alan, devşirme çocuklarının devlet yönetimi, sanat, askeri strateji ve din konularında üst düzey eğitilerek sadrazamlığa kadar yükselebildiği yatılı saray okuludur. Seyfiye ve kalemiye sınıfının elit yöneticileri burada yetişirdi.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Enderun Mektebi, devşirme çocuklarının devlet yöneticisi (sadrazam, beylerbeyi vb.) olarak yetiştirildiği ünlü saray mektebidir.<br>• <b>B Şıkkı (Yanlış):</b> Sahn-ı Seman Medresesi Fatih döneminde kurulan yüksek ilmiye akademisidir (üniversitedir).<br>• <b>C Şıkkı (Yanlış):</b> Nizamiye Medresesi Selçuklular döneminde Bağdat'ta kurulan ilk üniversitelerdendir.<br>• <b>D Şıkkı (Yanlış):</b> Hendesehane, gerileme döneminde batılı tarzda açılan ilk askeri mühendislik okuludur.",
+        "tag": "#SeyfiyeSınıfı"
+      },
+      {
+        "q": "Soru 62: Osmanlı kalemiye (bürokrasi) sınıfının divan dışındaki en önemli birimi Nişancı'ya bağlı kâtiplerin bulunduğu 'Bab-ı Ali' bürolarıdır. Nişancı'nın divandaki öneminin artması ve 17. yüzyıldan itibaren dış yazışmaların ve diplomasinin ağırlık kazanması üzerine, kâtiplerin şefi olan bir görevli divan üyesi düzeyine yükselmiştir. Zamanla sadrazamdan sonra devletin en önemli dış politika sözcüsü haline gelen bu görevli kimdir?",
+        "options": [
+          "Reisülküttab",
+          "Defterdar",
+          "Kazasker",
+          "Şeyhülislam"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Reisülküttab, başlangıçta divandaki yazışmaları yöneten kâtiplerin şefi (Nişancı yardımcısı) idi. 17. ve 18. yüzyıllarda diplomasinin önem kazanmasıyla dışişlerinden sorumlu bağımsız bir divan üyesi (Dışişleri Bakanı) seviyesine yükselmiştir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Reisülküttab, kalemiye sınıfının yükselen yıldızı olup, Osmanlı Devleti'nin dış ilişkilerini yöneten resmi diplomattır.<br>• <b>B Şıkkı (Yanlış):</b> Defterdar maliyeyi yönetir, dış siyasi ilişkilerden doğrudan sorumlu değildir.<br>• <b>C Şıkkı (Yanlış):</b> Kazasker eğitim ve yargının başıdır, iç idari/yargısal işlere bakar.<br>• <b>D Şıkkı (Yanlış):</b> Şeyhülislam din işlerinin başıdır; kalemiye sınıfına dahil değildir (ilmiyeye dahildir).",
+        "tag": "#KalemiyeSınıfı"
+      },
+      {
+        "q": "Soru 63: Osmanlı merkez ordusunun en kalabalık ve en etkin piyade sınıfı Yeniçerilerdir. Yeniçerilerin ordu içindeki disiplini ve savaş gücü, imparatorluğun yükselme dönemindeki büyük askeri zaferlerin en önemli teminatı olmuştur. Aşağıdakilerden hangisi Yeniçerilerin askeri disiplinini ve devlete bağlılığını korumak amacıyla konulan en katı kurallardan biridir?",
+        "options": [
+          "Askerlik yaptıkları süre boyunca evlenmelerinin ve askerlik dışında ticaret, zanaat gibi işlerle uğraşmalarının kesinlikle yasak olması",
+          "Sadece balkan dillerini konuşmalarına izin verilmesi",
+          "Kendi silahlarını pazar yerlerinde satabilmeleri",
+          "Padişahın izniyle başka devletlerin ordularında da ücretli çalışabilmeleri"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Yeniçeriler, hayatlarını tamamen askerliğe adamış profesyonel savaşçılardı. Askerlik dışı bir işle ilgilenmeleri, ticaret yapmaları veya evlenmeleri (aile sorumluluğu askeri odaklanmayı bozmasın diye) kesinlikle yasaktı. Bu kurallar 16. yüzyılın sonlarına kadar çok katı şekilde uygulanmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Evlilik ve ticaret yasağı, Yeniçerilerin profesyonel askeri odaklanmalarını ve disiplinlerini koruyan en temel kanundur.<br>• <b>B Şıkkı (Yanlış):</b> Türkçe konuşmak ve İslamiyet'i benimsemek zorundaydılar, balkan dilleri yasaktı.<br>• <b>C Şıkkı (Yanlış):</b> Silahlar devlet malıydı (Cebeci Ocağı korurdu), satılması kesinlikle yasaktı.<br>• <b>D Şıkkı (Yanlış):</b> Yeniçeriler sadece padişaha bağlı kullardı, başka devletlerde ücretli askerlik yapmaları vatana ihanet sayılırdı.",
+        "tag": "#MerkezOrdusu"
+      },
+      {
+        "q": "Soru 64: Osmanlı eyalet ordusunda (taşra ordusunda) görev yapan Deliler, sınır boylarında yaşayan, cesaretleri ve farklı kıyafetleriyle düşman ordularında büyük korku yaratan elit bir süvari ocağıdır. Deliler ocağının savaş meydanlarındaki bu sıra dışı askeri karakteri ve adı hakkında aşağıdakilerden hangisi söylenebilir?",
+        "options": [
+          "Korkusuzca düşman saflarının en önüne atıldıkları, vahşi hayvan postları giydikleri ve sadece tokat atarak düşman süvarilerini atından düşürebildikleri için bu adı almaları",
+          "Akli dengesi yerinde olmayan kişilerden kurulmuş olmaları",
+          "Sadece padişahın sarayını koruyan yaya korumalar olmaları",
+          "Eğitim almamış düzensiz çapulcu çeteleri olmaları"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Deliler, eyalet ordusunun en korkusuz süvarileridir. Sırtlarına aslan, kaplan postları diker, başlarına kartal tüyleri takarlardı. Göğüs göğse çarpışmalarda tokatlama teknikleri meşhurdur (tarihe Osmanlı Tokadı olarak geçen teknik). Akli dengeleri bozuk değildi, sadece askeri cesaretleri olağanüstüydü.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Vahşi post giymeleri, korkusuzca en önde savaşmaları ve ünlü tokat teknikleri bu askeri sınıfın ayırt edici özelliğidir.<br>• <b>B Şıkkı (Yanlış):</b> Akli dengeleri yerindeydi, son derece disiplinli ve teşkilatlı bir sınır muhafız ocağıydılar.<br>• <b>C Şıkkı (Yanlış):</b> Sarayı korumazlar, sınır eyaletlerinde (Rumeli'de) görev yapan süvarilerdir.<br>• <b>D Şıkkı (Yanlış):</b> Çapulcu değillerdir, beylerbeyinin emrinde yasal ve düzenli askeri sınıftırlar.",
+        "tag": "#EyaletOrdusu"
+      },
+      {
+        "q": "Soru 65: Osmanlı toprak hukukunda mülkiyeti devlete ait olan arazilerin (miri toprakların) izinsiz olarak satılması, vakfedilmesi veya şahsi mülk gibi miras bırakılması kesinlikle yasaktı. Köylü toprağı sadece ekip biçme hakkına sahipti ve vergisini devlete (veya devletin görevlendirdiği sipahiye) öderdi. Osmanlı toprak sistemindeki bu katı mülkiyet sınırlandırmasının temel jeopolitik amacı nedir?",
+        "options": [
+          "Toprağın bütünlüğünü korumak, miras yoluyla arazilerin küçük parçalara bölünmesini engellemek ve tarımsal üretimin verimliliğini kesintisiz sürdürmek",
+          "Tarım topraklarını ormanlık alanlara dönüştürmek",
+          "Köylülerin tamamını şehirlere göç etmeye zorlamak",
+          "Hazineye dış devletlerden borç altın almak"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Eğer miri araziler serbestçe satılabilse veya miras olarak bölünebilseydi, araziler zamanla çok küçük parçalara ayrılır ve tarımsal verimlilik düşerdi. Devlet bu durumun önüne geçmek için toprağın mülkiyetini kendisinde tutarak sadece işletme hakkını (bütün olarak) aileye devretmiştir. Bu da üretimin sürekliliğidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Toprağın parçalanmasını önleme ve üretim sürekliliğini sağlama miri arazi hukukunun en temel varoluş sebebidir.<br>• <b>B Şıkkı (Yanlış):</b> Tarım topraklarının ormana dönüştürülmesi söz konusu değildir, gıda üretimi devletin can damarıdır.<br>• <b>C Şıkkı (Yanlış):</b> Göç engellenmiştir; herkesin kendi toprağında kalması iskan ve tımar kanunlarıyla zorunlu kılınmıştır.<br>• <b>D Şıkkı (Yanlış):</b> Toprak mülkiyeti ve işletmesi tamamen milli bir ekonomik sistemdir, dış borçlanmayla ilgisi yoktur.",
+        "tag": "#ToprakSistemi"
+      },
+      {
+        "q": "Soru 66: Tımar sistemi (Dirlik sistemi), Osmanlı idaresinin eyaletlerdeki en karmaşık ve en verimli yönetim mekanizmasıydı. Tımar sisteminde araziler gelir durumlarına göre Has, Zeamet ve Tımar olmak üzere üç temel idari sınıfa ayrılırdı. Yıllık geliri 100.000 akçeden fazla olan, doğrudan padişaha, hanedan üyelerine ve en üst düzey divan üyelerine (sadrazama, vezirlere) dirlik olarak verilen bu en büyük toprak sınıfı aşağıdakilerden hangisidir?",
+        "options": [
+          "Has Topraklar",
+          "Zeamet Toprakları",
+          "Tımar Toprakları",
+          "Vakıf Toprakları"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Dirlik arazileri gelirine göre ayrılır: Yıllık geliri 100.000 akçeden fazla olan en yüksek sınıf 'Has'tır ve üst bürokrasiye verilir. 20.000 - 100.000 akçe arası orta kademe memurlara (kadı, alaybeyi vb.) verilen topraklar 'Zeamet'tir. 20.000 akçeden az olanlar ise askerlere (Tımarlı sipahilere) verilen 'Tımar'dır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Yıllık geliri 100.000 akçeden fazla olan dirlik arazilerine 'Has' adı verilirdi ve üst yöneticilere tahsis edilirdi.<br>• <b>B Şıkkı (Yanlış):</b> Zeamet orta düzey memurlara verilen orta gelirli dirlik topraklarıdır.<br>• <b>C Şıkkı (Yanlış):</b> Tımar en alt kademe asker ve memurlara verilen en yaygın dirlik topraklarıdır.<br>• <b>D Şıkkı (Yanlış):</b> Vakıf toprakları dirlik değildir, geliri hayır kurumlarına ayrılmış miri/mülk arazilerdir.",
+        "tag": "#TımarSistemi"
+      },
+      {
+        "q": "Soru 67: Osmanlı Devleti'nde 16. yüzyılın sonlarından itibaren savaşların uzaması ve orduya daha çok nakit ateşli silah gücü (tüfekli Yeniçeri) eklenmesi zorunluluğu, devletin hazine nakit ihtiyacını artırmıştır. Tımar sistemi bozulmuş ve yerini vergilerin peşin para karşılığı kiralandığı İltizam ve Malikâne sistemlerine bırakmıştır. İltizam sisteminin yaygınlaşmasının Osmanlı taşra toplumu üzerindeki en olumsuz tarihi sonucu aşağıdakilerden hangisidir?",
+        "options": [
+          "Mültezimlerin (ihale sahiplerinin) fazla kar etmek amacıyla köylüden kanunsuz ve fahiş vergiler toplaması, köylünün toprağını terk ederek şehirlere kaçması ve Celali İsyanları'nın patlaması",
+          "Eyalet donanmasının tamamen tasfiye edilmesi",
+          "Köylülerin tamamının sarayda bürokrat olarak işe başlaması",
+          "Avrupa devletlerinin Osmanlı'ya büyük göçler göndermesi"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> İltizam ve ömür boyu kiralama olan malikâne sisteminde mültezimler devlete ödedikleri ihale bedelini çıkarmak ve zengin olmak için halka ağır baskı uygulamışlardır. Köylü vergisini ödeyemeyip toprağı terk etmiş (Çiftbozan olmuş) ve dağa çıkarak Celali İsyanları'nın insan gücünü oluşturmuştur. Bu durum taşrada asayişi tamamen çökertmiştir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Ağır mültezim baskısı köylüyü yoksullaştırmış, tarımı baltalamış ve Celali İsyanları'na zemin hazırlayarak taşrayı çökertmiştir.<br>• <b>B Şıkkı (Yanlış):</b> Donanma tersanelerde üretilirdi, iltizamın donanmanın tasfiyesiyle doğrudan ilişkisi yoktur.<br>• <b>C Şıkkı (Yanlış):</b> Köylülerin sarayda işe başlaması imkansızdır, saray sadece Enderun mezunlarını veya liyakatli kulları alırdı.<br>• <b>D Şıkkı (Yanlış):</b> İltizam sistemi Avrupa'dan Osmanlı'ya göç çekmemiş, aksine Osmanlı halkının göç etmesine (kaçgun dönemine) neden olmuştur.",
+        "tag": "#İltizamVeMalikane"
+      },
+      {
+        "q": "Soru 68: Osmanlı Devleti'nde devlet hazinesine 'Hazine-i Amire' (Dış Hazine) adı verilirdi. Hazine-i Amire'nin tüm gelir ve gider hesaplarını tutmak, bütçeyi hazırlamak ve devlet memurlarının maaş ödemelerini koordine etmek divan üyesi olan Defterdar'ın göreviydi. Ancak Osmanlı'da bir de doğrudan padişahın şahsına ait olan, dış hazinenin yetersiz kaldığı durumlarda devlete borç veren veya padişahın şahsi birikimlerini sakladığı özel hazine vardı. Bu iç hazineye ne ad verilirdi?",
+        "options": [
+          "Hazine-i Hassa (İç Hazine)",
+          "Ceyb-i Hümayun",
+          "Miri Hazine",
+          "Nezaret Hazinesi"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Padişahın şahsi hazinesine 'Hazine-i Hassa' (İç Hazine) denirdi. Bu hazine padişahın şahsi gelirlerinden (has toprak gelirleri vb.) beslenirdi. Devletin resmi resmi kasası olan 'Hazine-i Amire' (Dış Hazine) sıkıştığında padişah iç hazineden dış hazineye borç altın aktarır veya ordunun ulufe ödemesini buradan karşılardı.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Hazine-i Hassa padişahın şahsi tasarruflarının ve gelirlerinin saklandığı elit iç hazinedir.<br>• <b>B Şıkkı (Yanlış):</b> 'Ceyb-i Hümayun' padişahın günlük cep harçlığı kasasıdır, daha küçük ölçeklidir.<br>• <b>C Şıkkı (Yanlış):</b> Miri Hazine resmi dış hazinenin (Hazine-i Amire'nin) diğer adıdır, devlete aittir.<br>• <b>D Şıkkı (Yanlış):</b> Nezaret Hazinesi geç dönem nezaret (bakanlık) bütçeleriyle ilgilidir.",
+        "tag": "#OsmanlıMaliyesi"
+      },
+      {
+        "q": "Soru 69: Osmanlı Eğitim Teşkilatı'nda ilkokul seviyesinde eğitim veren, mahalle veya köy camilerinin hemen yanında yer alan, kız ve erkek çocukların temel okuma-yazma, Kuran-ı Kerim okuma ve temel ahlak kurallarını öğrendiği ilk eğitim kurumuna ne ad verilirdi?",
+        "options": [
+          "Sıbyan Mektebi",
+          "Darülfünun",
+          "Medrese",
+          "Enderun"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Sıbyan Mektebi (veya Mahalle Mektebi), Osmanlı'da çocukların 4-5 yaşlarında başladığı ilk eğitim basamağıdır. Bu mektebe başlarken düzenlenen törene 'Amin Alayı' (veya Bed-i Besmele töreni) denirdi. Kız ve erkek çocuklar birlikte okurdu.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Sıbyan Mektebi, çocukların eğitime başladığı ilk temel Osmanlı mektebidir.<br>• <b>B Şıkkı (Yanlış):</b> 'Darülfünun' geç dönemde (19. yüzyılda) açılan modern üniversitedir.<br>• <b>C Şıkkı (Yanlış):</b> 'Medrese' orta, lise ve üniversite düzeyinde yüksek dini ve pozitif eğitim veren akademik kurumdur.<br>• <b>D Şıkkı (Yanlış):</b> 'Enderun' saray içindeki üst düzey bürokrat okuludur.",
+        "tag": "#EğitimSistemi"
+      },
+      {
+        "q": "Soru 70: Osmanlı Lonca Teşkilatı'nda esnafların dükkan açabilmesi, usta unvanı alabilmesi ve mesleğini icra edebilmesi için devletten resmi izin ve ruhsat alması gerekirdi. Ruhsatsız dükkan açmak kesinlikle yasaktı. Loncaların kaliteyi korumak ve esnaf sayısını dengelemek amacıyla uyguladığı bu resmi dükkan açma ruhsatına ve hakkına ne ad verilirdi?",
+        "options": [
+          "Gedik Hakkı",
+          "Narh Hakkı",
+          "Mülazemet Hakkı",
+          "İcazetname"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Gedik, Osmanlı esnaf teşkilatında (loncada) kalfalıktan ustalığa geçen esnafa verilen resmi dükkan açma yetkisidir (ruhsatıdır). Gedik belgesi olmayan hiç kimse çarşıda dükkan açıp ticaret yapamazdı. Bu sayede esnaf sayısı sınırda tutulur ve haksız rekabet önlenirdi.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Gedik, lonca sisteminde esnafın dükkan açmasını yasal kılan resmi tekel/ruhsat hakkıdır.<br>• <b>B Şıkkı (Yanlış):</b> 'Narh' ürünlerin fiyat standardının devletçe belirlenmesi sistemidir.<br>• <b>C Şıkkı (Yanlış):</b> 'Mülazemet' ilmiye sınıfında memurluk sırası bekleme hakkıdır.<br>• <b>D Şıkkı (Yanlış):</b> 'İcazetname' medrese mezunlarına verilen resmi diploma belgesidir.",
+        "tag": "#LoncaTeşkilatı"
+      },
+      {
+        "q": "Soru 71: Osmanlı Devleti'nde şer'i mahkemelerin başı olan Kadılar, yargılama yaparken tamamen bağımsızdılar. Kadıların adil karar vermesini kolaylaştırmak ve rüşvet almalarını önlemek amacıyla devlet kadılara dirlik araziler vermez, doğrudan mahkeme harçlarından makul bir ücret (yasal gelir) almalarını sağlardı. Kadıların mahkeme kararlarını denetleyen veya halkın kadılardan şikayetçi olduğu durumlarda en üst temyiz mahkemesi olarak çalışan divan organı hangisidir?",
+        "options": [
+          "Divan-ı Hümayun ve bizzat başkanlık eden Padişah/Sadrazam",
+          "Kazasker'in şahsi evi",
+          "Şeyhülislam'ın fetva dairesi",
+          "Defterdar'ın bütçe bürosu"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Kadıların verdikleri kararlara karşı itirazlar veya kadıların adaletsizlik yaptığına dair şikayetler doğrudan Divan-ı Hümayun'a (özellikle divandaki en üst yargı meclisine) iletilirdi. Divan bu şikayetleri inceler ve kararları bozma veya kadıyı görevden alma yetkisine sahipti.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Divan-ı Hümayun halkın kadı kararlarına itiraz edebildiği en üst temyiz mahkemesidir.<br>• <b>B Şıkkı (Yanlış):</b> Kazasker atama yapar ancak şahsi evinde resmi devlet mahkemesi kurulamazdı.<br>• <b>C Şıkkı (Yanlış):</b> Şeyhülislam dini fetva verir ancak mahkeme kurup kadı kararlarını doğrudan iptal edemezdi.<br>• <b>D Şıkkı (Yanlış):</b> Defterdar'ın yargılama veya kadı denetleme yetkisi kesinlikle yoktur.",
+        "tag": "#HukukSistemi"
+      },
+      {
+        "q": "Soru 72: Osmanlı Hat Sanatı, Arap harflerini estetik kurallarla güzel yazma sanatıdır. Bu sanatla uğraşanlara 'Hattat' denirdi. Osmanlı'da hat sanatının kurallarını sistemleştiren, yazıya getirdiği estetik yenilikler nedeniyle 'Hattatların Kıblesi' (Şeyhü'l-Hattatin) unvanını alan yükselme dönemi hat dehası aşağıdakilerden hangisidir?",
+        "options": [
+          "Amasyalı Şeyh Hamdullah",
+          "Hafız Osman",
+          "Ahmet Karahisari",
+          "Mustafa İzzet Efendi"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Amasyalı Şeyh Hamdullah, Fatih ve II. Bayezid dönemlerinde yaşamış, hat sanatında çığır açmış en büyük Osmanlı hattatıdır. Yazı stillerini güncellenmiş ve estetiği zirveye taşımıştır. Bu başarısı nedeniyle 'Hattatların Kıblesi' olarak anılır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Amasyalı Şeyh Hamdullah, Osmanlı hat sanatının en büyük kurucusu kabul edilen 'Hattatların Kıblesi' unvanlı sanatçıdır.<br>• <b>B Şıkkı (Yanlış):</b> Hafız Osman hat sanatında Hilye-i Şerif formunu ilk geliştiren 17. yüzyıl hattatıdır.<br>• <b>C Şıkkı (Yanlış):</b> Ahmet Karahisari Kanuni döneminde Süleymaniye Camii hatlarını yazan ünlü hattattır.<br>• <b>D Şıkkı (Yanlış):</b> Mustafa İzzet Efendi geç dönem (19. yüzyıl) hat sanatının dev isimlerindendir.",
+        "tag": "#OsmanlıSanatı"
+      },
+      {
+        "q": "Soru 73: Osmanlı egemenlik anlayışında 'Kut' inancının İslami döneme uyarlanmasıyla hükümdar 'Zıllullah' (Allah'ın yeryüzündeki gölgesi) olarak kabul edilmiştir. Hükümdar adına camilerde hutbe okunması ve sikkeler bastırılması egemenliğin halka ilan edilmesidir. Osmanlı veraset sistemindeki en köklü ve son düzenleme olan 'Ekber ve Erşed' sisteminin yürürlüğe girmesinin ardından şehzadelerin sarayda kafes arkasında eğitim görmelerine dayanan 'Şimşirlik' (Kafes) usulüne geçilmiştir. Kafes usulünün şehzadeler üzerindeki en olumsuz idari ve psikolojik sonucu ne olmuştur?",
+        "options": [
+          "Şehzadelerin halktan ve yönetim tecrübesinden uzak, askeri ve idari liyakatten yoksun padişahlar olarak tahta çıkmaları",
+          "Şehzadelerin yabancı dilleri öğrenememesi",
+          "Şehzadelerin ordu komutanı olarak seferlere gitmelerinin yasaklanması",
+          "Şehzadelerin tamamının saraydan kaçarak isyan etmeleri"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Kafes sistemi, şehzadelerin taht kavgaları için öldürülmesini engellemiştir ancak onları eyalet valiliği tecrübesinden (sancağa çıkma usulünden) mahrum bırakmıştır. Saray odalarında tecrit edilen şehzadeler, devlet yönetiminden habersiz, askeri pratik yapmamış ve ruhsal olarak yıpranmış şekilde tahta çıkmışlardır. Bu durum duraklama dönemi idari zafiyetinin en büyük sebebidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Sancağa çıkmanın yasaklanıp kafes usulüne geçilmesi, tecrübesiz ve liyakatsiz padişahların tahta çıkmasına yol açmıştır.<br>• <b>B Şıkkı (Yanlış):</b> Şehzadeler sarayda yabancı dil ve bilim dersleri alırlardı ancak pratik yönetim tecrübesi alamamışlardır.<br>• <b>C Şıkkı (Yanlış):</b> Seferlere padişah olarak da katılamayacak düzeyde pasifleşmelerine neden olmuştur.<br>• <b>D Şıkkı (Yanlış):</b> Tecrit altında tutuldukları için saraydan kaçmaları veya isyan etmeleri teknik olarak imkansız hale getirilmiştir.",
+        "tag": "#VerasetSistemi"
+      },
+      {
+        "q": "Soru 74: Osmanlı Saray Teşkilatı'nda Harem, sadece padişahın özel aile dairesi değil, aynı zamanda saray kadınlarının (cariyelerin) sıkı bir ahlak, edebiyat, din, müzik ve ev idaresi eğitimi aldığı kurumsal bir okul niteliğindeydi. Harem okulunun en üst idari yöneticisi ve saray protokolünde sadrazamla yarışacak düzeyde siyasi güce sahip olan en nüfuzlu kadın kimdir?",
+        "options": [
+          "Valide Sultan (Padişahın annesi)",
+          "Haseki Sultan",
+          "Saray Kethüdası",
+          "Mihrişah Sultan"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Valide Sultan (Tahtta oturan padişahın annesi), Harem'in mutlak yöneticisi ve en üst protokol üyesidir. Kadınlar Saltanatı olarak bilinen dönemlerde (17. yüzyıl) Valide Sultanlar, devlet işlerine doğrudan müdahale edecek kadar büyük bir siyasi ve idari güce ulaşmışlardır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Valide Sultan Harem'in mutlak idarecisi olup, saray bürokrasisindeki en güçlü kadın figürüdür.<br>• <b>B Şıkkı (Yanlış):</b> Haseki Sultan padişahın eşidir; Valide Sultan'ın hiyerarşik olarak altındadır.<br>• <b>C Şıkkı (Yanlış):</b> Kethüda idari yardımcı/sekreterdir; valide sultanın gücüne sahip değildir.<br>• <b>D Şıkkı (Yanlış):</b> Mihrişah Sultan tarihi bir şahsiyettir, genel makam adı değildir.",
+        "tag": "#SarayTeşkilatı"
+      },
+      {
+        "q": "Soru 75: Divan-ı Hümayun'da din ve hukuk işlerini yöneten Kazaskerler, Rumeli Kazaskeri ve Anadolu Kazaskeri olmak üzere iki kişiydiler. Protokolde Rumeli Kazaskeri, Anadolu Kazaskeri'nden üstün tutulurdu. Kazaskerlerin divandaki en stratejik yargısal ve eğitsel yetkisi aşağıdakilerden hangisidir?",
+        "options": [
+          "Taşradaki bağımsız Kadıların ve Medreselerdeki akademisyenlerin (Müderrislerin) atama, terfi ve azil işlemlerini doğrudan yapmak",
+          "Devlet bütçesini hazırlayıp vergileri onaylamak",
+          "Savaş ilanı kararlarını doğrudan almak",
+          "Padişah fermanlarına tuğra çekmek"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Kazasker, ilmiye sınıfının atama dairesinin başıdır. Eyaletlerdeki adalet dağıtıcıları olan Kadıları ve medreselerdeki ders veren Müderrisleri atama yetkisi kazaskere aitti. Bu durum Kazasker'i yargı ve eğitimin genel sekreteri/bakanı yapmaktaydı.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Kazasker, kadı ve müderris atamalarını yürüten en üst idari-yargısal divan üyesidir.<br>• <b>B Şıkkı (Yanlış):</b> Bütçeyi Defterdar hazırlar; kazaskerin mali işlerle yetkisi yoktur.<br>• <b>C Şıkkı (Yanlış):</b> Savaş ilanı kararı padişahın başkanlığındaki divanın ortak kararı ve padişah onayıyla alınır.<br>• <b>D Şıkkı (Yanlış):</b> Tuğra çekme yetkisi sadece Nişancı'ya aittir.",
+        "tag": "#DivanÜyeleri"
+      },
+      {
+        "q": "Soru 76: Osmanlı ilmiye sınıfına mensup olan Şeyhülislam, divan üyesi olmamasına rağmen divan toplantılarına çağrılır ve görüşü alınırdı. Şeyhülislam'ın aldığı kararlar ve verdiği fetvalar, devlet kanunlarının şeriata uygunluğunu onaylardı. Şeyhülislam'ın ataması doğrudan kim tarafından yapılırdı?",
+        "options": [
+          "Bizzat Padişah tarafından",
+          "Sadrazam tarafından",
+          "Kazasker tarafından",
+          "Yeniçeri Ağası tarafından"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Şeyhülislam, devlet hiyerarşisinde çok üstün bir yere sahip olduğu için ataması doğrudan padişahın kendi beratı (fermanı) ile yapılırdı. Şeyhülislamı görevden alma yetkisi de sadece padişaha aitti, bu da onun dini bağımsızlığını kısmen korumuştur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Şeyhülislam padişah tarafından doğrudan atanan en saygın dini otoritedir.<br>• <b>B Şıkkı (Yanlış):</b> Sadrazam şeyhülislama saygı göstermek zorundaydı, onu doğrudan atayamaz veya görevden alamazdı.<br>• <b>C Şıkkı (Yanlış):</b> Kazasker alt kademe kadıları atar; şeyhülislam kazaskerin de dini olarak üstündedir.<br>• <b>D Şıkkı (Yanlış):</b> Yeniçeri Ağası askeri komutandır, dini atamalarda hiçbir yetkisi yoktur.",
+        "tag": "#İlmiyeSınıfı"
+      },
+      {
+        "q": "Soru 77: Osmanlı seyfiye (kılıç ehli) sınıfının bir diğer önemli taşra yöneticisi sancakların asayişinden sorumlu olan Subaşılardır. Subaşılar, barış zamanında şehirlerde kolluk kuvveti (polis şefi) gibi görev yaparken, savaş zamanında sancakbeyinin komutası altında savaşa katılırlardı. Subaşıların taşradaki bu idari rolü aşağıdakilerden hangisinin göstergesidir?",
+        "options": [
+          "Taşrada askeri güç ile iç güvenlik işlerinin bir arada ve disiplinle yürütüldüğünün",
+          "Şehirlerde sivil idarenin tamamen ortadan kalktığının",
+          "Kadıların yargılama yetkilerinin subaşılara devredildiğinin",
+          "Tımar sisteminin şehirlerde uygulanmadığının"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Subaşılar, sancakbeyine bağlı askeri komutanlar olup, barışta şehirlerin asayişini sağlarlardı. Bu yapı, taşradaki askeri komuta zincirinin aynı zamanda iç güvenlik ve polissiyer hizmetleri de yerine getirdiğini gösterir. Hukuki yargılamayı ise sadece bağımsız kadı yapardı.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Subaşılar taşrada askeri düzenin ve sivil asayiş koordinasyonunun en önemli pratik uygulayıcılarıdır.<br>• <b>B Şıkkı (Yanlış):</b> Sivil ve hukuki idare kadıların elinde bağımsız olarak devam etmiştir.<br>• <b>C Şıkkı (Yanlış):</b> Subaşıların yargılama yetkisi yoktur, suçluları yakalayıp kadı mahkemesine çıkarmakla yükümlüdürler.<br>• <b>D Şıkkı (Yanlış):</b> Tımar sistemi kentsel alanların çevre tarım arazilerinde de aynen sipahiler vasıtasıyla yürütülmüştür.",
+        "tag": "#SeyfiyeSınıfı"
+      },
+      {
+        "q": "Soru 78: Osmanlı kalemiye sınıfına bağlı olan kâtipler, saraydaki resmi yazışmaları yaparken 'Divani', maliye kayıtlarını tutarken 'Siyakat' adı verilen özel şifreli yazı stilleri kullanırlardı. Maliye defterlerinde siyakat yazısının tercih edilmesinin en temel kurumsal gerekçesi aşağıdakilerden hangisidir?",
+        "options": [
+          "Devletin mali sırlarının, gelir-gider hesaplarının ve bütçe detaylarının sıradan insanlar ve casuslar tarafından okunmasını engellemek (güvenlik tedbiri)",
+          "Arapça harflerin yazılmasını tamamen yasaklamak",
+          "Kağıt israfını önlemek",
+          "Kâtiplerin okuma yazma bilmemesi"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Siyakat yazısı, harflerin noktalarının konulmadığı, okunması son derece zor ve özel eğitim gerektiren şifreli bir bürokrasi yazısıdır. Osmanlı Defterhanesi, devletin mali bütçe sırlarını korumak ve vergi kayıtlarının tahrif edilmesini önlemek amacıyla maliye kayıtlarını sadece bu yazıyla tutmuştur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Siyakat yazısının karmaşık ve şifreli yapısı, devletin mali güvenliğini korumaya yönelik idari bir tedbirdir.<br>• <b>B Şıkkı (Yanlış):</b> Yazı yine Arap harflidir, dil değişmemiştir; sadece harf formu şifrelenmiştir.<br>• <b>C Şıkkı (Yanlış):</b> Siyakat kağıt tasarrufu sağlamaz, aksine titiz ve geniş defter tutmayı gerektirir.<br>• <b>D Şıkkı (Yanlış):</b> Kâtipler Enderun'da veya Bab-ı Ali bürolarında en üst düzey eğitim almış seçkin yazarlardır.",
+        "tag": "#KalemiyeSınıfı"
+      },
+      {
+        "q": "Soru 79: Osmanlı merkez ordusunun (Kapıkulu Ocağı) teknik birliklerinden olan Humbaracılar, havan topları dökmek, el bombaları (humbara) üretmek ve bunları savaş meydanlarında düşman siperlerine fırlatmakla görevliydiler. Humbaracı Ocağı'nın 18. yüzyılda batılı tarzda ıslah edilmesi için görevlendirilen, Müslüman olup Ahmet Paşa adını alan ünlü Fransız mühendis aşağıdakilerden hangisidir?",
+        "options": [
+          "Humbaracı Ahmed Paşa (Kont de Bonneval)",
+          "Baron de Tott",
+          "Koca Ragıp Paşa",
+          "Cezayirli Gazi Hasan Paşa"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> 18. yüzyılda (I. Mahmut döneminde) Fransız askeri mühendisi Kont de Bonneval Osmanlı hizmetine girmiş, İslamiyet'i seçerek Humbaracı Ahmet Paşa adını almıştır. Ahmet Paşa, çökmekte olan Humbaracı Ocağı'nı batılı askeri mühendislik kurallarına göre yeniden organize etmiş ve Hendesehane'yi kurmuştur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Humbaracı Ahmet Paşa, merkez teknik ordusunu batılı mühendislik ilkeleriyle ıslah eden ilk yabancı uzmandır.<br>• <b>B Şıkkı (Yanlış):</b> Baron de Tott III. Mustafa döneminde sürat topçularını kuran Macar kökenli yabancı askeri uzmandır.<br>• <b>C Şıkkı (Yanlış):</b> Koca Ragıp Paşa Osmanlı sadrazamı ve devlet adamıdır; yabancı uzman değildir.<br>• <b>D Şıkkı (Yanlış):</b> Cezayirli Gazi Hasan Paşa ünlü Osmanlı kaptan-ı deryası ve donanma kahramanıdır.",
+        "tag": "#MerkezOrdusu"
+      },
+      {
+        "q": "Soru 80: Osmanlı eyalet ordusunda yer alan Beşliler, sınır boylarındaki kaleleri korumakla görevli hafif süvari ve piyade birlikleridir. Her beş haneden bir genç seçilerek bu birliğe alınır ve maaşları eyalet bütçesinden (yerel vergilerden) karşılanırdı. Beşliler birliğinin orduya alınış şekli aşağıdakilerden hangisinin göstergesidir?",
+        "options": [
+          "Taşradaki askeri insan kaynağının planlı ve toplumsal rızaya dayalı olarak seçildiğinin",
+          "Merkezdeki Yeniçerilerin tamamının taşraya sürüldüğünün",
+          "Eyalet kalelerinin tamamen boş bırakıldığının",
+          "Köylülerin askere gitmek istemediğinin"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Beşliler, sınır güvenliğini korumak amacıyla yerel halkın katılımıyla (her beş aileden bir genci ortaklaşa askere göndererek) oluşturulmuştur. Bu sistem, yerel savunmanın halkla iş birliği içinde organize edildiğini ve eyalet güvenliğinin dinamik tutulduğunu gösterir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Beşliler sistemindeki beş haneden bir asker alma kuralı, taşra savunmasının kurumsal ve toplumsal entegrasyonudur.<br>• <b>B Şıkkı (Yanlış):</b> Yeniçeriler merkezde kalmıştır, eyalet kalelerinde kale muhafızı olarak sadece küçük müfrezeler bulunurdu.<br>• <b>C Şıkkı (Yanlış):</b> Kaleler beşliler ve azaplar sayesinde kesintisiz korunmuştur.<br>• <b>D Şıkkı (Yanlış):</b> Askere gitmek gaza inancı nedeniyle onurlu bir görev kabul edilmekteydi.",
+        "tag": "#EyaletOrdusu"
+      },
+      {
+        "q": "Soru 81: Osmanlı Devleti'nde padişah öldüğünde veya tahttan indirildiğinde, yeni padişahın meşruiyet kazanması için bizzat İstanbul'daki Eyüp Sultan Türbesi'nde düzenlenen, dini ve hukuki bir tören yapılırdı. Bu tören padişahın kılıç kuşanarak gaza ve adalete yemin etmesidir. Tarihte padişahların meşruiyetini tescilleyen bu kılıç kuşanma törenine ne ad verilir?",
+        "options": [
+          "Kılıç Alayı",
+          "Amin Alayı",
+          "Surre Alayı",
+          "Cülus Bahşişi Töreni"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Kılıç Alayı, Osmanlı padişahının tahta çıktıktan sonra kutsal Eyüp Sultan Türbesi'nde kılıç kuşanarak adaleti koruyacağına ve gaza yapacağına yemin ettiği resmi dini-hukuki merasimdir. Bu tören batıdaki kralların taç giyme törenlerinin Osmanlı'daki karşılığıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Kılıç Alayı, tahta yeni çıkan padişahın egemenlik meşruiyetini halka ve dünyaya ilan ettiği dini kılıç kuşanma törenidir.<br>• <b>B Şıkkı (Yanlış):</b> Amin Alayı, çocukların sıbyan mektebine başlarken mahallede dualarla gezdirilmesi törenidir.<br>• <b>C Şıkkı (Yanlış):</b> Surre Alayı, her yıl padişah tarafından Mekke ve Medine'ye (Haremeyn) gönderilen hediyelerin ve yardımların taşındığı kervan alayıdır.<br>• <b>D Şıkkı (Yanlış):</b> Cülus bahşişi Yeniçerilere dağıtılan paradır; kılıç kuşanma manevi egemenlik tescilidir.",
+        "tag": "#VerasetSistemi"
+      },
+      {
+        "q": "Soru 82: Osmanlı Saray Teşkilatı'nda, padişahın sivil, askeri ve idari hizmetkarlarının kaldığı, saray koruyucularının yer aldığı dış saraya 'Birun' denmekteydi. Birun'da yer alan, padişahın binek atlarının bakımıyla ilgilenen, saray ahırlarından ve atlı tören protokolünden sorumlu olan görevli aşağıdakilerden hangisidir?",
+        "options": [
+          "Mirahur (Emir-i Ahur)",
+          "Müteferrika",
+          "Çavuşbaşı",
+          "Kapıcılar Kethüdası"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Mirahur (Emir-i Ahur), Osmanlı saray teşkilatının dış saray (Birun) bölümünde padişahın şahsi atlarının, saray ahırlarının (İstabl-ı Amire) ve atlı alayların idaresinden sorumlu en üst düzey saray görevlisidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Mirahur, sarayın atlarından, ahırlarından ve atlı tören protokolünden sorumlu Birun görevlisidir.<br>• <b>B Şıkkı (Yanlış):</b> Müteferrika sarayda padişahın özel hizmetlerini gören elit genç memur grubudur.<br>• <b>C Şıkkı (Yanlış):</b> Çavuşbaşı, divan kararlarını tebliğ eden ve divan içi güvenliği sağlayan icra bürosunun şefidir.<br>• <b>D Şıkkı (Yanlış):</b> Kapıcılar Kethüdası, sarayın kapılarının güvenliğinden ve saray giriş çıkışlarının denetiminden sorumlu görevlidir.",
+        "tag": "#SarayTeşkilatı"
+      },
+      {
+        "q": "Soru 83: Divan-ı Hümayun'da, devletin tüm gelir-gider hesaplarını tutan, bütçe açıklarını kapatmakla yükümlü olan Defterdarlar, sınırların genişlemesine paralel olarak Rumeli Defterdarı ve Anadolu Defterdarı olmak üzere ikiye ayrılmıştır. Protokolde Rumeli Defterdarı'nın, Anadolu Defterdarı'ndan üstün tutulmasının temel idari ve coğrafi gerekçesi nedir?",
+        "options": [
+          "Rumeli eyaletinin vergi gelirlerinin ve devlet bütçesindeki payının Anadolu'ya göre çok daha fazla ve stratejik olması",
+          "Anadolu defterdarının Türkçe bilmemesi",
+          "Padişahın Anadolu defterdarına güvenmemesi",
+          "Rumeli defterdarının doğrudan devşirme kökenli asker olması"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Osmanlı idari zihniyetinde fethin yönü olan batı (Rumeli) her zaman önceliklidir. Ayrıca Rumeli topraklarındaki tarımsal üretim ve gümrük vergisi gelirleri Anadolu'ya göre çok daha yüksek olduğu için, Rumeli Defterdarı bütçenin asıl yöneticisi sayılmış ve Anadolu defterdarına üstün tutulmuştur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Rumeli'nin yüksek vergi potansiyeli ve coğrafi büyüklüğü, oradaki mali yöneticinin protokolde üstün olmasını sağlamıştır.<br>• <b>B Şıkkı (Yanlış):</b> Her iki defterdar da en üst düzey Türkçe okur-yazarı ve seçkin maliye uzmanlarıdır.<br>• <b>C Şıkkı (Yanlış):</b> Olay güvenlikle değil, tamamen rasyonel mali hacim ve idari gelenekle ilgilidir.<br>• <b>D Şıkkı (Yanlış):</b> Defterdarlar asker değil, kalemiye sınıfına mensup sivil bürokratlardır.",
+        "tag": "#DivanÜyeleri"
+      },
+      {
+        "q": "Soru 84: Osmanlı Devleti'nde hukuk kurallarının yorumlanmasında ve yargı uyuşmazlıklarının çözümünde şer'i hukuk kuralları en üst yargı kuralıdır. Adalet sisteminin başı olan kadılar, hukuki konularda içinden çıkamadıkları zor davalarda veya yeni hukuki meselelerde en üst düzey dini otoriteden (Şeyhülislam'dan) yazılı görüş isterlerdi. Şeyhülislam'ın kadıların davalarında yol gösterici olması amacıyla verdiği bu yazılı dini-hukuki belgelere ne ad verilir?",
+        "options": [
+          "Fetva",
+          "Ferman",
+          "Berat",
+          "Şuhudu'l-Hal"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Şeyhülislam'ın kendisine sorulan hukuki ve dini sorulara karşılık verdiği şer'i cevap kağıdına 'Fetva' denir. Kadılar verdikleri mahkeme kararlarında bu fetvaları yasal dayanak olarak kullanabilirlerdi. Ferman padişahın emridir, Berat atama belgesidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Fetva, şeyhülislamın yasal veya dini bir soruya verdiği resmi yazılı şer'i görüştür/onaydır.<br>• <b>B Şıkkı (Yanlış):</b> 'Ferman' doğrudan padişahın yazılı emridir, siyasi/örfi hukuk kaynağıdır.<br>• <b>C Şıkkı (Yanlış):</b> 'Berat' padişah tarafından bir memura verilen atama veya ayrıcalık belgesidir.<br>• <b>D Şıkkı (Yanlış):</b> 'Şuhudu'l-Hal' mahkemede hazır bulunan yerel şahitlerin ve gözlemcilerin adıdır.",
+        "tag": "#İlmiyeSınıfı"
+      },
+      {
+        "q": "Soru 85: Osmanlı askeri teşkilatında, seyfiye sınıfının en saygın deniz kanadı donanmadır. Osmanlı donanmasının başkomutanı olan Kaptan-ı Derya, devletin deniz sınırlarının ve donanmanın tek yetkili yöneticisiydi. Kaptan-ı Derya'nın divan üyesi olmasının ardından, donanmanın ve denizciliğin merkezi olan resmi tersane eyaleti aşağıdakilerden hangisidir?",
+        "options": [
+          "Cezayir-i Bahr-i Sefid Eyaleti (Kaptanpaşa Eyaleti)",
+          "Budin Eyaleti",
+          "Bağdat Eyaleti",
+          "Erzurum Eyaleti"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Kaptan-ı Derya'ya doğrudan donanmanın lojistik desteğini sağlaması ve denizcileri beslemesi amacıyla Ege adaları ve Çanakkale boğazı çevresinden oluşan 'Cezayir-i Bahr-i Sefid' (Akdeniz Adaları) eyaleti dirlik ve yönetim bölgesi olarak bağlanmıştır. Bu eyalete Kaptanpaşa Eyaleti de denirdi.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Cezayir-i Bahr-i Sefid (Akdeniz Adaları) eyaleti, doğrudan Kaptan-ı Derya'ya bağlı denizcilik ve tersane yönetim merkezidir.<br>• <b>B Şıkkı (Yanlış):</b> Budin (Macaristan) kara sınır eyaletidir, denizle ilgisi yoktur.<br>• <b>C Şıkkı (Yanlış):</b> Bağdat doğu kara sınır eyaletidir, donanma üssü değildir.<br>• <b>D Şıkkı (Yanlış):</b> Erzurum Doğu Anadolu kara sınır eyaletidir.",
+        "tag": "#SeyfiyeSınıfı"
+      },
+      {
+        "q": "Soru 86: Osmanlı kalemiye (bürokrasi) sınıfının divan kararlarını kaydettiği en önemli defterler 'Mühimme Defterleri'dir. Bu defterlerde padişahın fermanları, beratları, eyalet valilerine gönderilen resmi yazılar ve savaş ilanları kronolojik sırayla yer alırdı. Mühimme defterlerinin tutulmasından ve arşivlenmesinden doğrudan sorumlu olan bürokratik divan dairesi aşağıdakilerden hangisidir?",
+        "options": [
+          "Beylikçi Kalemi (Divan Kalemi)",
+          "Tahvil Kalemi",
+          "Rüus Kalemi",
+          "Amedi Kalemi"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Beylikçi Kalemi, divanda görüşülen konuların, alınan kararların mühimme defterlerine kaydedilmesini sağlayan, padişah fermanlarını kaleme alan en önemli divan yazı işleri dairesidir. Amedi kalemi sadrazamın özel sekreteryasıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Beylikçi Kalemi, divan kararlarını (Mühimme defterlerini) tutan ana kalemiye dairesidir.<br>• <b>B Şıkkı (Yanlış):</b> Tahvil Kalemi üst düzey devlet yöneticilerinin (vezirlerin vb.) atama ve dirlik (zeamet/has) kayıtlarını tutardı.<br>• <b>C Şıkkı (Yanlış):</b> Rüus Kalemi orta ve alt düzey memurların atama ve tayin işlerini yürütürdü.<br>• <b>D Şıkkı (Yanlış):</b> Amedi Kalemi sadrazamın yabancı devletlerle ve padişahla olan yazışmalarını tutan dış diplomasi kalemiydi.",
+        "tag": "#KalemiyeSınıfı"
+      },
+      {
+        "q": "Soru 87: Osmanlı merkez ordusunun askeri disiplinini ve saray sadakatini pekiştiren en önemli unsurlardan biri de ocak kültürünü besleyen inanç bağlarıdır. Yeniçeri Ocağı'nın manevi koruyucusu ve pir kabul edilen, askerlerin törenlerde adını andığı ünlü tasavvuf büyüğü aşağıdakilerden hangisidir?",
+        "options": [
+          "Hacı Bektaş-ı Veli",
+          "Mevlana Celaleddin-i Rumi",
+          "Yunus Emre",
+          "Hacı Bayram-ı Veli"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Yeniçeri Ocağı, Hacı Bektaş-ı Veli'yi pir kabul etmiş ve ocak mensupları kendilerini 'Gürûh-ı Bektaşiyye' (Bektaşi topluluğu) olarak adlandırmışlardır. Yeniçerilerin törenlerde okuduğu meşhur gülbank duasında 'Pirimiz, sultanımız Hacı Bektaş-ı Veli...' ibaresi yer alırdı.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Hacı Bektaş-ı Veli, Yeniçeri Ocağı'nın manevi kurucusu ve piridir.<br>• <b>B Şıkkı (Yanlış):</b> Mevlana Konya'da Mevlevilik tarikatının piridir, orduyla doğrudan kurumsal bağı yoktur.<br>• <b>C Şıkkı (Yanlış):</b> Yunus Emre tasavvuf şairidir, askeri ocak piri değildir.<br>• <b>D Şıkkı (Yanlış):</b> Hacı Bayram-ı Veli Ankara'da yaşamış Bayramiye tarikatının piridir.",
+        "tag": "#MerkezOrdusu"
+      },
+      {
+        "q": "Soru 88: Osmanlı eyalet ordusunda sınır kalelerinde görev yapan ve özellikle kuşatma savaşlarında kale surlarının altından tüneller kazarak patlayıcı yerleştiren ve surları yıkan teknik askeri sınıfa ne ad verilirdi?",
+        "options": [
+          "Lağımcılar",
+          "Humbaracılar",
+          "Akıncılar",
+          "Saka Birliği"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Lağımcılar, kuşatılan kalelerin surlarını çökertmek amacıyla tüneller (lağımlar) kazan askeri mühendislik birliğidir. Tünelin ucuna barut yerleştirip ateşleyerek surları havaya uçururlar ve ordunun kaleye girmesini sağlarlardı. Sakalar ise su taşıyan geri hizmet birliğidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Lağımcılar, kale surlarının altına tünel kazarak patlatma yapan profesyonel teknik askeri sınıftır.<br>• <b>B Şıkkı (Yanlış):</b> Humbaracılar havan topları ve el bombaları fırlatan birimdir.<br>• <b>C Şıkkı (Yanlış):</b> Akıncılar sınır boylarında keşif ve yıpratma saldırıları yapan hafif süvarilerdir.<br>• <b>D Şıkkı (Yanlış):</b> Sakalar ordunun su ihtiyacını karşılayan sıhhi/lojistik geri hizmet sınıfıdır.",
+        "tag": "#EyaletOrdusu"
+      },
+      {
+        "q": "Soru 89: Osmanlı toprak sisteminde gelirleri doğrudan padişahın eşlerine, kızlarına ve annesine (saray kadınlarına) şahsi mülk veya gelir olarak ayrılan sınır arazilerine ne ad verilirdi?",
+        "options": [
+          "Paşmaklık Topraklar",
+          "Yurtluk Topraklar",
+          "Ocaklık Topraklar",
+          "Mukataa Topraklar"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Osmanlı miri arazi rejimi içinde, saray kadınlarının (padişah hanımlarının ve kızlarının) süslenme ve şahsi giderlerini karşılamak amacıyla tahsis edilen topraklara 'Paşmaklık' (ayak bastı parası anlamında) topraklar denirdi. Yurtluk ise sınır boyu gazilerine verilirdi.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Paşmaklık, geliri padişah ailesindeki kadınların şahsi giderleri için ayrılmış özel miri arazi türüdür.<br>• <b>B Şıkkı (Yanlış):</b> 'Yurtluk' topraklar, sınır boylarını koruyan aşiret beylerine ve gazilere dirlik olarak verilen topraklardır.<br>• <b>C Şıkkı (Yanlış):</b> 'Ocaklık' topraklar, geliri doğrudan kale muhafızlarının ve tersane giderlerinin karşılanması için ayrılan topraklardır.<br>• <b>D Şıkkı (Yanlış):</b> 'Mukataa' topraklar, geliri doğrudan devlet hazinesine (nakit olarak) aktarılan iltizam arazileridir.",
+        "tag": "#ToprakSistemi"
+      },
+      {
+        "q": "Soru 90: Osmanlı Tımar Sistemi'nde tarımsal üretimin kesintisiz sürmesini sağlamak amacıyla toprağı işleyen köylünün (reayanın) hakları kanunnamelerle korunmuştur. Sipahi köylünün toprağını zorla elinden alamazdı. Ancak köylü de toprağını mazeretsiz boş bırakamazdı. Aşağıdakilerden hangisi köylünün toprağı mazeretsiz terk etmesini engellemek amacıyla konulan idari kuraldır?",
+        "options": [
+          "Köylünün toprağını üç yıl üst üste boş bırakması durumunda toprağın elinden alınıp bir başkasına devredilmesi",
+          "Köylünün toprağını yabancı devletlere satmasına izin verilmesi",
+          "Köylünün her yıl vergi vermesinin yasaklanması",
+          "Köylünün sipahiyi hapse atabilmesi"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Tarımsal üretimin aksaması bütçeyi çökerteceği için, kanunlara göre bir köylü toprağını mazereti olmaksızın üç yıl boş bırakırsa, devlet o arazinin işletme hakkını iptal eder ve toprağı işleyecek başka bir aileye 'Çiftbozan' cezası keserek devrederdi. Bu durum üretimin devamlılığı için hayati bir kuraldı.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Üç yıl boş bırakılan toprağın geri alınması, tarımsal arz güvenliğini koruyan en temel hukuki yaptırımdır.<br>• <b>B Şıkkı (Yanlış):</b> Toprak miri olduğu için satılması kesinlikle hukuka aykırıdır.<br>• <b>C Şıkkı (Yanlış):</b> Vergiler düzenli ve kanunidir; vergiden muafiyet ancak devlete özel bir hizmet sunulduğunda (derbentçilik vb.) mümkündür.<br>• <b>D Şıkkı (Yanlış):</b> Köylü sipahiyi hapse atamazdı ancak sipahinin zulmünü bağımsız kadıya şikayet etme hakkına sahipti.",
+        "tag": "#TımarSistemi"
+      },
+      {
+        "q": "Soru 91: Malikâne sistemi, iltizam topraklarının mültezimlere ömür boyu kiralanmasıyla taşrada büyük bir mülkiyet ve güç yığılmasına yol açmıştır. Zenginleşen ve kendi bölgelerinde özel askeri birlikler (seki-ban) kuran bu mültezim aileleri, zamanla devletin taşradaki resmi idarecilerini bypass ederek doğrudan padişaha kafa tutabilecek güce ulaşmışlardır. Osmanlı tarihinde taşrada doğan bu güçlü feodal yerel sınıfa ne ad verilir?",
+        "options": [
+          "Ayanlar (Yerel Eşraf)",
+          "Kapıkulları",
+          "Müderrisler",
+          "Azaplar"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Malikâne sisteminin yarattığı zenginleşme, taşrada 'Ayanlık' adı verilen güçlü hanedanların (Ayanların) doğmasına yol açmıştır. 19. yüzyılın başında II. Mahmut, bu ayanlarla 'Sened-i İttifak' (1808) antlaşmasını imzalayarak onların varlığını resmen tanımak zorunda kalmıştır. Bu durum padişah yetkilerinin ilk kez sınırlandırılmasıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Ayanlar, iltizam ve malikâne sisteminin bozulmasıyla taşrada doğan, devletin merkezi otoritesine rakip olan güçlü feodal toprak derebeyleridir.<br>• <b>B Şıkkı (Yanlış):</b> Kapıkulları merkez askeri bürokrasisidir, taşrada toprak ağalığı kurmazlar.<br>• <b>C Şıkkı (Yanlış):</b> Müderrisler akademik öğretmenlerdir, askeri ve idari toprak gücüne sahip değillerdir.<br>• <b>D Şıkkı (Yanlış):</b> Azaplar eyalet ordusunun bekar gençlerden oluşan hafif yaya askerleridir.",
+        "tag": "#İltizamVeMalikane"
+      },
+      {
+        "q": "Soru 92: Osmanlı maliyesinde, devletin bütçe dengesini korumak ve halkı haksız fiyat artışlarından korumak amacıyla esnafa uygulanan fiyat tespiti (narh) dışında, çarşı ve pazarların düzenini, terazi ayarlarını ve ürünlerin temizliğini denetleyen modern zabıta teşkilatının temeli olan görevli kimdir?",
+        "options": [
+          "Muhtesib",
+          "Mültezim",
+          "Yiğitbaşı",
+          "Kethüda"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Muhtesib, Osmanlı'da pazar yerlerinin asayişinden, fiyat denetiminden (narh kontrolünden), ölçü ve tartı aletlerinin doğruluğundan sorumlu olan resmi pazar zabıtası ve belediye denetçisidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Muhtesib, Osmanlı belediye ve pazar denetimini yürüten en önemli zabıta/mali denetçidir.<br>• <b>B Şıkkı (Yanlış):</b> Mültezim iltizam ihalesini alan vergi toplayıcısıdır, pazar zabıtası değildir.<br>• <b>C Şıkkı (Yanlış):</b> Yiğitbaşı loncada güvenlik ve disiplinden sorumlu sivil esnaf temsilcisidir.<br>• <b>D Şıkkı (Yanlış):</b> Kethüda esnaf loncasının devletle olan ilişkilerini yürüten lonca şefidir.",
+        "tag": "#OsmanlıMaliyesi"
+      },
+      {
+        "q": "Soru 93: Osmanlı Devleti'nde, tıp eğitimi veren medreselere 'Darüşşifa' veya 'Darültıp' denmekteydi. Bu kurumlarda öğrenciler usta-çırak ilişkisiyle eğitilir, pratik cerrahi işlemler yapar ve hastaları tedavi ederlerdi. Darüşşifalarda tıp eğitimini başarıyla tamamlayan hekimlere verilen resmi mesleki icra diplomasına ne ad verilirdi?",
+        "options": [
+          "İcazetname",
+          "Berat",
+          "Ferman",
+          "Gedik"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Medrese eğitimi (tıp dahil) bittiğinde öğrencilere hocaları tarafından verilen resmi mezuniyet belgesine 'İcazetname' denir. İcazetname hekimin bağımsız olarak muayenehane açıp hasta tedavi edebileceğini hukuken tescillerdi.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> İcazetname medrese ve tıp eğitimi mezuniyetini tescilleyen resmi akademik diplomadır.<br>• <b>B Şıkkı (Yanlış):</b> 'Berat' devlet memuriyeti atama belgesidir.<br>• <b>C Şıkkı (Yanlış):</b> 'Ferman' padişahın kanuni emridir, okul mezuniyetiyle ilgisi yoktur.<br>• <b>D Şıkkı (Yanlış):</b> 'Gedik' esnafın dükkan açma ruhsatıdır (sanayi ve zanaat dükkanları içindir).",
+        "tag": "#EğitimSistemi"
+      },
+      {
+        "q": "Soru 94: Osmanlı Lonca Teşkilatı'nda, esnaf sandığı adı verilen ve esnafların ortaklaşa biriktirdikleri paralarla kurulan bir dayanışma fonu vardı. Bu fon, işleri bozulan esnaflara faizsiz kredi verir, sakat kalan esnafların ailelerine maaş bağlar ve yeni dükkan açacak genç ustaların sermaye ihtiyacını karşılardı. Lonca içindeki bu yardımlaşma sandığına ne ad verilirdi?",
+        "options": [
+          "Teavün Sandığı (Orta Sandığı / Esnaf Kesesi)",
+          "Avarız Sandığı",
+          "Memleket Sandığı",
+          "Enderun Kasası"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Lonca Teşkilatı'nda yardımlaşmayı ve esnaf dayanışmasını sağlayan fona 'Teavün Sandığı' (Orta Sandığı) denirdi. Esnaflar kazançlarının küçük bir kısmını düzenli olarak buraya bağışlar, böylece kriz dönemlerinde birbirlerini iflastan korurlardı.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Teavün Sandığı (Orta Sandığı), esnaf dayanışmasını kuran ve kredi desteği sağlayan sosyal yardımlaşma sandığıdır.<br>• <b>B Şıkkı (Yanlış):</b> 'Avarız Sandığı' mahalle düzeyinde olağanüstü vergileri ödemek için kurulan sosyal sandıktır.<br>• <b>C Şıkkı (Yanlış):</b> 'Memleket Sandıkları' 19. yüzyılda çiftçiye kredi vermek için kurulan Ziraat Bankası'nın temelini oluşturan sandıklardır.<br>• <b>D Şıkkı (Yanlış):</b> 'Enderun Kasası' saray içi idari bütçedir.",
+        "tag": "#LoncaTeşkilatı"
+      },
+      {
+        "q": "Soru 95: Osmanlı Hukuk Sistemi'nde, örfi hukukun sınırlarını padişahın mutlak yasama yetkisi (Yasanname ve Kanunnameler) belirlerdi. Ancak padişah örfi hukuk kuralları koyarken şer'i hukukun (İslam dininin kesin emirlerinin) sınırlarını kesinlikle aşamazdı. Osmanlı'da padişahların kendi örfi yetkileriyle çıkardığı, doğrudan belirli bir konuda yazılı emir ve kanun hükmünde kararname olan belgelere ne ad verilir?",
+        "options": [
+          "Ferman ve Hatt-ı Hümayun",
+          "Fetva ve Şer'iyye Sicili",
+          "İcazetname ve Tahrir",
+          "Berat ve Mülazemet"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Ferman, padişahın herhangi bir konuda verdiği yazılı emirdir. Hatt-ı Hümayun ise padişahın bizzat kendi kalemiyle yazdığı en üst düzey mutlak resmi emir belgesidir. Bunlar örfi hukukun birincil kaynaklarıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Ferman ve Hatt-ı Hümayun doğrudan padişahın örfi yasama gücünü gösteren resmi emirlerdir.<br>• <b>B Şıkkı (Yanlış):</b> Fetva şeyhülislamın dini görüşüdür; şer'iyye sicili ise kadı mahkeme defteridir.<br>• <b>C Şıkkı (Yanlış):</b> İcazetname diplomadır; Tahrir tapu kayıt işlemidir.<br>• <b>D Şıkkı (Yanlış):</b> Berat atama fermanıdır; Mülazemet stajyerlik/nöbet sırasıdır.",
+        "tag": "#HukukSistemi"
+      },
+      {
+        "q": "Soru 96: Osmanlı Mimari Sanatı'nın en parlak dönemi Klasik Dönemdir. Bu döneme damgasını vuran ve 'Dehaların Dehası' olarak anılan Mimar Sinan, çıraklık, kalfalık ve ustalık eserleriyle dünya mimarlık tarihine geçmiştir. Mimar Sinan'ın bizzat kendi ifadesiyle 'Ustalık Eserim' dediği Edirne'deki meşhur camii aşağıdakilerden hangisidir?",
+        "options": [
+          "Selimiye Camii",
+          "Süleymaniye Camii",
+          "Şehzade Camii",
+          "Sultanahmet Camii"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Mimar Sinan eserlerini derecelendirmiştir: 'Çıraklık Eserim' Şehzade Camii (İstanbul), 'Kalfalık Eserim' Süleymaniye Camii (İstanbul), 'Ustalık Eserim' ise Edirne'deki muazzam kubbe mimarisine sahip olan Selimiye Camii'dir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Selimiye Camii Edirne'de yer alan ve Mimar Sinan'ın ustalık döneminin zirvesi olan şaheserdir.<br>• <b>B Şıkkı (Yanlış):</b> Süleymaniye Camii kalfalık eseri kabul edilir ve İstanbul'dadır.<br>• <b>C Şıkkı (Yanlış):</b> Şehzade Camii çıraklık eseri kabul edilir.<br>• <b>D Şıkkı (Yanlış):</b> Sultanahmet Camii Mimar Sinan'ın öğrencisi Sedefkar Mehmet Ağa'nın eseridir (Mavi Camii).",
+        "tag": "#OsmanlıSanatı"
+      },
+      {
+        "q": "Soru 97: Osmanlı Tımar Sistemi'nde, dirlik sahibi sipahinin topladığı vergi gelirlerinin adaleti ve hakkaniyeti her yıl Nişancı ve eyalet kadıları tarafından denetlenirdi. Sipahinin köylüden kanunnamede yazılan miktarın dışında tek bir akçe dahi fazla vergi alması veya köylüyü kendi şahsi işlerinde ücretsiz çalıştırması (angarya) kesinlikle yasaktı. Devletin angaryayı yasaklamasındaki temel amaç aşağıdakilerden hangisidir?",
+        "options": [
+          "Köylünün can ve mal güvenliğini, emeğini korumak ve devlet adaletine olan inancı pekiştirmek",
+          "Sipahilerin tamamını ordu dışı bırakmak",
+          "Toprak verimliliğini sıfıra indirmek",
+          "Gayrimüslimlerin vergi ödemesini engellemek"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Osmanlı adalet felsefesinde (Adalet Dairesi), halkın (reayanın) uğrayacağı zulüm üretimi baltalar ve devleti zayıflatır. Angaryanın yasaklanması ve sipahinin sıkı denetlenmesi, köylünün emeğini sömürüye karşı korumayı ve devletin koruyucu adalet imajını güçlendirmeyi amaçlar.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Angarya yasağı, köylü haklarını koruyarak toplumsal adaleti ve üretim motivasyonunu koruyan en önemli insani-hukuki kuraldır.<br>• <b>B Şıkkı (Yanlış):</b> Sipahilerin gücü korunmak istenmiştir ancak bunun halkı ezerek yapılması engellenmiştir.<br>• <b>C Şıkkı (Yanlış):</b> Toprak verimliliğini artırmak devletin en büyük ekonomik hedefidir.<br>• <b>D Şıkkı (Yanlış):</b> Sistem hem Müslüman hem gayrimüslim köylüyü korumuştur.",
+        "tag": "#TımarSistemi"
+      },
+      {
+        "q": "Soru 98: 18. yüzyıldan itibaren İltizam sisteminin malikâneye dönmesi ve taşra mültezimlerinin (ayanların) güçlenmesi, Osmanlı Devleti'nin merkez dışındaki askeri gücünü zayıflatmıştır. Eyalet tımarlı ordusu çökerken, ayanlar kendi özel ordularıyla bölgelerinde bağımsız otoriteler kurmuşlardır. Bu durum Osmanlı Devleti'nin idari yapısında nasıl bir krize yol açmıştır?",
+        "options": [
+          "Merkezi otoritenin taşrada tamamen etkisiz kalması ve devletin iç güvenlikte yerel ayanlara bağımlı hale gelmesi",
+          "Bizans'ın İstanbul'u kuşatması",
+          "Padişahların yetkilerini tamamen yabancı elçilere devretmesi",
+          "Medreselerin tamamen sivil okullara dönüşmesi"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Tımar sisteminin çöküşü ve ayanların yükselişi, İstanbul'daki padişahın taşradaki eyaletleri yönetmesini imkansız kılmıştır. Devlet, taşradaki isyanları bastırmak veya savaşlara asker toplamak için dahi bu yerel ayanların askeri desteğine muhtaç kalmıştır. Bu durum feodalleşme krizidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Ayanların güçlenmesi, merkezi otoritenin taşra genelindeki denetim gücünü kırmış ve idari bir zaaf yaratmıştır.<br>• <b>B Şıkkı (Yanlış):</b> Bizans 1453'te yıkılmıştır; 18. yüzyılda Bizans yoktur.<br>• <b>C Şıkkı (Yanlış):</b> Padişah yabancı elçilere egemenlik yetkisi devretmemiştir.<br>• <b>D Şıkkı (Yanlış):</b> Medreseler klasik yapısını 19. yüzyıla kadar muhafaza etmiştir.",
+        "tag": "#İltizamVeMalikane"
+      },
+      {
+        "q": "Soru 99: Osmanlı Lonca Teşkilatı'nda, esnafların dini ve ahlaki gelişimini sağlayan en yetkili sivil yönetici 'Şeyh' (Esnaf Şeyhi) idi. Loncanın dış ilişkilerini, hükümetle (kadıyla) olan yazışmalarını ve esnaf haklarını koruyan resmi temsilciye ise 'Kethüda' (Kahyâ) adı verilirdi. Loncada kalfaların ustalık seviyesine ulaştıklarında düzenlenen, dualarla esnafa özel bir önlük bağlanmasını içeren meşhur mesleki törene ne ad verilir?",
+        "options": [
+          "Şed Kuşatma Töreni (Peştemal Bağlama)",
+          "Amin Alayı",
+          "Cülus Merasimi",
+          "Kılıç Alayı"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Loncada usta olan gence esnaf şeyhi ve ustaları önünde dualarla 'Şed Kuşatılırdı' (bel beline peştemal bağlanırdı). Bu tören gencin bağımsız esnaf (usta) statüsü kazandığının ve dükkan açmaya (gedik almaya) hak kazandığının resmi ahlaki-mesleki ilanıydı.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Şed Kuşatma Töreni, lonca sisteminde kalfalıktan ustalığa terfi eden esnafın kutsal önlük bağlama merasimidir.<br>• <b>B Şıkkı (Yanlış):</b> Amin Alayı ilkokula başlama merasimidir.<br>• <b>C Şıkkı (Yanlış):</b> Cülus padişahın tahta çıkma askeri törenidir.<br>• <b>D Şıkkı (Yanlış):</b> Kılıç alayı padişahın tahta çıktıktan sonra kılıç kuşanarak yemin etmesi törenidir.",
+        "tag": "#LoncaTeşkilatı"
+      },
+      {
+        "q": "Soru 100: Osmanlı minyatür sanatının klasik dönemdeki en büyük dehalarından biri, Kanuni Sultan Süleyman'ın doğu ve batı seferlerini resmeden, coğrafi harita hassasiyetinde şehir minyatürleri çizen ünlü ressam ve bilgindir. Çizdiği 'Beyan-ı Menazil-i Sefer-i Irakeyn' eseriyle tanınan bu dahi Osmanlı nakkaşı kimdir?",
+        "options": [
+          "Matrakçı Nasuh",
+          "Levni",
+          "Nakkaş Osman",
+          "Şeker Ahmet Paşa"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Matrakçı Nasuh, 16. yüzyılda yaşamış dahi bir matematikçi, silahşör, coğrafyacı ve nakkaştır. Geliştirdiği matrak sporuyla da tanınır. Kanuni'nin Irak seferi menzillerini çizdiği minyatürleri, o dönemin şehir mimarilerini, kalelerini ve doğasını birebir detayla gösteren tarihi belgelerdir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Matrakçı Nasuh, 16. yüzyılın en meşhur dahi şehir nakkaşı, silahşörü ve haritacısıdır.<br>• <b>B Şıkkı (Yanlış):</b> Levni Lale Devri'nin (18. yüzyılın) ünlü minyatür ve tasvir sanatçısıdır.<br>• <b>C Şıkkı (Yanlış):</b> Nakkaş Osman Surname-i Hümayun'u resmeden 16. yüzyıl sonu ünlü nakkaşıdır.<br>• <b>D Şıkkı (Yanlış):</b> Şeker Ahmet Paşa 19. yüzyılda batılı tarzda yağlıboya resim yapan Osmanlı ressamıdır.",
+        "tag": "#OsmanlıSanatı"
       }
     ]
   }
