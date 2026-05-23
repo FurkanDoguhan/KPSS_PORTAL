@@ -196,9 +196,55 @@
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
-                    <div class="lg:col-span-2 p-4 bg-slate-900 rounded-xl border border-slate-800 space-y-3">
-                        <h4 class="text-xs font-bold text-rose-400 uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-bolt-lightning"></i> En Çok Zorlandığın Konular ve Hata Dağılımı</h4>
-                        <div id="box-worst-topics-list" class="space-y-2"></div>
+                    <div class="lg:col-span-2 p-4.5 bg-slate-900 rounded-xl border border-slate-800 space-y-4">
+                        <h4 class="text-xs font-bold text-rose-400 uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-triangle-exclamation animate-pulse text-rose-500"></i> Zayıf Konular Derin Analiz & Akademik Teşhis</h4>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                            <!-- Sol: SVG Hata Sinapsları & Yoğunluk Grafiği -->
+                            <div class="md:col-span-5 space-y-1.5">
+                                <div class="text-[9px] font-black text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                    <i class="fa-solid fa-chart-pie text-rose-500"></i> HATA SİNAPSLARI & YOĞUNLUK RADARI
+                                </div>
+                                <div class="w-full flex justify-center py-2 bg-slate-950/40 rounded-xl border border-slate-850 h-36 relative overflow-hidden">
+                                    <svg id="svg-error-density-chart" class="w-full h-full" viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg">
+                                        <!-- Dinamik SVG olarak JS ile çizilecek -->
+                                    </svg>
+                                </div>
+                            </div>
+                            
+                            <!-- Sağ: Detaylı Analiz & Yorum -->
+                            <div class="md:col-span-7 space-y-1.5">
+                                <div class="text-[9px] font-black text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                    <i class="fa-solid fa-microscope text-indigo-400"></i> AI KRİTİK SEVİYE TEŞHİSİ
+                                </div>
+                                <div id="box-worst-diagnostics" class="p-2.5 bg-slate-950/40 rounded-xl border border-slate-850/60 text-[10px] leading-relaxed text-slate-400 space-y-2 h-36 overflow-y-auto pr-1">
+                                    <!-- Dinamik olarak JS ile yorumlar eklenecek -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Alt: Kazanım Durum Tablosu -->
+                        <div class="space-y-1.5 pt-3 border-t border-slate-800/80">
+                            <div class="text-[9px] font-black text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <i class="fa-solid fa-table-list text-emerald-400"></i> EN KRİTİK 4 KAZANIM VE AKADEMİK REÇETE
+                            </div>
+                            <div class="overflow-x-auto rounded-xl border border-slate-850 bg-slate-950/20">
+                                <table class="w-full text-left text-[10px] text-slate-300 border-collapse">
+                                    <thead>
+                                        <tr class="bg-slate-950/60 border-b border-slate-800 text-[9px] font-bold text-slate-400 uppercase tracking-wider">
+                                            <th class="py-2 px-3">Kazanım / Etiket</th>
+                                            <th class="py-2 px-3">İlişkili Ünite</th>
+                                            <th class="py-2 px-3 text-center">Hata Sayısı</th>
+                                            <th class="py-2 px-3 text-center">Tehdit Rozeti</th>
+                                            <th class="py-2 px-3">Kişisel Akademik Reçete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="table-worst-tbody" class="divide-y divide-slate-850">
+                                        <!-- Dinamik olarak JS ile oluşturulacak -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                     <div class="p-4 bg-slate-900 rounded-xl border border-slate-800 space-y-4 flex flex-col justify-between border-l-4 border-l-indigo-500">
                         <div>
@@ -217,12 +263,26 @@
 
                 <!-- 📊 SVG GRAFİK VE HIZ ANALİZİ PANELİ -->
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
-                    <div class="lg:col-span-2 p-4 bg-slate-900 rounded-xl border border-slate-800 space-y-3">
-                        <h4 class="text-xs font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-chart-bar"></i> Son 7 Günlük Soru Çözüm Grafiği</h4>
-                        <div class="w-full flex justify-center py-2 bg-slate-950/40 rounded-xl border border-slate-850">
-                            <svg id="svg-weekly-chart" class="w-full h-36" viewBox="0 0 420 144" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Dinamik oluşturulacak -->
-                            </svg>
+                    <div class="lg:col-span-2 p-4 bg-slate-900 rounded-xl border border-slate-800 space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- Sol Grafik: Çözüm Sayısı -->
+                            <div class="space-y-2">
+                                <h4 class="text-[11px] font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-chart-bar"></i> Son 7 Günlük Soru Çözümü</h4>
+                                <div class="w-full flex justify-center py-2 bg-slate-950/40 rounded-xl border border-slate-850 h-36">
+                                    <svg id="svg-weekly-chart" class="w-full h-full" viewBox="0 0 420 144" xmlns="http://www.w3.org/2000/svg">
+                                        <!-- Dinamik oluşturulacak -->
+                                    </svg>
+                                </div>
+                            </div>
+                            <!-- Sağ Grafik: Ünite Başarı Grafiği -->
+                            <div class="space-y-2">
+                                <h4 class="text-[11px] font-bold text-indigo-400 uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-chart-line"></i> Ünite Başarı Düzeyi (Mastery)</h4>
+                                <div class="w-full flex justify-center py-2 bg-slate-950/40 rounded-xl border border-slate-850 h-36">
+                                    <svg id="svg-mastery-chart" class="w-full h-full" viewBox="0 0 420 144" xmlns="http://www.w3.org/2000/svg">
+                                        <!-- Dinamik oluşturulacak -->
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="p-4 bg-slate-900 rounded-xl border border-slate-800 space-y-4 flex flex-col justify-between border-l-4 border-l-amber-500">
@@ -375,7 +435,7 @@
                     <div class="space-y-2">
                         <h3 class="text-lg font-black text-white">KPSS Karma Deneme Sınavı</h3>
                         <p class="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">
-                            ÖSYM sınav normlarında, 3 üniteden rastgele seçilmiş <b>27 Tarih</b> ve <b>18 Coğrafya</b> sorusundan oluşan 45 soruluk karma deneme sınavı.
+                            ÖSYM sınav normlarında, tüm müfredat ünitelerinden rastgele seçilmiş <b>27 Tarih</b> ve <b>18 Coğrafya</b> sorusundan oluşan 45 soruluk karma deneme sınavı.
                         </p>
                     </div>
                     <div class="grid grid-cols-3 gap-3 max-w-sm mx-auto text-center text-[10px] font-bold">
@@ -487,18 +547,23 @@
                 </div>
 
                 <!-- Harita Katmanı Seçici -->
-                <div class="flex flex-wrap gap-2 justify-center p-1 bg-slate-900 rounded-xl border border-slate-800">
-                    <button onclick="switchMapTheme('deprem')" id="btn-theme-deprem" class="flex-1 text-[10px] sm:text-xs font-black py-2 px-3 rounded-lg bg-emerald-500 text-slate-950 shadow-sm cursor-pointer transition-all hover:scale-102">DEPREM & FAY HATLARI</button>
-                    <button onclick="switchMapTheme('karstik')" id="btn-theme-karstik" class="flex-1 text-[10px] sm:text-xs font-black py-2 px-3 rounded-lg text-slate-400 hover:text-slate-200 cursor-pointer transition-all hover:scale-102">KARSTİK ŞEKİLLER & PLATOLAR</button>
-                    <button onclick="switchMapTheme('delta')" id="btn-theme-delta" class="flex-1 text-[10px] sm:text-xs font-black py-2 px-3 rounded-lg text-slate-400 hover:text-slate-200 cursor-pointer transition-all hover:scale-102">DELTA OVALARI & AKARSU</button>
-                    <button onclick="switchMapTheme('kıyı')" id="btn-theme-kıyı" class="flex-1 text-[10px] sm:text-xs font-black py-2 px-3 rounded-lg text-slate-400 hover:text-slate-200 cursor-pointer transition-all hover:scale-102">KIYI TİPLERİ & TOMBOLO</button>
-                    <button onclick="switchMapTheme('nüfus')" id="btn-theme-nüfus" class="flex-1 text-[10px] sm:text-xs font-black py-2 px-3 rounded-lg text-slate-400 hover:text-slate-200 cursor-pointer transition-all hover:scale-102">NÜFUS & TENHA YÖRELER</button>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-2 p-2 bg-slate-900 rounded-xl border border-slate-800 w-full">
+                    <button onclick="switchMapTheme('deprem')" id="btn-theme-deprem" class="flex items-center justify-center gap-1.5 text-[9px] sm:text-xs font-black py-2.5 px-2 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 shadow-lg cursor-pointer transition-all hover:scale-102"><i class="fa-solid fa-house-crack"></i> DEPREM & FAY</button>
+                    <button onclick="switchMapTheme('karstik')" id="btn-theme-karstik" class="flex items-center justify-center gap-1.5 text-[9px] sm:text-xs font-black py-2.5 px-2 rounded-lg text-slate-400 hover:text-slate-200 cursor-pointer transition-all hover:scale-102"><i class="fa-solid fa-mountain"></i> KARSTİK & PLATO</button>
+                    <button onclick="switchMapTheme('delta')" id="btn-theme-delta" class="flex items-center justify-center gap-1.5 text-[9px] sm:text-xs font-black py-2.5 px-2 rounded-lg text-slate-400 hover:text-slate-200 cursor-pointer transition-all hover:scale-102"><i class="fa-solid fa-water"></i> DELTA & AKARSU</button>
+                    <button onclick="switchMapTheme('kıyı')" id="btn-theme-kıyı" class="flex items-center justify-center gap-1.5 text-[9px] sm:text-xs font-black py-2.5 px-2 rounded-lg text-slate-400 hover:text-slate-200 cursor-pointer transition-all hover:scale-102"><i class="fa-solid fa-water-ladder"></i> KIYI & TOMBOLO</button>
+                    <button onclick="switchMapTheme('nüfus')" id="btn-theme-nüfus" class="flex items-center justify-center gap-1.5 text-[9px] sm:text-xs font-black py-2.5 px-2 rounded-lg text-slate-400 hover:text-slate-200 cursor-pointer transition-all hover:scale-102"><i class="fa-solid fa-users"></i> NÜFUS DAĞILIMI</button>
+                    <button onclick="switchMapTheme('iklim')" id="btn-theme-iklim" class="flex items-center justify-center gap-1.5 text-[9px] sm:text-xs font-black py-2.5 px-2 rounded-lg text-slate-400 hover:text-slate-200 cursor-pointer transition-all hover:scale-102"><i class="fa-solid fa-cloud-showers-water"></i> YAĞIŞ & İKLİM</button>
+                    <button onclick="switchMapTheme('toprak')" id="btn-theme-toprak" class="flex items-center justify-center gap-1.5 text-[9px] sm:text-xs font-black py-2.5 px-2 rounded-lg text-slate-400 hover:text-slate-200 cursor-pointer transition-all hover:scale-102"><i class="fa-solid fa-seedling"></i> TOPRAK TİPLERİ</button>
+                    <button onclick="switchMapTheme('maden')" id="btn-theme-maden" class="flex items-center justify-center gap-1.5 text-[9px] sm:text-xs font-black py-2.5 px-2 rounded-lg text-slate-400 hover:text-slate-200 cursor-pointer transition-all hover:scale-102"><i class="fa-solid fa-gem"></i> MADEN & ENERJİ</button>
+                    <button onclick="switchMapTheme('sanayi')" id="btn-theme-sanayi" class="flex items-center justify-center gap-1.5 text-[9px] sm:text-xs font-black py-2.5 px-2 rounded-lg text-slate-400 hover:text-slate-200 cursor-pointer transition-all hover:scale-102"><i class="fa-solid fa-industry"></i> SANAYİ MERKEZİ</button>
+                    <button onclick="switchMapTheme('afet')" id="btn-theme-afet" class="flex items-center justify-center gap-1.5 text-[9px] sm:text-xs font-black py-2.5 px-2 rounded-lg text-slate-400 hover:text-slate-200 cursor-pointer transition-all hover:scale-102"><i class="fa-solid fa-triangle-exclamation"></i> DOĞAL AFETLER</button>
                 </div>
 
                 <!-- İnteraktif Harita Arayüzü -->
                 <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
-                    <div class="lg:col-span-3 relative flex flex-col justify-center items-center p-4 bg-slate-900 rounded-xl border border-slate-800 h-80 overflow-hidden">
-                        <div class="w-full h-full relative" id="box-turkey-map">
+                    <div class="lg:col-span-3 relative flex flex-col justify-between items-center p-4 bg-slate-900 rounded-xl border border-slate-800 min-h-[22rem] h-auto overflow-hidden">
+                        <div class="w-full h-52 relative" id="box-turkey-map">
                             <svg class="w-full h-full" viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M 30,110 Q 50,60 120,65 T 250,55 T 380,60 T 470,80 Q 485,120 455,160 T 360,175 T 220,180 T 110,165 Z" fill="#151d30" stroke="#334155" stroke-width="2" />
                                 
@@ -518,6 +583,14 @@
                                 <circle cx="115" cy="65" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('catalca-kocaeli')" />
                                 <circle cx="295" cy="70" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('samsun-deltalar')" />
                                 <circle cx="85" cy="172" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('kas-kekova')" />
+                                <circle cx="45" cy="115" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('ege-kiyilari')" />
+                                <circle cx="270" cy="125" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('orta-anadolu')" />
+                                <circle cx="430" cy="85" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('erzurum-kars')" />
+                                <circle cx="55" cy="75" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('ergene')" />
+                                <circle cx="195" cy="65" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('zonguldak')" />
+                                <circle cx="360" cy="155" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('guneydogu')" />
+                                <circle cx="330" cy="110" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('sivas-divrigi')" />
+                                <circle cx="260" cy="165" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('iskenderun')" />
 
                                 <text x="100" y="148" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">Teke</text>
                                 <text x="170" y="158" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">Taşeli</text>
@@ -531,7 +604,18 @@
                                 <text x="115" y="53" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">İstanbul</text>
                                 <text x="295" y="58" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">Samsun</text>
                                 <text x="85" y="186" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">Kaş</text>
+                                <text x="45" y="103" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">Ege Kıyıları</text>
+                                <text x="270" y="137" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">O.Anadolu</text>
+                                <text x="430" y="73" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">Erzurum-Kars</text>
+                                <text x="55" y="87" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">Ergene</text>
+                                <text x="195" y="53" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">Zonguldak</text>
+                                <text x="360" y="167" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">Güneydoğu</text>
+                                <text x="330" y="98" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">Sivas</text>
+                                <text x="260" y="177" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">İskenderun</text>
                             </svg>
+                        </div>
+                        <div id="map-legend-panel" class="w-full mt-2 transition-all duration-300">
+                            <!-- Dinamik Lejant oluşturulacak -->
                         </div>
                     </div>
 
@@ -894,7 +978,7 @@
             }
         }
 
-        function openAnalysisCenter() {
+                function openAnalysisCenter() {
             if ('speechSynthesis' in window) window.speechSynthesis.cancel();
             document.getElementById("view-cards").classList.add("hidden"); 
             document.getElementById("view-quiz").classList.add("hidden"); 
@@ -904,7 +988,19 @@
             document.getElementById("box-top-navbar").classList.add("hidden");
             document.getElementById("view-analysis-center").classList.remove("hidden");
             
-            const worstBox = document.getElementById("box-worst-topics-list"); worstBox.innerHTML = "";
+            // Draw Charts
+            renderWeeklyChart();
+            renderMasteryChart();
+            
+            // Dinamik Tablo, SVG Grafik ve AI Yorum Seçicileri
+            const worstTbody = document.getElementById("table-worst-tbody");
+            const svgErrorDensity = document.getElementById("svg-error-density-chart");
+            const worstDiagnostics = document.getElementById("box-worst-diagnostics");
+
+            if (worstTbody) worstTbody.innerHTML = "";
+            if (svgErrorDensity) svgErrorDensity.innerHTML = "";
+            if (worstDiagnostics) worstDiagnostics.innerHTML = "";
+
             let hiyerarşi = {};
             let totalErrors = 0;
             kpssNotebook.forEach(item => { 
@@ -928,8 +1024,17 @@
             const btnTopicTarama = document.getElementById("btn-start-topic-tarama");
 
             if(sortedWorst.length === 0) {
-                worstBox.innerHTML = `<p class="text-xs text-slate-500 italic py-8 text-center w-full">Kayıtlı hatalı soru bulunmuyor.</p>`;
-                adviceText.textContent = "Harika gidiyorsun Furkan! Şu an için zayıf olduğun bir konu tespit edilmedi. Portalda soru çözmeye devam ederek gelişimini sürdürebilirsin.";
+                if (worstTbody) worstTbody.innerHTML = `
+                    <tr class="border-b border-slate-800 text-[10px]">
+                        <td colspan="5" class="py-6 text-center text-slate-500 italic">Kayıtlı hatalı soru bulunmuyor. Harika durumdasın!</td>
+                    </tr>`;
+                if (worstDiagnostics) worstDiagnostics.innerHTML = `
+                    <p class="text-xs text-slate-500 italic text-center py-6">Kritik bir zayıf konu tespit edilmedi.</p>`;
+                if (svgErrorDensity) svgErrorDensity.innerHTML = `
+                    <circle cx="110" cy="65" r="30" fill="#1e293b" opacity="0.3" />
+                    <text x="110" y="68" fill="#475569" font-size="8" text-anchor="middle" font-family="sans-serif">VERİ YOK</text>`;
+                
+                adviceText.innerHTML = "Harika gidiyorsun Furkan! Şu an için zayıf olduğun bir konu tespit edilmedi. Portalda soru çözmeye devam ederek gelişimini sürdürebilirsin.";
                 if (btnTarama) btnTarama.classList.add("opacity-40", "pointer-events-none");
                 if (btnTopicTarama) btnTopicTarama.classList.add("opacity-40", "pointer-events-none");
                 return;
@@ -937,26 +1042,235 @@
             
             if (btnTarama) btnTarama.classList.remove("opacity-40", "pointer-events-none");
             if (btnTopicTarama) btnTopicTarama.classList.remove("opacity-40", "pointer-events-none");
-            
-            let maxErrorsForTag = hiyerarşi[sortedWorst[0]];
 
-            sortedWorst.forEach(tag => {
+            const worst4 = sortedWorst.slice(0, 4);
+            const maxErrorsForTag = hiyerarşi[sortedWorst[0]];
+
+            // CROSS-INTEGRATION ADVİCE MAPPING (TAG TO COĞRAFYA MAP THEME)
+            const tagToMapThemeMap = {
+                "deprem": "deprem", "fay": "deprem", "tektonik": "deprem", "sismik": "deprem",
+                "karst": "karstik", "plato": "karstik", "obruk": "karstik", "kalker": "karstik", "jips": "karstik", "mağara": "karstik",
+                "delta": "delta", "akarsu": "delta", "nehir": "delta", "alüvyal": "delta",
+                "kıyı": "kıyı", "dalmaçya": "kıyı", "ria": "kıyı", "tombolo": "kıyı", "falez": "kıyı", "enine": "kıyı", "boyuna": "kıyı",
+                "nüfus": "nüfus", "göç": "nüfus", "yerleşme": "nüfus", "tenha": "nüfus", "yoğun": "nüfus",
+                "yağış": "iklim", "iklim": "iklim", "sıcaklık": "iklim", "rüzgar": "iklim", "nem": "iklim",
+                "toprak": "toprak", "terra rossa": "toprak", "vertisol": "toprak", "podzol": "toprak", "çernezyom": "toprak",
+                "maden": "maden", "enerji": "maden", "petrol": "maden", "kömür": "maden", "termik": "maden", "jeotermal": "maden", "bakır": "maden", "demir": "maden",
+                "sanayi": "sanayi", "endüstri": "sanayi", "ticaret": "sanayi", "fabrika": "sanayi", "liman": "sanayi",
+                "afet": "afet", "heyelan": "afet", "yangın": "afet", "çığ": "afet", "erozyon": "afet", "sel": "afet"
+            };
+
+            const themeTitles = {
+                "deprem": "DEPREM & FAY",
+                "karstik": "KARSTİK & PLATO",
+                "delta": "DELTA & AKARSU",
+                "kıyı": "KIYI & TOMBOLO",
+                "nüfus": "NÜFUS DAĞILIMI",
+                "iklim": "YAĞIŞ & İKLİM",
+                "toprak": "TOPRAK TİPLERİ",
+                "maden": "MADEN & ENERJİ",
+                "sanayi": "SANAYİ MERKEZİ",
+                "afet": "DOĞAL AFETLER"
+            };
+
+            // 1. TABLOYU DOLDURMA
+            worstTbody.innerHTML = "";
+            worst4.forEach(tag => {
                 let errCount = hiyerarşi[tag];
-                let barWidth = Math.round((errCount / maxErrorsForTag) * 100);
-                worstBox.innerHTML += `
-                    <div class="p-3 bg-slate-950/60 rounded-xl border border-slate-800 space-y-2">
-                        <div class="flex justify-between items-center text-xs">
-                            <span class="font-bold text-slate-300">${tag}</span>
-                            <span class="text-rose-400 font-bold bg-rose-950/30 px-2 py-0.5 rounded border border-rose-900/40">${errCount} Hata</span>
-                        </div>
-                        <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden border border-slate-850">
-                            <div class="bg-rose-500 h-full" style="width: ${barWidth}%"></div>
-                        </div>
-                    </div>`;
+                let matchedItem = kpssNotebook.find(n => n.tag === tag);
+                let unitLabel = matchedItem ? matchedItem.unit : "Genel Kazanım";
+
+                // Tehdit Rozeti Belirleme
+                let badgeHtml = "";
+                if (errCount >= 4) {
+                    badgeHtml = `<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[8px] font-black tracking-wide border bg-rose-950/45 text-rose-400 border-rose-900/60 whitespace-nowrap"><i class="fa-solid fa-skull-crossbones text-rose-500 animate-pulse"></i> KRİTİK</span>`;
+                } else if (errCount === 3) {
+                    badgeHtml = `<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[8px] font-black tracking-wide border bg-orange-950/45 text-orange-400 border-orange-900/60 whitespace-nowrap"><i class="fa-solid fa-triangle-exclamation text-orange-500"></i> YÜKSEK</span>`;
+                } else if (errCount === 2) {
+                    badgeHtml = `<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[8px] font-black tracking-wide border bg-amber-950/45 text-amber-400 border-amber-900/60 whitespace-nowrap"><i class="fa-solid fa-circle-exclamation text-amber-500"></i> ORTA</span>`;
+                } else {
+                    badgeHtml = `<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[8px] font-black tracking-wide border bg-yellow-950/45 text-yellow-400 border-yellow-900/60 whitespace-nowrap"><i class="fa-solid fa-circle-info text-yellow-500"></i> HAFİF</span>`;
+                }
+
+                // Akademik Reçete Belirleme
+                let prescription = "";
+                let mapThemeMatch = null;
+                let lowerTag = tag.toLowerCase();
+                for (let key in tagToMapThemeMap) {
+                    if (lowerTag.includes(key)) {
+                        mapThemeMatch = tagToMapThemeMap[key];
+                        break;
+                    }
+                }
+
+                if (mapThemeMatch && currentLesson === 'cografya') {
+                    prescription = `Harita Atlası'nda <b class="text-amber-400 font-bold">${themeTitles[mapThemeMatch]}</b> temasını açıp 20 sıcak noktayı detaylıca ezberleyin.`;
+                } else if (currentLesson === 'tarih') {
+                    prescription = `<b>Konu Anlatım Kitapçığı</b>'ndan ilgili ünitenin detaylarını 2 kez okuyup flash kartları sesli dinleyin.`;
+                } else {
+                    prescription = `AI Soru Bankasından bu konuya özel 15 soru çözüp hata defterini temizleyin.`;
+                }
+
+                worstTbody.innerHTML += `
+                    <tr class="hover:bg-slate-950/45 transition-colors border-b border-slate-850/80">
+                        <td class="py-2 px-3 font-bold text-slate-200">${tag}</td>
+                        <td class="py-2 px-3 text-slate-400">${unitLabel}</td>
+                        <td class="py-2 px-3 text-center font-mono font-bold text-slate-300 bg-slate-950/30">${errCount} Hata</td>
+                        <td class="py-2 px-3 text-center">${badgeHtml}</td>
+                        <td class="py-2 px-3 text-[10px] text-slate-400 leading-normal">${prescription}</td>
+                    </tr>`;
             });
+
+            // 2. DETAYLI AI TEŞHİS YORUMLARI
+            let diagnosticsHtml = "";
             
-            adviceText.textContent = `Furkan, analizlerime göre en çok takıldığın alan ${sortedWorst[0]} konusu (${maxErrorsForTag} hatalı soru). Sana tavsiyem, "Zayıf Konulardan Yeni Sorularla Tarama" başlatarak eksiklerini gidermendir. Doğru bildiğin sorular otomatik olarak defterden temizlenecektir!`;
-        }
+            // Genel Durum Teşhisi
+            if (totalErrors > 15) {
+                diagnosticsHtml += `
+                    <div class="space-y-1">
+                        <p class="text-rose-400 font-black flex items-center gap-1.5 text-[11px]"><i class="fa-solid fa-triangle-exclamation text-rose-500 animate-pulse"></i> HATA YOĞUNLUK ALARMI!</p>
+                        <p class="text-slate-400">Hata Defterinde <b class="text-white font-mono">${totalErrors}</b> hatalı soru birikmiş durumda. Bu yoğunluk, konu temellerinde bazı kavramsal boşluklar olduğunu gösteriyor. Yeni test çözmek yerine öncelikle hataları eritmeye vermelisiniz.</p>
+                    </div>`;
+            } else if (totalErrors > 5) {
+                diagnosticsHtml += `
+                    <div class="space-y-1">
+                        <p class="text-amber-400 font-black flex items-center gap-1.5 text-[11px]"><i class="fa-solid fa-circle-info text-amber-500"></i> KONTROLLÜ HATA DÜZEYİ</p>
+                        <p class="text-slate-400">Defterinizde <b class="text-white font-mono">${totalErrors}</b> aktif hata bulunmaktadır. Genel durumunuz stabil olsa da aşağıda listelenen kritik etiketlerde kronikleşen hata eğilimleri görüyorum. Küçük bir odaklanma açığınızı kapatacaktır.</p>
+                    </div>`;
+            } else {
+                diagnosticsHtml += `
+                    <div class="space-y-1">
+                        <p class="text-emerald-400 font-black flex items-center gap-1.5 text-[11px]"><i class="fa-solid fa-circle-check text-emerald-500"></i> ÜSTÜN AKADEMİK PERFORMANS</p>
+                        <p class="text-slate-400">Hata Defteriniz son derece temiz (yalnızca <b class="text-white font-mono">${totalErrors}</b> hata). Hatalarınız muhtemelen münferit dikkatsizliklerden kaynaklanmaktadır. Aşağıdaki noktaları hafifçe gözden geçirmeniz tam mükemmellik için yeterlidir.</p>
+                    </div>`;
+            }
+
+            // Baş Tehdit Analizi
+            const worstTag = worst4[0];
+            const worstCount = hiyerarşi[worstTag];
+            diagnosticsHtml += `
+                <div class="space-y-1 pt-2.5 border-t border-slate-800/60">
+                    <p class="text-indigo-300 font-black flex items-center gap-1.5"><i class="fa-solid fa-brain text-indigo-400 animate-pulse"></i> BAŞ TEHDİT ANALİZİ: ${worstTag}</p>
+                    <p class="text-slate-400">Şu ana kadar en çok zorlandığınız konu <b>${worstTag}</b> kazanımıdır (${worstCount} Hata). ÖSYM'nin her yıl mutlaka eleyici soru çıkardığı bu konuda, yanlış yapma riskinizi sıfırlamak için reçeteyi harfiyen uygulayın.</p>
+                </div>`;
+
+            // 3 Adımlı Aksiyon Reçetesi
+            diagnosticsHtml += `
+                <div class="space-y-1 pt-2.5 border-t border-slate-800/60">
+                    <p class="text-emerald-400 font-black flex items-center gap-1.5"><i class="fa-solid fa-clipboard-list text-emerald-500"></i> 3 ADIMLI AKSİYON PLANI</p>
+                    <ol class="list-decimal list-inside space-y-0.5 text-slate-400">
+                        <li>Zayıf konulardan AI tarama testi başlatın.</li>
+                        <li>Coğrafya ise Harita Atlası görsel modüllerine tıklayın; Tarih ise Flaş Kartları sesli dinleyin.</li>
+                        <li>Hata Defteri doluluk oranını %10'un altına indirmeyi hedefleyin.</li>
+                    </ol>
+                </div>`;
+
+            if (worstDiagnostics) worstDiagnostics.innerHTML = diagnosticsHtml;
+
+            // 3. DİNAMİK NEON SVG YOĞUNLUK SİNAPSLARI GRAFİĞİ
+            if (svgErrorDensity) {
+                // Glow filtresi ve degrade tanımları
+                let svgHtml = `
+                    <defs>
+                        <filter id="svgGlow" x="-30%" y="-30%" width="160%" height="160%">
+                            <feGaussianBlur stdDeviation="3.5" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                        <radialGradient id="gradWorstRed" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#fda4af" />
+                            <stop offset="60%" stop-color="#f43f5e" />
+                            <stop offset="100%" stop-color="#9f1239" />
+                        </radialGradient>
+                        <radialGradient id="gradWorstOrange" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#fed7aa" />
+                            <stop offset="60%" stop-color="#fb923c" />
+                            <stop offset="100%" stop-color="#c2410c" />
+                        </radialGradient>
+                        <radialGradient id="gradWorstAmber" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#fde68a" />
+                            <stop offset="60%" stop-color="#fbbf24" />
+                            <stop offset="100%" stop-color="#b45309" />
+                        </radialGradient>
+                        <radialGradient id="gradWorstYellow" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#fef08a" />
+                            <stop offset="60%" stop-color="#fde047" />
+                            <stop offset="100%" stop-color="#a16207" />
+                        </radialGradient>
+                    </defs>
+                `;
+
+                // Tehdit halkaları arka planı (Dairesel radar çizgileri)
+                svgHtml += `
+                    <!-- Radar rings -->
+                    <circle cx="110" cy="65" r="22" stroke="#475569" stroke-width="0.8" stroke-dasharray="3,3" fill="none" opacity="0.25" />
+                    <circle cx="110" cy="65" r="48" stroke="#334155" stroke-width="0.8" stroke-dasharray="3,3" fill="none" opacity="0.25" />
+                    <circle cx="110" cy="65" r="74" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="3,3" fill="none" opacity="0.25" />
+                `;
+
+                // Baloncuk koordinatları (Top 4 için)
+                const coords = [
+                    { x: 75, y: 48 },
+                    { x: 145, y: 42 },
+                    { x: 120, y: 92 },
+                    { x: 55, y: 88 }
+                ];
+                
+                // Sinaps bağlantıları çizimi (Aralarındaki cognitive ağ çizgileri)
+                const activeCoords = coords.slice(0, worst4.length);
+                for (let i = 0; i < activeCoords.length; i++) {
+                    for (let j = i + 1; j < activeCoords.length; j++) {
+                        svgHtml += `<line x1="${activeCoords[i].x}" y1="${activeCoords[i].y}" x2="${activeCoords[j].x}" y2="${activeCoords[j].y}" stroke="#6366f1" stroke-width="0.8" stroke-dasharray="2,2" opacity="0.4" />`;
+                    }
+                }
+
+                // Baloncuklar ve Yazı Etiketleri
+                const gradNames = ["gradWorstRed", "gradWorstOrange", "gradWorstAmber", "gradWorstYellow"];
+                const textColors = ["#fda4af", "#fed7aa", "#fde68a", "#fef08a"];
+
+                worst4.forEach((tag, idx) => {
+                    let errCount = hiyerarşi[tag];
+                    let r = 9 + Math.min(10, errCount) * 2; // Hata sayısına göre dinamik boyut (11px ile 29px arası)
+                    let pos = coords[idx];
+                    let cleanName = tag.replace("#", "");
+                    let dispName = cleanName.length > 7 ? cleanName.substring(0, 7) + ".." : cleanName;
+
+                    svgHtml += `
+                        <g class="hover:opacity-90 cursor-pointer transition-opacity duration-300">
+                            <!-- Glow Daire (Dış Işıma) -->
+                            <circle cx="${pos.x}" cy="${pos.y}" r="${r}" fill="url(#${gradNames[idx]})" opacity="0.3" filter="url(#svgGlow)" />
+                            <!-- Ana Daire -->
+                            <circle cx="${pos.x}" cy="${pos.y}" r="${r}" fill="url(#${gradNames[idx]})" stroke="#0f172a" stroke-width="1.5" />
+                            <!-- Hata Sayısı (Daire içinde) -->
+                            <text x="${pos.x}" y="${pos.y + 3}" fill="#0f172a" font-size="9" font-weight="950" font-family="monospace" text-anchor="middle">${errCount}</text>
+                            <!-- Etiket Adı (Daire üstünde) -->
+                            <text x="${pos.x}" y="${pos.y - r - 4}" fill="${textColors[idx]}" font-size="7.5" font-weight="950" font-family="sans-serif" text-anchor="middle" letter-spacing="0.5">${dispName.toUpperCase()}</text>
+                        </g>
+                    `;
+                });
+
+                svgErrorDensity.innerHTML = svgHtml;
+            }
+
+            // CROSS-INTEGRATION ADVICE TEXT SETTING
+            let mapThemeMatch = null;
+            let lowerTag = worst4[0].toLowerCase();
+            for (let key in tagToMapThemeMap) {
+                if (lowerTag.includes(key)) {
+                    mapThemeMatch = tagToMapThemeMap[key];
+                    break;
+                }
+            }
+
+            let mapRecommendation = "";
+            if (mapThemeMatch && currentLesson === 'cografya') {
+                mapRecommendation = `<div class="mt-2.5 pt-2 border-t border-slate-800/80 text-[10px] text-slate-400 font-semibold leading-relaxed">
+                    <span class="text-amber-400 font-bold block mb-1 animate-pulse"><i class="fa-solid fa-map-location-dot"></i> AI Harita Tavsiyesi:</span>
+                    Hata yaptığın <b>"${worst4[0]}"</b> konusu doğrudan <b>Harita Atlası</b> ile bağlantılıdır! Harita Atlası'na giderek <b>"${themeTitles[mapThemeMatch]}"</b> katmanını interaktif olarak çalışmanı öneririm.
+                </div>`;
+            }
+            
+            adviceText.innerHTML = `Furkan, analizlerime göre en çok takıldığın alan <b>${worst4[0]}</b> konusu (${hiyerarşi[worst4[0]]} hatalı soru). Sana tavsiyem, "Zayıf Konulardan Yeni Sorularla Tarama" başlatarak eksiklerini gidermendir. Doğru bildiğin sorular otomatik olarak defterden temizlenecektir! ${mapRecommendation}`;
+        } 
 
         function startReviewTaramaTest() {
             if ('speechSynthesis' in window) window.speechSynthesis.cancel();
@@ -1427,18 +1741,18 @@
             switchMapTheme('deprem');
         }
 
-        function switchMapTheme(theme) {
+                function switchMapTheme(theme) {
             currentMapTheme = theme;
             
-            // Update button styles
-            const themes = ['deprem', 'karstik', 'delta', 'kıyı', 'nüfus'];
+            // Update button styles for all 10 themes
+            const themes = ['deprem', 'karstik', 'delta', 'kıyı', 'nüfus', 'iklim', 'toprak', 'maden', 'sanayi', 'afet'];
             themes.forEach(t => {
                 const btn = document.getElementById(`btn-theme-${t}`);
                 if (btn) {
                     if (t === theme) {
-                        btn.className = "flex-1 text-[10px] sm:text-xs font-black py-2 px-3 rounded-lg bg-emerald-500 text-slate-950 shadow-sm cursor-pointer transition-all";
+                        btn.className = "flex items-center justify-center gap-1.5 text-[9px] sm:text-xs font-black py-2.5 px-2 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 shadow-lg cursor-pointer transition-all hover:scale-102";
                     } else {
-                        btn.className = "flex-1 text-[10px] sm:text-xs font-black py-2 px-3 rounded-lg text-slate-400 hover:text-slate-200 cursor-pointer transition-all";
+                        btn.className = "flex items-center justify-center gap-1.5 text-[9px] sm:text-xs font-black py-2.5 px-2 rounded-lg bg-slate-950/60 border border-slate-800 text-slate-400 hover:text-slate-200 cursor-pointer transition-all hover:scale-102";
                     }
                 }
             });
@@ -1458,113 +1772,423 @@
                 if(baf) baf.style.opacity = "0";
             }
 
+            // Visually update hotspot markers' colors and styles dynamically
+            const mapContainer = document.getElementById("box-turkey-map");
+            if (mapContainer) {
+                const circles = mapContainer.querySelectorAll("circle");
+                circles.forEach(circle => {
+                    const clickAttr = circle.getAttribute("onclick");
+                    if (clickAttr) {
+                        const match = clickAttr.match(/'([^']+)'/);
+                        if (match && match[1]) {
+                            const key = match[1];
+                            const detail = mapHotspotDetails[key];
+                            if (detail && detail.colors && detail.colors[theme]) {
+                                circle.setAttribute("fill", detail.colors[theme]);
+                                circle.setAttribute("r", "7.5");
+                                circle.setAttribute("stroke", "#ffffff");
+                                circle.setAttribute("stroke-width", "1.5");
+                                circle.style.transition = "all 0.4s ease";
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Render the Dynamic Legend
+            renderMapLegend(theme);
+
             // Reset info box
             const infoBox = document.getElementById("map-info-box");
             if (infoBox) {
                 infoBox.innerHTML = `
                     <div class="text-center py-16 text-slate-500 italic text-xs animate-fadeIn">
                         <i class="fa-solid fa-hand-pointer text-slate-700 text-3xl mb-2 block"></i>
-                        Haritada seçilen <b>${theme.toUpperCase()}</b> katmanına göre turuncu sıcak noktalardan birine tıklayıp detayları yükleyin.
+                        Haritada seçilen <b>${theme.toUpperCase()}</b> katmanına göre dinamik renkli sıcak noktalardan birine tıklayıp ders notlarını ve ÖSYM çıkmış analizlerini yükleyin.
                     </div>`;
             }
         }
 
-        const mapHotspotDetails = {
+        function renderMapLegend(theme) {
+            const legendEl = document.getElementById("map-legend-panel");
+            if (!legendEl) return;
+            
+            let html = "";
+            if (theme === 'deprem') {
+                html = `
+                    <div class="flex items-center justify-between gap-2 flex-wrap text-[10px] w-full mt-2 pt-2 border-t border-slate-800/80">
+                        <span class="text-slate-400 font-bold flex items-center gap-1"><i class="fa-solid fa-circle-info text-indigo-400"></i> LEJANT:</span>
+                        <span class="flex items-center gap-1 font-semibold text-rose-400"><span class="w-2 h-2 rounded-full bg-[#ef4444] inline-block shadow-sm"></span> Yüksek Risk (Kırık Fay Hattı)</span>
+                        <span class="flex items-center gap-1 font-semibold text-amber-400"><span class="w-2 h-2 rounded-full bg-[#f59e0b] inline-block shadow-sm"></span> Orta Risk Kuşağı</span>
+                        <span class="flex items-center gap-1 font-semibold text-emerald-400"><span class="w-2 h-2 rounded-full bg-[#10b981] inline-block shadow-sm"></span> En Güvenli (Masif Araziler)</span>
+                    </div>
+                `;
+            } else if (theme === 'karstik') {
+                html = `
+                    <div class="flex items-center justify-between gap-2 flex-wrap text-[10px] w-full mt-2 pt-2 border-t border-slate-800/80">
+                        <span class="text-slate-400 font-bold flex items-center gap-1"><i class="fa-solid fa-circle-info text-indigo-400"></i> LEJANT:</span>
+                        <span class="flex items-center gap-1 font-semibold text-blue-400"><span class="w-2 h-2 rounded-full bg-[#3b82f6] inline-block shadow-sm"></span> Kalkerli Karst Platosu</span>
+                        <span class="flex items-center gap-1 font-semibold text-indigo-400"><span class="w-2 h-2 rounded-full bg-[#4f46e5] inline-block shadow-sm"></span> Jips / Obruk Karstı</span>
+                        <span class="flex items-center gap-1 font-semibold text-slate-500"><span class="w-2 h-2 rounded-full bg-[#94a3b8] inline-block shadow-sm"></span> Karstik Olmayan / Volkanik</span>
+                    </div>
+                `;
+            } else if (theme === 'delta') {
+                html = `
+                    <div class="flex items-center justify-between gap-2 flex-wrap text-[10px] w-full mt-2 pt-2 border-t border-slate-800/80">
+                        <span class="text-slate-400 font-bold flex items-center gap-1"><i class="fa-solid fa-circle-info text-indigo-400"></i> LEJANT:</span>
+                        <span class="flex items-center gap-1 font-semibold text-emerald-400"><span class="w-2 h-2 rounded-full bg-[#059669] inline-block shadow-sm"></span> Aktif Delta Ovası</span>
+                        <span class="flex items-center gap-1 font-semibold text-rose-400"><span class="w-2 h-2 rounded-full bg-[#f43f5e] inline-block shadow-sm"></span> Delta Yok / Falezli Kıyı</span>
+                        <span class="flex items-center gap-1 font-semibold text-slate-500"><span class="w-2 h-2 rounded-full bg-[#94a3b8] inline-block shadow-sm"></span> İç Kesim / Karasal Ova</span>
+                    </div>
+                `;
+            } else if (theme === 'kıyı') {
+                html = `
+                    <div class="flex items-center justify-between gap-2 flex-wrap text-[10px] w-full mt-2 pt-2 border-t border-slate-800/80">
+                        <span class="text-slate-400 font-bold flex items-center gap-1"><i class="fa-solid fa-circle-info text-indigo-400"></i> LEJANT:</span>
+                        <span class="flex items-center gap-1 font-semibold text-purple-400"><span class="w-2 h-2 rounded-full bg-[#8b5cf6] inline-block shadow-sm"></span> Boyuna Kıyı / Ria</span>
+                        <span class="flex items-center gap-1 font-semibold text-amber-400"><span class="w-2 h-2 rounded-full bg-[#f59e0b] inline-block shadow-sm"></span> Tombolo (Körfez Limanı)</span>
+                        <span class="flex items-center gap-1 font-semibold text-pink-400"><span class="w-2 h-2 rounded-full bg-[#ec4899] inline-block shadow-sm"></span> Enine Kıyı (Girintili Ege)</span>
+                        <span class="flex items-center gap-1 font-semibold text-indigo-400"><span class="w-2 h-2 rounded-full bg-[#6366f1] inline-block shadow-sm"></span> Dalmaçya Kıyı (Kaş)</span>
+                    </div>
+                `;
+            } else if (theme === 'nüfus') {
+                html = `
+                    <div class="flex items-center justify-between gap-2 flex-wrap text-[10px] w-full mt-2 pt-2 border-t border-slate-800/80">
+                        <span class="text-slate-400 font-bold flex items-center gap-1"><i class="fa-solid fa-circle-info text-indigo-400"></i> LEJANT:</span>
+                        <span class="flex items-center gap-1 font-semibold text-emerald-400"><span class="w-2 h-2 rounded-full bg-[#059669] inline-block shadow-sm"></span> Yoğun Nüfus (Sanayi/Liman)</span>
+                        <span class="flex items-center gap-1 font-semibold text-orange-400"><span class="w-2 h-2 rounded-full bg-[#f97316] inline-block shadow-sm"></span> Seyrek Nüfus (Sarp/Karstik)</span>
+                        <span class="flex items-center gap-1 font-semibold text-rose-500"><span class="w-2 h-2 rounded-full bg-[#ef4444] inline-block shadow-sm"></span> En Tenha (Ekstrem Coğrafya)</span>
+                    </div>
+                `;
+            } else if (theme === 'iklim') {
+                html = `
+                    <div class="flex items-center justify-between gap-2 flex-wrap text-[10px] w-full mt-2 pt-2 border-t border-slate-800/80">
+                        <span class="text-slate-400 font-bold flex items-center gap-1"><i class="fa-solid fa-circle-info text-indigo-400"></i> LEJANT:</span>
+                        <span class="flex items-center gap-1 font-semibold text-sky-400"><span class="w-2 h-2 rounded-full bg-[#0284c7] inline-block shadow-sm"></span> Aşırı Nemli & Çok Yağışlı</span>
+                        <span class="flex items-center gap-1 font-semibold text-amber-500"><span class="w-2 h-2 rounded-full bg-[#d97706] inline-block shadow-sm"></span> Kurak Step / Buharlaşma Yüksek</span>
+                        <span class="flex items-center gap-1 font-semibold text-purple-400"><span class="w-2 h-2 rounded-full bg-[#4f46e5] inline-block shadow-sm"></span> Sert Karasal (Karlı Kış)</span>
+                    </div>
+                `;
+            } else if (theme === 'toprak') {
+                html = `
+                    <div class="flex items-center justify-between gap-2 flex-wrap text-[10px] w-full mt-2 pt-2 border-t border-slate-800/80">
+                        <span class="text-slate-400 font-bold flex items-center gap-1"><i class="fa-solid fa-circle-info text-indigo-400"></i> LEJANT:</span>
+                        <span class="flex items-center gap-1 font-semibold text-red-500"><span class="w-2 h-2 rounded-full bg-[#b91c1c] inline-block shadow-sm"></span> Terra Rossa</span>
+                        <span class="flex items-center gap-1 font-semibold text-green-600"><span class="w-2 h-2 rounded-full bg-[#15803d] inline-block shadow-sm"></span> Kahverengi Orman</span>
+                        <span class="flex items-center gap-1 font-semibold text-teal-600"><span class="w-2 h-2 rounded-full bg-[#0d9488] inline-block shadow-sm"></span> Alüvyal</span>
+                        <span class="flex items-center gap-1 font-semibold text-orange-600"><span class="w-2 h-2 rounded-full bg-[#b45309] inline-block shadow-sm"></span> Bozkır Toprağı</span>
+                        <span class="flex items-center gap-1 font-semibold text-slate-800"><span class="w-2 h-2 rounded-full bg-[#1e293b] inline-block shadow-sm"></span> Çernezyom (Kara Toprak)</span>
+                    </div>
+                `;
+            } else if (theme === 'maden') {
+                html = `
+                    <div class="flex items-center justify-between gap-2 flex-wrap text-[10px] w-full mt-2 pt-2 border-t border-slate-800/80">
+                        <span class="text-slate-400 font-bold flex items-center gap-1"><i class="fa-solid fa-circle-info text-indigo-400"></i> LEJANT:</span>
+                        <span class="flex items-center gap-1 font-semibold text-yellow-400"><span class="w-2 h-2 rounded-full bg-[#eab308] inline-block shadow-sm"></span> Stratejik Rezervler / Enerji</span>
+                        <span class="flex items-center gap-1 font-semibold text-slate-500"><span class="w-2 h-2 rounded-full bg-[#94a3b8] inline-block shadow-sm"></span> Düşük Rezervli Yerel Sahalar</span>
+                    </div>
+                `;
+            } else if (theme === 'sanayi') {
+                html = `
+                    <div class="flex items-center justify-between gap-2 flex-wrap text-[10px] w-full mt-2 pt-2 border-t border-slate-800/80">
+                        <span class="text-slate-400 font-bold flex items-center gap-1"><i class="fa-solid fa-circle-info text-indigo-400"></i> LEJANT:</span>
+                        <span class="flex items-center gap-1 font-semibold text-indigo-400"><span class="w-2 h-2 rounded-full bg-[#4f46e5] inline-block shadow-sm"></span> Sanayi Devleri (Ağır Metalurji)</span>
+                        <span class="flex items-center gap-1 font-semibold text-slate-500"><span class="w-2 h-2 rounded-full bg-[#94a3b8] inline-block shadow-sm"></span> Tarım, Orman ve Hayvancılık</span>
+                    </div>
+                `;
+            } else if (theme === 'afet') {
+                html = `
+                    <div class="flex items-center justify-between gap-2 flex-wrap text-[10px] w-full mt-2 pt-2 border-t border-slate-800/80">
+                        <span class="text-slate-400 font-bold flex items-center gap-1"><i class="fa-solid fa-circle-info text-indigo-400"></i> LEJANT:</span>
+                        <span class="flex items-center gap-1 font-semibold text-rose-500"><span class="w-2 h-2 rounded-full bg-[#e11d48] inline-block shadow-sm"></span> Heyelan / Yangın / Çığ / Sel</span>
+                        <span class="flex items-center gap-1 font-semibold text-emerald-500"><span class="w-2 h-2 rounded-full bg-[#10b981] inline-block shadow-sm"></span> Güvenli (Afet Riski Düşük)</span>
+                    </div>
+                `;
+            }
+            
+            legendEl.innerHTML = html;
+        }
+
+                const mapHotspotDetails = {
             "teke": {
                 "name": "Teke Yöresi (Antalya)",
-                "deprem": "<b>⚠️ Teke Yöresi Deprem Durumu:</b> BAF veya KAF aktif levha sınırlarının uzağındadır. Tektonik deprem riski düşüktür. Ancak kalker arazilerde yeraltı mağaralarının çökmesiyle oluşan yerel <b>Çöküntü Depremleri (Karstik Depremler)</b> görülebilir.",
-                "karstik": "<b>⚠️ Karstik Şekiller & Platolar:</b> Kalker (kireçtaşı) kayaçlarının en yaygın olduğu karstik aşınım platosudur. Lapya, dolin, polye gibi karstik erime şekilleri zirvededir. Sarp ve susuz arazi kıl keçisi yetiştiriciliğinin merkezidir.",
-                "delta": "<b>⚠️ Delta Oluşumu:</b> Dağlar kıyıya çok yakın ve paralel uzanır. Kıta sahanlığı son derece dar ve kıyı derin olduğundan akarsular delta ovası <b>oluşturamaz</b>.",
-                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Dağların kıyıya paralel uzandığı yüksek dikliklerde <b>Boyuna kıyı tipi</b> görülür. Dalga aşındırmasının gücüyle **falez (yalıyar)** oluşumu Karadeniz ile birlikte en fazla buradadır.",
-                "nüfus": "<b>⚠️ Nüfus ve Yerleşim:</b> Aşırı karstik engebelilik, verimli tarım topraklarının darlığı ve kireçli arazide suyun dibe sızarak yüzeyde su kıtlığı oluşturması nedeniyle <b>Türkiye'nin en tenha yörelerinden biridir</b>."
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> Tektonik sarsıntı riski düşüktür ancak kalkerli arazide tünel/mağara çökmeleriyle oluşan Karstik Depremler görülebilir.",
+                "karstik": "<b>⚠️ Karstik Morfoloji:</b> Kalker (kireçtaşı) aşınım platosudur. Lapya, dolin, uvala, polye (kestel, elmalı) ve mağaralar en yaygındır.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Dağlar kıyıdan duvar gibi yükseldiğinden kıta sahanlığı dardır; delta ovası bulunmaz.",
+                "kıyı": "<b>⚠️ Kıyı Tipi:</b> Boyuna kıyı tipi hâkimdir. Dalga aşındırmasıyla devasa Falezler (Yalıyarlar) oluşmuştur.",
+                "nüfus": "<b>⚠️ Nüfus ve Yerleşim:</b> Karstik engebe, susuzluk ve sarp arazi sebebiyle Türkiye'nin en tenha yerlerindendir.",
+                "iklim": "<b>⚠️ İklim ve Yağış:</b> Akdeniz iklimidir. Cephesel (frontal) yağışlar kışın yoğundur. Yaz kuraklığı belirgindir.",
+                "toprak": "<b>⚠️ Toprak Tipi:</b> Kalker üzerinde gelişen demir oksit zengini kırmızı renkli <b>Terra Rossa</b> toprakları yaygındır.",
+                "maden": "<b>⚠️ Maden & Enerji:</b> Belirgin büyük bir maden veya enerji üretim tesisi bulunmaz.",
+                "sanayi": "<b>⚠️ Sanayi & Ticaret:</b> Sarp arazi ve ulaşım zorluğu sebebiyle sanayi gelişmemiştir. Turizm ve kıl keçisi besiciliği yaygındır.",
+                "afet": "<b>⚠️ Doğal Afetler:</b> Yaz kuraklığı ve kızılçam ormanları nedeniyle <b>Orman Yangını</b> ve karstik <b>Göçük</b> riskleri yaygındır.",
+                "colors": {"deprem":"#10b981","karstik":"#3b82f6","delta":"#f43f5e","kıyı":"#8b5cf6","nüfus":"#f97316","iklim":"#f59e0b","toprak":"#b91c1c","maden":"#94a3b8","sanayi":"#94a3b8","afet":"#e11d48"}
             },
             "taseli": {
                 "name": "Taşeli Platosu (Mersin-Antalya)",
-                "deprem": "<b>⚠️ Taşeli Yöresi Deprem Durumu:</b> Türkiye'nin deprem tehlikesinin en düşük olduğu en kararlı, yaşlı masif arazilerinden biridir (Deprem Bölgesi 5. Derece).",
-                "karstik": "<b>⚠️ Karstik Şekiller & Platolar:</b> Teke platosu gibi saf kalker arazilerden oluşan aşınım platosudur. Obruk oluşumu (örn: Cennet-Cehennem obrukları) bu bölgenin en ünlü karstik morfolojisidir.",
-                "delta": "<b>⚠️ Delta Oluşumu:</b> Dağların hemen kıyıdan yükselmesi ve kıta sahanlığının dar olması sebebiyle Göksu nehri dışında geniş kıyı birikimi zorlaşmıştır.",
-                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Boyuna kıyı tipi hâkimdir. Yüksek kıyılar falezli morfolojiye sahiptir.",
-                "nüfus": "<b>⚠️ Nüfus ve Yerleşim:</b> İklim koşulları ılık Akdeniz iklimi olmasına rağmen, aşırı dağlık karstik engebeler ulaşımı zorlaştırmış ve yöreyi **tenha** bırakmıştır."
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> Türkiye'nin tektonik olarak en kararlı ova ve platolarındandır (Deprem Bölgesi 5. Derece).",
+                "karstik": "<b>⚠️ Karstik Morfoloji:</b> Aşınım düzlüğü karstik platosudur. Obruk oluşumu (Cennet-Cehennem) bu bölgenin en ünlü karstik yapısıdır.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Göksu nehrinin taşıdığı alüvyonlarla hemen doğusunda Silifke Deltası kurulmuştur ancak Taşeli dikliğinde delta bulunmaz.",
+                "kıyı": "<b>⚠️ Kıyı Tipi:</b> Boyuna kıyı tipi görülür, dik falezli ve girintisiz kıyı morfolojisi hâkimdir.",
+                "nüfus": "<b>⚠️ Nüfus ve Yerleşim:</b> İklim uygun olmasına rağmen aşırı karstik engebe ve ulaşım darlığından dolayı <b>nüfusu oldukça tenhadır</b>.",
+                "iklim": "<b>⚠️ İklim ve Yağış:</b> Akdeniz iklimi görülür ancak yüksek plato yapısından dolayı kışlar sahile göre serin ve karlı geçer.",
+                "toprak": "<b>⚠️ Toprak Tipi:</b> Kalker kayacı üzerinde gelişmiş kırmızı renkli verimsiz <b>Terra Rossa</b> toprakları hâkimdir.",
+                "maden": "<b>⚠️ Maden & Enerji:</b> Taşeli ve Karaman sınırı boyunca yerel boksit ve kireç taşı ocakları bulunur.",
+                "sanayi": "<b>⚠️ Sanayi & Ticaret:</b> Bölgede sanayi yatırımları yok denecek kadar azdır; halkın ana geçim kaynağı tarım ve hayvancılıktır.",
+                "afet": "<b>⚠️ Doğal Afetler:</b> Heyelan ve karstik obruk çökmeleri yerel ölçekte en yaygın görülen afetlerdendir.",
+                "colors": {"deprem":"#10b981","karstik":"#3b82f6","delta":"#f43f5e","kıyı":"#8b5cf6","nüfus":"#f97316","iklim":"#f59e0b","toprak":"#b91c1c","maden":"#94a3b8","sanayi":"#94a3b8","afet":"#ef4444"}
             },
             "cukurova": {
                 "name": "Çukurova Bölgesi (Adana)",
-                "deprem": "<b>⚠️ Deprem Riskleri:</b> DAF (Doğu Anadolu Fay Hattı) güney kollarına yakındır. Yumuşak ve gevşek alüvyal zemin yapısı deprem dalgalarının genliğini artırdığı için risk yüksektir.",
-                "karstik": "<b>⚠️ Karstik Yapı:</b> Tamamen alüvyal dolgu arazisi olduğu için karstik kayaçlar ve erime şekilleri görülmez. Geçirimsiz, verimli tarım toprakları hâkimdir.",
-                "delta": "<b>⚠️ Çukurova Delta Ovası:</b> Seyhan ve Ceyhan nehirlerinin taşıdığı alüvyonları sığ kıyıda biriktirmesiyle oluşan **Türkiye'nin en büyük delta ovasıdır**.",
-                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Sığ kıta sahanlığı nedeniyle geniş kumsallar ve alüvyal birikim kıyıları görülür. Kıta sahanlığı çok geniştir.",
-                "nüfus": "<b>⚠️ Nüfus ve Sanayi:</b> Son derece verimli tarım toprakları, tarıma dayalı sanayi kolları ve kavşak ulaşım yolları sayesinde Türkiye'nin **en yoğun nüfuslu ve en gelişmiş sanayi bölgelerindendir**."
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> DAF hattının güney uzantılarına yakındır. Gevşek alüvyal dolgu zemini deprem sarsıntısını büyüterek riski artırır.",
+                "karstik": "<b>⚠️ Karstik Yapı:</b> Akarsu birikim düzlüğü olduğu için karstik kayaçlar ve erime şekilleri görülmez.",
+                "delta": "<b>⚠️ Çukurova Delta Ovası:</b> Seyhan ve Ceyhan nehirlerinin taşıdığı alüvyonlarla oluşmuş <b>Türkiye'nin en büyük delta ovasıdır</b>.",
+                "kıyı": "<b>⚠️ Kıyı Tipi:</b> Kıta sahanlığı son derece geniş, alçak ve birikim tipi kumsal kıyıları hâkimdir.",
+                "nüfus": "<b>⚠️ Nüfus ve Sanayi:</b> Son derece verimli tarım toprakları ve gelişmiş sanayisi sayesinde <b>Türkiye'nin en yoğun nüfuslu yerlerindendir</b>.",
+                "iklim": "<b>⚠️ İklim ve Yağış:</b> Sıcak Akdeniz iklimidir. Kış yağışları yoğundur. Yaz mevsiminde bağıl nem oranı aşırı yüksek ve boğucudur.",
+                "toprak": "<b>⚠️ Toprak Tipi:</b> Akarsuların taşıp yığdığı organik madde yönünden zengin, en verimli taşınmış toprak olan <b>Alüvyal topraklar</b> hâkimdir.",
+                "maden": "<b>⚠️ Maden & Enerji:</b> Adana-Yumurtalık ve İskenderun hattı petrol boru hatlarının ve termik santrallerin kesişim noktasıdır.",
+                "sanayi": "<b>⚠️ Sanayi & Ticaret:</b> Dokuma, gıda, kimya ve tarıma dayalı sanayi kolları zirve seviyede gelişmiştir.",
+                "afet": "<b>⚠️ Doğal Afetler:</b> Düz arazi ve drenaj yetersizliği nedeniyle ani yağışlarda <b>Sel ve Taşkın</b> olayları sık yaşanır.",
+                "colors": {"deprem":"#ef4444","karstik":"#94a3b8","delta":"#059669","kıyı":"#f59e0b","nüfus":"#059669","iklim":"#f59e0b","toprak":"#0d9488","maden":"#eab308","sanayi":"#4f46e5","afet":"#e11d48"}
             },
             "dogu-karadeniz": {
                 "name": "Doğu Karadeniz (Rize-Artvin)",
-                "deprem": "<b>⚠️ Deprem Riskleri:</b> Kuzey Anadolu Fay Hattı'nın (KAF) kuzey kuşağında kalır. Kıyı şeridi deprem riski görece düşük masif bloklardandır.",
-                "karstik": "<b>⚠️ Karstik Yapı:</b> Bol yağışlı nemli iklim, karstik kimyasal erimeden ziyade **fiziki ve heyelan** aşındırmasını tetikler. Karstik şekiller görülmez.",
-                "delta": "<b>⚠️ Delta Oluşumu:</b> Kaçkar dağları hemen kıyıdan duvar gibi yükselir. Kıta sahanlığı aşırı dardır. Bu yüzden Karadeniz nehirleri alüvyon taşısa da kıyıda delta **oluşamaz**.",
-                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Dağların kıyıya tam paralel uzanmasından ötürü **Boyuna kıyı tipi** ve devasa **falezler** hâkimdir. Kıyı girintisi azdır, doğal liman bulunmaz.",
-                "nüfus": "<b>⚠️ Nüfus ve Yerleşim:</b> Engebeli ve yüksek dağlık arazisi nedeniyle iç kesimler tenha iken, nemli iklim ve balıkçılık nedeniyle nüfus tamamen **kıyı şeridine sıkışmış** ve yoğunlaşmıştır."
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> KAF hattının kuzey güvenli kuşağında yer alır. Türkiye genelinde deprem riski en düşük yörelerdendir.",
+                "karstik": "<b>⚠️ Karstik Yapı:</b> Nemli ve bol yağışlı kimyasal aşınım hâkim olsa da volkanik-kristalin kayaç yapısından ötürü karstik şekil görülmez.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Kaçkar dağları hemen kıyıdan yükseldiğinden kıta sahanlığı dardır; delta ovası <b>oluşamaz</b>.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Dağların kıyıya paralel uzandığı en net <b>Boyuna kıyı tipi</b> örneğidir. Doğal limanı yoktur, kıyı girintisi azdır.",
+                "nüfus": "<b>⚠️ Nüfus ve Yerleşim:</b> Sarp engebeli dağlık iç kesimler tenha iken, nemli iklim ve balıkçılık nedeniyle nüfus tamamen <b>kıyı şeridine sıkışmıştır</b>.",
+                "iklim": "<b>⚠️ Yağış ve İklim:</b> Her mevsim yağışlı Karadeniz iklimidir. <b>En çok yağışı Sonbaharda</b> alır. Yamaç (orografik) yağışları görülür.",
+                "toprak": "<b>⚠️ Toprak Tipi:</b> Aşırı yıkanmış, asitli ve kireçsiz <b>Kahverengi Orman toprakları</b> ile yükseklerde podzolik yapılar yaygındır.",
+                "maden": "<b>⚠️ Maden & Enerji:</b> Metalik madenler yönünden çok zengindir; <b>Artvin-Murgul bakır yatakları</b> Türkiye'nin can damarıdır.",
+                "sanayi": "<b>⚠️ Sanayi & Ticaret:</b> Çay ve fındık işleme sanayisi kıyıda yoğunlaşmıştır; iç kesimlerde sanayi gelişmemiştir.",
+                "afet": "<b>⚠️ Doğal Afetler:</b> Dik yamaçlar, killi toprak ve aşırı yağış birleşimiyle <b>Heyelan (Toprak Kayması)</b> riskinin en yüksek olduğu yöredir.",
+                "colors": {"deprem":"#10b981","karstik":"#94a3b8","delta":"#f43f5e","kıyı":"#8b5cf6","nüfus":"#f97316","iklim":"#0284c7","toprak":"#15803d","maden":"#eab308","sanayi":"#4f46e5","afet":"#e11d48"}
             },
             "sinop-inceburun": {
                 "name": "Sinop İnceburun Yöresi",
-                "deprem": "<b>⚠️ Deprem Riskleri:</b> KAF hattının kuzey güvenli kuşağındadır. Türkiye'nin tektonik olarak en kararlı, deprem tehlikesi en az olan masiflerinden biridir.",
-                "karstik": "<b>⚠️ Karstik Yapı:</b> Karstik erime kayaçları yaygın değildir, kumtaşı ve kil taşları hâkimdir.",
-                "delta": "<b>⚠️ Delta Oluşumu:</b> Dağların uzanış doğrultusundan dolayı Sinop kıyısında dar kıta sahanlığı nedeniyle delta oluşamamıştır.",
-                "kıyı": "<b>⚠️ Kıyı Tipleri & Tombolo:</b> Eski bir adanın kıyı oklarıyla ana karaya bağlanmasıyla oluşan <b>Türkiye'nin en net Tombolo (Bağlama Oku) örneğidir</b>. Sinop Limanı ise **Türkiye'nin tek doğal limanıdır**.",
-                "nüfus": "<b>⚠️ Nüfus ve Ulaşım:</b> Arkasındaki Küre dağlarının sarp yapısı iç kesimlerle ulaşımı engellediği için (hinterlandı dar) Sinop Limanı gelişememiş ve yöre **tenha** kalmıştır."
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> KAF zonunun kuzeyindeki kararlı bloktadır. Tektonik sarsıntı tehlikesi son derece azdır.",
+                "karstik": "<b>⚠️ Karstik Yapı:</b> Metamorfik araziler yaygındır; geniş karstik erime düzlükleri bulunmaz.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Küre dağlarının denize yakınlığı nedeniyle kıta sahanlığı dardır; delta ovası oluşamamıştır.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Eski bir adanın karaya bağlanmasıyla oluşan <b>Türkiye'nin en net Tombolo (Bağlama Oku) örneğidir</b>. Sinop Limanı ise <b>tek doğal limanımızdır</b>.",
+                "nüfus": "<b>⚠️ Nüfus ve Ulaşım:</b> Arkasındaki dağların ulaşımı engellemesi (hinterlandın dar olması) nedeniyle liman gelişememiş ve yöre <b>tenha</b> kalmıştır.",
+                "iklim": "<b>⚠️ İklim ve Rüzgar:</b> Karadeniz iklimidir. Kuzeybatı rüzgarlarına tamamen açıktır ve Samsun'a göre daha fazla yağış alır.",
+                "toprak": "<b>⚠️ Toprak Tipi:</b> Nemli iklim altında gelişmiş kireçsiz kahverengi orman ve psödomaki altı toprakları yaygındır.",
+                "maden": "<b>⚠️ Maden & Enerji:</b> Türkiye'nin ilk planlanan nükleer santral projelerinden biri bu bölgede yer almaktadır.",
+                "sanayi": "<b>⚠️ Sanayi & Ticaret:</b> Ulaşım akslarının dışında kalması nedeniyle sanayi gelişimi oldukça sınırlıdır.",
+                "afet": "<b>⚠️ Doğal Afetler:</b> Kıyı erozyonu ve kış aylarında yaşanan fırtınalar temel yerel afet kaynaklarındandır.",
+                "colors": {"deprem":"#10b981","karstik":"#94a3b8","delta":"#f43f5e","kıyı":"#f59e0b","nüfus":"#f97316","iklim":"#0284c7","toprak":"#15803d","maden":"#94a3b8","sanayi":"#94a3b8","afet":"#10b981"}
             },
             "yildiz-daglari": {
                 "name": "Yıldız Dağları (Kırklareli)",
-                "deprem": "<b>⚠️ Deprem Riskleri:</b> Türkiye'nin deprem tehlikesinin en düşük olduğu yaşlı paleozoik masif kütlesidir. Oldukça güvenlidir.",
-                "karstik": "<b>⚠️ Karstik Yapı:</b> Dupnisa Mağarası gibi yerel bazı karstik mağara oluşumları barındırır ancak bölge genel olarak metamorfik masif arazidir.",
-                "delta": "<b>⚠️ Delta Oluşumu:</b> Kıyıda akarsuların taşıdığı alüvyal dolgu kısıtlıdır, belirgin bir delta ovası yer almaz.",
-                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Karadeniz kıyı kuşağında yüksek boyuna kıyılar ve dik yamaçlı kıyı aşınımları görülür.",
-                "nüfus": "<b>⚠️ Nüfus ve Yerleşim:</b> İstanbul gibi devasa bir metropole sınır olmasına rağmen, sarp engebeli dağlık yapısı ve ana ulaşım yollarının dışında kalması nedeniyle **Türkiye'nin en tenha yörelerinden biridir**."
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> Türkiye'nin en kararlı yaşlı kütlesi olan Istranca Masifi buradadır. Deprem riski yok denecek kadar azdır.",
+                "karstik": "<b>⚠️ Karstik Yapı:</b> Masif kütle içinde Dupnisa Mağarası gibi yerel bazı turistik karstik erime mağaraları barındırır.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Dağlar dik yükselir ve büyük akarsular bulunmaz; kıyıda delta oluşumu yoktur.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Karadeniz kıyı kuşağında yüksek dikliklere sahip boyuna kıyı özellikleri sergiler.",
+                "nüfus": "<b>⚠️ Nüfus ve Engebe:</b> İstanbul gibi bir deve sınır olmasına rağmen sarp dağlık yapısı ve ana yolların dışında kalmasıyla <b>Türkiye'nin en tenha yerlerindendir</b>.",
+                "iklim": "<b>⚠️ İklim ve Yağış:</b> Karadeniz ile Karasal iklim geçişindedir. Balkanlar'dan gelen soğuk hava dalgalarını ilk karşılayan yerdir, kışlar karlı geçer.",
+                "toprak": "<b>⚠️ Toprak Tipi:</b> Yapraklı orman örtüsü altında yıkanmış <b>Kahverengi Orman toprakları</b> ve asitli orman toprakları yaygındır.",
+                "maden": "<b>⚠️ Maden & Enerji:</b> Metamorfik masif yapı nedeniyle zengin metalik maden yatakları barındırmaz.",
+                "sanayi": "<b>⚠️ Sanayi & Ticaret:</b> Sanayi gelişimi zayıftır. Ormancılık, arıcılık ve yerel hayvancılık temel geçim kaynaklarıdır.",
+                "afet": "<b>⚠️ Doğal Afetler:</b> Orman yangınları ve kış aylarında aşırı kar yağışına bağlı yolların kapanması yerel afetlerdendir.",
+                "colors": {"deprem":"#10b981","karstik":"#94a3b8","delta":"#f43f5e","kıyı":"#8b5cf6","nüfus":"#f97316","iklim":"#10b981","toprak":"#15803d","maden":"#94a3b8","sanayi":"#94a3b8","afet":"#10b981"}
             },
             "mentese": {
                 "name": "Menteşe Yöresi (Muğla)",
-                "deprem": "<b>⚠️ Deprem Riskleri:</b> BAF (Batı Anadolu Fay Hattı) deprem riski yüksek kırıklı fay zonlarına oldukça yakındır ve sık tektonik sarsıntı geçirir.",
-                "karstik": "<b>⚠️ Karstik Özellikler:</b> Karstik aşınım şekilleri ve kireçtaşları yaygındır, karstik kaynaklar ve mağaralar mevcuttur.",
-                "delta": "<b>⚠️ Delta Oluşumu:</b> Ege genelinde dağlar denize dik uzanırken, Menteşe'de kıyıya **paralel** uzanır. Bu yüzden kıta sahanlığı dardır ve delta oluşumu zordur.",
-                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Eski vadilerin sular altında kalmasıyla oluşan Türkiye'nin en net <b>Ria kıyı tipi</b> örnekleri buradadır (Bodrum-Marmaris kıyıları).",
-                "nüfus": "<b>⚠️ Nüfus ve Engebe:</b> İklim ve turizm çok gelişmiş olmasına rağmen, dağların sarp kıvrımlı yapısı ve engebeli yerşekilleri nedeniyle **tenha nüfuslu** bir yöredir."
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> BAF kırıklı fay hatlarına çok yakındır. Tektonik deprem riski yüksek yörelerimizdendir.",
+                "karstik": "<b>⚠️ Karstik Özellikler:</b> Kalkerli yapı yaygındır, dağlık karstik aşınım şekilleri ve kanyonlar mevcuttur.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Dağlar kıyıya paralel uzandığı için kıta sahanlığı dardır; Ege'nin diğer yöreleri gibi geniş deltaları yoktur.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Eski akarsu vadilerinin deniz suları altında kalmasıyla oluşan <b>Türkiye'nin en net Ria kıyı tipi</b> örneğidir (Muğla-Bodrum kıyıları).",
+                "nüfus": "<b>⚠️ Nüfus ve Engebe:</b> İklim ve turizm çok elverişli olmasına rağmen aşırı sarp ve engebeli yerşekillerinden dolayı <b>nüfusu tenhadır</b>.",
+                "iklim": "<b>⚠️ İklim ve Yağış:</b> Akdeniz iklimidir. Dağların kıyıya paralel uzanıp yükselmesiyle <b>orografik yağış alır ve çok yağışlıdır</b>.",
+                "toprak": "<b>⚠️ Toprak Tipi:</b> Kireç taşları üzerinde kırmızı renkli <b>Terra Rossa</b> toprakları ile iç kesimlerde kahverengi orman toprakları yaygındır.",
+                "maden": "<b>⚠️ Maden & Enerji:</b> Muğla-Yatağan ve Milas çevresinde zengin <b>Linyit yatakları</b> ve bunlara bağlı termik santraller bulunur.",
+                "sanayi": "<b>⚠️ Sanayi & Ticaret:</b> Ağır sanayi yoktur; turizm, mermer işletmeciliği, ormancılık ve arıcılık (çam balı) gelişmiştir.",
+                "afet": "<b>⚠️ Doğal Afetler:</b> Yoğun kızılçam ormanları ve yaz kuraklığı birleşimiyle <b>Orman Yangını riskinin en yüksek olduğu</b> alanlardandır.",
+                "colors": {"deprem":"#ef4444","karstik":"#3b82f6","delta":"#f43f5e","kıyı":"#14b8a6","nüfus":"#f97316","iklim":"#f59e0b","toprak":"#b91c1c","maden":"#eab308","sanayi":"#94a3b8","afet":"#e11d48"}
             },
             "tuz-golu": {
                 "name": "Tuz Gölü Havzası",
-                "deprem": "<b>⚠️ Deprem Riskleri:</b> Levha ortasında kalır. Fay hatlarına nispeten uzak olduğu için deprem tehlikesi görece az kararlı alanlardandır.",
-                "karstik": "<b>⚠️ Karstik Özellikler:</b> Jips (alçıtaşı) ve kaya tuzu erime şekilleri yaygındır. Özellikle Konya Karapınar çevresindeki yer altı çöküntüleriyle oluşan **Obruklar** coğrafyanın temel konusudur.",
-                "delta": "<b>⚠️ Delta Oluşumu:</b> Tamamen karasal bir kapalı havzadır. Deniz olmadığı için delta oluşumu söz konusu değildir.",
-                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Kıyı morfolojisi bulunmaz, eski sığ göl birikim ovaları mevcuttur.",
-                "nüfus": "<b>⚠️ Nüfus ve Kuraklık:</b> Yıllık yağış miktarının Türkiye'de en az olduğu (kuraklık ve buharlaşmanın yüksek olduğu) yer olması sebebiyle **tenha nüfuslu** bir havzadır."
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> Kırıklı fay hatlarına nispeten uzak, genç dolgu çanağı olmasına rağmen deprem riski görece düşüktür.",
+                "karstik": "<b>⚠️ Karstik Yapı:</b> Jips (alçıtaşı) ve kaya tuzu erime şekilleri yaygındır. Konya Karapınar çevresindeki yer altı çöküntüleriyle oluşan <b>Obruklar</b> çok ünlüdür.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Tamamen karasal iç kapalı havza olduğundan kıyı birikimi veya delta ovası bulunmaz.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Kıyı şeridi yoktur, eski sığ göl tabanı ovaları yaygındır.",
+                "nüfus": "<b>⚠️ Nüfus ve Kuraklık:</b> Yıllık yağışın en az olduğu (şiddetli kuraklık) yer olması nedeniyle tarımsal açıdan <b>nüfusu oldukça tenhadır</b>.",
+                "iklim": "<b>⚠️ İklim ve Yağış:</b> Yarı kurak Step (Bozkır) iklimidir. Türkiye'nin en az yağış alan yeridir. <b>En çok yağışı İlkbaharda</b> yükselim (konveksiyonel) olarak alır.",
+                "toprak": "<b>⚠️ Toprak Tipi:</b> Kuraklık nedeniyle yıkanmanın az, tuz ve kireç birikiminin en fazla olduğu <b>Kahverengi/Gri Bozkır toprakları</b> hâkimdir.",
+                "maden": "<b>⚠️ Maden & Enerji:</b> Türkiye'nin tuz ihtiyacının %60'ından fazlası bu gölden karşılanır. Tuz üretimi ve doğalgaz depolama alanları yaygındır.",
+                "sanayi": "<b>⚠️ Sanayi & Ticaret:</b> Tarıma dayalı un, yem sanayisi ve tuz arıtma işletmeleri yoğunlaşmıştır.",
+                "afet": "<b>⚠️ Doğal Afetler:</b> Rüzgar aşındırmasının en şiddetli olduğu, <b>Rüzgar Erozyonu (Çölleşme)</b> riskinin en yüksek olduğu tek yerdir.",
+                "colors": {"deprem":"#10b981","karstik":"#3b82f6","delta":"#f43f5e","kıyı":"#94a3b8","nüfus":"#f97316","iklim":"#d97706","toprak":"#b45309","maden":"#eab308","sanayi":"#94a3b8","afet":"#e11d48"}
             },
             "hakkari": {
                 "name": "Hakkari Yöresi (Cilo-Sat Dağları)",
-                "deprem": "<b>⚠️ Deprem Riskleri:</b> DAF (Doğu Anadolu Fay) aktif zonunun doğu ucundadır. Yüksek ve aktif bindirme hatları nedeniyle **tektonik deprem riski çok yüksektir**.",
-                "karstik": "<b>⚠️ Karstik Yapı:</b> Karstik erime kayaçları sınırlıdır, genellikle kristalin şistler ve volkanik-metamorfik dağlar yaygındır.",
-                "delta": "<b>⚠️ Delta Oluşumu:</b> Tamamen karasal, aşırı yüksek dağlık arazidir. Nehirler derine aşındırma (çentik vadi) yapar.",
-                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Deniz kıyısı bulunmaz, sarp buzul vadileri mevcuttur.",
-                "nüfus": "<b>⚠️ Nüfus ve Yükseklik:</b> Aşırı yükseklik (ortalama 2500m üstü), sert kış iklimi, sarp yerşekilleri ve ulaşım yollarına uzaklık nedeniyle **Türkiye'nin en tenha bölgesidir**."
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> Doğu Anadolu Fay (DAF) bindirme kuşağındadır. Tektonik sarsıntı ve deprem tehlikesi <b>çok yüksektir</b>.",
+                "karstik": "<b>⚠️ Karstik Yapı:</b> Yüksek kıvrımlı alpin arazidir, belirgin geniş karstik sahalar bulunmaz.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Tamamen karasal, aşırı engebeli ve yüksek dağlık bölgedir; delta oluşumu imkansızdır.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Kıyı şeridi yoktur. Aktif buzul gölleri ve derin sarp akarsu vadileri (çentik vadi) hâkimdir.",
+                "nüfus": "<b>⚠️ Nüfus ve Engebe:</b> Aşırı yükseklik, sert kışlar, sarp yerşekilleri ve ana yollara uzaklık nedeniyle <b>Türkiye'nin en tenha yöresidir</b>.",
+                "iklim": "<b>⚠️ Sert Karasal İklim:</b> Kışlar aşırı soğuk, uzun ve kar yağışlıdır. Karın yerde kalma süresi (150 gün+) Türkiye'de en yüksektir.",
+                "toprak": "<b>⚠️ Toprak Tipi:</b> Yüksek dağ çayırları altındaki humuslu topraklar ile çıplak kayalık alpin topraklar yaygındır.",
+                "maden": "<b>⚠️ Maden & Enerji:</b> Metalik maden zenginidir; özellikle <b>Çinko ve Kurşun yatakları</b> aktif olarak işletilir.",
+                "sanayi": "<b>⚠️ Sanayi & Ticaret:</b> Ulaşım zorluğu ve sermaye yetersizliğinden sanayi gelişmemiştir; arıcılık ve sınır ticareti yaygındır.",
+                "afet": "<b>⚠️ Doğal Afetler:</b> Dik yamaçlar ve aşırı kar birikimi nedeniyle <b>Çığ tehlikesinin en yüksek olduğu</b> bölgedir.",
+                "colors": {"deprem":"#ef4444","karstik":"#94a3b8","delta":"#f43f5e","kıyı":"#94a3b8","nüfus":"#f97316","iklim":"#4f46e5","toprak":"#1e293b","maden":"#eab308","sanayi":"#94a3b8","afet":"#e11d48"}
             },
             "catalca-kocaeli": {
                 "name": "Çatalca-Kocaeli Platosu",
-                "deprem": "<b>⚠️ Deprem Riskleri:</b> KAF (Kuzey Anadolu Fay Hattı) güney Marmara geçişine çok yakındır. Sanayi yoğunluğu nedeniyle deprem hassasiyeti ve riski çok yüksektir.",
-                "karstik": "<b>⚠️ Karstik Yapı:</b> Kalker araziler kısıtlıdır, aşınım düzlüğü killi tortulları yaygındır.",
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> KAF hattının hemen kuzey sınırındadır. Nüfus ve sanayi yoğunluğundan dolayı sismik hassasiyeti en yüksek yerdir.",
+                "karstik": "<b>⚠️ Karstik Yapı:</b> Geniş karstik erimeler yoktur, aşınım düzlüğü killi tortulları yaygındır.",
                 "delta": "<b>⚠️ Delta Oluşumu:</b> Belirgin bir delta ovası olmasa da kıta sahanlığı geniştir, sığ kıyı birikimleri mevcuttur.",
-                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Eski vadilerin boğaz haline gelmesiyle oluşan **Ria kıyı tipi** (İstanbul Boğazı ve Haliç) bu bölgenin can damarıdır.",
-                "nüfus": "<b>⚠️ Nüfus ve Sanayi:</b> Engebeliğin en az olduğu en alçak **aşınım platosudur**. Sanayi, ticaret, ulaşım ve nüfusun **Türkiye'de en yoğun olduğu** zirve merkezdir."
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> İstanbul Boğazı ve Haliç eski akarsu vadilerinin sular altında kalmasıyla oluşan <b>Ria kıyı tipi</b> örnekleridir.",
+                "nüfus": "<b>⚠️ Nüfus ve Sanayi:</b> Yerşekillerinin düzlüğü, sanayi, ticaret ve ulaşım kavşağı olmasıyla <b>Türkiye'nin en yoğun nüfuslu yeridir</b>.",
+                "iklim": "<b>⚠️ Geçiş İklimi:</b> Karadeniz, Akdeniz ve Karasal iklimlerin geçiş alanındadır. Kışlar serin, yazlar sıcak ve nemlidir.",
+                "toprak": "<b>⚠️ Toprak Tipi:</b> Kuzey kesimlerde kahverengi orman toprakları, güneyde ise yer yer kahverengi podzolik ve killi topraklar hâkimdir.",
+                "maden": "<b>⚠️ Maden & Enerji:</b> Büyük metalik maden yatakları yoktur ancak taş ocağı ve silis kumu üretimi yoğundur.",
+                "sanayi": "<b>⚠️ Sanayi & Ticaret:</b> Türkiye sanayisinin, finansının ve dış ticaretinin kalbidir; her türlü sanayi kolu gelişmiştir.",
+                "afet": "<b>⚠️ Doğal Afetler:</b> Aşırı betonlaşma nedeniyle ani sağanaklarda <b>Kent Selleri (Taşkın)</b> riski çok yüksektir.",
+                "colors": {"deprem":"#ef4444","karstik":"#94a3b8","delta":"#f43f5e","kıyı":"#14b8a6","nüfus":"#059669","iklim":"#10b981","toprak":"#15803d","maden":"#94a3b8","sanayi":"#4f46e5","afet":"#ef4444"}
             },
             "samsun-deltalar": {
-                "name": "Samsun Deltaları (Bafra ve Çarşamba)",
-                "deprem": "<b>⚠️ Deprem Riskleri:</b> KAF hattı Samsun'un güneyinden geçer. Delta ovası gevşek zeminli olduğu için deprem sarsıntısını büyütme potansiyeline sahiptir.",
-                "karstik": "<b>⚠️ Karstik Şekiller:</b> Tamamen alüvyal akarsu birikim sahasıdır, karstik erime şekilleri görülmez.",
-                "delta": "<b>⚠️ Delta Ovaları:</b> Kızılırmak'ın taşıdığı alüvyonlarla **Bafra Delta Ovası**'nı, Yeşilırmak'ın taşıdığı alüvyonlarla ise **Çarşamba Delta Ovası**'nı oluşturduğu verimli tarım sahasıdır.",
-                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Karadeniz genelinde kıta sahanlığı dar iken, Samsun çevresinde Canik dağlarının alçak ve geride olması nedeniyle kıta sahanlığı geniştir, delta ovaları kolayca oluşmuştur.",
-                "nüfus": "<b>⚠️ Nüfus ve Tarım:</b> İki devasa alüvyal delta ovası sayesinde tarım ve tarımsal sanayi çok gelişmiş, bu da Karadeniz'in en yoğun nüfuslu sanayi/tarım kentini ortaya çıkarmıştır."
+                "name": "Samsun Deltaları (Bafra-Çarşamba)",
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> KAF hattı Samsun'un güneyinden geçer. Deltaların gevşek zemin yapısı deprem sarsıntısının yıkıcılığını artırabilir.",
+                "karstik": "<b>⚠️ Karstik Yapı:</b> Akarsu alüvyal dolgu ovası olduğundan karstik erime kayaçları bulunmaz.",
+                "delta": "<b>⚠️ Delta Ovaları:</b> Kızılırmak'ın oluşturduğu <b>Bafra</b> ve Yeşilırmak'ın oluşturduğu <b>Çarşamba</b> delta ovaları verimli tarım depolarıdır.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Canik dağlarının alçak ve geride olması nedeniyle kıta sahanlığı geniştir, düz ve sığ birikim kıyıları hâkimdir.",
+                "nüfus": "<b>⚠️ Nüfus ve Tarım:</b> İki devasa alüvyal delta ovası sayesinde tarım ve tarımsal sanayi çok gelişmiş, bu da Karadeniz'in en yoğun nüfuslu kentini ortaya çıkarmıştır.",
+                "iklim": "<b>⚠️ Geçiş Karadeniz İklimi:</b> Canik dağlarının geride olması orografik yağışı azaltmıştır; yıllık yağış miktarı Doğu Karadeniz'in yarısı kadardır.",
+                "toprak": "<b>⚠️ Toprak Tipi:</b> Nehirlerin taşıyıp biriktirdiği mineralce çok zengin, taban suyu yüksek verimli <b>Alüvyal topraklar</b> yaygındır.",
+                "maden": "<b>⚠️ Maden & Enerji:</b> Karadeniz'in doğusundan gelen bakır madenlerini işleyen <b>Samsun Bakır İzabe Tesisleri</b> (Sanayi bağlantılı) ve doğalgaz santralleri bulunur.",
+                "sanayi": "<b>⚠️ Sanayi & Ticaret:</b> Tarıma dayalı gıda, sigara, gübre sanayisi ve gelişmiş Karadeniz liman ticareti yaygındır.",
+                "afet": "<b>⚠️ Doğal Afetler:</b> Akarsu taşkın yatağında olmalarından ötürü nehir taşmaları ve zemin oturması (sıvılaşma) afet riskleri taşır.",
+                "colors": {"deprem":"#ef4444","karstik":"#94a3b8","delta":"#059669","kıyı":"#10b981","nüfus":"#059669","iklim":"#10b981","toprak":"#0d9488","maden":"#eab308","sanayi":"#4f46e5","afet":"#ef4444"}
             },
             "kas-kekova": {
                 "name": "Kaş-Kekova Kıyıları (Antalya)",
-                "deprem": "<b>⚠️ Deprem Riskleri:</b> Helenik yayına ve Akdeniz kırık hatlarına yakındır, deprem riski orta-yüksek kategorisindedir.",
-                "karstik": "<b>⚠️ Karstik Şekiller:</b> Batı Torosların uzantısı olan kireçli, karstik erime arazileridir. Kanyon vadiler ve yer altı akiferleri yaygındır.",
-                "delta": "<b>⚠️ Delta Oluşumu:</b> Sarp dikliklerden ötürü kıta sahanlığı dar, kıyı derindir; delta oluşumu imkansızdır.",
-                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Kıyıya paralel uzanan sıra dağların arasındaki vadilerin deniz istilasıyla dolmasıyla oluşan **Türkiye'nin tek Dalmaçya kıyı tipi** örneğidir. Yüzlerce adacık yer alır.",
-                "nüfus": "<b>⚠️ Nüfus ve Turizm:</b> Dağlık sarp yapısından ötürü tarım kısıtlı olduğundan nüfusu tenha kalmış, ancak elit deniz turizmi ve dalış sporlarının merkezi olmuştur."
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> Helenik-Kıbrıs yayına yakındır. Deprem riski orta-yüksek kategorisindedir.",
+                "karstik": "<b>⚠️ Karstik Şekiller:</b> Batı Torosların kireçli arazileridir. Kanyon vadiler ve su altı karstik mağaraları yaygındır.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Sarp diklikler nedeniyle kıta sahanlığı son derece dardır; delta oluşumu imkansızdır.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Kıyıya paralel uzanan sıradağ vadilerinin deniz altında kalmasıyla oluşan <b>Türkiye'nin tek Dalmaçya kıyı tipi</b> örneğidir.",
+                "nüfus": "<b>⚠️ Nüfus ve Turizm:</b> Dağlık sarp yapısından ötürü tarım kısıtlı olduğundan nüfusu tenha kalmış, ancak elit turizmin merkezi olmuştur.",
+                "iklim": "<b>⚠️ En Ilık Akdeniz İklimi:</b> Kış sıcaklık ortalaması en yüksek kıyı kuşağıdır. Don olayı neredeyse hiç yaşanmaz, seracılığa çok uygundur.",
+                "toprak": "<b>⚠️ Toprak Tipi:</b> Kireç taşlarının üzerinde gelişen kırmızı renkli verimsiz <b>Terra Rossa</b> toprakları hâkimdir.",
+                "maden": "<b>⚠️ Maden & Enerji:</b> Yerel kalker taş ocakları dışında önemli bir maden rezervi bulunmaz.",
+                "sanayi": "<b>⚠️ Sanayi & Ticaret:</b> Ağır sanayi yoktur; turizm, yatçılık, örtü altı tarım (seracılık) en büyük geçim kaynağıdır.",
+                "afet": "<b>⚠️ Doğal Afetler:</b> Kuru yazlar nedeniyle orman yangınları ve denizel fırtına kabarmaları yerel risklerdendir.",
+                "colors": {"deprem":"#f59e0b","karstik":"#3b82f6","delta":"#f43f5e","kıyı":"#6366f1","nüfus":"#f97316","iklim":"#f59e0b","toprak":"#b91c1c","maden":"#94a3b8","sanayi":"#94a3b8","afet":"#e11d48"}
+            },
+            "ege-kiyilari": {
+                "name": "Ege Kıyıları (İzmir-Aydın)",
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> BAF (Batı Anadolu Fay Hattı) üzerindedir. Grabensel çöküntü alanları boyunca deprem riski ve jeotermal potansiyel <b>en yüksek</b> yöremizdir.",
+                "karstik": "<b>⚠️ Karstik Özellikler:</b> Mermer yatakları (başkalaşım karstı) yaygındır ancak kalkerli geniş karstik ovalar Toroslar kadar baskın değildir.",
+                "delta": "<b>⚠️ Delta Ovaları:</b> Akarsuların taşıdığı alüvyonlarla oluşmuş <b>Menemen, Selçuk, Balat ve Dikili</b> gibi büyük delta ovaları bulunur.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Dağların denize dik uzanmasından dolayı kıyıda girinti-çıkıntı en fazladır. <b>Enine kıyı tipi</b> görülür.",
+                "nüfus": "<b>⚠️ Nüfus ve Sanayi:</b> Verimli çöküntü ovaları, liman ticareti, sanayi ve turizm sayesinde <b>nüfusun en yoğun olduğu</b> kıyı kesimlerindendir.",
+                "iklim": "<b>⚠️ Akdeniz İklimi:</b> Dağlar kıyıya dik uzandığı için denizel nemli ve ılık hava iç kesimlere kadar (150 km) rahatlıkla sokulur.",
+                "toprak": "<b>⚠️ Toprak Tipi:</b> Kıyı ovalarında aşırı verimli <b>Alüvyal topraklar</b>, yamaçlarda ise yer yer Terra Rossalar yaygındır.",
+                "maden": "<b>⚠️ Maden & Enerji:</b> Kırıklı yapı nedeniyle <b>Jeotermal enerji</b> (Denizli-Sarayköy, Aydın-Germencik) ve zengin mermer yatakları bulunur.",
+                "sanayi": "<b>⚠️ Sanayi & Ticaret:</b> Petrol rafinerisi (Aliağa), tekstil, gıda ve ihracat liman ticareti zirve seviyede gelişmiştir.",
+                "afet": "<b>⚠️ Doğal Afetler:</b> Aktif tektonik kırıklar nedeniyle yıkıcı <b>Tektonik Depremler</b> ve kıyı düzlüklerinde sel olayları yaşanır.",
+                "colors": {"deprem":"#ef4444","karstik":"#94a3b8","delta":"#059669","kıyı":"#ec4899","nüfus":"#059669","iklim":"#f59e0b","toprak":"#0d9488","maden":"#eab308","sanayi":"#4f46e5","afet":"#e11d48"}
+            },
+            "orta-anadolu": {
+                "name": "Orta Anadolu Platosu (Konya-Sivas)",
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> KAF ve DAF hatlarının uzağındadır. Türkiye'nin tektonik sarsıntı tehlikesi en düşük, en eski kararlı masif ova ve platolarını barındırır.",
+                "karstik": "<b>⚠️ Karstik Yapı:</b> Konya çevresinde Obruklar ve jipsli (alçıtaşı) arazilerin erimesiyle oluşan karstik yapılar (Sivas-Çankırı çevresi) yaygındır.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Deniz kıyısı bulunmadığı için delta oluşumu yoktur. Geniş tabanlı tektonik ova düzlükleri mevcuttur.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Kıyı şeridi yoktur, yüksek düzlükler ve platolar hâkimdir.",
+                "nüfus": "<b>⚠️ Nüfus ve Tarım:</b> Tarımda makineleşmenin en kolay olduğu düz arazidir. Nüfus tarım kentlerinde (Konya) ve sanayi odaklarında yoğunlaşırken, kırsal kesimler kuraklık nedeniyle tenhadır.",
+                "iklim": "<b>⚠️ Ilıman Karasal (Step) İklimi:</b> Yıllık yağış miktarı azdır. Yazlar sıcak ve kurak, kışlar soğuk geçer. En fazla yağışı <b>İlkbaharda</b> konveksiyonel (Kırkikindi) yükselim yağışları olarak alır.",
+                "toprak": "<b>⚠️ Toprak Tipi:</b> Yarı kurak iklim nedeniyle kalsiyum birikimi yüksek olan <b>Kahverengi/Kestane renkli Bozkır toprakları</b> hâkimdir.",
+                "maden": "<b>⚠️ Maden & Enerji:</b> Tuz üretimi ve yerel doğalgaz depolama alanları dışında geniş linyit havzaları da bulunur.",
+                "sanayi": "<b>⚠️ Sanayi & Ticaret:</b> Tarıma dayalı un, yem, şeker sanayisi ve otomotiv montaj (Konya) gelişmiştir.",
+                "afet": "<b>⚠️ Doğal Afetler:</b> Bitki örtüsünün cılız olması ve kuraklık nedeniyle <b>Rüzgar Erozyonu</b> en büyük afet riskidir.",
+                "colors": {"deprem":"#10b981","karstik":"#3b82f6","delta":"#f43f5e","kıyı":"#94a3b8","nüfus":"#f97316","iklim":"#d97706","toprak":"#b45309","maden":"#94a3b8","sanayi":"#94a3b8","afet":"#e11d48"}
+            },
+            "erzurum-kars": {
+                "name": "Erzurum-Kars Platosu",
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> Kuzey ve Doğu Anadolu fay hatlarının kesişim bölgesine yakındır. Tektonik genç volkanik araziler nedeniyle deprem riski orta-yüksek derecededir.",
+                "karstik": "<b>⚠️ Karstik Yapı:</b> Genellikle bazalt ve lav örtülü volkanik platodur. Karstik oluşumlar neredeyse hiç görülmez.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Yüksek karasal bölgedir, akarsular derin vadilerde (çentik vadi) akar. Delta oluşumu imkansızdır.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Kıyı morfolojisi yoktur, ortalama yükseltisi 2000m olan volkanik yaylalar hâkimdir.",
+                "nüfus": "<b>⚠️ Nüfus ve Hayvancılık:</b> İklimin sertliği ve kışlerin aşırı uzun sürmesi tarımı engellemiştir. Nüfus **oldukça tenhadır**. Temel geçim kaynağı mera hayvancılığıdır.",
+                "iklim": "<b>⚠️ Sert Karasal İklim:</b> Kışlar aşırı soğuk, donlu ve uzundur. Türkiye'de en çok yağışı <b>Yaz mevsiminde</b> alan tek bölgemizdir. Yaz yağışları çayırların yeşermesini sağlar (büyükbaş hayvancılık).",
+                "toprak": "<b>⚠️ Toprak Tipi:</b> Yaz yağışlarının gürleştirdiği uzun alpin çayırları altında gelişmiş, dünyanın en verimli yerli zonal toprağı olan organik madde deposu siyah renkli **Çernezyom (Kara Topraklar)** hâkimdir.",
+                "maden": "<b>⚠️ Maden & Enerji:</b> Volkanik genç kayaçlar nedeniyle zengin metalik maden yatakları barındırmaz ancak Oltu taşı (yerel süs eşyası) ocakları mevcuttur.",
+                "sanayi": "<b>⚠️ Sanayi & Ticaret:</b> Sert kış şartları ve uzaklık nedeniyle sanayi gelişmemiştir; geçim tamamen et-süt entegre tarımı ve mera hayvancılığına dayanır.",
+                "afet": "<b>⚠️ Doğal Afetler:</b> Kış aylarında dondurucu **Don Olayları** (-40 dereceye varan sıcaklıklar) ve dağlık yollarda aşırı kar birikimi nedeniyle **Çığ** ve **Ulaşım Kesintileri** en büyük afet riskidir.",
+                "colors": {"deprem":"#f59e0b","karstik":"#94a3b8","delta":"#f43f5e","kıyı":"#94a3b8","nüfus":"#ef4444","iklim":"#4f46e5","toprak":"#1e293b","maden":"#94a3b8","sanayi":"#94a3b8","afet":"#e11d48"}
+            },
+            "ergene": {
+                "name": "Ergene Havzası (Edirne)",
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> Kuzey Anadolu Fay Hattı'nın (KAF) kuzeyindeki Trakya bloğunda yer aldığından tektonik deprem riski son derece düşüktür.",
+                "karstik": "<b>⚠️ Karstik Yapı:</b> Alçak düzlüklerden oluşan eski aşınım sahasıdır, karstik kayaçlar ve erime şekilleri bulunmaz.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Meriç nehri denize ulaştığı Saros Körfezi'nde küçük bir delta oluşturur ancak Ergene havzası iç kısımda ova karakterindedir.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Ergene havzasının kıyısı yoktur; güneyinde Enez kıyılarında limanlı kıyı izleri bulunur.",
+                "nüfus": "<b>⚠️ Nüfus ve Tarım:</b> Engebe azdır, düz ovaları yoğundur. Ancak sınır bölgesi olması ve yoğun sanayi odaklarının uzağında kalmasıyla nüfusu nispeten <b>seyrektir</b>.",
+                "iklim": "<b>⚠️ Karasal İklim:</b> Etrafı dağlarla çevrili alçak bir çanak olduğu için deniz etkisine kapalıdır; kışları soğuk ve ayazlı sert bir Karasal iklim görülür. En az yağışı yazın alır.",
+                "toprak": "<b>⚠️ Toprak Tipi:</b> Killi-kireçli depolar üzerinde oluşan, halk arasında 'kara kepir' veya 'taş doğuran' olarak bilinen killi <b>Vertisol toprakları</b> çok yaygındır.",
+                "maden": "<b>⚠️ Maden & Enerji:</b> Kırklareli-Hamitabat çevresinde zengin **Doğalgaz yatakları** ve gaz çevrim termik santralleri bulunur.",
+                "sanayi": "<b>⚠️ Sanayi & Ticaret:</b> Ayçiçeği ve çeltik (pirinç) tarımına dayalı gıda sanayisi ile sınır ticareti (Kapıkule) çok gelişmiştir.",
+                "afet": "<b>⚠️ Doğal Afetler:</b> Havza yapısı düz olduğundan ve Meriç/Ergene nehirleri taştığından ilkbaharda ciddi <b>Sel ve Su Baskınları</b> yaşanır.",
+                "colors": {"deprem":"#10b981","karstik":"#94a3b8","delta":"#94a3b8","kıyı":"#94a3b8","nüfus":"#f97316","iklim":"#d97706","toprak":"#b45309","maden":"#eab308","sanayi":"#4f46e5","afet":"#e11d48"}
+            },
+            "zonguldak": {
+                "name": "Zonguldak-Karabük Yöresi",
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> 1. Derece deprem kuşağı olan KAF hattının hemen kuzeyindeki güvenli masif bloktadır; sismik risk orta-düşüktür.",
+                "karstik": "<b>⚠️ Karstik Yapı:</b> Masif kalker blokları barındırır. Gökgöl Mağarası gibi turistik erime mağaraları ve yerel karstik yapılar yaygındır.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Batı Karadeniz dağları dik yükseldiğinden kıta sahanlığı dardır; delta ovası oluşamamıştır.",
+                "kıyı": "<b>⚠️ Kıyı Tipi:</b> Dağların denize paralel uzandığı girintisiz <b>Boyuna kıyı tipi</b> hâkimdir. Doğal liman bulunmaz.",
+                "nüfus": "<b>⚠️ Nüfus ve Yerleşim:</b> Engebeli dağlık yapıya rağmen zengin kömür yatakları ve ağır demir-çelik sanayisi sayesinde <b>nüfusu oldukça yoğundur</b>.",
+                "iklim": "<b>⚠️ Karadeniz İklimi:</b> Her mevsim yağışlı, ılıman denizel Karadeniz iklimidir. Rüzgar alan yamaçlarda orografik yağışlar etkilidir. En çok yağışı sonbaharda alır.",
+                "toprak": "<b>⚠️ Toprak Tipi:</b> Soğuk ve nemli iklimde iğne yapraklı ormanlar altında gelişen kül rengindeki verimsiz yıkanmış <b>Podzol topraklar</b> yaygındır.",
+                "maden": "<b>⚠️ Maden & Enerji:</b> Türkiye'de **Taş Kömürünün** çıkarıldığı tek yerdir (1. Jeolojik Zaman masifi). Taş kömürüne bağlı Çatalağzı Termik Santrali bulunur.",
+                "sanayi": "<b>⚠️ Sanayi & Ticaret:</b> Kömürün sağladığı enerjiyle demiri eriten Türkiye'nin en büyük **Kardemir ve Erdemir Demir-Çelik fabrikaları** buradadır.",
+                "afet": "<b>⚠️ Doğal Afetler:</b> Dik yamaçlar, aşırı yıkanma ve killi yapı nedeniyle Karadeniz genelinde olduğu gibi **Heyelan** riski çok yüksektir.",
+                "colors": {"deprem":"#10b981","karstik":"#3b82f6","delta":"#f43f5e","kıyı":"#8b5cf6","nüfus":"#059669","iklim":"#0284c7","toprak":"#1e293b","maden":"#eab308","sanayi":"#4f46e5","afet":"#e11d48"}
+            },
+            "guneydogu": {
+                "name": "Güneydoğu Anadolu (Şanlıurfa-Mardin)",
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> Bindirme kuşağının (Güneydoğu Anadolu Torosları) güneyindeki düz kararlı Arap Platformundadır; deprem riski düşüktür.",
+                "karstik": "<b>⚠️ Karstik Özellikler:</b> Mardin Eşiği'nde yerel kalker yapılar olsa da kuraklıktan ötürü belirgin aktif karstik erime şekli azdır.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Deniz kıyısı bulunmadığından delta oluşumu yoktur. Fırat ve Dicle nehirlerinin yardımıyla geniş sulama ovaları kurulmuştur.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Deniz sınırı yoktur, yüksek düz platolar ve tektonik çanak ovaları hâkimdir.",
+                "nüfus": "<b>⚠️ Nüfus ve GAP:</b> Eskiden kuraklıktan dolayı tenha olan bu yöre, GAP sulama projeleri (pamuk tarımı) ve düz arazi sayesinde **nüfusu hızla yoğunlaşan** yerlerdendir.",
+                "iklim": "<b>⚠️ Şiddetli Karasal İklim:</b> Basra alçak basıncının sıcak hava dalgaları ve çöl rüzgarları sebebiyle **Türkiye'nin yazın en sıcak ve buharlaşmanın en yüksek olduğu yeridir**.",
+                "toprak": "<b>⚠️ Toprak Tipi:</b> Yarı kurak iklim ve bozkır örtüsü altında gelişen kireçli **Kahverengi ve Kestane renkli Bozkır toprakları** yaygındır.",
+                "maden": "<b>⚠️ Maden & Enerji:</b> Türkiye'de aktif **Petrol çıkarılan** tek bölgemizdir (Batman-Raman, Adıyaman). Cizre-Silopi'de ise Asfaltit madeni bulunur.",
+                "sanayi": "<b>⚠️ Sanayi & Ticaret:</b> Tarıma dayalı gıda, tekstil, iplik sanayisi ve Ortadoğu ülkelerine açılan sınır kapıları sayesinde transit ticaret gelişmiştir.",
+                "afet": "<b>⚠️ Doğal Afetler:</b> Şiddetli yaz kuraklığı ve bitki örtüsü eksikliği nedeniyle **Rüzgar Erozyonu ve Çölleşme** riski çok yüksektir.",
+                "colors": {"deprem":"#10b981","karstik":"#94a3b8","delta":"#94a3b8","kıyı":"#94a3b8","nüfus":"#059669","iklim":"#d97706","toprak":"#b45309","maden":"#eab308","sanayi":"#4f46e5","afet":"#e11d48"}
+            },
+            "sivas-divrigi": {
+                "name": "Sivas-Divriği Yöresi",
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> KAF hattının güneyinde yer alır. Deprem riski orta-yüksek derecededir.",
+                "karstik": "<b>⚠️ Jips Karstı:</b> Türkiye'de karstik erimenin en hızlı olduğu kolay çözünebilen **Jips (Alçıtaşı) arazilerinin** merkezidir. Karstik göller yaygındır.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Tamamen karasal dağlık iç kesimdir, kıyı birikimi ve delta bulunmaz.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Kıyı şeridi yoktur. Kızılırmak'ın yukarı çığırındaki derin çentik vadiler ve aşınım düzlükleri hâkimdir.",
+                "nüfus": "<b>⚠️ Nüfus ve Engebe:</b> Yüksek engebeli dağlık yapı, sert karasal iklim ve ulaşım zorluğu nedeniyle **nüfusu oldukça tenhadır**.",
+                "iklim": "<b>⚠️ Karasal İklim:</b> Yüksekliğin fazla olmasından dolayı kışlar çok soğuk, uzun ve kar yağışlı geçer. En çok yağışı ilkbaharda yükselim olarak alır.",
+                "toprak": "<b>⚠️ Toprak Tipi:</b> Kestane renkli bozkır toprakları ile yüksek yamaçlarda taşlık kahverengi orman toprakları yaygındır.",
+                "maden": "<b>⚠️ Metal Maden Deposu:</b> Türkiye'nin en zengin ve en kaliteli **Demir yataklarının** bulunduğu yerdir (Sivas-Divriği ve Malatya-Hekimhan).",
+                "sanayi": "<b>⚠️ Sanayi & Demir-Çelik:</b> Çıkarılan demir madeninin bir kısmı yerel tesislerde işlenir, büyük kısmı ise enerji kaynağına yakınlık sebebiyle Karabük-Ereğli demir-çelik fabrikalarına taşınır.",
+                "afet": "<b>⚠️ Doğal Afetler:</b> Kar yağışına bağlı yolların kapanması, don olayları ve engebeli yamaçlarda yerel heyelanlar görülür.",
+                "colors": {"deprem":"#f59e0b","karstik":"#3b82f6","delta":"#f43f5e","kıyı":"#94a3b8","nüfus":"#f97316","iklim":"#d97706","toprak":"#b45309","maden":"#eab308","sanayi":"#94a3b8","afet":"#ef4444"}
+            },
+            "iskenderun": {
+                "name": "İskenderun Körfezi Yöresi",
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> Doğu Anadolu Fay (DAF) hattının Akdeniz'e inen kırık hatlarına çok yakındır; deprem riski ve sismik hassasiyet **çok yüksektir**.",
+                "karstik": "<b>⚠️ Karstik Özellikler:</b> Amanos Dağları'nın batı eteklerinde yerel karstik kalkerler bulunsa da düzlük zemin alüvyal dolgudur.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Körfezin doğusunda Amanos dağlarının dikliği nedeniyle kıta sahanlığı dardır ancak hemen batısında Çukurova deltasının uzantıları yer alır.",
+                "kıyı": "<b>⚠️ Kıyı Tipi:</b> Geniş kıta sahanlığına sahip, liman ve körfez birikim morfolojisi hâkimdir.",
+                "nüfus": "<b>⚠️ Nüfus ve Sanayi:</b> Muhteşem jeopolitik konumu, demir-çelik sanayisi ve büyük liman ticareti sayesinde **nüfusu son derece yoğundur**.",
+                "iklim": "<b>⚠️ Sıcak Akdeniz İklimi:</b> Kışları son derece ılık ve yağışlı, yazları sıcak ve nemlidir. Amanos dağlarının etkisiyle yamaç yağışları da alır.",
+                "toprak": "<b>⚠️ Toprak Tipi:</b> Kıyı düzlüğünde akarsu birikimi **Alüvyal topraklar**, Amanos eteklerinde ise kalker üzeri gelişen kırmızı **Terra Rossa** toprakları bulunur.",
+                "maden": "<b>⚠️ Enerji & Jeopolitik:</b> Ortadoğu ve Hazar petrollerinin Akdeniz'e açıldığı **Boru Hatlarının Terminalidir** (BTC, Yumurtalık). Büyük İskenderun kömür/gaz termik santralleri yaygındır.",
+                "sanayi": "<b>⚠️ Sanayi ve Ağır Metalurji:</b> Türkiye'nin en büyük ağır sanayi hamlelerinden biri olan **İsdemir Demir-Çelik Fabrikası** (liman ve ithalat avantajıyla buraya kurulmuştur) ve kimya sanayisi gelişmiştir.",
+                "afet": "<b>⚠️ Doğal Afetler:</b> Tektonik kırıklara bağlı büyük depremler ve körfez sanayisinin yarattığı çevre kirliliği riskleri yaygındır.",
+                "colors": {"deprem":"#ef4444","karstik":"#94a3b8","delta":"#059669","kıyı":"#10b981","nüfus":"#059669","iklim":"#f59e0b","toprak":"#0d9488","maden":"#eab308","sanayi":"#4f46e5","afet":"#e11d48"}
             }
         };
 
@@ -1608,105 +2232,217 @@
             const ratio = globalStats.solved > 0 ? Math.round((globalStats.correct / globalStats.solved) * 100) : 0;
             const avgTime = totalSolvedCount > 0 ? (totalSolvedTime / totalSolvedCount) : 0;
             
-            // Build error list
+            // User Profile Configuration
+            let userProfile = JSON.parse(localStorage.getItem('kpss_user_profile')) || {
+                name: "Furkan Doğuhan",
+                target: "KPSS 2026 - Türkiye Derecesi Hedefi (95+ Puan)",
+                slogan: "İnanç, İstikrar ve Bilimsel Hata Analizi"
+            };
+
+            // AI Motivation Advice
+            let motivationMsg = "";
+            let progressIcon = "";
+            if (ratio >= 85) {
+                motivationMsg = "Zirve Kalite! Mevcut başarı oranınız ÖSYM standartlarına göre Türkiye geneli derece bandındadır. Hata defterinizdeki en ince detaylara odaklanmaya devam edin.";
+                progressIcon = "🏆";
+            } else if (ratio >= 70) {
+                motivationMsg = "Harika İlerleme! %70+ başarı oranı akademik olarak çok güçlü bir altyapıyı işaret eder. Eksik kazanımlarınızı nokta atışı AI taramalarıyla kapatabilirsiniz.";
+                progressIcon = "⚡";
+            } else if (ratio >= 50) {
+                motivationMsg = "Gelişmekte Olan Potansiyel! Çözdüğünüz her yanlış soru, gerçek sınavda yapacağınız bir doğru demektir. Hata defterini her gün tekrarlayın.";
+                progressIcon = "📈";
+            } else {
+                motivationMsg = "Başlangıç Aşaması. Yolun başında hataların fazla olması son derece doğaldır. Her kazanım analizini dikkatlice okuyarak temeli sağlamlaştırın.";
+                progressIcon = "🎯";
+            }
+
+            // Build error list with clickable links and high fidelity design
             let errorsHtml = "";
             let filteredErrors = kpssNotebook.filter(n => n.lesson === currentLesson);
             if (filteredErrors.length === 0) {
-                errorsHtml = `<p class="print-text-muted italic">Kayıtlı hatalı soru bulunmamaktadır. Harika gidiyorsun!</p>`;
+                errorsHtml = `
+                    <div class="print-card text-center py-6">
+                        <i class="fa-solid fa-circle-check text-emerald-500 text-3xl mb-2 block"></i>
+                        <p class="font-bold print-text-dark text-xs uppercase tracking-wide">Kayıtlı Hatalı Soru Bulunmamaktadır!</p>
+                        <p class="print-text-muted text-[10px] mt-1">Harika bir performans sergiliyorsunuz. Tüm kazanımları başarıyla tamamladınız.</p>
+                    </div>`;
             } else {
                 filteredErrors.forEach((item, idx) => {
+                    const searchUrl = `https://www.google.com/search?q=${encodeURIComponent('KPSS ' + (item.lesson === 'tarih' ? 'Tarih' : 'Coğrafya') + ' ' + item.q)}`;
                     errorsHtml += `
-                        <div class="print-card print-avoid-break">
-                            <div class="flex justify-between print-text-muted text-[9px] border-b border-slate-200 pb-1 mb-2 font-bold uppercase">
-                                <span>#${idx+1} | ${item.unit}</span>
-                                <span>KAZANIM: ${item.tag || "#GenelKazanım"}</span>
+                        <div class="print-card print-avoid-break" style="border-left: 3px solid #f43f5e !important; padding: 12px; margin-bottom: 10px; background: #fffcfc;">
+                            <div class="flex justify-between print-text-muted text-[8px] border-b border-slate-100 pb-1 mb-2 font-bold uppercase tracking-wider">
+                                <span><i class="fa-solid fa-hashtag text-rose-500"></i> ${idx+1} | ${item.unit}</span>
+                                <span><i class="fa-solid fa-tag text-indigo-500"></i> KAZANIM: ${item.tag || "#GenelKazanım"}</span>
                             </div>
-                            <p class="font-bold print-text-dark text-[11px] mb-1.5 leading-relaxed">${item.q}</p>
-                            <p class="text-emerald-700 font-bold mb-1">Doğru Cevap: ${item.options[item.correct]}</p>
-                            <p class="print-text-muted text-[10px] leading-relaxed italic"><b class="print-text-dark font-bold">ÖSYM Çözüm Analizi:</b> ${item.rationale}</p>
+                            <a href="${searchUrl}" target="_blank" class="font-bold print-text-dark text-[11px] mb-1.5 leading-relaxed block hover:text-indigo-600 transition-colors" title="Google üzerinde ara ve doğrula">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[9px] mr-1 text-indigo-400 no-print"></i>${item.q}
+                            </a>
+                            <div class="p-2 bg-emerald-50 rounded border border-emerald-100 text-[10px] mb-1.5 font-bold text-emerald-800">
+                                <i class="fa-solid fa-circle-check mr-1 text-emerald-600"></i> Doğru Cevap: ${item.options[item.correct]}
+                            </div>
+                            <p class="print-text-muted text-[10px] leading-relaxed italic" style="background: #f8fafc; padding: 6px; border-radius: 4px; border-left: 2px solid #cbd5e1;">
+                                <strong class="print-text-dark font-black"><i class="fa-solid fa-brain text-purple-500 mr-1"></i> ÖSYM Akademik Çözüm & Tuzak Analizi:</strong> ${item.rationale}
+                            </p>
                         </div>`;
                 });
             }
             
-            // Get worst topics for printing
-            let worstTopicsHtml = "";
+            // Analyze zayıf konular (Hata Sıklığı)
             let hiyerarşi = {};
             filteredErrors.forEach(item => { 
                 let k = item.tag || "#GenelKazanım"; 
                 hiyerarşi[k] = (hiyerarşi[k] || 0) + 1; 
             });
             let sortedWorst = Object.keys(hiyerarşi).sort((a,b) => hiyerarşi[b] - hiyerarşi[a]);
+            
+            // Topic error bars rendering
+            let worstTopicsHtml = "";
+            let topicErrorBarsHtml = "";
+            
             if (sortedWorst.length === 0) {
-                worstTopicsHtml = `<span class="font-bold text-emerald-700">Tespit edilen zayıf konu bulunmamaktadır.</span>`;
+                worstTopicsHtml = `<span class="font-bold text-emerald-700">Analiz edilecek zayıf konu bulunmamaktadır. Tebrikler!</span>`;
+                topicErrorBarsHtml = `
+                    <div class="text-center py-4 text-emerald-600 font-bold text-[10px]">
+                        <i class="fa-solid fa-shield-halved text-lg mb-1 block"></i>
+                        Zayıf kazanım bulunamadı. Savunma hattınız mükemmel durumda!
+                    </div>`;
             } else {
-                worstTopicsHtml = sortedWorst.slice(0, 3).map(tag => `<span class="font-bold text-rose-700 mr-3">${tag} (${hiyerarşi[tag]} Hata)</span>`).join(" ");
+                worstTopicsHtml = sortedWorst.slice(0, 3).map(tag => `<span class="font-bold text-rose-700 mr-3"><i class="fa-solid fa-circle-exclamation text-rose-600 mr-0.5"></i> ${tag} (${hiyerarşi[tag]} Hata)</span>`).join(" ");
+                
+                topicErrorBarsHtml = `<div class="space-y-2 mt-1.5">`;
+                sortedWorst.slice(0, 5).forEach(tag => {
+                    let errCount = hiyerarşi[tag];
+                    let barPercent = Math.min(100, Math.round((errCount / Math.max(1, kpssNotebook.length)) * 100));
+                    let color = errCount > 4 ? '#ef4444' : (errCount > 2 ? '#f59e0b' : '#3b82f6');
+                    topicErrorBarsHtml += `
+                        <div class="print-avoid-break">
+                            <div class="flex justify-between items-center text-[9px] mb-0.5 font-bold">
+                                <span class="print-text-dark"><i class="fa-solid fa-triangle-exclamation text-amber-500 mr-1"></i> ${tag}</span>
+                                <span class="text-slate-600 font-mono">${errCount} Hata (%${barPercent} Yoğunluk)</span>
+                            </div>
+                            <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden border border-slate-200">
+                                <div class="h-full rounded-full" style="width: ${barPercent}%; background-color: ${color}; transition: width 0.5s ease-in-out;"></div>
+                            </div>
+                        </div>`;
+                });
+                topicErrorBarsHtml += `</div>`;
             }
 
             const lessonTitle = currentLesson === 'tarih' ? "Tarih & İlk Türk-İslam Kültürü" : "Coğrafya & Türkiye Fiziki Morfolojisi";
             const speedCoach = avgTime < 30 ? "Mükemmel Hız (ÖSYM Sınav Ritmine Tam Uyumlu)" : (avgTime <= 60 ? "İdeal Hız (Süreyi Dengeli ve Verimli Kullanma)" : "Biraz Hızlanmalı (Soru pratikleriyle hızlanma tavsiye edilir)");
 
             printWrapper.innerHTML = `
-                <!-- Sayfa 1: Gelişim ve Analiz Raporu -->
-                <div class="print-page-break">
-                    <div class="print-header flex justify-between items-end">
-                        <div>
-                            <h1 class="text-xl font-black print-text-dark tracking-wide">KPSS GELİŞİM & BAŞARI RAPORU</h1>
-                            <p class="text-[10px] print-text-muted">Furkan'ın Bireysel Yapay Zeka Eğitim Raporu</p>
+                <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+                    .print-container { font-family: 'Inter', sans-serif !important; color: #1e293b !important; background: white !important; font-size: 11px; line-height: 1.5; }
+                    .print-text-dark { color: #0f172a !important; }
+                    .print-text-muted { color: #64748b !important; }
+                    .print-card-style { border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px; background: #fafafa; margin-bottom: 12px; }
+                    .progress-bar-container { background: #f1f5f9; border-radius: 9999px; height: 6px; overflow: hidden; }
+                    .progress-bar-fill { background: linear-gradient(to right, #4f46e5, #10b981); height: 100%; border-radius: 9999px; }
+                </style>
+                <div class="print-container">
+                    <!-- Sayfa 1: Gelişim ve Analiz Raporu -->
+                    <div class="print-page-break" style="padding: 10px;">
+                        <!-- Premium Kişiselleştirilmiş Header -->
+                        <div class="flex justify-between items-center border-b-2 border-slate-800 pb-3.5 mb-4">
+                            <div class="flex items-center gap-3">
+                                <div style="width: 48px; height: 48px; border-radius: 50%; background: #e0e7ff; display: flex; align-items: center; justify-content: center; border: 2px solid #4f46e5;" class="no-print-bg">
+                                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 32px; height: 32px;">
+                                        <circle cx="50" cy="40" r="20" fill="#4f46e5"/>
+                                        <path d="M 20,80 Q 50,55 80,80 Z" fill="#4f46e5"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h1 class="text-lg font-black print-text-dark tracking-tight leading-none">${userProfile.name}</h1>
+                                    <p class="text-[9px] text-indigo-700 font-bold mt-1 uppercase tracking-wide"><i class="fa-solid fa-trophy mr-1"></i> ${userProfile.target}</p>
+                                    <p class="text-[8px] text-slate-400 italic">${userProfile.slogan}</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-[9px] font-black text-slate-500 uppercase tracking-widest block">HAFTALIK AKADEMİK GELİŞİM RAPORU</span>
+                                <span class="text-xs font-bold text-slate-700 mt-1 block">${today}</span>
+                            </div>
                         </div>
-                        <span class="text-xs font-bold print-text-muted">${today}</span>
+
+                        <div class="space-y-4">
+                            <!-- Genel Performans İstatistikleri -->
+                            <div class="print-accent-bar" style="border-left: 4px solid #4f46e5 !important; padding-left: 10px; margin-bottom: 8px;">
+                                <h2 class="text-xs font-black print-text-dark uppercase tracking-wider"><i class="fa-solid fa-chart-line text-indigo-600 mr-1"></i> 1. Genel Performans İstatistikleri</h2>
+                                <p class="text-[8px] print-text-muted mt-0.5">Mevcut Çalışma Alanı: <b>${lessonTitle}</b></p>
+                            </div>
+
+                            <div class="print-grid" style="display: grid; grid-template-cols: repeat(4, 1fr); gap: 10px;">
+                                <div class="print-stat-box" style="border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; text-align: center; background: #f8fafc;">
+                                    <div class="text-[8px] print-text-muted font-bold uppercase"><i class="fa-solid fa-circle-question mr-1"></i> Toplam Çözülen</div>
+                                    <div class="text-base font-black print-text-dark mt-0.5">${globalStats.solved}</div>
+                                </div>
+                                <div class="print-stat-box" style="border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; text-align: center; background: #f0fdf4;">
+                                    <div class="text-[8px] print-text-muted font-bold uppercase"><i class="fa-solid fa-square-check mr-1 text-emerald-600"></i> Başarı Oranı</div>
+                                    <div class="text-base font-black text-emerald-700 mt-0.5">%${ratio}</div>
+                                </div>
+                                <div class="print-stat-box" style="border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; text-align: center; background: #f8fafc;">
+                                    <div class="text-[8px] print-text-muted font-bold uppercase"><i class="fa-solid fa-stopwatch mr-1"></i> Ortalama Hız</div>
+                                    <div class="text-base font-black print-text-dark mt-0.5">${avgTime.toFixed(1)} sn</div>
+                                </div>
+                                <div class="print-stat-box" style="border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; text-align: center; background: #fffbeb;">
+                                    <div class="text-[8px] print-text-muted font-bold uppercase"><i class="fa-solid fa-fire mr-1 text-amber-500"></i> Çalışma Serisi</div>
+                                    <div class="text-base font-black text-amber-700 mt-0.5">${streakCount} Gün</div>
+                                </div>
+                            </div>
+
+                            <!-- Başarı Oranı Görsel Yüzde Çubuk Grafiği -->
+                            <div class="print-card-style" style="padding: 10px; margin-bottom: 12px; background: #fafafa;">
+                                <div class="flex justify-between items-center text-[9px] font-bold mb-1.5">
+                                    <span class="print-text-dark">Akademik Doğruluk Oranı</span>
+                                    <span class="text-indigo-600">%${ratio}</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" style="width: ${ratio}%;"></div>
+                                </div>
+                            </div>
+
+                            <!-- Yapay Zeka Koçluk & Zayıf Kazanım Raporu -->
+                            <div class="print-card-style" style="border-left: 4px solid #10b981 !important; background: #f6fdf9;">
+                                <h3 class="text-[10px] font-black print-text-dark mb-1.5 uppercase tracking-wider flex items-center gap-1">
+                                    <span>${progressIcon}</span> Yapay Zeka Gelişim ve Koçluk Tavsiyesi
+                                </h3>
+                                <p class="text-[10px] print-text-muted leading-relaxed" style="text-align: justify;">
+                                    Sayın <strong>${userProfile.name}</strong>, yaptığım bilimsel veri analizlerine göre, <b>${lessonTitle}</b> dersinde en çok odaklanmanız gereken zayıf kazanımlarınız: ${worstTopicsHtml}. 
+                                    Soru başına ortalama hızınız <b>${avgTime.toFixed(1)} saniye</b> seviyesindedir. Bu hız ÖSYM sınav ritmine göre <strong>${speedCoach}</strong> olarak değerlendirilmiştir. 
+                                    <br><span class="text-indigo-700 font-bold"><i class="fa-solid fa-lightbulb text-indigo-500 mr-1 mt-1"></i> AI Önerisi:</span> ${motivationMsg} Zayıf olduğunuz kazanımlarla ilgili hata defterindeki akademik şık analizlerini düzenli okuyarak netlerinizi hızlı bir şekilde artırabilirsiniz.
+                                </p>
+                            </div>
+
+                            <!-- Zayıf Konu Hata Dağılımı Çubuk Grafiği -->
+                            <div class="print-accent-bar mt-2" style="border-left: 4px solid #f59e0b !important; padding-left: 10px; margin-bottom: 8px;">
+                                <h2 class="text-xs font-black print-text-dark uppercase tracking-wider"><i class="fa-solid fa-triangle-exclamation text-amber-500 mr-1"></i> 2. Zayıf Kazanım Hata Dağılım Grafiği</h2>
+                                <p class="text-[8px] print-text-muted mt-0.5">Hata defteri verilerine göre zayıf olunan konuların yoğunluk dereceleri</p>
+                            </div>
+                            <div class="print-card-style">
+                                ${topicErrorBarsHtml}
+                            </div>
+
+                            <!-- Grafik Bölümü -->
+                            <div class="print-accent-bar mt-2" style="border-left: 4px solid #10b981 !important; padding-left: 10px; margin-bottom: 8px;">
+                                <h2 class="text-xs font-black print-text-dark uppercase tracking-wider"><i class="fa-solid fa-chart-area text-emerald-600 mr-1"></i> 3. Son 7 Günlük Soru Çözüm Dağılımı</h2>
+                            </div>
+                            <div class="print-card-style flex justify-center py-4 bg-white" style="height: 120px;">
+                                ${document.getElementById("svg-weekly-chart") ? document.getElementById("svg-weekly-chart").outerHTML.replace('class="w-full h-36"', 'style="width: 380px; height: 110px;"') : ""}
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="space-y-4">
-                        <div class="print-accent-bar">
-                            <h2 class="text-xs font-black print-text-dark uppercase tracking-wider">1. Genel Performans İstatistikleri</h2>
-                            <p class="text-[9px] print-text-muted mt-0.5">Seçili Ders: <b>${lessonTitle}</b></p>
+                    <!-- Sayfa 2 ve Sonrası: Zayıf Konular ve Hata Defteri -->
+                    <div style="padding: 10px;">
+                        <div class="print-header" style="border-bottom: 2px solid #0f172a; padding-bottom: 6px; margin-bottom: 12px;">
+                            <h1 class="text-base font-black print-text-dark tracking-tight"><i class="fa-solid fa-book-bookmark text-rose-500 mr-1"></i> 4. DETAYLI HATA DEFTERİ KAZANIM REHBERİ</h1>
+                            <p class="text-[8px] print-text-muted">Buradaki sorulara ait akademik çözümler ve ÖSYM ders notları KPSS Portalı üzerinde etkileşimlidir. Soruların üzerine tıklayarak internet üzerinden doğrulama yapabilirsiniz.</p>
                         </div>
-
-                        <div class="print-grid">
-                            <div class="print-stat-box">
-                                <div class="text-[8px] print-text-muted font-bold uppercase">Toplam Çözülen</div>
-                                <div class="text-lg font-black print-text-dark mt-1">${globalStats.solved}</div>
-                            </div>
-                            <div class="print-stat-box">
-                                <div class="text-[8px] print-text-muted font-bold uppercase">Başarı Oranı</div>
-                                <div class="text-lg font-black text-emerald-700 mt-1">%${ratio}</div>
-                            </div>
-                            <div class="print-stat-box">
-                                <div class="text-[8px] print-text-muted font-bold uppercase">Ortalama Hız</div>
-                                <div class="text-lg font-black print-text-dark mt-1">${avgTime.toFixed(1)} sn</div>
-                            </div>
-                            <div class="print-stat-box">
-                                <div class="text-[8px] print-text-muted font-bold uppercase">Çalışma Serisi</div>
-                                <div class="text-lg font-black text-amber-700 mt-1">${streakCount} Gün</div>
-                            </div>
+                        <div class="space-y-4">
+                            ${errorsHtml}
                         </div>
-
-                        <div class="print-card mt-3">
-                            <h3 class="text-[10px] font-black print-text-dark mb-1.5 uppercase tracking-wider flex items-center gap-1"><i class="fa-solid fa-graduation-cap"></i> Yapay Zeka Gelişim ve Koçluk Raporu</h3>
-                            <p class="text-[10px] print-text-muted leading-relaxed italic">
-                                Furkan, yaptığım detaylı analizlere göre, <b>${lessonTitle}</b> dersinde en zayıf olduğun konular: ${worstTopicsHtml}. 
-                                Soru başına ortalama hızın <b>${avgTime.toFixed(1)} saniye</b> seviyesindedir. Bu hız ÖSYM standartlarına göre <b>${speedCoach}</b> kategorisine girmektedir. 
-                                Gelişimin için Hata Defterindeki şık analizlerini detaylıca okumanı ve AI tarama testlerini düzenli çözmeni tavsiye ederim.
-                            </p>
-                        </div>
-
-                        <div class="print-accent-bar mt-4">
-                            <h2 class="text-xs font-black print-text-dark uppercase tracking-wider">2. Son 7 Günlük Soru Çözüm Dağılımı</h2>
-                        </div>
-                        <div class="print-card flex justify-center py-4 bg-white" style="height: 120px;">
-                            ${document.getElementById("svg-weekly-chart") ? document.getElementById("svg-weekly-chart").outerHTML.replace('class="w-full h-36"', 'style="width: 380px; height: 110px;"') : ""}
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sayfa 2 ve Sonrası: Zayıf Konular ve Hata Defteri -->
-                <div>
-                    <div class="print-header">
-                        <h1 class="text-base font-black print-text-dark tracking-wide">3. ZAYIF KONULAR VE HATA DEFTERİ ÇÖZÜM REHBERİ</h1>
-                        <p class="text-[9px] print-text-muted">Bu soruların şık analizleri ve detaylı kazanım rehberleri portal üzerinde de etkileşimlidir.</p>
-                    </div>
-                    <div class="space-y-4">
-                        ${errorsHtml}
                     </div>
                 </div>
             `;
@@ -1807,6 +2543,85 @@
             
             const streakCountEl = document.getElementById("txt-streak-count");
             if (streakCountEl) streakCountEl.textContent = streakCount;
+        }
+
+        function renderMasteryChart() {
+            const svg = document.getElementById("svg-mastery-chart");
+            if (!svg) return;
+            
+            // 5 units names for current lesson
+            const unitShortNames = currentLesson === 'tarih' ? 
+                ["1. İslamiyet Öncesi", "2. İlk Türk-İslam", "3. Beylikler Dönemi", "4. Kuruluş & Yükselme", "5. Kültür & Teşkilat"] :
+                ["1. Coğrafi Konum", "2. Yerşekilleri", "3. İklim & Bitki", "4. Beşeri Coğrafya", "5. Ekonomik Coğrafya"];
+            
+            let svgHtml = `
+                <defs>
+                    <linearGradient id="masteryEmerald" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#10b981" />
+                        <stop offset="100%" stop-color="#059669" />
+                    </linearGradient>
+                    <linearGradient id="masteryAmber" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#fbbf24" />
+                        <stop offset="100%" stop-color="#d97706" />
+                    </linearGradient>
+                    <linearGradient id="masteryRose" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#f87171" />
+                        <stop offset="100%" stop-color="#dc2626" />
+                    </linearGradient>
+                </defs>
+            `;
+            
+            const startY = 12;
+            const barHeight = 11;
+            const gap = 25;
+            const maxBarWidth = 220;
+            const startX = 110;
+            
+            for (let i = 0; i < 5; i++) {
+                const uData = currentData[i];
+                if (!uData) continue;
+                
+                const uName = uData.unite;
+                const totalQuestions = uData.quiz ? uData.quiz.length : 40;
+                
+                // Count active errors in Hata Defteri
+                const errorsCount = kpssNotebook.filter(n => n.lesson === currentLesson && n.unit === uName).length;
+                
+                // Success rate calculation
+                const masteryScore = Math.max(10, Math.round(((totalQuestions - errorsCount) / totalQuestions) * 100));
+                
+                // Select gradient based on mastery score
+                let gradName = "masteryEmerald";
+                let statusText = "GÜVENLİ";
+                let statusColor = "#10b981";
+                if (masteryScore < 60) {
+                    gradName = "masteryRose";
+                    statusText = "RİSKLİ";
+                    statusColor = "#f43f5e";
+                } else if (masteryScore < 85) {
+                    gradName = "masteryAmber";
+                    statusText = "KRİTİK";
+                    statusColor = "#fbbf24";
+                }
+                
+                const y = startY + i * gap;
+                const barWidth = Math.round((masteryScore / 100) * maxBarWidth);
+                
+                svgHtml += `
+                    <!-- Label -->
+                    <text x="5" y="${y + 9}" fill="#94a3b8" font-size="8.5" font-weight="900" font-family="sans-serif">${unitShortNames[i]}</text>
+                    <!-- Background bar -->
+                    <rect x="${startX}" y="${y}" width="${maxBarWidth}" height="${barHeight}" rx="3.5" fill="#1e293b" />
+                    <!-- Progress bar -->
+                    <rect x="${startX}" y="${y}" width="${barWidth}" height="${barHeight}" rx="3.5" fill="url(#${gradName})" class="transition-all duration-500" />
+                    <!-- Mastery Percentage -->
+                    <text x="${startX + maxBarWidth + 10}" y="${y + 9}" fill="${statusColor}" font-size="8.5" font-weight="900" font-family="monospace">%${masteryScore}</text>
+                    <!-- Status Label -->
+                    <text x="${startX + maxBarWidth + 48}" y="${y + 9}" fill="${statusColor}" font-size="7" font-weight="900" font-family="sans-serif" text-anchor="end">${statusText}</text>
+                `;
+            }
+            
+            svg.innerHTML = svgHtml;
         }
 
         function renderWeeklyChart() {
