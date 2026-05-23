@@ -5816,6 +5816,726 @@ const cografya_db = [
         "correct": 1,
         "rationale": "<b>Doğru Cevap: B şıkkıdır.</b> Göçün temel nedeni kırsal işsizlik ve gelir yetersizliğidir. Eğer kırsal halk kendi toprağında sulu tarım yaparak veya yerel fabrikalarda çalışarak yüksek gelir elde edebilirse kentlere gitme ihtiyacı duymaz. Buna 'yerinde kalkınma' denir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Seyahat ve yerleşim özgürlüğü anayasal haktır, göç yasaklanamaz.<br>• <b>B Şıkkı (Doğru):</b> İstihdam ve sosyal imkanların (okul, hastane) kırsal bölgelerde geliştirilmesi göç dalgasını kalıcı olarak durduran yegane çözümdür.<br>• <b>C Şıkkı (Yanlış):</b> Herkesin metropolde toplanması kentsel ekolojiyi tamamen çökertir.<br>• <b>D Şıkkı (Yanlış):</b> Eğitimin kapatılması göçü azaltmaz aksine kaçışı hızlandırır.",
         "tag": "#GöçüÖnleme"
+      },
+      {
+        "q": "Soru 41: Türkiye'de 2007 yılından itibaren uygulanmaya başlanan Adrese Dayalı Nüfus Kayıt Sistemi (ADNKS) ile ilgili aşağıda verilen bilgilerden hangisi yanlıştır?",
+        "options": [
+          "Nüfus sayımının yapıldığı gün uygulanan sokağa çıkma yasaklarını ve bu yasakların yol açtığı ekonomik kayıpları ortadan kaldırmıştır.",
+          "Kişilerin yerleşim yerlerine göre nüfus bilgilerini güncel tutmakta ve nüfus hareketlerini anlık olarak takip edebilmektedir.",
+          "De-facto (hazır bulunan) nüfus sayım yönteminden, de-jure (ikametgaha dayalı) nüfus sayım yöntemine geçişi sağlamıştır.",
+          "Ülkedeki okur-yazarlık oranı, mesleki dağılım ve işsizlik gibi detaylı sosyo-ekonomik verileri sadece beş yılda bir yapılan fiziki anketlerle sisteme işler."
+        ],
+        "correct": 3,
+        "rationale": "<b>Doğru Cevap: D Şıkkıdır.</b> ADNKS ile sosyo-ekonomik özellikler fiziki anketlerle beş yılda bir değil, diğer devlet kurumlarının (SGK, MEB vb.) veri tabanlarıyla entegre olarak sürekli ve elektronik ortamda güncellenmektedir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Doğrudur. ADNKS öncesinde sokağa çıkma yasaklı sayımlar yapılıyordu, bu sistemle bu kayıplar sona erdi.<br>• <b>B Şıkkı (Yanlış):</b> Doğrudur. Sistem, kişilerin ikamet adreslerine dayalı olarak sürekli güncel nüfus verisi sunar.<br>• <b>C Şıkkı (Yanlış):</b> Doğrudur. Fiilen bulunulan yerin sayılması (de-facto) yerine, yasal ikametgaha dayalı (de-jure) sayım sistemine geçilmiştir.<br>• <b>D Şıkkı (Doğru):</b> Yanlış bir açıklamadır, sistem entegrasyonu sayesinde fiziki anket zorunluluğu ortadan kalkmıştır.",
+        "tag": "#ADNKS"
+      },
+      {
+        "q": "Soru 42: Bir ülkedeki toplam nüfusun, o ülkenin toplam yüzölçümüne bölünmesiyle aritmetik nüfus yoğunluğu elde edilir. Türkiye'de bölgelerin aritmetik nüfus yoğunlukları arasındaki belirgin farklar göz önüne alındığında, aşağıdakilerden hangisi aritmetik nüfus yoğunluğunu belirleyen temel faktörler arasında gösterilemez?",
+        "options": [
+          "Bölgelerin yüzölçümlerinin birbirinden farklı olması",
+          "Sanayi, ticaret ve ulaşım imkanlarının belirli alanlarda yoğunlaşması",
+          "Bölgelerin yıllık ortalama yağış miktarı ve rüzgar yönü gibi mikroklimatik etkenlerin doğrudan tarım dışı alanları belirlemesi",
+          "İstihdam olanaklarının bölgesel dağılımındaki dengesizlikler"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Rüzgar yönü gibi detaylı mikroklimatik etkenler, aritmetik nüfus yoğunluğunun makro düzeydeki dağılışını doğrudan belirleyen temel bir etken değildir. Aritmetik nüfus yoğunluğu toplam nüfus ve yüzölçüm ilişkisine dayanır ve nüfus dağılışını asıl belirleyen sanayi, istihdam ve yerşekilleridir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Yüzölçümü aritmetik yoğunluk formülünün paydasıdır, dolayısıyla doğrudan etkilidir (örneğin yüzölçümü küçük ama nüfusu fazla olan Marmara yoğun, yüzölçümü büyük olan İç Anadolu seyrek yoğunlukludur).<br>• <b>B Şıkkı (Yanlış):</b> Sanayi ve ticaret nüfusu çeker, nüfus payını artırarak aritmetik yoğunluğu yükseltir.<br>• <b>C Şıkkı (Doğru):</b> Rüzgar yönü gibi etkenler makro düzeyde nüfus yoğunluğunu belirleyen temel faktör olamaz.<br>• <b>D Şıkkı (Yanlış):</b> İstihdam dengesizlikleri iç göçe neden olarak yoğunluğu etkiler.",
+        "tag": "#AritmetikYoğunluk"
+      },
+      {
+        "q": "Soru 43: Türkiye'de geçici köy altı yerleşmelerinden biri olan 'Dam', özellikle Ege Bölgesi (Göller Yöresi ve Gökçeada gibi alanlar dahil) ve Batı Anadolu'da yaygındır. Dam yerleşmeleriyle ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+        "options": [
+          "Tamamen kalıcı konutlardan oluşup, idari olarak doğrudan ilçeye bağlıdır.",
+          "Genellikle hayvancılık faaliyetlerinin ön planda olduğu, ailelerin geçici olarak barındığı tek mesken veya birkaç eklentiden oluşan yerleşmelerdir.",
+          "Doğu Karadeniz'deki yayla yerleşmelerinin Ege'deki birebir isim eşdeğeridir.",
+          "Sadece büyükbaş hayvancılık yapılan ve nüfusu 500'ün üzerinde olan kalıcı köy altı birimidir."
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Damlar, Ege Bölgesi, Göller Yöresi ve Bozcaada/Gökçeada gibi yerlerde hayvancılık faaliyetlerinin ön planda olduğu geçici köy altı yerleşmeleridir. Genellikle küçükbaş veya büyükbaş hayvan barınağı ile çobanın/ailenin kaldığı basit yapılardan oluşur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Dam yerleşmeleri geçicidir ve idari olarak bağlı oldukları köye tabidirler.<br>• <b>B Şıkkı (Doğru):</b> Damların temel işlevi geçici hayvancılık yapılması ve ailelerin burada mevsimlik konaklamasıdır.<br>• <b>C Şıkkı (Yanlış):</b> Yaylalar ile damların coğrafi ortamı, yükseltisi ve işlevleri farklıdır.<br>• <b>D Şıkkı (Yanlış):</b> Nüfusu oldukça az olup geçici statüdedir.",
+        "tag": "#Dam"
+      },
+      {
+        "q": "Soru 44: Türkiye'de dağınık yerleşmelerin yaygın olduğu alanlar ile toplu yerleşmelerin yaygın olduğu alanlar karşılaştırıldığında, yerleşme dokusunu belirleyen en temel iki faktör sırasıyla hangisinde doğru verilmiştir?",
+        "options": [
+          "Yıllık sıcaklık farkı - Toprak tipi",
+          "Su kaynaklarının durumu - Yerşekillerinin engebelilik derecesi",
+          "Ulaşım ağının gelişmişliği - Bitki örtüsünün sıklığı",
+          "Nüfus yoğunluğu - Tarım ürünlerinin çeşitliliği"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Türkiye'de dağınık veya toplu yerleşme dokusunu belirleyen en temel fiziksel faktörler su kaynaklarının bolluğu/kıtlığı ve yerşekillerinin engebeli/düz olmasıdır. Karadeniz gibi suyun bol ve arazinin engebeli olduğu yerlerde dağınık; İç Anadolu gibi suyun az ve arazinin düz olduğu yerlerde ise toplu yerleşmeler görülür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Sıcaklık farkı ve toprak tipi yerleşme dokusunu doğrudan belirlemez.<br>• <b>B Şıkkı (Doğru):</b> Su kaynaklarının bolluğu evlerin serbestçe dağılmasını sağlar, engebe ise düz alan bulma zorunluluğundan dolayı dağınıklığı artırır. Suyun azlığı ise insanları su kuyusu veya çeşme etrafında toplanmaya zorlar (toplu yerleşme).<br>• <b>C Şıkkı (Yanlış):</b> Ulaşım ve bitki örtüsü ikincil faktörlerdir, dokuyu doğrudan kuramazlar.<br>• <b>D Şıkkı (Yanlış):</b> Nüfus yoğunluğu yerleşme dokusunun sonucu olabilir ama nedeni değildir.",
+        "tag": "#DağınıkYerleşme"
+      },
+      {
+        "q": "Soru 45: Hızlı nüfus artışı yaşayan ülkelerde veya bölgelerde, nüfusun temel ihtiyaçlarını (eğitim, sağlık, konut, altyapı vb.) karşılamak amacıyla yapılan yatırımlara 'demografik yatırımlar' denir. Buna göre, Türkiye'de demografik yatırımların payının yüksek olduğu bir bölge için aşağıdakilerden hangisi söylenebilir?",
+        "options": [
+          "Kişi başına düşen milli gelir payı hızla artmaktadır.",
+          "Kalkınma hızı ve sanayileşme yatırımlarına ayrılan pay yüksek düzeydedir.",
+          "Genç nüfus oranı yüksek olup, devlet bütçesinden tüketime ve sosyal hizmetlere ayrılan pay üretim yatırımlarını kısıtlamaktadır.",
+          "Dışarıdan göç alma oranı, doğal nüfus artış hızından çok daha düşüktür."
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Demografik yatırımların yüksek olması, nüfus artış hızının çok yüksek olduğunu gösterir. Bu durum, devletin bütçesini fabrikalar kurmak (üretken yatırımlar) yerine okul, hastane ve yol gibi doğrudan gelir getirmeyen sosyal ve alt yapı tesislerine (demografik yatırımlar) harcamasına yol açar. Bu da ülkenin kalkınma hızını yavaşlatır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Demografik yatırımlar arttıkça kişi başına düşen milli gelir artışı yavaşlar.<br>• <b>B Şıkkı (Yanlış):</b> Demografik yatırımlar üretken sanayi yatırımlarının payını azaltır.<br>• <b>C Şıkkı (Doğru):</b> Nüfus artış hızı yüksek olan yerlerde genç nüfus fazladır, dolayısıyla okul ve hastane gibi tüketime yönelik demografik yatırımların payı artar.<br>• <b>D Şıkkı (Yanlış):</b> Demografik yatırımlar hem yüksek doğal nüfus artışlı hem de aşırı göç alan metropollerde yüksek olabilir.",
+        "tag": "#DemografikYatırım"
+      },
+      {
+        "q": "Soru 46: Doğu Anadolu Bölgesi, Türkiye'de nüfus yoğunluğunun en az olduğu bölgelerin başında gelmektedir. Bölgenin nüfus özellikleri ve dağılışı üzerinde aşağıdakilerden hangisinin etkisi diğerlerine göre daha azdır?",
+        "options": [
+          "Yüksek ve engebeli dağlık alanların geniş yer kaplaması",
+          "Kış mevsiminin çok soğuk ve uzun geçmesi, kar örtüsünün yerde kalma süresinin uzun olması",
+          "Ulaşım ağlarının yetersizliği ve sanayi tesislerinin az olması",
+          "Geniş platolar üzerinde yaygın olarak yapılan büyükbaş hayvancılık faaliyetleri"
+        ],
+        "correct": 3,
+        "rationale": "<b>Doğru Cevap: D Şıkkıdır.</b> Büyükbaş hayvancılık faaliyetleri Doğu Anadolu'da ekonomik bir geçim kaynağıdır ancak bölgenin genel olarak çok seyrek nüfuslu olmasının veya nüfusun dağılışının temel bir olumsuz belirleyicisi değildir. Bölgenin genel nüfus seyrekleşmesinin temel sebepleri engebe, sert iklim ve sanayi yetersizliğidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Yerşekillerinin engebeli ve yüksek olması nüfusun az olmasının başlıca fiziksel nedenidir.<br>• <b>B Şıkkı (Yanlış):</b> Sert karasal iklim yaşam koşullarını zorlaştırarak nüfusu olumsuz etkiler.<br>• <b>C Şıkkı (Yanlış):</b> Sanayi ve ulaşım yetersizliği bölgenin sürekli göç vermesine ve nüfus yoğunluğunun düşük kalmasına neden olur.<br>• <b>D Şıkkı (Doğru):</b> Büyükbaş hayvancılık bölge nüfusunun geçim kaynağıdır, nüfusu azaltan veya sınırlandıran bir etken değildir.",
+        "tag": "#DoğuAnadolu"
+      },
+      {
+        "q": "Soru 47: Fizyolojik nüfus yoğunluğu, toplam nüfusun tarım alanlarına bölünmesiyle elde edilir. Tarım alanlarının dar ve dağlık olduğu, buna karşılık nüfusun fazla olduğu yerlerde fizyolojik nüfus yoğunluğu yüksek çıkar. Buna göre, Türkiye coğrafyasında aşağıdaki alanların hangisinde fizyolojik nüfus yoğunluğunun yüksek çıkma nedeni diğerlerinden farklı bir gerekçeye dayanır?",
+        "options": [
+          "Doğu Karadeniz Bölümü",
+          "Yıldız Dağları Yöresi",
+          "Marmara Bölgesi (Çatalca-Kocaeli)",
+          "Teke Yarımadası"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Doğu Karadeniz, Yıldız Dağları ve Teke Yarımadası gibi yerlerde fizyolojik nüfus yoğunluğunun yüksek (veya dengesiz) olmasının temel nedeni tarım alanlarının engebeli araziden dolayı çok kısıtlı ve dar olmasıdır. Çatalca-Kocaeli Bölümü'nde (Marmara) ise yerşekilleri düz olmasına rağmen yoğunluğun aşırı yüksek çıkmasının nedeni tarım alanlarının darlığı değil, sanayi ve kentleşmeden dolayı bölgede yaşayan toplam nüfusun olağanüstü fazla olmasıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Doğu Karadeniz'de engebelilik fazla, tarım arazisi çok azdır, yoğunluk bu yüzden yüksektir.<br>• <b>B Şıkkı (Yanlış):</b> Yıldız Dağları'nda engebe ve tarım dışı alanlar nedeniyle tarım toprakları dardır.<br>• <b>C Şıkkı (Doğru):</b> Marmara'da düzlükler fazladır fakat nüfus milyonlarla ifade edildiği için formüldeki pay (nüfus) aşırı büyür ve fizyolojik yoğunluk zirve yapar.<br>• <b>D Şıkkı (Yanlış):</b> Teke Yarımadası karstik ve dağlık olduğu için tarım arazisi azdır.",
+        "tag": "#FizyolojikYoğunluk"
+      },
+      {
+        "q": "Soru 48: Türkiye'de kırsal alanlardan kentsel alanlara doğru yapılan göçlerin nedenleri 'itici' ve 'çekici' faktörler olarak ikiye ayrılır. Aşağıdakilerden hangisi kırsal alanın nüfusu dışarıya kaçıran 'itici' faktörlerinden biri değildir?",
+        "options": [
+          "Tarımda makineleşmenin artmasıyla insan gücüne olan ihtiyacın azalması",
+          "Miras yoluyla tarım topraklarının parçalanarak ailelerin geçimini karşılayamaz hale gelmesi",
+          "Kentlerde eğitim, sağlık ve kültürel imkanların çok daha gelişmiş ve çekici olması",
+          "Kırsal alanda su kaynaklarının yetersizliği ve erozyon nedeniyle toprak veriminin düşmesi"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Kentlerdeki eğitim, sağlık ve kültürel imkanların gelişmiş olması kırsal alanın değil, kentin 'çekici' faktörüdür. İtici faktörler doğrudan kırsal alanda yaşanan ve insanı göçe zorlayan olumsuzluklardır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Tarımda makineleşme kırsalda işsizliğe yol açan en önemli 'itici' güçtür.<br>• <b>B Şıkkı (Yanlış):</b> Toprakların mirasla bölünmesi kırsalda geliri düşürür, göçe zorlayan 'itici' bir nedendir.<br>• <b>C Şıkkı (Doğru):</b> Kent imkanlarının cazibesi 'çekici' bir nedendir, kırsalın 'itici' bir özelliği değildir.<br>• <b>D Şıkkı (Yanlış):</b> Toprak verimsizliği ve erozyon kırsaldaki hayatı zorlaştıran 'itici' faktörlerdir.",
+        "tag": "#GöçünNedenleri"
+      },
+      {
+        "q": "Soru 49: Türkiye'de bölgeler ve şehirler arasında yaşanan yoğun iç göç dalgaları hem göç veren hem de göç alan yerlerde önemli ekonomik ve sosyal değişimlere yol açar. Aşağıdakilerden hangisi göç veren (nüfusu azalan) kırsal yörelerde ortaya çıkan sonuçlardan biri değildir?",
+        "options": [
+          "Tarım topraklarının boş kalması ve ekili-dikili alanların daralması",
+          "Kamu yatırımlarının (okul, sağlık ocağı vb.) verimsizleşmesi ve atıl duruma düşmesi",
+          "Nüfusun yaş yapısının değişmesi, dinamik iş gücünün kaybedilmesi ve geriye yaşlı nüfusun kalması",
+          "Sanayi tesislerinin tarım arazilerini işgal etmesi ve çevre kirliliğinin hızla artması"
+        ],
+        "correct": 3,
+        "rationale": "<b>Doğru Cevap: D Şıkkıdır.</b> Sanayi tesislerinin tarım arazilerini işgal etmesi ve çevre kirliliğinin artması, göç veren kırsal alanların değil, kontrolsüz şekilde aşırı göç alan büyük şehirlerin (göç alan yerlerin) ortaya çıkardığı olumsuz sonuçlardan biridir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Kırsalda genç nüfus göç edince tarım alanları ekilemez ve atıl kalır.<br>• <b>B Şıkkı (Yanlış):</b> Azalan nüfus nedeniyle devletin kırsala yaptığı okul ve sağlık ocağı yatırımları kapalı kalır, atıllaşır.<br>• <b>C Şıkkı (Yanlış):</b> Göç edenler genelde genç iş gücü olduğu için kırsalda nüfus yaşlanır.<br>• <b>D Şıkkı (Doğru):</b> Sanayileşme baskısı ve kirlilik göç alan merkezlerin sorunudur, nüfusu azalan kırsalın değil.",
+        "tag": "#GöçünSonuçları"
+      },
+      {
+        "q": "Soru 50: Türkiye'de özellikle büyük kentlere yönelen yoğun göç hareketlerinin doğurduğu mekansal ve sosyo-ekonomik problemleri engellemek amacıyla devlet çeşitli politikalar geliştirmektedir. Kırsal göçü önlemeye (Göçü Önleme) yönelik olarak aşağıda belirtilen uygulamalardan hangisinin katkısı en azdır?",
+        "options": [
+          "Kırsal alanlarda besi ve kümes hayvancılığı gibi modern ahır faaliyetlerini teşvik etmek",
+          "Tarıma dayalı sanayi tesislerini kent merkezleri yerine hammadde kaynağı olan kırsal yörelere kurmak",
+          "Büyük kentlerdeki gecekondu alanlarını kentsel dönüşümle yüksek katlı apartmanlara dönüştürmek",
+          "Kırsalda sulama projelerini (GAP, DAP, KOP vb.) yaygınlaştırarak nadas tarımını bitirmek ve yılda birden fazla ürün alınmasını sağlamak"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Büyük kentlerdeki gecekonduların apartmana dönüştürülmesi kentsel dönüşüm sorununu çözer ancak kırsaldaki göçü önlemede hiçbir doğrudan etkiye sahip değildir. Kırsal göçü önlemenin yolu kırsalda geliri ve istihdamı artıracak projelerdir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Besi hayvancılığı gibi gelir getiren faaliyetler köylünün köyünde kalmasını sağlar.<br>• <b>B Şıkkı (Yanlış):</b> Kırsalda kurulan fabrikalar yerinde istihdam yaratarak gençlerin kentlere göç etmesini engeller.<br>• <b>C Şıkkı (Doğru):</b> Kentsel dönüşüm kente yönelik göçün sebebini veya kırsaldaki itici faktörleri çözmez, sadece kentsel mekanı düzenler.<br>• <b>D Şıkkı (Yanlış):</b> Sulama projeleri tarımsal verimi ve çiftçi gelirini katlayarak kırsal nüfusu yerinde tutar.",
+        "tag": "#GöçüÖnleme"
+      },
+      {
+        "q": "Soru 51: Türkiye'de cumhuriyetin ilk yıllarında kent nüfus oranı oldukça düşük iken, 1950'li yıllardan sonra kentleşme hızı büyük bir ivme kazanmıştır. Türkiye'deki kentleşme (şehirleşme) süreci ile ilgili aşağıda verilen bilgilerden hangisi yanlıştır?",
+        "options": [
+          "Kentleşme hızının artmasında tarımda makineleşme ve sanayi sektörünün gelişmesi lokomotif görevi görmüştür.",
+          "Türkiye'de kent nüfus oranı, kır nüfus oranını ilk kez 1980-1985 döneminde geçmiştir.",
+          "Sanayileşme ve kentleşme paralel bir hızda ilerlemiş, Türkiye'deki tüm kentleşme hareketleri sanayi iş gücü açığı tarafından organize edilmiştir.",
+          "2012 yılında yürürlüğe giren Büyükşehir Yasası ile kır-kent nüfus istatistiklerinde kır nüfusu kağıt üzerinde ani bir düşüş yaşamıştır."
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Türkiye'deki kentleşme süreci her zaman sanayileşmeyle tam paralel gitmemiştir. Çoğu dönemde kentleşme hızı, kentteki sanayileşme (iş gücü ihtiyacı) hızını aşmıştır. İnsanlar kentte hazır iş olduğu için değil, kırsaldaki itici güçlerden dolayı kente yığılmıştır. Bu durum yalancı kentleşmeye ve yüksek kentsel işsizliğe yol açmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> 1950'ler sonrası traktörün tarıma girmesiyle işsiz kalan kırsal nüfus kentlere akın etmiştir.<br>• <b>B Şıkkı (Yanlış):</b> Doğrudur, 1980-1985 sayımları arasında kent nüfusu kır nüfusunu geçmiştir (özellikle 1985 sayımında).<br>• <b>C Şıkkı (Doğru):</b> Kentleşmenin sanayileşmeyi aşması Türkiye kentleşmesinin karakteristik bir çarpıklığıdır.<br>• <b>D Şıkkı (Yanlış):</b> Büyükşehir yasasıyla köyler mahalle statüsüne geçmiş, resmi kır nüfusu aniden azalmıştır.",
+        "tag": "#Kentleşme"
+      },
+      {
+        "q": "Soru 52: Kırsal konut yapımında kullanılan malzemeler doğrudan çevredeki doğal ortamdan temin edilir. Karasal iklimin hüküm sürdüğü, bitki örtüsünün bozkır (orman bakımından fakir) olduğu ve killi toprakların yaygın olduğu İç Anadolu ve Güneydoğu Anadolu kırsalında kerpiç evler yaygındır. Kerpiç konutlar ile ilgili aşağıdaki bilgilerden hangisi yanlıştır?",
+        "options": [
+          "Yaz aylarında serin, kış aylarında ise sıcak tutan yüksek bir ısı yalıtım özelliğine sahiptir.",
+          "Yağışların az, havanın kuru olduğu yarı kurak iklim bölgelerine en uygun konut tipidir.",
+          "Karadeniz kıyı kuşağında nem oranı yüksek olduğu için yapı malzemesi olarak kerpiç tercih edilmektedir.",
+          "Depreme karşı dayanıksız olmaları ve sel/aşırı yağışlarda kolayca eriyebilmeleri kerpiç konutların en zayıf yönleridir."
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Karadeniz kıyı kuşağında nem oranı ve yağış çok yüksek olduğu için kerpiç binalar suya dayanamaz ve erir. Ayrıca Karadeniz'de gür ormanlar bulunduğu için geleneksel yapı malzemesi ahşaptır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Kerpiç (toprak-saman karışımı) gözenekli yapısıyla doğal yalıtım sağlar, kışın sıcak yazın serindir.<br>• <b>B Şıkkı (Yanlış):</b> Kurak bölgelerde toprak bol, yağış az olduğu için kerpiç en pratik yapıdır.<br>• <b>C Şıkkı (Doğru):</b> Karadeniz ahşap konut bölgesidir, kerpiç konut bölgesi İç ve Güneydoğu Anadolu'dur.<br>• <b>D Şıkkı (Yanlış):</b> Kerpiç binalar esneklik barındırmadığı için depremde kolayca yıkılır ve can kaybı riskini artırır.",
+        "tag": "#KerpiçEvler"
+      },
+      {
+        "q": "Soru 53: Türkiye'de geçici köy altı yerleşmeleri hayvancılık amacıyla kurulmuş, mevsimlik olarak kullanılan yerleşmelerdir. Doğu Anadolu ve Güneydoğu Anadolu kırsalında yaygın olan ve genellikle taş ya da kerpiçten yapılmış hayvan barınakları (ağıllar) ile çoban evinden oluşan geçici yerleşmeye ne ad verilir?",
+        "options": [
+          "Yayla",
+          "Kom",
+          "Divan",
+          "Mezra"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Doğu ve Güneydoğu Anadolu bölgelerinde hayvancılık amacıyla kurulan, genellikle bir veya birkaç aileye ait olan geçici köy altı yerleşmelerine 'Kom' denir. Taş duvarlı ağıllar kom yerleşmelerinin temelini oluşturur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Yaylalar daha yüksekte, yazın serinlemek ve otlatma amaçlı ortak alanlardır.<br>• <b>B Şıkkı (Doğru):</b> Kom yerleşmeleri Doğu Anadolu'ya özgü geçici hayvancılık birimleridir.<br>• <b>C Şıkkı (Yanlış):</b> Divan, Batı Karadeniz'de yaygın olan kalıcı köy altı yerleşmesidir.<br>• <b>D Şıkkı (Yanlış):</b> Mezra, Doğu Anadolu'da yaygın olan ama tarım da yapılan kalıcı köy altı yerleşmesidir.",
+        "tag": "#Kom"
+      },
+      {
+        "q": "Soru 54: Türkiye'de köylerden küçük, idari olarak köye bağlı olan ama bağımsız yerleşim özellikleri gösteren birimlere 'köy altı yerleşmeleri' denir. Köy altı yerleşmelerinin ortaya çıkmasında aşağıdakilerden hangisinin etkisi yoktur?",
+        "options": [
+          "Devlete ait geniş arazilerin ve ormanlık alanların aileler tarafından işgal edilip sahiplenilmesi",
+          "Aileler arasında yaşanan kan davaları veya geçimsizlik gibi sosyal problemler",
+          "Tarım arazilerinin engebeli, dağınık ve birbirinden uzak olması nedeniyle çiftçilerin tarlalarının yanına yerleşme zorunluluğu",
+          "Köylerde konut yapımında sadece lüks ve modern malzemelerin kullanımının zorunlu hale getirilmesi"
+        ],
+        "correct": 3,
+        "rationale": "<b>Doğru Cevap: D Şıkkıdır.</b> Köy altı yerleşmelerinin kurulmasında modern malzeme zorunluluğu gibi bir idari kural veya etken kesinlikle söz konusu değildir. Bu yerleşmeler tamamen coğrafi zorunluluklar, hayvancılık/tarım istekleri ve kan davaları gibi sosyal sebeplerle doğal olarak kurulmuştur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Hazine arazilerinin kazanılması veya yerleşime açılması köy altı birimlerini artırmıştır.<br>• <b>B Şıkkı (Yanlış):</b> Sosyal çatışmalar aileleri köy merkezinden uzaklaşıp müstakil yerler kurmaya itmiştir.<br>• <b>C Şıkkı (Yanlış):</b> Tarım arazileri dağınık olan çiftçi, ulaşım zorluğundan dolayı arazisinin ortasına ev kurarak köy altı birimi (mezra, mahalle vb.) oluşturur.<br>• <b>D Şıkkı (Doğru):</b> Konut malzemesiyle ilgili kuralların köy altı oluşumuyla ilgisi yoktur.",
+        "tag": "#KöyAltıYerleşmeleri"
+      },
+      {
+        "q": "Soru 55: Türkiye'de kırsal konutlarda kullanılan ana yapı malzemeleri (ahşap, taş, toprak/kerpiç) bölgelerin iklim, bitki örtüsü ve jeolojik yapısıyla doğrudan ilişkilidir. Buna göre, aşağıdaki eşleştirmelerden hangisinde kırsal konut malzemesi ile yaygın olduğu coğrafi alan yanlış eşleştirilmiştir?",
+        "options": [
+          "Ahşap Konutlar - Rize, Artvin ve Giresun kırsalı",
+          "Taş Konutlar - Nevşehir (Ürgüp-Göreme), Şanlıurfa ve Akdeniz Toros kırsalı",
+          "Kerpiç Konutlar - Konya, Şanlıurfa ve Aksaray kırsalı",
+          "Ahşap Konutlar - Mardin, Şırnak ve Hakkari kırsalı"
+        ],
+        "correct": 3,
+        "rationale": "<b>Doğru Cevap: D Şıkkıdır.</b> Mardin, Şırnak ve Hakkari kırsalında orman örtüsü çok zayıf olduğu için ahşap konutlar kesinlikle yaygın değildir. Bu bölgelerde özellikle dağlık arazinin sağladığı kolaylıklar nedeniyle taş konutlar veya kerpiç konutlar yaygındır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Karadeniz kıyısında bol yağıştan dolayı gür ormanlar bulunur, konutlar ahşaptır.<br>• <b>B Şıkkı (Yanlış):</b> Nevşehir'de volkanik tüf taşları, Akdeniz'de ise kalkerli sert taşlar konut yapımında kullanılır.<br>• <b>C Şıkkı (Yanlış):</b> İç Anadolu ve Güneydoğu'nun kurak kırsalında toprak (kerpiç) yaygındır.<br>• <b>D Şıkkı (Doğru):</b> Doğu/Güneydoğu Anadolu'nun bu kesimlerinde taş ve toprak malzeme hâkimdir, ahşap değil.",
+        "tag": "#KırsalKonutlar"
+      },
+      {
+        "q": "Soru 56: Türkiye'deki köy altı yerleşmeleri kalıcı ve geçici olmak üzere ikiye ayrılır. Kalıcı olanlar yıl boyunca yerleşimin sürdüğü, tarımın ön planda olduğu birimlerdir. Aşağıdakilerden hangisi kalıcı köy altı yerleşmelerinden biri olan 'Mahalle' yerleşmelerinin özelliklerinden biridir?",
+        "options": [
+          "Köye bağlı olmakla birlikte, zamanla büyüyerek bağımsız bir köy statüsü kazanmaya en aday yerleşmedir.",
+          "Yılın sadece 2-3 ayı hayvancılık için çıkılan, kışın tamamen boşaltılan geçici alanlardır.",
+          "Batı Karadeniz'de birkaç mahallenin birleşmesiyle oluşan en büyük kalıcı yerleşmedir.",
+          "Sadece Ege Bölgesi'nde zeytin tarımı amacıyla kurulan geçici tek evlik birimlerdir."
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Köy altı yerleşmeleri içinde kalıcı olanlar 'Mahalle', 'Mezra', 'Divan' ve 'Çiftlik'tir. Bunlar arasında mahalle, köye bağlı olan ve nüfusu arttıkça bağımsız muhtarlık (köy) olmaya en elverişli, tarım ve hayvancılığın birlikte yapıldığı kalıcı birimdir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Mahalleler köy olmaya en yakın köy altı birimleridir.<br>• <b>B Şıkkı (Yanlış):</b> Bu tanım yayla veya obalara uyar, mahalleler kışın boşaltılmaz.<br>• <b>C Şıkkı (Yanlış):</b> Batı Karadeniz'de mahallelerin birleşmesiyle oluşan birim 'Divan'dır.<br>• <b>D Şıkkı (Yanlış):</b> Ege'de zeytin tarımı için kurulan geçici yerleşmeler 'Dam' veya çiftlik eklentileridir.",
+        "tag": "#Mahalle"
+      },
+      {
+        "q": "Soru 57: Muğla ili sınırları içinde yer alan Menteşe Yöresi, Türkiye'nin kıyı kuşağında yer almasına ve bol yağış almasına rağmen nüfus yoğunluğu oldukça az olan 'tenha' alanlardan biridir. Menteşe Yöresi'nin bu nüfus özelliğinde (Menteşe Nüfusu) aşağıdakilerden hangisinin etkisi en fazladır?",
+        "options": [
+          "Yıllık yağış miktarının tarım yapmayı imkansız kılacak derecede az olması",
+          "Dağların kıyıya dik uzanması nedeniyle iç kesimlerle bağlantının tamamen kopması",
+          "Arazinin aşırı dağlık, engebeli ve karstik yapıda olması nedeniyle ulaşım yollarının dışında kalması",
+          "Yörede turizm faaliyetlerinin hiç gelişmemiş olması"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Menteşe Yöresi (Muğla), kıyıda yer almasına rağmen çok engebeli, dağlık ve karstik sarp arazilere sahiptir. Bu engebeli yapı ulaşım hatlarının (ana yolların) yöreye uğramamasına yol açmış, tarım arazilerini kısıtlamış ve nüfusun tenha kalmasına neden olmuştur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Menteşe Türkiye'nin en çok yağış alan yerlerindendir, yağış azlığı söz konusu değildir.<br>• <b>B Şıkkı (Yanlış):</b> Menteşe'de dağlar kıyıya paralel uzanır, kıyı son derece girintili çıkıntılıdır.<br>• <b>C Şıkkı (Doğru):</b> Engebe ve ana yollara sapa kalma durumu yöreyi tenha kılan asıl faktördür.<br>• <b>D Şıkkı (Yanlış):</b> Yörede Bodrum, Marmaris gibi dev turizm merkezleri vardır ancak yörenin geneli engebeden dolayı nüfusça tenhadır.",
+        "tag": "#MenteşeNüfusu"
+      },
+      {
+        "q": "Soru 58: Türkiye'de mevsimlik (geçici) iç göçler, yılın belirli dönemlerinde tarım, turizm, inşaat veya hayvancılık faaliyetlerinde çalışmak üzere yapılan nüfus hareketleridir. Mevsimlik göç ile ilgili aşağıda verilen örneklerden hangisi diğerlerinden farklı bir ekonomik sektöre bağlıdır?",
+        "options": [
+          "Yaz aylarında Şanlıurfa ve Adıyaman'dan çok sayıda işçinin fındık toplamak amacıyla Ordu ve Giresun'a gitmesi",
+          "Kış mevsiminde Erzurum-Kars yöresinden inşaat ustalarının çalışmak üzere İzmir ve Antalya'ya gitmesi",
+          "İlkbahar aylarında İç Anadolu'dan göçer ailelerin hayvanlarını otlatmak için Toros yaylalarına çıkması",
+          "Ağustos ayında Niğde ve Konya'dan ailelerin pamuk toplamak üzere Çukurova'ya (Adana) göç etmesi"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Ordu'ya fındık (A), Çukurova'ya pamuk (D) toplamaya gitmek mevsimlik 'tarım' göçüdür. İzmir'e inşaat işine gitmek (B) 'inşaat/hizmet' göçüdür. Toros yaylalarına hayvan otlatmaya çıkmak (C) ise doğrudan 'hayvancılık' amaçlı mevsimlik göçtür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Fındık tarım amaçlıdır.<br>• <b>B Şıkkı (Yanlış):</b> İnşaat işçiliği inşaat sektörüne bağlıdır.<br>• <b>C Şıkkı (Doğru):</b> Yaylaya hayvan otlatmaya gitmek tamamen hayvancılık odaklı geleneksel mevsimlik göçtür.<br>• <b>D Şıkkı (Yanlış):</b> Pamuk işçiliği tarım amaçlıdır.",
+        "tag": "#MevsimlikGöç"
+      },
+      {
+        "q": "Soru 59: Doğu Anadolu, Güneydoğu Anadolu ve İç Anadolu bölgelerinde yaygın olan kalıcı köy altı yerleşmelerinden biri 'Mezra'dır. Mezra yerleşmelerinin genel özellikleri ile ilgili aşağıdakilerden hangisi yanlıştır?",
+        "options": [
+          "Genellikle tarım faaliyetlerinin hayvancılığa göre daha ön planda olduğu kalıcı yerleşmelerdir.",
+          "Köy sınırları içinde, köy merkezine uzak arazilerde tarım yapıp ürünü depolamak amacıyla kurulmuşlardır.",
+          "Batı Karadeniz kıyısında ahşap orman içi kulübelerinden oluşan tamamen geçici yerleşmelerdir.",
+          "Nüfusları ve ekonomik güçleri arttıkça zamanla bağımsız köy haline gelebilirler."
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Mezralar Batı Karadeniz'de değil, ağırlıklı olarak Doğu ve Güneydoğu Anadolu'da yaygındır. Ayrıca geçici değil, kalıcı (yıl boyu yaşanılan) köy altı yerleşmeleridir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Mezralarda temel ekonomik faaliyet tarımdır, bunun yanında hayvancılık da yapılır.<br>• <b>B Şıkkı (Yanlış):</b> Mezralar uzak tarlalara yakın olmak amacıyla kurulmuş kalıcı yerleşimlerdir.<br>• <b>C Şıkkı (Doğru):</b> Mezraların Karadeniz orman kulübeleriyle veya geçici yerleşmelerle alakası yoktur.<br>• <b>D Şıkkı (Yanlış):</b> Birçok Doğu Anadolu mezrası nüfus artışıyla köy statüsüne kavuşmuştur.",
+        "tag": "#Mezra"
+      },
+      {
+        "q": "Soru 60: Bir ülkenin nüfus artış hızı, doğumlar ile ölümler arasındaki farkı ifade eden 'doğal nüfus artışı' ile göçlerin etkisini içeren 'gerçek nüfus artışı' toplamından oluşur. Türkiye'nin nüfus artış hızı grafikleri incelendiğinde, aşağıdakilerden hangisi nüfus artış hızının düşmesinin uzun vadeli olumsuz sonuçları arasında gösterilemez?",
+        "options": [
+          "Genç nüfus oranının azalması ve nüfusun yaşlanması",
+          "Gelecekte iş gücü açığının ortaya çıkması ve dinamik nüfusun kaybedilmesi",
+          "Sosyal güvenlik kurumlarının (emeklilik fonları vb.) üzerindeki mali yükün artması",
+          "Kişi başına düşen demografik yatırımların bütçedeki payının artması"
+        ],
+        "correct": 3,
+        "rationale": "<b>Doğru Cevap: D Şıkkıdır.</b> Nüfus artış hızının düşmesiyle çocuk ve genç nüfus oranı azalır. Bu durum, devletin okul ve kreş gibi demografik yatırımlara ayırmak zorunda olduğu payı azaltır ve bütçeyi rahatlatır. Bu durum olumsuz değil, ekonomik kalkınma açısından olumlu bir sonuçtur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Doğum oranı düştükçe genç nüfus payı azalır, yaşlı nüfus payı artar (olumsuzdur).<br>• <b>B Şıkkı (Yanlış):</b> Nüfus artışının durması gelecekte üretken çağdaki iş gücü miktarını düşürür.<br>• <b>C Şıkkı (Yanlış):</b> Yaşlı nüfusun artması, çalışan nüfusun emeklileri finanse etmesini zorlaştırarak sosyal güvenliği çökertebilir.<br>• <b>D Şıkkı (Doğru):</b> Nüfus artışının azalması demografik yükü azaltır, artırmaz.",
+        "tag": "#NüfusArtışHızı"
+      },
+      {
+        "q": "Soru 61: Türkiye'de nüfusun coğrafi dağılışı (Nüfus Dağılışı) oldukça adaletsizdir. Kıyı kesimlerde nüfus yoğun iken, iç kesimlerde nüfus genellikle seyrektir. Nüfusun dağılışında etkili olan aşağıdaki faktörlerden hangisi beşeri (insan kaynaklı) bir faktördür?",
+        "options": [
+          "Çatalca-Kocaeli Platosu'nda sanayi tesislerinin yoğunlaşması nedeniyle nüfusun sık olması",
+          "Menteşe Yöresi'nde dağlık ve engebeli araziden dolayı nüfusun seyrek olması",
+          "Tuz Gölü ve çevresinde yıllık yağış azlığı ve kuraklıktan dolayı nüfusun seyrek olması",
+          "Teke ve Taşeli yarımadalarında karstik kayaç yapısı (kalker) nedeniyle tarım topraklarının verimsizleşmesi ve nüfusun azalması"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Sanayileşme, ulaşım, tarım metotları, turizm ve madencilik nüfus dağılışını etkileyen 'beşeri' faktörlerdir. Çatalca-Kocaeli'deki sanayi yoğunlaşması beşeri bir faktör iken; dağlık arazi (Menteşe), kuraklık (Tuz Gölü) ve karstik yapı (Teke-Taşeli) tamamen 'fiziki' (doğal) faktörlerdir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Sanayi tesisi insan faaliyeti olduğu için beşeri faktördür.<br>• <b>B Şıkkı (Yanlış):</b> Engebe fiziki coğrafya elemanıdır.<br>• <b>C Şıkkı (Yanlış):</b> İklim ve yağış fiziki faktördür.<br>• <b>D Şıkkı (Yanlış):</b> Litolojik (taş) yapı ve karstik özellikler fiziki faktördür.",
+        "tag": "#NüfusDağılışı"
+      },
+      {
+        "q": "Soru 62: Demografik dönüşüm (Nüfus Dönüşümü) kuramına göre ülkeler yüksek doğum ve yüksek ölüm oranlarının olduğu aşamadan, düşük doğum ve düşük ölüm oranlarının olduğu modern aşamaya geçerler. Türkiye'nin nüfus dönüşüm süreciyle ilgili olarak aşağıdakilerden hangisi söylenemez?",
+        "options": [
+          "Cumhuriyetin ilk yıllarında (1923-1960) nüfusu artırıcı teşvik politikaları uygulanmıştır.",
+          "1960'lardan sonra hızlı nüfus artışının ekonomik kalkınmayı yavaşlattığı fark edilerek nüfus planlaması politikalarına geçilmiştir.",
+          "Günümüzde Türkiye, nüfus dönüşüm sürecinin son aşamasına yaklaşmış, doğum oranları yenilenme eşiğinin (2.1) altına gerilemiştir.",
+          "Türkiye tarih boyunca hiçbir zaman demografik dönüşüm yaşamamış, doğum oranları her dönemde sabit kalmıştır."
+        ],
+        "correct": 3,
+        "rationale": "<b>Doğru Cevap: D Şıkkıdır.</b> Türkiye çok belirgin bir demografik dönüşüm yaşamıştır. 1920'lerde kadın başına düşen çocuk sayısı 6-7 iken, günümüzde bu oran 1.5 - 1.6 seviyelerine gerilemiş, yani doğum oranları hızla düşmüştür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Doğrudur, savaşlardan çıkan ülkede nüfusu artırmak için vergi muafiyeti, çok çocuklu annelere madalya gibi teşvikler verilmiştir.<br>• <b>B Şıkkı (Yanlış):</b> 1965 Nüfus Planlaması Kanunu ile nüfus artışını frenleyen politikalara başlanmıştır.<br>• <b>C Şıkkı (Yanlış):</b> Günümüzde Türkiye yaşlanan bir nüfus yapısına sahip olup dönüşümün olgun evresindedir.<br>• <b>D Şıkkı (Doğru):</b> Doğum oranlarının sabit kaldığı iddiası yanlıştır, Türkiye'nin nüfus yapısı radikal biçimde değişmiştir.",
+        "tag": "#NüfusDönüşümü"
+      },
+      {
+        "q": "Soru 63: Türkiye'nin son yıllardaki nüfus piramidi incelendiğinde, piramidin tabanının daraldığı, üst kısmının (yaşlı nüfus) ise genişlediği görülür. Bu yapısal değişim aşağıdakilerden hangisinin doğrudan bir göstergesidir?",
+        "options": [
+          "Bebek ölüm oranlarının hızla arttığının",
+          "Doğum oranlarının düştüğünün ve ortalama yaşam süresinin uzadığının",
+          "Ülkenin dışarıya yoğun şekilde genç iş gücü göçü verdiğinin",
+          "Okur-yazar oranının ve eğitim kalitesinin ülke genelinde azaldığının"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Nüfus piramidinin tabanının daralması doğum oranlarının düştüğünü; piramidin tavanının (yaşlı nüfus kısmının) genişlemesi ise sağlık hizmetlerinin gelişmesiyle ortalama yaşam süresinin uzadığını gösterir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Tabanın daralması ölüm artışından değil, doğumların azalmasından kaynaklanır.<br>• <b>B Şıkkı (Doğru):</b> Azalan doğumlar piramit tabanını daraltır, uzayan ömür ise üst kısmı kalınlaştırır.<br>• <b>C Şıkkı (Yanlış):</b> Dış göç piramitte bu denli simetrik ve düzenli bir taban daralmasına yol açmaz.<br>• <b>D Şıkkı (Yanlış):</b> Eğitim seviyesinin artması doğum oranlarını düşüren etkenlerdendir, eğitim azalmamıştır.",
+        "tag": "#NüfusPiramidi"
+      },
+      {
+        "q": "Soru 64: Türkiye'de nüfus sayımları (Nüfus Sayımı) tarihi incelendiğinde Cumhuriyet döneminin ilk nüfus sayımı hangi yılda yapılmıştır ve bu sayımdaki toplam nüfus yaklaşık ne kadardır?",
+        "options": [
+          "1923 yılında - 8 Milyon",
+          "1927 yılında - 13.6 Milyon",
+          "1935 yılında - 16.2 Milyon",
+          "1950 yılında - 20.9 Milyon"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Cumhuriyet tarihinin ilk nüfus sayımı 1927 yılında yapılmış olup, ülkenin nüfusu 13.648.270 (yaklaşık 13.6 Milyon) olarak tespit edilmiştir. İkinci sayım ise 1935 yılında gerçekleştirilmiştir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> 1923'te resmi genel sayım yapılmamıştır.<br>• <b>B Şıkkı (Doğru):</b> 1927, Cumhuriyet döneminin ilk resmi genel nüfus sayım yılıdır ve nüfus 13.6 milyondur.<br>• <b>C Şıkkı (Yanlış):</b> 1935 yılı cumhuriyetin ikinci genel nüfus sayımıdır.<br>• <b>D Şıkkı (Yanlış):</b> 1950 yılı daha sonraki periyodik sayımlardan biridir.",
+        "tag": "#NüfusSayımı"
+      },
+      {
+        "q": "Soru 65: Genellikle göçer ailelerin veya aşiretlerin çadırlardan oluşturduğu, küçükbaş hayvancılığın ön planda olduğu geçici köy altı yerleşmesine 'Oba' denir. Oba yerleşmeleri Türkiye'de en çok hangi dağlık kuşakta yaygındır?",
+        "options": [
+          "Kuzey Anadolu Dağları'nda (Karadeniz)",
+          "Toros Dağları'nda (Akdeniz)",
+          "Yıldız Dağları'nda (Marmara)",
+          "Ege'deki Kırıklı Dağlar (Aydın-Menteşe) üzerinde"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Obalar, çadır yerleşmeleri olup özellikle Akdeniz Bölgesi'ndeki Toros Dağları üzerinde yörük kültürünün ve küçükbaş hayvancılığın bir uzantısı olarak çok yaygındır. Doğu Anadolu'da da görülmekle beraber en tipik yerleşme sahası Toroslar'dır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Karadeniz dağlarında obadan ziyade 'Yayla' yerleşmeleri baskındır.<br>• <b>B Şıkkı (Doğru):</b> Toroslar yörüklerin oba (çadır) hayvancılığı yaptığı en önemli dağ sırasıdır.<br>• <b>C Şıkkı (Yanlış):</b> Yıldız Dağları'nda hayvancılık yapılır ancak oba yerleşmesi karakteri yoktur.<br>• <b>D Şıkkı (Yanlış):</b> Ege kıyılarında hayvancılık için dam veya çiftlikler yaygındır, dağ obaları sınırlıdır.",
+        "tag": "#Oba"
+      },
+      {
+        "q": "Soru 66: Bir nüfusun yaşları küçükten büyüğe sıralandığında tam ortada kalan kişinin yaşına 'ortanca yaş' (medyan yaş) denir. Türkiye'de ortanca yaşın sürekli yükselmesi aşağıdakilerden hangisinin kesin bir göstergesidir?",
+        "options": [
+          "Bebek ölüm oranlarının kontrolsüz şekilde yükseldiğinin",
+          "Genç nüfus oranının arttığının ve nüfusun dinamikleştiğinin",
+          "Doğum oranlarının azaldığının ve yaşlı nüfus oranının arttığının (nüfusun yaşlandığının)",
+          "Ülke dışından gelen mülteci nüfusun tamamen çocuklardan oluştuğunun"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Ortanca yaşın yükselmesi, doğum oranlarının düştüğünü (tabanın daraldığını) ve yaşlı nüfus payının arttığını (tavanın genişlediğini) gösterir. Türkiye'de 1980'lerde 20'lerde olan ortanca yaş, günümüzde 33-34 seviyelerine çıkmıştır. Bu durum Türkiye nüfusunun yaşlanma sürecine girdiğini kanıtlar.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Bebek ölümlerinin artması ortanca yaşı bu şekilde yükseltmez.<br>• <b>B Şıkkı (Yanlış):</b> Genç nüfus artsaydı ortanca yaş düşerdi.<br>• <b>C Şıkkı (Doğru):</b> Doğum azlığı ve uzun ömür ortanca yaşı yukarı çeker, bu da nüfusun yaşlandığı anlamına gelir.<br>• <b>D Şıkkı (Yanlış):</b> Çocuk göçü ortanca yaşı düşürücü etki yapardı.",
+        "tag": "#OrtancaYaş"
+      },
+      {
+        "q": "Soru 67: Tarımsal nüfus yoğunluğu, tarımla geçinen nüfusun tarım alanlarına bölünmesiyle bulunur. Buna göre yerşekillerinin düz, tarım alanlarının geniş, ancak tarımda çalışan nüfusun makineleşmeden dolayı nispeten az olduğu İç Anadolu'da tarımsal yoğunluk düşük iken; dağlık, engebeli ve tarım arazisinin dar olduğu Doğu Karadeniz'de tarımsal yoğunluk yüksektir. Aşağıdaki alanların hangisinde tarımsal nüfus yoğunluğunun düşük olması beklenir?",
+        "options": [
+          "Tekirdağ (Ergene Havzası)",
+          "Muğla (Menteşe Yöresi)",
+          "Rize (Doğu Karadeniz)",
+          "Hakkari Yöresi"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Tekirdağ (Ergene Havzası) düz yerşekillerine ve çok geniş tarım arazilerine sahiptir. Tarımda makine kullanımı da yüksek olduğu için tarımsal nüfus yoğunluğu oldukça düşüktür. Muğla, Rize ve Hakkari ise çok dağlık ve engebeli olduklarından tarım alanları dardır, bu yüzden buralarda tarımsal yoğunluk yüksek çıkar.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Geniş düzlükler ve makineleşme tarımsal nüfus yoğunluğunu düşürür (Ergene).<br>• <b>B Şıkkı (Yanlış):</b> Menteşe engebelidir, tarım alanları dar olduğundan yoğunluk yüksektir.<br>• <b>C Şıkkı (Yanlış):</b> Rize'de engebeden dolayı tarım arazisi çok azdır, yoğunluk son derece yüksektir.<br>• <b>D Şıkkı (Yanlış):</b> Hakkari dağlık arazi yapısı nedeniyle tarımsal yoğunluğu yüksek olan bir yerdir.",
+        "tag": "#TarımsalYoğunluk"
+      },
+      {
+        "q": "Soru 68: Taş evler, jeolojik yapıya bağlı olarak taş malzemenin kolayca temin edilebildiği dağlık ve karstik alanlarda yaygındır. Türkiye'de geleneksel taş mimarisinin (Taş Evler) en karakteristik olarak görüldüğü coğrafi yöreler aşağıdakilerden hangisinde birlikte verilmiştir?",
+        "options": [
+          "Çarşamba Ovası - Bafra Ovası",
+          "Mardin Eşiği - Nevşehir (Kapadokya) - Teke Yöresi",
+          "Ergene Havzası - Konya Ovası",
+          "Yıldız Dağları - Çatalca Platosu"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Türkiye'de taş evlerin en yaygın ve karakteristik olduğu yerler karstik kalker taşlarının bol olduğu Akdeniz (Teke-Taşeli), kolay işlenebilen volkanik tüflerin bulunduğu İç Anadolu (Nevşehir/Kapadokya) ve özel kalker mimarisinin geliştiği Güneydoğu Anadolu (Mardin Eşiği) kırsalıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Deltalarda taş bulunmaz, alüvyal düzlüklerdir.<br>• <b>B Şıkkı (Doğru):</b> Mardin, Kapadokya tüfleri ve Teke kalkerleri taş mimarisinin Türkiye'deki zirve noktalarıdır.<br>• <b>C Şıkkı (Yanlış):</b> Ergene ve Konya düz, topraksı alanlar olup taş azdır (kerpiç yaygındır).<br>• <b>D Şıkkı (Yanlış):</b> Yıldız ve Çatalca'da taş konut mimarisi Mardin veya Teke kadar baskın değildir.",
+        "tag": "#TaşEvler"
+      },
+      {
+        "q": "Soru 69: Teke ve Taşeli yarımadaları (Teke Taşeli), kıyı kuşağında yer almalarına ve Akdeniz iklim bölgesinde bulunmalarına rağmen Türkiye'nin en tenha nüfuslu alanları arasında yer alır. Bu durumun ortaya çıkmasında etkili olan en temel fiziksel (doğal) etken aşağıdakilerden hangisidir?",
+        "options": [
+          "Yaz aylarında sıcaklığın aşırı yüksek olması ve kuraklık",
+          "Sanayi tesislerinin kıyılarda kurulmasının yasaklanmış olması",
+          "Karstik kalkerli arazi yapısının suyu yer altına sızdırması ve tarım topraklarının çok verimsiz, engebeli olması",
+          "Bölgede demir yolu ağının bulunmaması"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Teke ve Taşeli yörelerinin tenha olmasının temel nedeni karstik litolojidir. Karstik kalker yapısı çatlaklı olduğundan yağış sularını hızla yer altına geçirir, yüzey suyu kıtlığı yaratır. Ayrıca arazi sarp, engebeli ve topraklar verimsiz terra-rossa karakterindedir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Akdeniz'in genelinde yazlar sıcaktır fakat Çukurova ve Antalya ovaları yoğundur. Yani tek neden sıcaklık olamaz.<br>• <b>B Şıkkı (Yanlış):</b> Böyle bir yasak yoktur.<br>• <b>C Şıkkı (Doğru):</b> Karstik aşınım şekilleri (dolin, uvala vb.) arazinin düzleşmesini engeller, suyu alta sızdırır ve tarımı zorlaştırır.<br>• <b>D Şıkkı (Yanlış):</b> Demir yolu olmaması bir sonuçtur, asıl fiziksel neden arazidir.",
+        "tag": "#TekeTaşeli"
+      },
+      {
+        "q": "Soru 70: Türkiye'de toplu yerleşmeler, evlerin birbirine çok yakın kurulduğu köy dokusunu ifade eder. Bu yerleşmelerin İç Anadolu, Güneydoğu Anadolu ve Doğu Anadolu'nun düzlüklerinde yaygın olmasının temel nedeni aşağıdakilerden hangisidir?",
+        "options": [
+          "Güvenlik ihtiyacının kıyılara göre daha fazla olması",
+          "Su kaynaklarının sınırlı (kısıtlı) olması ve arazinin düz-sade yerşekillerine sahip olması",
+          "Nüfusun bu bölgelerde çok hızlı artması",
+          "Tarım arazilerinin tamamen orman örtüsüyle kaplı olması"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Toplu yerleşmelerin yaygın olduğu yerlerde iki temel özellik bir arada bulunur: Birincisi yerşekillerinin düz olması (evlerin yan yana kolayca yapılabilmesi), ikincisi ise su kaynaklarının çok kıt olmasıdır. İnsanlar suyun bulunduğu kuyu, pınar veya akarsu etrafında topluca yaşamak zorundadır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Güvenlik faktörü tarihi bir etkendir ama toplu dokunun ana coğrafi sebebi değildir.<br>• <b>B Şıkkı (Doğru):</b> Kısıtlı su kaynakları insanları bir araya toplar, düz yerşekilleri ise bu yakınlığı kolaylaştırır.<br>• <b>C Şıkkı (Yanlış):</b> Nüfus artış hızı toplu dokuyu doğrudan kurmaz.<br>• <b>D Şıkkı (Yanlış):</b> Bu bölgeler orman bakımından fakir bozkır sahalarıdır.",
+        "tag": "#TopluYerleşme"
+      },
+      {
+        "q": "Soru 71: İç Anadolu Bölgesi'nde yer alan Tuz Gölü ve çevresi (Tuz Gölü Nüfusu), kıyı şeridine oldukça uzak ve düz yerşekillerine sahip olmasına rağmen Türkiye'nin en tenha ve nüfus yoğunluğu en düşük alanlarından biridir. Bu yörenin seyrek nüfuslu olmasında aşağıdakilerden hangisinin etkisi yoktur?",
+        "options": [
+          "Yıllık yağış miktarının Türkiye ortalamasının çok altında olması ve şiddetli buharlaşma",
+          "Topraklarda tuzlanma ve çoraklaşma oranının tarımı imkansız kılacak derecede yüksek olması",
+          "Arazinin çok yüksek, engebeli ve aşırı eğimli dağ sıralarıyla kaplı olması",
+          "Yüzey suyu ve yeraltı tatlı su kaynaklarının son derece kısıtlı olması"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Tuz Gölü ve çevresi engebeli veya dağlık değildir; aksine Türkiye'nin en düz, sade yerşekillerine sahip alanlarındandır. Buradaki seyreklik dağlıktan değil, aşırı kuraklık, su kıtlığı ve çorak topraklardan kaynaklanır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Yıllık yağış 300 mm civarıdır, buharlaşma yüksek olduğundan kuraklık temel nedendir.<br>• <b>B Şıkkı (Yanlış):</b> Tuz gölü çevresi tuzcul ve çorak topraklarla kaplıdır, tarımsal verim çok düşüktür.<br>• <b>C Şıkkı (Doğru):</b> Arazi düzdür, sarp dağlar bulunmaz.<br>• <b>D Şıkkı (Yanlış):</b> Akarsu ve göl gibi yüzey suları ile içilebilir yeraltı suyu yetersizdir.",
+        "tag": "#TuzGölüNüfusu"
+      },
+      {
+        "q": "Soru 72: Yaylalar, Türkiye'de en yaygın geçici köy altı yerleşmeleridir. Son yıllarda yaylaların fonksiyonlarında (işlevlerinde) önemli değişimler meydana gelmiştir. Buna göre, aşağıdaki bölgelerimizden hangisinde yaylacılık faaliyeti günümüzde geleneksel hayvancılık amacından ziyade, ağırlıklı olarak turizm ve rekreasyon (doğa sporları, festival vb.) amacıyla yürütülmektedir?",
+        "options": [
+          "Doğu Anadolu Bölgesi (Erzurum-Kars çevresi)",
+          "Güneydoğu Anadolu Bölgesi",
+          "Karadeniz Bölgesi (Doğu Karadeniz Bölümü)",
+          "Akdeniz Bölgesi (Tekeli-Toroslar)"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Doğu Karadeniz yaylaları (Ayder, Anzer, Uzungöl yaylaları vb.) son yıllarda geleneksel hayvancılık amacından hızla sıyrılarak turizm, doğa sporları ve otelcilik merkezi haline gelmiştir. Doğu Anadolu ve Toroslar'da ise yaylacılık hala büyük ölçüde hayvancılık amaçlıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Erzurum-Kars yaylalarında büyükbaş hayvancılık temel geçim kaynağıdır.<br>• <b>B Şıkkı (Yanlış):</b> Güneydoğu'da yaz kuraklığından kaçanlar hayvancılık için yaylaya çıkar.<br>• <b>C Şıkkı (Doğru):</b> Karadeniz'de yeşil turizm (yayla turizmi) devlet tarafından da desteklenen ana sektördür.<br>• <b>D Şıkkı (Yanlış):</b> Toroslar'da göçerler hala küçükbaş hayvancılık odaklı yaylacılık yapar.",
+        "tag": "#Yayla"
+      },
+      {
+        "q": "Soru 73: Türkiye'de özellikle 1950'lerden sonra kırsal alanlardan büyük şehirlere doğru kontrolsüz şekilde yaşanan göç dalgaları, kentlerin hazırlıksız yakalanmasına neden olmuş ve çarpık kentleşme (gecekondulaşma, altyapı yetersizliği) sorununu doğurmuştur. Aşağıdakilerden hangisi çarpık kentleşmenin kent yaşamında yol açtığı sorunlardan biri değildir?",
+        "options": [
+          "Sanayi tesisleri ve fabrikaların kent merkezlerinin ortasında kalması",
+          "Belediye hizmetlerinin (çöp toplama, su, kanalizasyon) yeni kurulan mahallelere ulaştırılamaması",
+          "Kent içindeki yeşil alanların, parkların ve sosyal donatı alanlarının daralması",
+          "Kır ve kent nüfusu arasındaki eğitim düzeyinin tamamen eşitlenmesi"
+        ],
+        "correct": 3,
+        "rationale": "<b>Doğru Cevap: D Şıkkıdır.</b> Çarpık kentleşme kır ve kent nüfusu arasındaki eğitim düzeyinin eşitlenmesini sağlamaz; aksine göçle gelenlerin yaşadığı kenar mahallelerde eğitim ve sağlık hizmetlerine erişim zorlaştığı için yeni sosyo-ekonomik eşitsizlikler doğar.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Kentlerin plansız büyümesi eski çevre yolları üstündeki fabrikaları şehrin kalbinde bırakmıştır.<br>• <b>B Şıkkı (Yanlış):</b> Altyapısız kurulan gecekondu bölgelerine hizmet götürmek belediyeler için büyük yük olmuştur.<br>• <b>C Şıkkı (Yanlış):</b> İmar plansızlığı yeşil alanları yok ederek betonlaşmayı körüklemiştir.<br>• <b>D Şıkkı (Doğru):</b> Eğitim düzeyinin eşitlenmesi çarpık kentleşmenin bir sonucu veya ilişkili bir faydası değildir.",
+        "tag": "#ÇarpıkKentleşme"
+      },
+      {
+        "q": "Soru 74: Adrese Dayalı Nüfus Kayıt Sistemi (ADNKS) verileri sayesinde Türkiye'de nüfusun yaş gruplarına göre dağılımı, eğitim seviyesi, nüfus hareketleri gibi birçok parametre anlık olarak çıkarılabilmektedir. ADNKS verilerinden yararlanarak devletin hazırlayabileceği en stratejik uzun vadeli planlama aşağıdakilerden hangisidir?",
+        "options": [
+          "Hangi ile kaç adet seçim sandığı kurulacağının anlık belirlenmesi",
+          "Gelecek 20 yıllık süreçte ihtiyaç duyulacak okul, hastane, istihdam alanları ve emeklilik bütçelerinin projeksiyonlarla planlanması",
+          "Turistik otellerin doluluk oranlarının mevsimlik olarak izlenmesi",
+          "Hangi meslek grubunun ne kadar vergi ödeyeceğinin belirlenmesi"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> ADNKS'nin sunduğu yaş grupları, nüfus artış hızları ve göç yönü gibi veriler, devlet planlama teşkilatlarının gelecek yıllardaki demografik yükleri, okul ihtiyacını, sosyal güvenlik bütçesini ve istihdam planlarını hatasız yapmasını sağlayan en kritik stratejik kaynaktır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Sandık tespiti basit bir idari işlemdir, sistemin asıl stratejik gücü değildir.<br>• <b>B Şıkkı (Doğru):</b> Demografik projeksiyonlar devlet planlaması için yaşamsal önemdedir.<br>• <b>C Şıkkı (Yanlış):</b> Otel dolulukları Kültür ve Turizm Bakanlığı'nın farklı sistemlerince takip edilir.<br>• <b>D Şıkkı (Yanlış):</b> Vergi oranları Maliye Bakanlığı'nın gelir beyanlarına dayanır.",
+        "tag": "#ADNKS"
+      },
+      {
+        "q": "Soru 75: Aritmetik nüfus yoğunluğu Türkiye genelinde sürekli artmaktadır. 1927'de kilometrekareye düşen insan sayısı 18 iken, günümüzde bu sayı 110'u aşmıştır. Türkiye'de aritmetik nüfus yoğunluğunun sürekli artış göstermesinin temel nedeni aşağıdakilerden hangisidir?",
+        "options": [
+          "Türkiye'nin yüzölçümünün tektonik çökmelerle sürekli daralması",
+          "Yıllık yağış miktarının kıyılarda artış göstermesi",
+          "Ülke nüfusunun doğal ve gerçek yollarla sürekli büyümesi",
+          "Tarımsal makineleşmenin düz arazilerde hız kazanması"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Aritmetik nüfus yoğunluğu formülü = Toplam Nüfus / Toplam Yüzölçümü şeklindedir. Türkiye'nin yüzölçümü sabit olduğuna göre, aritmetik yoğunluğun sürekli yükselmesinin tek ve temel nedeni ülke nüfusunun her yıl doğumlar ve dış göçlerle sürekli olarak artmasıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Türkiye'nin yüzölçümü jeolojik süreçlerle bu derece hızlı daralmaz.<br>• <b>B Şıkkı (Yanlış):</b> Yağış miktarının yoğunluk formülüyle doğrudan ilişkisi yoktur.<br>• <b>C Şıkkı (Doğru):</b> Sürekli büyüyen pay (nüfus) ve sabit payda (yüzölçüm) yoğunluğun artmasının nedenidir.<br>• <b>D Şıkkı (Yanlış):</b> Makineleşme tarımsal yoğunluğu etkiler, aritmetik yoğunluğun doğrudan nedeni değildir.",
+        "tag": "#AritmetikYoğunluk"
+      },
+      {
+        "q": "Soru 76: Geçici köy altı yerleşmelerinden biri olan Damlar, bazı kıyı ve ada kırsallarında (örneğin Gökçeada kırsalında) kendine özgü taş ve ahşap mimarili barınaklarla karakterizedir. Dam yerleşmelerinin bulunduğu bir yörede aşağıdaki ekonomik faaliyetlerden hangisinin ön planda olması beklenir?",
+        "options": [
+          "Modern seracılık ve yoğun meyvecilik",
+          "Hayvanların mevsimlik otlatılması, mandıracılık ve küçük çaplı tarım",
+          "Sanayi üretimi ve madencilik",
+          "Ormancılık ve kerestecilik"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Damlar, Ege Bölgesi ve kıyı eklentilerinde temel olarak hayvancılık (mandıracılık, peynir üretimi) amacıyla kullanılan, mevsimlik otlatma yapılan geçici yerleşmelerdir. Yanında bazen küçük aile ihtiyaçları için sebze tarımı da yapılabilir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Seracılık kalıcı büyük yatırımlarla ovalarda yapılır, geçici damlarda değil.<br>• <b>B Şıkkı (Doğru):</b> Hayvancılık ve mandıracılık damların kurulma sebebidir.<br>• <b>C Şıkkı (Yanlış):</b> Sanayi kent merkezlerinde kurulur.<br>• <b>D Şıkkı (Yanlış):</b> Ormancılık Karadeniz ve Akdeniz'in orman köylerine özgüdür.",
+        "tag": "#Dam"
+      },
+      {
+        "q": "Soru 77: Karadeniz Bölgesi'nde dağınık yerleşmelerin yaygın olmasında tarım arazilerinin küçük ve parçalı olması da etkilidir. Doğu Karadeniz'de tarım arazilerinin bu şekilde parçalı ve dağınık olmasının temel nedeni hangisidir?",
+        "options": [
+          "Bölgede sulamalı tarımın yaygın olmaması",
+          "Arazinin çok dağlık olması, dik yamaçlar ve vadilerle yarılmış olması",
+          "Toprağın aşırı killi ve geçirimsiz olması",
+          "Devletin tarım arazilerini kamulaştırması"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Doğu Karadeniz'de yerşekillerinin aşırı engebeli olması, dik yamaçlar ve derin vadiler geniş ve düz tarım ovalarının oluşmasını engellemiştir. Tarım alanları yamaçlarda küçük basamaklar ve parçalı düzlükler halinde kalmıştır. Bu da evlerin tarlaların yanına dağınık şekilde yapılmasına yol açmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Yağış bol olduğundan sulama sorunu yoktur.<br>• <b>B Şıkkı (Doğru):</b> Dağlık sarp yapı geniş arazileri imkansız kılar, parçalı araziler dağınık evleri doğurur.<br>• <b>C Şıkkı (Yanlış):</b> Kil yerleşme dokusunun veya parçalı arazinin ana nedeni olamaz.<br>• <b>D Şıkkı (Yanlış):</b> Kamulaştırma kırsal dağınıklığın nedeni değildir.",
+        "tag": "#DağınıkYerleşme"
+      },
+      {
+        "q": "Soru 78: Türkiye gibi gelişmekte olan ülkelerde demografik yatırımların bütçedeki payının yüksek olması kalkınma hızını yavaşlatır. Buna göre, devletin demografik yatırımların bütçe içindeki payını azaltmak amacıyla uygulayabileceği en tutarlı nüfus politikası aşağıdakilerden hangisidir?",
+        "options": [
+          "Nüfus artış hızını artıracak teşvikleri daha da çoğaltmak",
+          "Doğum oranlarını düşürerek nüfus artış hızını kontrol altına almak ve azaltmak",
+          "Sanayi yatırımlarını tamamen durdurmak",
+          "Büyük kentlere yapılan göçleri tamamen serbest bırakmak"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Demografik yatırımların azaltılması, çocuk ve genç nüfus artışının yavaşlatılmasına bağlıdır. Doğum oranları düştüğünde okul, kreş, çocuk hastanesi gibi acil sosyal altyapı yatırım ihtiyacı azalır. Böylece devlet kaynakları doğrudan üretken alanlara (sanayi, teknoloji vb.) yönlendirilebilir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Artış hızı yükselirse demografik yatırım ihtiyacı daha da artar, bütçe zorlanır.<br>• <b>B Şıkkı (Doğru):</b> Doğumların kontrolü demografik baskıyı hafifleterek sermaye birikimini ve kalkınmayı hızlandırır.<br>• <b>C Şıkkı (Yanlış):</b> Sanayinin durdurulması ülkeyi yoksullaştırır.<br>• <b>D Şıkkı (Yanlış):</b> Kontrolsüz göç şehirlerdeki demografik yatırımları patlatır.",
+        "tag": "#DemografikYatırım"
+      },
+      {
+        "q": "Soru 79: Doğu Anadolu Bölgesi'nde kırsal yerleşmelerde evlerin yapımında taş malzeme çok yaygın iken, vadi tabanlarında kerpiç malzeme kullanımı da göze çarpar. Bölgedeki kırsal konut malzemesinin bu bölgesel değişimi aşağıdakilerden hangisiyle doğrudan açıklanır?",
+        "options": [
+          "Vadi tabanlarındaki nüfusun çok daha zengin olmasıyla",
+          "Yüksek dağ yamaçlarında kil ve saman bulmanın imkansız olması, vadilerde ise akarsuların biriktirdiği killi alüvyonların toprağa dönüşmesi",
+          "Bölgede ahşap malzemenin kullanımının yasal olarak yasaklanması",
+          "Taş evlerin sadece hayvancılık yapılan yerlerde kullanılması zorunluluğu"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Kırsal konut malzemesi doğal hammaddeye dayanır. Dağ yamaçlarında çıplak kayalıklar ve taş bol olduğundan taş evler yapılır. Vadi tabanlarında ise akarsular ince killi toprakları biriktirdiği için bu topraktan kerpiç tuğlalar yapmak çok kolaydır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Konut malzemesi zenginlikten ziyade fiziksel hammadde coğrafyasına bağlıdır.<br>• <b>B Şıkkı (Doğru):</b> Doğal çevre yamaçlarda taşı, düzlük/vadi tabanlarında ise toprağı (kerpici) zorunlu kılar.<br>• <b>C Şıkkı (Yanlış):</b> Ahşap yasağı yoktur, orman yetersizliği doğal bir sınırdır.<br>• <b>D Şıkkı (Yanlış):</b> Taş evler kalıcı insan meskenleridir, hayvancılıkla sınırlı değildir.",
+        "tag": "#DoğuAnadolu"
+      },
+      {
+        "q": "Soru 80: Türkiye genelinde fizyolojik nüfus yoğunluğu en yüksek olan coğrafi bölge Marmara Bölgesi'dir. Marmara Bölgesi'ni sırasıyla Ege ve Akdeniz bölgeleri takip eder. Marmara'da fizyolojik nüfus yoğunluğunun aşırı yüksek olmasında aşağıdakilerden hangisinin etkisi yoktur?",
+        "options": [
+          "Bölgenin yoğun dış göç alması ve toplam nüfusunun çok fazla olması",
+          "Sanayi, hizmet ve ticaret faaliyetlerinin bu bölgede toplanması",
+          "Bölgedeki ekili-dikili tarım alanlarının engebeli arazilerden dolayı çok dar olması",
+          "Bölgenin büyük tüketim merkezlerine yakın olmasının nüfusu çekmesi"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Marmara Bölgesi engebeli değildir; aksine sade yerşekillerine sahip olup tarım arazisi oranı en yüksek bölgelerden biridir. Fizyolojik nüfus yoğunluğunun yüksek çıkmasının nedeni arazinin darlığı değil, pay kısmındaki nüfusun (sanayi ve göç nedeniyle) olağanüstü yüksek olmasıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Marmara 25 milyonu aşan nüfusuyla formüldeki nüfus değerini devasa kılar.<br>• <b>B Şıkkı (Yanlış):</b> Sanayi iş imkanı yaratarak nüfus yığılmasına sebep olur.<br>• <b>C Şıkkı (Doğru):</b> Marmara'da tarım arazileri dar değil oldukça geniştir, bu şık yanlıştır.<br>• <b>D Şıkkı (Yanlış):</b> Pazar yakınlığı nüfus ve üretimi çeken beşeri etkendir.",
+        "tag": "#FizyolojikYoğunluk"
+      },
+      {
+        "q": "Soru 81: Türkiye'de iç göç hareketlerinin yönü genellikle doğudan batıya, iç kesimlerden kıyı kesimlerine doğrudur. Aşağıdakilerden hangisi göç veren Doğu Anadolu kırsalında göçe neden olan ekonomik (beşeri) nedenlerden biri değildir?",
+        "options": [
+          "Tarımsal işletmelerin miras yoluyla bölünerek küçük, verimsiz parçalara ayrılması",
+          "Tarımda makine kullanımının yaygınlaşmasıyla iş gücüne olan ihtiyacın azalması",
+          "Kış sıcaklıklarının çok düşük olması ve karın uzun süre yerde kalması nedeniyle kış turizminin gelişmesi",
+          "Kırsal alanda iş imkanlarının kısıtlı olması ve sanayi kuruluşlarının yok denecek kadar az olması"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Kış turizminin gelişmesi göçe neden olan olumsuz bir etken değil, aksine bölgede istihdam yaratarak göçü azaltabilecek olumlu ekonomik bir gelişmedir. Diğer seçenekler ise göçün klasik ekonomik itici nedenleridir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Miras bölünmesi toprağı yetersiz kılar, aileyi göçe zorlar.<br>• <b>B Şıkkı (Yanlış):</b> Makineleşme kırsal iş gücünü işsiz bırakır.<br>• <b>C Şıkkı (Doğru):</b> Kış turizmi istihdam yaratan olumlu bir beşeri olaydır, itici bir güç değildir.<br>• <b>D Şıkkı (Yanlış):</b> Sanayi eksikliği kırsal nüfusu büyük şehirlere çeken en temel itici faktördür.",
+        "tag": "#GöçünNedenleri"
+      },
+      {
+        "q": "Soru 82: Türkiye'de aşırı göç alan metropollerde (İstanbul, Ankara, İzmir, Bursa) kontrolsüz büyümenin sonucunda birçok mekansal ve sosyal sorun ortaya çıkar. Aşağıdakilerden hangisi göç alan büyük şehirlerde ortaya çıkan olumsuz sonuçlar arasında yer almaz?",
+        "options": [
+          "Ulaşım ağlarının yetersiz kalması, trafik yoğunluğunun ve hava kirliliğinin artması",
+          "Eğitim ve sağlık kurumlarında sınıf ve hasta mevcudunun artarak hizmet kalitesinin düşmesi",
+          "Belediyelerin çevre düzenleme ve çöp toplama maliyetlerinin azalması",
+          "Gürültü kirliliğinin artması ve kent içi güvenliğin zayıflaması"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Aşırı göç alan kentlerde belediyelerin çevre düzenleme, çöp toplama ve kanalizasyon gibi hizmet maliyetleri azalmaz, aksine olağanüstü düzeyde artar ve belediye bütçelerini zorlar.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Taşıt sayısının artışı trafik keşmekeşine ve emisyon kirliliğine neden olur.<br>• <b>B Şıkkı (Yanlış):</b> Okul ve hastane kapasiteleri yetersiz kalarak hizmet standartlarını geriletir.<br>• <b>C Şıkkı (Doğru):</b> Hizmet maliyetlerinin azalması söz konusu olamaz, maliyetler katlanarak artar.<br>• <b>D Şıkkı (Yanlış):</b> Kalabalıklaşma gürültüyü artırır, asayiş sorunlarını tetikler.",
+        "tag": "#GöçünSonuçları"
+      },
+      {
+        "q": "Soru 83: Tarımda modern sulama sistemlerinin kurulması ve sulu tarımın yaygınlaştırılması, kırsal göçün önlenmesinde (Göçü Önleme) kilit rol oynar. Sulu tarımın yaygınlaşmasıyla göçün azalması arasındaki ilişkiyi açıklayan en temel zincirleme reaksiyon hangisidir?",
+        "options": [
+          "Sulu tarım -> Nadasın azalması -> Tarımda çalışan nüfus ihtiyacının sıfırlanması -> Göçün durması",
+          "Sulu tarım -> Yılda birden fazla ürün alınabilmesi -> Tarımsal verim ve çiftçi gelirinin katlanması -> Köylünün köyünde kalması",
+          "Sulu tarım -> Toprak erozyonunun artması -> Kırsal nüfusun tarlalarını tamamen terk etmesi -> Göçün hızlanması",
+          "Sulu tarım -> Makineleşmenin yasaklanması -> İnsan gücü ihtiyacının suni olarak artırılması -> Göçün önlenmesi"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Sulu tarımın yaygınlaşmasıyla nadas biter, çiftçi tarlasından yılda 2 veya 3 kez yüksek gelir getiren sanayi bitkileri (pamuk, mısır vb.) alabilir. Geliri yükselen çiftçi kente gitme ihtiyacı duymaz ve yerinde kalır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Nüfus ihtiyacının sıfırlanması göçü artırır, sulu tarım iş gücü ihtiyacını canlı tutar.<br>• <b>B Şıkkı (Doğru):</b> Ekonomik refahın kırsalda yükselmesi, kent cazibesine karşı en güçlü kalkandır.<br>• <b>C Şıkkı (Yanlış):</b> Sulama erozyonu artırmaz, ekili örtüyü korur.<br>• <b>D Şıkkı (Yanlış):</b> Makineleşme yasaklanamaz, sulu tarım makineyle entegredir.",
+        "tag": "#GöçüÖnleme"
+      },
+      {
+        "q": "Soru 84: Türkiye'de kentleşme hızı bölgeler arasında büyük farklılıklar gösterir. Sanayi, ticaret ve turizmin gelişmiş olduğu kıyı bölgelerinde kentleşme oranı %90'ların üzerine çıkmışken, tarım ve hayvancılığın hâkim olduğu iç kesimlerde kır nüfusu payı hala yüksektir. Aşağıdaki şehirlerden hangisinde kentleşme oranı diğerlerine göre daha düşüktür?",
+        "options": [
+          "Kocaeli",
+          "Gümüşhane",
+          "Gaziantep",
+          "Bursa"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Kocaeli, Bursa ve Gaziantep sanayileşmiş dev merkezler olup kentleşme oranları son derece yüksektir. Gümüşhane ise Karadeniz'in dağlık iç kesiminde yer alır, sanayisi zayıftır ve nüfusunun önemli kısmı hala kırsal yerleşmelerde tarım ve hayvancılıkla geçinir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Kocaeli Türkiye'nin en sanayileşmiş ve kentleşmiş illerindendir.<br>• <b>B Şıkkı (Doğru):</b> Gümüşhane dağlık engebeli yapısı ve tarımsal ekonomisiyle kent nüfusu payı düşük olan bir şehirdir.<br>• <b>C Şıkkı (Yanlış):</b> Gaziantep Güneydoğu'nun sanayi ve ticaret başkenti olup kentleşmesi yüksektir.<br>• <b>D Şıkkı (Yanlış):</b> Bursa otomotiv ve tekstil sanayisiyle yüksek kentleşme oranına sahiptir.",
+        "tag": "#Kentleşme"
+      },
+      {
+        "q": "Soru 85: Kerpiç evler, yarı kurak iklim bölgelerinin geleneksel mimarisidir. Türkiye'de Güneydoğu Anadolu Bölgesi'nde yer alan Şanlıurfa-Harran yöresindeki kubbeli kerpiç evler (Harran Evleri) mimari açıdan dünya çapında benzersizdir. Harran evlerinin kubbeli yapılmasının temel coğrafi gerekçesi nedir?",
+        "options": [
+          "Bölgede kubbe yapacak taş malzemenin bol olması",
+          "Karasal iklimin yaz sıcaklarında aşırı ısınmayı önlemek ve havalandırmayı kolaylaştırarak içeriyi serin tutmak",
+          "Harran'ın çok yoğun kar yağışı alması nedeniyle çatıların çökmesini engellemek",
+          "Kubbenin yağmur sularını tamamen bina içinde biriktirmesini sağlamak"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Harran evlerinin kubbeli yapısı, yaz aylarında 45 dereceyi aşan çöl sıcaklarında sıcak havanın kubbenin üst kısmında toplanmasını ve tepedeki delikten dışarı çıkmasını (doğal termal baca etkisi) sağlar. Bu sayede evlerin içi serin kalır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Bu evler taş değil kerpiç (toprak) malzemeden yapılmıştır.<br>• <b>B Şıkkı (Doğru):</b> Kubbe mimarisi, klimasız dönemde aşırı yaz sıcaklarıyla mücadele etmek için geliştirilmiş harika bir ekolojik çözümdür.<br>• <b>C Şıkkı (Yanlış):</b> Harran kışın ılık geçer, kar yağışı son derece nadirdir.<br>• <b>D Şıkkı (Yanlış):</b> Kubbe su biriktirmez, aksine yağmurun hızla akmasını sağlar.",
+        "tag": "#KerpiçEvler"
+      },
+      {
+        "q": "Soru 86: Doğu Anadolu Bölgesi'nde hayvancılık faaliyetleri için kurulan geçici köy altı yerleşmelerinden biri olan 'Kom'lar ile ilgili aşağıda verilen bilgilerden hangisi yanlıştır?",
+        "options": [
+          "Genellikle mera alanlarına yakın, su kaynaklarının bulunduğu yüksek düzlüklerde kurulur.",
+          "Kış mevsiminde kar kalınlığı arttığı ve sıcaklıklar düştüğü için tamamen boşaltılarak köye dönülür.",
+          "Evler genellikle taş duvarlı olup, çatıları saman ve toprakla kapatılmış basit yapılardan oluşur.",
+          "Sadece büyük deniz kıyılarında balıkçılık yapmak amacıyla kurulmuşlardır."
+        ],
+        "correct": 3,
+        "rationale": "<b>Doğru Cevap: D Şıkkıdır.</b> Komlar deniz kıyısında değil, denizden uzak dağlık Doğu Anadolu Bölgesi'nde kurulur ve balıkçılıkla hiçbir ilgisi yoktur. Temel kuruluş amacı mera hayvancılığıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Doğrudur. Hayvanların otlaması için meraya ve suya yakınlık şarttır.<br>• <b>B Şıkkı (Yanlış):</b> Doğrudur. Kom geçici bir yerleşimdir, sert kış şartlarında köylere geri çekilinir.<br>• <b>C Şıkkı (Yanlış):</b> Doğrudur. Yerel malzemeler olan taş ve toprak mesken yapımında esastır.<br>• <b>D Şıkkı (Doğru):</b> Balıkçılıkla alakası yoktur, tamamen karasal hayvancılık birimidir.",
+        "tag": "#Kom"
+      },
+      {
+        "q": "Soru 87: Türkiye coğrafyasında köy altı yerleşmelerinin kalıcı (mezra, divan, mahalle, çiftlik) veya geçici (yayla, kom, oba, dam, bağ evi, dalyan) olmasını belirleyen en temel ekonomik ölçüt aşağıdakilerden hangisidir?",
+        "options": [
+          "Yerleşmelerde kullanılan konutların lüks seviyesi",
+          "Yapılan temel ekonomik faaliyetin tarım (kalıcı) veya hayvancılık (geçici) odaklı olması",
+          "Yerleşmelerin deniz seviyesinden yüksekliği",
+          "Yerleşmelerde yaşayan insanların nüfus cüzdanı kayıtları"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Köy altı yerleşmelerinin kalıcılık durumunu belirleyen temel ekonomik faktör işlevdir. Tarım (ekim, biçim, hasat) uzun süreli ve toprağa bağlılık gerektirdiği için tarım odaklı birimler kalıcıdır. Hayvancılık (otlatma) ise mevsimlik otlak arayışına dayandığı için hayvancılık odaklı birimler geçicidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Konut lüksü kalıcılığı belirlemez, geçici yaylalarda da lüks villalar kurulabilmektedir.<br>• <b>B Şıkkı (Doğru):</b> Tarım toprağa bağlar (kalıcı), hayvancılık ise mevsimlik otlaklara göre göç ettirir (geçici).<br>• <b>C Şıkkı (Yanlış):</b> Yükseklik etkilidir ama belirleyici tek ekonomik ölçüt değildir (örneğin yüksekteki mezralar kalıcıdır).<br>• <b>D Şıkkı (Yanlış):</b> Kayıtların yerleşim tipiyle coğrafi ilişkisi yoktur.",
+        "tag": "#KöyAltıYerleşmeleri"
+      },
+      {
+        "q": "Soru 88: Akdeniz Bölgesi'nin özellikle karstik dağlık yörelerinde kırsal konutlarda taş mimarisi hâkimdir. Taş evlerin yapımında yaygın olarak kullanılan ve kolay aşınabilen karstik taş türü aşağıdakilerden hangisidir?",
+        "options": [
+          "Granit",
+          "Kalker (Kireç Taşı)",
+          "Bazalt",
+          "Andezit"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Akdeniz Torosları karstik arazilerden oluşur ve buradaki en yaygın kayaç kalkerdir (kireç taşı). Kolayca kesilip işlenebildiği için yöre halkı tarafından kırsal taş evlerin yapımında ana malzeme olarak kalker kullanılmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Granit sert iç püskürük kayaçtır, işlenmesi zordur ve Akdeniz'de yaygın değildir.<br>• <b>B Şıkkı (Doğru):</b> Kalker Akdeniz'in temel karstik taş yapısıdır, geleneksel taş evlerde bolca kullanılır.<br>• <b>C Şıkkı (Yanlış):</b> Bazalt volkanik dış püskürük kayaçtır, Doğu Anadolu kırsalında yaygındır.<br>• <b>D Şıkkı (Yanlış):</b> Andezit Ankara çevresinde yaygın volkanik taştır.",
+        "tag": "#KırsalKonutlar"
+      },
+      {
+        "q": "Soru 89: Karadeniz ve Marmara bölgelerinde kalıcı köy altı yerleşmelerinden olan 'Mahalle' yerleşmeleri yaygındır. Mahalle yerleşmelerinin coğrafi dokusuyla ilgili aşağıdakilerden hangisi doğrudur?",
+        "options": [
+          "Genellikle orman içlerinde, evlerin birbirinden kilometrelerce uzak olduğu aşırı dağınık yapılardır.",
+          "Köy merkezinin hemen yakınında, tarım arazilerinin genişlemesiyle kurulan ve birkaç ev ile eklentiden oluşan kalıcı birimlerdir.",
+          "Sadece mevsimlik olarak kullanılan, kışın yolları kardan kapanan geçici çadır yerleşmeleridir.",
+          "Dalyan adı verilen deniz balıkçılığı tesislerinin diğer ismidir."
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Kırsal mahalleler, ana köyün etrafındaki tarım alanlarının işlenmesiyle kurulan, genellikle akrabalık bağları olan ailelerin yaşadığı, kalıcı köy altı yerleşmeleridir. Köyün idari sınırları içindedirler.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Mahalle içindeki evler birbirine yakındır, aşırı dağınık orman içi kulübeler değillerdir.<br>• <b>B Şıkkı (Doğru):</b> Mahalleler tarım arazilerinin genişlemesiyle köyün uydusu olarak kurulan kalıcı birimlerdir.<br>• <b>C Şıkkı (Yanlış):</b> Mahalleler kalıcıdır, kışın boşaltılmaz.<br>• <b>D Şıkkı (Yanlış):</b> Dalyan balıkçılık yerleşmesidir, mahalleyle alakası yoktur.",
+        "tag": "#Mahalle"
+      },
+      {
+        "q": "Soru 90: Türkiye'nin seyrek nüfuslu alanlarından biri olan Menteşe Yöresi kırsalında engebeli araziden dolayı tarım kısıtlıdır. Buna göre, Menteşe Yöresi halkının tarım dışı geçim kaynakları arasında aşağıdakilerden hangisinin payı en yüksektir?",
+        "options": [
+          "Manda hayvancılığı ve ipek böcekçiliği",
+          "Taş kömürü madenciliği",
+          "Arıcılık (çam balı üretimi) ve kıyı turizmi",
+          "Kümes hayvancılığı ve çay tarımı"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Menteşe Yöresi (Muğla), geniş kızılçam ormanları sayesinde Türkiye'nin çam balı üretim merkezidir (arıcılık çok gelişmiştir). Ayrıca engebeli kıyılarındaki koylar ve deniz sıcaklığı sayesinde Bodrum, Marmaris, Fethiye gibi dev kıyı turizmi merkezlerine ev sahipliği yapar.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Manda sulak alan ister, Menteşe karstiktir. İpek böcekçiliği de yaygın değildir.<br>• <b>B Şıkkı (Yanlış):</b> Taş kömürü Zonguldak'tadır.<br>• <b>C Şıkkı (Doğru):</b> Orman zenginliği arıcılığı, coğrafi güzellik ise turizmi birinci sıraya taşımıştır.<br>• <b>D Şıkkı (Yanlış):</b> Çay tarımı sadece Doğu Karadeniz'dedir.",
+        "tag": "#MenteşeNüfusu"
+      },
+      {
+        "q": "Soru 91: Yaz aylarında Çukurova'ya pamuk toplamaya giden tarım işçileri ile kış aylarında Uludağ ve Palandöken'e giden otel çalışanları mevsimlik göç yapmaktadır. Bu iki mevsimlik göç hareketinin yöneldiği alanların sırasıyla en yoğun nüfuslandığı mevsimler hangileridir?",
+        "options": [
+          "Yaz - Kış",
+          "Kış - Yaz",
+          "İlkbahar - Sonbahar",
+          "Yaz - Yaz"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Çukurova tarım odaklı bir yaz göçü merkezi olup nüfusu yaz aylarında artar. Uludağ ve Palandöken ise kış turizmi merkezleri olduğundan nüfusları kış aylarında zirve yapar. Dolayısıyla sıralama Yaz ve Kış şeklindedir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Pamuk hasadı yazın, kayak turizmi ise kışın yapıldığından nüfus artış dönemleri sırasıyla Yaz ve Kış mevsimleridir.<br>• <b>B Şıkkı (Yanlış):</b> Sıralama terstir.<br>• <b>C Şıkkı (Yanlış):</b> İlkbahar-sonbahar ana hasat ve kayak dönemleri değildir.<br>• <b>D Şıkkı (Yanlış):</b> Kayak merkezleri yazın tenhadır.",
+        "tag": "#MevsimlikGöç"
+      },
+      {
+        "q": "Soru 92: Türkiye'de en yaygın ve en organize kalıcı köy altı yerleşmesi 'Mezra'dır. Doğu Anadolu kırsalında mezra yerleşmelerinin çok yaygın olmasında aşağıdakilerden hangisinin etkisi en azdır?",
+        "options": [
+          "Yerşekillerinin dağlık olması nedeniyle tarım arazilerinin küçük parçalar halinde dağılmış olması",
+          "Büyükbaş hayvancılık için yaz aylarında otlak bulma ihtiyacı",
+          "Bölgede sanayi tesislerinin yoğun olmasından dolayı işçi lojmanlarına duyulan ihtiyaç",
+          "Geniş ailelerin bölünerek kendi müstakil tarım alanlarının başına yerleşme isteği"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Doğu Anadolu Bölgesi'nde sanayi tesisleri son derece azdır. Mezraların kurulmasının sanayi lojmanları ihtiyacıyla hiçbir ilgisi yoktur. Mezra, tamamen tarım ve hayvancılık kökenli kırsal bir yerleşmedir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Parçalı araziler çiftçiyi tarlasının yanına yerleşmeye (mezra kurmaya) zorlar.<br>• <b>B Şıkkı (Yanlış):</b> Mezralarda hayvancılık da yapıldığı için otlak yakınlığı kurulma sebebidir.<br>• <b>C Şıkkı (Doğru):</b> Sanayi lojmanı tezi tamamen gerçek dışıdır.<br>• <b>D Şıkkı (Yanlış):</b> Sosyal bölünmeler aileleri köyden ayırıp mezra kurmaya iten beşeri nedenlerdendir.",
+        "tag": "#Mezra"
+      },
+      {
+        "q": "Soru 93: Türkiye'nin 1940-1945 yılları arasındaki nüfus artış hızı grafiğinde tarihi bir düşüş (nüfus artış hızı binde 10'ların altına inmiştir) göze çarpar. Bu dönemde nüfus artış hızının bu derece sert düşmesinin temel nedeni aşağıdakilerden hangisidir?",
+        "options": [
+          "İkinci Dünya Savaşı nedeniyle seferberlik ilan edilerek yetişkin erkek nüfusun silah altına alınması",
+          "Türkiye'nin İkinci Dünya Savaşı'na fiilen girerek milyonlarca askerini kaybetmesi",
+          "Devletin çok çocuklu aileleri cezalandıran yeni kanunlar çıkarması",
+          "Ülkede yaşanan çok şiddetli kuraklık ve kıtlık salgını"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> 1940-1945 dönemi İkinci Dünya Savaşı yıllarına denk gelir. Türkiye savaşa fiilen girmemiş olsa da, her an saldırıya uğrama riskine karşı genel seferberlik ilan etmiş ve genç üretken erkek nüfusun neredeyse tamamını askere (silah altına) almıştır. Bu durum doğum oranlarının dramatik şekilde düşmesine yol açmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Seferberlik evlilikleri ve doğumları engellediği için artış hızını binde 10.58'den binde 5.9'a düşürmüştür.<br>• <b>B Şıkkı (Yanlış):</b> Türkiye savaşa fiilen girip cephede büyük asker kayıpları vermemiştir.<br>• <b>C Şıkkı (Yanlış):</b> O dönemde devlet nüfusu artırıcı politikalar uyguluyordu, ceza söz konusu değildi.<br>• <b>D Şıkkı (Yanlış):</b> Ekonomik zorluklar yaşanmıştır ancak ana etken seferberliktir.",
+        "tag": "#NüfusArtışHızı"
+      },
+      {
+        "q": "Soru 94: Türkiye'de dağların uzanış doğrultusu nüfusun kıyı ve iç kesimlerdeki dağılışını (Nüfus Dağılışı) doğrudan etkiler. Karadeniz ve Akdeniz bölgelerinde nüfusun çok dar bir kıyı şeridine sıkışıp iç kesimlerin tenha kalmasında dağların uzanışının hangi özelliği belirleyicidir?",
+        "options": [
+          "Dağların kıyıya dik uzanması",
+          "Dağların kıyı çizgisine paralel uzanarak iç kesimlerle ulaşımı ve nemli havayı engellemesi",
+          "Dağların çok alçak olması ve kar tutmaması",
+          "Dağların tamamen sönmüş volkanik konilerden oluşması"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Karadeniz ve Akdeniz'de dağlar kıyıya paralel uzanır. Bu durum nemli deniz havasının iç kesimlere girmesini engeller ve kıyıda bol yağışlı ideal yaşam alanları kurar. Ayrıca kıyı ile iç kesimler arasındaki ulaşımı zorlaştırarak nüfusun kıyı şeridine yığılmasına neden olur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Dağların dik uzandığı yer Ege'dir, Ege'de nüfus iç vadilere kadar sokulabilir.<br>• <b>B Şıkkı (Doğru):</b> Paralel dağ sıraları iklimsel ve ulaşımsal bariyer görevi görerek kıyı yığılmasını yaratır.<br>• <b>C Şıkkı (Yanlış):</b> Bu dağlar oldukça yüksek ve sarp dağlardır.<br>• <b>D Şıkkı (Yanlış):</b> Kıvrım dağlarıdır, volkanik değillerdir.",
+        "tag": "#NüfusDağılışı"
+      },
+      {
+        "q": "Soru 95: Türkiye'de nüfus dönüşümünün son aşamasına girilmesiyle birlikte nüfusun gelecekteki yapısıyla ilgili endişeler artmıştır. Bu endişeleri hafifletmek amacıyla son yıllarda devletin benimsediği yeni nüfus politikası yönelimi hangisidir?",
+        "options": [
+          "Doğum oranlarını daha da düşürmek için kısırlaştırma kampanyaları düzenlemek",
+          "En az üç çocuk sloganıyla doğurganlığı ve nüfus artış hızını artırmaya yönelik teşvik edici (pronatalist) politikalar",
+          "Büyük kentlerdeki nüfusu zorla kırsal alanlara göç ettirmek",
+          "Yabancı ülkelerden sadece yaşlı işçilerin göç etmesini sağlamak"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Doğum oranlarının tehlikeli sınırların altına inmesi üzerine Türkiye, son yıllarda nüfusu artırıcı (en az 3 çocuk söylemi, doğum izinlerinin uzatılması, çocuk yardımları vb.) pronatalist teşvik politikalarına geri dönmüştür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Devlet doğumları azaltmayı değil artırmayı hedeflemektedir.<br>• <b>B Şıkkı (Doğru):</b> Yaşlanan nüfus tehdidine karşı doğurganlığı teşvik edici politikalar devrededir.<br>• <b>C Şıkkı (Yanlış):</b> Zorunlu iç göç uygulaması yoktur.<br>• <b>D Şıkkı (Yanlış):</b> Dinamik iş gücü için genç nüfus istenir, yaşlı nüfus göçü hedeflenmez.",
+        "tag": "#NüfusDönüşümü"
+      },
+      {
+        "q": "Soru 96: Türkiye'nin 2020 yılı nüfus piramidi incelendiğinde, piramidin tabanında salgın hastalıklar ve sosyo-ekonomik kaygıların etkisiyle belirgin bir daralma daha gözlenmiştir. Nüfus piramidinin tabanının bu şekilde daralması, gelecekte Türkiye için aşağıdakilerden hangisini kaçınılmaz kılar?",
+        "options": [
+          "Genç nüfus işsizliğinin tamamen sıfırlanmasını",
+          "Aktif sigortalı çalışan nüfusun emekli nüfusa oranının (bağımlılık oranı yükü) kötüleşmesini",
+          "Eğitim kurumlarının ve üniversitelerin kapasitesinin yetersiz kalmasını",
+          "Hızlı nüfus artışı nedeniyle gecekondulaşmanın patlamasını"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Piramidin tabanının daralması doğumların azalması demektir. Bu çocukların 20 yıl sonra iş gücüne katılacağı düşünüldüğünde, gelecekte çalışan genç nüfus az olacak, buna karşın emekli (yaşlı) nüfus çok fazla olacaktır. Bu da sosyal güvenlik sistemine devasa bir mali yük getirecektir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> İşsizliğin sıfırlanması nüfus yapısına değil, ekonomik politikalara bağlıdır.<br>• <b>B Şıkkı (Doğru):</b> Yaşlı bağımlılık oranının artması sosyal devlet dengesini zorlayan en büyük tehdittir.<br>• <b>C Şıkkı (Yanlış):</b> Öğrenci sayısı azalacağı için okul kapasite fazlası (atıllık) oluşur, yetersizlik değil.<br>• <b>D Şıkkı (Yanlış):</b> Nüfus yavaşladığı için gecekondulaşma baskısı azalır.",
+        "tag": "#NüfusPiramidi"
+      },
+      {
+        "q": "Soru 97: Osmanlı Devleti dönemindeki ilk nüfus sayımı 1831 yılında II. Mahmut döneminde yapılmıştır. Bu nüfus sayımının (Nüfus Sayımı) temel iki amacı aşağıdakilerden hangisinde doğru verilmiştir?",
+        "options": [
+          "Okur-yazar oranını belirlemek - Nüfusun mesleki dağılımını tespit etmek",
+          "Askerlik yapacak erkek nüfus miktarını ve ödenecek vergileri (cizye vb.) belirlemek",
+          "Kadın nüfusun istihdama katılımını artırmak - Şehirleşme oranını hesaplamak",
+          "Mevsimlik göç hareketlerini takip etmek - Tarımsal üretimi planlamak"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Modern anlamda olmayan 1831 Osmanlı sayımında kadınlar sayılmamış, sadece erkek nüfus ve hayvanlar sayılmıştır. Bunun temel nedeni Yeniçeri Ocağı'nın kaldırılmasından sonra kurulan Asakir-i Mansure-i Muhammediye ordusuna asker kaynağı bulmak ve devletin vergi mükellefi olan erkekleri (özellikle gayrimüslim tebaayı) belirlemektir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Sosyo-ekonomik ve eğitim hedefleri o dönemde arka plandadır.<br>• <b>B Şıkkı (Doğru):</b> Askerlik çağındaki erkeklerin tespiti ve vergi toplama gücü 1831 sayımının ana nedenidir.<br>• <b>C Şıkkı (Yanlış):</b> Kadınlar bu sayımda hiç hesaba katılmamıştır.<br>• <b>D Şıkkı (Yanlış):</b> Göç takibi ve tarım planı amaçlanmamıştır.",
+        "tag": "#NüfusSayımı"
+      },
+      {
+        "q": "Soru 98: Türkiye'de hayvancılık yapılan geçici köy altı yerleşmelerinden biri olan 'Oba'lar ile ilgili aşağıda verilen bilgilerden hangisi yanlıştır?",
+        "options": [
+          "Genellikle göçer ailelerin kıl çadırlardan oluşturduğu geçici yerleşimlerdir.",
+          "Doğu ve Batı Toroslar ile Doğu Anadolu yaylalarında kıl keçisi ve koyun yetiştiriciliğiyle entegredir.",
+          "İdari açıdan tamamen bağımsız, kendi belediyesi ve muhtarı olan kalıcı idari birimlerdir.",
+          "Bitki örtüsünün zengin olduğu gür otlaklı yüksek dağ kuşaklarında kurulurlar."
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Obalar geçici köy altı yerleşmeleridir. Kendine ait muhtarlığı veya belediyesi yoktur. İdari olarak bağlı bulundukları köy muhtarlığına tabidirler.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Obalar çadır mimarisine sahip hareketli yerleşimlerdir.<br>• <b>B Şıkkı (Yanlış):</b> Toroslar'daki küçükbaş hayvancılık yapan yörük obaları bunun en iyi örneğidir.<br>• <b>C Şıkkı (Doğru):</b> İdari bağımsızlıkları yoktur, geçicidirler.<br>• <b>D Şıkkı (Yanlış):</b> Hayvanların beslenmesi için otlağı bol dağlık sahaları seçerler.",
+        "tag": "#Oba"
+      },
+      {
+        "q": "Soru 99: Türkiye'de ortanca yaşın illere göre dağılımı incelendiğinde, ortanca yaşın en yüksek (yaşlı nüfuslu) olduğu iller Karadeniz kıyısında (Sinop, Kastamonu, Giresun vb.) yer alırken; en düşük (genç nüfuslu) olduğu iller Güneydoğu Anadolu'da (Şanlıurfa, Şırnak vb.) yer alır. Karadeniz illerinde ortanca yaşın bu denli yüksek çıkmasında etkili olan temel faktör hangisidir?",
+        "options": [
+          "Bu illerde bebek ölüm oranlarının Türkiye genelinden yüksek olması",
+          "Karadeniz illerinin dışarıya sürekli olarak genç ve dinamik nüfus göçü vermesi ve geride yaşlıların kalması",
+          "Güneydoğu Anadolu'da okuma yazma oranının çok daha yüksek olması",
+          "Karadeniz'de tarımsal makineleşmenin çok gelişmiş olması"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Sinop ve Kastamonu gibi Karadeniz illeri iş imkanlarının yetersizliğinden dolayı genç nüfusunu sürekli büyük şehirlere göç olarak gönderir. Gençler gidince geride kalan yaşlı nüfus oranı artar ve bu durum ortanca yaşı yukarı çeker. Şanlıurfa ve Şırnak gibi illerde ise doğum oranları çok yüksek olduğundan çocuk nüfusu fazladır, bu da ortanca yaşı düşürür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Bebek ölümleri Karadeniz'de yüksek değildir.<br>• <b>B Şıkkı (Doğru):</b> Dışa göçle gençlerin gitmesi bölgeyi yaşlandırarak ortanca yaşı (Sinop'ta olduğu gibi) zirveye taşır.<br>• <b>C Şıkkı (Yanlış):</b> Okuma yazmanın ortanca yaşa bu şekilde ters etkisi yoktur.<br>• <b>D Şıkkı (Yanlış):</b> Karadeniz dağlıktır, makineleşme zayıftır.",
+        "tag": "#OrtancaYaş"
+      },
+      {
+        "q": "Soru 100: Tarımsal nüfus yoğunluğu hesaplanırken tarım arazilerinin büyüklüğü kritik öneme sahiptir. Türkiye'de tarım dışı alanların ve dağların kapladığı alanın fazla olduğu yörelerde tarımsal yoğunluk yüksek çıkar. Buna göre, aşağıdaki yörelerin hangisinde tarımsal nüfus yoğunluğunun en yüksek çıkması beklenir?",
+        "options": [
+          "Şanlıurfa Platosu",
+          "Konya Ovası",
+          "Doğu Karadeniz (Rize ve çevresi)",
+          "Çukurova (Adana)"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Rize ve çevresi (Doğu Karadeniz) çok sarp ve dik dağlık bir yapıya sahiptir. Tarım arazileri son derece dar ve küçük çay bahçeleri halindedir. Bu dar tarım arazilerinde çalışan insan sayısı fazla olduğu için tarımsal nüfus yoğunluğu Türkiye'nin en yüksek seviyesine ulaşır. Konya, Şanlıurfa ve Çukurova ise geniş düzlük tarım ovalarına sahip olduklarından tarımsal yoğunlukları düşüktür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Şanlıurfa düzdür, araziler geniştir, yoğunluk azdır.<br>• <b>B Şıkkı (Yanlış):</b> Konya Türkiye'nin en büyük düz tarım ovasıdır, yoğunluk düşüktür.<br>• <b>C Şıkkı (Doğru):</b> Dağlık sarp yapı nedeniyle daralan tarım alanı yoğunluğu patlatır (Rize).<br>• <b>D Şıkkı (Yanlış):</b> Çukurova çok geniş alüvyal düzlük ovadır, yoğunluk düşüktür.",
+        "tag": "#TarımsalYoğunluk"
       }
     ]
   },
@@ -6363,6 +7083,726 @@ const cografya_db = [
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Koyun, düzlük ve bozkır otları ister (İç Anadolu). Kıl Keçisi ise sarp, kayalık karstik dağlarda çalı ve ağaç yapraklarını yiyerek beslenir (Teke-Taşeli yöreleri).<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Koyun bozkıra, kıl keçisi ise engebeli makilik karstik arazilere tam ekolojik uyum sağlamıştır.<br>• <b>B Şıkkı (Yanlış):</b> Manda sulak alan ister, Toroslarda kıl keçisi yaygındır.<br>• <b>C Şıkkı (Yanlış):</b> Toroslarda sığır değil, keçi yaygındır.<br>• <b>D Şıkkı (Yanlış):</b> Tiftik keçisi Ankara çevresine özgüdür.",
         "tag": "#KüçükbaşHayvancılık"
+      },
+      {
+        "q": "Soru 41: Türkiye, zengin flora çeşitliliği, engebeli yerşekillerinin yarattığı farklı iklim kuşakları ve zengin orman varlığı sayesinde dünyada arıcılık faaliyetlerinde en önemli ülkelerden biridir. Türkiye'de arıcılık (Arıcılık) faaliyetlerinin bölgesel dağılışı ile ilgili aşağıdakilerden hangisi yanlıştır?",
+        "options": [
+          "Muğla ve çevresi kızılçam ormanlarındaki çam pamuklu biti salgısı sayesinde çam balı üretiminde dünya lideridir.",
+          "Ordu, Rize (Anzer) ve Kars gibi Doğu Karadeniz ile Doğu Anadolu yöreleri yüksek endemik çiçek çeşitliliği ile çiçek balında çok ünlüdür.",
+          "Arıcılık faaliyeti sadece düz ovalarda ve tarım alanlarının merkezinde yapılabilen, engebeli dağlık alanlarda ise tamamen imkansız olan bir hayvancılık dalıdır.",
+          "Gezginci arıcılık yöntemiyle kovanlar mevsimsel sıcaklık ve çiçek açma dönemlerine göre kıyıdan iç kesimlere veya farklı bölgelere taşınır."
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Arıcılık, tarım arazilerinin darlığından etkilenmez; aksine sarp, engebeli, dağlık ve bitki çeşitliliğinin (floranın) insan eliyle bozulmadığı doğal alanlarda çok daha verimli yapılır. Bu yönüyle dağlık alanların geçim kaynağıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Muğla çam balında tescillidir ve Türkiye üretiminin çoğunu karşılar.<br>• <b>B Şıkkı (Yanlış):</b> Anzer yaylası florasıyla eşsiz çiçek balı sunar, Kars ve Ordu da çiçek balında liderdir.<br>• <b>C Şıkkı (Doğru):</b> Dağlık engebeli alanlar arıcılık için idealdir, düz ovalarda tarım ilaçları arılara zarar verir.<br>• <b>D Şıkkı (Yanlış):</b> Türkiye'de arıcılar iklim çeşitliliğini kullanmak için kovanları sürekli gezdirirler (gezginci arıcılık).",
+        "tag": "#Arıcılık"
+      },
+      {
+        "q": "Soru 42: Türkiye üç tarafı denizlerle çevrili ve çok sayıda iç su kaynağına (akarsu, göl, baraj) sahip bir ülke olmasına rağmen balıkçılık (Balıkçılık) sektöründen elde edilen ekonomik gelir arzulanan düzeyde değildir. Türkiye'de balıkçılığın gelişmesini engelleyen aşağıdaki etkenlerden hangisi beşeri (insan kaynaklı) bir hata değildir?",
+        "options": [
+          "Açık deniz (okyanus) balıkçılığı yerine kıyı balıkçılığının yapılması ve teknelerin teknik donanım yetersizliği",
+          "Denizlerin kimyasal atıklar, evsel çöpler ve sanayi tesisleriyle aşırı derecede kirletilmesi",
+          "Denizlerimizin tuzluluk oranlarının enlemin etkisine bağlı olarak güneyden kuzeye doğru (Akdeniz'den Karadeniz'e) azalması",
+          "Dinamit kullanımı, tırıvırı kullanımı ve üreme dönemlerinde yapılan kaçak avcılık"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Denizlerin tuzluluk oranlarının güneyden kuzeye enlem etkisine (buharlaşma farkına) bağlı olarak değişmesi tamamen doğal, coğrafi bir faktördür. Hatta Karadeniz'in tuzluluğunun az olması, oksijen miktarını artırarak Türkiye balıkçılığının %70'inden fazlasının Karadeniz'de yapılmasını sağlayan olumlu doğal bir etkendir, beşeri bir engel değildir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Kıyıya hapsolma ve soğuk hava depolu büyük gemiciliğin olmaması beşeri bir eksikliktir.<br>• <b>B Şıkkı (Yanlış):</b> Çevre kirliliği insan eliyle yapılan ve balık neslini yok eden beşeri bir hatadır.<br>• <b>C Şıkkı (Doğru):</b> Tuzluluk değişimi doğal fiziksel coğrafyanın sonucudur.<br>• <b>D Şıkkı (Yanlış):</b> Kaçak, zamansız ve yasak yöntemlerle avcılık biyolojik çeşitliliği baltalayan beşeri bir sorundur.",
+        "tag": "#Balıkçılık"
+      },
+      {
+        "q": "Soru 43: Büyükbaş hayvancılık (Büyükbaş Hayvancılık), gür ve uzun boylu çayırların bulunduğu yaz yağışlı iklim bölgelerinde mera hayvancılığı şeklinde yapılırken; büyük tüketim merkezlerinin (şehirlerin) yakınında modern ahırlarda yem hayvancılığı şeklinde de yapılabilmektedir. Buna göre, Türkiye'de büyükbaş hayvancılığın yoğunlaştığı Erzurum-Kars Platosu (mera) ile Marmara Bölgesi (ahır/besi) karşılaştırıldığında aşağıdakilerden hangisi yanlıştır?",
+        "options": [
+          "Erzurum-Kars'taki üretim iklim koşullarına ve yaz yağışlarına son derece bağımlıdır.",
+          "Marmara Bölgesi'ndeki besi hayvancılığında et ve süt veriminde iklime bağlı dalgalanmalar çok azdır.",
+          "Erzurum-Kars'ta yerel çayır örtüsü doğal yem kaynağı iken, Marmara'da endüstriyel yem üretimi ve şeker pancarı küspesi kullanımı yaygındır.",
+          "Erzurum-Kars'taki mera hayvancılığının süt verimi, Marmara'daki modern ahır hayvancılığından çok daha yüksektir."
+        ],
+        "correct": 3,
+        "rationale": "<b>Doğru Cevap: D Şıkkıdır.</b> Erzurum-Kars'taki geleneksel mera hayvancılığında süt ve et verimi, hayvanlar sürekli hareket ettiği ve doğal koşullardan etkilendiği için düşüktür. Marmara ve Ege'deki modern ahır (besi) hayvancılığında ise ıslah edilmiş ırklar kullanıldığı ve zengin rasyonlu suni yemler verildiği için verim çok daha yüksektir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Doğrudur, mera yağış azsa kurur, süt üretimi düşer (iklime bağımlıdır).<br>• <b>B Şıkkı (Yanlış):</b> Besi hayvancılığı kapalı tesislerde yapıldığından hava şartlarından etkilenmez.<br>• <b>C Şıkkı (Yanlış):</b> Şeker pancarı fabrikaları çevresinde küspe hayvancılığı (besi) çok yaygındır.<br>• <b>D Şıkkı (Doğru):</b> Mera hayvancılığında verim düşüktür, ahır hayvancılığında ise çok yüksektir.",
+        "tag": "#BüyükbaşHayvancılık"
+      },
+      {
+        "q": "Soru 44: Kümes hayvancılığı (Kümes Hayvancılığı) (tavuk, hindi vb.) modern, kapalı ve iklimlendirmeli tesislerde yapıldığı için iklim ve bitki örtüsünden etkilenmez. Buna göre, Türkiye'de kümes hayvancılığının Bolu, Sakarya, Balıkesir, Manisa ve İzmir gibi illerde olağanüstü yoğunlaşmasının temel beşeri gerekçesi hangisidir?",
+        "options": [
+          "Bu illerdeki toprakların kümes yapımına çok uygun olması",
+          "Büyük tüketim merkezlerine (İstanbul, Ankara, İzmir gibi metropollere) yakınlık ve pazar kolaylığı",
+          "Bu şehirlerde yaz sıcaklıklarının çok düşük olması",
+          "Bu yörelerin orman örtüsünün tavuklar için ideal sığınak sağlaması"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Kümes hayvancılığı endüstriyel bir faaliyettir ve nakliye maliyetini en aza indirgemek amacıyla büyük nüfuslu tüketim merkezlerinin (metropollerin) hemen dışındaki illere (Bolu, Sakarya, Manisa, Balıkesir) kurulmuştur. Yani temel etken 'pazara yakınlık' ilkesidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Kümesler betonarme binalardır, toprak tipiyle ilişkisi yoktur.<br>• <b>B Şıkkı (Doğru):</b> Pazar ve tüketici nüfusa yakınlık bu sanayi dalının konumunu belirleyen tek temel etkendir.<br>• <b>C Şıkkı (Yanlış):</b> Kapalı klimalı tesislerde dış sıcaklığın bir önemi yoktur.<br>• <b>D Şıkkı (Yanlış):</b> Orman örtüsüyle endüstriyel kümeslerin bağlantısı yoktur.",
+        "tag": "#KümesHayvancılığı"
+      },
+      {
+        "q": "Soru 45: Küçükbaş hayvancılık (Küçükbaş Hayvancılık), bozkır (step) bitki örtüsünün yaygın olduğu, yerşekillerinin düz veya düze yakın olduğu kurak/yarı kurak bölgelerde gelişmiştir. Türkiye'de küçükbaş hayvan sayısının en fazla olduğu coğrafi bölge ile küçükbaş cinslerinden 'Koyun' yetiştiriciliğinin en yaygın olduğu il sırasıyla hangisinde doğru verilmiştir?",
+        "options": [
+          "İç Anadolu Bölgesi - Şanlıurfa",
+          "Doğu Anadolu Bölgesi - Van",
+          "Güneydoğu Anadolu Bölgesi - Konya",
+          "Marmara Bölgesi - Edirne"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Türkiye'de toplam küçükbaş hayvan sayısının en yüksek olduğu coğrafi bölge, geniş platoları ve bozkır alanlarıyla Doğu Anadolu Bölgesi'dir. İl bazında ise en çok koyun varlığına sahip olan tescilli ilimiz Van'dır. Van'ı Konya ve Şanlıurfa izler.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> İç Anadolu ve Şanlıurfa üst sıralardadır ancak bölge olarak Doğu Anadolu, il olarak Van liderdir.<br>• <b>B Şıkkı (Doğru):</b> Doğu Anadolu geniş meralarıyla küçükbaş deposudur, Van ise koyun sayısında Türkiye birincisidir.<br>• <b>C Şıkkı (Yanlış):</b> Konya koyunda ikincidir, Güneydoğu da lider bölge değildir.<br>• <b>D Şıkkı (Yanlış):</b> Marmara küçükbaşta ön planda değildir.",
+        "tag": "#KüçükbaşHayvancılık"
+      },
+      {
+        "q": "Soru 46: Meyvecilik ve bağcılık (Meyvecilik Ve Bağcılık), Türkiye'nin iklim çeşitliliği sayesinde son derece zengindir. Türkiye, üzüm, incir, fındık ve kayısı üretiminde dünya lideridir. Meyve ağaçlarının soğuğa karşı dayanıklılığı (kış ılıklığı isteği) göz önüne alındığında, aşağıdaki meyvelerden hangisinin Türkiye'deki coğrafi dağılış alanı diğerlerine göre daha dardır?",
+        "options": [
+          "Elma",
+          "Üzüm",
+          "Muz",
+          "Kayısı"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Muz, tropikal kökenli bir bitki olup kış ılıklığı isteği ve nem ihtiyacı aşırı derecede yüksektir. Türkiye'de mikroklima alanı olan Akdeniz kıyılarında (Anamur, Gazipaşa, Alanya kıyı şeridinde) çok dar bir kuşakta yetişebilir. Elma ve üzüm ise soğuğa son derece dayanıklı olduklarından Türkiye'nin hemen her yerinde yetiştirilebilir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Elma -40 dereceye kadar dayanabilir, tüm bölgelerde yetişir.<br>• <b>B Şıkkı (Yanlış):</b> Üzüm toprak seçmez, dona dayanıklıdır ve en yaygın bağcılık ürünüdür.<br>• <b>C Şıkkı (Doğru):</b> Muz aşırı soğuk duyarlılığı yüzünden en dar alana sıkışmış mikroklima meyvesidir.<br>• <b>D Şıkkı (Yanlış):</b> Kayısı karasal iklimi sever (Malatya), dağılışı geniştir.",
+        "tag": "#MeyvecilikVeBağcılık"
+      },
+      {
+        "q": "Soru 47: Ormanlar, Türkiye yüzölçümünün yaklaşık %29'unu kaplar. Ormancılık (Ormancılık) faaliyetleri mobilya, kağıt, kereste sektörü ve maden direği üretimi gibi birçok sektöre hammadde sağlar. Türkiye'de orman varlığının bölgelere göre dağılışında ve gürlüğünde etkili olan en temel fiziksel faktör aşağıdakilerden hangisidir?",
+        "options": [
+          "Bölgelerin toprak tipleri ve kayaç yapısı",
+          "Bölgelerin yıllık nemlilik, yağış miktarı ve yağış rejimi",
+          "Bölgelerin deniz seviyesinden ortalama yüksekliği",
+          "Orman köylerinin nüfus yoğunluğu"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Ormanların dağılışını belirleyen en temel fiziksel (doğal) etken nem ve yağıştır. Yağışın ve nemin bol olduğu Karadeniz kıyı kuşağı en zengin orman alanlarına sahip iken, kuraklığın şiddetli olduğu İç ve Güneydoğu Anadolu orman bakımından en fakir yerlerdir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Toprak tipi ikincil etkendir.<br>• <b>B Şıkkı (Doğru):</b> Su ve nem ağaç gelişiminin ana şartıdır. Kıyı bölgelerinin orman zenginliği nem sayesindedir.<br>• <b>C Şıkkı (Yanlış):</b> Yükseklik sadece ağaç türlerinin dikey kuşağını (geniş, karma, iğne yapraklı) belirler, genel varlığı değil.<br>• <b>D Şıkkı (Yanlış):</b> Beşeri koruma/kullanma etkilidir ama ana belirleyici doğadır.",
+        "tag": "#Ormancılık"
+      },
+      {
+        "q": "Soru 48: Sanayi bitkileri (Sanayi Bitkileri), hasat edildikten sonra doğrudan tüketilemeyen, fabrikalarda işlenerek hammaddeye dönüştürülen (şeker pancarı, pamuk, tütün, çay vb.) ürünlerdir. Türkiye'de şeker pancarı üretimi ile ilgili aşağıda verilen bilgilerden hangisi yanlıştır?",
+        "options": [
+          "Şeker pancarı söküldükten sonra hızla bozulduğu için fabrikalar ekim alanlarının hemen yakınına kurulur.",
+          "Tuzlu topraklardan kaçınan, sulama imkanı olan iç bölgelerimizde (özellikle Konya ve çevresinde) ekimi çok yaygındır.",
+          "Kıyı kesimlerde (Ege ve Akdeniz kıyılarında) ekonomik getirisi çok daha yüksek olan diğer tarım ürünleri tercih edildiği için şeker pancarı ekilmez.",
+          "Şeker pancarı posası (küspe) besi hayvancılığını zorlaştırdığı için fabrikaların etrafında hayvancılık yapılması yasaklanmıştır."
+        ],
+        "correct": 3,
+        "rationale": "<b>Doğru Cevap: D Şıkkıdır.</b> Şeker pancarı fabrikalarının etrafında hayvancılık yasaklanmamıştır; aksine pancar posası (küspe) çok besleyici ve ucuz bir büyükbaş hayvan yemi olduğu için fabrikaların çevresinde ahır (besi) hayvancılığı olağanüstü düzeyde gelişmiştir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Hızlı bozulan pancar, nakliye süresini azaltmak için fabrika dibine ekilir (yakınlık şartı).<br>• <b>B Şıkkı (Yanlış):</b> İç Anadolu nadas alanlarının sulanmasıyla şeker pancarı üretim üssü haline gelmiştir.<br>• <b>C Şıkkı (Yanlış):</b> Kıyı çiftçisi pancar yerine zeytin, narenciye veya pamuk ekerek daha yüksek gelir elde eder.<br>• <b>D Şıkkı (Doğru):</b> Yasak tezi yanlıştır, tam tersine küspe besi hayvancılığını körükleyen olumlu bir yan üründür.",
+        "tag": "#SanayiBitkileri"
+      },
+      {
+        "q": "Soru 49: Tahıllar (Tahıllar) (buğday, arpa, yulaf, çavdar, mısır, pirinç), Türkiye'de ekim alanı en geniş olan tarım ürün grubudur. Türkiye'de 'Buğday' tarımı ile ilgili aşağıdakilerden hangisi yanlıştır?",
+        "options": [
+          "İlkbahar aylarında büyüme döneminde yağış, yaz aylarında hasat döneminde ise kuraklık ve sıcaklık ister.",
+          "Her mevsim yağışlı geçen Doğu Karadeniz kıyı kuşağında buğday tarımı doğal olarak yapılamaz.",
+          "Konya Ovası, düz yerşekilleri ve karasal iklim yapısıyla Türkiye'nin buğday ambarı konumundadır.",
+          "Buğday, soğuğa karşı aşırı duyarlı bir tropikal bitki olduğu için Erzurum-Kars gibi yüksek platolarda asla yetişmez."
+        ],
+        "correct": 3,
+        "rationale": "<b>Doğru Cevap: D Şıkkıdır.</b> Buğday tropikal değil, orta kuşağın karasal iklim bitkisidir ve soğuğa oldukça dayanıklıdır. Erzurum-Kars gibi yüksek platolarda da buğday yetiştirilmektedir (sadece hasat süresi yaz sıcaklarının geç gelmesinden dolayı daha geç gerçekleşir).<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Doğrudur, çimlenme için nem, olgunlaşma için güneş ve kuraklık elzemdir.<br>• <b>B Şıkkı (Yanlış):</b> Karadeniz kıyısında yaz yağışları olduğu için buğday çürür, ekilemez.<br>• <b>C Şıkkı (Yanlış):</b> Konya Ovası düzlüğü ve iklimiyle buğday ekiminde Türkiye lideridir.<br>• <b>D Şıkkı (Doğru):</b> Yüksek yerlerde yetişebilen dayanıklı bir tahıldır, tropikal soğuk duyarlılığı yoktur.",
+        "tag": "#Tahıllar"
+      },
+      {
+        "q": "Soru 50: Türkiye'de bazı stratejik tarım ürünlerinin ekim alanları devlet kontrolü veya sınırlandırması altındadır. Aşağıdaki tarım ürünlerinden hangisinin devlet tarafından sınırlandırılma gerekçesi 'kaliteyi korumak ve tekel fiyatını dengede tutmak' amacıyla açıklanır?",
+        "options": [
+          "Pirinç (Çeltik)",
+          "Kenevir",
+          "Tütün",
+          "Haşhaş"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Tütünün devlet kontrolünde olmasının temel nedeni Türk tütününün dünyaca ünlü yüksek kalitesini korumak ve fazla üretimden dolayı fiyatların düşmesini (stok fazlasını) engellemektir. Pirinç sıtma hastalığı (sağlık) nedeniyle, kenevir ve haşhaş ise uyuşturucu hammaddesi (güvenlik) içerdikleri için sınırlandırılmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Pirinç sulak alanda sivrisinek ürettiğinden yerleşim yerleri çevresinde sağlık gerekçesiyle sınırlandırılır.<br>• <b>B Şıkkı (Yanlış):</b> Kenevir narkotik güvenlik amacıyla kontrol edilir.<br>• <b>C Şıkkı (Doğru):</b> Tütün sınırlandırması kalite standartlarını koruma ve arz-talep dengesini (ekonomik tekel) sağlama odaklıdır.<br>• <b>D Şıkkı (Yanlış):</b> Haşhaş afyon sakızı (uyuşturucu) eldesi nedeniyle sıkı denetime tabidir.",
+        "tag": "#TarımdaDevletSınırlandırması"
+      },
+      {
+        "q": "Soru 51: Türkiye'de tarımsal verimliliği etkileyen en temel faktörler sulama, gübreleme, makineleşme, kaliteli tohum kullanımı ve toprak bakımıdır. Türkiye tarımında sulama (Tarımı Etkileyen Faktörler) sorununun çözülmesi durumunda, tarım sektöründe aşağıdakilerden hangisinin yaşanması beklenmez?",
+        "options": [
+          "Tarımsal üretimde iklim koşullarına ve yağışa olan bağımlılığın sona ermesi",
+          "Nadasa bırakılan toprak miktarının hızla artması",
+          "Yılda birden fazla ürün alınabilen arazi payının yükselmesi",
+          "Pamuk, sebze ve mısır gibi su isteyen ürünlerin ekim alanlarının genişlemesi"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Sulu tarımın yaygınlaşması nadas alanlarını artırmaz, aksine nadasa olan ihtiyacı tamamen ortadan kaldırarak nadas alanlarını hızla azaltır veya yok eder. Nadas toprakların su biriktirmesi için boş bırakılmasıdır, su gelirse buna gerek kalmaz.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Sulamayla kurak yıllarda bile baraj suyu kullanılacağı için iklime bağımlılık biter.<br>• <b>B Şıkkı (Doğru):</b> Sulama nadası azaltan bir unsurdur, artırma tezi tamamen yanlıştır.<br>• <b>C Şıkkı (Yanlış):</b> Sulamayla boş kalmayan toprakta kış ve yaz olmak üzere ardışık ekim yapılabilir.<br>• <b>D Şıkkı (Yanlış):</b> Su seven endüstri bitkilerinin üretimi ve ekim alanı katlanır.",
+        "tag": "#TarımıEtkileyenFaktörler"
+      },
+      {
+        "q": "Soru 52: Yağ bitkileri (Yağ Bitkileri), tohumlarındaki yüksek yağ oranı nedeniyle sıvı yağ ve sanayi yağı eldesinde kullanılan (ayçiçeği, zeytin, soya, mısır, yer fıstığı, kanola) bitkilerdir. Türkiye'de 'Soya Fasulyesi' üretimi ile ilgili aşağıdakilerden hangisi doğrudur?",
+        "options": [
+          "Doğal yetişme alanı Doğu Anadolu dağları olup, soğuğa en dayanıklı yağ bitkisidir.",
+          "Türkiye üretiminin yaklaşık %90'ını sulama imkanları gelişmiş olan Çukurova (Adana) ve çevresi karşılar.",
+          "Sadece Ege Bölgesi'nde taşlık karstik arazilerde yetişen geçici bir bitkidir.",
+          "Karadeniz kıyısında her mevsim yağış aldığı için soyadan yağ elde etmek imkansızdır."
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Soya fasulyesi, Türkiye'de doğal yetişme ortamı Karadeniz iklimi olmasına rağmen, sulama imkanlarının (GAP ve Çukurova sulaması) gelişmesiyle en yoğun üretildiği yer Çukurova (Adana) olmuştur. Çukurova, soya üretiminin çok büyük bir kısmını tek başına üstlenir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Soya sıcaklık ve bol su isteyen yaz ürünüdür, soğuğa dayanıklı değildir.<br>• <b>B Şıkkı (Doğru):</b> Çukurova sulu tarımı soya fasulyesinde Türkiye'nin en büyük üretim havzasını kurmuştur.<br>• <b>C Şıkkı (Yanlış):</b> Soya yumuşak, alüvyal taban toprakları sever, karstik taşlıkları değil.<br>• <b>D Şıkkı (Yanlış):</b> Yağ elde etme süreci endüstriyel fabrikalarda yapılır, iklim yağ çıkarmayı engellemez.",
+        "tag": "#YağBitkileri"
+      },
+      {
+        "q": "Soru 53: Yumrulu ve baklagil tarım ürünleri (Yumrulu Ve Baklagiller) (patates, nohut, mercimek, kuru fasulye), hem insan beslenmesinde protein kaynağı olmaları hem de toprağa azot bağlama özellikleri nedeniyle çok değerlidir. İç Anadolu ve Güneydoğu Anadolu karasal iklim koşullarında çok yaygın olan baklagil türleri hangileridir?",
+        "options": [
+          "Soya Fasulyesi - Yer Fıstığı",
+          "Nohut - Kırmızı Mercimek - Yeşil Mercimek",
+          "Çay - Fındık",
+          "Şeker Pancarı - Kanola"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Karasal iklimin yarı kurak koşullarına en iyi uyum sağlayan baklagiller nohut ve mercimektir. Güneydoğu Anadolu kırmızı mercimekte, İç Anadolu ise yeşil mercimek ve nohut üretiminde Türkiye'nin lider bölgeleridir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Soya ve yer fıstığı sulu tarım isteyen yağ bitkileridir.<br>• <b>B Şıkkı (Doğru):</b> Nohut ve mercimek kuraklığa dayanıklı klasik karasal baklagil ürünleridir.<br>• <b>C Şıkkı (Yanlış):</b> Çay ve fındık Karadeniz nem bitkileridir.<br>• <b>D Şıkkı (Yanlış):</b> Şeker pancarı yumrulu sanayi bitkisidir, kanola yağ bitkisidir.",
+        "tag": "#YumruluVeBaklagiller"
+      },
+      {
+        "q": "Soru 54: İpek böcekçiliği (İpek Böcekçiliği), dut ağacı yapraklarıyla beslenen ipek böceğinin kozasından ham ipek elde edilmesi faaliyetidir. Son yıllarda yapay ipek üretiminin artması geleneksel ipek böcekçiliğini geriletmiştir. Türkiye'de günümüzde ipek böceği kozası üretiminde birinci sırada yer alan coğrafi ilimiz hangisidir?",
+        "options": [
+          "Bursa",
+          "Diyarbakır",
+          "Rize",
+          "Konya"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Geleneksel olarak ipek böcekçiliği denilince akla ilk olarak Bursa gelse de, günümüzde modern ve yapay ipek fabrikalarının Bursa'da yerleşmesiyle yaş koza üretim liderliği Güneydoğu Anadolu Bölgesi'ndeki Diyarbakır iline (Kulp ilçesi ve çevresi) geçmiştir. Diyarbakır yaş koza üretiminde Türkiye birincisidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Bursa tarihi merkezdir ve ipek kumaş işlemede öncüdür ama yaş koza hammaddesinde liderliği Diyarbakır'a kaptırmıştır.<br>• <b>B Şıkkı (Doğru):</b> Diyarbakır yaş ipek kozası üretiminde Türkiye'nin en büyük payına sahip lider ilidir.<br>• <b>C Şıkkı (Yanlış):</b> Rize'de nem yüksektir ama ipek böcekçiliği gelişmemiştir.<br>• <b>D Şıkkı (Yanlış):</b> Konya'da dut üretimi kısıtlıdır, ipekçilik zayıftır.",
+        "tag": "#İpekBöcekçiliği"
+      },
+      {
+        "q": "Soru 55: Türkiye'de arıcılık (Arıcılık) faaliyetlerinin sürdürülebilirliği ve yüksek kaliteli bal üretimi için kovanların yerleştirildiği alanların zirai (tarımsal) ilaçlama yapılan bölgelerden uzak olması gerekir. Bunun temel bilimsel gerekçesi aşağıdakilerden hangisidir?",
+        "options": [
+          "Tarımsal ilaçların kovanların ahşap yapısını çürütmesi",
+          "Kimyasal ilaçların arı ölümlerine yol açması ve balda toksik kalıntı bırakarak kaliteyi bozması",
+          "İlaçlı alanlardaki çiçeklerin tamamen kuruması",
+          "Arıların tarım ilaçlarının kokusundan dolayı uçmayı tamamen unutması"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Tarım alanlarında kullanılan pestisitler (böcek öldürücü ilaçlar) arıların sinir sistemini çökerterek kitlesel arı ölümlerine yol açar. Ayrıca hayatta kalan arıların getirdiği polenlerdeki kimyasal kalıntılar balın saflığını bozar. Bu nedenle arıcılık dağlık, ilaçsız vahşi meralarda tercih edilir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Ahşap çürümesi temel biyolojik sorun değildir.<br>• <b>B Şıkkı (Doğru):</b> Kimyasal kalıntılar arı kolonilerini yok eder ve balı zehirli hale getirir.<br>• <b>C Şıkkı (Yanlış):</b> İlaçlar çiçeği kurutmaz, çiçeğin üstündeki böcekleri öldürür.<br>• <b>D Şıkkı (Yanlış):</b> Arıların uçmayı unutması söz konusu değildir.",
+        "tag": "#Arıcılık"
+      },
+      {
+        "q": "Soru 56: Karadeniz, Türkiye balıkçılığının (Balıkçılık) can damarıdır. Karadeniz'de balık miktarının ve çeşitliliğinin diğer denizlerimize göre çok daha fazla olmasında aşağıdakilerden hangisinin etkisi yoktur?",
+        "options": [
+          "Suyunun soğuk ve tuzluluk oranının düşük olmasının oksijen miktarını artırması",
+          "Plankton (balık yemi) yönünden çok zengin olması",
+          "Deniz tabanındaki derinliğin 200 metreden sonra hidrojen sülfür (H2S) gazından dolayı canlı yaşamına izin vermemesi",
+          "Çok sayıda bol su taşıyan akarsunun (Tuna, Dinyeper, Yeşilırmak vb.) Karadeniz'i beslemesi"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Karadeniz'de 200 metre derinliğin altında zehirli hidrojen sülfür gazı bulunması ve burada hiçbir canlı yaşamının olmaması Karadeniz balıkçılığını geliştiren değil, aksine canlı yaşam alanını sadece üst katmana sıkıştıran 'olumsuz' doğal bir sınırlamadır. Diğer seçenekler ise balıkçılığı destekleyen olumlu etkenlerdir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Düşük tuzluluk ve soğuk su balıkların üremesi için mükemmel ortamdır.<br>• <b>B Şıkkı (Yanlış):</b> Plankton bolluğu balık sürülerinin Karadeniz'e göç etmesini sağlar.<br>• <b>C Şıkkı (Doğru):</b> Zehirli gaz tabakası biyolojik bir engeldir, balıkçılığı artıran olumlu bir faktör değildir.<br>• <b>D Şıkkı (Yanlış):</b> Akarsular denize bol besin tuzu taşıyarak planktonları besler.",
+        "tag": "#Balıkçılık"
+      },
+      {
+        "q": "Soru 57: Doğu Anadolu Bölgesi'ndeki Erzurum-Kars ve Ardahan platolarında büyükbaş hayvancılığın (Büyükbaş Hayvancılık) mera hayvancılığı şeklinde gelişmesinde etkili olan en temel fiziksel (doğal) coğrafya etmeni aşağıdakilerden hangisidir?",
+        "options": [
+          "Bölgede sanayi tesislerinin çok fazla olması",
+          "Yükseltiye bağlı olarak yaz mevsiminin serin ve yağışlı geçmesi, bu sayede gür Alpin çayırlarının yetişmesi",
+          "Bölgedeki göllerin tatlı su balığı üretimine çok elverişli olması",
+          "Bölgede buğday tarımının çok kolay yapılması"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Erzurum-Kars ve Ardahan platoları Türkiye'nin en yüksek alanlarındandır. Yüksekliğe bağlı olarak sert karasal iklim görülür ve en çok yağış yaz mevsiminde düşer. Yaz yağışları sayesinde bozkırlar kuramaz, boyları uzun gür 'Alpin çayırları' gelişir. Bu çayırlar büyükbaş hayvanların otlatılması için biçilmiş kaftandır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Doğu Anadolu sanayiden uzaktır.<br>• <b>B Şıkkı (Doğru):</b> Yaz yağışları -> Gür çayırlar -> Mera büyükbaş hayvancılığı zinciri coğrafyanın temel kuralıdır.<br>• <b>C Şıkkı (Yanlış):</b> Balıkçılık büyükbaş hayvancılığı doğrudan etkilemez.<br>• <b>D Şıkkı (Yanlış):</b> Bu bölgede buğday tarımı iklim nedeniyle zordur ve hayvancılık ana sektördür.",
+        "tag": "#BüyükbaşHayvancılık"
+      },
+      {
+        "q": "Soru 58: Kümes hayvancılığı tesislerinde elektrik kesintileri veya iklimlendirme sistemlerinin arızalanması kitlesel hayvan ölümlerine yol açabilir. Kümes hayvancılığında (Kümes Hayvancılığı) yaşanan bu hassasiyetin temel nedeni aşağıdakilerden hangisidir?",
+        "options": [
+          "Tavukların karanlıktan aşırı korkmaları",
+          "Tesislerin tamamen yapay havalandırma, nem ve sıcaklık dengesine dayanması; elektrik kesildiğinde binlerce hayvanın havasız kalması",
+          "Tavukların sadece müzik eşliğinde yem yiyebilmeleri",
+          "Kümeslerde modern yem üretiminin elektrikle yapılması"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Endüstriyel kümes hayvancılığı kapalı modern hangarlarda yapılır. Bu hangarlarda binlerce tavuk bir arada tutulduğu için yapay fanlar yardımıyla sürekli temiz hava pompalanır ve sıcaklık sabit tutulur. Elektrik kesintisinde klimalar durursa içerideki karbondioksit ve amonyak gazı birikimi hayvanların dakikalar içinde boğulmasına neden olur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Korku kitlesel ölümlerin temel fizyolojik nedeni değildir.<br>• <b>B Şıkkı (Doğru):</b> Yapay yaşama bağlılık, elektrik ve klima arızalarında yüksek ölüm riski (telef) yaratır.<br>• <b>C Şıkkı (Yanlış):</b> Müzik verimi artırabilir ama hayati zorunluluk değildir.<br>• <b>D Şıkkı (Yanlış):</b> Yemleme elle de yapılabilir, asıl sorun oksijen ve sıcaklıktır.",
+        "tag": "#KümesHayvancılığı"
+      },
+      {
+        "q": "Soru 59: Türkiye'de küçükbaş hayvancılıkta (Küçükbaş Hayvancılık) son yıllarda koyun ve keçi sütü ürünlerine (peynir vb.) yönelik talep artmıştır. Türkiye'de keçi türlerinden 'Kıl Keçisi' yetiştiriciliğinin en yaygın olduğu sarp dağlık alanlar aşağıdakilerden hangisidir?",
+        "options": [
+          "Ergene Havzası düzlükleri",
+          "Nevşehir Volkanik Platosu",
+          "Teke ve Taşeli Yarımadaları (Toros Dağları kuşağı)",
+          "Çukurova Deltası"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Kıl keçisi, engebeli dağlık alanlara, kayalıklara ve makilik çalı örtüsüne mükemmel uyum sağlamıştır. Akdeniz Torosları (Teke ve Taşeli yöreleri) karstik sarp yapısı ve maki bitki örtüsüyle kıl keçisi üretiminin Türkiye'deki kalbidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Ergene düzdür, koyun ve sığır yaygındır.<br>• <b>B Şıkkı (Yanlış):</b> Nevşehir'de küçükbaş koyunculuk gelişmiştir.<br>• <b>C Şıkkı (Doğru):</b> Toroslar'ın dik kayalık yapısı ve makiler kıl keçisinin ideal habitatıdır.<br>• <b>D Şıkkı (Yanlış):</b> Çukurova tarım ovasıdır, kıl keçisine uygun değildir.",
+        "tag": "#KüçükbaşHayvancılık"
+      },
+      {
+        "q": "Soru 60: Türkiye'de narenciye (turunçgiller: portakal, mandalina, limon, greyfurt) üretimi kış ılıklığı isteyen kıyı kesimlerde yapılır. Türkiye narenciye (Meyvecilik Ve Bağcılık) üretiminin yaklaşık %80'inden fazlasını tek başına karşılayan coğrafi bölge hangisidir?",
+        "options": [
+          "Ege Bölgesi",
+          "Akdeniz Bölgesi",
+          "Marmara Bölgesi",
+          "Karadeniz Bölgesi"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Akdeniz Bölgesi (özellikle Çukurova, Antalya ve Hatay ovaları), kış aylarında don olaylarının çok nadir görülmesi ve yüksek sıcaklık ortalamaları sayesinde Türkiye narenciye üretiminin ezici çoğunluğunu tek başına karşılar. Ege Bölgesi ikinci sırada yer alır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Ege'de narenciye yetişir (Bodrum mandalinası vb.) ama toplam miktarda Akdeniz'in gerisindedir.<br>• <b>B Şıkkı (Doğru):</b> Akdeniz kıyı kuşağı narenciyenin anavatanı gibidir, kış sıcaklıkları idealdir.<br>• <b>C Şıkkı (Yanlış):</b> Marmara'da kış donları narenciye tarımını engeller (sadece güney kıyılarda küçük miktarda yetişir).<br>• <b>D Şıkkı (Yanlış):</b> Karadeniz'de sadece Rize'de mikroklima olarak mandalina yetişir ama miktarı azdır.",
+        "tag": "#MeyvecilikVeBağcılık"
+      },
+      {
+        "q": "Soru 61: Türkiye ormanlarında üretilen odun dışı orman ürünleri de ekonomiye büyük katkı sağlar. Aşağıdakilerden hangisi doğrudan ormanlardan (özellikle kızılçam ve meşe ormanlarından) elde edilen odun dışı ticari orman ürünleri arasında yer almaz?",
+        "options": [
+          "Çam fıstığı ve reçine",
+          "Defne yaprağı ve sığla yağı",
+          "Mantar türleri ve keçiboynuzu",
+          "Çay ve pamuk lifleri"
+        ],
+        "correct": 3,
+        "rationale": "<b>Doğru Cevap: D Şıkkıdır.</b> Çay ve pamuk orman ürünü değil, tamamen tarım alanlarında çiftçiler tarafından ekilip biçilen kültürel tarım ürünleridir. Çam fıstığı (Bergama kozak yaylası), defne yaprağı, reçine ve sığla yağı (Muğla) ise tipik orman altı odun dışı ürünlerdir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Çam fıstığı çam ağacı kozalağından elde edilen çok değerli bir orman ürünüdür.<br>• <b>B Şıkkı (Yanlış):</b> Sığla ağacı Muğla'da endemik olup kozmetik yağı ormandan çıkarılır.<br>• <b>C Şıkkı (Yanlış):</b> Keçiboynuzu ve yabani mantarlar orman içi toplayıcılığına dayanır.<br>• <b>D Şıkkı (Doğru):</b> Çay ve pamuk tarımsal bitkilerdir, orman ekosistemiyle alakaları yoktur.",
+        "tag": "#Ormancılık"
+      },
+      {
+        "q": "Soru 62: Türkiye'de pamuk üretimi tekstil sanayisinin en önemli hammaddesidir. Pamuk (Sanayi Bitkileri) yaz aylarında sulama, hasat döneminde ise kesin kuraklık ister. GAP projesinin hayata geçmesiyle sulama imkanları artan Güneydoğu Anadolu Bölgesi, pamuk üretiminde Ege ve Akdeniz'i geride bırakarak birinci sıraya yükselmiştir. Günümüzde Türkiye pamuk üretiminde birinci sırada yer alan lider ilimiz hangisidir?",
+        "options": [
+          "Adana",
+          "Aydın",
+          "Şanlıurfa",
+          "Hatay"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Şanlıurfa, GAP kapsamında Atatürk Barajı'ndan gelen suların ovalara akıtılmasıyla Türkiye pamuk üretiminin tek başına yaklaşık %45-50'sini karşılayan lider il konumuna gelmiştir. Adana (Çukurova) pamuğun eski kenti olsa da günümüzde Şanlıurfa tartışmasız birincidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Adana eski popülerliğini kaybetmiş, pamuk yerini soya ve mısıra bırakmıştır.<br>• <b>B Şıkkı (Yanlış):</b> Aydın Ege'de pamukta öncüdür ama Urfa'nın gerisindedir.<br>• <b>C Şıkkı (Doğru):</b> Şanlıurfa GAP sulamasıyla pamuğun yeni başkentidir.<br>• <b>D Şıkkı (Yanlış):</b> Hatay (Amik Ovası) üretimi de Urfa'dan azdır.",
+        "tag": "#SanayiBitkileri"
+      },
+      {
+        "q": "Soru 63: Pirinç (Çeltik) tarımı sulak ve bataklık arazilerde yapıldığı için su ihtiyacı en yüksek olan tahıl (Tahıllar) ürünüdür. Türkiye'de pirinç tarımı ile ilgili aşağıdakilerden hangisi doğrudur?",
+        "options": [
+          "Kurak iklim koşullarına en iyi uyum sağlayan ve İç Anadolu'nun en kuru platolarında yetişen üründür.",
+          "Ekim alanları sıtma hastalığına yol açan sivrisinek üremesi nedeniyle devlet denetiminde olup yerleşim yerlerinden uzak tutulur.",
+          "Türkiye'de çeltik üretiminin tamamı Doğu Anadolu Bölgesi'ndeki dağ yamaçlarında taraçalarda yapılır.",
+          "Yıllık yağış rejimi düzenli olan Karadeniz ormanlarının içinde gölgede yetiştirilir."
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Pirinç (çeltik) tarlaları sürekli su altında durduğundan sivrisineklerin üremesi için mükemmel bataklıklar oluşturur. Sivrisinekler sıtma salgınına neden olduğu için devlet, çeltik ekim alanlarını kanunla şehir ve kasaba merkezlerinin uzağında sınırlar.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Pirinç kuraklığa dayanamaz, sürekli su ister.<br>• <b>B Şıkkı (Doğru):</b> Sağlık (sıtma) riski nedeniyle pirinç ekimi yasal sınırlandırmaya tabidir.<br>• <b>C Şıkkı (Yanlış):</b> Akarsu boylarında (özellikle Edirne Meriç havzasında) ovalarda yapılır, dağda değil.<br>• <b>D Şıkkı (Yanlış):</b> Pirinç bol güneş ister, gölgede yetişmez.",
+        "tag": "#Tahıllar"
+      },
+      {
+        "q": "Soru 64: Haşhaş (Papaver somniferum), ilaç sanayisinde morfin ve kodein yapımında kullanılan çok önemli bir bitki olmakla birlikte, kapsülünün çizilmesiyle elde edilen afyon sakızı uyuşturucu yapımına elverişlidir. Türkiye'de haşhaş tarımının (Tarımda Devlet Sınırlandırması) çok sıkı devlet denetiminde ve lisanslı yapılmasının temel gerekçesi hangisidir?",
+        "options": [
+          "Haşhaş bitkisinin toprağı aşırı derecede tuzlandırmasını önlemek",
+          "Uluslararası uyuşturucu kaçakçılığını ve yasa dışı narkotik madde üretimini engellemek, üretimi tıbbi hammadde amacıyla sınırlandırmak",
+          "Haşhaş yağının sıvı yağ fiyatlarını düşürmesini engellemek",
+          "Haşhaş çiçeğinin arılara zarar vermesini durdurmak"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Haşhaş uyuşturucu hammaddesi içerdiği için yasa dışı narkotik üretimini önlemek amacıyla Birleşmiş Milletler denetiminde ve Türkiye Cumhuriyeti devletinin sıkı lisans kontrolü altında sadece belirli illerde (Afyonkarahisar ve çevresinde) toprak üstü çizilmeden, kapsülüyle fabrikaya teslim edilmek şartıyla yetiştirilir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Toprak tuzlanmasıyla ilgisi yoktur.<br>• <b>B Şıkkı (Doğru):</b> Narkotik güvenlik ve uluslararası anlaşmalar haşhaş tarımındaki sıkı denetimin tek gerekçesidir.<br>• <b>C Şıkkı (Yanlış):</b> Ekonomik fiyat kontrolü değil, güvenlik kontrolüdür.<br>• <b>D Şıkkı (Yanlış):</b> Arılara zararlı değildir.",
+        "tag": "#TarımdaDevletSınırlandırması"
+      },
+      {
+        "q": "Soru 65: Tarımda makineleşme, iş gücü ihtiyacını azaltarak kırsal nüfusu göçe zorlar ancak tarımsal verimliliği, ekim hızını ve hasat kalitesini olağanüstü artırır. Türkiye'de yerşekillerinin engebeli yapısı nedeniyle tarımda makine kullanımının (Tarımı Etkileyen Faktörler) en zor olduğu ve hala insan/hayvan gücüne en çok ihtiyaç duyulan coğrafi bölümümüz hangisidir?",
+        "options": [
+          "İç Anadolu Bölgesi (Konya Ovası)",
+          "Marmara Bölgesi (Ergene Havzası)",
+          "Doğu Karadeniz Bölümü (Rize-Artvin dağlık kuşağı)",
+          "Güneydoğu Anadolu Bölgesi (Şanlıurfa ovaları)"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Doğu Karadeniz Bölümü aşırı engebeli, sarp, dik yamaçlardan oluşur. Bu yamaçlara traktör veya biçerdöver sokmak fiziksel olarak imkansızdır. Bu yüzden çay ve fındık hasadı hala tamamen el gücüyle (makas ve insan emeğiyle) yapılmaktadır. Konya, Ergene ve Şanlıurfa ise düzlük olduğundan makineleşme çok kolaydır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Konya düz arazidir, makine kullanımı maksimumdur.<br>• <b>B Şıkkı (Yanlış):</b> Ergene sade yerşekillidir, makineleşme yaygındır.<br>• <b>C Şıkkı (Doğru):</b> Dik yamaçlar traktör kullanımını engeller, Karadeniz engebeli yapısıyla makinesizdir.<br>• <b>D Şıkkı (Yanlış):</b> Güneydoğu düz platolardan oluştuğundan makineleşmiştir.",
+        "tag": "#TarımıEtkileyenFaktörler"
+      },
+      {
+        "q": "Soru 66: Yağ bitkilerinden 'Zeytin', tipik bir Akdeniz iklim bitkisidir. Zeytin ağaçları kış ılıklığı ister, yaz kuraklığına son derece dayanıklıdır. Türkiye'de zeytin (Yağ Bitkileri) üretimi ile ilgili aşağıda verilen bilgilerden hangisi yanlıştır?",
+        "options": [
+          "Sofralık zeytin üretiminde Güney Marmara (Gemlik) ön planda iken, yağlık zeytin üretiminde Ege Bölgesi (Edremit, Ayvalık) liderdir.",
+          "Zeytin ağaçları fizyolojik özellikleri nedeniyle bir yıl çok ürün verirken, ertesi yıl dinlenerek az ürün verir (periyodisite - var yılı/yok yılı).",
+          "Zeytin, kış sıcaklıkları -10 derecenin altına inen İç Anadolu ve Doğu Anadolu kırsalında yaygın olarak yetiştirilmektedir.",
+          "Akdeniz iklim bölgesinde yer almasına rağmen yüksek dağlık alanlarda zeytin tarımı don olayları nedeniyle yapılamaz."
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Zeytin ağacı don olaylarına karşı çok hassastır. Kışın sıcaklık sıfırın altına düştüğünde donar. Bu nedenle kışların çok soğuk ve sert geçtiği İç Anadolu ve Doğu Anadolu bölgelerinde zeytin tarımı kesinlikle yapılamaz.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Gemlik sofralıkta tescillidir, Ege ise asit oranı düşük zeytinyağında dünya markasıdır.<br>• <b>B Şıkkı (Yanlış):</b> Doğrudur, 'var yılı/yok yılı' dalgalanması zeytinin karakteristik özelliğidir.<br>• <b>C Şıkkı (Doğru):</b> Karasal iç bölgelerde zeytin donar, yetişmesi imkansızdır.<br>• <b>D Şıkkı (Yanlış):</b> Akdeniz'de bile 800 metreden sonra sıcaklık düştüğü için zeytin sınırı biter.",
+        "tag": "#YağBitkileri"
+      },
+      {
+        "q": "Soru 67: Türkiye'de yumrulu tarım ürünlerinden 'Patates' süzek, kumlu ve gevşek volkanik toprakları çok sever. Türkiye'de patates (Yumrulu Ve Baklagiller) üretiminde volkanik toprak varlığı sayesinde lider olan coğrafi yöre ve illerimiz hangisinde doğru verilmiştir?",
+        "options": [
+          "Tekirdağ - Edirne (Ergene Havzası)",
+          "Rize - Trabzon kıyı şeridi",
+          "Niğde - Nevşehir yöresi (İç Anadolu volkanik arazileri)",
+          "Muğla - Antalya kıyıları"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Patates yumrusunun toprak altında kolayca büyüyebilmesi için gevşek, kumlu ve mineralli volkanik topraklar idealdir. Niğde ve Nevşehir yöresi (Melendiz ve Erciyes dağlarının volkanik tüflü toprakları) bu fiziksel özelliklere sahip olduğu için Türkiye'nin en büyük patates üretim alanıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Ergene killi vertisoldür, patatese uygun değildir.<br>• <b>B Şıkkı (Yanlış):</b> Karadeniz kıyıları patates tarım merkezi değildir.<br>• <b>C Şıkkı (Doğru):</b> Volkanik tüfler yumrulu bitkilerin kök salmasını kolaylaştırır, Niğde-Nevşehir liderdir.<br>• <b>D Şıkkı (Yanlış):</b> Akdeniz kıyılarında sera ve narenciye tercih edilir.",
+        "tag": "#YumruluVeBaklagiller"
+      },
+      {
+        "q": "Soru 68: İpek böcekçiliği (İpek Böcekçiliği), tamamen dut ağacına bağlı organik bir faaliyettir. Suni ipeğin petrokimyasal yollarla çok ucuza üretilmesi geleneksel koza üreticiliğini ekonomik olarak zayıflatmıştır. Aşağıdakilerden hangisi günümüzde geleneksel ipek böcekçiliğini korumak amacıyla devletin uyguladığı destekleyici tedbirlerden biri olamaz?",
+        "options": [
+          "Yaş koza üreticilerine kilo başına yüksek devlet hibesi ödenmesi",
+          "Dut ağacı ekim alanlarının tescillenerek korunması ve ücretsiz dut fidanı dağıtılması",
+          "Sentetik (yapay) ipek ithalatını tamamen serbest bırakıp yerli yaş koza üretimine yüksek vergiler koymak",
+          "Geleneksel dokumacılık kooperatiflerine faizsiz kredi verilmesi"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Sentetik ipek ithalatının serbest bırakılması ve yerli kozaya vergi konulması yerli üreticiyi tamamen bitirir. Bu nedenle devlet tam aksine ithal yapay ipeğe karşı yerli doğal kozayı hibe ve alım garantileriyle desteklemektedir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Alım garantileri köylüyü bu zahmetli işte tutar.<br>• <b>B Şıkkı (Yanlış):</b> Dut ağacı aracı yemdir, korunması zorunludur.<br>• <b>C Şıkkı (Doğru):</b> Yerli üretime vergi konulması destek değil köstek olur, bu şık yanlıştır.<br>• <b>D Şıkkı (Yanlış):</b> Kooperatiflerin desteklenmesi pazar payını korur.",
+        "tag": "#İpekBöcekçiliği"
+      },
+      {
+        "q": "Soru 69: Türkiye'de arıcılık (Arıcılık) sektöründe bal dışındaki yan orman/arı ürünlerinin de katma değeri çok yüksektir. Aşağıdakilerden hangisi arıların bitki tomurcuklarından topladığı, kovanı dezenfekte etmekte kullandığı ve tıbbi ilaç sanayisinde çok popüler olan güçlü antioksidan arı ürünüdür?",
+        "options": [
+          "Polen",
+          "Propolis",
+          "Arı Sütü",
+          "Balmumu"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Propolis, arıların kavak, meşe gibi ağaçların tomurcuklarından topladığı reçinemsi bir maddedir. Arılar propolisi kovan deliklerini kapatmak ve kovan içi mikropları öldürmek (sterilizasyon) için kullanırlar. İnsanlar için de çok güçlü bir doğal antibiyotik ve bağışıklık güçlendiricidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Polen arıların topladığı proteinli çiçek tozudur.<br>• <b>B Şıkkı (Doğru):</b> Kovan koruyucu yapışkan madde propolistir, eczacılıkta değeri çok yüksektir.<br>• <b>C Şıkkı (Yanlış):</b> Arı sütü genç arıların kraliçe arıyı beslemek için salgıladığı sıvıdır.<br>• <b>D Şıkkı (Yanlış):</b> Balmumu petek yapımında kullanılan salgıdır.",
+        "tag": "#Arıcılık"
+      },
+      {
+        "q": "Soru 70: Kültür balıkçılığı (tatlı su veya deniz balıkçılığı tesisleri), Türkiye'de son yıllarda büyük gelişme göstermiş ve önemli bir ihracat kalemi olmuştur. Türkiye'de deniz kültür balıkçılığı (Balıkçılık) (çipura, levrek kafesleri) en çok hangi coğrafi kıyılarımızda yoğunlaşmıştır?",
+        "options": [
+          "Doğu Karadeniz kıyıları (Rize-Artvin)",
+          "Ege Denizi kıyıları (Muğla, İzmir körfezleri)",
+          "Marmara Denizi iç kıyıları",
+          "Batı Karadeniz kıyıları (Sinop)"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Ege Denizi kıyıları, girintili çıkıntılı yapısı, çok sayıdaki korunaklı koy ve körfezleri (Güllük Körfezi vb.) sayesinde dalgalardan korunan kültür balıkçılığı kafesleri için en ideal coğrafi alandır. Muğla ve İzmir kıyıları çipura-levrek ihracatında liderdir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Karadeniz kıyıları düzdür, korunaklı koy az olduğundan açık deniz dalgası kafesleri parçalar (Karadeniz'de havuz balıkçılığı yaygındır).<br>• <b>B Şıkkı (Doğru):</b> Ege'nin engebeli körfez yapısı deniz kültür kafesçiliğinin merkezidir.<br>• <b>C Şıkkı (Yanlış):</b> Marmara kirlilik ve kentsel baskı nedeniyle kafes balıkçılığına uygun değildir.<br>• <b>D Şıkkı (Yanlış):</b> Batı Karadeniz dalgalıdır, kafes yatırımı zordur.",
+        "tag": "#Balıkçılık"
+      },
+      {
+        "q": "Soru 71: Türkiye'de mera büyükbaş hayvancılığı (Büyükbaş Hayvancılık), özellikle et üretimi açısından yaz yağışlı çayırlara dayanırken, besi (ahır) büyükbaş hayvancılığı endüstriyel tesislerde tüketici nüfusa yakın olarak gelişmiştir. Türkiye'de besi hayvancılığının coğrafi dağılışı incelendiğinde, aşağıdakilerden hangisi besi tesislerinin Marmara ve Ege bölgelerinde yoğunlaşmasının ana gerekçesi olamaz?",
+        "options": [
+          "Bu bölgelerde geniş nüfusa sahip metropollerin bulunması (pazar alanı)",
+          "Ulaşım ve pazarlama imkanlarının gelişmiş olması",
+          "Marmara ve Ege bölgelerinin yaz aylarında aşırı yağışlı ve serin Alpin çayırlarına sahip olması",
+          "Şeker fabrikalarının (küspe üretimi) ve yağ fabrikalarının (küspe) bu bölgelerde yoğun olması"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Marmara ve Ege bölgeleri yaz aylarında sıcak ve kurak Akdeniz/Geçiş iklimi etkisindedir. Bu bölgelerde Alpin çayırları kesinlikle bulunmaz. Besi hayvancılığı kapalı ahırlarda yapay yemlerle yapıldığı için çayırlara ihtiyaç duymaz. Bu yörelerde kurulmasının nedeni pazar, ulaşım ve hammadde (küspe) yakınlığıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Pazar yakınlığı et ve süt ürünlerinin bozulmadan tüketiciye ulaşması için yaşamsaldır.<br>• <b>B Şıkkı (Yanlış):</b> Gelişmiş otoyol ağları dağıtımı kolaylaştırır.<br>• <b>C Şıkkı (Doğru):</b> Yaz yağışlı çayırlar Doğu Anadolu'ya özgüdür, Marmara ve Ege'de bulunmaz.<br>• <b>D Şıkkı (Yanlış):</b> Şeker pancarı posası besi hayvancılığının en ucuz hammadde kaynağıdır.",
+        "tag": "#BüyükbaşHayvancılık"
+      },
+      {
+        "q": "Soru 72: Kümes hayvancılığında (Kümes Hayvancılığı) kullanılan ırklar (hibrit etçi tavuklar - broiler) çok hızlı büyüyebilen ve yem dönüşüm oranı son derece yüksek olan kültür ırklarıdır. Türkiye'deki kümes hayvancılığı sektörü ile ilgili aşağıda verilen bilgilerden hangisi yanlıştır?",
+        "options": [
+          "Kümes hayvancılığı, kırmızı et fiyatlarına göre daha ekonomik bir protein kaynağı sunduğu için iç pazarda çok yüksek talep görür.",
+          "Tesisler büyük ölçüde entegre bilgisayarlı sistemlerle kontrol edilir, yemleme ve temizlik otomatiktir.",
+          "Kümes hayvancılığı sadece kırsal alanda serbest dolaşan tavukların (organik tavukçuluk) yumurtalarının toplanmasına dayalı geleneksel bir faaliyettir ve sanayileşmemiştir.",
+          "Irak ve Orta Doğu ülkeleri, Türkiye'nin tavuk eti ve yumurta ihracatında en önemli dış pazarları arasındadır."
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Türkiye'deki kümes hayvancılığının %95'ten fazlası serbest dolaşan geleneksel tavukçuluk değil, tamamen endüstriyel, yüksek kapasiteli ve son derece modern kapalı entegre tesislerde yürütülen sanayileşmiş bir hayvancılık dalıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Tavuk eti kırmızı ete göre ucuz olduğu için halkın temel protein deposudur.<br>• <b>B Şıkkı (Yanlış):</b> Modern tesislerde bilgisayarlı havalandırma ve yemleme standarttır.<br>• <b>C Şıkkı (Doğru):</b> Kümes hayvancılığı devasa bir sanayidir, sadece geleneksel köy tavukçuluğu değildir.<br>• <b>D Şıkkı (Yanlış):</b> Türkiye, Orta Doğu'ya her yıl milyonlarca dolarlık yumurta ve piliç ihraç eder.",
+        "tag": "#KümesHayvancılığı"
+      },
+      {
+        "q": "Soru 73: Türkiye'nin iç bölgelerindeki kurak meralarda küçükbaş hayvancılık (Küçükbaş Hayvancılık) yaygındır. Küçükbaş hayvancılığın en karakteristik özelliklerinden biri 'Aşırı otlatma' (overgrazing) sonucunda meraların bozulması ve erozyonun hızlanmasıdır. Aşağıdakilerden hangisi meralarda aşırı otlatmayı engellemek amacıyla devletin veya üreticilerin uygulayabileceği en etkili yöntemdir?",
+        "options": [
+          "Tüm küçükbaş hayvanları ormanlık alanların içine salarak ağaç yapraklarıyla beslemek",
+          "Meralarda nöbetleşe otlatma (rotasyonel otlatma) planı uygulamak ve mera ıslah projeleriyle yapay yem bitkisi ekimini artırmak",
+          "Meraları tamamen betonla kapatıp hayvancılığı bitirmek",
+          "Küçükbaş hayvanların tamamını büyükbaş hayvana dönüştürmek"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Aşırı otlatmayı engellemenin en bilimsel yolu 'rotasyonel otlatma'dır. Mera belirli bölümlere ayrılır; bir bölüm otlatılırken diğer bölüm dinlendirilir ve otların kendini yenilemesine fırsat tanınır. Ayrıca yapay yem ekimi mera üzerindeki nüfus baskısını hafifletir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Orman içinde otlatma, yeni filizleri yok ederek ormanı tamamen tahrip eder (özellikle keçiler kızılçamlara zarar verir).<br>• <b>B Şıkkı (Doğru):</b> Planlı otlatma ve ıslah (gübreleme, yabancı ot temizliği) mera verimliliğini korur ve erozyonu önler.<br>• <b>C Şıkkı (Yanlış):</b> Betonlaşma merayı yok eder.<br>• <b>D Şıkkı (Yanlış):</b> İç bölgelerin iklimi büyükbaşa uygun değildir, zorunlu değişim yapılamaz.",
+        "tag": "#KüçükbaşHayvancılık"
+      },
+      {
+        "q": "Soru 74: Türkiye'de meyvecilik ve bağcılık (Meyvecilik Ve Bağcılık) sektörü iklim elverişliliği nedeniyle çok gelişmiştir. Türkiye, fındık üretiminin yaklaşık %70'ini, kayısı üretiminin ise %60'ından fazlasını tek başına karşılayarak dünya ticaretinde tekel konumundadır. Bu iki stratejik ürünün Türkiye'de en yoğun üretildiği tescilli illerimiz hangisinde doğru eşleştirilmiştir?",
+        "options": [
+          "Fındık: Rize - Kayısı: Elazığ",
+          "Fındık: Ordu - Kayısı: Malatya",
+          "Fındık: Giresun - Kayısı: Konya",
+          "Fındık: Trabzon - Kayısı: Şanlıurfa"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Türkiye'de en çok fındık üreten ilimiz Ordu'dur (Giresun kalite olarak çok ünlü olsa da miktar olarak Ordu liderdir). Dünyaca ünlü kuru kayısı üretimimizin kalbi ve lideri ise tartışmasız Malatya ilimizdir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Rize çay merkezidir, Elazığ kayısıda Malatya'nın gerisindedir.<br>• <b>B Şıkkı (Doğru):</b> Ordu fındık miktarında, Malatya ise kayısı üretiminde tescilli liderlerdir.<br>• <b>C Şıkkı (Yanlış):</b> Konya'da kayısı tarımı Malatya seviyesinde değildir.<br>• <b>D Şıkkı (Yanlış):</b> Şanlıurfa pamuk ve tahıl merkezidir, kayısı lideri değildir.",
+        "tag": "#MeyvecilikVeBağcılık"
+      },
+      {
+        "q": "Soru 75: Ormanlarımızın tahrip edilmesi erozyonu hızlandırır, su kaynaklarını kurutur ve çölleşmeye yol açar. Türkiye'de cumhuriyet döneminden günümüze orman varlığını (Ormancılık) korumak ve geliştirmek amacıyla anayasaya eklenen en sert hüküm aşağıdakilerden hangisidir?",
+        "options": [
+          "Orman köylülerine odun kullanımının tamamen ücretsiz yapılması",
+          "Devlet ormanlarının mülkiyetinin devredilemeyeceği, zamanaşımı ile iktisap olunamayacağı ve ormanlara zarar veren hiçbir faaliyetin affedilmeyeceği (orman suçlarının genel af kapsamı dışında tutulması)",
+          "Tüm ormanların özel şirketlere satılarak ticari işletmeye dönüştürülmesi",
+          "Orman yangınlarının sadece yağmur suyuyla söndürülmesinin zorunlu kılınması"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Anayasa'nın 169. maddesi gereğince ormanlar devletin tescilli koruması altındadır. Orman suçları hiçbir genel af kapsamına alınamaz ve orman arazileri asla özel mülk haline getirilemez. Bu, orman tahribatını önlemeye yönelik dünyadaki en katı yasal korumalardan biridir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Ücretsiz odun ormanları korumaz, aksine tahribatı artırabilir.<br>• <b>B Şıkkı (Doğru):</b> Anayasal güvence ve genel af dışı bırakılma orman yağmasını engelleyen en güçlü kalkandır.<br>• <b>C Şıkkı (Yanlış):</b> Özel mülkiyet ormanların parçalanmasına yol açabilir.<br>• <b>D Şıkkı (Yanlış):</b> Yangın söndürme metodunun yasal sınırlandırması yoktur.",
+        "tag": "#Ormancılık"
+      },
+      {
+        "q": "Soru 76: Tütün, Türkiye'de üretilen en önemli kaliteli sanayi bitkilerinden (Sanayi Bitkileri) biridir. Şark tipi (Oriental) Türk tütünü, aromatik yapısı ve yüksek kalitesiyle dünya sigara sanayisinde harmanlayıcı olarak çok aranır. Türkiye'de tütün üretimi ile ilgili aşağıda verilen coğrafi bilgilerden hangisi yanlıştır?",
+        "options": [
+          "Tütün, kıraç ve mineralce zengin eğimli yamaç topraklarını çok sever.",
+          "Ege Bölgesi (özellikle Manisa, Denizli, İzmir kırsalı) Türkiye tütün üretiminde birinci sıradadır.",
+          "Tütün ekimi her mevsim aşırı sisli ve sürekli yağışlı geçen Doğu Karadeniz kıyı kuşağında çok kaliteli sonuçlar verir.",
+          "Tütün üretimi devlet tarafından kalite kontrolünü sağlamak amacıyla kota (sınırlandırma) sistemine tabi tutulmuştur."
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Tütün olgunlaşma ve kuruma döneminde bol güneş ve yaz kuraklığı ister. Her mevsim yağışlı ve nemli olan Doğu Karadeniz kıyılarında tütün kalitesi bozulur ve yapraklar çürür. Bu nedenle Karadeniz kıyısında kaliteli tütün üretimi zordur (Karadeniz'in sadece Samsun gibi iç kesimlerinde üretilebilir).<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Tütün kıraç topraklarda daha aromatik ve kaliteli yaprak verir.<br>• <b>B Şıkkı (Yanlış):</b> Ege Bölgesi yüksek kaliteli tütün üretiminde Türkiye lideridir.<br>• <b>C Şıkkı (Doğru):</b> Yağışlı nemli Karadeniz kıyı kuşağı tütüne uygun değildir, bu şık yanlıştır.<br>• <b>D Şıkkı (Yanlış):</b> Kota sistemi fazla üretimi engelleyerek fiyat dengesini ve kaliteyi korur.",
+        "tag": "#SanayiBitkileri"
+      },
+      {
+        "q": "Soru 77: Mısır, nem ve bol su isteyen bir tahıl (Tahıllar) ürünüdür. Doğal yetişme alanı Karadeniz kıyı kuşağı olmasına rağmen, sulama imkanlarının (özellikle damlama sulamanın) yaygınlaşmasıyla Akdeniz ve Güneydoğu Anadolu ovalarında mısır tarımı patlama yapmıştır. Mısırın Karadeniz kıyısındaki üretimi ile Akdeniz'deki üretimi karşılaştırıldığında hangisi doğrudur?",
+        "options": [
+          "Karadeniz'de üretilen mısırın tamamı sıvı yağ fabrikalarına satılarak ihraç edilir.",
+          "Akdeniz'de mısır sulamayla yetiştirilen ticari bir ürün iken, Karadeniz'de doğal yağışla yetişen ve yerel halk tarafından temel gıda (ekmek) olarak tüketilen bir üründür.",
+          "Karadeniz'deki mısır üretimi Akdeniz'den miktar olarak çok daha fazladır.",
+          "Akdeniz'de mısır sadece kış mevsiminde kar altında yetiştirilir."
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Karadeniz kıyısında yağış bol olduğu için mısır susuz yetişir. Ancak bölge halkı buğday ekemediği için mısırı un yapıp kendisi tüketir (yani ticari değeri azdır). Akdeniz ve Güneydoğu'da ise mısır sulamayla ekilir ve doğrudan yem ve yağ sanayisine satılan dev ticari bir tarım ürünüdür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Karadeniz mısırı iç pazarda tüketilir, yağ sanayisine yetecek miktarda ticari üretimi azdır.<br>• <b>B Şıkkı (Doğru):</b> Karadeniz'de geçimlik aile ürünü, Akdeniz'de ise yüksek karlı endüstriyel hammaddedir.<br>• <b>C Şıkkı (Yanlış):</b> Akdeniz sulu tarımı miktar olarak Karadeniz'i katlamıştır.<br>• <b>D Şıkkı (Yanlış):</b> Mısır yaz sıcaklığı isteyen bir yaz ürünüdür.",
+        "tag": "#Tahıllar"
+      },
+      {
+        "q": "Soru 78: Kenevir (Cannabis sativa), lifleri halat, çuval ve kağıt yapımında kullanılan çok dayanıklı bir sanayi bitkisidir. Ancak yapraklarında uyuşturucu madde barındırdığı için devlet denetimindedir. Türkiye'de son yıllarda yerli ilaç ve endüstriyel tekstil üretimi amacıyla kenevir tarımına (Tarımda Devlet Sınırlandırması) özel izin verilen lider ilimiz hangisidir?",
+        "options": [
+          "Samsun",
+          "Konya",
+          "Muğla",
+          "Şanlıurfa"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Türkiye'de kenevir ekimi Samsun (özellikle Vezirköprü ilçesi) merkezli olarak devlet kontrolünde ve teşvikiyle endüstriyel lif ve tohum üretimi amacıyla tescillenmiştir. Samsun, kenevir endüstrisinin Türkiye'deki araştırma ve üretim üssüdür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Samsun-Vezirköprü yasal kenevir üretiminin ve tohum geliştirme projelerinin merkezidir.<br>• <b>B Şıkkı (Yanlış):</b> Konya'da kenevir tarımına izin verilmemektedir.<br>• <b>C Şıkkı (Yanlış):</b> Muğla arıcılık ve orman bölgesidir.<br>• <b>D Şıkkı (Yanlış):</b> Şanlıurfa'da kenevir ekimi yasaktır.",
+        "tag": "#TarımdaDevletSınırlandırması"
+      },
+      {
+        "q": "Soru 79: Türkiye tarımında nadas yöntemi, yarı kurak iklim bölgelerinde toprağın bir yıl ekilip, ertesi yıl su ve mineral biriktirmesi için boş bırakılmasıdır. Nadas (Tarımı Etkileyen Faktörler) toprak erozyonunu hızlandıran ve üretimi kesintiye uğratan olumsuz bir yöntemdir. Türkiye'de nadas alanlarının en geniş olduğu coğrafi bölge ile nadas ihtiyacının en az olduğu coğrafi bölge sırasıyla hangisidir?",
+        "options": [
+          "Doğu Anadolu - Güneydoğu Anadolu",
+          "İç Anadolu Bölgesi - Karadeniz Bölgesi",
+          "Güneydoğu Anadolu - Akdeniz Bölgesi",
+          "Marmara Bölgesi - Ege Bölgesi"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Nadas en çok yağışın yetersiz, kuraklığın fazla ve sulama imkanlarının kısıtlı olduğu İç Anadolu Bölgesi'nde yaygındır. Nadas ihtiyacının en az olduğu bölge ise her mevsim düzenli yağış alan ve toprağın hiçbir zaman nem sıkıntısı çekmediği Karadeniz Bölgesi kıyı kuşağıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Güneydoğu'da GAP ile nadas azalmıştır, ancak lider İç Anadolu'dur.<br>• <b>B Şıkkı (Doğru):</b> Karasallık ve kuraklık İç Anadolu'da nadası zirveye taşır; Karadeniz nemi ise nadası sıfırlar.<br>• <b>C Şıkkı (Yanlış):</b> Akdeniz'de kış yağışları fazladır ama Karadeniz kadar düzenli değildir.<br>• <b>D Şıkkı (Yanlış):</b> Marmara ve Ege'de sulama geliştiğinden nadas azdır.",
+        "tag": "#TarımıEtkileyenFaktörler"
+      },
+      {
+        "q": "Soru 80: Yağ bitkilerinden 'Yer Fıstığı', gevşek ve sıcak toprakları seven, Akdeniz iklimine uyum sağlamış ticari bir üründür. Türkiye yer fıstığı (Yağ Bitkileri) üretiminin yaklaşık %80'ini karşılayan ve tescilli yer fıstığı ile ünlü olan Akdeniz ilimiz hangisidir?",
+        "options": [
+          "Antalya",
+          "Mersin",
+          "Osmaniye",
+          "Isparta"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Osmaniye ili, yer fıstığı üretimi, işlemesi ve ticaretiyle Türkiye'nin tescilli yer fıstığı merkezidir. Üretimin çok büyük kısmı Osmaniye ve komşusu Adana (Çukurova) tarafından gerçekleştirilir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Antalya seracılıkta öncüdür.<br>• <b>B Şıkkı (Yanlış):</b> Mersin muz ve narenciyede liderdir.<br>• <b>C Şıkkı (Doğru):</b> Osmaniye yer fıstığıyla özdeşleşmiş coğrafi işaretli tarım kentidir.<br>• <b>D Şıkkı (Yanlış):</b> Isparta gül ve elma üreticisidir.",
+        "tag": "#YağBitkileri"
+      },
+      {
+        "q": "Soru 81: Kuru tarım alanlarında ekim nöbeti (münavebeli ekim), nadasa alternatif olarak geliştirilmiş en çevreci yöntemdir. Münavebeli ekim (Yumrulu Ve Baklagiller) sisteminde toprağa bir yıl tahıl ekildikten sonra, ertesi yıl toprağın boş bırakılmayıp azot bağlayan bir baklagil (nohut, mercimek) ekilmesinin temel ekolojik faydası hangisidir?",
+        "options": [
+          "Toprağın tamamen kurumasını ve sertleşmesini sağlamak",
+          "Toprağın kaybettiği mineralleri ve azotu biyolojik yollarla geri kazanmasını sağlarken, çiftçinin her yıl ürün alarak gelir elde etmesini garanti etmek",
+          "Tarım arazilerinde sulama ihtiyacını tamamen sıfırlamak",
+          "Toprağın altındaki volkanik tüfleri eritmek"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Baklagillerin (nohut, mercimek, fasulye) köklerindeki rizobyum bakterileri, havanın serbest azotunu bağlayarak toprağı doğal yoldan gübreler. Bir yıl buğday, ertesi yıl nohut ekildiğinde toprak boş kalmaz (erozyon önlenir), gübre ihtiyacı azalır ve çiftçi her yıl ürün hasat eder.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Toprağın sertleşmesi olumsuz bir durumdur.<br>• <b>B Şıkkı (Doğru):</b> Münavebeli ekim hem toprağı besler (azot dengesi) hem de çiftçinin nadas kaybını bitirir.<br>• <b>C Şıkkı (Yanlış):</b> Sulama ihtiyacını sıfırlamaz ama nadası bitirir.<br>• <b>D Şıkkı (Yanlış):</b> Jeolojik tüflere tarımsal bir etkisi yoktur.",
+        "tag": "#YumruluVeBaklagiller"
+      },
+      {
+        "q": "Soru 82: İpek böcekçiliği (İpek Böcekçiliği) faaliyetinde, dut yapraklarının tazeliği ve ilaçsız olması çok önemlidir. Tarım alanlarında yapılan kimyasal ilaçlamalar dut yapraklarına bulaştığında ipek böceklerinin anında ölümüne neden olur. Buna göre, ipek böcekçiliğinin yapılacağı köylerde aşağıdaki tedbirlerden hangisinin alınması zorunludur?",
+        "options": [
+          "Dut ağaçlarının tamamen cam seraların içine dikilmesi",
+          "Dutlukların tarımsal ilaçlama yapılan pamuk veya meyve bahçelerinden uzak, izole alanlarda kurulması ve organik tarım kurallarının uygulanması",
+          "İpek böceklerine dut yaprağı yerine hazır plastik yem verilmesi",
+          "Dut yapraklarının deterjanla yıkanarak böceklere verilmesi"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> İpek böcekleri kimyasal maddelere karşı aşırı hassastır. Zirai ilaç bulaşmış yaprakları yediklerinde koza öremeden ölürler. Bu nedenle dutluklar kimyasal ilaçlama yapılan tarım alanlarından uzakta, izole ve rüzgar altı yönünde kurulmalıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Dut ağaçları çok büyüktür, seraya sığmaz ve maliyeti kurtarmaz.<br>• <b>B Şıkkı (Doğru):</b> Organik izolasyon ipek böcekçiliğinin sürdürülebilirliği için tek çaredir.<br>• <b>C Şıkkı (Yanlış):</b> Böcekler sadece doğal dut yaprağı yer, suni yem yemezler.<br>• <b>D Şıkkı (Yanlış):</b> Deterjan kimyasal kalıntı bırakarak böcekleri daha hızlı zehirler.",
+        "tag": "#İpekBöcekçiliği"
+      },
+      {
+        "q": "Soru 83: Türkiye'de yüksek kalitesiyle bilinen arı ürünlerinden 'Anzer Balı', Doğu Karadeniz Bölümü'nde Rize'nin İkizdere ilçesindeki Anzer Yaylası'nda üretilir. Anzer balının (Arıcılık) dünya çapında eşsiz bir tıbbi değere ve astronomik fiyatlara sahip olmasının temel bilimsel nedeni aşağıdakilerden hangisidir?",
+        "options": [
+          "Anzer yaylasındaki kovanların tamamen altından yapılmış olması",
+          "Yaylanın çok yüksek rakımında yetişen ve yaklaşık 80-90 adedi sadece bu yöreye özgü (endemik) olan yüzlerce farklı çiçekli bitkinin nektarından üretilmesi",
+          "Balın içine yapay olarak şeker şurubu katılması",
+          "Anzer arılarının deniz suyundan bal üretebilme yeteneği"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Anzer Yaylası, 2000 metrenin üzerindeki yüksekliğiyle olağanüstü zengin bir Alpin florasına sahiptir. Burada yetişen çiçekli bitkilerin önemli bir kısmı sadece bu yaylaya özgü endemik türlerdir. Bu endemik çiçeklerden beslenen Kafkas ırkı arıların ürettiği bal, yüksek enzim ve şifa değerine sahiptir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Kovanların altın olmasının kimyasal bala etkisi olamaz.<br>• <b>B Şıkkı (Doğru):</b> Endemik bitki çeşitliliği balın eşsiz aromasını ve şifalı enzim yapısını kuran ana faktördür.<br>• <b>C Şıkkı (Yanlış):</b> Şeker şurubu balın sahteliğidir, değerini sıfırlar.<br>• <b>D Şıkkı (Yanlış):</b> Arılar deniz suyundan bal yapamazlar.",
+        "tag": "#Arıcılık"
+      },
+      {
+        "q": "Soru 84: Türkiye'nin iç sularında (göl ve barajlarında) tatlı su balıkçılığı yaygındır. Türkiye'nin en büyük tatlı su gölü olan Beyşehir Gölü ile tektonik Eğirdir Gölü'nde son yıllarda balık miktarının ve yerli türlerin (akbalık vb.) hızla yok olmasının en temel nedeni hangisidir?",
+        "options": [
+          "Göllerin sularının aşırı soğuması",
+          "Göllerin tabanında volkanik patlamaların yaşanması",
+          "Göllere etçil ve istilacı yabancı balık türlerinin (özellikle levrek ve sudak) sonradan aşılanması ve bu etçillerin yerli balık yavrularını tüketmesi",
+          "Göllerde hiçbir şekilde avcılık yapılmaması"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Beyşehir ve Eğirdir göllerine 1950-1970'li yıllarda ekonomik gelir artırmak amacıyla dışarıdan etçil tatlı su levreği (sudak) aşılanmıştır. Bu yabancı etçil tür göldeki ekolojik dengeyi bozarak gölün kendi yerli otçul balık türlerini ve yavrularını yiyip bitirmiştir (biyolojik istila).<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Küresel ısınma vardır, aşırı soğuma söz konusu değildir.<br>• <b>B Şıkkı (Yanlış):</b> Bu göller aktif volkanik alanlar değildir.<br>• <b>C Şıkkı (Doğru):</b> Yanlış balık aşılama politikaları iç su ekosistemlerini çökerten en büyük beşeri hatalardandır.<br>• <b>D Şıkkı (Yanlış):</b> Aşırı avlanma vardır, avlanmama değil.",
+        "tag": "#Balıkçılık"
+      },
+      {
+        "q": "Soru 85: Doğu Anadolu Bölgesi'ndeki Kars-Ardahan platolarında mera hayvancılığı yaygınken, burada mandıracılık ve süt ürünleri sanayisi (Kars kaşarı, gravyer) çok gelişmiştir. Kars ve Ardahan'da bu süt sanayisinin (Büyükbaş Hayvancılık) gelişmesinde aşağıdakilerden hangisinin katkısı en fazladır?",
+        "options": [
+          "Bölgede şeker pancarı tarımının çok yaygın olması",
+          "Bölgedeki yerel sığır ırklarının ıslah edilerek süt verimi yüksek İsviçre kökenli montofon ve simental ırklarıyla melezlenmesi ve gür yaz meralarının kaliteli süt sağlaması",
+          "Bölgenin İstanbul ve İzmir gibi büyük pazarlara çok yakın olması",
+          "Mera hayvancılığında sadece suni yem kullanılması"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Kars ve Ardahan'da Kafkas üniversitesi ve devlet üretme çiftlikleri öncülüğünde yerli verimsiz sığırlar, yüksek verimli montofon/simental ırklarıyla melezlenmiştir. Zengin Alpin çayırlarıyla beslenen bu melez büyükbaşlar, aromatik ve yağ oranı yüksek kaliteli süt vererek dünyaca ünlü Kars kaşarı ve gravyer peynir sanayisinin doğmasını sağlamıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Kars'ta iklimden dolayı pancar tarımı yaygın değildir.<br>• <b>B Şıkkı (Doğru):</b> Irk ıslahı ve doğal gür çayırlar süt kalitesini ve miktarını artırarak peynircilik sanayisini zirveye taşımıştır.<br>• <b>C Şıkkı (Yanlış):</b> Bölge büyük batı pazarlarına en uzak konumdadır (ulaşım maliyeti dezavantajdır).<br>• <b>D Şıkkı (Yanlış):</b> Meralarda suni yem kullanılmaz, tamamen doğal otlatma esastır.",
+        "tag": "#BüyükbaşHayvancılık"
+      },
+      {
+        "q": "Soru 86: Kümes hayvancılığı (Kümes Hayvancılığı) tesislerinde gübre ve atık yönetimi çevre sağlığı açısından ciddi denetime tabidir. Tesislerin yakınındaki akarsulara veya yeraltı sularına azotlu tavuk gübrelerinin sızması aşağıdakilerden hangisine yol açar?",
+        "options": [
+          "Akarsularda balık çeşitliliğinin aşırı derecede artmasına",
+          "Suların temizlenerek içme suyuna dönüşmesine",
+          "Sularda aşırı alg (yosun) patlamasına (ötrofikasyon), sudaki oksijenin tükenmesine ve kitlesel su canlısı ölümlerine",
+          "Toprağın volkanik tüfe dönüşmesine"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Tavuk gübresi azot ve fosfor yönünden çok zengindir. Su kaynaklarına karıştığında sudaki alglerin kontrolsüzce çoğalmasına (ötrofikasyon) neden olur. Su yüzeyini kaplayan yeşil alg tabakası güneş ışığını ve havayı keserek sudaki oksijeni bitirir ve balık ölümlerine yol açar.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Balık çeşitliliğini azaltır, artırmaz.<br>• <b>B Şıkkı (Yanlış):</b> Suları zehirli hale getirir.<br>• <b>C Şıkkı (Doğru):</b> Azot yığılması ötrofikasyon denilen tatlı su felaketini tetikler.<br>• <b>D Şıkkı (Yanlış):</b> Gübrenin jeolojik taş yapısıyla ilişkisi yoktur.",
+        "tag": "#KümesHayvancılığı"
+      },
+      {
+        "q": "Soru 87: Türkiye'de küçükbaş hayvancılıkta (Küçükbaş Hayvancılık) yün üretimi tekstil ve halıcılık sektörü için hammadde kaynağıdır. İç Anadolu'da yaygın olan koyun türlerinden elde edilen ve halı dokumaya çok uygun olan yün tipi ile bu yünü sağlayan yerli koyun cinsi hangisinde doğru verilmiştir?",
+        "options": [
+          "Merinos Yünü - Merinos Koyunu",
+          "Kaba Yapağı - Karaman Koyunu",
+          "Tiftik Lifleri - Tiftik Keçisi",
+          "Kaşmir Yünü - Ankara Keçisi"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Türkiye'nin yerli koyun ırkı olan Karaman koyunu, kaba ve kalın yün (kaba yapağı) verir. Bu kalın yünler hazır giyim tekstiline uygun olmasa da, aşınmaya dayanıklı geleneksel Türk halı ve kilim dokumacılığı için en ideal hammaddedir. Merinos koyunu ise ince yün verir ve kumaş yapımında kullanılır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Merinos ince yünlüdür, Bursa çevresinde yaygındır ve halı için yumuşaktır.<br>• <b>B Şıkkı (Doğru):</b> Karaman koyununun kaba yapağısı geleneksel halıcılığın ana malzemesidir.<br>• <b>C Şıkkı (Yanlış):</b> Tiftik keçi ürünüdür, koyun değildir.<br>• <b>D Şıkkı (Yanlış):</b> Kaşmir ve Ankara keçisi keçi grubundadır.",
+        "tag": "#KüçükbaşHayvancılık"
+      },
+      {
+        "q": "Soru 88: Türkiye'de bazı meyveler aşırı düşük kış sıcaklıklarına dayanıklı oldukları için geniş yayılış alanına sahipken, bazıları ise sadece mikroklima alanlarında yetişebilir. Don olaylarına karşı en dayanıklı olan ve Türkiye genelinde ekim alanı en geniş olan iki meyve grubu hangisidir?",
+        "options": [
+          "Muz - İncir",
+          "Elma - Üzüm",
+          "Turunçgiller - Avokado",
+          "Antep Fıstığı - Mandalina"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Elma ve üzüm kış donlarına karşı Türkiye'de yetişen en dayanıklı meyvelerdir. Elma ağaçları -40 dereceye, üzüm bağları ise -30 dereceye kadar dayanabilir. Bu fizyolojik özellikleri sayesinde her ikisi de Türkiye'nin 7 bölgesinde ve neredeyse tüm illerinde yaygın olarak yetiştirilir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Muz ve incir don duyarlıdır, kıyılarda yetişir.<br>• <b>B Şıkkı (Doğru):</b> Elma ve üzüm Türkiye tarımının don riskine karşı en dayanıklı ve yaygın ikilisidir.<br>• <b>C Şıkkı (Yanlış):</b> Turunçgil ve avokado tropikal-subtropikal olup kış ılıklığı şarttır.<br>• <b>D Şıkkı (Yanlış):</b> Antep fıstığı sıcaklık ister, mandalina dona hassastır.",
+        "tag": "#MeyvecilikVeBağcılık"
+      },
+      {
+        "q": "Soru 89: Türkiye'de ormanların yok edilmesinde en büyük paya sahip olan beşeri faktör orman yangınlarıdır. Türkiye'de orman yangını (Ormancılık) riskinin en yüksek olduğu kıyı şeridi ile bu yangınların yayılmasını hızlandıran iğne yapraklı kurakçıl ağaç türü sırasıyla hangisidir?",
+        "options": [
+          "Doğu Karadeniz kıyısı - Ladin",
+          "Akdeniz ve Ege kıyı kuşağı - Kızılçam",
+          "Marmara Bölgesi kıyıları - Kayın",
+          "Güneydoğu Anadolu kırsalı - Meşe"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Türkiye'de yaz kuraklığının en şiddetli olduğu, bağıl nemin düştüğü Akdeniz ve Ege kıyı kuşağı orman yangını riskinin en yüksek olduğu sahadır. Bu bölgenin hâkim ağaç türü olan 'Kızılçam' (Pinus brutia) reçineli yapısı nedeniyle çok kolay tutuşur ve yangının hızla büyümesine yol açar.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Karadeniz her mevsim yağışlı olduğundan yangın riski en düşüktür.<br>• <b>B Şıkkı (Doğru):</b> Akdeniz yaz kuraklığı ve yanıcı reçineli kızılçam ormanları yangınların ana merkezidir.<br>• <b>C Şıkkı (Yanlış):</b> Kayın nemli yapraklı ağaçtır, kolay tutuşmaz.<br>• <b>D Şıkkı (Yanlış):</b> Güneydoğu'da meşelikler seyrektir, orman alanı azdır.",
+        "tag": "#Ormancılık"
+      },
+      {
+        "q": "Soru 90: Çay, her mevsim yağış, yüksek bağıl nem, asidik yıkanmış toprak ve gölgeli bulutlu gün sayısı isteyen çok hassas bir sanayi bitkisidir (Sanayi Bitkileri). Türkiye'de çay tarımı ile ilgili aşağıda verilen bilgilerden hangisi yanlıştır?",
+        "options": [
+          "Türkiye'de çay ekim alanlarının tamamı Doğu Karadeniz kıyı kuşağında (Rize, Trabzon, Artvin, Giresun illerinde) toplanmıştır.",
+          "Çay bitkisi kış aylarında kar altında kalarak dinlendiği için yapraklarında haşere barındırmaz ve organik değeri çok yüksektir.",
+          "Çay, kurak karasal iklim koşullarına en iyi uyum sağlayan ve İç Anadolu ovalarında sulamayla en çok yetiştirilen üründür.",
+          "Cumhuriyet döneminde Zihni Derin'in öncülüğünde Gürcistan'dan getirilen fidanlarla bölgede çay tarımı başlatılmıştır."
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Çay, İç Anadolu'da kesinlikle yetişemez. Çay bitkisi kireçli topraklardan nefret eder, bol nem ve asidik toprak ister. İç Anadolu'nun karasal kurak havası ve kireçli toprakları çay tarımını imkansız kılar.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Doğu Karadeniz kıyı şeridi Türkiye'nin tek çay havzasıdır.<br>• <b>B Şıkkı (Yanlış):</b> Üzerine kar yağan dünyadaki tek çay çeşididir, bu yüzden kimyasal ilaçlamaya gerek kalmaz (organiktir).<br>• <b>C Şıkkı (Doğru):</b> İç Anadolu'da yetiştirilmesi fiziksel olarak imkansızdır, bu şık yanlıştır.<br>• <b>D Şıkkı (Yanlış):</b> Zihni Derin, Doğu Karadeniz'e çayı kazandıran efsanevi Türk ziraatçısıdır.",
+        "tag": "#SanayiBitkileri"
+      },
+      {
+        "q": "Soru 91: Çeltik (pirinç) tarımı akarsu vadi tabanlarındaki alüvyal topraklarda çok yüksek verim sağlar. Türkiye'de en yoğun çeltik üretiminin (Tahıllar) yapıldığı Meriç Nehri havzası ve Edirne ili Türkiye toplam üretiminin yaklaşık %40-50'sini karşılar. Edirne ilinin çeltik tarımı için sunduğu en büyük coğrafi kolaylık nedir?",
+        "options": [
+          "Edirne'nin çok yüksek dağlık ve sarp arazilere sahip olması",
+          "Meriç Nehri'nin getirdiği bol su ve nehir yatağındaki geniş, düz tabanlı alüvyal ovalar",
+          "Bölgede yaz mevsiminin tamamen kar yağışlı geçmesi",
+          "Toprağın tamamen taşlık ve karstik olması"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Çeltik tarlalarının (tava) düz olması ve nehir suyuyla kolayca doldurulabilmesi gerekir. Meriç ve Ergene nehirlerinin birleştiği Edirne yöresi, düz alüvyal taban ovaları ve bol akarsu debisiyle pirinç üretimi için en ideal doğal alanı sunar.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Edirne düzlük bir ildir, dağlık değildir.<br>• <b>B Şıkkı (Doğru):</b> Alüvyal düzlükler su tutmayı kolaylaştırır, akarsu ise sulama güvencesidir.<br>• <b>C Şıkkı (Yanlış):</b> Yazın kar yağışı söz konusu değildir.<br>• <b>D Şıkkı (Yanlış):</b> Karstik topraklar suyu sızdırdığı için çeltik tarlası su tutamaz, killi alüvyon şarttır.",
+        "tag": "#Tahıllar"
+      },
+      {
+        "q": "Soru 92: Türkiye'de 'Çay' ve 'Fındık' gibi tarım ürünleri doğrudan devletin belirlediği alanlarda ekilebilmektedir. Devletin bu iki üründe ekim alanlarını sınırlandırmasının (Tarımda Devlet Sınırlandırması) temel gerekçesi aşağıdakilerden hangisidir?",
+        "options": [
+          "Bu ürünlerin uyuşturucu yapımında hammadde olarak kullanılmasını önlemek",
+          "Üretim fazlası (arz fazlası) oluşmasını engellemek, kaliteyi korumak ve haksız rekabeti önleyerek çiftçiyi korumak",
+          "Bu ürünlerin toprakta şiddetli depremlere yol açmasını engellemek",
+          "Çay ve fındık yapraklarının zehirli gaz salgılamasını durdurmak"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Çay ve fındıkta ekim alanlarının sınırlandırılma nedeni tamamen ekonomiktir. Kontrolsüz ekim yapılırsa arz fazlası oluşur, ürünler depolarda çürür ve fiyatlar taban yaparak çiftçiyi iflas ettirir. Devlet ekim alanlarını belirleyerek üretimi kontrol altında tutar.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Bu ürünlerde narkotik içerik yoktur.<br>• <b>B Şıkkı (Doğru):</b> Arz-talep dengesini korumak ve tarımsal ekonomiyi stabilize etmek amacıyla alan sınırlaması yapılır.<br>• <b>C Şıkkı (Yanlış):</b> Tarımın depremle jeolojik bir ilgisi olamaz.<br>• <b>D Şıkkı (Yanlış):</b> Zehirli gaz salgısı gerçek dışıdır.",
+        "tag": "#TarımdaDevletSınırlandırması"
+      },
+      {
+        "q": "Soru 93: Tarımda gübreleme, toprağın kaybettiği mineralleri geri vererek verimi katlayan en önemli faktördür. Kimyasal gübrelerin Türkiye'de hammaddesi (fosfat) büyük ölçüde ithalata dayandığı için gübre maliyeti döviz kurlarına bağlı olarak çok değişkendir. Türkiye'de yerli fosfat yataklarının çıkarıldığı tek maden bölgesi (Tarımı Etkileyen Faktörler) hangisidir?",
+        "options": [
+          "Zonguldak - Ereğli",
+          "Mardın - Mazıdağı",
+          "Artvin - Murgul",
+          "Batman - Raman"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Kimyasal gübrenin ana hammaddesi fosfattır. Türkiye fosfat yönünden fakir bir ülke olup gübre ihtiyacının %90'ını ithal eder. Türkiye'deki tek kayda değer fosfat yatağı ise Mardin'in Mazıdağı ilçesinde yer alır ve buradaki tesislerde yerli fosfat gübresi üretilir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Zonguldak taş kömürü yatağıdır.<br>• <b>B Şıkkı (Doğru):</b> Mardin Mazıdağı yerli fosfat gübre üretiminin tek maden üssüdür.<br>• <b>C Şıkkı (Yanlış):</b> Artvin Murgul bakır madeniyle ünlüdür.<br>• <b>D Şıkkı (Yanlış):</b> Batman Raman petrol alanıdır.",
+        "tag": "#TarımıEtkileyenFaktörler"
+      },
+      {
+        "q": "Soru 94: Yağ bitkilerinden 'Yer Fıstığı', hasat edildikten sonra tohumlarındaki yüksek protein ve yağ kalitesiyle hem çerezlik hem de sanayide sıvı yağ eldesinde kullanılır. Yer fıstığının toprak altında yumrular halinde geliştiği düşünüldüğünde, yer fıstığı tarımı için en ideal toprak yapısı hangisidir?",
+        "options": [
+          "Su geçirmeyen, aşırı killi ve sertleşen ağır topraklar",
+          "Gevşek, süzek, kumlu-tınlı ve havalanması kolay olan hafif bünyeli topraklar",
+          "Tamamen tuzla kaplı çorak bataklık toprakları",
+          "Karadeniz'in gür orman altı organik podzol toprakları"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Yer fıstığı (Arachis hypogaea), çiçek açtıktan sonra döllenen kollarını toprak altına sokar ve fıstık kapsülleri toprak altında büyür. Toprağın bu kolları kabul edebilmesi ve kapsülün sıkışmadan büyüyebilmesi için gevşek, kumlu ve yumuşak toprak yapısı şarttır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Killi sert topraklar fıstığın toprak altına girmesini engeller ve ürünü çürütür.<br>• <b>B Şıkkı (Doğru):</b> Gevşek kumlu topraklar fıstığın yeraltı gelişimini destekleyen ideal fiziksel ortamdır.<br>• <b>C Şıkkı (Yanlış):</b> Tuzlu topraklarda yer fıstığı kurur.<br>• <b>D Şıkkı (Yanlış):</b> Podzol çok asidik ve soğuktur, yer fıstığı sıcaklık ister.",
+        "tag": "#YağBitkileri"
+      },
+      {
+        "q": "Soru 95: Türkiye'de yumrulu ve baklagil tarımında 'Kuru Fasulye' milli mutfağın en popüler ürünüdür. Kuru fasulye (Yumrulu Ve Baklagiller) yaz aylarında düzenli sulama ister, karasal iklimin hüküm sürdüğü iç bölgelerde çok yüksek verim sağlar. Son yıllarda coğrafi işaretiyle ve kalitesiyle ünlü olan Konya-Derbent ve Niğde fasulyeleri ön plana çıkmıştır. Kuru fasulye tarımında sulama yöntemi olarak aşağıdakilerden hangisinin tercih edilmesi verimi ve su tasarrufunu maksimuma çıkarır?",
+        "options": [
+          "Tarlayı göl haline getirene kadar vahşi salma sulama yapmak",
+          "Modern damlama sulama ve yağmurlama sulama sistemleri kullanarak toprağın nemini dengede tutmak",
+          "Tarlayı hiç sulamayıp tamamen kurumaya bırakmak",
+          "Sadece deniz suyu püskürtmek"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Kuru fasulye tarımında vahşi sulama kök çürüklüğüne ve mantar hastalıklarına yol açar. Damlama veya yağmurlama sistemleri suyun doğrudan kök bölgesine kontrollü verilmesini sağlayarak hem su tasarrufu yapar hem de verimi maksimuma çıkarır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Vahşi sulama erozyona ve kök mantarlarına yol açan verimsiz bir yöntemdir.<br>• <b>B Şıkkı (Doğru):</b> Damlama sulama su kıtlığı olan İç Anadolu'da baklagil tarımının can kurtaranıdır.<br>• <b>C Şıkkı (Yanlış):</b> Susuz kalan fasulye kurur ve ürün vermez.<br>• <b>D Şıkkı (Yanlış):</b> Tuzlu deniz suyu fasulyeyi anında öldürür.",
+        "tag": "#YumruluVeBaklagiller"
+      },
+      {
+        "q": "Soru 96: İpek böcekçiliği (İpek Böcekçiliği), ipek böceğinin yumurtadan çıkıp koza örme aşamasına kadar yaklaşık 35-40 günlük çok kısa ama aşırı emek yoğun bir bakım sürecini kapsar. İpek böceğinin kendi etrafına ördüğü ve tekstilde kullanılan o değerli koruyucu koza yapısı hangi salgıdan oluşmaktadır?",
+        "options": [
+          "Balmumu salgısı",
+          "Ağız bezlerinden salgılanan ve havayla temas ettiğinde sertleşen protein yapılı sıvı ipek (fibroin ve serisin)",
+          "Dut ağacı reçinesi",
+          "Arı zehri"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> İpek böceği, tırtıl evresinin sonunda ağız altı bezlerinden (ipek bezleri) protein kökenli fibroin sıvısı salgılar. Bu sıvı dışarı çıktığı an havayla temas ederek donar ve ipek ipliğine dönüşür. Tırtıl başını sekiz çizerek sallayarak kendi etrafına bu iplikten koza örer.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Balmumu arı ürünüdür.<br>• <b>B Şıkkı (Doğru):</b> Biyolojik protein fibroin salgısı ipek lifinin hammaddesidir.<br>• <b>C Şıkkı (Yanlış):</b> Reçine ağacın salgısıdır, tırtılın değil.<br>• <b>D Şıkkı (Yanlış):</b> Arı zehri ipekle alakasızdır.",
+        "tag": "#İpekBöcekçiliği"
+      },
+      {
+        "q": "Soru 97: Tarımda toprak analizi, toprağın hangi mineraller yönünden zengin veya fakir olduğunu belirleyerek doğru gübre kullanımını sağlar. Türkiye topraklarının genel özellikleri (Tarımı Etkileyen Faktörler) göz önüne alındığında, tarım topraklarımızın çoğunda hangi mineralin eksikliği yaygındır ve bu durum tarımsal verimi nasıl etkiler?",
+        "options": [
+          "Demir eksikliği - Tarımı tamamen imkansız kılar.",
+          "Organik madde (humus) ve azot eksikliği - Toprağın verimliliğini düşürür ve azotlu gübre kullanımını zorunlu kılar.",
+          "Tuz fazlalığı - Tüm toprakları çöle dönüştürür.",
+          "Kalsiyum eksikliği - Toprağın asitleşmesine yol açar."
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Türkiye topraklarının büyük kısmı yarı kurak iklim koşullarından dolayı organik madde (humus) yönünden fakirdir. Ayrıca yıkanmanın az olduğu iç kesimlerde kireç oranı yüksek olsa da, azot miktarı düşüktür. Bu durum tarımda verimi düşürdüğü için çiftçiler yoğun şekilde azotlu ve fosfatlı suni gübreler kullanmak zorundadır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Demir eksikliği bazı bitkilerde kloroz yapar ama tarımı tamamen bitirmez.<br>• <b>B Şıkkı (Doğru):</b> Humus yetersizliği Türkiye topraklarının en kronik verim kısıtlayıcı fiziksel özelliğidir.<br>• <b>C Şıkkı (Yanlış):</b> Tuzluluk sadece Tuz Gölü çevresinde aşırıdır, genel sorun değildir.<br>• <b>D Şıkkı (Yanlış):</b> Türkiye toprakları kireçli (kalsiyumlu) olduğundan asit değil alkali karakterdedir.",
+        "tag": "#TarımıEtkileyenFaktörler"
+      },
+      {
+        "q": "Soru 98: Yağ bitkilerinden 'Kanola' (Kolza), son yıllarda Türkiye'de biyodizel yakıt üretimi ve yemeklik yağ sanayisinde kullanımı hızla artan sarı çiçekli bir tarım ürünüdür. Kanola (Yağ Bitkileri) üretimi ile ilgili aşağıda verilen bilgilerden hangisi doğrudur?",
+        "options": [
+          "Sadece Doğu Karadeniz'in en yüksek dağlarında yetişen endemik bir çiçektir.",
+          "Trakya (Marmara) başta olmak üzere, kış ılıklığı olan iç ve kıyı bölgelerimizde ekim alanları hızla genişleyen ticari bir yağ bitkisidir.",
+          "Zehirli yaprakları nedeniyle Türkiye'de ekimi tamamen yasaklanmıştır.",
+          "Sadece yaz aylarında çöl ikliminde yetişebilen tropikal bir ottur."
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Kanola (kolza), Trakya Bölgesi (Tekirdağ, Edirne) başta olmak üzere sulama ve iklim koşullarına uyum yeteneğiyle Türkiye'de son yıllarda üretimi en çok teşvik edilen yağ bitkilerindendir. Çiçeklerindeki yüksek yağ oranı hem biyodizel yakıt hem de gıda sanayisi için çok değerlidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Endemik değildir, tüm dünyada tarımı yapılan bir kültür bitkisidir.<br>• <b>B Şıkkı (Doğru):</b> Trakya kanola tarımının Türkiye'deki öncüsüdür ve ekimi yaygınlaşmaktadır.<br>• <b>C Şıkkı (Yanlış):</b> Yasak değildir, devlet destekli ekilmektedir.<br>• <b>D Şıkkı (Yanlış):</b> Orta kuşağın serin karasal ve geçiş iklimlerine uyumludur.",
+        "tag": "#YağBitkileri"
+      },
+      {
+        "q": "Soru 99: Yumrulu tarım ürünlerinden 'Kırmızı Turp', zengin C vitamini ve mineral yapısıyla kış aylarında tüketilen çok değerli bir sebzedir. Türkiye'de kırmızı turp (Yumrulu Ve Baklagiller) üretiminin yaklaşık %70'ini tek başına karşılayan, akarsu biriktirme ovalarındaki gevşek toprak yapısıyla ünlü olan Akdeniz yöresi ve ilimiz hangisidir?",
+        "options": [
+          "Osmaniye - Kadirli ilçesi (Çukurova havzası)",
+          "Isparta - Eğirdir yöresi",
+          "Muğla - Bodrum kıyıları",
+          "Antalya - Alanya ilçesi"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Osmaniye'nin Kadirli ilçesi (Savrun Çayı vadisi alüvyal toprakları), Türkiye kırmızı turp üretiminin ezici çoğunluğunu tek başına karşılar. Kadirli turpu coğrafi işaretli tescilli bir ürün olup yöre halkının en büyük geçim kaynağıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Kadirli alüvyal gevşek toprakları ve su bolluğu kırmızı turp tarımı için Türkiye'nin rakipsiz merkezidir.<br>• <b>B Şıkkı (Yanlış):</b> Eğirdir elma üretimiyle ünlüdür.<br>• <b>C Şıkkı (Yanlış):</b> Bodrum turizme dayalıdır.<br>• <b>D Şıkkı (Yanlış):</b> Alanya muz üreticisidir.",
+        "tag": "#YumruluVeBaklagiller"
+      },
+      {
+        "q": "Soru 100: Geleneksel ipek böcekçiliğinin (İpek Böcekçiliği) sürdürülmesi, somut olmayan kültürel mirasın (ipek halıcılığı, el dokuması kumaşlar) korunması açısından yaşamsal önemdedir. Türkiye'de el dokuması ipek halıcılığının dünyaca ünlü olduğu ve ipek ipliği hammaddesinin koza köylerinden sağlandığı tescilli tarihi merkezimiz hangisidir?",
+        "options": [
+          "Nevşehir - Ürgüp",
+          "Kocaeli - Hereke",
+          "İzmir - Ödemiş",
+          "Şanlıurfa - Harran"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Kocaeli'nin Hereke beldesi, dünyaca ünlü yüzde yüz ipek el dokuması Hereke halılarının tarihi merkezidir. Osmanlı saraylarına halı dokuyan bu merkez, günümüzde de Hereke ipek halısıyla dünya markasıdır. İpek iplik ihtiyacının önemli kısmı koza köylerinden gelen doğal ipekle karşılanır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Ürgüp volkanik taş el sanatlarıyla ünlüdür, Hereke ipek halısı kadar tescilli ipek halıcılığı yoktur.<br>• <b>B Şıkkı (Doğru):</b> Hereke, dünya saraylarını süsleyen o meşhur çift düğümlü incecik ipek halıların yegane anavatanıdır.<br>• <b>C Şıkkı (Yanlış):</b> Ödemiş ipek dokuma beziyle ünlüdür ama Hereke düzeyinde devasa bir tescilli halıcılık markası değildir.<br>• <b>D Şıkkı (Yanlış):</b> Harran kerpiç evleriyle ünlüdür.",
+        "tag": "#İpekBöcekçiliği"
       }
     ]
   }
