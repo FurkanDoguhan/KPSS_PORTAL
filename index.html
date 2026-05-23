@@ -34,11 +34,20 @@
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #475569; }
         
+        /* --- PRINT STYLES FOR PROFESSIONALLY FORMATTED KPSS REPORT --- */
         @media print {
-            body * { visibility: hidden; background: white !important; color: black !important; }
-            #view-notebook, #view-notebook * { visibility: visible; }
-            #view-notebook { position: absolute; left: 0; top: 0; width: 100%; }
+            body { background: white !important; color: black !important; font-family: 'Inter', sans-serif !important; font-size: 11px !important; }
+            body * { visibility: hidden; }
+            #print-report-wrapper, #print-report-wrapper * { visibility: visible; }
+            #print-report-wrapper { position: absolute; left: 0; top: 0; width: 100%; display: block !important; }
             .no-print { display: none !important; }
+            .print-page-break { page-break-after: always; }
+            .print-avoid-break { page-break-inside: avoid; }
+            .print-card { border: 1px solid #e2e8f0 !important; background: #f8fafc !important; color: black !important; padding: 16px !important; border-radius: 12px !important; margin-bottom: 12px !important; }
+            .print-header { border-bottom: 2px solid #0f172a !important; padding-bottom: 8px !important; margin-bottom: 16px !important; }
+            .print-accent-bar { border-left: 4px solid #4f46e5 !important; padding-left: 12px !important; }
+            .print-grid { display: grid !important; grid-template-cols: repeat(4, 1fr) !important; gap: 12px !important; }
+            .print-stat-box { border: 1px solid #e2e8f0 !important; border-radius: 8px !important; padding: 10px !important; text-align: center !important; }
         }
     </style>
     <script src="tarih_db.json"></script>
@@ -100,6 +109,10 @@
                 <button onclick="openAnalysisCenter()" class="w-full py-2 bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 text-slate-300 font-bold text-[11px] rounded-xl transition-all flex justify-start items-center px-4 gap-2.5 cursor-pointer hover-glow">
                     <i class="fa-solid fa-chart-pie text-amber-500"></i> AI Analiz Merkezi & Raporlar
                 </button>
+                
+                <button onclick="openMapAtlasView()" class="w-full py-2 bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 text-slate-300 font-bold text-[11px] rounded-xl transition-all flex justify-start items-center px-4 gap-2.5 cursor-pointer hover-glow">
+                    <i class="fa-solid fa-map-location-dot text-emerald-400"></i> ÖSYM Coğrafya Harita Atlası
+                </button>
             </div>
 
             <div class="glass-card p-4 rounded-2xl space-y-3">
@@ -112,6 +125,37 @@
                     <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800/60">
                         <div class="text-[9px] text-slate-500 font-black uppercase tracking-wider">Başarı Oranı</div>
                         <div id="stats-ratio" class="text-base font-black text-emerald-400 mt-0.5">0%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 🏆 GÜNLÜK GÖREVLER VE GAMIFICATION -->
+            <div class="glass-card p-4 rounded-2xl space-y-3">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-fire text-orange-500 animate-pulse"></i> Günlük Görevler</h3>
+                    <span id="lbl-streak-badge" class="text-[10px] font-black text-orange-400 bg-orange-950/40 border border-orange-900/60 px-2 py-0.5 rounded-lg flex items-center gap-1"><i class="fa-solid fa-fire text-orange-500"></i> <span id="txt-streak-count">0</span> Gün</span>
+                </div>
+                <div class="space-y-2 text-[11px]">
+                    <div class="flex justify-between items-center text-slate-300 p-2 bg-slate-950/40 rounded-lg border border-slate-850">
+                        <span class="font-semibold">🎯 Soru Avcısı (0/30)</span>
+                        <span id="lbl-mission-1-state" class="text-[9px] font-bold text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded">0%</span>
+                    </div>
+                    <div class="flex justify-between items-center text-slate-300 p-2 bg-slate-950/40 rounded-lg border border-slate-850">
+                        <span class="font-semibold">🎴 Kart Dedektifi (0/10)</span>
+                        <span id="lbl-mission-2-state" class="text-[9px] font-bold text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded">0%</span>
+                    </div>
+                    <div class="flex justify-between items-center text-slate-300 p-2 bg-slate-950/40 rounded-lg border border-slate-850">
+                        <span class="font-semibold">📖 Hata Bükücü (0/3)</span>
+                        <span id="lbl-mission-3-state" class="text-[9px] font-bold text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded">0%</span>
+                    </div>
+                </div>
+                <div class="space-y-1">
+                    <div class="flex justify-between text-[9px] font-bold text-slate-500 uppercase tracking-wider">
+                        <span>Günlük Verimlilik</span>
+                        <span id="txt-daily-energy-percent">0%</span>
+                    </div>
+                    <div class="w-full bg-slate-900 h-2 rounded-full overflow-hidden border border-slate-800">
+                        <div id="bar-daily-energy" class="bg-gradient-to-r from-orange-500 to-amber-500 h-full w-0 transition-all duration-300 shadow-[0_0_8px_rgba(245,158,11,0.5)]"></div>
                     </div>
                 </div>
             </div>
@@ -128,6 +172,7 @@
                     <button onclick="switchMode('cards')" id="btn-mode-cards" class="flex-1 sm:flex-none px-4 py-1.5 rounded-md bg-slate-800 text-white shadow-xs cursor-pointer">Kartlar</button>
                     <button onclick="switchMode('quiz')" id="btn-mode-quiz" class="flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer">Soru Bankası</button>
                     <button onclick="switchMode('notes')" id="btn-mode-notes" class="flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer">Konu Özetleri</button>
+                    <button onclick="switchMode('exam')" id="btn-mode-exam" class="flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer">Deneme Sınavı</button>
                 </div>
             </div>
 
@@ -143,6 +188,9 @@
                         </button>
                         <button onclick="startTopicTaramaTest()" id="btn-start-topic-tarama" class="flex-1 lg:flex-none px-4.5 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-[10px] font-black rounded-xl shadow-lg hover:from-indigo-500 hover:to-purple-500 transition-all flex items-center justify-center gap-2 cursor-pointer hover-glow">
                             <i class="fa-solid fa-bolt"></i> ZAYIF KONULARDAN YENİ SORULARLA TARAMA (AI)
+                        </button>
+                        <button onclick="generateWeeklyPerformancePDF()" class="flex-1 lg:flex-none px-4.5 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-[10px] font-black rounded-xl shadow-lg hover:from-emerald-500 hover:to-teal-500 transition-all flex items-center justify-center gap-2 cursor-pointer hover-glow">
+                            <i class="fa-solid fa-file-pdf"></i> HAFTALIK GELİŞİM RAPORU (PDF)
                         </button>
                     </div>
                 </div>
@@ -163,6 +211,36 @@
                                 <div id="bar-notebook-capacity" class="bg-rose-500 h-full w-0 transition-all duration-300"></div>
                             </div>
                             <span id="txt-notebook-capacity" class="text-[10px] text-slate-400 font-mono mt-1 block">0 Soru</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 📊 SVG GRAFİK VE HIZ ANALİZİ PANELİ -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                    <div class="lg:col-span-2 p-4 bg-slate-900 rounded-xl border border-slate-800 space-y-3">
+                        <h4 class="text-xs font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-chart-bar"></i> Son 7 Günlük Soru Çözüm Grafiği</h4>
+                        <div class="w-full flex justify-center py-2 bg-slate-950/40 rounded-xl border border-slate-850">
+                            <svg id="svg-weekly-chart" class="w-full h-36" viewBox="0 0 420 144" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Dinamik oluşturulacak -->
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-slate-900 rounded-xl border border-slate-800 space-y-4 flex flex-col justify-between border-l-4 border-l-amber-500">
+                        <div>
+                            <h4 class="text-xs font-bold text-amber-500 uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-stopwatch"></i> Zaman Yönetimi & Çözüm Hızı</h4>
+                            <div class="text-center py-3 bg-slate-950/40 rounded-xl border border-slate-850 mt-2.5">
+                                <span id="txt-avg-solve-time" class="font-mono text-2xl font-black text-white">0.0<span class="text-xs font-normal text-slate-500"> sn/soru</span></span>
+                            </div>
+                            <p id="txt-solve-speed-coach" class="text-[11px] text-slate-400 mt-2.5 italic leading-relaxed">Çözüm hızınızı ölçmek için soru bankasından test çözün.</p>
+                        </div>
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-[9px] font-bold text-slate-500 uppercase tracking-wider">
+                                <span>Zaman Verimlilik Skoru</span>
+                                <span id="txt-time-efficiency-percent">0%</span>
+                            </div>
+                            <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden border border-slate-800">
+                                <div id="bar-time-efficiency" class="bg-amber-500 h-full w-0 transition-all duration-300"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -286,6 +364,193 @@
                     </div>
                 </div>
             </div>
+
+            <!-- ⏱️ DENEME SINAVI GÖRÜNÜMÜ -->
+            <div id="view-exam" class="hidden space-y-4">
+                <!-- Sınav Giriş Ekranı -->
+                <div id="exam-start-panel" class="bg-slate-950/80 p-8 rounded-2xl border border-slate-800 space-y-6 backdrop-blur-md shadow-2xl text-center">
+                    <div class="w-16 h-16 bg-gradient-to-tr from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center text-slate-950 text-2xl mx-auto shadow-lg shadow-orange-500/20">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-lg font-black text-white">KPSS Karma Deneme Sınavı</h3>
+                        <p class="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">
+                            ÖSYM sınav normlarında, 3 üniteden rastgele seçilmiş <b>27 Tarih</b> ve <b>18 Coğrafya</b> sorusundan oluşan 45 soruluk karma deneme sınavı.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3 max-w-sm mx-auto text-center text-[10px] font-bold">
+                        <div class="p-3 bg-slate-900 rounded-xl border border-slate-850">
+                            <div class="text-amber-400 text-sm font-black">45</div>
+                            <div class="text-slate-500 mt-0.5">SORU</div>
+                        </div>
+                        <div class="p-3 bg-slate-900 rounded-xl border border-slate-850">
+                            <div class="text-indigo-400 text-sm font-black">45 dk</div>
+                            <div class="text-slate-500 mt-0.5">SÜRE</div>
+                        </div>
+                        <div class="p-3 bg-slate-900 rounded-xl border border-slate-850">
+                            <div class="text-emerald-400 text-sm font-black">-0.25</div>
+                            <div class="text-slate-500 mt-0.5">NET KATSAYISI</div>
+                        </div>
+                    </div>
+                    <div class="pt-2">
+                        <button onclick="startDenemeExam()" class="px-8 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-black text-xs rounded-xl shadow-lg shadow-orange-500/20 cursor-pointer hover:scale-102 transition-all hover-glow">DENEMEYİ BAŞLAT</button>
+                    </div>
+                </div>
+
+                <!-- Aktif Sınav Paneli -->
+                <div id="exam-active-panel" class="hidden space-y-4">
+                    <div class="flex justify-between items-center bg-slate-950/80 p-3.5 rounded-xl border border-slate-800 backdrop-blur-md">
+                        <div class="flex items-center gap-3">
+                            <span id="lbl-exam-timer" class="font-mono text-xs sm:text-sm font-black text-rose-400 bg-rose-950/30 px-3 py-1.5 rounded-xl border border-rose-900/50 flex items-center gap-1.5"><i class="fa-solid fa-hourglass-half text-xs animate-spin"></i> 45:00</span>
+                            <span id="lbl-exam-progress" class="text-xs font-bold text-slate-400">Soru 1 / 45</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="toggleExamFocusMode()" id="btn-exam-focus" class="px-3 py-1.5 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 font-bold text-[10px] rounded-lg transition-all flex items-center gap-1.5 cursor-pointer" title="Odaklanma Modu (Arayüzü Sadeleştir)">
+                                <i class="fa-solid fa-eye-slash text-amber-500"></i> ODAKLANMA MODU
+                            </button>
+                            <button onclick="finishExamEarly()" class="px-3 py-1.5 bg-rose-950/40 hover:bg-rose-900/40 border border-rose-900/50 text-rose-300 font-bold text-[10px] rounded-lg transition-all cursor-pointer">
+                                SINAVI BİTİR
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Sınav Kartı -->
+                    <div class="bg-slate-950/80 p-6 rounded-2xl border border-slate-800 space-y-6 backdrop-blur-md shadow-2xl">
+                        <div class="flex justify-between items-center text-[10px] font-bold uppercase tracking-wider text-slate-500 pb-3 border-b border-slate-900">
+                            <span id="lbl-exam-lesson-badge" class="px-2.5 py-0.5 rounded">DERS</span>
+                            <div class="flex items-center gap-1 bg-slate-900 px-2 py-1 rounded-md border border-slate-800">
+                                <span class="text-slate-400 text-[9px] mr-1">ÖSYM ZORLUK:</span>
+                                <div id="box-exam-difficulty-stars" class="flex text-amber-500 text-[10px]"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span id="lbl-exam-question-tag" class="inline-block text-[10px] font-black text-indigo-400 bg-indigo-950/40 border border-indigo-900/60 px-2 py-0.5 rounded-md mb-2">#Kazanım</span>
+                            <h3 id="txt-exam-q" class="text-sm sm:text-base font-bold text-slate-100 leading-relaxed">Soru Metni...</h3>
+                        </div>
+
+                        <div id="exam-options-box" class="space-y-2.5"></div>
+
+                        <div class="flex justify-between pt-4 border-t border-slate-900">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sınav Sonuç Paneli -->
+                <div id="exam-result-panel" class="hidden bg-slate-950/80 p-8 rounded-2xl border border-slate-800 space-y-6 backdrop-blur-md shadow-2xl animate-fadeIn">
+                    <div class="text-center space-y-2 border-b border-slate-800 pb-4">
+                        <h3 class="text-lg font-black text-white flex items-center justify-center gap-2"><i class="fa-solid fa-trophy text-amber-500 animate-bounce"></i> Deneme Sınav Karnesi</h3>
+                        <p class="text-xs text-slate-400">Deneme sınavı başarı istatistikleriniz</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-slate-900 p-4 rounded-xl border border-slate-850 text-center">
+                            <div class="text-[9px] text-slate-500 font-bold uppercase tracking-wider">DOĞRU</div>
+                            <div id="txt-exam-correct" class="text-xl font-black text-emerald-400 mt-1">0</div>
+                        </div>
+                        <div class="bg-slate-900 p-4 rounded-xl border border-slate-850 text-center">
+                            <div class="text-[9px] text-slate-500 font-bold uppercase tracking-wider">YANLIŞ</div>
+                            <div id="txt-exam-wrong" class="text-xl font-black text-rose-400 mt-1">0</div>
+                        </div>
+                        <div class="bg-slate-900 p-4 rounded-xl border border-slate-850 text-center">
+                            <div class="text-[9px] text-slate-500 font-bold uppercase tracking-wider">BOŞ</div>
+                            <div id="txt-exam-empty" class="text-xl font-black text-slate-400 mt-1">0</div>
+                        </div>
+                        <div class="bg-indigo-950/40 p-4 rounded-xl border border-indigo-900/50 text-center border-l-4 border-l-indigo-500 shadow-md">
+                            <div class="text-[9px] text-indigo-400 font-black uppercase tracking-wider">KPSS NET</div>
+                            <div id="txt-exam-net" class="text-xl font-black text-white mt-1">0.00</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-slate-900/80 rounded-xl border border-slate-800 space-y-2 text-xs leading-relaxed text-slate-300">
+                        <h4 class="font-bold text-white flex items-center gap-1.5"><i class="fa-solid fa-circle-info text-indigo-400"></i> Hata Analiz ve Gelişim Rehberi</h4>
+                        <p>Deneme sınavında yaptığınız tüm yanlış sorular otomatik olarak <b>Hata Defteri</b>'nize kaydedilmiştir. Şık analizlerini ve detaylı çözümlerini Hata Defterinizden inceleyebilirsiniz.</p>
+                        <p>Ayrıca <b>AI Analiz Paneli</b>'ndeki "Zayıf Konulardan Yeni Sorularla Tarama" butonu ile denemede takıldığınız kavramlara ait benzer diğer soruları tarayabilirsiniz.</p>
+                    </div>
+
+                    <div class="flex justify-center pt-2 gap-4">
+                        <button onclick="switchMode('cards')" class="px-6 py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 font-bold text-xs rounded-xl cursor-pointer">Ana Sayfaya Dön</button>
+                        <button onclick="startDenemeExam()" class="px-6 py-2.5 bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-black text-xs rounded-xl shadow-md cursor-pointer">Yeni Deneme Başlat</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 🗺️ ÖSYM COĞRAFYA HARİTA ATLASI -->
+            <div id="view-map-atlas" class="hidden bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-6 animate-fadeIn">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-800 pb-4">
+                    <div>
+                        <h3 class="text-base font-black text-white flex items-center gap-2"><i class="fa-solid fa-map-location-dot text-emerald-400"></i> ÖSYM Coğrafya Harita Atlası</h3>
+                        <p class="text-[11px] text-slate-400">ÖSYM'nin en çok soru sorduğu kritik coğrafi sıcak noktaları ve tematik harita katmanlarını interaktif olarak çalışın.</p>
+                    </div>
+                    <button onclick="switchMode('cards')" class="text-xs text-slate-500 hover:text-slate-200 cursor-pointer">Geri Dön</button>
+                </div>
+
+                <!-- Harita Katmanı Seçici -->
+                <div class="flex flex-wrap gap-2 justify-center p-1 bg-slate-900 rounded-xl border border-slate-800">
+                    <button onclick="switchMapTheme('deprem')" id="btn-theme-deprem" class="flex-1 text-[10px] sm:text-xs font-black py-2 px-3 rounded-lg bg-emerald-500 text-slate-950 shadow-sm cursor-pointer transition-all hover:scale-102">DEPREM & FAY HATLARI</button>
+                    <button onclick="switchMapTheme('karstik')" id="btn-theme-karstik" class="flex-1 text-[10px] sm:text-xs font-black py-2 px-3 rounded-lg text-slate-400 hover:text-slate-200 cursor-pointer transition-all hover:scale-102">KARSTİK ŞEKİLLER & PLATOLAR</button>
+                    <button onclick="switchMapTheme('delta')" id="btn-theme-delta" class="flex-1 text-[10px] sm:text-xs font-black py-2 px-3 rounded-lg text-slate-400 hover:text-slate-200 cursor-pointer transition-all hover:scale-102">DELTA OVALARI & AKARSU</button>
+                    <button onclick="switchMapTheme('kıyı')" id="btn-theme-kıyı" class="flex-1 text-[10px] sm:text-xs font-black py-2 px-3 rounded-lg text-slate-400 hover:text-slate-200 cursor-pointer transition-all hover:scale-102">KIYI TİPLERİ & TOMBOLO</button>
+                    <button onclick="switchMapTheme('nüfus')" id="btn-theme-nüfus" class="flex-1 text-[10px] sm:text-xs font-black py-2 px-3 rounded-lg text-slate-400 hover:text-slate-200 cursor-pointer transition-all hover:scale-102">NÜFUS & TENHA YÖRELER</button>
+                </div>
+
+                <!-- İnteraktif Harita Arayüzü -->
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-6">
+                    <div class="lg:col-span-3 relative flex flex-col justify-center items-center p-4 bg-slate-900 rounded-xl border border-slate-800 h-80 overflow-hidden">
+                        <div class="w-full h-full relative" id="box-turkey-map">
+                            <svg class="w-full h-full" viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M 30,110 Q 50,60 120,65 T 250,55 T 380,60 T 470,80 Q 485,120 455,160 T 360,175 T 220,180 T 110,165 Z" fill="#151d30" stroke="#334155" stroke-width="2" />
+                                
+                                <path id="map-line-kaf" d="M 40,80 Q 150,70 280,85 T 450,90" fill="none" stroke="#ef4444" stroke-width="2.5" class="transition-all duration-300 opacity-80 pointer-events-none" />
+                                <path id="map-line-daf" d="M 280,180 Q 320,135 380,120 T 450,90" fill="none" stroke="#ef4444" stroke-width="2" class="transition-all duration-300 opacity-80 pointer-events-none" />
+                                <path id="map-line-baf" d="M 35,90 L 50,115 M 40,110 L 60,135 M 45,130 L 65,155" fill="none" stroke="#ef4444" stroke-width="1.5" class="transition-all duration-300 opacity-80 pointer-events-none" />
+                                
+                                <circle cx="100" cy="160" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('teke')" />
+                                <circle cx="170" cy="170" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('taseli')" />
+                                <circle cx="230" cy="155" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('cukurova')" />
+                                <circle cx="390" cy="85" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('dogu-karadeniz')" />
+                                <circle cx="260" cy="62" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('sinop-inceburun')" />
+                                <circle cx="75" cy="55" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('yildiz-daglari')" />
+                                <circle cx="50" cy="155" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('mentese')" />
+                                <circle cx="205" cy="115" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('tuz-golu')" />
+                                <circle cx="450" cy="135" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('hakkari')" />
+                                <circle cx="115" cy="65" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('catalca-kocaeli')" />
+                                <circle cx="295" cy="70" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('samsun-deltalar')" />
+                                <circle cx="85" cy="172" r="8" fill="#f59e0b" class="cursor-pointer hover:scale-125 transition-transform animate-pulse" onclick="clickMapHotspot('kas-kekova')" />
+
+                                <text x="100" y="148" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">Teke</text>
+                                <text x="170" y="158" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">Taşeli</text>
+                                <text x="230" y="143" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">Çukurova</text>
+                                <text x="390" y="73" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">D.Karadeniz</text>
+                                <text x="260" y="50" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">Sinop</text>
+                                <text x="75" y="43" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">Yıldız D.</text>
+                                <text x="50" y="143" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">Menteşe</text>
+                                <text x="205" y="103" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">Tuz Gölü</text>
+                                <text x="450" y="123" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">Hakkari</text>
+                                <text x="115" y="53" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">İstanbul</text>
+                                <text x="295" y="58" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">Samsun</text>
+                                <text x="85" y="186" fill="#94a3b8" font-size="8" font-weight="black" font-family="sans-serif" text-anchor="middle" pointer-events="none">Kaş</text>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-2 p-5 bg-slate-900 rounded-xl border border-slate-800 flex flex-col justify-between h-80 overflow-y-auto">
+                        <div id="map-info-box" class="space-y-4">
+                            <div class="text-center py-16 text-slate-500 italic text-xs">
+                                <i class="fa-solid fa-hand-pointer text-slate-700 text-3xl mb-2 block"></i>
+                                Harita üzerindeki turuncu sıcak noktalara tıklayarak ilgili konu hakkındaki ÖSYM çıkmış analizlerini ve coğrafi özelliklerini inceleyin.
+                            </div>
+                        </div>
+                        <div class="text-[9px] text-slate-500 border-t border-slate-850 pt-2 text-center font-semibold">
+                            💡 Harita temaları değiştikçe, fay hatları gibi katmanlar otomatik güncellenir.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 📑 PDF YAZDIRMA ŞABLONU (YALNIZCA YAZICIDA GÖRÜNÜR) -->
+            <div id="print-report-wrapper" class="hidden"></div>
         </div>
     </main>
 
@@ -306,11 +571,32 @@
         let timerState = 'idle'; // 'idle', 'running', 'paused'
         let timerMode = 'work'; // 'work', 'short', 'long'
         let isTaramaTestMode = false;
-        let originalTitle = "KPSS Ultra Entegre Portal v15.0";
+        let originalTitle = "KPSS Ultra Entegre Portal v17.0";
 
         let kpssNotebook = JSON.parse(localStorage.getItem('kpss_furkan_notebook')) || [];
         let globalStats = JSON.parse(localStorage.getItem('kpss_global_stats')) || { solved: 0, correct: 0 };
         let isVoiceActive = JSON.parse(localStorage.getItem('kpss_voice_active')) || false;
+
+        // --- PREMIUM ANALYTICS, GAMIFICATION & EXAM VARIABLES ---
+        let isExamMode = false;
+        let examQuestions = [];
+        let examIdx = 0;
+        let examAnswers = [];
+        let examTimerInstance = null;
+        let examTimerSeconds = 2700;
+        let isExamFocusMode = false;
+        
+        // --- PREMIUM MAP ATLAS VARIABLES ---
+        let currentMapTheme = "deprem";
+        
+        let dailyMissions = JSON.parse(localStorage.getItem('kpss_daily_missions')) || { solved: 0, cards: 0, notes: 0, date: "" };
+        let streakCount = JSON.parse(localStorage.getItem('kpss_streak_count')) || 0;
+        let lastActiveDate = localStorage.getItem('kpss_last_active_date') || "";
+        let dailyStats = JSON.parse(localStorage.getItem('kpss_daily_stats')) || {};
+        
+        let questionStartTime = 0;
+        let totalSolvedTime = JSON.parse(localStorage.getItem('kpss_total_solved_time')) || 0;
+        let totalSolvedCount = JSON.parse(localStorage.getItem('kpss_total_solved_count')) || 0;
 
         function saveStateToStorage() {
             localStorage.setItem('kpss_furkan_notebook', JSON.stringify(kpssNotebook));
@@ -601,6 +887,7 @@
             if(targetContent) {
                 embedPanel.classList.remove("hidden");
                 embedText.innerHTML = targetContent;
+                recordNoteRead();
                 embedPanel.scrollIntoView({ behavior: 'smooth' });
             } else {
                 alert(`ℹ️ #${pureTag} etiketi için ek ders notu özeti henüz yazılmamış veya veritabanı dosyası eksik.`);
@@ -892,17 +1179,21 @@
             const btnCards = document.getElementById("btn-mode-cards");
             const btnQuiz = document.getElementById("btn-mode-quiz");
             const btnNotes = document.getElementById("btn-mode-notes");
+            const btnExam = document.getElementById("btn-mode-exam");
 
             // Hide all active main panels first
             document.getElementById("view-cards").classList.add("hidden");
             document.getElementById("view-quiz").classList.add("hidden");
             document.getElementById("view-notes").classList.add("hidden");
+            document.getElementById("view-exam").classList.add("hidden");
+            document.getElementById("view-map-atlas").classList.add("hidden");
             document.getElementById("box-group-selector").classList.add("hidden");
 
             // Reset tab styles
             if (btnCards) btnCards.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer";
             if (btnQuiz) btnQuiz.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer";
             if (btnNotes) btnNotes.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer";
+            if (btnExam) btnExam.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer";
 
             if (mode === 'cards') {
                 isTaramaTestMode = false;
@@ -920,6 +1211,17 @@
                 document.getElementById("view-notes").classList.remove("hidden");
                 if (btnNotes) btnNotes.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md bg-slate-800 text-white shadow-xs cursor-pointer";
                 renderNotesView();
+            } else if (mode === 'exam') {
+                isTaramaTestMode = false;
+                document.getElementById("view-exam").classList.remove("hidden");
+                document.getElementById("exam-start-panel").classList.remove("hidden");
+                document.getElementById("exam-active-panel").classList.add("hidden");
+                document.getElementById("exam-result-panel").classList.add("hidden");
+                if (btnExam) btnExam.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md bg-slate-800 text-white shadow-xs cursor-pointer";
+            } else if (mode === 'map-atlas') {
+                isTaramaTestMode = false;
+                document.getElementById("view-map-atlas").classList.remove("hidden");
+                document.getElementById("box-top-navbar").classList.add("hidden");
             }
         }
 
@@ -949,6 +1251,7 @@
 
         function renderQuiz() {
             document.getElementById("box-rationale").classList.add("hidden"); document.getElementById("box-embedded-note").classList.add("hidden"); answered = false;
+            questionStartTime = Date.now();
             if(activeGroupQuestions.length === 0) { document.getElementById("txt-quiz-q").textContent = "Soru bulunamadı."; document.getElementById("quiz-options-box").innerHTML = ""; return; }
             
             const activeQ = activeGroupQuestions[quizIdx];
@@ -1012,7 +1315,8 @@
 
             globalStats.solved++;
             let rawQ = activeQ.q.replace("[TARAMA] ", "").replace("[KONU TARAMA] ", "").replace("[KONU TESTİ] ", "");
-            if(selected === activeQ.correct) { 
+            const isCorrect = selected === activeQ.correct;
+            if(isCorrect) { 
                 globalStats.correct++; score++; 
                 if(kpssNotebook.some(n => n.q === rawQ)) {
                     kpssNotebook = kpssNotebook.filter(n => n.q !== rawQ);
@@ -1023,6 +1327,21 @@
                 }
             }
             saveStateToStorage();
+            
+            // --- Gamification & analytics stats triggers ---
+            recordQuestionSolved(isCorrect);
+            
+            if (questionStartTime > 0) {
+                const elapsed = (Date.now() - questionStartTime) / 1000;
+                if (elapsed < 300) {
+                    totalSolvedTime += elapsed;
+                    totalSolvedCount++;
+                    localStorage.setItem('kpss_total_solved_time', JSON.stringify(totalSolvedTime));
+                    localStorage.setItem('kpss_total_solved_count', JSON.stringify(totalSolvedCount));
+                    updateTimeEfficiencyUI();
+                }
+            }
+            
             document.getElementById("txt-quiz-rationale").innerHTML = activeQ.rationale;
             document.getElementById("box-rationale").classList.remove("hidden");
 
@@ -1089,19 +1408,737 @@
         
         function nextCard() { 
             if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-            cardIdx = (cardIdx < currentData[activeUnitIdx].cards.length - 1) ? cardIdx + 1 : 0; renderAll(); 
+            cardIdx = (cardIdx < currentData[activeUnitIdx].cards.length - 1) ? cardIdx + 1 : 0; 
+            recordCardReviewed();
+            renderAll(); 
         }
 
         function prevCard() { 
             if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-            cardIdx = (cardIdx > 0) ? cardIdx - 1 : currentData[activeUnitIdx].cards.length - 1; renderAll(); 
+            cardIdx = (cardIdx > 0) ? cardIdx - 1 : currentData[activeUnitIdx].cards.length - 1; 
+            recordCardReviewed();
+            renderAll(); 
         }
 
-        // MÜKEMMEL DOM VE DB OKUMA BAĞLANTISI (v15.0 GÜVENCESİ)
+        // --- PREMIUM MAP ATLAS ENGINE ---
+        function openMapAtlasView() {
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+            switchMode('map-atlas');
+            switchMapTheme('deprem');
+        }
+
+        function switchMapTheme(theme) {
+            currentMapTheme = theme;
+            
+            // Update button styles
+            const themes = ['deprem', 'karstik', 'delta', 'kıyı', 'nüfus'];
+            themes.forEach(t => {
+                const btn = document.getElementById(`btn-theme-${t}`);
+                if (btn) {
+                    if (t === theme) {
+                        btn.className = "flex-1 text-[10px] sm:text-xs font-black py-2 px-3 rounded-lg bg-emerald-500 text-slate-950 shadow-sm cursor-pointer transition-all";
+                    } else {
+                        btn.className = "flex-1 text-[10px] sm:text-xs font-black py-2 px-3 rounded-lg text-slate-400 hover:text-slate-200 cursor-pointer transition-all";
+                    }
+                }
+            });
+
+            // Update Fault Lines (only show in deprem mode)
+            const kaf = document.getElementById("map-line-kaf");
+            const daf = document.getElementById("map-line-daf");
+            const baf = document.getElementById("map-line-baf");
+            
+            if (theme === 'deprem') {
+                if(kaf) kaf.style.opacity = "0.8";
+                if(daf) daf.style.opacity = "0.8";
+                if(baf) baf.style.opacity = "0.8";
+            } else {
+                if(kaf) kaf.style.opacity = "0";
+                if(daf) daf.style.opacity = "0";
+                if(baf) baf.style.opacity = "0";
+            }
+
+            // Reset info box
+            const infoBox = document.getElementById("map-info-box");
+            if (infoBox) {
+                infoBox.innerHTML = `
+                    <div class="text-center py-16 text-slate-500 italic text-xs animate-fadeIn">
+                        <i class="fa-solid fa-hand-pointer text-slate-700 text-3xl mb-2 block"></i>
+                        Haritada seçilen <b>${theme.toUpperCase()}</b> katmanına göre turuncu sıcak noktalardan birine tıklayıp detayları yükleyin.
+                    </div>`;
+            }
+        }
+
+        const mapHotspotDetails = {
+            "teke": {
+                "name": "Teke Yöresi (Antalya)",
+                "deprem": "<b>⚠️ Teke Yöresi Deprem Durumu:</b> BAF veya KAF aktif levha sınırlarının uzağındadır. Tektonik deprem riski düşüktür. Ancak kalker arazilerde yeraltı mağaralarının çökmesiyle oluşan yerel <b>Çöküntü Depremleri (Karstik Depremler)</b> görülebilir.",
+                "karstik": "<b>⚠️ Karstik Şekiller & Platolar:</b> Kalker (kireçtaşı) kayaçlarının en yaygın olduğu karstik aşınım platosudur. Lapya, dolin, polye gibi karstik erime şekilleri zirvededir. Sarp ve susuz arazi kıl keçisi yetiştiriciliğinin merkezidir.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Dağlar kıyıya çok yakın ve paralel uzanır. Kıta sahanlığı son derece dar ve kıyı derin olduğundan akarsular delta ovası <b>oluşturamaz</b>.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Dağların kıyıya paralel uzandığı yüksek dikliklerde <b>Boyuna kıyı tipi</b> görülür. Dalga aşındırmasının gücüyle **falez (yalıyar)** oluşumu Karadeniz ile birlikte en fazla buradadır.",
+                "nüfus": "<b>⚠️ Nüfus ve Yerleşim:</b> Aşırı karstik engebelilik, verimli tarım topraklarının darlığı ve kireçli arazide suyun dibe sızarak yüzeyde su kıtlığı oluşturması nedeniyle <b>Türkiye'nin en tenha yörelerinden biridir</b>."
+            },
+            "taseli": {
+                "name": "Taşeli Platosu (Mersin-Antalya)",
+                "deprem": "<b>⚠️ Taşeli Yöresi Deprem Durumu:</b> Türkiye'nin deprem tehlikesinin en düşük olduğu en kararlı, yaşlı masif arazilerinden biridir (Deprem Bölgesi 5. Derece).",
+                "karstik": "<b>⚠️ Karstik Şekiller & Platolar:</b> Teke platosu gibi saf kalker arazilerden oluşan aşınım platosudur. Obruk oluşumu (örn: Cennet-Cehennem obrukları) bu bölgenin en ünlü karstik morfolojisidir.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Dağların hemen kıyıdan yükselmesi ve kıta sahanlığının dar olması sebebiyle Göksu nehri dışında geniş kıyı birikimi zorlaşmıştır.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Boyuna kıyı tipi hâkimdir. Yüksek kıyılar falezli morfolojiye sahiptir.",
+                "nüfus": "<b>⚠️ Nüfus ve Yerleşim:</b> İklim koşulları ılık Akdeniz iklimi olmasına rağmen, aşırı dağlık karstik engebeler ulaşımı zorlaştırmış ve yöreyi **tenha** bırakmıştır."
+            },
+            "cukurova": {
+                "name": "Çukurova Bölgesi (Adana)",
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> DAF (Doğu Anadolu Fay Hattı) güney kollarına yakındır. Yumuşak ve gevşek alüvyal zemin yapısı deprem dalgalarının genliğini artırdığı için risk yüksektir.",
+                "karstik": "<b>⚠️ Karstik Yapı:</b> Tamamen alüvyal dolgu arazisi olduğu için karstik kayaçlar ve erime şekilleri görülmez. Geçirimsiz, verimli tarım toprakları hâkimdir.",
+                "delta": "<b>⚠️ Çukurova Delta Ovası:</b> Seyhan ve Ceyhan nehirlerinin taşıdığı alüvyonları sığ kıyıda biriktirmesiyle oluşan **Türkiye'nin en büyük delta ovasıdır**.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Sığ kıta sahanlığı nedeniyle geniş kumsallar ve alüvyal birikim kıyıları görülür. Kıta sahanlığı çok geniştir.",
+                "nüfus": "<b>⚠️ Nüfus ve Sanayi:</b> Son derece verimli tarım toprakları, tarıma dayalı sanayi kolları ve kavşak ulaşım yolları sayesinde Türkiye'nin **en yoğun nüfuslu ve en gelişmiş sanayi bölgelerindendir**."
+            },
+            "dogu-karadeniz": {
+                "name": "Doğu Karadeniz (Rize-Artvin)",
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> Kuzey Anadolu Fay Hattı'nın (KAF) kuzey kuşağında kalır. Kıyı şeridi deprem riski görece düşük masif bloklardandır.",
+                "karstik": "<b>⚠️ Karstik Yapı:</b> Bol yağışlı nemli iklim, karstik kimyasal erimeden ziyade **fiziki ve heyelan** aşındırmasını tetikler. Karstik şekiller görülmez.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Kaçkar dağları hemen kıyıdan duvar gibi yükselir. Kıta sahanlığı aşırı dardır. Bu yüzden Karadeniz nehirleri alüvyon taşısa da kıyıda delta **oluşamaz**.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Dağların kıyıya tam paralel uzanmasından ötürü **Boyuna kıyı tipi** ve devasa **falezler** hâkimdir. Kıyı girintisi azdır, doğal liman bulunmaz.",
+                "nüfus": "<b>⚠️ Nüfus ve Yerleşim:</b> Engebeli ve yüksek dağlık arazisi nedeniyle iç kesimler tenha iken, nemli iklim ve balıkçılık nedeniyle nüfus tamamen **kıyı şeridine sıkışmış** ve yoğunlaşmıştır."
+            },
+            "sinop-inceburun": {
+                "name": "Sinop İnceburun Yöresi",
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> KAF hattının kuzey güvenli kuşağındadır. Türkiye'nin tektonik olarak en kararlı, deprem tehlikesi en az olan masiflerinden biridir.",
+                "karstik": "<b>⚠️ Karstik Yapı:</b> Karstik erime kayaçları yaygın değildir, kumtaşı ve kil taşları hâkimdir.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Dağların uzanış doğrultusundan dolayı Sinop kıyısında dar kıta sahanlığı nedeniyle delta oluşamamıştır.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri & Tombolo:</b> Eski bir adanın kıyı oklarıyla ana karaya bağlanmasıyla oluşan <b>Türkiye'nin en net Tombolo (Bağlama Oku) örneğidir</b>. Sinop Limanı ise **Türkiye'nin tek doğal limanıdır**.",
+                "nüfus": "<b>⚠️ Nüfus ve Ulaşım:</b> Arkasındaki Küre dağlarının sarp yapısı iç kesimlerle ulaşımı engellediği için (hinterlandı dar) Sinop Limanı gelişememiş ve yöre **tenha** kalmıştır."
+            },
+            "yildiz-daglari": {
+                "name": "Yıldız Dağları (Kırklareli)",
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> Türkiye'nin deprem tehlikesinin en düşük olduğu yaşlı paleozoik masif kütlesidir. Oldukça güvenlidir.",
+                "karstik": "<b>⚠️ Karstik Yapı:</b> Dupnisa Mağarası gibi yerel bazı karstik mağara oluşumları barındırır ancak bölge genel olarak metamorfik masif arazidir.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Kıyıda akarsuların taşıdığı alüvyal dolgu kısıtlıdır, belirgin bir delta ovası yer almaz.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Karadeniz kıyı kuşağında yüksek boyuna kıyılar ve dik yamaçlı kıyı aşınımları görülür.",
+                "nüfus": "<b>⚠️ Nüfus ve Yerleşim:</b> İstanbul gibi devasa bir metropole sınır olmasına rağmen, sarp engebeli dağlık yapısı ve ana ulaşım yollarının dışında kalması nedeniyle **Türkiye'nin en tenha yörelerinden biridir**."
+            },
+            "mentese": {
+                "name": "Menteşe Yöresi (Muğla)",
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> BAF (Batı Anadolu Fay Hattı) deprem riski yüksek kırıklı fay zonlarına oldukça yakındır ve sık tektonik sarsıntı geçirir.",
+                "karstik": "<b>⚠️ Karstik Özellikler:</b> Karstik aşınım şekilleri ve kireçtaşları yaygındır, karstik kaynaklar ve mağaralar mevcuttur.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Ege genelinde dağlar denize dik uzanırken, Menteşe'de kıyıya **paralel** uzanır. Bu yüzden kıta sahanlığı dardır ve delta oluşumu zordur.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Eski vadilerin sular altında kalmasıyla oluşan Türkiye'nin en net <b>Ria kıyı tipi</b> örnekleri buradadır (Bodrum-Marmaris kıyıları).",
+                "nüfus": "<b>⚠️ Nüfus ve Engebe:</b> İklim ve turizm çok gelişmiş olmasına rağmen, dağların sarp kıvrımlı yapısı ve engebeli yerşekilleri nedeniyle **tenha nüfuslu** bir yöredir."
+            },
+            "tuz-golu": {
+                "name": "Tuz Gölü Havzası",
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> Levha ortasında kalır. Fay hatlarına nispeten uzak olduğu için deprem tehlikesi görece az kararlı alanlardandır.",
+                "karstik": "<b>⚠️ Karstik Özellikler:</b> Jips (alçıtaşı) ve kaya tuzu erime şekilleri yaygındır. Özellikle Konya Karapınar çevresindeki yer altı çöküntüleriyle oluşan **Obruklar** coğrafyanın temel konusudur.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Tamamen karasal bir kapalı havzadır. Deniz olmadığı için delta oluşumu söz konusu değildir.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Kıyı morfolojisi bulunmaz, eski sığ göl birikim ovaları mevcuttur.",
+                "nüfus": "<b>⚠️ Nüfus ve Kuraklık:</b> Yıllık yağış miktarının Türkiye'de en az olduğu (kuraklık ve buharlaşmanın yüksek olduğu) yer olması sebebiyle **tenha nüfuslu** bir havzadır."
+            },
+            "hakkari": {
+                "name": "Hakkari Yöresi (Cilo-Sat Dağları)",
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> DAF (Doğu Anadolu Fay) aktif zonunun doğu ucundadır. Yüksek ve aktif bindirme hatları nedeniyle **tektonik deprem riski çok yüksektir**.",
+                "karstik": "<b>⚠️ Karstik Yapı:</b> Karstik erime kayaçları sınırlıdır, genellikle kristalin şistler ve volkanik-metamorfik dağlar yaygındır.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Tamamen karasal, aşırı yüksek dağlık arazidir. Nehirler derine aşındırma (çentik vadi) yapar.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Deniz kıyısı bulunmaz, sarp buzul vadileri mevcuttur.",
+                "nüfus": "<b>⚠️ Nüfus ve Yükseklik:</b> Aşırı yükseklik (ortalama 2500m üstü), sert kış iklimi, sarp yerşekilleri ve ulaşım yollarına uzaklık nedeniyle **Türkiye'nin en tenha bölgesidir**."
+            },
+            "catalca-kocaeli": {
+                "name": "Çatalca-Kocaeli Platosu",
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> KAF (Kuzey Anadolu Fay Hattı) güney Marmara geçişine çok yakındır. Sanayi yoğunluğu nedeniyle deprem hassasiyeti ve riski çok yüksektir.",
+                "karstik": "<b>⚠️ Karstik Yapı:</b> Kalker araziler kısıtlıdır, aşınım düzlüğü killi tortulları yaygındır.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Belirgin bir delta ovası olmasa da kıta sahanlığı geniştir, sığ kıyı birikimleri mevcuttur.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Eski vadilerin boğaz haline gelmesiyle oluşan **Ria kıyı tipi** (İstanbul Boğazı ve Haliç) bu bölgenin can damarıdır.",
+                "nüfus": "<b>⚠️ Nüfus ve Sanayi:</b> Engebeliğin en az olduğu en alçak **aşınım platosudur**. Sanayi, ticaret, ulaşım ve nüfusun **Türkiye'de en yoğun olduğu** zirve merkezdir."
+            },
+            "samsun-deltalar": {
+                "name": "Samsun Deltaları (Bafra ve Çarşamba)",
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> KAF hattı Samsun'un güneyinden geçer. Delta ovası gevşek zeminli olduğu için deprem sarsıntısını büyütme potansiyeline sahiptir.",
+                "karstik": "<b>⚠️ Karstik Şekiller:</b> Tamamen alüvyal akarsu birikim sahasıdır, karstik erime şekilleri görülmez.",
+                "delta": "<b>⚠️ Delta Ovaları:</b> Kızılırmak'ın taşıdığı alüvyonlarla **Bafra Delta Ovası**'nı, Yeşilırmak'ın taşıdığı alüvyonlarla ise **Çarşamba Delta Ovası**'nı oluşturduğu verimli tarım sahasıdır.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Karadeniz genelinde kıta sahanlığı dar iken, Samsun çevresinde Canik dağlarının alçak ve geride olması nedeniyle kıta sahanlığı geniştir, delta ovaları kolayca oluşmuştur.",
+                "nüfus": "<b>⚠️ Nüfus ve Tarım:</b> İki devasa alüvyal delta ovası sayesinde tarım ve tarımsal sanayi çok gelişmiş, bu da Karadeniz'in en yoğun nüfuslu sanayi/tarım kentini ortaya çıkarmıştır."
+            },
+            "kas-kekova": {
+                "name": "Kaş-Kekova Kıyıları (Antalya)",
+                "deprem": "<b>⚠️ Deprem Riskleri:</b> Helenik yayına ve Akdeniz kırık hatlarına yakındır, deprem riski orta-yüksek kategorisindedir.",
+                "karstik": "<b>⚠️ Karstik Şekiller:</b> Batı Torosların uzantısı olan kireçli, karstik erime arazileridir. Kanyon vadiler ve yer altı akiferleri yaygındır.",
+                "delta": "<b>⚠️ Delta Oluşumu:</b> Sarp dikliklerden ötürü kıta sahanlığı dar, kıyı derindir; delta oluşumu imkansızdır.",
+                "kıyı": "<b>⚠️ Kıyı Tipleri:</b> Kıyıya paralel uzanan sıra dağların arasındaki vadilerin deniz istilasıyla dolmasıyla oluşan **Türkiye'nin tek Dalmaçya kıyı tipi** örneğidir. Yüzlerce adacık yer alır.",
+                "nüfus": "<b>⚠️ Nüfus ve Turizm:</b> Dağlık sarp yapısından ötürü tarım kısıtlı olduğundan nüfusu tenha kalmış, ancak elit deniz turizmi ve dalış sporlarının merkezi olmuştur."
+            }
+        };
+
+        function clickMapHotspot(key) {
+            const detail = mapHotspotDetails[key];
+            if (!detail) return;
+            
+            const infoBox = document.getElementById("map-info-box");
+            if (!infoBox) return;
+            
+            const noteText = detail[currentMapTheme] || "Seçilen kategori için not bulunamadı.";
+            
+            infoBox.innerHTML = `
+                <div class="space-y-3 animate-fadeIn">
+                    <div class="border-b border-slate-800 pb-2 flex justify-between items-center">
+                        <h4 class="text-xs font-black text-emerald-405 flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-emerald-400"></i> ${detail.name}</h4>
+                        <span class="text-[9px] font-black text-indigo-400 bg-indigo-950/40 border border-indigo-900/60 px-2 py-0.5 rounded uppercase tracking-wider">${currentMapTheme.toUpperCase()}</span>
+                    </div>
+                    <div class="text-[11px] text-slate-300 leading-relaxed">${noteText}</div>
+                    <div class="pt-2">
+                        <button onclick="speakText('${detail.name}. ' + '${noteText.replace(/<\/?[^>]+(>|$)/g, "").replace(/'/g, "\'")}')" class="w-full py-1.5 bg-slate-950 hover:bg-slate-900 border border-slate-800 text-slate-400 hover:text-white font-bold text-[10px] rounded-lg transition-all cursor-pointer flex justify-center items-center gap-1">
+                            <i class="fa-solid fa-volume-high text-indigo-400"></i> NOTU SESLENDİR
+                        </button>
+                    </div>
+                </div>`;
+                
+            // Trigger voice if active
+            if (isVoiceActive) {
+                speakText(`${detail.name}. ${noteText}`);
+            }
+        }
+
+        // --- SMART PRINT ENGINE (HAFTALIK GELİŞİM RAPORU PDF) ---
+        function generateWeeklyPerformancePDF() {
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+            
+            const printWrapper = document.getElementById("print-report-wrapper");
+            if (!printWrapper) return;
+            
+            const today = new Date().toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' });
+            const ratio = globalStats.solved > 0 ? Math.round((globalStats.correct / globalStats.solved) * 100) : 0;
+            const avgTime = totalSolvedCount > 0 ? (totalSolvedTime / totalSolvedCount) : 0;
+            
+            // Build error list
+            let errorsHtml = "";
+            let filteredErrors = kpssNotebook.filter(n => n.lesson === currentLesson);
+            if (filteredErrors.length === 0) {
+                errorsHtml = `<p class="print-text-muted italic">Kayıtlı hatalı soru bulunmamaktadır. Harika gidiyorsun!</p>`;
+            } else {
+                filteredErrors.forEach((item, idx) => {
+                    errorsHtml += `
+                        <div class="print-card print-avoid-break">
+                            <div class="flex justify-between print-text-muted text-[9px] border-b border-slate-200 pb-1 mb-2 font-bold uppercase">
+                                <span>#${idx+1} | ${item.unit}</span>
+                                <span>KAZANIM: ${item.tag || "#GenelKazanım"}</span>
+                            </div>
+                            <p class="font-bold print-text-dark text-[11px] mb-1.5 leading-relaxed">${item.q}</p>
+                            <p class="text-emerald-700 font-bold mb-1">Doğru Cevap: ${item.options[item.correct]}</p>
+                            <p class="print-text-muted text-[10px] leading-relaxed italic"><b class="print-text-dark font-bold">ÖSYM Çözüm Analizi:</b> ${item.rationale}</p>
+                        </div>`;
+                });
+            }
+            
+            // Get worst topics for printing
+            let worstTopicsHtml = "";
+            let hiyerarşi = {};
+            filteredErrors.forEach(item => { 
+                let k = item.tag || "#GenelKazanım"; 
+                hiyerarşi[k] = (hiyerarşi[k] || 0) + 1; 
+            });
+            let sortedWorst = Object.keys(hiyerarşi).sort((a,b) => hiyerarşi[b] - hiyerarşi[a]);
+            if (sortedWorst.length === 0) {
+                worstTopicsHtml = `<span class="font-bold text-emerald-700">Tespit edilen zayıf konu bulunmamaktadır.</span>`;
+            } else {
+                worstTopicsHtml = sortedWorst.slice(0, 3).map(tag => `<span class="font-bold text-rose-700 mr-3">${tag} (${hiyerarşi[tag]} Hata)</span>`).join(" ");
+            }
+
+            const lessonTitle = currentLesson === 'tarih' ? "Tarih & İlk Türk-İslam Kültürü" : "Coğrafya & Türkiye Fiziki Morfolojisi";
+            const speedCoach = avgTime < 30 ? "Mükemmel Hız (ÖSYM Sınav Ritmine Tam Uyumlu)" : (avgTime <= 60 ? "İdeal Hız (Süreyi Dengeli ve Verimli Kullanma)" : "Biraz Hızlanmalı (Soru pratikleriyle hızlanma tavsiye edilir)");
+
+            printWrapper.innerHTML = `
+                <!-- Sayfa 1: Gelişim ve Analiz Raporu -->
+                <div class="print-page-break">
+                    <div class="print-header flex justify-between items-end">
+                        <div>
+                            <h1 class="text-xl font-black print-text-dark tracking-wide">KPSS GELİŞİM & BAŞARI RAPORU</h1>
+                            <p class="text-[10px] print-text-muted">Furkan'ın Bireysel Yapay Zeka Eğitim Raporu</p>
+                        </div>
+                        <span class="text-xs font-bold print-text-muted">${today}</span>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="print-accent-bar">
+                            <h2 class="text-xs font-black print-text-dark uppercase tracking-wider">1. Genel Performans İstatistikleri</h2>
+                            <p class="text-[9px] print-text-muted mt-0.5">Seçili Ders: <b>${lessonTitle}</b></p>
+                        </div>
+
+                        <div class="print-grid">
+                            <div class="print-stat-box">
+                                <div class="text-[8px] print-text-muted font-bold uppercase">Toplam Çözülen</div>
+                                <div class="text-lg font-black print-text-dark mt-1">${globalStats.solved}</div>
+                            </div>
+                            <div class="print-stat-box">
+                                <div class="text-[8px] print-text-muted font-bold uppercase">Başarı Oranı</div>
+                                <div class="text-lg font-black text-emerald-700 mt-1">%${ratio}</div>
+                            </div>
+                            <div class="print-stat-box">
+                                <div class="text-[8px] print-text-muted font-bold uppercase">Ortalama Hız</div>
+                                <div class="text-lg font-black print-text-dark mt-1">${avgTime.toFixed(1)} sn</div>
+                            </div>
+                            <div class="print-stat-box">
+                                <div class="text-[8px] print-text-muted font-bold uppercase">Çalışma Serisi</div>
+                                <div class="text-lg font-black text-amber-700 mt-1">${streakCount} Gün</div>
+                            </div>
+                        </div>
+
+                        <div class="print-card mt-3">
+                            <h3 class="text-[10px] font-black print-text-dark mb-1.5 uppercase tracking-wider flex items-center gap-1"><i class="fa-solid fa-graduation-cap"></i> Yapay Zeka Gelişim ve Koçluk Raporu</h3>
+                            <p class="text-[10px] print-text-muted leading-relaxed italic">
+                                Furkan, yaptığım detaylı analizlere göre, <b>${lessonTitle}</b> dersinde en zayıf olduğun konular: ${worstTopicsHtml}. 
+                                Soru başına ortalama hızın <b>${avgTime.toFixed(1)} saniye</b> seviyesindedir. Bu hız ÖSYM standartlarına göre <b>${speedCoach}</b> kategorisine girmektedir. 
+                                Gelişimin için Hata Defterindeki şık analizlerini detaylıca okumanı ve AI tarama testlerini düzenli çözmeni tavsiye ederim.
+                            </p>
+                        </div>
+
+                        <div class="print-accent-bar mt-4">
+                            <h2 class="text-xs font-black print-text-dark uppercase tracking-wider">2. Son 7 Günlük Soru Çözüm Dağılımı</h2>
+                        </div>
+                        <div class="print-card flex justify-center py-4 bg-white" style="height: 120px;">
+                            ${document.getElementById("svg-weekly-chart") ? document.getElementById("svg-weekly-chart").outerHTML.replace('class="w-full h-36"', 'style="width: 380px; height: 110px;"') : ""}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sayfa 2 ve Sonrası: Zayıf Konular ve Hata Defteri -->
+                <div>
+                    <div class="print-header">
+                        <h1 class="text-base font-black print-text-dark tracking-wide">3. ZAYIF KONULAR VE HATA DEFTERİ ÇÖZÜM REHBERİ</h1>
+                        <p class="text-[9px] print-text-muted">Bu soruların şık analizleri ve detaylı kazanım rehberleri portal üzerinde de etkileşimlidir.</p>
+                    </div>
+                    <div class="space-y-4">
+                        ${errorsHtml}
+                    </div>
+                </div>
+            `;
+            
+            // Print Trigger
+            window.print();
+        }
+
+        // --- PREMIUM JS ENGINES (EXAM, GRAPH, GAMIFICATION, TIME) ---
+        function recordQuestionSolved(isCorrect) {
+            const today = new Date().toISOString().split('T')[0];
+            
+            // Update Daily Stats for Graph
+            dailyStats[today] = (dailyStats[today] || 0) + 1;
+            localStorage.setItem('kpss_daily_stats', JSON.stringify(dailyStats));
+            
+            // Streak Calculation
+            if (lastActiveDate !== today) {
+                const yesterday = new Date();
+                yesterday.setDate(yesterday.getDate() - 1);
+                const yesterdayStr = yesterday.toISOString().split('T')[0];
+                
+                if (lastActiveDate === yesterdayStr) {
+                    streakCount++;
+                } else if (lastActiveDate === "") {
+                    streakCount = 1;
+                } else {
+                    streakCount = 1;
+                }
+                lastActiveDate = today;
+                localStorage.setItem('kpss_last_active_date', lastActiveDate);
+                localStorage.setItem('kpss_streak_count', JSON.stringify(streakCount));
+            }
+            
+            checkDailyMissionsDate();
+            dailyMissions.solved++;
+            localStorage.setItem('kpss_daily_missions', JSON.stringify(dailyMissions));
+            
+            updateDailyMissionsUI();
+            renderWeeklyChart();
+        }
+        
+        function checkDailyMissionsDate() {
+            const today = new Date().toISOString().split('T')[0];
+            if (dailyMissions.date !== today) {
+                dailyMissions = { solved: 0, cards: 0, notes: 0, date: today };
+                localStorage.setItem('kpss_daily_missions', JSON.stringify(dailyMissions));
+            }
+        }
+        
+        function recordCardReviewed() {
+            checkDailyMissionsDate();
+            dailyMissions.cards++;
+            localStorage.setItem('kpss_daily_missions', JSON.stringify(dailyMissions));
+            updateDailyMissionsUI();
+        }
+        
+        function recordNoteRead() {
+            checkDailyMissionsDate();
+            dailyMissions.notes++;
+            localStorage.setItem('kpss_daily_missions', JSON.stringify(dailyMissions));
+            updateDailyMissionsUI();
+        }
+        
+        function updateDailyMissionsUI() {
+            checkDailyMissionsDate();
+            
+            const m1Percent = Math.min(100, Math.round((dailyMissions.solved / 30) * 100));
+            const m2Percent = Math.min(100, Math.round((dailyMissions.cards / 10) * 100));
+            const m3Percent = Math.min(100, Math.round((dailyMissions.notes / 3) * 100));
+            
+            const el1 = document.getElementById("lbl-mission-1-state");
+            const el2 = document.getElementById("lbl-mission-2-state");
+            const el3 = document.getElementById("lbl-mission-3-state");
+            
+            if (el1) {
+                el1.textContent = `${m1Percent}%`;
+                el1.className = m1Percent >= 100 ? "text-[9px] font-black text-emerald-400 bg-emerald-950/40 px-1.5 py-0.5 rounded border border-emerald-900" : "text-[9px] font-bold text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded";
+                el1.parentElement.firstElementChild.textContent = `🎯 Soru Avcısı (${dailyMissions.solved}/30)`;
+            }
+            if (el2) {
+                el2.textContent = `${m2Percent}%`;
+                el2.className = m2Percent >= 100 ? "text-[9px] font-black text-emerald-400 bg-emerald-950/40 px-1.5 py-0.5 rounded border border-emerald-900" : "text-[9px] font-bold text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded";
+                el2.parentElement.firstElementChild.textContent = `🎴 Kart Dedektifi (${dailyMissions.cards}/10)`;
+            }
+            if (el3) {
+                el3.textContent = `${m3Percent}%`;
+                el3.className = m3Percent >= 100 ? "text-[9px] font-black text-emerald-400 bg-emerald-950/40 px-1.5 py-0.5 rounded border border-emerald-900" : "text-[9px] font-bold text-slate-500 bg-slate-900 px-1.5 py-0.5 rounded";
+                el3.parentElement.firstElementChild.textContent = `📖 Hata Bükücü (${dailyMissions.notes}/3)`;
+            }
+            
+            const totalPercent = Math.round((m1Percent + m2Percent + m3Percent) / 3);
+            const energyBar = document.getElementById("bar-daily-energy");
+            const energyTxt = document.getElementById("txt-daily-energy-percent");
+            
+            if (energyBar) energyBar.style.width = `${totalPercent}%`;
+            if (energyTxt) energyTxt.textContent = `${totalPercent}%`;
+            
+            const streakCountEl = document.getElementById("txt-streak-count");
+            if (streakCountEl) streakCountEl.textContent = streakCount;
+        }
+
+        function renderWeeklyChart() {
+            const svg = document.getElementById("svg-weekly-chart");
+            if (!svg) return;
+            
+            const days = [];
+            const shortDays = ["Pz", "Pt", "Sa", "Ça", "Pe", "Cu", "Ct"];
+            const months = ["Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"];
+            
+            for (let i = 6; i >= 0; i--) {
+                const d = new Date();
+                d.setDate(d.getDate() - i);
+                const dateStr = d.toISOString().split('T')[0];
+                const dayName = shortDays[d.getDay()];
+                const label = `${d.getDate()} ${months[d.getMonth()]}`;
+                days.push({ date: dateStr, dayName: dayName, label: label, count: dailyStats[dateStr] || 0 });
+            }
+            
+            const maxCount = Math.max(10, ...days.map(d => d.count));
+            
+            let svgHtml = `
+                <line x1="20" y1="20" x2="400" y2="20" stroke="#1e293b" stroke-dasharray="3,3" />
+                <line x1="20" y1="60" x2="400" y2="60" stroke="#1e293b" stroke-dasharray="3,3" />
+                <line x1="20" y1="100" x2="400" y2="100" stroke="#1e293b" stroke-dasharray="3,3" />
+                <line x1="20" y1="115" x2="400" y2="115" stroke="#334155" stroke-width="1.5" />
+            `;
+            
+            const startX = 30;
+            const barWidth = 32;
+            const gap = 20;
+            const chartHeight = 95;
+            
+            days.forEach((day, idx) => {
+                const x = startX + idx * (barWidth + gap);
+                const barHeight = Math.round((day.count / maxCount) * chartHeight);
+                const y = 115 - barHeight;
+                
+                const barColor = day.count > 0 ? "url(#chartGrad)" : "#1e293b";
+                
+                svgHtml += `
+                    <rect x="${x}" y="${y}" width="${barWidth}" height="${barHeight}" rx="4" fill="${barColor}" class="transition-all duration-500" />
+                    <text x="${x + barWidth/2}" y="${y - 6}" text-anchor="middle" fill="${day.count > 0 ? '#10b981' : '#64748b'}" font-size="9" font-weight="900" font-family="monospace">${day.count}</text>
+                    <text x="${x + barWidth/2}" y="128" text-anchor="middle" fill="#94a3b8" font-size="8" font-weight="bold">${day.dayName}</text>
+                    <text x="${x + barWidth/2}" y="138" text-anchor="middle" fill="#475569" font-size="7">${day.label}</text>
+                `;
+            });
+            
+            svgHtml = `
+                <defs>
+                    <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#10b981" />
+                        <stop offset="100%" stop-color="#047857" stop-opacity="0.3" />
+                    </linearGradient>
+                </defs>
+            ` + svgHtml;
+            
+            svg.innerHTML = svgHtml;
+        }
+
+        function updateTimeEfficiencyUI() {
+            const avg = totalSolvedCount > 0 ? (totalSolvedTime / totalSolvedCount) : 0;
+            const timeEl = document.getElementById("txt-avg-solve-time");
+            const coachEl = document.getElementById("txt-solve-speed-coach");
+            const effBar = document.getElementById("bar-time-efficiency");
+            const effTxt = document.getElementById("txt-time-efficiency-percent");
+            
+            if (timeEl) {
+                timeEl.innerHTML = `${avg.toFixed(1)}<span class="text-xs font-normal text-slate-500"> sn/soru</span>`;
+            }
+            
+            let rating = "";
+            let scorePercent = 0;
+            if (totalSolvedCount === 0) {
+                rating = "Ortalama hızınızı ölçmek için soru bankasından test çözün.";
+                scorePercent = 0;
+            } else if (avg < 30) {
+                rating = "🚀 <b>Mükemmel Hız:</b> Soruları adeta havada kapıyorsun! Sınavda bolca zaman artıracaksın.";
+                scorePercent = 100;
+            } else if (avg <= 60) {
+                rating = "🎯 <b>İdeal ÖSYM Hızı:</b> Zamanı son derece verimli kullanıyorsun. Ritm harika.";
+                scorePercent = 85;
+            } else {
+                rating = "⚠️ <b>Biraz Hızlanmalısın:</b> Şık analizlerini dikkatli oku ama süreyi de unutma! Bol pratikle hızlanacaksın.";
+                scorePercent = Math.max(10, Math.round(100 - (avg - 60) * 1.5));
+            }
+            
+            if (coachEl) coachEl.innerHTML = rating;
+            if (effBar) effBar.style.width = `${scorePercent}%`;
+            if (effTxt) effTxt.textContent = `${scorePercent}%`;
+        }
+
+        function startDenemeExam() {
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+            
+            let allTarihQ = [];
+            let allCografyaQ = [];
+            
+            const tDb = typeof tarih_db !== 'undefined' ? tarih_db : [];
+            tDb.forEach(unit => {
+                if (unit.quiz) allTarihQ.push(...unit.quiz);
+            });
+            const cDb = typeof cografya_db !== 'undefined' ? cografya_db : [];
+            cDb.forEach(unit => {
+                if (unit.quiz) allCografyaQ.push(...unit.quiz);
+            });
+            
+            if (allTarihQ.length < 27 || allCografyaQ.length < 18) {
+                alert("ℹ️ Deneme sınavı başlatmak için soru veritabanı boyutu yetersiz.");
+                return;
+            }
+            
+            let selectedTarih = allTarihQ.sort(() => 0.5 - Math.random()).slice(0, 27).map(q => { return {...q, lesson: 'tarih'}; });
+            let selectedCografya = allCografyaQ.sort(() => 0.5 - Math.random()).slice(0, 18).map(q => { return {...q, lesson: 'cografya'}; });
+            
+            examQuestions = [...selectedTarih, ...selectedCografya];
+            examAnswers = new Array(45).fill(null);
+            
+            examIdx = 0;
+            examTimerSeconds = 2700;
+            isExamMode = true;
+            
+            document.getElementById("exam-start-panel").classList.add("hidden");
+            document.getElementById("exam-result-panel").classList.add("hidden");
+            document.getElementById("exam-active-panel").classList.remove("hidden");
+            
+            clearInterval(examTimerInstance);
+            examTimerInstance = setInterval(() => {
+                if (examTimerSeconds > 0) {
+                    examTimerSeconds--;
+                    updateExamTimerDisplay();
+                } else {
+                    clearInterval(examTimerInstance);
+                    finishExamEarly();
+                }
+            }, 1000);
+            
+            updateExamTimerDisplay();
+            renderExamQuestion();
+        }
+        
+        function updateExamTimerDisplay() {
+            const timerEl = document.getElementById("lbl-exam-timer");
+            if (!timerEl) return;
+            const mins = Math.floor(examTimerSeconds / 60);
+            const secs = examTimerSeconds % 60;
+            const formatted = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            timerEl.innerHTML = `<i class="fa-solid fa-hourglass-half text-xs animate-spin"></i> ${formatted}`;
+            
+            if (isExamMode) {
+                document.title = `(${formatted}) DENEME | ${originalTitle}`;
+            }
+        }
+        
+        function renderExamQuestion() {
+            if (examQuestions.length === 0) return;
+            const q = examQuestions[examIdx];
+            
+            document.getElementById("lbl-exam-progress").textContent = `Soru ${examIdx + 1} / 45`;
+            document.getElementById("lbl-exam-question-tag").textContent = q.tag || "#GenelKazanım";
+            document.getElementById("txt-exam-q").textContent = q.q;
+            
+            const badge = document.getElementById("lbl-exam-lesson-badge");
+            if (badge) {
+                if (q.lesson === 'tarih') {
+                    badge.textContent = "TARİH";
+                    badge.className = "px-2.5 py-0.5 rounded bg-amber-950/40 border border-amber-900/40 text-amber-400 text-[9px] font-black tracking-wider";
+                } else {
+                    badge.textContent = "COĞRAFYA";
+                    badge.className = "px-2.5 py-0.5 rounded bg-emerald-950/40 border border-emerald-900/40 text-emerald-400 text-[9px] font-black tracking-wider";
+                }
+            }
+            
+            const difficulty = calculateDifficulty(q);
+            const starBox = document.getElementById("box-exam-difficulty-stars");
+            if (starBox) {
+                starBox.innerHTML = "";
+                for(let i=0; i<5; i++) { 
+                    starBox.innerHTML += `<i class="fa-solid fa-star ${i<difficulty?'text-amber-500':'text-slate-700'}"></i>`; 
+                }
+            }
+            
+            const optionsBox = document.getElementById("exam-options-box");
+            optionsBox.innerHTML = "";
+            
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement("button");
+                const isSelected = examAnswers[examIdx] === idx;
+                
+                if (isSelected) {
+                    btn.className = "w-full text-left px-4 py-3 bg-indigo-950/60 border-2 border-indigo-500 rounded-xl text-xs font-bold text-indigo-200 flex justify-between items-center cursor-pointer";
+                    btn.innerHTML = `<span><b class="text-indigo-400 mr-2">${String.fromCharCode(65+idx)}</b> ${opt}</span><i class="fa-solid fa-circle-check text-indigo-400"></i>`;
+                } else {
+                    btn.className = "w-full text-left px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold hover:bg-slate-800/60 transition-all flex justify-between items-center cursor-pointer hover-glow";
+                    btn.innerHTML = `<span><b class="text-slate-500 mr-2">${String.fromCharCode(65+idx)}</b> ${opt}</span>`;
+                }
+                
+                btn.onclick = () => {
+                    examAnswers[examIdx] = idx;
+                    renderExamQuestion();
+                };
+                optionsBox.appendChild(btn);
+            });
+            
+            const navContainer = document.getElementById("exam-active-panel").querySelector(".pt-4.border-t");
+            if (navContainer) {
+                navContainer.innerHTML = "";
+                
+                const backBtn = document.createElement("button");
+                backBtn.className = `px-4 py-2 bg-slate-900 border border-slate-800 hover:bg-slate-800 rounded-xl text-xs font-bold flex items-center gap-2 cursor-pointer ${examIdx === 0 ? 'opacity-40 pointer-events-none' : ''}`;
+                backBtn.innerHTML = `<i class="fa-solid fa-arrow-left text-[10px]"></i> Önceki Soru`;
+                backBtn.onclick = () => {
+                    if (examIdx > 0) {
+                        examIdx--;
+                        renderExamQuestion();
+                    }
+                };
+                navContainer.appendChild(backBtn);
+                
+                const midLabel = document.createElement("span");
+                midLabel.className = "text-xs font-mono text-slate-500 self-center hidden sm:inline";
+                midLabel.textContent = `KPSS Deneme Sınavı`;
+                navContainer.appendChild(midLabel);
+                
+                const nextBtn = document.createElement("button");
+                if (examIdx === 44) {
+                    nextBtn.textContent = "Sınavı Bitir";
+                    nextBtn.className = "px-4 py-2 bg-gradient-to-r from-rose-600 to-red-600 text-white rounded-xl text-xs font-bold flex items-center gap-2 cursor-pointer hover:from-rose-500 hover:to-red-500 shadow-md hover-glow";
+                    nextBtn.onclick = () => finishExamEarly();
+                } else {
+                    nextBtn.innerHTML = `Sonraki Soru <i class="fa-solid fa-arrow-right text-[10px]"></i>`;
+                    nextBtn.className = "px-4 py-2 bg-slate-900 border border-slate-800 hover:bg-slate-800 rounded-xl text-xs font-bold flex items-center gap-2 cursor-pointer hover-glow";
+                    nextBtn.onclick = () => {
+                        examIdx++;
+                        renderExamQuestion();
+                    };
+                }
+                navContainer.appendChild(nextBtn);
+            }
+        }
+        
+        function toggleExamFocusMode() {
+            isExamFocusMode = !isExamFocusMode;
+            const btn = document.getElementById("btn-exam-focus");
+            const header = document.querySelector("header");
+            const main = document.querySelector("main");
+            const sidebar = main.firstElementChild;
+            
+            if (isExamFocusMode) {
+                if (btn) btn.className = "px-3 py-1.5 bg-emerald-950/60 border border-emerald-800 text-emerald-300 font-bold text-[10px] rounded-lg transition-all flex items-center gap-1.5 cursor-pointer shadow-md";
+                if (header) header.classList.add("hidden");
+                if (sidebar) sidebar.classList.add("hidden");
+                if (main) main.className = "max-w-3xl mx-auto p-4 md:p-6 grid grid-cols-1 gap-6";
+            } else {
+                if (btn) btn.className = "px-3 py-1.5 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 font-bold text-[10px] rounded-lg transition-all flex items-center gap-1.5 cursor-pointer";
+                if (header) header.classList.remove("hidden");
+                if (sidebar) sidebar.classList.remove("hidden");
+                if (main) main.className = "max-w-7xl mx-auto p-4 md:p-6 grid grid-cols-1 lg:grid-cols-4 gap-6";
+            }
+        }
+        
+        function finishExamEarly() {
+            clearInterval(examTimerInstance);
+            isExamMode = false;
+            document.title = originalTitle;
+            
+            if (isExamFocusMode) {
+                toggleExamFocusMode();
+            }
+            
+            let correct = 0;
+            let wrong = 0;
+            let empty = 0;
+            
+            examQuestions.forEach((q, idx) => {
+                const ans = examAnswers[idx];
+                if (ans === null) {
+                    empty++;
+                } else if (ans === q.correct) {
+                    correct++;
+                } else {
+                    wrong++;
+                    
+                    let rawQ = q.q.replace("[TARAMA] ", "").replace("[KONU TARAMA] ", "").replace("[KONU TESTİ] ", "");
+                    if(!kpssNotebook.some(n => n.q === rawQ)) {
+                        kpssNotebook.push({
+                            lesson: q.lesson,
+                            unit: "Deneme Sınavı",
+                            q: rawQ,
+                            options: q.options,
+                            correct: q.correct,
+                            rationale: q.rationale,
+                            tag: q.tag || "#GenelKazanım"
+                        });
+                    }
+                }
+            });
+            
+            const net = correct - (wrong * 0.25);
+            
+            document.getElementById("txt-exam-correct").textContent = correct;
+            document.getElementById("txt-exam-wrong").textContent = wrong;
+            document.getElementById("txt-exam-empty").textContent = empty;
+            document.getElementById("txt-exam-net").textContent = net.toFixed(2);
+            
+            document.getElementById("exam-active-panel").classList.add("hidden");
+            document.getElementById("exam-result-panel").classList.remove("hidden");
+            
+            globalStats.solved += (correct + wrong);
+            globalStats.correct += correct;
+            saveStateToStorage();
+            
+            checkDailyMissionsDate();
+            dailyMissions.solved += (correct + wrong);
+            localStorage.setItem('kpss_daily_missions', JSON.stringify(dailyMissions));
+            
+            const today = new Date().toISOString().split('T')[0];
+            dailyStats[today] = (dailyStats[today] || 0) + (correct + wrong);
+            localStorage.setItem('kpss_daily_stats', JSON.stringify(dailyStats));
+            
+            updateDailyMissionsUI();
+            renderWeeklyChart();
+        }
+
+        // MÜKEMMEL DOM VE DB OKUMA BAĞLANTISI (v17.0 GÜVENCESİ)
         document.addEventListener("DOMContentLoaded", () => {
             updateSidebarStats();
             updateVoiceAssistantUI();
             updateTimerDisplay();
+            updateDailyMissionsUI();
+            renderWeeklyChart();
+            updateTimeEfficiencyUI();
             
             let checkDB = setInterval(() => {
                 if (typeof tarih_db !== 'undefined' && typeof cografya_db !== 'undefined') {
