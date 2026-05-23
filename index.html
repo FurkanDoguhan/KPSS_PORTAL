@@ -7,14 +7,32 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        .glass-card {
+            background: rgba(15, 23, 42, 0.55);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(51, 65, 85, 0.45);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
         .flashcard { perspective: 1000px; }
-        .flashcard-inner { transition: transform 0.4s; transform-style: preserve-3d; }
+        .flashcard-inner { transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; }
         .flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
-        .flashcard-front, .flashcard-back { backface-visibility: hidden; position: absolute; inset: 0; }
+        .flashcard-front, .flashcard-back { backface-visibility: hidden; position: absolute; inset: 0; border-radius: 1rem; }
         .flashcard-back { transform: rotateY(180deg); }
+        
+        .hover-glow {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-glow:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.2), 0 8px 10px -6px rgba(99, 102, 241, 0.2);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+        
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-track { background: #0b0f19; }
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
         
         @media print {
             body * { visibility: hidden; background: white !important; color: black !important; }
@@ -30,20 +48,31 @@
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans antialiased transition-colors duration-300">
 
-    <header class="bg-slate-950 border-b border-slate-800 sticky top-0 z-50 px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+    <header class="bg-slate-950/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50 px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
         <div class="flex items-center gap-3">
-            <div class="bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 p-2 rounded-xl font-black text-lg shadow-lg">KPSS</div>
+            <div class="bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 p-2 rounded-xl font-black text-lg shadow-lg shadow-orange-500/20">KPSS</div>
             <div>
-                <h1 class="text-base font-bold text-white tracking-wide">Yüksek Kapasiteli Eğitim Portalı</h1>
-                <p class="text-xs text-slate-400">Yapısal Güvence & ÖSYM Bilgi Notu Motoru (v14.0)</p>
+                <h1 class="text-base font-black text-white tracking-wide">Yüksek Kapasiteli Eğitim Portalı</h1>
+                <p class="text-xs text-slate-400">Yapısal Güvence & ÖSYM Bilgi Notu Motoru (v15.0)</p>
             </div>
         </div>
         
-        <div class="flex flex-wrap items-center gap-4">
+        <div class="flex flex-wrap items-center justify-center gap-4">
+            <button onclick="toggleVoiceAssistant()" id="btn-voice-assistant" class="bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white px-3 py-1.5 rounded-xl flex items-center gap-2 text-xs font-bold transition-all cursor-pointer">
+                <i class="fa-solid fa-volume-xmark text-rose-400" id="icon-voice"></i>
+                <span>SESLİ ASİSTAN</span>
+            </button>
+
             <div class="bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl flex items-center gap-2 text-xs font-bold">
                 <span class="text-rose-400"><i class="fa-solid fa-clock-rotate-left animate-pulse"></i> POMODORO:</span>
                 <span id="txt-timer" class="font-mono text-white text-sm">25:00</span>
-                <button onclick="toggleTimer()" id="btn-timer-control" class="text-emerald-400 hover:text-emerald-300 ml-1"><i class="fa-solid fa-play"></i></button>
+                <button onclick="toggleTimer()" id="btn-timer-control" class="text-emerald-400 hover:text-emerald-300 ml-1 cursor-pointer" title="Başlat/Durdur"><i class="fa-solid fa-play"></i></button>
+                <button onclick="resetTimer()" id="btn-timer-reset" class="text-slate-400 hover:text-slate-200 ml-1 cursor-pointer" title="Sıfırla"><i class="fa-solid fa-rotate-right"></i></button>
+                <select id="sel-timer-mode" onchange="changeTimerMode(this.value)" class="bg-slate-950 text-slate-300 border border-slate-800 rounded px-1 py-0.5 ml-1 text-[10px] focus:outline-none cursor-pointer">
+                    <option value="work">Çalışma (25d)</option>
+                    <option value="short">Mola (5d)</option>
+                    <option value="long">Uzun Mola (15d)</option>
+                </select>
             </div>
 
             <div class="flex bg-slate-900 p-1 rounded-xl border border-slate-800">
@@ -56,21 +85,35 @@
     <main class="max-w-7xl mx-auto p-4 md:p-6 grid grid-cols-1 lg:grid-cols-4 gap-6">
         
         <div class="lg:col-span-1 space-y-4">
-            <div class="bg-slate-950/40 p-4 rounded-2xl border border-slate-800 h-[calc(100vh-340px)] overflow-y-auto">
-                <h2 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3 px-2">Müfredat Üniteleri</h2>
+            <div class="glass-card p-4 rounded-2xl h-[calc(100vh-380px)] overflow-y-auto">
+                <h2 class="text-xs font-black text-indigo-400 uppercase tracking-widest mb-3 px-2 flex items-center gap-1.5"><i class="fa-solid fa-book-open"></i> Üniteler</h2>
                 <div id="unit-list" class="space-y-1"></div>
             </div>
 
-            <div class="bg-slate-950 border border-slate-800 p-4 rounded-2xl space-y-2">
-                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider"><i class="fa-solid fa-folder-tree text-indigo-400 mr-1"></i> Kontrol İstasyonu</h3>
+            <div class="glass-card p-4 rounded-2xl space-y-2">
+                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center gap-1.5"><i class="fa-solid fa-folder-tree text-indigo-400"></i> Kontrol İstasyonu</h3>
                 
-                <button onclick="openNotebookView()" class="w-full py-2 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 font-bold text-[11px] rounded-xl transition-all flex justify-start items-center px-4 gap-2.5 cursor-pointer">
+                <button onclick="openNotebookView()" class="w-full py-2 bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 text-slate-300 font-bold text-[11px] rounded-xl transition-all flex justify-start items-center px-4 gap-2.5 cursor-pointer hover-glow">
                     <i class="fa-solid fa-book-bookmark text-indigo-400"></i> Furkan'ın Hata Defteri (<span id="txt-notebook-count">0</span>)
                 </button>
                 
-                <button onclick="openAnalysisCenter()" class="w-full py-2 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 font-bold text-[11px] rounded-xl transition-all flex justify-start items-center px-4 gap-2.5 cursor-pointer">
+                <button onclick="openAnalysisCenter()" class="w-full py-2 bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 text-slate-300 font-bold text-[11px] rounded-xl transition-all flex justify-start items-center px-4 gap-2.5 cursor-pointer hover-glow">
                     <i class="fa-solid fa-chart-pie text-amber-500"></i> AI Analiz Merkezi & Raporlar
                 </button>
+            </div>
+
+            <div class="glass-card p-4 rounded-2xl space-y-3">
+                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-chart-line text-emerald-400"></i> Başarı Takip</h3>
+                <div class="grid grid-cols-2 gap-2 text-center">
+                    <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800/60">
+                        <div class="text-[9px] text-slate-500 font-black uppercase tracking-wider">Çözülen Soru</div>
+                        <div id="stats-total" class="text-base font-black text-white mt-0.5">0</div>
+                    </div>
+                    <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800/60">
+                        <div class="text-[9px] text-slate-500 font-black uppercase tracking-wider">Başarı Oranı</div>
+                        <div id="stats-ratio" class="text-base font-black text-emerald-400 mt-0.5">0%</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -127,42 +170,51 @@
 
             <div id="view-cards" class="space-y-6">
                 <div class="flex justify-center">
-                    <div id="card-container" class="flashcard w-full max-w-2xl h-80 cursor-pointer" onclick="this.classList.toggle('flipped')">
+                    <div id="card-container" class="flashcard w-full max-w-2xl h-80 cursor-pointer hover:scale-[1.01] transition-transform duration-300" onclick="this.classList.toggle('flipped')">
                         <div class="flashcard-inner relative w-full h-full duration-300">
-                            <div class="flashcard-front bg-slate-950 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between shadow-lg">
-                                <span class="text-[10px] font-bold text-indigo-400 bg-indigo-950/50 border border-indigo-900/40 px-2 py-0.5 rounded w-fit uppercase">Kazanım Tanımı</span>
-                                <p id="txt-card-q" class="text-base font-bold text-slate-200 text-center my-auto px-4">Soru...</p>
+                            <div class="flashcard-front bg-slate-950/80 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between shadow-2xl backdrop-blur-md">
+                                <div class="flex justify-between items-center w-full">
+                                    <span class="text-[10px] font-bold text-indigo-400 bg-indigo-950/50 border border-indigo-900/40 px-2 py-0.5 rounded w-fit uppercase">Kazanım Tanımı</span>
+                                    <button onclick="speakCardQuestion(event)" class="text-slate-400 hover:text-white hover:scale-105 text-[10px] font-black bg-slate-900 px-2 py-0.5 rounded border border-slate-800 cursor-pointer transition-all" title="Soruyu Seslendir"><i class="fa-solid fa-volume-high text-indigo-400"></i> Dinle</button>
+                                </div>
+                                <p id="txt-card-q" class="text-base sm:text-lg font-bold text-slate-200 text-center my-auto px-4 leading-relaxed">Soru...</p>
                                 <span class="text-[10px] text-slate-500 text-center"><i class="fa-solid fa-rotate mr-1"></i> Çevirmek için tıkla</span>
                             </div>
-                            <div class="flashcard-back bg-slate-950 border-2 border-emerald-900/50 rounded-2xl p-6 flex flex-col justify-between shadow-xl">
-                                <span class="text-[10px] font-bold text-emerald-400 bg-emerald-950/50 border border-emerald-900/40 px-2 py-0.5 rounded w-fit uppercase">ÖSYM Analitik Yanıt</span>
+                            <div class="flashcard-back bg-slate-950/80 border-2 border-emerald-900/50 rounded-2xl p-6 flex flex-col justify-between shadow-2xl backdrop-blur-md">
+                                <div class="flex justify-between items-center w-full">
+                                    <span class="text-[10px] font-bold text-emerald-400 bg-emerald-950/50 border border-emerald-900/40 px-2 py-0.5 rounded w-fit uppercase">ÖSYM Analitik Yanıt</span>
+                                    <button onclick="speakCardAnswer(event)" class="text-slate-400 hover:text-white hover:scale-105 text-[10px] font-black bg-slate-900 px-2 py-0.5 rounded border border-slate-800 cursor-pointer transition-all" title="Cevabı Seslendir"><i class="fa-solid fa-volume-high text-emerald-400"></i> Dinle</button>
+                                </div>
                                 <p id="txt-card-a" class="text-xs sm:text-sm text-slate-300 leading-relaxed overflow-y-auto my-auto max-h-48 pr-2">Cevap...</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="flex justify-center items-center gap-4">
-                    <button onclick="prevCard()" class="w-10 h-10 rounded-xl bg-slate-950 border border-slate-800 hover:bg-slate-900 text-sm cursor-pointer"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button onclick="prevCard()" class="w-10 h-10 rounded-xl bg-slate-950 border border-slate-800 hover:bg-slate-900 hover:scale-105 transition-all text-sm cursor-pointer"><i class="fa-solid fa-chevron-left"></i></button>
                     <span id="lbl-card-idx" class="text-xs font-bold text-slate-400 bg-slate-950 border border-slate-800 px-4 py-2 rounded-xl">0 / 0</span>
-                    <button onclick="nextCard()" class="w-10 h-10 rounded-xl bg-slate-950 border border-slate-800 hover:bg-slate-900 text-sm cursor-pointer"><i class="fa-solid fa-chevron-right"></i></button>
+                    <button onclick="nextCard()" class="w-10 h-10 rounded-xl bg-slate-950 border border-slate-800 hover:bg-slate-900 hover:scale-105 transition-all text-sm cursor-pointer"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </div>
 
             <div id="view-quiz" class="hidden space-y-4">
-                <div class="w-full bg-slate-950 p-3 rounded-xl border border-slate-800 space-y-1.5">
+                <div class="w-full bg-slate-950/80 p-3 rounded-xl border border-slate-800 space-y-1.5 backdrop-blur-md">
                     <div class="flex justify-between text-[10px] font-bold text-slate-400 uppercase tracking-wider">
                         <span id="txt-quiz-module-title">Modül İlerleme Durumu</span>
                         <span id="txt-progress-percent">0%</span>
                     </div>
                     <div class="w-full bg-slate-900 h-2 rounded-full overflow-hidden border border-slate-800">
-                        <div id="bar-progress" class="bg-gradient-to-r from-indigo-500 to-purple-500 h-full w-0 transition-all duration-300"></div>
+                        <div id="bar-progress" class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-full w-0 transition-all duration-300 shadow-[0_0_8px_rgba(99,102,241,0.5)]"></div>
                     </div>
                 </div>
 
-                <div id="quiz-card" class="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-6">
-                    <div class="flex justify-between items-center text-[10px] font-bold uppercase tracking-wider text-slate-500 pb-3 border-b border-slate-900">
+                <div id="quiz-card" class="bg-slate-950/80 p-6 rounded-2xl border border-slate-800 space-y-6 backdrop-blur-md shadow-2xl">
+                    <div class="flex flex-wrap gap-2 justify-between items-center text-[10px] font-bold uppercase tracking-wider text-slate-500 pb-3 border-b border-slate-900">
                         <span id="lbl-quiz-idx">Soru 1</span>
-                        <div class="flex items-center gap-3">
+                        <div class="flex flex-wrap items-center gap-3">
+                            <button onclick="speakCurrentQuestion()" class="text-slate-400 hover:text-white flex items-center gap-1.5 bg-slate-900/80 px-2.5 py-1 rounded-md border border-slate-800 cursor-pointer hover:border-slate-700 transition-all hover-glow" title="Soruyu ve Şıkları Seslendir">
+                                <i class="fa-solid fa-volume-high text-indigo-400 animate-pulse"></i> Soruyu Dinle
+                            </button>
                             <div class="flex items-center gap-1 bg-slate-900 px-2 py-1 rounded-md border border-slate-800">
                                 <span class="text-slate-400 text-[9px] mr-1">ÖSYM ZORLUK:</span>
                                 <div id="box-difficulty-stars" class="flex text-amber-500 text-[10px]"></div>
@@ -178,12 +230,17 @@
 
                     <div id="quiz-options-box" class="space-y-2.5"></div>
                     
-                    <div id="box-rationale" class="p-4 bg-slate-900 border border-slate-800 rounded-xl hidden space-y-3">
-                        <div class="flex justify-between items-center border-b border-slate-800 pb-1.5">
+                    <div id="box-rationale" class="p-4 bg-slate-900/50 border border-slate-800 rounded-xl hidden space-y-3">
+                        <div class="flex justify-between items-center border-b border-slate-800/80 pb-1.5">
                             <h4 class="text-xs font-bold text-amber-400 flex items-center gap-1.5"><i class="fa-solid fa-lightbulb"></i> Çözüm Rehberi:</h4>
-                            <button onclick="openNoteFromTag(document.getElementById('lbl-question-tag').textContent)" class="text-[10px] bg-emerald-950 border border-emerald-800 text-emerald-400 px-3 py-1 rounded-md font-black hover:text-white cursor-pointer transition-all">
-                                <i class="fa-solid fa-graduation-cap"></i> ÖSYM Bilgi Notunu Aç
-                            </button>
+                            <div class="flex items-center gap-2">
+                                <button onclick="speakCurrentRationale()" class="text-[10px] bg-slate-900/80 border border-slate-800 text-slate-300 px-2.5 py-1 rounded-md font-bold hover:text-white hover:border-slate-700 cursor-pointer transition-all hover-glow">
+                                    <i class="fa-solid fa-volume-high text-emerald-400"></i> Çözümü Dinle
+                                </button>
+                                <button onclick="openNoteFromTag(document.getElementById('lbl-question-tag').textContent)" class="text-[10px] bg-emerald-950 border border-emerald-800 text-emerald-400 px-3 py-1 rounded-md font-black hover:text-white cursor-pointer transition-all">
+                                    <i class="fa-solid fa-graduation-cap"></i> ÖSYM Bilgi Notunu Aç
+                                </button>
+                            </div>
                         </div>
                         <p id="txt-quiz-rationale" class="text-xs text-slate-300 leading-relaxed"></p>
                     </div>
@@ -197,8 +254,8 @@
                     </div>
 
                     <div class="flex justify-between pt-4 border-t border-slate-900">
-                        <button onclick="resetQuiz()" class="text-xs font-bold text-slate-500 hover:text-slate-300 cursor-pointer">Sıfırla</button>
-                        <button onclick="nextQuestion()" class="px-4 py-2 bg-slate-900 border border-slate-800 hover:bg-slate-800 rounded-xl text-xs font-bold flex items-center gap-2 cursor-pointer">Sonraki Soru <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
+                        <button onclick="resetQuiz()" class="text-xs font-bold text-slate-500 hover:text-slate-300 cursor-pointer hover:scale-105 transition-all">Sıfırla</button>
+                        <button onclick="nextQuestion()" class="px-4 py-2 bg-slate-900 border border-slate-800 hover:bg-slate-800 rounded-xl text-xs font-bold flex items-center gap-2 cursor-pointer hover-glow">Sonraki Soru <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
                     </div>
                 </div>
             </div>
@@ -209,6 +266,7 @@
         let currentLesson = "tarih";
         let currentData = [];
         let activeUnitIdx = 0;
+        let activeGroupIdx = 0;
         let cardIdx = 0;
         let quizIdx = 0;
         let score = 0;
@@ -218,10 +276,14 @@
         const questionsPerGroup = 20;
         let timerInstance = null;
         let timerSeconds = 1500;
+        let timerState = 'idle'; // 'idle', 'running', 'paused'
+        let timerMode = 'work'; // 'work', 'short', 'long'
         let isTaramaTestMode = false;
+        let originalTitle = "KPSS Ultra Entegre Portal v15.0";
 
         let kpssNotebook = JSON.parse(localStorage.getItem('kpss_furkan_notebook')) || [];
         let globalStats = JSON.parse(localStorage.getItem('kpss_global_stats')) || { solved: 0, correct: 0 };
+        let isVoiceActive = JSON.parse(localStorage.getItem('kpss_voice_active')) || false;
 
         function saveStateToStorage() {
             localStorage.setItem('kpss_furkan_notebook', JSON.stringify(kpssNotebook));
@@ -230,16 +292,269 @@
         }
 
         function updateSidebarStats() {
-            document.getElementById("stats-total").textContent = globalStats.solved;
-            const ratio = globalStats.solved > 0 ? Math.round((globalStats.correct / globalStats.solved) * 100) : 0;
-            document.getElementById("stats-ratio").textContent = `${ratio}%`;
-            document.getElementById("txt-notebook-count").textContent = kpssNotebook.length;
+            const totalEl = document.getElementById("stats-total");
+            const ratioEl = document.getElementById("stats-ratio");
+            const countEl = document.getElementById("txt-notebook-count");
+            
+            if (totalEl) totalEl.textContent = globalStats.solved;
+            if (ratioEl) {
+                const ratio = globalStats.solved > 0 ? Math.round((globalStats.correct / globalStats.solved) * 100) : 0;
+                ratioEl.textContent = `${ratio}%`;
+            }
+            if (countEl) countEl.textContent = kpssNotebook.length;
         }
 
-        // HARİCİ DERS NOTU VERİTABANINDAN VERİ ÇEKEN ENTEGRE MOTOR
+        // ==========================================
+        // 🎙️ TÜRKÇE SESLİ ASİSTAN MOTORU (WEB SPEECH API)
+        // ==========================================
+        function toggleVoiceAssistant() {
+            isVoiceActive = !isVoiceActive;
+            localStorage.setItem('kpss_voice_active', isVoiceActive);
+            updateVoiceAssistantUI();
+            
+            if (!isVoiceActive && 'speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+            } else if (isVoiceActive) {
+                // Speak welcome message
+                speakText("Sesli asistan aktif edildi. Furkan, başarılar dilerim.");
+            }
+        }
+
+        function updateVoiceAssistantUI() {
+            const btn = document.getElementById("btn-voice-assistant");
+            const icon = document.getElementById("icon-voice");
+            if (!btn || !icon) return;
+
+            if (isVoiceActive) {
+                btn.className = "bg-emerald-950/40 border border-emerald-800 text-emerald-300 hover:text-white px-3 py-1.5 rounded-xl flex items-center gap-2 text-xs font-bold transition-all cursor-pointer shadow-md shadow-emerald-500/10";
+                icon.className = "fa-solid fa-volume-high text-emerald-400 animate-pulse";
+            } else {
+                btn.className = "bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white px-3 py-1.5 rounded-xl flex items-center gap-2 text-xs font-bold transition-all cursor-pointer";
+                icon.className = "fa-solid fa-volume-xmark text-rose-400";
+            }
+        }
+
+        function speakText(text) {
+            if (!('speechSynthesis' in window)) return;
+            
+            window.speechSynthesis.cancel(); // Stop current speech
+            if (!text || text.trim() === "") return;
+
+            // Strip HTML tags for clean reading
+            const cleanText = text.replace(/<\/?[^>]+(>|$)/g, "").replace(/#/g, "");
+            
+            const utterance = new SpeechSynthesisUtterance(cleanText);
+            utterance.lang = "tr-TR";
+
+            // Set voice to Turkish
+            const voices = window.speechSynthesis.getVoices();
+            const trVoice = voices.find(voice => voice.lang.includes("tr-TR") || voice.lang.includes("tr"));
+            if (trVoice) {
+                utterance.voice = trVoice;
+            }
+            
+            utterance.rate = 1.05; // Slightly faster for native flow
+            utterance.pitch = 1.0;
+            
+            window.currentUtterance = utterance;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function speakCurrentQuestion() {
+            if (activeGroupQuestions.length === 0) return;
+            const activeQ = activeGroupQuestions[quizIdx];
+            let textToSpeak = `${activeQ.q}. `;
+            activeQ.options.forEach((opt, idx) => {
+                textToSpeak += `${String.fromCharCode(65 + idx)} şıkkı: ${opt}. `;
+            });
+            speakText(textToSpeak);
+        }
+
+        function speakCurrentRationale() {
+            if (activeGroupQuestions.length === 0) return;
+            const activeQ = activeGroupQuestions[quizIdx];
+            speakText(`Doğru cevap ${String.fromCharCode(65 + activeQ.correct)} şıkkıdır. Çözüm açıklaması: ${activeQ.rationale}`);
+        }
+
+        function speakCardQuestion(e) {
+            if (e) e.stopPropagation();
+            const unit = currentData[activeUnitIdx];
+            if (unit && unit.cards && unit.cards[cardIdx]) {
+                speakText(unit.cards[cardIdx].q);
+            }
+        }
+
+        function speakCardAnswer(e) {
+            if (e) e.stopPropagation();
+            const unit = currentData[activeUnitIdx];
+            if (unit && unit.cards && unit.cards[cardIdx]) {
+                speakText(unit.cards[cardIdx].a);
+            }
+        }
+
+        function speakNotebookItem(q, ans, rat) {
+            speakText(`Soru: ${decodeURIComponent(q)}. Doğru cevap: ${decodeURIComponent(ans)}. Çözüm: ${decodeURIComponent(rat)}`);
+        }
+
+
+        // ==========================================
+        // ⏱️ POMODORO ÇALIŞMA SAYACI & BİLDİRİM (WEB AUDIO)
+        // ==========================================
+        function toggleTimer() {
+            const btn = document.getElementById("btn-timer-control");
+            if (!btn) return;
+
+            if (timerState === 'running') {
+                // Pause timer
+                clearInterval(timerInstance);
+                timerState = 'paused';
+                btn.innerHTML = `<i class="fa-solid fa-play"></i>`;
+                btn.className = "text-emerald-400 hover:text-emerald-300 ml-1 cursor-pointer";
+                document.title = originalTitle;
+            } else {
+                // Start timer
+                timerState = 'running';
+                btn.innerHTML = `<i class="fa-solid fa-pause text-amber-500"></i>`;
+                btn.className = "text-amber-500 hover:text-amber-400 ml-1 cursor-pointer";
+                
+                timerInstance = setInterval(() => {
+                    if (timerSeconds > 0) {
+                        timerSeconds--;
+                        updateTimerDisplay();
+                    } else {
+                        // Timer completed!
+                        clearInterval(timerInstance);
+                        timerState = 'idle';
+                        btn.innerHTML = `<i class="fa-solid fa-play"></i>`;
+                        btn.className = "text-emerald-400 hover:text-emerald-300 ml-1 cursor-pointer";
+                        document.title = originalTitle;
+                        
+                        playAlarmSound();
+                        
+                        let msg = "";
+                        if (timerMode === 'work') {
+                            msg = "Tebrikler Furkan! Çalışma seansın bitti. Mola vermeyi unutma!";
+                        } else {
+                            msg = "Mola bitti Furkan! Tekrar odaklanıp devam edelim.";
+                        }
+                        speakText(msg);
+                        alert(`🔔 Pomodoro Bildirimi: ${msg}`);
+                    }
+                }, 1000);
+            }
+        }
+
+        function resetTimer() {
+            clearInterval(timerInstance);
+            timerState = 'idle';
+            
+            const btn = document.getElementById("btn-timer-control");
+            if (btn) {
+                btn.innerHTML = `<i class="fa-solid fa-play"></i>`;
+                btn.className = "text-emerald-400 hover:text-emerald-300 ml-1 cursor-pointer";
+            }
+            
+            changeTimerMode(timerMode);
+            document.title = originalTitle;
+        }
+
+        function changeTimerMode(mode) {
+            timerMode = mode;
+            const selector = document.getElementById("sel-timer-mode");
+            if (selector) selector.value = mode;
+
+            if (mode === 'work') {
+                timerSeconds = 1500; // 25 min
+            } else if (mode === 'short') {
+                timerSeconds = 300;  // 5 min
+            } else if (mode === 'long') {
+                timerSeconds = 900;  // 15 min
+            }
+
+            updateTimerDisplay();
+        }
+
+        function updateTimerDisplay() {
+            const timerEl = document.getElementById("txt-timer");
+            if (!timerEl) return;
+
+            const mins = Math.floor(timerSeconds / 60);
+            const secs = timerSeconds % 60;
+            const formatted = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            timerEl.textContent = formatted;
+
+            if (timerState === 'running') {
+                const prefix = timerMode === 'work' ? '🧠 Çalış' : '☕ Mola';
+                document.title = `(${formatted}) ${prefix} | ${originalTitle}`;
+            }
+        }
+
+        function playAlarmSound() {
+            try {
+                const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                const now = audioCtx.currentTime;
+                
+                // Beautiful retro double chime (E5 and G5 notes)
+                const osc1 = audioCtx.createOscillator();
+                const gain1 = audioCtx.createGain();
+                osc1.type = 'sine';
+                osc1.frequency.setValueAtTime(659.25, now); // E5
+                gain1.gain.setValueAtTime(0.25, now);
+                gain1.gain.exponentialRampToValueAtTime(0.01, now + 0.45);
+                osc1.connect(gain1);
+                gain1.connect(audioCtx.destination);
+                osc1.start(now);
+                osc1.stop(now + 0.5);
+                
+                const osc2 = audioCtx.createOscillator();
+                const gain2 = audioCtx.createGain();
+                osc2.type = 'sine';
+                osc2.frequency.setValueAtTime(783.99, now + 0.22); // G5
+                gain2.gain.setValueAtTime(0.25, now + 0.22);
+                gain2.gain.exponentialRampToValueAtTime(0.01, now + 0.67);
+                osc2.connect(gain2);
+                gain2.connect(audioCtx.destination);
+                osc2.start(now + 0.22);
+                osc2.stop(now + 0.7);
+            } catch(e) {
+                console.warn("Web Audio API not supported", e);
+            }
+        }
+
+
+        // ==========================================
+        // ⭐ AKILLI ÖSYM ZORLUK DERECESİ HESAPLAYICI
+        // ==========================================
+        function calculateDifficulty(activeQ) {
+            let difficulty = 2; // Base zorluk: 2 Yıldız
+            const text = (activeQ.q + " " + activeQ.rationale).toLowerCase();
+
+            // 1. Olumsuz soru kökü analizi (+1 Yıldız)
+            const negatives = ["değildir", "yanlıştır", "olamaz", "beklenmez", "değil", "yanlış"];
+            if (negatives.some(w => text.includes(w))) {
+                difficulty += 1;
+            }
+
+            // 2. Karmaşık/Akademik terim filtrelemesi (+1 Yıldız)
+            const academicWords = ["kut ", "kut-", "veraset", "ikili teşkilat", "ikta", "ahi", "gulam", "bakı", "enlem", "kürk yolu", "miryokefalon", "kösedağ", "töre", "iskan", "istimalet", "iltizam", "tımar"];
+            if (academicWords.some(w => text.includes(w))) {
+                difficulty += 1;
+            }
+
+            // 3. Paragraf ve Soru Uzunluğu Analizi (+1 Yıldız)
+            if (activeQ.q.length > 180) {
+                difficulty += 1;
+            }
+
+            return Math.min(5, Math.max(1, difficulty));
+        }
+
+
+        // ==========================================
+        // 📚 DERS VE NOT ENTEGRASYON MANTIKLARI
+        // ==========================================
         function openNoteFromTag(tag) {
             let pureTag = tag.replace("#", "").trim();
-            // Derse göre not db seçimini doğrula
             let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
             
             let targetContent = null;
@@ -262,6 +577,7 @@
         }
 
         function openAnalysisCenter() {
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
             document.getElementById("view-cards").classList.add("hidden"); document.getElementById("view-quiz").classList.add("hidden"); document.getElementById("view-notebook").classList.add("hidden"); document.getElementById("box-embedded-note").classList.add("hidden");
             document.getElementById("box-top-navbar").classList.add("hidden");
             document.getElementById("view-analysis-center").classList.remove("hidden");
@@ -280,12 +596,13 @@
             }
             document.getElementById("btn-start-tarama").classList.remove("opacity-40", "pointer-events-none");
             sortedWorst.forEach(tag => {
-                worstBox.innerHTML += `<div class="flex justify-between items-center p-2.5 bg-slate-900 rounded-xl text-xs mb-2"><span>${tag}</span><span class="text-rose-400 font-bold bg-rose-950/30 px-2 py-0.5 rounded">${hiyerarşi[tag]} Hata</span></div>`;
+                worstBox.innerHTML += `<div class="flex justify-between items-center p-2.5 bg-slate-900/60 rounded-xl text-xs mb-2 border border-slate-800"><span>${tag}</span><span class="text-rose-400 font-bold bg-rose-950/30 px-2 py-0.5 rounded border border-rose-900/40">${hiyerarşi[tag]} Hata</span></div>`;
             });
             adviceText.textContent = `Furkan, analizlerime göre en çok takıldığın alan ${sortedWorst[0]} konusu. Yukarıdaki butona basarak tarama başlatabilirsin.`;
         }
 
         function startReviewTaramaTest() {
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
             let filtered = kpssNotebook.filter(n => n.lesson === currentLesson);
             if(filtered.length === 0) return;
             activeGroupQuestions = filtered.map(item => { return { q: `[TARAMA] ${item.q}`, options: item.options, correct: item.correct, rationale: item.rationale, tag: item.tag }; });
@@ -297,6 +614,7 @@
         }
 
         function switchLesson(lesson) {
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
             currentLesson = lesson; isTaramaTestMode = false;
             currentData = lesson === 'tarih' ? (typeof tarih_db !== 'undefined' ? tarih_db : []) : (typeof cografya_db !== 'undefined' ? cografya_db : []);
             activeUnitIdx = 0; activeGroupIdx = 0; cardIdx = 0; quizIdx = 0; score = 0;
@@ -306,8 +624,8 @@
             document.getElementById("box-embedded-note").classList.add("hidden");
             document.getElementById("box-top-navbar").classList.remove("hidden");
             
-            document.getElementById("btn-tarih").className = lesson === 'tarih' ? "px-5 py-2 rounded-lg font-bold text-xs uppercase bg-amber-500 text-slate-950 shadow-sm cursor-pointer" : "px-5 py-2 rounded-lg font-bold text-xs uppercase text-slate-400 hover:text-slate-200 cursor-pointer";
-            document.getElementById("btn-cografya").className = lesson === 'cografya' ? "px-5 py-2 rounded-lg font-bold text-xs uppercase bg-emerald-500 text-slate-950 shadow-sm cursor-pointer" : "px-5 py-2 rounded-lg font-bold text-xs uppercase text-slate-400 hover:text-slate-200 cursor-pointer";
+            document.getElementById("btn-tarih").className = lesson === 'tarih' ? "px-5 py-2 rounded-lg font-bold text-xs uppercase bg-amber-500 text-slate-950 shadow-sm cursor-pointer hover:scale-102 transition-transform" : "px-5 py-2 rounded-lg font-bold text-xs uppercase text-slate-400 hover:text-slate-200 cursor-pointer";
+            document.getElementById("btn-cografya").className = lesson === 'cografya' ? "px-5 py-2 rounded-lg font-bold text-xs uppercase bg-emerald-500 text-slate-950 shadow-sm cursor-pointer hover:scale-102 transition-transform" : "px-5 py-2 rounded-lg font-bold text-xs uppercase text-slate-400 hover:text-slate-200 cursor-pointer";
 
             buildUnitList(); 
             buildGroupSelector(); 
@@ -319,7 +637,7 @@
             if(currentData.length === 0) return;
             currentData.forEach((item, index) => {
                 const btn = document.createElement("button");
-                btn.className = `w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold flex justify-between items-center transition-all cursor-pointer ${index === activeUnitIdx && !isTaramaTestMode ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-400 hover:bg-slate-900'}`;
+                btn.className = `w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold flex justify-between items-center transition-all cursor-pointer ${index === activeUnitIdx && !isTaramaTestMode ? 'bg-gradient-to-r from-indigo-600 to-indigo-700 text-white shadow-md shadow-indigo-500/25 border-indigo-500' : 'text-slate-400 hover:bg-slate-900 border border-transparent hover-glow'}`;
                 btn.onclick = () => { isTaramaTestMode = false; activeUnitIdx = index; cardIdx = 0; quizIdx = 0; score = 0; document.getElementById("view-notebook").classList.add("hidden"); document.getElementById("view-analysis-center").classList.add("hidden"); document.getElementById("box-embedded-note").classList.add("hidden"); buildUnitList(); buildGroupSelector(); renderAll(); };
                 btn.innerHTML = `<span class="truncate pr-2">${item.unite}</span><i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>`;
                 container.appendChild(btn);
@@ -334,7 +652,7 @@
             const totalGroups = Math.ceil(unit.quiz.length / questionsPerGroup);
             for (let i = 0; i < totalGroups; i++) {
                 const btn = document.createElement("button");
-                btn.className = `px-2.5 py-1 rounded-md text-[10px] font-black cursor-pointer ${i === activeGroupIdx ? 'bg-amber-500 text-slate-950 shadow-sm' : 'bg-slate-800 text-slate-400'}`;
+                btn.className = `px-2.5 py-1 rounded-md text-[10px] font-black cursor-pointer hover-glow ${i === activeGroupIdx ? 'bg-amber-500 text-slate-950 shadow-sm' : 'bg-slate-800 text-slate-400'}`;
                 btn.textContent = `MODÜL ${i + 1}`;
                 btn.onclick = () => { activeGroupIdx = i; quizIdx = 0; score = 0; prepareGroupQuestions(); renderQuiz(); };
                 container.appendChild(btn);
@@ -348,21 +666,43 @@
         }
 
         function switchMode(mode) {
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
             currentMode = mode; document.getElementById("view-notebook").classList.add("hidden"); document.getElementById("view-analysis-center").classList.add("hidden"); document.getElementById("box-top-navbar").classList.remove("hidden"); document.getElementById("box-embedded-note").classList.add("hidden");
+            
+            const btnCards = document.getElementById("btn-mode-cards");
+            const btnQuiz = document.getElementById("btn-mode-quiz");
+
             if(mode === 'cards') {
                 isTaramaTestMode = false; document.getElementById("view-cards").classList.remove("hidden"); document.getElementById("view-quiz").classList.add("hidden"); document.getElementById("box-group-selector").classList.add("hidden");
+                if (btnCards) btnCards.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md bg-slate-800 text-white shadow-xs cursor-pointer";
+                if (btnQuiz) btnQuiz.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer";
                 buildUnitList();
             } else {
-                document.getElementById("view-quiz").classList.remove("hidden"); document.getElementById("view-cards").classList.add("hidden"); buildGroupSelector(); prepareGroupQuestions(); renderQuiz();
+                document.getElementById("view-quiz").classList.remove("hidden"); document.getElementById("view-cards").classList.add("hidden"); 
+                if (btnQuiz) btnQuiz.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md bg-slate-800 text-white shadow-xs cursor-pointer";
+                if (btnCards) btnCards.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer";
+                buildGroupSelector(); prepareGroupQuestions(); renderQuiz();
             }
         }
 
         function renderAll() {
             if(currentData.length === 0 || isTaramaTestMode) return;
-            const unit = currentData[activeUnitIdx]; document.getElementById("txt-active-unit").textContent = unit.unite;
+            const unit = currentData[activeUnitIdx]; 
+            document.getElementById("txt-active-unit").textContent = unit.unite;
             document.getElementById("card-container").classList.remove("flipped");
-            if(unit.cards && unit.cards.length > 0) { document.getElementById("txt-card-q").innerHTML = unit.cards[cardIdx].q; document.getElementById("txt-card-a").innerHTML = unit.cards[cardIdx].a; document.getElementById("lbl-card-idx").textContent = `${cardIdx + 1} / ${unit.cards.length}`; }
-            prepareGroupQuestions(); renderQuiz();
+            
+            if(unit.cards && unit.cards.length > 0) { 
+                document.getElementById("txt-card-q").innerHTML = unit.cards[cardIdx].q; 
+                document.getElementById("txt-card-a").innerHTML = unit.cards[cardIdx].a; 
+                document.getElementById("lbl-card-idx").textContent = `${cardIdx + 1} / ${unit.cards.length}`; 
+                
+                // Auto-read question card if active
+                if (isVoiceActive && currentMode === 'cards') {
+                    speakText(unit.cards[cardIdx].q);
+                }
+            }
+            prepareGroupQuestions(); 
+            renderQuiz();
         }
 
         function renderQuiz() {
@@ -374,6 +714,13 @@
             document.getElementById("lbl-score").textContent = `Skor: ${score} / ${activeGroupQuestions.length}`;
             document.getElementById("txt-quiz-q").textContent = activeQ.q;
 
+            // Dinamik Modül İlerleme Çubuğu Güncellemesi
+            const progressPercent = activeGroupQuestions.length > 0 ? Math.round((quizIdx / activeGroupQuestions.length) * 100) : 0;
+            const bar = document.getElementById("bar-progress");
+            const percentText = document.getElementById("txt-progress-percent");
+            if (bar) bar.style.width = `${progressPercent}%`;
+            if (percentText) percentText.textContent = `${progressPercent}%`;
+
             let parsedTag = activeQ.tag || "#GenelKazanım";
             if(!activeQ.tag) {
                 if(activeQ.rationale.includes("Kut") || activeQ.q.includes("Kut")) parsedTag = "#KutAnlayışı";
@@ -383,14 +730,26 @@
             }
             document.getElementById("lbl-question-tag").textContent = parsedTag;
 
-            const starBox = document.getElementById("box-difficulty-stars"); starBox.innerHTML = "";
-            for(let i=0; i<5; i++) { starBox.innerHTML += `<i class="fa-solid fa-star ${i<3?'text-amber-500':'text-slate-700'}"></i>`; }
+            // Dinamik ÖSYM Zorluk Yıldızları
+            const difficulty = calculateDifficulty(activeQ);
+            const starBox = document.getElementById("box-difficulty-stars"); 
+            if (starBox) {
+                starBox.innerHTML = "";
+                for(let i=0; i<5; i++) { 
+                    starBox.innerHTML += `<i class="fa-solid fa-star ${i<difficulty?'text-amber-500':'text-slate-700'}"></i>`; 
+                }
+            }
+
+            // Auto-read question if active
+            if (isVoiceActive && currentMode === 'quiz') {
+                speakText(activeQ.q);
+            }
 
             // v12.0 Sarsılmaz Hatasız Şık Döngüsü (Tamamen Korundu)
             const optionsBox = document.getElementById("quiz-options-box"); optionsBox.innerHTML = "";
             activeQ.options.forEach((opt, idx) => {
                 const btn = document.createElement("button");
-                btn.className = "w-full text-left px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold hover:bg-slate-800/60 transition-all flex justify-between items-center cursor-pointer";
+                btn.className = "w-full text-left px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-xs font-semibold hover:bg-slate-800/60 transition-all flex justify-between items-center cursor-pointer hover-glow";
                 btn.innerHTML = `<span><b class="text-slate-500 mr-2">${String.fromCharCode(65+idx)}</b> ${opt}</span>`;
                 btn.onclick = () => checkAnswer(idx, btn, activeQ, parsedTag);
                 optionsBox.appendChild(btn);
@@ -399,6 +758,9 @@
 
         function checkAnswer(selected, btn, activeQ, tagStr) {
             if(answered) return; answered = true;
+
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel(); // Stop reading the question
+
             const buttons = document.getElementById("quiz-options-box").querySelectorAll("button");
             buttons.forEach((b, idx) => {
                 if(idx === activeQ.correct) b.className = "w-full text-left px-4 py-3 bg-emerald-950/60 border-2 border-emerald-500 rounded-xl text-xs font-bold text-emerald-200 flex justify-between items-center";
@@ -417,12 +779,42 @@
             saveStateToStorage();
             document.getElementById("txt-quiz-rationale").innerHTML = activeQ.rationale;
             document.getElementById("box-rationale").classList.remove("hidden");
+
+            // Auto-read correct/incorrect and rationale if active
+            if (isVoiceActive) {
+                const answerResult = selected === activeQ.correct ? "Tebrikler, doğru cevap!" : "Maalesef yanlış cevap.";
+                speakText(`${answerResult} Doğru cevap ${String.fromCharCode(65 + activeQ.correct)} şıkkıdır. Çözüm açıklaması: ${activeQ.rationale}`);
+            }
         }
 
-        function nextQuestion() { if(quizIdx < activeGroupQuestions.length - 1) { quizIdx++; renderQuiz(); } else { alert("Test tamamlandı!"); isTaramaTestMode = false; switchLesson(currentLesson); } }
-        function resetQuiz() { quizIdx = 0; score = 0; answered = false; renderQuiz(); }
+        function nextQuestion() { 
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+
+            if(quizIdx < activeGroupQuestions.length - 1) { 
+                quizIdx++; 
+                renderQuiz(); 
+            } else { 
+                // Set progress bar to 100% on completion
+                const bar = document.getElementById("bar-progress");
+                const percentText = document.getElementById("txt-progress-percent");
+                if (bar) bar.style.width = "100%";
+                if (percentText) percentText.textContent = "100%";
+
+                setTimeout(() => {
+                    alert(`🎉 Tebrikler Furkan! Modülü başarıyla tamamladın.\nSkorun: ${score} / ${activeGroupQuestions.length}`); 
+                    isTaramaTestMode = false; 
+                    switchLesson(currentLesson); 
+                }, 300);
+            } 
+        }
+
+        function resetQuiz() { 
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+            quizIdx = 0; score = 0; answered = false; renderQuiz(); 
+        }
 
         function openNotebookView() {
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
             document.getElementById("view-cards").classList.add("hidden"); document.getElementById("view-quiz").classList.add("hidden"); document.getElementById("view-analysis-center").classList.add("hidden"); document.getElementById("box-embedded-note").classList.add("hidden");
             document.getElementById("box-top-navbar").classList.add("hidden");
             const notebookView = document.getElementById("view-notebook"); notebookView.classList.remove("hidden");
@@ -430,18 +822,41 @@
             let filtered = kpssNotebook.filter(n => n.lesson === currentLesson);
             if(filtered.length === 0) { listContainer.innerHTML = `<p class="text-xs text-slate-500 text-center py-8">Hata defteriniz boş.</p>`; return; }
             filtered.forEach(item => {
-                listContainer.innerHTML += `<div class="p-5 bg-slate-900 border border-slate-800 rounded-xl space-y-2 text-xs print-card"><div class="flex justify-between text-[10px] text-slate-500 border-b border-slate-800 pb-1"><span>${item.unit}</span><button onclick="deleteFromNotebook('${item.q}')" class="text-rose-400 no-print cursor-pointer">Sil</button></div><p class="font-bold text-slate-200 text-sm leading-relaxed">${item.q}</p><p class="text-emerald-400 font-bold">Cevap: ${item.options[item.correct]}</p><p class="text-slate-400 mt-1 leading-relaxed">${item.rationale}</p></div>`;
+                listContainer.innerHTML += `
+                    <div class="p-5 bg-slate-900/60 border border-slate-800 rounded-xl space-y-2 text-xs print-card hover-glow backdrop-blur-md">
+                        <div class="flex justify-between text-[10px] text-slate-500 border-b border-slate-800 pb-1">
+                            <span>${item.unit}</span>
+                            <div class="flex items-center gap-2">
+                                <button onclick="speakNotebookItem('${encodeURIComponent(item.q)}', '${encodeURIComponent(item.options[item.correct])}', '${encodeURIComponent(item.rationale)}')" class="text-indigo-400 no-print cursor-pointer hover:text-white" title="Notu Seslendir">Dinle</button>
+                                <span class="no-print text-slate-700">|</span>
+                                <button onclick="deleteFromNotebook('${item.q}')" class="text-rose-400 no-print cursor-pointer hover:text-rose-300">Sil</button>
+                            </div>
+                        </div>
+                        <p class="font-bold text-slate-200 text-sm leading-relaxed">${item.q}</p>
+                        <p class="text-emerald-400 font-bold">Cevap: ${item.options[item.correct]}</p>
+                        <p class="text-slate-400 mt-1 leading-relaxed">${item.rationale}</p>
+                    </div>`;
             });
         }
+
         function deleteFromNotebook(q) { kpssNotebook = kpssNotebook.filter(n => n.q !== q); saveStateToStorage(); openNotebookView(); }
         
-        function toggleTimer() { /* Pomodoro */ }
-        function nextCard() { cardIdx = (cardIdx < currentData[activeUnitIdx].cards.length - 1) ? cardIdx + 1 : 0; renderAll(); }
-        function prevCard() { cardIdx = (cardIdx > 0) ? cardIdx - 1 : currentData[activeUnitIdx].cards.length - 1; renderAll(); }
+        function nextCard() { 
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+            cardIdx = (cardIdx < currentData[activeUnitIdx].cards.length - 1) ? cardIdx + 1 : 0; renderAll(); 
+        }
 
-        // MÜKEMMEL DOM VE DB OKUMA BAĞLANTISI (v12.0 GÜVENCESİ)
+        function prevCard() { 
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+            cardIdx = (cardIdx > 0) ? cardIdx - 1 : currentData[activeUnitIdx].cards.length - 1; renderAll(); 
+        }
+
+        // MÜKEMMEL DOM VE DB OKUMA BAĞLANTISI (v15.0 GÜVENCESİ)
         document.addEventListener("DOMContentLoaded", () => {
             updateSidebarStats();
+            updateVoiceAssistantUI();
+            updateTimerDisplay();
+            
             let checkDB = setInterval(() => {
                 if (typeof tarih_db !== 'undefined' && typeof cografya_db !== 'undefined') {
                     clearInterval(checkDB);
