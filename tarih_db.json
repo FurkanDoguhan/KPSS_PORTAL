@@ -121,6 +121,26 @@ const tarih_db = [
       {
         "q": "12 Hayvanlı Türk Takvimi'nin bilimsel önemi nedir?",
         "a": "Türklerin güneş yılı esaslı olarak tamamen kendi gözlemleriyle oluşturduğu bir takvimdir. Gelişmiş bir astronomi ve matematik bilgisinin kanıtıdır."
+      },
+      {
+        "q": "Kıpçaklar (Kumanlar) boyunun en ünlü sözlük eseri ve Ruslarla olan mücadelelerini anlatan destan hangisidir?",
+        "a": "En ünlü eserleri Codex Cumanicus sözlüğüdür. Ruslar ile olan mücadeleleri ise ünlü İgor Destanı'na konu olmuştur."
+      },
+      {
+        "q": "Bizans ordusunda ücretli askerlik yaparken 1071 Malazgirt Savaşı'nda Selçuklu safına geçen Hristiyan Oğuz boyu hangisidir?",
+        "a": "Bizans ordusunda paralı askerlik yapan Uzlar (Hristiyan Oğuzlar), Malazgirt'te Selçuklu tarafına geçerek saf değiştirmiştir."
+      },
+      {
+        "q": "Eski Türklerde ressamlara ne ad verilir ve Uygur mimarisinde çadır kubbe geçişlerinde kullanılan motif hangisidir?",
+        "a": "Ressamlara Bedizci denir. Çadır kubbe geçişlerindeki motif ise Türk Üçgeni olarak adlandırılır."
+      },
+      {
+        "q": "Eski Türk devletlerinde başbakanlık (vezirlik) makamına ne ad verilir ve Kağanın resmi fermanlarına ne denir?",
+        "a": "Başbakana Ayguci (veya Üge) denir. Hükümdarın resmi fermanlarına ise Yarlıg adı verilir."
+      },
+      {
+        "q": "Eski Türklerde devlet ile halk arasında yapılan, karşılıklı hak ve görevleri belirleyen yazısız sözleşmeye ne ad verilir?",
+        "a": "Devlet ile halk arasındaki bu yazısız toplumsal sözleşmeye Tüz adı verilir."
       }
     ],
     "quiz": [
@@ -2511,6 +2531,126 @@ const tarih_db = [
         "correct": 0,
         "rationale": "Ülkenin ortak malı sayılması, hanedandaki her erkek üyeye yönetim hakkı (Kut) tanıdığı için iç savaşları, bölünmeleri ve hızlı yıkımları beraberinde getirmiştir.",
         "tag": "#KutAnlayışı"
+      },
+      {
+        "q": "Soru: Orta Asya'da demirin ilk kez işlendiği, keçeden çadırların ve dört tekerlekli arabaların yapıldığı bilinen en eski kültür bölgesi aşağıdakilerden hangisidir?",
+        "options": [
+          "A) Anav Kültürü",
+          "B) Karasuk Kültürü",
+          "C) Afanasyevo Kültürü",
+          "D) Tagar Kültürü"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğuru Cevap: B Şıkkıdır.</b><br><br><b>Şık Analizleri:</b><br>• <b>Karasuk Kültürü:</b> Orta Asya'da demirin ilk kez işlendiği, keçeden çadırların yapıldığı ve dört tekerlekli arabaların kullanıldığı kültür merkezidir.<br>• <b>Anav Kültürü:</b> Orta Asya'nın en eski kültür merkezidir. At ilk kez burada evcilleştirilmiştir.<br>• <b>Afanasyevo Kültürü:</b> Türklere ait en eski kültür merkezidir.<br>• <b>Tagar Kültürü:</b> Orta Asya'nın en gelişmiş ve en yeni kültür merkezidir.",
+        "tag": "#KulturMerkezleri"
+      },
+      {
+        "q": "Soru: Atın ilk kez evcilleştirildiği, seramik ve tarım izlerinin görüldüğü Orta Asya'nın en eski kültür merkezi aşağıdakilerden hangisidir?",
+        "options": [
+          "A) Tagar Kültürü",
+          "B) Karasuk Kültürü",
+          "C) Anav Kültürü",
+          "D) Andronova Kültürü"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b><br><br><b>Şık Analizleri:</b><br>• <b>Anav Kültürü:</b> Orta Asya'nın en eski kültürü olup, atın ilk evcilleştirildiği yerdir.<br>• <b>Tagar Kültürü:</b> En gelişmiş bozkır kültürüdür.<br>• <b>Andronova Kültürü:</b> Afanasyevo'nun gelişmiş hali olup, tunç ve altın eşyalara rastlanır.",
+        "tag": "#KulturMerkezleri"
+      },
+      {
+        "q": "Soru: Almanların ünlü Nibelungen Destanı'nda 'Etzel' adıyla geçen, Bizans'ı Margus ve Anatolius antlaşmalarıyla vergiye bağlayan ünlü Avrupa Hun Kağanı aşağıdakilerden hangisidir?",
+        "options": [
+          "A) Balamir",
+          "B) Attila",
+          "C) Uldız",
+          "D) Rua"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b><br><br><b>Şık Analizleri:</b><br>• <b>Attila:</b> Avrupa Hun Devleti'nin en parlak dönemidir. Alman destanı Nibelungen'de 'Etzel' olarak anılır. Bizans'ı Margus ve Anatolius ile vergiye bağlamıştır.<br>• <b>Balamir:</b> Kurucudur.<br>• <b>Uldız:</b> Anadolu'ya ilk ayak basan hükümdardır.",
+        "tag": "#AvrupaHunAttila"
+      },
+      {
+        "q": "Soru: Bizans kaynaklarında 'Turchia' (Türkiye) adıyla ilk kez VI. yüzyılda anılan, tarihte Türk adıyla kurulan ilk devlet aşağıdakilerden hangisidir?",
+        "options": [
+          "A) Asya Hun Devleti",
+          "B) I. Göktürk Devleti",
+          "C) Uygur Devleti",
+          "D) Karahanlı Devleti"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b><br><br><b>Şık Analizleri:</b><br>• <b>I. Göktürk Devleti:</b> VI. yüzyılda Bizans kaynaklarında 'Turchia' ifadesinin ilk kullanıldığı devlettir. Türk adıyla kurulan ilk devlettir.<br>• <b>Asya Hun:</b> Bilinen ilk devlettir ancak Türk adıyla kurulmamıştır.",
+        "tag": "#GokturkKutluk"
+      },
+      {
+        "q": "Soru: II. Göktürk (Kutluk) Devleti'nde 'İlteriş' unvanını alan hükümdar ve devletin ilk büyük veziri, 'Türklerin Bismarck'ı' olarak bilinen devlet adamı ikilisi hangisinde doğru verilmiştir?",
+        "options": [
+          "A) Bilge Kağan - Kül Tigin",
+          "B) Kutluk Kağan - Vezir Tonyukuk",
+          "C) Bumin Kağan - İstemi Yabgu",
+          "D) Bögü Kağan - Yolluğ Tigin"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b><br><br><b>Şık Analizleri:</b><br>• <b>Kutluk Kağan - Vezir Tonyukuk:</b> Devleti derleyip toplayan Kutluk'a 'İlteriş' denmiştir. Tonyukuk ise ilk vezir olup Türklerin Bismarck'ı olarak adlandırılır.<br>• <b>Bilge Kağan - Kül Tigin:</b> En parlak dönem yöneticileridir.",
+        "tag": "#GokturkKutluk"
+      },
+      {
+        "q": "Soru 205: Rusların ünlü İgor Destanı'na ve Türklerin Dede Korkut Hikayeleri'ne konu olan, altın saçlı ve savaşçı kimlikleriyle bilinen, Codex Cumanicus adlı iki ciltlik sözlüğü hazırlayan Türk boyu aşağıdakilerden hangisidir?",
+        "options": [
+          "Peçenekler",
+          "Kıpçaklar (Kumanlar)",
+          "Karluklar",
+          "Hazarlar"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Karadeniz'in kuzeyindeki Deşt-i Kıpçak bozkırlarında yaşayan Kıpçaklar (Kumanlar), İgor Destanı'na konu olmuş ve ünlü Codex Cumanicus sözlüğünü yazmışlardır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Peçenekler devlet kuramamış savaşçı bir boydur ancak Codex eseri onlara ait değildir.<br>• <b>B Şıkkı (Doğru):</b> Kıpçaklar, fiziki güzellikleri, Codex Cumanicus eseri ve Ruslarla olan destansı savaşlarıyla bilinir.<br>• <b>C Şıkkı (Yanlış):</b> Karluklar İslamiyet'i kabul eden ilk Türk boyudur.<br>• <b>D Şıkkı (Yanlış):</b> Hazarlar Museviliği benimseyen tek Türk devletidir.",
+        "tag": "#KipçaklarKumanlar"
+      },
+      {
+        "q": "Soru 206: Hristiyanlığı benimseyerek Bizans ordusunda paralı askerlik yapan ve 1071 Malazgirt Savaşı sırasında Büyük Selçuklu ordusunun kendi soydaşları olduğunu fark ederek savaş sırasında saf değiştiren Oğuz boyu hangisidir?",
+        "options": [
+          "Uzlar (Oğuzlar)",
+          "Karluklar",
+          "Kırgızlar",
+          "Türgişler"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Bizans ordusunda ücretli askerlik yapan Uzlar (Hristiyan Oğuzlar) ve Peçenekler, Malazgirt Savaşı'nda Selçuklu tarafına geçerek savaşın kazanılmasını sağlamışlardır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Uzlar, Hristiyanlaşan Oğuz boyu olup Malazgirt'te saf değiştiren en kalabalık güçtür.<br>• <b>B Şıkkı (Yanlış):</b> Karluklar Selçuklu ordusuyla zaten müttefiktir, Bizans ordusunda bulunmamışlardır.<br>• <b>C Şıkkı (Yanlış):</b> Kırgızlar Ötüken'de egemen olup Bizans sınırına gelmemişlerdir.<br>• <b>D Şıkkı (Yanlış):</b> Türgişler kendi paralarını basan yerleşik Orta Asya devletidir.",
+        "tag": "#OguzlarUzoklar"
+      },
+      {
+        "q": "Soru 207: İslamiyet öncesi Türk sanat tarihi kazılarında karşılaşılan ve özellikle Uygur mimarisinde çadır kubbe geçişlerinde kullanılan geometrik motiflere verilen ad aşağıdakilerden hangisidir?",
+        "options": [
+          "Fresk resmi",
+          "Türk Üçgeni",
+          "Hayvan Üslubu",
+          "Bedizci motifi"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Uygurlar yerleşik yaşama geçtikten sonra çadır kültürünü mimariye aktarmış ve kubbe geçişlerinde geometrik bir motif olan 'Türk Üçgeni'ni kullanmışlardır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Fresk, duvar resmidir, geometrik kubbe geçiş motifi değildir.<br>• <b>B Şıkkı (Doğru):</b> Türk Üçgeni, kubbe geçişlerinde Türk mimarisine özgü efsanevi bir geometrik tasarımdır.<br>• <b>C Şıkkı (Yanlış):</b> Hayvan Üslubu İskitlerden beri kullanılan madencilik süsleme tarzıdır.<br>• <b>D Şıkkı (Yanlış):</b> Bedizci, eski Türklerde ressamlara verilen mesleki unvandır.",
+        "tag": "#KulturSanatTerimleri"
+      },
+      {
+        "q": "Soru 208: Eski Türk devlet teşkilatında Kağan olmadığı zamanlarda Kurultay meclisine başkanlık edebilen, günümüzdeki başbakanlık (vezirlik) makamına denk gelen görevli aşağıdakilerden hangisidir?",
+        "options": [
+          "Buyruk",
+          "Ayguci (Üge)",
+          "Tarkan",
+          "Tamgacı"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Eski Türk idari yapısında vezire (başbakana) Ayguci veya Üge denir. Hükümdar savaşa gittiğinde kurultayı o yönetir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Buyruk, bakan (nazır) anlamına gelen divan üyesidir.<br>• <b>B Şıkkı (Doğru):</b> Ayguci, Kağanın mutlak yardımcısı ve hükümetin (vezirlerin) başıdır.<br>• <b>C Şıkkı (Yanlış):</b> Tarkan, ordu komutanlarına verilen askeri rütbedir.<br>• <b>D Şıkkı (Yanlış):</b> Tamgacı, devletin mühür ve yazışmalarından sorumlu katiptir.",
+        "tag": "#DevletYonetimTerimleri"
+      },
+      {
+        "q": "Soru 209: Eski Türk devletlerinde hükümdarın (Kağanın) yetkilerini ve halkın devlete olan bağlılığını düzenleyen, devlet ile millet arasındaki karşılıklı hak ve ödevleri içeren yazısız toplumsal sözleşmeye ne ad verilir?",
+        "options": [
+          "Türe",
+          "Tüz",
+          "Kurultay fermanı",
+          "Yarlık"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Devlet ile halk arasındaki karşılıklı sorumlulukları ve hakları belirleyen yazısız toplumsal anayasa ve sözleşmeye 'Tüz' denir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Töre (Türe), yazısız genel hukuk kuralları bütünüdür.<br>• <b>B Şıkkı (Doğru):</b> Tüz, hükümdar ile tebaa arasındaki anayasal sözleşmeyi temsil eden siyasi kavramdır.<br>• <b>C Şıkkı (Yanlış):</b> Kurultay kararları meclis kararlarıdır.<br>• <b>D Şıkkı (Yanlış):</b> Yarlık (Yarlıg), bizzat Kağanın çıkardığı ferman ve emirlerdir.",
+        "tag": "#SosyalHayatTerimleri"
       }
     ]
   },
@@ -2636,6 +2776,26 @@ const tarih_db = [
       {
         "q": "Büyük Selçuklu Devleti'nde askeri davalara bakan özel hakime ne ad verilirdi?",
         "a": "Ordu içindeki adalet işlerinden sorumlu askeri yargıca <b>Kadıasker (Kadı-ı Leşker)</b> adı verilirdi."
+      },
+      {
+        "q": "Selçuklu toprak sisteminde mülkiyeti devlete ait olan arazilerin genel adı nedir ve vakıf araziler satılabilir mi?",
+        "a": "Mülkiyeti devlete ait arazilerin adı Miri Arazi'dir. Miri ve vakıf araziler satılamaz ve devredilemez."
+      },
+      {
+        "q": "Büyük Selçuklu döneminde Şii Bâtıni yıkıcı faaliyetlerine karşı Sünni inancı korumak ve devlet adamı yetiştirmek için açılan üniversite düzeyindeki medrese hangisidir?",
+        "a": "Vezir Nizamülmülk tarafından kurulan Nizamiye Medreseleri'dir."
+      },
+      {
+        "q": "Türk-İslam geçiş dönemi eseri olan Kutadgu Bilig ve Divanü Lugati't-Türk hangi lehçe ile yazılmıştır?",
+        "a": "Her iki eser de Karahanlıların resmi dili olan Hakaniye lehçesi (Türkçe) ile yazılmıştır."
+      },
+      {
+        "q": "Selçukluların bağımsız olduğu ve Gaznelilerin yıkılış sürecine girmesine yol açan 1040 tarihli savaş hangisidir?",
+        "a": "Tuğrul ve Çağrı Bey döneminde kazanılan Dandanakan Savaşı'dır."
+      },
+      {
+        "q": "Gazneli Devleti'nin çok uluslu yapısı ve resmi dillerinin Arapça/Farsça olması devlet üzerinde nasıl bir etki yaratmıştır?",
+        "a": "Halk ile devlet arasındaki bağı kopararak devletin kısa sürede yıkılmasına neden olmuştur."
       }
     ],
     "quiz": [
@@ -3838,6 +3998,90 @@ const tarih_db = [
         "correct": 0,
         "rationale": "Veraset sistemindeki bu belirsizlik, her hükümdar ölümünde şehzadeleri birbirine düşürmüş, iç savaşlara ve Selçuklu gibi dev imparatorlukların hızla bölünmesine yol açmıştır.",
         "tag": "#KutAnlayışı"
+      },
+      {
+        "q": "Soru: Mısır'da kurulan ilk Türk-İslam devleti olan, kurucusunun adını taşıyan ve 'Maristan' adı verilen ücretsiz hastaneler inşa eden devlet aşağıdakilerden hangisidir?",
+        "options": [
+          "A) İhşidiler",
+          "B) Tolunoğulları",
+          "C) Memlükler",
+          "D) Eyyubiler"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b><br><br><b>Şık Analizleri:</b><br>• <b>Tolunoğulları:</b> Mısır'da kurulan ilk Türk-İslam devletidir (868). Maristan adı verilen sosyal hastaneler kurmuşlardır.<br>• <b>İhşidiler (Akşitler):</b> İkinci devlettir ve Hicaz'a egemen olan ilk Türk devletidir.<br>• <b>Memlükler:</b> Moğolları durduran ve veraseti olmayan tek Türk devletidir.",
+        "tag": "#MisirdaKurulanDevletler"
+      },
+      {
+        "q": "Soru: Tarihte Ayn el-Calut ve Elbistan savaşlarıyla Moğolları (İlhanlıları) durdurabilen ilk ve tek Türk-İslam devleti aşağıdakilerden hangisidir?",
+        "options": [
+          "A) Selçuklular",
+          "B) Gazneliler",
+          "C) Memlükler",
+          "D) Eyyubiler"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b><br><br><b>Şık Analizleri:</b><br>• <b>Memlükler:</b> Ayn el-Calut ve Elbistan savaşlarıyla Moğolları dünyada askeri olarak durduran ilk ve tek devlettir. Ayrıca veraset sistemi uygulamamışlardır.<br>• <b>Eyyubiler:</b> Hıttin Savaşı ile Kudüs'ü almışlardır.",
+        "tag": "#MisirdaKurulanDevletler"
+      },
+      {
+        "q": "Soru 103: Büyük Selçuklu Devleti'nde mülkiyeti doğrudan devlete ait olan miri arazilerin, vergi gelirlerinin hizmet karşılığı asker ve memurlara verilmesi sistemi aşağıdakilerden hangisidir?",
+        "options": [
+          "Mülk toprak sistemi",
+          "İkta sistemi",
+          "Vakıf toprak sistemi",
+          "Has arazi"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> İkta sistemi, miri toprakların vergi gelirlerinin asker besleme (cebelü) karşılığında komutanlara dağıtılması esasına dayanır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Mülk toprak, şahıslara ait satılabilen topraktır.<br>• <b>B Şıkkı (Doğru):</b> İkta sistemi, hazineye yük olmadan daimi bir eyalet ordusu kurulmasını sağlar.<br>• <b>C Şıkkı (Yanlış):</b> Vakıf topraklar hayır kurumlarının masraflarını karşılayan satılamaz arazilerdir.<br>• <b>D Şıkkı (Yanlış):</b> Has arazi, geliri doğrudan sultana ve hanedana ait olan topraklardır.",
+        "tag": "#SelcukluToprakSistemi"
+      },
+      {
+        "q": "Soru 104: Büyük Selçuklu döneminde kurulan ve Şii-Bâtınilik propagandasının kurucusu olan Hasan Sabbah'ın yıkıcı fikirlerine karşı Sünni inancı korumak ve liyakatli bürokrat yetiştirmek amacıyla açılan dünyanın ilk kurumsal üniversitesi hangisidir?",
+        "options": [
+          "Semerkant Medresesi",
+          "Nizamiye Medreseleri",
+          "Yağıbasan Medresesi",
+          "Karatay Medresesi"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Alparslan ve Melikşah dönemlerinde Bağdat'ta kurulan Nizamiye Medreseleri, Bâtıni (haşhaşi) fikir akımlarına karşı fikri mücadele amacıyla kurulan akademik zirvedir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Semerkant Medresesi Karahanlılara ait ilk medresedir.<br>• <b>B Şıkkı (Doğru):</b> Nizamiye Medreseleri, Vezir Nizamülmülk tarafından planlanan ilk devasa Sünni eğitim kalesidir.<br>• <b>C Şıkkı (Yanlış):</b> Yağıbasan, Anadolu'daki Danişmentlilere ait ilk medresedir.<br>• <b>D Şıkkı (Yanlış):</b> Karatay Medresesi Anadolu Selçuklu döneminde açılmıştır.",
+        "tag": "#İlkTurkİslamMedreseleri"
+      },
+      {
+        "q": "Soru 105: Karahanlılar döneminde Yusuf Has Hacib tarafından Hakaniye lehçesiyle yazılan, hükümdara adaletli yönetim öğütleyen ve Türk-İslam tarihinin ilk edebi eseri ile ilk siyasetnamesi olma unvanını taşıyan başyapıt hangisidir?",
+        "options": [
+          "Divanü Lugati't-Türk",
+          "Kutadgu Bilig",
+          "Atabetü'l-Hakayık",
+          "Divan-ı Hikmet"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Kutadgu Bilig (Mutluluk Veren Bilgi), Türk-İslam sentezinin ilk yazılı edebi eseri ve ilk siyasetnamesidir. Hükümdar Tabgaç Buğra Han'a sunulmuştur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Divanü Lugati't-Türk, Kaşgarlı Mahmud'un ilk Türkçe sözlük eseridir.<br>• <b>B Şıkkı (Doğru):</b> Kutadgu Bilig, adalet, akıl, kanaat ve devleti temsil eden 4 karakterin karşılıklı konuşmalarına dayanan ilk siyasi başyapıttır.<br>• <b>C Şıkkı (Yanlış):</b> Atabetü'l-Hakayık, ahlak ve tasavvuf kitabıdır.<br>• <b>D Şıkkı (Yanlış):</b> Divan-ı Hikmet, Hoca Ahmet Yesevi'nin şiirleridir.",
+        "tag": "#İlkTurkİslamEserleri"
+      },
+      {
+        "q": "Soru 106: Tuğrul ve Çağrı Bey döneminde Gaznelilere karşı kazanılan ve Büyük Selçuklu Devleti'nin resmen kurulmasını sağlarken Gaznelilerin yıkılış sürecine girmesine yol açan 1040 tarihli kurucu savaş hangisidir?",
+        "options": [
+          "Pasinler Savaşı",
+          "Dandanakan Savaşı",
+          "Katvan Savaşı",
+          "Malazgirt Savaşı"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> 1040 Dandanakan Savaşı, iki Müslüman Türk ordusunun karşılaşmasıdır. Selçukluların kurulmasını ve Gaznelilerin tarih sahnesinden çekilmeye başlamasını sağlamıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Pasinler (1048) Bizans'la yapılan ilk savaştır.<br>• <b>B Şıkkı (Doğru):</b> Dandanakan, Oğuzların tarih sahnesine bağımsız bir Selçuklu İmparatorluğu olarak çıkışını tescilleyen savaştır.<br>• <b>C Şıkkı (Yanlış):</b> Katvan (1141) Karahitaylara yenilip Selçuklunun yıkılış sürecine girdiği savaştır.<br>• <b>D Şıkkı (Yanlış):</b> Malazgirt, Anadolu kapılarını açan savaştır.",
+        "tag": "#TurkİslamSavaslari"
+      },
+      {
+        "q": "Soru 107: Afganistan'ın Gazne şehrinde Alp Tigin tarafından kurulan Gazneli Devleti'nin, çok uluslu yapısı nedeniyle diğer Türk devletlerine göre daha kısa ömürlü olmasının ve halkla bağının zayıf kalmasının temel idari nedeni hangisidir?",
+        "options": [
+          "Gulam ordusunun bulunmaması",
+          "Yönetici kadrosunun Türk, halkın ise farklı etnik kökenlerden (Afgan, Hint, Fars) oluşması",
+          "İktisadi olarak İpek Yolu'nu kontrol edememeleri",
+          "Kut anlayışını tamamen reddetmeleri"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Gaznelilerin yönetici ve askeri bürokrasisi tamamen Türk iken, yönettikleri coğrafyadaki halkın büyük bölümü Hintliler, Afganlar ve Farslardan oluşuyordu. Bu durum toplumsal birliği zorlaştırmış ve yıkılışı hızlandırmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Gulam ordusu Gaznelilerde en gelişmiş düzeyde vardır.<br>• <b>B Şıkkı (Doğru):</b> Farklı etnik yapıların bir arada tutulması, ulusal bir kimlik oluşturulmasını engellemiş ve asayiş krizlerinde devleti zayıflatmıştır.<br>• <b>C Şıkkı (Yanlış):</b> Ticaret yolları kontrollerinde vardır.<br>• <b>D Şıkkı (Yanlış):</b> Kut inancı Gaznelilerde de varlığını sürdürmüştür.",
+        "tag": "#GazneliDevletiYonetim"
       }
     ]
   },
@@ -3963,6 +4207,22 @@ const tarih_db = [
       {
         "q": "Mengücekliler döneminde Sivas'ta yapılan ve UNESCO Dünya Mirası listesinde yer alan başyapıt hangisidir?",
         "a": "Eşsiz taş işçiliği ve kapılarındaki cennet gölgeleriyle ünlü olan <b>Divriği Ulu Cami ve Darüşşifası</b>'dır."
+      },
+      {
+        "q": "1071 Malazgirt Savaşı'nın kazanılmasıyla Bizans'ın balkanlardan yardım istemesi üzerine başlayan küresel askeri hareket nedir?",
+        "a": "Avrupa'nın düzenlediği Haçlı Seferleri'nin başlamasına doğrudan neden olmuştur."
+      },
+      {
+        "q": "Kösedağ Savaşı'ndan sonra Balıkesir-Çanakkale çevresinde kurulan ve Osmanlı'ya katılan ilk denizci beylik hangisidir?",
+        "a": "Karesioğulları Beyliği'dir, Osmanlı donanmasının temelini oluşturmuştur."
+      },
+      {
+        "q": "Selçuklu şehir hayatında tek bir ürünün (un, yağ) toptan satıldığı hal/pazar yerine ne ad verilir?",
+        "a": "Bu toptan pazar yerlerine Kapan Hanı adı verilir."
+      },
+      {
+        "q": "Mengücekliler tarafından yapılan ve UNESCO Dünya Mirası listesine giren Anadolu'daki ilk Türk-İslam yapıtı hangisidir?",
+        "a": "Sivas'taki Divriği Ulu Camii ve Darüşşifası'dır."
       }
     ],
     "quiz": [
@@ -5245,6 +5505,54 @@ const tarih_db = [
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Narh).</b> Narh, fahiş karların ve enflasyonun önüne geçer.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Narh uygulaması fiyat istikrarını ve kamu yararını korur.<br>• <b>B Şıkkı (Yanlış):</b> Gedik, dükkan açma ruhsatıdır.<br>• <b>C Şıkkı (Yanlış):</b> Müsadere, mala el koymadır.<br>• <b>D Şıkkı (Yanlış):</b> İltizam, vergi toplama ihalesidir.",
         "tag": "#ASDMedeniyeti"
+      },
+      {
+        "q": "Soru 101: 1071 yılında kazanılan Malazgirt Savaşı sonrasında Bizans İmparatorluğu'nun Türkleri Anadolu'dan atamayacağını anlayarak Avrupa'dan yardım istemesi üzerine başlayan evrensel askeri hareket hangisidir?",
+        "options": [
+          "Coğrafi Keşifler",
+          "Haçlı Seferleri",
+          "Kavimler Göçü",
+          "Rönesans hareketleri"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Malazgirt zaferinden sonra Türklerin Anadolu'yu hızlıca fethetmesi Bizans'ı çaresiz bırakmış ve Avrupa'dan askeri destek istemesi üzerine ünlü Haçlı Seferleri tetiklenmiştir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Coğrafi Keşifler okyanus yolları arayışıdır.<br>• <b>B Şıkkı (Doğru):</b> Haçlı Seferleri, Türklerin Anadolu'daki ilerleyişini durdurmak için Papa önderliğinde toplanan birleşik Avrupa seferleridir.<br>• <b>C Şıkkı (Yanlış):</b> Kavimler Göçü 375 yılında yapılmıştır.<br>• <b>D Şıkkı (Yanlış):</b> Rönesans kültürel sanatsal gelişimdir.",
+        "tag": "#MalazgirtSavasi"
+      },
+      {
+        "q": "Soru 102: 1243 Kösedağ Savaşı sonrasında Anadolu Selçuklu Devleti'nin otoritesinin çökmesiyle, Balıkesir ve Çanakkale çevresinde kurulan, denizci kimliğiyle bilinen ve Osmanlı'ya katılan ilk beylik hangisidir?",
+        "options": [
+          "Aydınoğulları",
+          "Karesioğulları",
+          "Germiyanoğulları",
+          "Hamitoğulları"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Balıkesir çevresinde kurulan Karesioğulları Beyliği, Orhan Bey döneminde Osmanlı'ya katılan ilk beylik olmuş ve donanmamızın temelini oluşturmuştur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Aydınoğulları İzmir çevresindedir ve en güçlü denizci beyliktir.<br>• <b>B Şıkkı (Doğru):</b> Karesioğullarının katılmasıyla Osmanlı donanması kurulmuş ve Rumeli'ye (Gelibolu) geçiş kolaylaşmıştır.<br>• <b>C Şıkkı (Yanlış):</b> Germiyanoğulları Kütahya çevresindedir.<br>• <b>D Şıkkı (Yanlış):</b> Hamitoğulları Isparta çevresindedir.",
+        "tag": "#KoseDalgDalgalari"
+      },
+      {
+        "q": "Soru 103: Anadolu Selçuklu Devleti ticari medeniyetinde, şehirlerde tek bir ürünün (örneğin un, yağ, hububat) toptan getirilip satıldığı, günümüzdeki toptancı hallerine benzeyen kapalı pazar yerlerine ne ad verilir?",
+        "options": [
+          "Bedesten",
+          "Kapan Hanı",
+          "Ribat",
+          "Kümbet"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Tek bir ürünün toptan getirilip dağıtıldığı ticaret hanlarına Kapan Hanı (un kapanı, yağ kapanı) adı verilir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Bedesten değerli kumaşların, takıların satıldığı lüks kapalı çarşıdır.<br>• <b>B Şıkkı (Doğru):</b> Kapan Hanı, gıda maddelerinin karaborsaya düşmesini önlemek amacıyla fiyat denetiminin de yapıldığı toptan hallerdir.<br>• <b>C Şıkkı (Yanlış):</b> Ribat, kervansaray ve sınır karakollarıdır.<br>• <b>D Şıkkı (Yanlış):</b> Kümbet, Selçuklu tarzı anıt mezarlardır.",
+        "tag": "#ASDMedeniyetTerimleri"
+      },
+      {
+        "q": "Soru 104: Mengücekliler döneminde inşa edilen, taş işçiliğindeki muazzam detaylarıyla ünlü olan ve UNESCO Dünya Mirası listesine Türkiye'den giren ilk Türk-İslam mimari başyapıtı hangisidir?",
+        "options": [
+          "Yağıbasan Medresesi",
+          "Divriği Ulu Camii ve Darüşşifası",
+          "Malabadi Köprüsü",
+          "Hatuniye Medresesi"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Sivas Divriği'de bulunan Divriği Ulu Camii ve Darüşşifası, taş oymacılığının zirvesi olup UNESCO'nun tescillediği ilk kültür mirasımızdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Yağıbasan Medresesi Danişmentlilere ait ilk medresedir.<br>• <b>B Şıkkı (Doğru):</b> Divriği Ulu Camii, Mengücekliler döneminde yapılan, kapısındaki gölgelerin namaz kılan insan şekli oluşturduğu taş şaheseridir.<br>• <b>C Şıkkı (Yanlış):</b> Malabadi, Artuklulara ait taş kemerli köprüdür.<br>• <b>D Şıkkı (Yanlış):</b> Hatuniye, Artuklu medresesidir.",
+        "tag": "#BirinciBeyliklerMedeniyeti"
       }
     ]
   },
@@ -5370,6 +5678,26 @@ const tarih_db = [
         ],
         "correct": 0,
         "a": "<b>Devşirme Kadrolaşması:</b> Merkeziyetçi mutlak otoriteyi padişahın elinde toplama stratejisidir."
+      },
+      {
+        "q": "İstanbul'un Fethi'nden önce Bizans'ın savunma amacıyla kullandığı, suda yanmaya devam eden ünlü silahı hangisidir?",
+        "a": "Grejuva Ateşi (Rum Ateşi) adı verilen sıvı ateş püskürtme sistemidir."
+      },
+      {
+        "q": "1402 Ankara Savaşı'nın kaybedilmesi ve Anadolu Türk siyasi birliğinin bozulması sonucunda Osmanlı'da başlayan kriz dönemi hangisidir?",
+        "a": "11 yıl süren ve şehzadelerin taht kavgası yaptığı Fetret Devri'dir."
+      },
+      {
+        "q": "Karesioğullarının Osmanlı'ya katılmasıyla beyliğin elde ettiği en önemli askeri kazanım nedir?",
+        "a": "Osmanlı ilk kez donanma gücüne sahip olmuş ve Rumeli'ye geçişi kolaylaşmıştır."
+      },
+      {
+        "q": "Kanuni döneminde batı seferlerinde ve Avrupa içlerindeki harekatlarda kullanılan en önemli lojistik ileri üs neresidir?",
+        "a": "1521 yılında fethedilen Belgrad şehridir."
+      },
+      {
+        "q": "Sokollu Mehmet Paşa'nın Hazar Denizi'ne inerek Rusların güneye inmesini engellemek amacıyla hazırladığı nehir projesi hangisidir?",
+        "a": "Don ve Volga nehirlerini birleştirmeyi amaçlayan Don-Volga Kanal Projesi'dir."
       }
     ],
     "quiz": [
@@ -6572,6 +6900,78 @@ const tarih_db = [
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Fatih Sultan Mehmet, İstanbul'u fethederek Roma İmparatorluğu'nun başkentini ele geçirmiş ve kendini Roma imparatorlarının meşru halefi görerek 'Kayser-i Rum' (Roma İmparatoru / Sezarı) unvanını almıştır. Bu unvan Osmanlı'nın evrensel imparatorluk vizyonunun ifadesidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Fatih, Bizans'ın fethinden sonra Roma tahtının mirasçılığı adına 'Kayser-i Rum' unvanını kullanmıştır.<br>• <b>B Şıkkı (Yanlış):</b> 'Hadimü'l-Haremeyn' (Mekke ve Medine'nin Hizmetkarı) unvanı Yavuz Sultan Selim'e aittir.<br>• <b>C Şıkkı (Yanlış):</b> 'Sultan-ı İklim-i Rum' unvanı Niğbolu zaferinden sonra Yıldırım Bayezid'e verilmiştir.<br>• <b>D Şıkkı (Yanlış):</b> 'Şah-ı Cihan' Babür İmparatorluğu hükümdarlarına ait doğu kökenli bir unvandır.",
         "tag": "#İstanbulunFethi"
+      },
+      {
+        "q": "Soru: I. Murad döneminde Bizans ve Bulgar kuvvetleriyle yapılan, kazanılmasıyla Edirne'nin fethedilip başkent yapıldığı savaş aşağıdakilerden hangisidir?",
+        "options": [
+          "A) Koyunhisar Savaşı",
+          "B) Sırpsındığı Savaşı",
+          "C) Sazlıdere Savaşı",
+          "D) I. Kosova Savaşı"
+        ],
+        "correct": 2,
+        "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b><br><br><b>Şık Analizleri:</b><br>• <b>Sazlıdere Savaşı:</b> 1363 yılında Bizans ve Bulgar kuvvetleriyle yapılmış, Edirne fethedilerek başkent ilan edilmiştir.<br>• <b>Sırpsındığı:</b> Haçlılarla yapılan ilk savaştır.<br>• <b>Koyunhisar:</b> Osman Gazi dönemindeki ilk Bizans savaşıdır.",
+        "tag": "#SazlidereSavasi"
+      },
+      {
+        "q": "Soru 102: İstanbul'un kuşatılması sırasında Bizans İmparatorluğu'nun savunma gücünü artırmak amacıyla kullandığı, suda dahi sönmeyen ve gemileri yakan sıvı ateş püskürtme silahı hangisidir?",
+        "options": [
+          "Şahi Topu",
+          "Grejuva (Rum Ateşi)",
+          "Havan Topu",
+          "Mancınık ateşi"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Bizans'ın en önemli savunma silahı olan Grejuva Ateşi, suyla temas ettiğinde daha çok yanan kimyasal bir karışımdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Şahi topları, Fatih'in döktürdüğü devasa Osmanlı toplarıdır.<br>• <b>B Şıkkı (Doğru):</b> Grejuva ateşi, Haliç zinciriyle birlikte Bizans surlarını denizden aşılmaz kılan en büyük savunma aracıdır.<br>• <b>C Şıkkı (Yanlış):</b> Havan topu, surların arkasına aşırtma vuruş yapmak için Fatih tarafından icat edilmiştir.<br>• <b>D Şıkkı (Yanlış):</b> Mancınık klasik kuşatma aracıdır.",
+        "tag": "#IstanbulunFethiHazirliklar"
+      },
+      {
+        "q": "Soru 103: 1402 Ankara Savaşı'nda Yıldırım Bayezid'in Timur'a yenilmesi sonucunda Osmanlı Devleti'nin batı yönündeki fetihlerinin durmasına ve Anadolu Türk Siyasi Birliği'nin tamamen parçalanmasına yol açan kriz dönemi hangisidir?",
+        "options": [
+          "Duraklama Devri",
+          "Fetret Devri",
+          "Lale Devri",
+          "Gerileme Dönemi"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Ankara Savaşı sonrasında Yıldırım'ın oğulları arasında 11 yıl süren ve devleti yıkılışın eşiğine getiren taht kavgaları dönemi 'Fetret Devri' olarak adlandırılır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Duraklama 1579 Sokollu Mehmet Paşa'nın ölümüyle başlar.<br>• <b>B Şıkkı (Doğru):</b> Fetret Devri, beyliklerin yeniden kurulmasıyla Anadolu birliğini sıfırlayan tarihi kriz dönemidir.<br>• <b>C Şıkkı (Yanlış):</b> Lale Devri 1718'de başlayan yenilik dönemidir.<br>• <b>D Şıkkı (Yanlış):</b> Gerileme Karlofça sonrasıdır.",
+        "tag": "#AnkaraSavasiNedenleri"
+      },
+      {
+        "q": "Soru 104: Osmanlı Devleti'nin Orhan Bey döneminde Karesioğulları Beyliği'ni topraklarına katarak elde ettiği en stratejik askeri-siyasi kazanım aşağıdakilerden hangisidir?",
+        "options": [
+          "İlk yazılı kanunnamenin yapılması",
+          "İlk kez donanma gücüne sahip olunması ve Rumeli'ye geçişin kolaylaşması",
+          "İlk bakır paranın basılması",
+          "Halifeliğin Osmanlı'ya geçmesi"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Karesioğullarının katılmasıyla beyliğin elindeki tersane ve gemiler Osmanlı'ya geçmiş, Hacı İlbeyi gibi denizciler sayesinde Rumeli kıyılarına (Çimpe) geçiş sağlanmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> İlk yazılı kanunname Fatih Kanunnamesi'dir.<br>• <b>B Şıkkı (Doğru):</b> Karesi donanması, Osmanlı'nın denizciliğe başlamasını sağlayan ve Rumeli fetihlerinin lojistiğini kuran kurucu güçtür.<br>• <b>C Şıkkı (Yanlış):</b> İlk bakır para Osman Bey dönemindedir.<br>• <b>D Şıkkı (Yanlış):</b> Halifelik Yavuz Sultan Selim'in Mısır seferiyle alınmıştır.",
+        "tag": "#KaresiDonanmaGecis"
+      },
+      {
+        "q": "Soru 105: Kanuni Sultan Süleyman'ın 1521 yılında fethettiği, Avrupa içlerine ve Macaristan üzerine yapılacak büyük askeri harekatlarda Osmanlı ordusunun en önemli lojistik ve askeri ileri üssü olan şehir hangisidir?",
+        "options": [
+          "Budapeşte",
+          "Belgrad",
+          "Viyana",
+          "Sofya"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> 1521 yılında Sırbistan'dan alınan Belgrad, Kanuni'nin Avrupa'ya açılan askeri kapısı ve lojistik ordu toplanma merkezi olmuştur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Budin (Budapeşte) Mohaç savaşı sonrasında alınmıştır, Belgrad'dan daha batıdadır.<br>• <b>B Şıkkı (Doğru):</b> Belgrad, stratejik nehir yolları ve kaleleriyle Avrupa fetihlerinin kilidi durumundadır.<br>• <b>C Şıkkı (Yanlış):</b> Viyana kuşatılmış fakat fethedilememiştir.<br>• <b>D Şıkkı (Yanlış):</b> Sofya idari beylerbeylik merkezidir.",
+        "tag": "#SuleymanKanuniSeferler"
+      },
+      {
+        "q": "Soru 106: Sadrazam Sokollu Mehmet Paşa'nın, Rusların güneye inmesini engellemek, Don ve Volga nehirlerini birleştirerek Hazar Denizi'ne inmek ve Orta Asya Türkleriyle doğrudan bağlantı kurmak amacıyla hazırladığı kanal projesi hangisidir?",
+        "options": [
+          "Süveyş Kanalı Projesi",
+          "Don-Volga Kanal Projesi",
+          "Karadeniz-Marmara Projesi",
+          "Kızıldeniz Projesi"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Don ve Volga nehirlerinin en yakın olduğu noktayı birleştirerek Hazar'a inme projesi olan Don-Volga Projesi, Türk dünyasını birleştirmeyi amaçlayan tarihi bir vizyondur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Süveyş Kanalı Akdeniz'i Kızıldeniz'e bağlama projesidir.<br>• <b>B Şıkkı (Doğru):</b> Don-Volga projesi, Rusya'nın büyümesini engellemek, Hazar'da donanma kurup Safevileri kuzeyden sıkıştırmak ve Türk birliğini sağlamak içindir.<br>• <b>C Şıkkı (Yanlış):</b> Karadeniz-Marmara Sakarya nehri projesidir.<br>• <b>D Şıkkı (Yanlış):</b> Kızıldeniz projesi Süveyş ile aynıdır.",
+        "tag": "#SokolluMehmetProje"
       }
     ]
   },
@@ -6637,6 +7037,22 @@ const tarih_db = [
       {
         "q": "Osmanlı görsel sanatlarında derinlik ve perspektif aramayan, olayları ve kişileri önemine göre büyük-küçük çizen kitap resim sanatı hangisidir?",
         "a": "<b>Minyatür Sanatı:</b> Ustalarına Nakkaş denilen, tarihi olayları iki boyutlu görsel belgeler olarak kaydeden geleneksel süsleme sanatıdır."
+      },
+      {
+        "q": "Osmanlı miri toprak sisteminde geliri doğrudan devlet hazinesine peşin nakit olarak aktarılan arazi türü hangisidir?",
+        "a": "Mukataa topraklarıdır, vergisi iltizam yöntemiyle peşin toplanır."
+      },
+      {
+        "q": "Topkapı Sarayı'nda bulunan, zeki devşirme çocuklarının sadrazam, komutan veya bürokrat olarak yetiştirildiği okul hangisidir?",
+        "a": "Enderun Mektebi (Saray Okulu)'dur."
+      },
+      {
+        "q": "Osmanlı'da cariyelerin saray adabı, din, edebiyat ve el işi öğrendiği üst düzey kız okulu niteliğindeki saray bölümü hangisidir?",
+        "a": "Padişahın ailesiyle yaşadığı özel bölüm olan Harem teşkilatıdır."
+      },
+      {
+        "q": "Osmanlı ticaret yollarındaki dağ geçitlerinin ve stratejik noktaların güvenliğini sağlayan askeri-sivil kolluk gücü hangisidir?",
+        "a": "Derbentçiler adı verilen güvenlik teşkilatıdır."
       }
     ],
     "quiz": [
@@ -7839,6 +8255,66 @@ const tarih_db = [
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Matrakçı Nasuh, 16. yüzyılda yaşamış dahi bir matematikçi, silahşör, coğrafyacı ve nakkaştır. Geliştirdiği matrak sporuyla da tanınır. Kanuni'nin Irak seferi menzillerini çizdiği minyatürleri, o dönemin şehir mimarilerini, kalelerini ve doğasını birebir detayla gösteren tarihi belgelerdir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Matrakçı Nasuh, 16. yüzyılın en meşhur dahi şehir nakkaşı, silahşörü ve haritacısıdır.<br>• <b>B Şıkkı (Yanlış):</b> Levni Lale Devri'nin (18. yüzyılın) ünlü minyatür ve tasvir sanatçısıdır.<br>• <b>C Şıkkı (Yanlış):</b> Nakkaş Osman Surname-i Hümayun'u resmeden 16. yüzyıl sonu ünlü nakkaşıdır.<br>• <b>D Şıkkı (Yanlış):</b> Şeker Ahmet Paşa 19. yüzyılda batılı tarzda yağlıboya resim yapan Osmanlı ressamıdır.",
         "tag": "#OsmanlıSanatı"
+      },
+      {
+        "q": "Soru: Ahmet Cevdet Paşa başkanlığındaki bir komisyon tarafından İslam fıkhına dayalı olarak hazırlanan, Osmanlı Devleti'nin ilk modern medeni kanunu aşağıdakilerden hangisidir?",
+        "options": [
+          "A) Kanun-i Esasi",
+          "B) Mecelle-i Ahkam-ı Adliye",
+          "C) Kanunname-i Âli Osman",
+          "D) Tanzimat Fermanı"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b><br><br><b>Şık Analizleri:</b><br>• <b>Mecelle:</b> Ahmet Cevdet Paşa tarafından hazırlanan ilk medeni kanundur.<br>• <b>Kanun-i Esasi:</b> İlk anayasadır.<br>• <b>Kanunname-i Âli Osman:</b> Fatih döneminin kanunnamesidir.",
+        "tag": "#HukukSistemi"
+      },
+      {
+        "q": "Soru 102: Osmanlı toprak sisteminde miri toprakların vergi gelirlerinin peşin olarak tahsil edilerek doğrudan devlet hazinesine aktarıldığı arazi türü aşağıdakilerden hangisidir?",
+        "options": [
+          "Has Topraklar",
+          "Mukataa araziler",
+          "Ocaklık topraklar",
+          "Yurtluk araziler"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Mukataa topraklar, geliri doğrudan nakit olarak hazineye aktarılan, vergisi İltizam (açık artırmalı kiralama) yöntemiyle peşin toplanan topraklardır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Has arazi, geliri doğrudan sultana ve hanedana ait topraklardır.<br>• <b>B Şıkkı (Doğru):</b> Mukataa topraklar, devletin acil nakit para ihtiyacını karşılamak için iltizamla kiraladığı hazine arazileridir.<br>• <b>C Şıkkı (Yanlış):</b> Ocaklık, geliri kale muhafızlarına ve tersane giderlerine ayrılan topraklardır.<br>• <b>D Şıkkı (Yanlış):</b> Yurtluk, geliri sınır boylarındaki askerlere ayrılan arazileridir.",
+        "tag": "#OsmanliToprakCesitleri"
+      },
+      {
+        "q": "Soru 103: Fatih Sultan Mehmet döneminde Topkapı Sarayı'nda kurumsallaşan, devşirme çocukların en zeki olanlarının seçilerek sadrazam, vezir ve üst düzey devlet bürokratı olarak yetiştirildiği saray okulu hangisidir?",
+        "options": [
+          "Şehzade Mektebi",
+          "Enderun Mektebi",
+          "Medrese Okulu",
+          "Acemi Ocağı"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Enderun Mektebi, sarayın iç bölümünde (Birun-Enderun) yer alan, padişahın doğrudan liyakatli yönetici sınıfını yetiştirdiği saray okuludur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Şehzade mektebi hanedan çocuklarının ilk okuma yazma öğrendiği yerdir.<br>• <b>B Şıkkı (Doğru):</b> Enderun, sadrazamlığa kadar yükselebilen idari ve sanatsal kadroları liyakat esasıyla yetiştiren okuldur.<br>• <b>C Şıkkı (Yanlış):</b> Medrese dini şer'i eğitim veren halk okuludur.<br>• <b>D Şıkkı (Yanlış):</b> Acemi Ocağı Yeniçeri piyade eğitim merkezidir.",
+        "tag": "#EnderunMektebi"
+      },
+      {
+        "q": "Soru 104: Padişahın ailesiyle yaşadığı, kelime anlamı 'yasak' olan ve cariyelerin saray adabı, din, edebiyat, el işi ve müzik öğrendiği üst düzey saray eğitim bölümü hangisidir?",
+        "options": [
+          "Birun",
+          "Harem",
+          "Enderun",
+          "Divan salonu"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Harem, padişahın evi olmasının yanı sıra cariyelerin saray terbiyesi aldığı bir eğitim akademisi ve okuldur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Birun, sarayın dış hizmetlerinin (hekimler, seyisler) yürütüldüğü bölümdür.<br>• <b>B Şıkkı (Doğru):</b> Harem, cariyelerin eğitilip Enderun mezunu devlet adamlarıyla evlendirilerek taşra saray elitinin kurulmasını sağlayan okuldur.<br>• <b>C Şıkkı (Yanlış):</b> Enderun erkek bürokrat yetiştiren saray okuludur.<br>• <b>D Şıkkı (Yanlış):</b> Divan salonu devlet meclisidir.",
+        "tag": "#HaremTeskilati"
+      },
+      {
+        "q": "Soru 105: Osmanlı eyalet ve ticaret yollarındaki dağ geçitlerinin, köprülerin ve stratejik boğazların güvenliğini sağlamak amacıyla kurulan askeri-sivil taşra kolluk gücü hangisidir?",
+        "options": [
+          "Menzil Teşkilatı",
+          "Derbentçiler",
+          "Mekkareciler",
+          "Muhtesipler"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Derbentçiler, ticaret kervanlarının yollardaki güvenliğini sağlayan, geçitleri ve köprüleri koruyan özel kolluk kuvvetidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Menzil teşkilatı posta, hızlı haberleşme ve lojistik durak organizasyonudur.<br>• <b>B Şıkkı (Doğru):</b> Derbentçiler, ticaret yollarındaki asayişi koruyarak gümrük gelirlerinin ve ticaretin istikrarını sağlarlar.<br>• <b>C Şıkkı (Yanlış):</b> Mekkareciler taşımacılık lojistik esnafıdır.<br>• <b>D Şıkkı (Yanlış):</b> Muhtesip belediye zabıtası ve fiyat denetleyicisidir.",
+        "tag": "#OsmanliEsnafSistemi"
       }
     ]
   }
