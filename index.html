@@ -34,6 +34,18 @@
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #475569; }
         
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-slideUp {
+            animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .note-line {
+            display: inline-block;
+            width: 100%;
+        }
+        
         /* --- PRINT STYLES FOR PROFESSIONALLY FORMATTED KPSS REPORT --- */
         @media print {
             body { background: white !important; color: black !important; font-family: 'Inter', sans-serif !important; font-size: 11px !important; }
@@ -168,11 +180,12 @@
                     <h2 id="txt-active-unit" class="text-sm font-black text-white truncate">Ünite Yükleniyor...</h2>
                     <div id="box-group-selector" class="mt-3 flex flex-wrap gap-1.5 hidden"></div>
                 </div>
-                <div class="flex bg-slate-900 p-1 rounded-lg border border-slate-800 text-xs font-bold w-full sm:w-auto">
-                    <button onclick="switchMode('cards')" id="btn-mode-cards" class="flex-1 sm:flex-none px-4 py-1.5 rounded-md bg-slate-800 text-white shadow-xs cursor-pointer">Kartlar</button>
-                    <button onclick="switchMode('quiz')" id="btn-mode-quiz" class="flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer">Soru Bankası</button>
-                    <button onclick="switchMode('notes')" id="btn-mode-notes" class="flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer">Konu Özetleri</button>
-                    <button onclick="switchMode('exam')" id="btn-mode-exam" class="flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer">Deneme Sınavı</button>
+                <div class="flex bg-slate-900 p-1 rounded-lg border border-slate-800 text-[10px] sm:text-xs font-bold w-full sm:w-auto flex-wrap sm:flex-nowrap gap-1 sm:gap-0">
+                    <button onclick="switchMode('roadmap')" id="btn-mode-roadmap" class="flex-grow sm:flex-none px-3.5 py-1.5 rounded-md bg-slate-800 text-white shadow-xs cursor-pointer flex items-center justify-center gap-1 transition-all duration-200"><i class="fa-solid fa-map-location-dot"></i> Yol Haritası</button>
+                    <button onclick="switchMode('cards')" id="btn-mode-cards" class="flex-grow sm:flex-none px-3.5 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer flex items-center justify-center gap-1 transition-all duration-200"><i class="fa-solid fa-clone"></i> Kartlar</button>
+                    <button onclick="switchMode('quiz')" id="btn-mode-quiz" class="flex-grow sm:flex-none px-3.5 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer flex items-center justify-center gap-1 transition-all duration-200"><i class="fa-solid fa-circle-question"></i> Soru Bankası</button>
+                    <button onclick="switchMode('notes')" id="btn-mode-notes" class="flex-grow sm:flex-none px-3.5 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer flex items-center justify-center gap-1 transition-all duration-200"><i class="fa-solid fa-book"></i> Konu Özetleri</button>
+                    <button onclick="switchMode('exam')" id="btn-mode-exam" class="flex-grow sm:flex-none px-3.5 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer flex items-center justify-center gap-1 transition-all duration-200"><i class="fa-solid fa-graduation-cap"></i> Deneme Sınavı</button>
                 </div>
             </div>
 
@@ -366,18 +379,18 @@
                             </div>
                             <!-- Flaş Kart Widget -->
                             <div class="flex justify-center py-2">
-                                <div class="w-80 h-48 cursor-pointer flashcard" id="wizard-flashcard-container" onclick="flipWizardCard()">
+                                <div class="w-full max-w-md h-56 cursor-pointer flashcard" id="wizard-flashcard-container" onclick="flipWizardCard()">
                                     <div class="w-full h-full relative flashcard-inner duration-500" id="wizard-flashcard-box">
                                         <!-- Front -->
-                                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-950/95 to-slate-900/95 border-2 border-indigo-500/40 flex flex-col justify-between p-4 flashcard-front text-center shadow-lg">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-950/95 to-slate-900/95 border-2 border-indigo-500/40 flex flex-col justify-between p-5 rounded-2xl flashcard-front text-center shadow-xl">
                                             <span class="text-[8px] text-indigo-400 font-bold uppercase tracking-wider flex items-center justify-center gap-1"><i class="fa-solid fa-circle-question"></i> KAVRAM / SORU</span>
-                                            <p id="wizard-card-front" class="text-xs font-black text-slate-200 flex-grow flex items-center justify-center px-2">Soru yükleniyor...</p>
+                                            <p id="wizard-card-front" class="text-xs sm:text-sm font-bold text-slate-200 flex-grow flex items-center justify-center px-5 py-2 leading-relaxed">Soru yükleniyor...</p>
                                             <span class="text-[8px] text-slate-500 animate-pulse"><i class="fa-solid fa-rotate mr-1"></i> ÇEVİRMEK İÇİN TIKLA</span>
                                         </div>
                                         <!-- Back -->
-                                        <div class="absolute inset-0 bg-slate-950 border-2 border-emerald-500/40 flex flex-col justify-between p-4 flashcard-back text-center shadow-lg">
+                                        <div class="absolute inset-0 bg-slate-950 border-2 border-emerald-500/40 flex flex-col justify-between p-5 rounded-2xl flashcard-back text-center shadow-lg">
                                             <span class="text-[8px] text-emerald-400 font-bold uppercase tracking-wider flex items-center justify-center gap-1"><i class="fa-solid fa-circle-check"></i> AÇIKLAMA / YANIT</span>
-                                            <p id="wizard-card-back" class="text-xs font-medium text-slate-350 flex-grow flex items-center justify-center leading-relaxed px-2">Cevap yükleniyor...</p>
+                                            <p id="wizard-card-back" class="text-[11px] sm:text-xs font-semibold text-slate-300 flex-grow flex items-center justify-center px-5 py-2 leading-relaxed">Cevap yükleniyor...</p>
                                             <span class="text-[8px] text-slate-500"><i class="fa-solid fa-rotate mr-1"></i> ÇEVİRMEK İÇİN TIKLA</span>
                                         </div>
                                     </div>
@@ -440,20 +453,217 @@
             </div>
 
             <div id="view-notes" class="hidden space-y-4">
-                <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4">
-                    <div>
-                        <h3 class="text-sm font-black text-white flex items-center gap-2"><i class="fa-solid fa-book text-indigo-400 animate-pulse"></i> ÖSYM Detaylı Konu Anlatım Kitapçığı</h3>
-                        <p class="text-[10px] text-slate-400">Seçili üniteye ait kavramları ve ÖSYM ders notlarını buradan inceleyebilirsiniz.</p>
+                <!-- Premium Booklet Controls Pane -->
+                <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 space-y-4 shadow-xl">
+                    <div class="flex flex-col lg:flex-row justify-between lg:items-center gap-4 border-b border-slate-900 pb-4">
+                        <div>
+                            <h3 class="text-sm font-black text-white flex items-center gap-2">
+                                <i class="fa-solid fa-book text-indigo-400 animate-pulse"></i> 
+                                ÖSYM Detaylı Konu Anlatım Kitapçığı
+                            </h3>
+                            <p class="text-[10px] text-slate-400 mt-1">Kazanımları inceleyebilir, fosforlu kalemle çizebilir, sesli kitapçık olarak aralıksız dinleyebilir veya tümünü PDF yapabilirsiniz.</p>
+                        </div>
+                        
+                        <!-- Actions Row -->
+                        <div class="flex flex-wrap items-center gap-3 no-print">
+                            <!-- Yazdır PDF Butonu -->
+                            <button onclick="generateFullNotesPDF()" class="px-3.5 py-2 bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 text-white text-[10px] font-black rounded-xl shadow-lg shadow-indigo-500/10 hover:shadow-indigo-500/20 border border-indigo-500/30 flex items-center gap-1.5 cursor-pointer transition-all hover:scale-102">
+                                <i class="fa-solid fa-file-pdf text-[11px]"></i> TÜM NOTLARI PDF YAP (KİTAPÇIK)
+                            </button>
+                            
+                            <!-- Sesli Playlist Butonu -->
+                            <button onclick="startNotesPlaylist()" class="px-3.5 py-2 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white text-[10px] font-black rounded-xl shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/20 border border-emerald-500/30 flex items-center gap-1.5 cursor-pointer transition-all hover:scale-102">
+                                <i class="fa-solid fa-volume-high text-[11px] animate-pulse"></i> SESLİ KİTAPÇIK OYNAT
+                            </button>
+                        </div>
                     </div>
-                    <div class="relative w-full sm:w-64">
-                        <input type="text" id="search-notes-input" oninput="renderNotesView()" placeholder="Kavramlarda ara..." class="w-full bg-slate-900 border border-slate-800 text-xs px-3.5 py-1.5 rounded-xl text-slate-300 placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-all">
-                        <i class="fa-solid fa-magnifying-glass absolute right-3.5 top-2.5 text-slate-500 text-[10px]"></i>
+                    
+                    <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <!-- Booklet Mode Toggle -->
+                        <label class="flex items-center gap-2.5 cursor-pointer no-print group">
+                            <div class="relative">
+                                <input type="checkbox" id="toggle-booklet-mode" onchange="renderNotesView()" class="sr-only peer">
+                                <div class="w-8 h-4 bg-slate-900 rounded-full transition-all peer-checked:bg-indigo-500/30 border border-slate-800 peer-checked:border-indigo-500/50"></div>
+                                <div class="absolute left-0.5 top-0.5 w-3 h-3 bg-slate-500 rounded-full transition-all peer-checked:translate-x-4 peer-checked:bg-indigo-400 shadow-sm"></div>
+                            </div>
+                            <span class="text-[10px] font-black text-slate-400 group-hover:text-slate-300 transition-colors uppercase tracking-wider">Sürekli Kitapçık Modu (Tüm Üniteler)</span>
+                        </label>
+                        
+                        <!-- Search Box -->
+                        <div class="relative w-full sm:w-64">
+                            <input type="text" id="search-notes-input" oninput="renderNotesView()" placeholder="Kavramlarda veya içerikte ara..." class="w-full bg-slate-900 border border-slate-800 text-xs px-3.5 py-1.5 rounded-xl text-slate-300 placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-all">
+                            <i class="fa-solid fa-magnifying-glass absolute right-3.5 top-2.5 text-slate-500 text-[10px]"></i>
+                        </div>
                     </div>
                 </div>
+                
                 <div id="box-notes-list" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
             </div>
 
-            <div id="view-cards" class="space-y-6">
+            <!-- YAPAY ZEKA AKILLI YOL HARİTASI PANELİ -->
+            <div id="view-roadmap" class="space-y-6">
+                <!-- Üst Karşılama ve Durum Paneli -->
+                <div class="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 p-6 rounded-2xl border border-slate-800 shadow-2xl relative overflow-hidden">
+                    <div class="absolute -right-16 -top-16 w-44 h-44 rounded-full bg-indigo-500/10 blur-3xl"></div>
+                    <div class="absolute -left-16 -bottom-16 w-44 h-44 rounded-full bg-emerald-500/10 blur-3xl"></div>
+                    
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 relative z-10">
+                        <div>
+                            <span class="inline-flex items-center gap-1.5 text-[9px] font-black text-indigo-400 bg-indigo-950/60 border border-indigo-900/40 px-2.5 py-1 rounded-full uppercase tracking-wider mb-2">
+                                <i class="fa-solid fa-brain animate-pulse text-indigo-400"></i> AI Rehber Modu Aktif
+                            </span>
+                            <h3 class="text-lg font-black text-white flex items-center gap-2">
+                                Hoş Geldin Furkan! 🎯 <span class="text-xs font-normal text-slate-400">Hedef: 2026 KPSS Türkiye Birinciliği</span>
+                            </h3>
+                            <p class="text-[11px] text-slate-400 mt-1">Yapay zeka bugün eksiklerini kapatmak ve yeni kazanımlar edinmek için özel bir program hazırladı.</p>
+                        </div>
+                        
+                        <!-- Mini Durum Kutuları -->
+                        <div class="flex flex-wrap gap-2.5 w-full md:w-auto">
+                            <div class="flex-1 md:flex-none bg-slate-900/80 border border-slate-800/80 px-3.5 py-2 rounded-xl text-center min-w-[100px]">
+                                <span class="block text-[8px] font-bold text-slate-500 uppercase tracking-widest">GÜNLÜK VERİMLİLİK</span>
+                                <span id="roadmap-energy-text" class="text-xs font-black text-orange-400">0%</span>
+                            </div>
+                            <div class="flex-1 md:flex-none bg-slate-900/80 border border-slate-800/80 px-3.5 py-2 rounded-xl text-center min-w-[100px]">
+                                <span class="block text-[8px] font-bold text-slate-500 uppercase tracking-widest">HATA DEFTERİ</span>
+                                <span id="roadmap-error-text" class="text-xs font-black text-rose-400">0 Eksiği</span>
+                            </div>
+                            <div class="flex-1 md:flex-none bg-slate-900/80 border border-slate-800/80 px-3.5 py-2 rounded-xl text-center min-w-[100px]">
+                                <span class="block text-[8px] font-bold text-slate-500 uppercase tracking-widest">GÜNLÜK GÖREV</span>
+                                <span id="roadmap-quest-text" class="text-xs font-black text-emerald-400">0/3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7 GÜNLÜK HAFTALIK AKADEMİK TAKVİM -->
+                <div class="bg-slate-950/80 p-5 rounded-2xl border border-slate-800/80 shadow-xl space-y-4">
+                    <div class="flex justify-between items-center border-b border-slate-900 pb-3">
+                        <h4 class="text-xs font-black text-white uppercase tracking-wider flex items-center gap-1.5">
+                            <i class="fa-solid fa-calendar-days text-indigo-400"></i> Haftalık Akademik Yol Haritası (7 Günlük Plan)
+                        </h4>
+                        <span class="text-[9px] text-slate-500 font-mono">Dinamik İlerlemeli Program</span>
+                    </div>
+                    
+                    <div id="roadmap-calendar-grid" class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-3">
+                        <!-- Günler JavaScript ile doldurulacak -->
+                    </div>
+                </div>
+
+                <!-- BUGÜNÜN GÖREV İSTASYONU (QUEST HUB) -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                    <!-- GÖREV 1: KONU ÇALIŞMA -->
+                    <div class="bg-slate-950/80 p-5 rounded-2xl border border-slate-800/80 hover:border-indigo-500/20 shadow-xl transition-all duration-300 relative group flex flex-col justify-between min-h-[220px]">
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-[9px] font-black text-indigo-400 bg-indigo-950/50 border border-indigo-900/40 px-2 py-0.5 rounded uppercase">Görev 1: Konu Çalış</span>
+                                <span id="quest-1-status" class="text-[9px] font-black text-slate-500 uppercase tracking-wider"><i class="fa-regular fa-circle"></i> BEKLİYOR</span>
+                            </div>
+                            <h4 id="quest-1-title" class="text-xs font-black text-white uppercase tracking-wider">Kavram Notu Yükleniyor...</h4>
+                            <p id="quest-1-desc" class="text-[10px] text-slate-400 leading-relaxed line-clamp-4">...</p>
+                        </div>
+                        <button id="quest-1-btn" onclick="executeQuest(1)" class="w-full mt-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-[10px] font-black rounded-xl shadow-lg shadow-indigo-500/10 border border-indigo-500/30 flex items-center justify-center gap-1.5 cursor-pointer transition-all hover:scale-102">
+                            <i class="fa-solid fa-book-open"></i> KONUYU ÇALIŞ
+                        </button>
+                    </div>
+
+                    <!-- GÖREV 2: KAZANIM TESTİ -->
+                    <div class="bg-slate-950/80 p-5 rounded-2xl border border-slate-800/80 hover:border-emerald-500/20 shadow-xl transition-all duration-300 relative group flex flex-col justify-between min-h-[220px]">
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-[9px] font-black text-emerald-400 bg-emerald-950/50 border border-emerald-900/40 px-2 py-0.5 rounded uppercase">Görev 2: Soru Çöz</span>
+                                <span id="quest-2-status" class="text-[9px] font-black text-slate-500 uppercase tracking-wider"><i class="fa-regular fa-circle"></i> BEKLİYOR</span>
+                            </div>
+                            <h4 id="quest-2-title" class="text-xs font-black text-white uppercase tracking-wider">AI Özel Kazanım Testi</h4>
+                            <p id="quest-2-desc" class="text-[10px] text-slate-400 leading-relaxed line-clamp-4">Bugün çalıştığınız kavrama ait çıkabilecek tüm ÖSYM soru tiplerini barındıran 5 soruluk yapay zeka analiz testini çözerek konuyu pekiştirin.</p>
+                        </div>
+                        <button id="quest-2-btn" onclick="executeQuest(2)" class="w-full mt-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-[10px] font-black rounded-xl shadow-lg shadow-emerald-500/10 border border-emerald-500/30 flex items-center justify-center gap-1.5 cursor-pointer transition-all hover:scale-102">
+                            <i class="fa-solid fa-circle-question"></i> TESTİ ÇÖZ
+                        </button>
+                    </div>
+
+                    <!-- GÖREV 3: ZAYIF BÖLGE KAPATMA -->
+                    <div class="bg-slate-950/80 p-5 rounded-2xl border border-slate-800/80 hover:border-rose-500/20 shadow-xl transition-all duration-300 relative group flex flex-col justify-between min-h-[220px]">
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-[9px] font-black text-rose-400 bg-rose-950/50 border border-rose-900/40 px-2 py-0.5 rounded uppercase">Görev 3: Eksiği Kapat</span>
+                                <span id="quest-3-status" class="text-[9px] font-black text-slate-500 uppercase tracking-wider"><i class="fa-regular fa-circle"></i> BEKLİYOR</span>
+                            </div>
+                            <h4 id="quest-3-title" class="text-xs font-black text-white uppercase tracking-wider">Yapay Zeka Zayıf Alan Analizi</h4>
+                            <p id="quest-3-desc" class="text-[10px] text-slate-400 leading-relaxed line-clamp-4">...</p>
+                        </div>
+                        <button id="quest-3-btn" onclick="executeQuest(3)" class="w-full mt-4 py-2 bg-rose-600 hover:bg-rose-500 text-white text-[10px] font-black rounded-xl shadow-lg shadow-rose-500/10 border border-rose-500/30 flex items-center justify-center gap-1.5 cursor-pointer transition-all hover:scale-102">
+                            <i class="fa-solid fa-prescription-bottle-medical"></i> REÇETEYİ UYGULA
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ALTI GELİŞİM ÖNGÖRÜLERİ VE AKILLI KOÇ PANELİ -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <!-- Dinamik Gelişim Metreleri -->
+                    <div class="bg-slate-950/80 p-5 rounded-2xl border border-slate-800/80 shadow-xl space-y-4">
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
+                            <i class="fa-solid fa-chart-line text-indigo-400"></i> AI Gelişim Öngörüleri ve Kriterler
+                        </h4>
+                        
+                        <div class="space-y-3">
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[9px] font-bold text-slate-400 uppercase tracking-wider">
+                                    <span>Müfredat Konu Bitirme Oranı</span>
+                                    <span id="roadmap-curriculum-percent" class="text-indigo-400">0%</span>
+                                </div>
+                                <div class="w-full bg-slate-900 h-2 rounded-full overflow-hidden border border-slate-800">
+                                    <div id="roadmap-curriculum-bar" class="bg-gradient-to-r from-indigo-500 to-purple-500 h-full w-0 transition-all duration-300"></div>
+                                </div>
+                                <span id="roadmap-curriculum-desc" class="text-[8px] text-slate-500 block">...</span>
+                            </div>
+
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-[9px] font-bold text-slate-400 uppercase tracking-wider">
+                                    <span>Hata Defteri Temizleme Oranı</span>
+                                    <span id="roadmap-errors-percent" class="text-emerald-400">100%</span>
+                                </div>
+                                <div class="w-full bg-slate-900 h-2 rounded-full overflow-hidden border border-slate-800">
+                                    <div id="roadmap-errors-bar" class="bg-gradient-to-r from-emerald-500 to-teal-500 h-full w-full transition-all duration-300"></div>
+                                </div>
+                                <span id="roadmap-errors-desc" class="text-[8px] text-slate-500 block">Tebrikler, tüm zayıflıklarınızı sildiniz!</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Kişisel Gelişim Tavsiyesi (Akıllı Koç) -->
+                    <div class="bg-slate-950/80 p-5 rounded-2xl border border-slate-800/80 shadow-xl space-y-3 flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
+                                <i class="fa-solid fa-user-tie text-emerald-400 animate-bounce"></i> Yapay Zeka Kişisel KPSS Koçu
+                            </h4>
+                            <p id="roadmap-coaching-advice" class="text-[10px] text-slate-350 leading-relaxed mt-2.5">
+                                "Harika bir gün Furkan! Bugünün programını tamamlamak için görev istasyonundaki adımları takip et. KPSS 2026 hedeflerinde istikrar en büyük anahtardır!"
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-slate-900 pt-2.5 mt-2">
+                            <span class="text-[8px] text-slate-500 font-mono">KPSS AI Coach Engine v1.0</span>
+                            <span class="text-[9px] font-bold text-emerald-400 bg-emerald-950/40 px-2 py-0.5 rounded border border-emerald-900/40 uppercase">Analiz Güncel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- YENİ: DİNAMİK MÜFREDAT İZLEME PANELİ & ANALİZ -->
+                <div class="bg-slate-950/80 p-5 rounded-2xl border border-slate-800/80 shadow-xl space-y-4">
+                    <div class="flex justify-between items-center border-b border-slate-900 pb-3">
+                        <h4 class="text-xs font-black text-white uppercase tracking-wider flex items-center gap-1.5">
+                            <i class="fa-solid fa-graduation-cap text-indigo-400"></i> KPSS Akademik İlerleme & Müfredat İzleyici
+                        </h4>
+                        <span class="text-[9px] text-slate-500 font-mono">Ders: <span id="roadmap-tracker-lesson-title" class="text-indigo-400 font-bold uppercase">Tarih</span></span>
+                    </div>
+                    
+                    <div id="roadmap-curriculum-tracker" class="grid grid-cols-1 md:grid-cols-2 gap-4 max-h-[400px] overflow-y-auto pr-1">
+                        <!-- Üniteler ve Kavramlar JS ile buraya basılacak -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="view-cards" class="hidden space-y-6">
                 <div class="flex justify-center">
                     <div id="card-container" class="flashcard w-full max-w-2xl h-80 cursor-pointer hover:scale-[1.01] transition-transform duration-300" onclick="this.classList.toggle('flipped')">
                         <div class="flashcard-inner relative w-full h-full duration-300">
@@ -755,6 +965,49 @@
 
             <!-- 📑 PDF YAZDIRMA ŞABLONU (YALNIZCA YAZICIDA GÖRÜNÜR) -->
             <div id="print-report-wrapper" class="hidden"></div>
+
+            <!-- 🎧 DERS NOTLARI SESLİ ASİSTAN OYNATICI (STICKY PLAYER) -->
+            <div id="box-notes-audio-player" class="hidden fixed bottom-6 left-6 z-40 max-w-sm w-full bg-slate-950/95 border border-indigo-500/30 rounded-2xl p-4 shadow-2xl backdrop-blur-md space-y-3 animate-slideUp">
+                <div class="flex justify-between items-center border-b border-slate-900 pb-2">
+                    <div class="flex items-center gap-2">
+                        <div class="flex items-end gap-0.5 h-3 w-4 no-print" id="soundwave-anim">
+                            <span class="w-0.5 bg-indigo-400 rounded-full animate-bounce" style="height: 100%; animation-duration: 0.6s;"></span>
+                            <span class="w-0.5 bg-indigo-400 rounded-full animate-bounce" style="height: 60%; animation-duration: 0.8s;"></span>
+                            <span class="w-0.5 bg-indigo-400 rounded-full animate-bounce" style="height: 80%; animation-duration: 0.5s;"></span>
+                            <span class="w-0.5 bg-indigo-400 rounded-full animate-bounce" style="height: 40%; animation-duration: 0.7s;"></span>
+                        </div>
+                        <span class="text-[9px] font-black text-indigo-400 tracking-wider uppercase">SESLİ KİTAPÇIK</span>
+                    </div>
+                    <button onclick="stopNotesPlaylist()" class="text-slate-500 hover:text-white hover:scale-110 transition-all text-xs font-bold cursor-pointer">&times;</button>
+                </div>
+                
+                <div class="space-y-1">
+                    <h4 id="audio-player-unit-title" class="text-[10px] font-black text-white truncate">1. Ünite: İslamiyet Öncesi</h4>
+                    <p id="audio-player-concept-title" class="text-[11px] font-bold text-slate-300 truncate">Okunan: #AskeriTeşkilat</p>
+                    <div class="flex justify-between items-center text-[8px] text-slate-500 font-bold">
+                        <span id="audio-player-progress-text">Kavram 1 / 10</span>
+                        <span id="audio-player-countdown-text">Aralıksız Okuma Modu</span>
+                    </div>
+                </div>
+                
+                <!-- Player Controls -->
+                <div class="flex items-center justify-between pt-1">
+                    <!-- Prev Button -->
+                    <button onclick="prevNotesPlaylist()" class="text-slate-400 hover:text-white hover:scale-105 p-1.5 rounded-lg bg-slate-900 border border-slate-800 text-[10px] cursor-pointer transition-all">
+                        <i class="fa-solid fa-backward-step"></i>
+                    </button>
+                    
+                    <!-- Play/Pause Button -->
+                    <button onclick="toggleNotesPlaylistPlayPause()" id="btn-audio-player-play" class="flex-grow mx-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 border border-indigo-500 text-white text-[10px] font-black rounded-xl cursor-pointer transition-all flex justify-center items-center gap-1.5 shadow-md shadow-indigo-600/10">
+                        <i class="fa-solid fa-pause"></i> DURAKLAT
+                    </button>
+                    
+                    <!-- Next Button -->
+                    <button onclick="nextNotesPlaylist()" class="text-slate-400 hover:text-white hover:scale-105 p-1.5 rounded-lg bg-slate-900 border border-slate-800 text-[10px] cursor-pointer transition-all">
+                        <i class="fa-solid fa-forward-step"></i>
+                    </button>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -767,7 +1020,7 @@
         let quizIdx = 0;
         let score = 0;
         let answered = false;
-        let currentMode = "cards";
+        let currentMode = "roadmap";
         let activeGroupQuestions = [];
         const questionsPerGroup = 20;
         let timerInstance = null;
@@ -1504,56 +1757,765 @@
             renderQuiz();
         }
 
+        // --- PERSISTENT HIGHLIGHTER STATE & STORAGE ---
+        let noteHighlights = {};
+        try {
+            noteHighlights = JSON.parse(localStorage.getItem('kpss_note_highlights') || '{}');
+        } catch(e) {
+            noteHighlights = {};
+            console.error("Error reading highlights from localStorage:", e);
+        }
+
+        function initHighlightsForLesson() {
+            if (!noteHighlights[currentLesson]) {
+                noteHighlights[currentLesson] = {};
+            }
+        }
+
+        function toggleLineHighlight(element, kavram, idx) {
+            initHighlightsForLesson();
+            if (!noteHighlights[currentLesson][kavram]) {
+                noteHighlights[currentLesson][kavram] = {};
+            }
+            
+            const isHighlighted = noteHighlights[currentLesson][kavram][idx];
+            if (isHighlighted) {
+                delete noteHighlights[currentLesson][kavram][idx];
+                if (Object.keys(noteHighlights[currentLesson][kavram]).length === 0) {
+                    delete noteHighlights[currentLesson][kavram];
+                }
+                element.className = "note-line cursor-pointer hover:bg-slate-800/30 px-1 rounded transition-all";
+            } else {
+                noteHighlights[currentLesson][kavram][idx] = true;
+                element.className = "note-line cursor-pointer bg-yellow-500/25 text-white font-medium border-b border-yellow-500/40 px-1 rounded transition-all";
+            }
+            
+            localStorage.setItem('kpss_note_highlights', JSON.stringify(noteHighlights));
+            element.classList.add('scale-[1.01]');
+            setTimeout(() => element.classList.remove('scale-[1.01]'), 150);
+        }
+
+        function isConceptLineHighlighted(kavram, idx) {
+            return noteHighlights[currentLesson] && 
+                   noteHighlights[currentLesson][kavram] && 
+                   noteHighlights[currentLesson][kavram][idx];
+        }
+
+        function countTotalHighlights(lesson) {
+            let count = 0;
+            if (noteHighlights[lesson]) {
+                Object.keys(noteHighlights[lesson]).forEach(kavram => {
+                    count += Object.keys(noteHighlights[lesson][kavram] || {}).length;
+                });
+            }
+            return count;
+        }
+
+        // --- MAP ATLAS INTEGRATION SHORTCUTS ---
+        function getMapThemeForConcept(kavram) {
+            const k = kavram.toLowerCase();
+            if (['adnks', 'aritmetikyoğunluk', 'fizyolojikyoğunluk', 'tarımsalyoğunluk', 'nüfusdağılışı', 'nüfusartışhızı', 'nüfuspiramidi', 'teketaşeli', 'menteşenüfusu', 'tuzgölünüfusu', 'göçnedenleri', 'göçsonuçları', 'mevsimlikgöç', 'kentleşme', 'çarpıkkentleşme', 'demografikyatırım', 'ortancayaş', 'nüfusdönümü'].includes(k)) {
+                return 'nüfus';
+            }
+            if (['yayla', 'oba', 'kom', 'dam', 'mezra', 'mahalle', 'köyaltıyerleşmeleri', 'topluyerleşme', 'dağınıkyerleşme', 'kırsalkonutlar', 'taşevler', 'kerpiçevler'].includes(k)) {
+                return 'toprak';
+            }
+            if (['tarımıetkileyenfaktörler', 'tahıllar', 'sanayibitkileri', 'yağbitkileri', 'yumruluvebaklagiller', 'meyvecilikvebağcılık', 'tarımdadevletsınırlandırması'].includes(k)) {
+                return 'toprak';
+            }
+            if (['küçükbaşhayvancılık', 'büyükbaşhayvancılık', 'kümeshayvancılığı', 'arıcılık', 'ipekböcekçiliği', 'balıkçılık', 'ormancılık'].includes(k)) {
+                return 'sanayi';
+            }
+            return null;
+        }
+
+        function showConceptOnMap(theme) {
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+            if (notesPlaylist.isActive) stopNotesPlaylist();
+            switchMode('map-atlas');
+            switchMapTheme(theme);
+            setTimeout(() => {
+                document.getElementById("view-map-atlas")?.scrollIntoView({ behavior: 'smooth' });
+            }, 150);
+        }
+
+        // --- CUSTOM TOAST NOTIFICATION WIDGET ---
+        function showNotification(message, type = 'indigo') {
+            const oldToast = document.getElementById("kpss-custom-toast");
+            if (oldToast) oldToast.remove();
+
+            const toast = document.createElement("div");
+            toast.id = "kpss-custom-toast";
+            toast.className = `fixed bottom-6 right-6 z-50 px-4 py-3 rounded-2xl border bg-slate-950/95 text-slate-100 shadow-2xl backdrop-blur-md flex items-center gap-3 transition-all duration-300 transform translate-y-10 opacity-0 animate-slideUp`;
+            
+            let borderCol = "border-indigo-500/50 shadow-indigo-500/10";
+            let icon = `<i class="fa-solid fa-bell text-indigo-400"></i>`;
+            if (type === 'success') {
+                borderCol = "border-emerald-500/50 shadow-emerald-500/10";
+                icon = `<i class="fa-solid fa-circle-check text-emerald-400"></i>`;
+            } else if (type === 'warning') {
+                borderCol = "border-amber-500/50 shadow-amber-500/10";
+                icon = `<i class="fa-solid fa-triangle-exclamation text-amber-400"></i>`;
+            }
+            
+            toast.className += ` ${borderCol}`;
+            toast.innerHTML = `
+                <div class="text-sm">${icon}</div>
+                <div class="text-xs font-semibold leading-tight">${message}</div>
+                <button onclick="this.parentElement.remove()" class="text-slate-500 hover:text-white text-xs cursor-pointer ml-2">&times;</button>
+            `;
+            
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.classList.remove("translate-y-10", "opacity-0");
+            }, 10);
+            
+            setTimeout(() => {
+                if (toast.parentElement) {
+                    toast.classList.add("translate-y-10", "opacity-0");
+                    setTimeout(() => toast.remove(), 300);
+                }
+            }, 4000);
+        }
+
+        // --- BOOKLET CARDS ENGINE & LINE PROCESSORS ---
+        function processNoteHtmlForHighlighter(kavram, rawHtml) {
+            const lines = rawHtml.split('<br>');
+            return lines.map((line, idx) => {
+                if (!line.trim()) return '<br>';
+                const isHighlighted = isConceptLineHighlighted(kavram, idx);
+                const highlightClass = isHighlighted 
+                    ? 'bg-yellow-500/25 text-white font-medium border-b border-yellow-500/40 px-1 rounded transition-all note-line cursor-pointer' 
+                    : 'note-line cursor-pointer hover:bg-slate-800/30 px-1 rounded transition-all';
+                return `<span class="${highlightClass}" data-kavram="${kavram}" data-idx="${idx}" onclick="toggleLineHighlight(this, '${kavram}', ${idx})">${line}</span>`;
+            }).join('<br>');
+        }
+
+        function createNoteCardHTML(kavram, noteHtml, unitName) {
+            const cleanText = noteHtml.replace(/<\/?[^>]+(>|$)/g, "").toLowerCase();
+            const card = document.createElement("div");
+            card.className = "glass-card p-5 rounded-2xl border border-slate-800/80 hover-glow transition-all flex flex-col justify-between space-y-4 animate-fadeIn";
+            
+            const highlightedTextHtml = processNoteHtmlForHighlighter(kavram, noteHtml);
+            
+            let atlasShortcutHtml = "";
+            if (currentLesson === 'cografya') {
+                let mapTheme = getMapThemeForConcept(kavram);
+                if (mapTheme) {
+                    atlasShortcutHtml = `
+                        <button onclick="showConceptOnMap('${mapTheme}')" class="text-emerald-400 hover:text-emerald-300 hover:scale-105 text-[10px] font-bold bg-emerald-950/20 px-2 py-0.5 rounded border border-emerald-900/35 cursor-pointer transition-all ml-1.5" title="Haritada İncele">
+                            <i class="fa-solid fa-map-location-dot"></i> Haritada Gör
+                        </button>
+                    `;
+                }
+            }
+
+            // Çalıp/Okunma Durumu Göstergesi
+            let states = JSON.parse(localStorage.getItem('kpss_concept_states')) || {};
+            let isRead = states[currentLesson]?.[kavram]?.read || false;
+            
+            let readBtnHtml = isRead 
+                ? `<button onclick="toggleConceptRead('${kavram}', false)" class="px-3 py-2 bg-emerald-950/50 border border-emerald-900/50 text-emerald-400 font-black text-[10px] rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1 shrink-0" title="Okundu"><i class="fa-solid fa-circle-check"></i> OKUNDU</button>`
+                : `<button onclick="toggleConceptRead('${kavram}', true)" class="px-3 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-slate-200 font-black text-[10px] rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1 shrink-0" title="Okundu Olarak İşaretle"><i class="fa-regular fa-circle"></i> OKUNDU YAP</button>`;
+            
+            card.innerHTML = `
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center border-b border-slate-800 pb-2">
+                        <div class="flex items-center">
+                            <span class="text-[10px] font-black text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2 py-0.5 rounded-md uppercase tracking-wider">#${kavram}</span>
+                            ${atlasShortcutHtml}
+                        </div>
+                        <button onclick="speakText('${kavram}. ${cleanText.replace(/'/g, "\\'")}')" class="text-slate-400 hover:text-white hover:scale-105 text-[10px] font-bold bg-slate-900 px-2 py-0.5 rounded border border-slate-800 cursor-pointer transition-all" title="Konuyu Dinle"><i class="fa-solid fa-volume-high text-indigo-400"></i> Dinle</button>
+                    </div>
+                    <div class="text-xs text-slate-300 leading-relaxed overflow-y-auto max-h-64 pr-1 scrollbar-thin">${highlightedTextHtml}</div>
+                </div>
+                <div class="flex gap-2 pt-2 border-t border-slate-900/60 no-print">
+                    ${readBtnHtml}
+                    <button onclick="startRoadmapQuiz('${kavram}')" class="flex-grow py-2 bg-indigo-950/40 hover:bg-indigo-900/40 border border-indigo-900/50 text-indigo-300 hover:text-white font-black text-[10px] rounded-xl transition-all cursor-pointer flex justify-center items-center gap-1.5 hover-glow">
+                        <i class="fa-solid fa-circle-question"></i> TESTİ ÇÖZ (10 SORU)
+                    </button>
+                </div>`;
+            return card;
+        }
+
+        // --- MAIN RENDERER (BOOKLET & UNIT MODES) ---
         function renderNotesView() {
             const listContainer = document.getElementById("box-notes-list");
             if (!listContainer) return;
             
             listContainer.innerHTML = "";
             let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
-            let unitNote = activeNoteDb.find(box => box.unite === currentData[activeUnitIdx]?.unite);
             
-            if (!unitNote || !unitNote.kavramlar || Object.keys(unitNote.kavramlar).length === 0) {
+            if (activeNoteDb.length === 0) {
                 listContainer.className = "flex justify-center items-center py-16 col-span-2";
                 listContainer.innerHTML = `
                     <div class="text-center space-y-2">
                         <i class="fa-solid fa-book-open text-slate-700 text-3xl"></i>
-                        <p class="text-xs text-slate-500 italic">Bu üniteye ait detaylı konu anlatım kitapçığı bulunmuyor.</p>
+                        <p class="text-xs text-slate-500 italic">Bu derse ait konu anlatım kitapçığı bulunmuyor.</p>
                     </div>`;
                 return;
             }
             
             listContainer.className = "grid grid-cols-1 md:grid-cols-2 gap-4 w-full";
             const searchVal = document.getElementById("search-notes-input")?.value?.toLowerCase() || "";
+            const isBookletMode = document.getElementById("toggle-booklet-mode")?.checked || false;
+            const pureSearch = searchVal.startsWith('#') ? searchVal.substring(1) : searchVal;
             
-            Object.keys(unitNote.kavramlar).forEach(kavram => {
-                const noteHtml = unitNote.kavramlar[kavram];
-                const cleanText = noteHtml.replace(/<\/?[^>]+(>|$)/g, "").toLowerCase();
+            if (isBookletMode) {
+                let anyRendered = false;
+                activeNoteDb.forEach((unitNote, uIdx) => {
+                    let concepts = Object.keys(unitNote.kavramlar || {});
+                    let matchedConcepts = concepts.filter(kavram => {
+                        const noteHtml = unitNote.kavramlar[kavram];
+                        const cleanText = noteHtml.replace(/<\/?[^>]+(>|$)/g, "").toLowerCase();
+                        return !pureSearch || kavram.toLowerCase().includes(pureSearch) || cleanText.includes(pureSearch);
+                    });
+                    
+                    if (matchedConcepts.length > 0) {
+                        anyRendered = true;
+                        const unitHeader = document.createElement("div");
+                        unitHeader.className = "col-span-1 md:col-span-2 py-2 mt-6 first:mt-0 border-b border-slate-800/80 flex items-center justify-between animate-fadeIn";
+                        unitHeader.innerHTML = `
+                            <h4 class="text-xs font-black text-indigo-400 uppercase tracking-widest flex items-center gap-2">
+                                <i class="fa-solid fa-folder-open text-indigo-500"></i> ${unitNote.unite}
+                            </h4>
+                            <span class="text-[9px] font-bold text-slate-500 bg-slate-950 px-2 py-0.5 rounded border border-slate-900">${matchedConcepts.length} Kavram</span>
+                        `;
+                        listContainer.appendChild(unitHeader);
+                        
+                        matchedConcepts.forEach(kavram => {
+                            const noteHtml = unitNote.kavramlar[kavram];
+                            const card = createNoteCardHTML(kavram, noteHtml, unitNote.unite);
+                            listContainer.appendChild(card);
+                        });
+                    }
+                });
                 
-                if (searchVal && !kavram.toLowerCase().includes(searchVal) && !cleanText.includes(searchVal)) {
+                if (!anyRendered) {
+                    listContainer.className = "flex justify-center items-center py-12 col-span-2";
+                    listContainer.innerHTML = `<p class="text-xs text-slate-500 italic">Aramanızla eşleşen kavram bulunamadı.</p>`;
+                }
+            } else {
+                let unitNote = activeNoteDb.find(box => box.unite === currentData[activeUnitIdx]?.unite);
+                if (!unitNote || !unitNote.kavramlar || Object.keys(unitNote.kavramlar).length === 0) {
+                    listContainer.className = "flex justify-center items-center py-16 col-span-2";
+                    listContainer.innerHTML = `
+                        <div class="text-center space-y-2">
+                            <i class="fa-solid fa-book-open text-slate-700 text-3xl"></i>
+                            <p class="text-xs text-slate-500 italic">Bu üniteye ait detaylı konu anlatım kitapçığı bulunmuyor.</p>
+                        </div>`;
                     return;
                 }
                 
-                const card = document.createElement("div");
-                card.className = "glass-card p-5 rounded-2xl border border-slate-800/80 hover-glow transition-all flex flex-col justify-between space-y-4 animate-fadeIn";
-                card.innerHTML = `
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center border-b border-slate-800 pb-2">
-                            <span class="text-[10px] font-black text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2 py-0.5 rounded-md uppercase tracking-wider">#${kavram}</span>
-                            <button onclick="speakText('${kavram}. ${cleanText.replace(/'/g, "\\'")}')" class="text-slate-400 hover:text-white hover:scale-105 text-[10px] font-bold bg-slate-900 px-2 py-0.5 rounded border border-slate-800 cursor-pointer transition-all" title="Konuyu Dinle"><i class="fa-solid fa-volume-high text-indigo-400"></i> Dinle</button>
+                let concepts = Object.keys(unitNote.kavramlar);
+                let count = 0;
+                
+                concepts.forEach(kavram => {
+                    const noteHtml = unitNote.kavramlar[kavram];
+                    const cleanText = noteHtml.replace(/<\/?[^>]+(>|$)/g, "").toLowerCase();
+                    
+                    if (pureSearch && !kavram.toLowerCase().includes(pureSearch) && !cleanText.includes(pureSearch)) {
+                        return;
+                    }
+                    
+                    count++;
+                    const card = createNoteCardHTML(kavram, noteHtml, unitNote.unite);
+                    listContainer.appendChild(card);
+                });
+                
+                if (count === 0) {
+                    listContainer.className = "flex justify-center items-center py-12 col-span-2";
+                    listContainer.innerHTML = `<p class="text-xs text-slate-500 italic">Aramanızla eşleşen kavram bulunamadı.</p>`;
+                }
+            }
+        }
+
+        // --- FULL STUDY NOTES BOOKLET & PDF SMART EXPORT ENGINE ---
+        function generateFullNotesPDF() {
+            const printWrapper = document.getElementById("print-report-wrapper");
+            if (!printWrapper) return;
+            
+            // User Profile Configuration (loaded locally to prevent reference errors)
+            let userProfile = JSON.parse(localStorage.getItem('kpss_user_profile')) || {
+                name: "Furkan Doğuhan",
+                target: "KPSS 2026 - Türkiye Derecesi Hedefi (95+ Puan)",
+                slogan: "İnanç, İstikrar ve Bilimsel Hata Analizi"
+            };
+            
+            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
+            
+            if (activeNoteDb.length === 0) {
+                showNotification("Yazdırılacak ders notu verisi bulunamadı.", "warning");
+                return;
+            }
+            
+            const lessonTitle = currentLesson === 'tarih' ? "TARİH & İLK TÜRK-İSLAM KÜLTÜRÜ" : "COĞRAFYA & TÜRKİYE FİZİKİ VE BEŞERİ MORFOLOJİSİ";
+            const today = new Date().toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' });
+            
+            // Build booklet structure
+            let bookletHtml = `
+                <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+                    .print-container { font-family: 'Inter', sans-serif !important; color: #1e293b !important; background: white !important; font-size: 11px; line-height: 1.6; }
+                    .print-text-dark { color: #0f172a !important; }
+                    .print-text-muted { color: #64748b !important; }
+                    .print-card-style { border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px; background: #fafafa; margin-bottom: 12px; }
+                    .print-page-break { page-break-after: always; }
+                    .print-avoid-break { page-break-inside: avoid; }
+                    
+                    .cover-page {
+                        height: 100vh;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        padding: 40px;
+                        box-sizing: border-box;
+                        border: 15px double #4f46e5;
+                        background: #fcfcfc;
+                    }
+                    .cover-header { text-align: center; margin-top: 50px; }
+                    .cover-subtitle { font-size: 10px; font-weight: 800; color: #4f46e5; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 10px; }
+                    .cover-title { font-size: 26px; font-weight: 900; color: #0f172a; line-height: 1.1; margin-bottom: 15px; }
+                    .cover-decoration { width: 100px; height: 3px; background: linear-gradient(to right, #4f46e5, #10b981); margin: 20px auto; }
+                    
+                    .cover-body {
+                        background: #ffffff;
+                        border: 1px solid #e2e8f0;
+                        border-radius: 16px;
+                        padding: 24px;
+                        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+                        max-width: 500px;
+                        margin: 0 auto;
+                        text-align: center;
+                    }
+                    .cover-profile-pic {
+                        width: 60px; height: 60px; border-radius: 50%; background: #e0e7ff; display: flex; align-items: center; justify-content: center; border: 2.5px solid #4f46e5; margin: 0 auto 12px;
+                    }
+                    
+                    .cover-footer { text-align: center; margin-bottom: 30px; }
+                    .cover-footer-text { font-size: 9px; color: #64748b; font-weight: 600; letter-spacing: 1px; }
+                    
+                    .toc-container { padding: 30px; }
+                    .toc-title { font-size: 18px; font-weight: 900; border-bottom: 2px solid #0f172a; padding-bottom: 8px; margin-bottom: 20px; }
+                    .toc-row { display: flex; justify-content: space-between; border-bottom: 1px dashed #e2e8f0; padding: 6px 0; font-size: 11px; }
+                    .toc-dots { flex-grow: 1; border-bottom: 1px dotted #cbd5e1; margin: 0 8px; position: relative; top: -4px; }
+                    
+                    .chapter-divider {
+                        height: 100vh;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 40px;
+                        box-sizing: border-box;
+                        border-left: 10px solid #4f46e5;
+                        background: #f8fafc;
+                        text-align: center;
+                    }
+                    .chapter-number { font-size: 14px; font-weight: 900; color: #4f46e5; letter-spacing: 2px; text-transform: uppercase; }
+                    .chapter-title { font-size: 22px; font-weight: 900; color: #0f172a; margin-top: 10px; }
+                    
+                    .concept-print-card {
+                        border: 1px solid #e2e8f0;
+                        border-radius: 12px;
+                        padding: 16px;
+                        background: #ffffff;
+                        margin-bottom: 16px;
+                    }
+                    .concept-header-print {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        border-bottom: 1.5px solid #0f172a;
+                        padding-bottom: 4px;
+                        margin-bottom: 10px;
+                    }
+                    .concept-tag-print { font-size: 9px; font-weight: 900; color: #4f46e5; text-transform: uppercase; letter-spacing: 1px; }
+                    .concept-unit-print { font-size: 8px; font-weight: 700; color: #64748b; }
+                    .print-highlighted-line { background-color: rgba(254, 240, 138, 0.6) !important; border-bottom: 1.5px solid #eab308 !important; padding: 1px 3px !important; border-radius: 3px !important; font-weight: 500 !important; }
+                </style>
+                
+                <div class="print-container">
+                    <!-- 1. COVER PAGE -->
+                    <div class="cover-page print-page-break">
+                        <div class="cover-header">
+                            <div class="cover-subtitle">ÖSYM KPSS DERS ÇALIŞMA ASİSTANI</div>
+                            <div class="cover-title">${lessonTitle}</div>
+                            <div class="text-[12px] font-bold text-slate-500 uppercase tracking-widest">EKSİKSİZ DERS NOTLARI KİTAPÇIĞI</div>
+                            <div class="cover-decoration"></div>
                         </div>
-                        <div class="text-xs text-slate-300 leading-relaxed overflow-y-auto max-h-64 pr-1 scrollbar-thin">${noteHtml}</div>
+                        
+                        <div class="cover-body">
+                            <div class="cover-profile-pic">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 38px; height: 38px;">
+                                    <circle cx="50" cy="40" r="20" fill="#4f46e5"/>
+                                    <path d="M 20,80 Q 50,55 80,80 Z" fill="#4f46e5"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-sm font-black print-text-dark">${userProfile.name}</h2>
+                            <p class="text-[9px] text-indigo-700 font-bold mt-1 uppercase tracking-wider"><i class="fa-solid fa-trophy mr-1"></i> ${userProfile.target}</p>
+                            <div style="background: #f8fafc; border-radius: 8px; padding: 10px; margin-top: 16px; border: 1px solid #e2e8f0;">
+                                <p class="text-[8px] print-text-muted italic">"${userProfile.slogan}"</p>
+                            </div>
+                            <div style="display: grid; grid-template-cols: repeat(2, 1fr); gap: 10px; margin-top: 16px; text-align: left;">
+                                <div style="border-right: 1px solid #e2e8f0; padding-right: 8px;">
+                                    <span class="text-[8px] print-text-muted uppercase font-bold block">Toplam Ünite</span>
+                                    <span class="text-xs font-black print-text-dark">${activeNoteDb.length} Ünite</span>
+                                </div>
+                                <div style="padding-left: 8px;">
+                                    <span class="text-[8px] print-text-muted uppercase font-bold block">Fosforlu Vurgu</span>
+                                    <span class="text-xs font-black print-text-dark">${countTotalHighlights(currentLesson)} Satır</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cover-footer">
+                            <div class="cover-footer-text">KPSS AKADEMİK GELİŞİM PLATFORMU &copy; 2026</div>
+                            <div class="text-[8px] text-slate-400 mt-1">${today} tarihinde oluşturuldu.</div>
+                        </div>
                     </div>
-                    <div class="flex gap-2 pt-2 border-t border-slate-900/60 no-print">
-                        <button onclick="startConceptQuiz('${kavram}')" class="w-full py-2 bg-indigo-950/40 hover:bg-indigo-900/40 border border-indigo-900/50 text-indigo-300 hover:text-white font-black text-[10px] rounded-xl transition-all cursor-pointer flex justify-center items-center gap-1.5 hover-glow">
-                            <i class="fa-solid fa-circle-question"></i> BU KONUDAN TEST ÇÖZ
-                        </button>
-                    </div>`;
-                listContainer.appendChild(card);
+            `;
+            
+            // 2. TABLE OF CONTENTS
+            bookletHtml += `
+                    <div class="toc-container print-page-break">
+                        <h3 class="toc-title">İÇİNDEKİLER DİZİNİ</h3>
+                        <div style="margin-top: 20px;" class="space-y-4">
+            `;
+            
+            activeNoteDb.forEach((unitNote, idx) => {
+                let concepts = Object.keys(unitNote.kavramlar || {});
+                bookletHtml += `
+                    <div style="margin-bottom: 14px;">
+                        <div class="font-bold print-text-dark text-xs uppercase flex justify-between">
+                            <span>${idx + 1}. Ünite: ${unitNote.unite}</span>
+                            <span>${concepts.length} Kavram</span>
+                        </div>
+                        <div style="padding-left: 14px; margin-top: 6px;" class="space-y-1">
+                `;
+                
+                concepts.forEach(kavram => {
+                    bookletHtml += `
+                        <div class="toc-row">
+                            <span class="text-slate-600">#${kavram}</span>
+                            <span class="toc-dots"></span>
+                            <span class="font-bold print-text-dark">Sayfa Konusu</span>
+                        </div>
+                    `;
+                });
+                
+                bookletHtml += `
+                        </div>
+                    </div>
+                `;
             });
             
-            if (listContainer.children.length === 0) {
-                listContainer.className = "flex justify-center items-center py-12 col-span-2";
-                listContainer.innerHTML = `<p class="text-xs text-slate-500 italic">Aramanızla eşleşen kavram bulunamadı.</p>`;
+            bookletHtml += `
+                        </div>
+                    </div>
+            `;
+            
+            // 3. CHAPTERS & CONTENT
+            activeNoteDb.forEach((unitNote, idx) => {
+                bookletHtml += `
+                    <div class="chapter-divider print-page-break">
+                        <div class="chapter-number">${idx + 1}. ÜNİTE</div>
+                        <h2 class="chapter-title">${unitNote.unite}</h2>
+                        <div class="cover-decoration"></div>
+                        <p class="text-[9px] print-text-muted max-w-sm mt-2">Bu ünitede yer alan ÖSYM sınav odağına sahip kavram analizleri ve akademik bilgi notları listelenmiştir.</p>
+                    </div>
+                `;
+                
+                let concepts = Object.keys(unitNote.kavramlar || {});
+                concepts.forEach(kavram => {
+                    const rawHtml = unitNote.kavramlar[kavram];
+                    const lines = rawHtml.split('<br>');
+                    const formattedLines = lines.map((line, lIdx) => {
+                        if (!line.trim()) return '<br>';
+                        const isHighlighted = isConceptLineHighlighted(kavram, lIdx);
+                        if (isHighlighted) {
+                            return `<span class="print-highlighted-line">${line}</span>`;
+                        }
+                        return line;
+                    }).join('<br>');
+                    
+                    bookletHtml += `
+                        <div class="concept-print-card print-avoid-break">
+                            <div class="concept-header-print">
+                                <span class="concept-tag-print">#${kavram}</span>
+                                <span class="concept-unit-print">${unitNote.unite}</span>
+                            </div>
+                            <div class="text-[10px] leading-relaxed print-text-dark text-justify" style="color: #1e293b !important;">
+                                ${formattedLines}
+                            </div>
+                        </div>
+                    `;
+                });
+            });
+            
+            bookletHtml += `
+                </div>
+            `;
+            
+            printWrapper.innerHTML = bookletHtml;
+            showNotification("Ders notları kitapçığı başarıyla derlendi! PDF Yazdırma ekranı açılıyor...", "success");
+            
+            setTimeout(() => {
+                window.print();
+            }, 450);
+        }
+
+        // --- AUDIOBOOK PLAYLIST ENGINE ---
+        let notesPlaylist = {
+            isActive: false,
+            isPlaying: false,
+            concepts: [],
+            currentIdx: 0,
+            timer: null,
+            countdown: 0
+        };
+
+        function startNotesPlaylist() {
+            if (!('speechSynthesis' in window)) {
+                showNotification("Tarayıcınız ses sentezini desteklemiyor.", "warning");
+                return;
+            }
+            
+            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
+            if (activeNoteDb.length === 0) return;
+            
+            const isBookletMode = document.getElementById("toggle-booklet-mode")?.checked || false;
+            let conceptsToPlay = [];
+            
+            if (isBookletMode) {
+                activeNoteDb.forEach(unit => {
+                    Object.keys(unit.kavramlar || {}).forEach(kavram => {
+                        conceptsToPlay.push({
+                            kavram: kavram,
+                            noteHtml: unit.kavramlar[kavram],
+                            unite: unit.unite
+                        });
+                    });
+                });
+            } else {
+                let activeUnit = activeNoteDb.find(box => box.unite === currentData[activeUnitIdx]?.unite);
+                if (activeUnit) {
+                    Object.keys(activeUnit.kavramlar || {}).forEach(kavram => {
+                        conceptsToPlay.push({
+                            kavram: kavram,
+                            noteHtml: activeUnit.kavramlar[kavram],
+                            unite: activeUnit.unite
+                        });
+                    });
+                }
+            }
+            
+            if (conceptsToPlay.length === 0) {
+                showNotification("Seslendirilecek ders notu bulunamadı.", "warning");
+                return;
+            }
+            
+            if (typeof toggleVoiceAssistant === 'function' && typeof isVoiceActive !== 'undefined' && isVoiceActive) {
+                toggleVoiceAssistant();
+            }
+            
+            notesPlaylist.isActive = true;
+            notesPlaylist.isPlaying = true;
+            notesPlaylist.concepts = conceptsToPlay;
+            notesPlaylist.currentIdx = 0;
+            notesPlaylist.countdown = 0;
+            if (notesPlaylist.timer) clearInterval(notesPlaylist.timer);
+            notesPlaylist.timer = null;
+            
+            const playerWidget = document.getElementById("box-notes-audio-player");
+            if (playerWidget) {
+                playerWidget.classList.remove("hidden");
+            }
+            
+            showNotification(`Sesli Kitapçık başlatıldı! Toplam ${conceptsToPlay.length} kavram aralıksız okunacak.`, "success");
+            playPlaylistConcept(0);
+        }
+
+        function playPlaylistConcept(idx) {
+            if (!notesPlaylist.isActive) return;
+            if (idx < 0 || idx >= notesPlaylist.concepts.length) {
+                stopNotesPlaylist();
+                return;
+            }
+            
+            notesPlaylist.currentIdx = idx;
+            notesPlaylist.isPlaying = true;
+            notesPlaylist.countdown = 0;
+            if (notesPlaylist.timer) {
+                clearInterval(notesPlaylist.timer);
+                notesPlaylist.timer = null;
+            }
+            
+            const conceptObj = notesPlaylist.concepts[idx];
+            updatePlaylistPlayerUI();
+            
+            const activeCards = document.querySelectorAll(`[data-kavram="${conceptObj.kavram}"]`);
+            if (activeCards.length > 0) {
+                activeCards[0].closest('.glass-card')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            
+            const cleanText = conceptObj.noteHtml.replace(/<\/?[^>]+(>|$)/g, "");
+            const textToSpeak = `${conceptObj.unite}. Kavram ${conceptObj.kavram}. ${cleanText}`;
+            
+            speakPlaylistText(textToSpeak, handlePlaylistConceptEnded);
+        }
+
+        function speakPlaylistText(text, onEndCallback) {
+            if (!('speechSynthesis' in window)) return;
+            window.speechSynthesis.cancel();
+            
+            const cleanText = text.replace(/<\/?[^>]+(>|$)/g, "").replace(/#/g, "");
+            const utterance = new SpeechSynthesisUtterance(cleanText);
+            utterance.lang = "tr-TR";
+            
+            const voices = window.speechSynthesis.getVoices();
+            const trVoice = voices.find(voice => voice.lang.includes("tr-TR") || voice.lang.includes("tr"));
+            if (trVoice) utterance.voice = trVoice;
+            
+            utterance.rate = 1.02;
+            utterance.pitch = 1.0;
+            
+            utterance.onend = () => {
+                if (notesPlaylist.isActive && notesPlaylist.isPlaying && onEndCallback) {
+                    onEndCallback();
+                }
+            };
+            
+            utterance.onerror = (e) => {
+                console.error("Speech synthesis error in playlist:", e);
+            };
+            
+            window.currentUtterance = utterance;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function handlePlaylistConceptEnded() {
+            if (!notesPlaylist.isActive || !notesPlaylist.isPlaying) return;
+            
+            if (notesPlaylist.currentIdx >= notesPlaylist.concepts.length - 1) {
+                stopNotesPlaylist();
+                showNotification("Tebrikler! Sesli kitapçık dinleme listesini başarıyla tamamladınız. 🎓", "success");
+                return;
+            }
+            
+            notesPlaylist.countdown = 2;
+            updatePlaylistPlayerUI();
+            
+            if (notesPlaylist.timer) clearInterval(notesPlaylist.timer);
+            notesPlaylist.timer = setInterval(() => {
+                notesPlaylist.countdown--;
+                updatePlaylistPlayerUI();
+                
+                if (notesPlaylist.countdown <= 0) {
+                    clearInterval(notesPlaylist.timer);
+                    notesPlaylist.timer = null;
+                    notesPlaylist.currentIdx++;
+                    playPlaylistConcept(notesPlaylist.currentIdx);
+                }
+            }, 1000);
+        }
+
+        function toggleNotesPlaylistPlayPause() {
+            if (!notesPlaylist.isActive) return;
+            
+            const btn = document.getElementById("btn-audio-player-play");
+            const soundwave = document.getElementById("soundwave-anim");
+            
+            if (notesPlaylist.isPlaying) {
+                notesPlaylist.isPlaying = false;
+                window.speechSynthesis.pause();
+                if (notesPlaylist.timer) {
+                    clearInterval(notesPlaylist.timer);
+                    notesPlaylist.timer = null;
+                }
+                if (btn) btn.innerHTML = `<i class="fa-solid fa-play"></i> DEVAM ET`;
+                if (soundwave) {
+                    soundwave.querySelectorAll('span').forEach(s => s.classList.remove('animate-bounce'));
+                }
+                showNotification("Sesli Kitapçık duraklatıldı.", "indigo");
+            } else {
+                notesPlaylist.isPlaying = true;
+                if (window.speechSynthesis.paused) {
+                    window.speechSynthesis.resume();
+                } else {
+                    playPlaylistConcept(notesPlaylist.currentIdx);
+                }
+                if (btn) btn.innerHTML = `<i class="fa-solid fa-pause"></i> DURAKLAT`;
+                if (soundwave) {
+                    soundwave.querySelectorAll('span').forEach(s => s.classList.add('animate-bounce'));
+                }
+                showNotification("Sesli Kitapçık çalmaya devam ediyor...", "success");
+            }
+            updatePlaylistPlayerUI();
+        }
+
+        function stopNotesPlaylist() {
+            notesPlaylist.isActive = false;
+            notesPlaylist.isPlaying = false;
+            if (notesPlaylist.timer) clearInterval(notesPlaylist.timer);
+            notesPlaylist.timer = null;
+            
+            window.speechSynthesis.cancel();
+            
+            const playerWidget = document.getElementById("box-notes-audio-player");
+            if (playerWidget) {
+                playerWidget.classList.add("hidden");
+            }
+            showNotification("Sesli Kitapçık oynatıcısı kapatıldı.", "indigo");
+        }
+
+        function nextNotesPlaylist() {
+            if (!notesPlaylist.isActive) return;
+            if (notesPlaylist.currentIdx < notesPlaylist.concepts.length - 1) {
+                if (notesPlaylist.timer) clearInterval(notesPlaylist.timer);
+                notesPlaylist.timer = null;
+                playPlaylistConcept(notesPlaylist.currentIdx + 1);
+            } else {
+                showNotification("Listenin son kavramındasınız.", "indigo");
+            }
+        }
+
+        function prevNotesPlaylist() {
+            if (!notesPlaylist.isActive) return;
+            if (notesPlaylist.currentIdx > 0) {
+                if (notesPlaylist.timer) clearInterval(notesPlaylist.timer);
+                notesPlaylist.timer = null;
+                playPlaylistConcept(notesPlaylist.currentIdx - 1);
+            } else {
+                showNotification("Listenin ilk kavramındasınız.", "indigo");
+            }
+        }
+
+        function updatePlaylistPlayerUI() {
+            if (!notesPlaylist.isActive) return;
+            
+            const unitTitleEl = document.getElementById("audio-player-unit-title");
+            const conceptTitleEl = document.getElementById("audio-player-concept-title");
+            const progressEl = document.getElementById("audio-player-progress-text");
+            const countdownEl = document.getElementById("audio-player-countdown-text");
+            
+            const conceptObj = notesPlaylist.concepts[notesPlaylist.currentIdx];
+            
+            if (unitTitleEl) unitTitleEl.textContent = conceptObj.unite;
+            if (conceptTitleEl) conceptTitleEl.textContent = `Okunan: #${conceptObj.kavram}`;
+            if (progressEl) progressEl.textContent = `Kavram ${notesPlaylist.currentIdx + 1} / ${notesPlaylist.concepts.length}`;
+            
+            if (countdownEl) {
+                if (notesPlaylist.countdown > 0) {
+                    countdownEl.textContent = `Sıradakine geçiliyor: ${notesPlaylist.countdown} sn`;
+                    countdownEl.className = "text-[8px] text-amber-400 font-black animate-pulse animate-duration-1000";
+                } else if (!notesPlaylist.isPlaying) {
+                    countdownEl.textContent = "Duraklatıldı";
+                    countdownEl.className = "text-[8px] text-slate-500 font-bold";
+                } else {
+                    countdownEl.textContent = "Aralıksız Okuma Modu";
+                    countdownEl.className = "text-[8px] text-indigo-400 font-bold";
+                }
             }
         }
 
@@ -1615,12 +2577,14 @@
             document.getElementById("box-top-navbar").classList.remove("hidden");
             document.getElementById("box-embedded-note").classList.add("hidden");
             
+            const btnRoadmap = document.getElementById("btn-mode-roadmap");
             const btnCards = document.getElementById("btn-mode-cards");
             const btnQuiz = document.getElementById("btn-mode-quiz");
             const btnNotes = document.getElementById("btn-mode-notes");
             const btnExam = document.getElementById("btn-mode-exam");
 
             // Hide all active main panels first
+            if (document.getElementById("view-roadmap")) document.getElementById("view-roadmap").classList.add("hidden");
             document.getElementById("view-cards").classList.add("hidden");
             document.getElementById("view-quiz").classList.add("hidden");
             document.getElementById("view-notes").classList.add("hidden");
@@ -1629,26 +2593,35 @@
             document.getElementById("box-group-selector").classList.add("hidden");
 
             // Reset tab styles
-            if (btnCards) btnCards.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer";
-            if (btnQuiz) btnQuiz.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer";
-            if (btnNotes) btnNotes.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer";
-            if (btnExam) btnExam.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer";
+            const inactiveClass = "flex-grow sm:flex-none px-3.5 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer flex items-center justify-center gap-1 transition-all duration-200";
+            const activeClass = "flex-grow sm:flex-none px-3.5 py-1.5 rounded-md bg-slate-800 text-white shadow-xs cursor-pointer flex items-center justify-center gap-1 transition-all duration-200";
 
-            if (mode === 'cards') {
+            if (btnRoadmap) btnRoadmap.className = inactiveClass;
+            if (btnCards) btnCards.className = inactiveClass;
+            if (btnQuiz) btnQuiz.className = inactiveClass;
+            if (btnNotes) btnNotes.className = inactiveClass;
+            if (btnExam) btnExam.className = inactiveClass;
+
+            if (mode === 'roadmap') {
+                isTaramaTestMode = false;
+                if (document.getElementById("view-roadmap")) document.getElementById("view-roadmap").classList.remove("hidden");
+                if (btnRoadmap) btnRoadmap.className = activeClass;
+                renderRoadmapView();
+            } else if (mode === 'cards') {
                 isTaramaTestMode = false;
                 document.getElementById("view-cards").classList.remove("hidden");
-                if (btnCards) btnCards.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md bg-slate-800 text-white shadow-xs cursor-pointer";
+                if (btnCards) btnCards.className = activeClass;
                 buildUnitList();
             } else if (mode === 'quiz') {
                 document.getElementById("view-quiz").classList.remove("hidden");
-                if (btnQuiz) btnQuiz.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md bg-slate-800 text-white shadow-xs cursor-pointer";
+                if (btnQuiz) btnQuiz.className = activeClass;
                 buildGroupSelector();
                 prepareGroupQuestions();
                 renderQuiz();
             } else if (mode === 'notes') {
                 isTaramaTestMode = false;
                 document.getElementById("view-notes").classList.remove("hidden");
-                if (btnNotes) btnNotes.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md bg-slate-800 text-white shadow-xs cursor-pointer";
+                if (btnNotes) btnNotes.className = activeClass;
                 renderNotesView();
             } else if (mode === 'exam') {
                 isTaramaTestMode = false;
@@ -1656,12 +2629,747 @@
                 document.getElementById("exam-start-panel").classList.remove("hidden");
                 document.getElementById("exam-active-panel").classList.add("hidden");
                 document.getElementById("exam-result-panel").classList.add("hidden");
-                if (btnExam) btnExam.className = "flex-1 sm:flex-none px-4 py-1.5 rounded-md bg-slate-800 text-white shadow-xs cursor-pointer";
+                if (btnExam) btnExam.className = activeClass;
             } else if (mode === 'map-atlas') {
                 isTaramaTestMode = false;
                 document.getElementById("view-map-atlas").classList.remove("hidden");
                 document.getElementById("box-top-navbar").classList.add("hidden");
             }
+        }
+
+        // --- AI AKADEMİK YOL HARİTASI, 3 AŞAMALI KONU TAMAMLAMA VE AKTİF ÇÜRÜME MOTORU (v20.0) ---
+        let activeRoadmapDay = new Date().getDay() === 0 ? 7 : new Date().getDay();
+        let activeRoadmapConceptQuiz = null;
+        let roadmapQuests = JSON.parse(localStorage.getItem('kpss_roadmap_quests')) || {};
+
+        function getWeakestTag() {
+            if (!kpssNotebook || kpssNotebook.length === 0) return null;
+            let lessonNotebook = kpssNotebook.filter(n => n.lesson === currentLesson && n.tag && n.tag !== "#GenelKazanım");
+            if (lessonNotebook.length === 0) return null;
+            
+            let counts = {};
+            let maxTag = null;
+            let maxCount = 0;
+            
+            lessonNotebook.forEach(n => {
+                let tag = n.tag;
+                counts[tag] = (counts[tag] || 0) + 1;
+                if (counts[tag] > maxCount) {
+                    maxCount = counts[tag];
+                    maxTag = tag;
+                }
+            });
+            
+            return maxTag ? { tag: maxTag, count: maxCount } : null;
+        }
+
+        function updateConceptStatus(kavram, states) {
+            if (!states[currentLesson]) states[currentLesson] = {};
+            if (!states[currentLesson][kavram]) {
+                states[currentLesson][kavram] = { read: false, cards_viewed: false, quiz_score: { correct: 0, total: 0 }, status: 'not_started' };
+            }
+            
+            let cState = states[currentLesson][kavram];
+            let testPassed = cState.quiz_score && cState.quiz_score.total > 0 && (cState.quiz_score.correct / cState.quiz_score.total >= 0.70);
+            
+            if (cState.read && cState.cards_viewed && testPassed) {
+                cState.status = 'completed';
+            } else if (cState.quiz_score && cState.quiz_score.total > 0 && !testPassed) {
+                cState.status = 'incomplete'; // Eksik Konu
+            } else if (cState.read || cState.cards_viewed) {
+                cState.status = 'in_progress';
+            } else {
+                cState.status = 'not_started';
+            }
+        }
+
+        function toggleConceptRead(kavram, isReadState) {
+            let states = JSON.parse(localStorage.getItem('kpss_concept_states')) || {};
+            if (!states[currentLesson]) states[currentLesson] = {};
+            if (!states[currentLesson][kavram]) {
+                states[currentLesson][kavram] = { read: false, cards_viewed: false, quiz_score: { correct: 0, total: 0 }, status: 'not_started' };
+            }
+            
+            states[currentLesson][kavram].read = isReadState;
+            updateConceptStatus(kavram, states);
+            localStorage.setItem('kpss_concept_states', JSON.stringify(states));
+            
+            showToastNotification(`📖 #${kavram} konusu ${isReadState ? 'çalışıldı (okundu)' : 'çalışılmadı'} olarak işaretlendi!`);
+            
+            // Eğer aktif yol haritası gününün hedefiyse Görev 1'i tamamla
+            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
+            if (activeRoadmapDay <= 5) {
+                let keys = Object.keys(activeNoteDb[activeRoadmapDay - 1].kavramlar);
+                let target = getFirstIncompleteConcept(activeRoadmapDay - 1) || keys[0];
+                if (target === kavram && isReadState) {
+                    markQuestCompleted(activeRoadmapDay, 1);
+                }
+            } else if (activeRoadmapDay === 6) {
+                let weakest = getWeakestTag();
+                let pureWeakest = weakest ? weakest.tag.replace('#', '') : "";
+                if (pureWeakest === kavram && isReadState) {
+                    markQuestCompleted(6, 1);
+                }
+            }
+            
+            renderNotesView();
+            if (currentMode === 'roadmap') renderRoadmapView();
+        }
+
+        function getFirstIncompleteConcept(unitIdx) {
+            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
+            const unitNotes = activeNoteDb[unitIdx];
+            if (!unitNotes || !unitNotes.kavramlar) return null;
+            
+            let states = JSON.parse(localStorage.getItem('kpss_concept_states')) || {};
+            let keys = Object.keys(unitNotes.kavramlar);
+            
+            for (let tag of keys) {
+                let status = states[currentLesson]?.[tag]?.status || 'not_started';
+                if (status !== 'completed') {
+                    return tag;
+                }
+            }
+            return null; // Tüm konular tamamlanmışsa null döner
+        }
+
+        function renderRoadmapView() {
+            checkDailyMissionsDate();
+            
+            // 1. Durum Göstergelerini Güncelle
+            const m1Percent = Math.min(100, Math.round((dailyMissions.solved / 30) * 100));
+            const m2Percent = Math.min(100, Math.round((dailyMissions.cards / 10) * 100));
+            const m3Percent = Math.min(100, Math.round((dailyMissions.notes / 3) * 100));
+            const totalPercent = Math.round((m1Percent + m2Percent + m3Percent) / 3);
+            
+            const energyTxt = document.getElementById("roadmap-energy-text");
+            if (energyTxt) energyTxt.textContent = `${totalPercent}%`;
+            
+            const errorTxt = document.getElementById("roadmap-error-text");
+            const activeErrors = kpssNotebook.filter(n => n.lesson === currentLesson).length;
+            if (errorTxt) errorTxt.textContent = `${activeErrors} Eksiği`;
+            
+            let key = currentLesson + "_" + activeRoadmapDay;
+            if (!roadmapQuests[key]) {
+                roadmapQuests[key] = [false, false, false];
+            }
+            const questsDone = roadmapQuests[key].filter(Boolean).length;
+            const questTxt = document.getElementById("roadmap-quest-text");
+            if (questTxt) questTxt.textContent = `${questsDone}/3`;
+            
+            // 2. 7 Günlük Takvimi Dinamik Render Et
+            const grid = document.getElementById("roadmap-calendar-grid");
+            if (grid) {
+                grid.innerHTML = "";
+                const dayNames = ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", "Pazar"];
+                const dayShorts = ["PZT", "SAL", "ÇAR", "PER", "CUM", "CMT", "PAZ"];
+                const completedDays = JSON.parse(localStorage.getItem('kpss_roadmap_completed_days')) || [];
+                
+                for (let i = 1; i <= 7; i++) {
+                    const isToday = i === (new Date().getDay() === 0 ? 7 : new Date().getDay());
+                    const isActive = i === activeRoadmapDay;
+                    
+                    let isCompleted = completedDays.includes(i) || roadmapQuests[currentLesson + "_" + i]?.every(Boolean);
+                    
+                    let focusText = "";
+                    if (i <= 5) {
+                        focusText = `Ünite ${i}`;
+                    } else if (i === 6) {
+                        focusText = "Hataları Bük";
+                    } else {
+                        focusText = "Büyük Sınav";
+                    }
+                    
+                    let borderClass = "border-slate-800/80";
+                    let bgClass = "bg-slate-900/40 hover:bg-slate-900/80";
+                    let textClass = "text-slate-400";
+                    let glowEl = "";
+                    
+                    if (isCompleted) {
+                        borderClass = "border-emerald-500/40";
+                        bgClass = "bg-emerald-950/20 hover:bg-emerald-950/40";
+                        textClass = "text-emerald-400";
+                    }
+                    
+                    if (isActive) {
+                        borderClass = "border-indigo-500/80 ring-1 ring-indigo-500/30";
+                        bgClass = "bg-slate-950";
+                        textClass = "text-white";
+                        glowEl = `<span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-indigo-500 rounded-full animate-ping"></span>`;
+                    }
+                    
+                    const dayCard = document.createElement("div");
+                    dayCard.className = `relative p-3 rounded-xl border ${borderClass} ${bgClass} transition-all duration-300 cursor-pointer flex flex-col justify-between items-center text-center select-none min-h-[90px]`;
+                    dayCard.onclick = () => {
+                        activeRoadmapDay = i;
+                        renderRoadmapView();
+                    };
+                    
+                    dayCard.innerHTML = `
+                        ${glowEl}
+                        <span class="text-[8px] font-black uppercase tracking-wider ${isActive ? 'text-indigo-400' : 'text-slate-500'}">${dayNames[i-1]}</span>
+                        <span class="text-xs font-black my-1 ${textClass}">${dayShorts[i-1]}</span>
+                        <span class="text-[7px] text-slate-500 font-bold uppercase truncate max-w-full">${focusText}</span>
+                        ${isCompleted ? '<i class="fa-solid fa-circle-check text-[9px] text-emerald-400 mt-1"></i>' : ''}
+                        ${isToday && !isCompleted ? '<span class="text-[7px] font-black text-indigo-400 bg-indigo-950 px-1 py-0.2 rounded border border-indigo-900/50 uppercase mt-1">Bugün</span>' : ''}
+                    `;
+                    grid.appendChild(dayCard);
+                }
+            }
+
+            // 3. Görev İstasyonu İçeriğini Dinamik Belirle
+            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
+            let states = JSON.parse(localStorage.getItem('kpss_concept_states')) || {};
+            let conceptTag = "";
+            let conceptTitle = "";
+            let conceptDesc = "";
+            let isUnitAllMastered = false;
+            
+            if (activeRoadmapDay <= 5) {
+                const target = getFirstIncompleteConcept(activeRoadmapDay - 1);
+                if (target) {
+                    conceptTag = target;
+                    const rawText = activeNoteDb[activeRoadmapDay - 1].kavramlar[conceptTag] || "";
+                    conceptTitle = rawText.match(/<b>(.*?)<\/b>/)?.[1] || conceptTag;
+                    conceptDesc = rawText.replace(/<[^>]*>/g, '').replace(/⚠️|ÖSYM TUZAĞI:/g, '').trim().substring(0, 150) + "...";
+                } else {
+                    // Ünitedeki tüm konular bitmiş!
+                    isUnitAllMastered = true;
+                    conceptTag = "AllMastered";
+                    conceptTitle = `Ünite ${activeRoadmapDay} Tamamlandı! 🎉`;
+                    conceptDesc = `Tebrikler Furkan! Bu ünitedeki tüm kavramları %100 başarıyla tamamladın, hiçbir eksiğin kalmadı. Üniteyi gözden geçirebilir veya hatırlatıcı çözebilirsin.`;
+                }
+            } else if (activeRoadmapDay === 6) {
+                let weakest = getWeakestTag();
+                if (weakest) {
+                    conceptTag = weakest.tag.replace('#', '');
+                    conceptTitle = `En Zayıf Kazanım: #${conceptTag}`;
+                    conceptDesc = `Hata defterinizde en sık yanlış yaptığınız konudur (${weakest.count} Hata). Bugün bu kazanımın detaylı özetini ve zayıflıkları tekrar inceleyin.`;
+                } else {
+                    conceptTag = "GenelTekrar";
+                    conceptTitle = "Genel Tekrar Günü";
+                    conceptDesc = "Hata defterinizde aktif hata bulunmamaktadır! İstediğiniz bir ünitenin ders notunu genel tekrar olarak çalışabilirsiniz.";
+                }
+            } else {
+                conceptTag = "GenelTekrar";
+                conceptTitle = "Haftalık Genel Tekrar ve Hızlı Not Revizyonu";
+                conceptDesc = "Sınav öncesinde çalıştığınız tüm ünitelerin özet notlarını ve önemli KPSS kazanımlarını hızlıca gözden geçirerek zihninizi hazırlayın.";
+            }
+
+            // Görev 1 UI Güncellemesi
+            const q1Title = document.getElementById("quest-1-title");
+            const q1Desc = document.getElementById("quest-1-desc");
+            const q1Status = document.getElementById("quest-1-status");
+            const q1Btn = document.getElementById("quest-1-btn");
+            if (q1Title) q1Title.textContent = conceptTitle || "Kazanım Bulunamadı";
+            if (q1Desc) q1Desc.textContent = conceptDesc || "Ders notu bulunamadı.";
+            
+            if (isUnitAllMastered) {
+                if (q1Status) q1Status.innerHTML = '<span class="text-emerald-400 font-black"><i class="fa-solid fa-circle-check"></i> %100 BAŞARI</span>';
+                if (q1Btn) {
+                    q1Btn.className = "w-full mt-4 py-2 bg-emerald-950/40 border border-emerald-500/20 text-emerald-400 text-[10px] font-black rounded-xl flex items-center justify-center gap-1.5 cursor-pointer hover:bg-emerald-950/60";
+                    q1Btn.innerHTML = '<i class="fa-solid fa-folder-open"></i> ÜNİTE NOTLARINI AÇ';
+                }
+            } else if (roadmapQuests[key][0]) {
+                if (q1Status) q1Status.innerHTML = '<span class="text-emerald-400 font-black"><i class="fa-solid fa-circle-check"></i> TAMAMLANDI</span>';
+                if (q1Btn) {
+                    q1Btn.className = "w-full mt-4 py-2 bg-emerald-950/40 border border-emerald-500/20 text-emerald-400 text-[10px] font-black rounded-xl flex items-center justify-center gap-1.5 cursor-pointer hover:bg-emerald-950/60";
+                    q1Btn.innerHTML = '<i class="fa-solid fa-check"></i> TEKRAR GÖZ AT';
+                }
+            } else {
+                if (q1Status) q1Status.innerHTML = '<span class="text-slate-500 font-bold"><i class="fa-regular fa-circle"></i> BEKLİYOR</span>';
+                if (q1Btn) {
+                    q1Btn.className = "w-full mt-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white text-[10px] font-black rounded-xl shadow-lg shadow-indigo-500/10 border border-indigo-500/30 flex items-center justify-center gap-1.5 cursor-pointer transition-all hover:scale-102";
+                    q1Btn.innerHTML = activeRoadmapDay === 7
+                        ? '<i class="fa-solid fa-book-open"></i> GENEL TEKRAR BAŞLAT'
+                        : '<i class="fa-solid fa-book-open"></i> KONUYU ÇALIŞ';
+                }
+            }
+
+            // Görev 2 UI Güncellemesi
+            const q2Title = document.getElementById("quest-2-title");
+            const q2Desc = document.getElementById("quest-2-desc");
+            const q2Status = document.getElementById("quest-2-status");
+            const q2Btn = document.getElementById("quest-2-btn");
+            
+            if (activeRoadmapDay <= 5) {
+                if (isUnitAllMastered) {
+                    if (q2Title) q2Title.textContent = "Hızlı Hatırlatıcı Karma Test";
+                    if (q2Desc) q2Desc.textContent = "Tüm üniteyi tamamladınız! Bu ünitedeki tüm kavramları harmanlayan ve pekiştirici 10 soruluk karma ÖSYM testini çözün.";
+                } else {
+                    if (q2Title) q2Title.textContent = `Kazanım Testi (10 Soru / 7 Doğru): #${conceptTag}`;
+                    if (q2Desc) q2Desc.textContent = `Bugün çalıştığınız "${conceptTitle}" konusuna ait, 7 adet konu sorusu ve 3 adet hatırlatıcı sorudan oluşan 10 soruluk testi çözün. Geçmek için en az 7 doğru gerekmektedir!`;
+                }
+            } else if (activeRoadmapDay === 6) {
+                if (q2Title) q2Title.textContent = "Hatalı Sorulardan Birebir Tarama";
+                if (q2Desc) q2Desc.textContent = "Hata defterinize kaydolmuş olan geçmiş yanlış sorularınızdan oluşan birebir tarama testini çözün ve eksiklerinizi anında kapatın.";
+            } else {
+                if (q2Title) q2Title.textContent = "30 Soruluk KPSS Simülatörü";
+                if (q2Desc) q2Desc.textContent = "Haftalık sürecin zirvesine ulaştınız. Gerçek sınav süresi ve kurallarıyla hazırlanmış 30 soruluk genel KPSS denemesini çözün.";
+            }
+
+            if (roadmapQuests[key][1]) {
+                if (q2Status) q2Status.innerHTML = '<span class="text-emerald-400 font-black"><i class="fa-solid fa-circle-check"></i> TAMAMLANDI</span>';
+                if (q2Btn) {
+                    q2Btn.className = "w-full mt-4 py-2 bg-emerald-950/40 border border-emerald-500/20 text-emerald-400 text-[10px] font-black rounded-xl flex items-center justify-center gap-1.5 cursor-pointer hover:bg-emerald-950/60";
+                    q2Btn.innerHTML = '<i class="fa-solid fa-check"></i> TESTİ TEKRARLA';
+                }
+            } else {
+                if (q2Status) q2Status.innerHTML = '<span class="text-slate-500 font-bold"><i class="fa-regular fa-circle"></i> BEKLİYOR</span>';
+                if (q2Btn) {
+                    q2Btn.className = "w-full mt-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-[10px] font-black rounded-xl shadow-lg shadow-emerald-500/10 border border-emerald-500/30 flex items-center justify-center gap-1.5 cursor-pointer transition-all hover:scale-102";
+                    q2Btn.innerHTML = activeRoadmapDay === 7 ? '<i class="fa-solid fa-graduation-cap"></i> DENEMEYİ BAŞLAT' : '<i class="fa-solid fa-circle-question"></i> TESTİ ÇÖZ';
+                }
+            }
+
+            // Görev 3 UI Güncellemesi
+            const q3Title = document.getElementById("quest-3-title");
+            const q3Desc = document.getElementById("quest-3-desc");
+            const q3Status = document.getElementById("quest-3-status");
+            const q3Btn = document.getElementById("quest-3-btn");
+            
+            let weakestTagObj = getWeakestTag();
+            if (weakestTagObj) {
+                if (q3Title) q3Title.textContent = `Akademik Reçete: ${weakestTagObj.tag}`;
+                if (q3Desc) q3Desc.textContent = `Hata defteri analizlerinize göre en sık yanlış yaptığınız konu "${weakestTagObj.tag}" olarak tespit edilmiştir. Akademik reçete kartları, özet anlatımı ve 5 soruluk testle bu zayıflığı tamamen ortadan kaldırın!`;
+                if (q3Btn) q3Btn.innerHTML = '<i class="fa-solid fa-prescription-bottle-medical"></i> REÇETEYİ UYGULA';
+            } else {
+                if (q3Title) q3Title.textContent = "Hata Defteri Kusursuz!";
+                if (q3Desc) q3Desc.textContent = "Muazzam bir başarı Furkan! Şu anda aktif hata yaptığın hiçbir konu bulunmuyor. Kendini test etmek için Genel Deneme çözebilir veya notları pekiştirebilirsin.";
+                if (q3Btn) q3Btn.innerHTML = '<i class="fa-solid fa-graduation-cap"></i> MOCK DENEME BAŞLAT';
+            }
+
+            if (roadmapQuests[key][2]) {
+                if (q3Status) q3Status.innerHTML = '<span class="text-emerald-400 font-black"><i class="fa-solid fa-circle-check"></i> TAMAMLANDI</span>';
+                if (q3Btn) {
+                    q3Btn.className = "w-full mt-4 py-2 bg-emerald-950/40 border border-emerald-500/20 text-emerald-400 text-[10px] font-black rounded-xl flex items-center justify-center gap-1.5 cursor-pointer hover:bg-emerald-950/60";
+                    q3Btn.innerHTML = '<i class="fa-solid fa-check"></i> REÇETEYİ TEKRAR ET';
+                }
+            } else {
+                if (q3Status) q3Status.innerHTML = '<span class="text-slate-500 font-bold"><i class="fa-regular fa-circle"></i> BEKLİYOR</span>';
+                if (q3Btn) {
+                    q3Btn.className = "w-full mt-4 py-2 bg-rose-600 hover:bg-rose-500 text-white text-[10px] font-black rounded-xl shadow-lg shadow-rose-500/10 border border-rose-500/30 flex items-center justify-center gap-1.5 cursor-pointer transition-all hover:scale-102";
+                }
+            }
+
+            // 4. Müfredat İlerleme Oranı
+            let totalConcepts = 0;
+            activeNoteDb.forEach(u => {
+                if (u.kavramlar) totalConcepts += Object.keys(u.kavramlar).length;
+            });
+            
+            let uniqueStudied = 0;
+            if (states && states[currentLesson]) {
+                for (let c in states[currentLesson]) {
+                    if (states[currentLesson][c].status === 'completed') {
+                        uniqueStudied++;
+                    }
+                }
+            }
+            
+            const curriculumPercent = totalConcepts > 0 ? Math.round((uniqueStudied / totalConcepts) * 100) : 0;
+            const curriculumBar = document.getElementById("roadmap-curriculum-bar");
+            const curriculumTxt = document.getElementById("roadmap-curriculum-percent");
+            const curriculumDesc = document.getElementById("roadmap-curriculum-desc");
+            
+            if (curriculumBar) curriculumBar.style.width = `${curriculumPercent}%`;
+            if (curriculumTxt) curriculumTxt.textContent = `${curriculumPercent}%`;
+            if (curriculumDesc) curriculumDesc.textContent = `Toplam ${totalConcepts} konudan ${uniqueStudied} tanesini 3 aşamalı kriterle tamamen bitirdiniz.`;
+
+            // 5. Hata Temizleme Oranı
+            const totalErrorsCount = kpssNotebook.length;
+            const resolvedErrors = JSON.parse(localStorage.getItem('kpss_resolved_errors_count')) || 0;
+            const errorBase = totalErrorsCount + resolvedErrors;
+            const errorPercent = errorBase > 0 ? Math.round((resolvedErrors / errorBase) * 100) : 100;
+            
+            const errorBar = document.getElementById("roadmap-errors-bar");
+            const errorPercentTxt = document.getElementById("roadmap-errors-percent");
+            const errorDesc = document.getElementById("roadmap-errors-desc");
+            
+            if (errorBar) errorBar.style.width = `${errorPercent}%`;
+            if (errorPercentTxt) errorPercentTxt.textContent = `${errorPercent}%`;
+            if (errorDesc) {
+                if (activeErrors > 0) {
+                    errorDesc.textContent = `Çözülen hatalarla %${errorPercent} temizlik oranı sağlandı. ${activeErrors} hata aktif düzeltilmeyi bekliyor.`;
+                } else {
+                    errorDesc.textContent = "Mükemmel! Hata defterinizdeki tüm yanlışları sıfırladınız, %100 arınma sağlandı.";
+                }
+            }
+
+            // 6. AI Koç Kişisel Tavsiyesi
+            const coachAdvice = document.getElementById("roadmap-coaching-advice");
+            if (coachAdvice) {
+                let averageTime = JSON.parse(localStorage.getItem('kpss_total_solved_time')) || 0;
+                let solvedCount = JSON.parse(localStorage.getItem('kpss_total_solved_count')) || 0;
+                let avgSpeed = solvedCount > 0 ? Math.round(averageTime / solvedCount) : 45;
+                
+                if (activeErrors > 3) {
+                    let weakestObj = getWeakestTag();
+                    coachAdvice.textContent = `"Furkan, yaptığım analizlere göre en çok zorlandığın konu ${weakestObj ? weakestObj.tag : 'tarih'}. Görev 3'te yer alan Akademik Reçete'yi uygulayarak bu konudaki netlerini anında 1 net yükseltebilirsin! Süre yönetimini ihmal etme."`;
+                } else if (avgSpeed > 50) {
+                    coachAdvice.textContent = `"Furkan, soru başına ortalama çözüm süren ${avgSpeed} saniye civarında. ÖSYM sınavında hız kazanmak için test çözerken süre tutmayı dene ve Flaş kartları daha sık kullan."`;
+                } else if (totalPercent >= 80) {
+                    coachAdvice.textContent = `"Harika bir verimlilik Furkan! Günlük hedeflerinde %${totalPercent} başarı yakaladın. Bu disiplin ve istikrar seni 2026 KPSS'de kesinlikle zirveye ulaştıracak!"`;
+                } else {
+                    coachAdvice.textContent = `"Bugün ${dayNames[activeRoadmapDay-1]} çalışma programındayız Furkan. Görev istasyonundaki adımları teker teker tamamlayarak günlük verimliliğini %100'e ulaştır. Başarılar!"`;
+                }
+            }
+
+            // 7. YENİ: KPSS Müfredat İzleyici & Analiz Dashboard'unu Çiz
+            const trackerLessonTitle = document.getElementById("roadmap-tracker-lesson-title");
+            if (trackerLessonTitle) trackerLessonTitle.textContent = currentLesson === 'tarih' ? 'Tarih' : 'Coğrafya';
+            
+            const trackerGrid = document.getElementById("roadmap-curriculum-tracker");
+            if (trackerGrid) {
+                trackerGrid.innerHTML = "";
+                
+                activeNoteDb.forEach((unitNotes, unitIdx) => {
+                    const unitBox = document.createElement("div");
+                    unitBox.className = "bg-slate-900/60 border border-slate-800/80 p-4 rounded-xl space-y-3";
+                    
+                    let uConcepts = Object.keys(unitNotes.kavramlar || {});
+                    let uDone = uConcepts.filter(c => states[currentLesson]?.[c]?.status === 'completed').length;
+                    let uPercent = uConcepts.length > 0 ? Math.round((uDone / uConcepts.length) * 100) : 0;
+                    
+                    unitBox.innerHTML = `
+                        <div class="flex justify-between items-center border-b border-slate-800 pb-2">
+                            <h5 class="text-[10px] font-black text-white uppercase tracking-wider truncate max-w-[70%]">${unitNotes.unite}</h5>
+                            <span class="text-[9px] font-bold text-slate-400 bg-slate-950 px-2 py-0.5 rounded border border-slate-900">${uDone}/${uConcepts.length} Konu (%${uPercent})</span>
+                        </div>
+                        <div class="grid grid-cols-1 gap-2">
+                            <!-- Kavramlar buraya eklenecek -->
+                        </div>
+                    `;
+                    
+                    const conceptContainer = unitBox.querySelector(".grid");
+                    
+                    uConcepts.forEach(c => {
+                        let cState = states[currentLesson]?.[c] || { read: false, cards_viewed: false, quiz_score: { correct: 0, total: 0 }, status: 'not_started' };
+                        let status = cState.status || 'not_started';
+                        
+                        let badgeClass = "bg-slate-900 text-slate-500 border border-slate-800";
+                        let badgeText = "BAŞLANMADI";
+                        
+                        if (status === 'completed') {
+                            badgeClass = "bg-emerald-950/40 text-emerald-400 border border-emerald-900/50";
+                            badgeText = "✓ TAMAMLANDI";
+                        } else if (status === 'incomplete') {
+                            badgeClass = "bg-rose-950/40 text-rose-400 border border-rose-900/50 animate-pulse";
+                            badgeText = "⚠️ EKSİK KONU";
+                        } else if (status === 'in_progress') {
+                            badgeClass = "bg-indigo-950/40 text-indigo-400 border border-indigo-900/50";
+                            badgeText = "● ÇALIŞILIYOR";
+                        }
+                        
+                        const itemRow = document.createElement("div");
+                        itemRow.className = "flex justify-between items-center bg-slate-950/50 p-2.5 rounded-lg border border-slate-900 hover:border-slate-800/80 transition-all cursor-pointer";
+                        itemRow.onclick = () => {
+                            // Konunun notunu aç ve odaklan!
+                            isTaramaTestMode = false;
+                            activeUnitIdx = unitIdx;
+                            switchMode('notes');
+                            const searchInput = document.getElementById("search-notes-input");
+                            if (searchInput) searchInput.value = "#" + c;
+                            renderNotesView();
+                            
+                            setTimeout(() => {
+                                const element = document.getElementById("box-notes-list");
+                                if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }, 200);
+                        };
+                        
+                        // Indicators HTML (Read, Cards, Quiz)
+                        let readInd = cState.read ? '<span class="text-emerald-400" title="Not Okundu"><i class="fa-solid fa-book-open"></i></span>' : '<span class="text-slate-700" title="Not Bekliyor"><i class="fa-regular fa-book"></i></span>';
+                        let cardInd = cState.cards_viewed ? '<span class="text-emerald-400" title="Kart İncelendi"><i class="fa-solid fa-clone"></i></span>' : '<span class="text-slate-700" title="Kart Bekliyor"><i class="fa-regular fa-clone"></i></span>';
+                        
+                        let testPassed = cState.quiz_score && cState.quiz_score.total > 0 && (cState.quiz_score.correct / cState.quiz_score.total >= 0.70);
+                        let quizInd = testPassed ? '<span class="text-emerald-400" title="Test Başarılı"><i class="fa-solid fa-circle-question"></i></span>' : '<span class="text-slate-700" title="Test Bekliyor/Yetersiz"><i class="fa-regular fa-circle-question"></i></span>';
+                        
+                        itemRow.innerHTML = `
+                            <div class="flex items-center gap-2 max-w-[50%]">
+                                <span class="text-[9px] font-black text-slate-300 truncate">#${c}</span>
+                                <div class="flex gap-1.5 text-[8px] border-l border-slate-900 pl-2">
+                                    ${readInd}
+                                    ${cardInd}
+                                    ${quizInd}
+                                </div>
+                            </div>
+                            <span class="text-[7.5px] font-black px-2 py-0.5 rounded ${badgeClass}">${badgeText}</span>
+                        `;
+                        conceptContainer.appendChild(itemRow);
+                    });
+                    
+                    trackerGrid.appendChild(unitBox);
+                });
+            }
+        }
+
+        function executeQuest(questIdx) {
+            checkDailyMissionsDate();
+            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
+            let key = currentLesson + "_" + activeRoadmapDay;
+            
+            if (activeRoadmapDay <= 5) {
+                const target = getFirstIncompleteConcept(activeRoadmapDay - 1);
+                const unitNotes = activeNoteDb[activeRoadmapDay - 1];
+                if (!unitNotes) return;
+                const keys = Object.keys(unitNotes.kavramlar);
+                let conceptTag = target || keys[0] || "GenelKazanım";
+                
+                if (questIdx === 1) {
+                    isTaramaTestMode = false;
+                    activeUnitIdx = activeRoadmapDay - 1;
+                    switchMode('notes');
+                    const searchInput = document.getElementById("search-notes-input");
+                    if (searchInput) {
+                        searchInput.value = "#" + conceptTag;
+                    }
+                    renderNotesView();
+                    
+                    // Mark read
+                    let states = JSON.parse(localStorage.getItem('kpss_concept_states')) || {};
+                    if (!states[currentLesson]) states[currentLesson] = {};
+                    if (!states[currentLesson][conceptTag]) {
+                        states[currentLesson][conceptTag] = { read: false, cards_viewed: false, quiz_score: { correct: 0, total: 0 }, status: 'not_started' };
+                    }
+                    states[currentLesson][conceptTag].read = true;
+                    updateConceptStatus(conceptTag, states);
+                    localStorage.setItem('kpss_concept_states', JSON.stringify(states));
+                    
+                    markQuestCompleted(activeRoadmapDay, 1);
+                    
+                    setTimeout(() => {
+                        const element = document.getElementById("box-notes-list");
+                        if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 200);
+                } else if (questIdx === 2) {
+                    startRoadmapQuiz(conceptTag);
+                } else if (questIdx === 3) {
+                    let weakest = getWeakestTag();
+                    if (weakest) {
+                        applyAcademicPrescription(weakest.tag);
+                    } else {
+                        isTaramaTestMode = false;
+                        switchMode('exam');
+                    }
+                }
+            } else if (activeRoadmapDay === 6) {
+                if (questIdx === 1) {
+                    let weakest = getWeakestTag();
+                    let conceptTag = weakest ? weakest.tag.replace('#', '') : "";
+                    isTaramaTestMode = false;
+                    switchMode('notes');
+                    const searchInput = document.getElementById("search-notes-input");
+                    if (searchInput && conceptTag) {
+                        searchInput.value = "#" + conceptTag;
+                    }
+                    renderNotesView();
+                    markQuestCompleted(6, 1);
+                    
+                    setTimeout(() => {
+                        const element = document.getElementById("box-notes-list");
+                        if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 200);
+                } else if (questIdx === 2) {
+                    activeRoadmapConceptQuiz = 'tarama';
+                    startReviewTaramaTest();
+                } else if (questIdx === 3) {
+                    let weakest = getWeakestTag();
+                    if (weakest) {
+                        applyAcademicPrescription(weakest.tag);
+                    } else {
+                        isTaramaTestMode = false;
+                        switchMode('exam');
+                    }
+                }
+            } else {
+                if (questIdx === 1) {
+                    isTaramaTestMode = false;
+                    switchMode('notes');
+                    markQuestCompleted(7, 1);
+                    
+                    setTimeout(() => {
+                        const element = document.getElementById("box-notes-list");
+                        if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 200);
+                } else if (questIdx === 2) {
+                    isTaramaTestMode = false;
+                    switchMode('exam');
+                    markQuestCompleted(7, 2);
+                } else if (questIdx === 3) {
+                    let weakest = getWeakestTag();
+                    if (weakest) {
+                        applyAcademicPrescription(weakest.tag);
+                    } else {
+                        isTaramaTestMode = false;
+                        switchMode('exam');
+                    }
+                }
+            }
+        }
+
+        function markQuestCompleted(dayIdx, questNumber) {
+            let key = currentLesson + "_" + dayIdx;
+            if (!roadmapQuests[key]) {
+                roadmapQuests[key] = [false, false, false];
+            }
+            if (!roadmapQuests[key][questNumber - 1]) {
+                roadmapQuests[key][questNumber - 1] = true;
+                localStorage.setItem('kpss_roadmap_quests', JSON.stringify(roadmapQuests));
+                
+                if (questNumber === 1) dailyMissions.notes++;
+                else if (questNumber === 2) dailyMissions.solved = Math.min(30, dailyMissions.solved + 10); // 10 questions!
+                else dailyMissions.notes++;
+                
+                localStorage.setItem('kpss_daily_missions', JSON.stringify(dailyMissions));
+                updateDailyMissionsUI();
+            }
+
+            if (roadmapQuests[key].every(Boolean)) {
+                let completedDays = JSON.parse(localStorage.getItem('kpss_roadmap_completed_days')) || [];
+                if (!completedDays.includes(dayIdx)) {
+                    completedDays.push(dayIdx);
+                    localStorage.setItem('kpss_roadmap_completed_days', JSON.stringify(completedDays));
+                }
+            }
+
+            if (currentMode === 'roadmap') {
+                renderRoadmapView();
+            }
+        }
+
+        function startRoadmapQuiz(tag) {
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+            
+            let pureTag = tag.replace('#', '').toLowerCase();
+            
+            // Dynamic Unit Index Resolution to prevent cross-unit quiz mismatches
+            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
+            let foundUnitIdx = -1;
+            for (let i = 0; i < activeNoteDb.length; i++) {
+                if (activeNoteDb[i].kavramlar && activeNoteDb[i].kavramlar[tag]) {
+                    foundUnitIdx = i;
+                    break;
+                }
+            }
+            if (foundUnitIdx !== -1) {
+                activeUnitIdx = foundUnitIdx;
+            }
+            
+            let targetPool = [];
+            
+            // Ünite sorularından hedef kavramı içeren soruları süz
+            const unit = currentData[activeUnitIdx];
+            if (unit && unit.quiz) {
+                targetPool = unit.quiz.filter(q => {
+                    let qTag = (q.tag || '').replace('#', '').toLowerCase();
+                    return qTag === pureTag;
+                });
+            }
+            
+            // Eğer ünitede bu kavramdan soru yoksa ünitenin tüm sorularını havuz yap
+            if (targetPool.length === 0) {
+                targetPool = unit ? unit.quiz || [] : [];
+            }
+            
+            // 7 Hedef Soru Seç (Eğer 7'den azsa olanları seç ve üniteden tamamla)
+            let selectedTarget = targetPool.slice(0, 7);
+            if (selectedTarget.length < 7 && unit && unit.quiz) {
+                let extra = unit.quiz.filter(q => !selectedTarget.includes(q)).slice(0, 7 - selectedTarget.length);
+                selectedTarget = selectedTarget.concat(extra);
+            }
+            
+            // 3 Hatırlatıcı Soru Seç (Tamamlanmış konulardan)
+            let states = JSON.parse(localStorage.getItem('kpss_concept_states')) || {};
+            let completedConcepts = [];
+            if (states[currentLesson]) {
+                for (let c in states[currentLesson]) {
+                    if (states[currentLesson][c].status === 'completed' && c !== tag) {
+                        completedConcepts.push(c);
+                    }
+                }
+            }
+            
+            let reviewPool = [];
+            if (completedConcepts.length > 0) {
+                currentData.forEach(u => {
+                    if (u.quiz) {
+                        u.quiz.forEach(q => {
+                            let qTag = (q.tag || '').replace('#', '');
+                            if (completedConcepts.includes(qTag)) {
+                                reviewPool.push(q);
+                            }
+                        });
+                    }
+                });
+            }
+            
+            // Review sorularını seç ve etiketle
+            let selectedReview = [];
+            if (reviewPool.length > 0) {
+                // Karıştırıp 3 tane seç
+                let shuffled = reviewPool.sort(() => 0.5 - Math.random());
+                selectedReview = shuffled.slice(0, 3).map(item => {
+                    let rTag = (item.tag || '').replace('#', '');
+                    return {
+                        q: `[HATIRLATICI] ${item.q}`,
+                        options: item.options,
+                        correct: item.correct,
+                        rationale: item.rationale,
+                        tag: item.tag,
+                        isReviewQuestion: true,
+                        originalConcept: rTag
+                    };
+                });
+            }
+            
+            // Eğer 3 hatırlatıcı seçilemediyse kalanları üniteden doldur
+            let reviewCountNeeded = 3 - selectedReview.length;
+            if (reviewCountNeeded > 0 && unit && unit.quiz) {
+                let fallbackPool = unit.quiz.filter(q => !selectedTarget.includes(q)).slice(0, reviewCountNeeded);
+                let extraReview = fallbackPool.map(item => {
+                    return {
+                        q: `[KAZANIM TESTİ] ${item.q}`,
+                        options: item.options,
+                        correct: item.correct,
+                        rationale: item.rationale,
+                        tag: item.tag
+                    };
+                });
+                selectedReview = selectedReview.concat(extraReview);
+            }
+            
+            // Toplam 10 soruyu birleştir
+            let combined = selectedTarget.map(item => {
+                return {
+                    q: `[KAZANIM TESTİ] ${item.q}`,
+                    options: item.options,
+                    correct: item.correct,
+                    rationale: item.rationale,
+                    tag: item.tag
+                };
+            }).concat(selectedReview);
+            
+            activeGroupQuestions = combined;
+            isTaramaTestMode = true;
+            quizIdx = 0;
+            score = 0;
+            answered = false;
+            activeRoadmapConceptQuiz = tag;
+            
+            if (document.getElementById("view-roadmap")) document.getElementById("view-roadmap").classList.add("hidden");
+            document.getElementById("view-quiz").classList.remove("hidden");
+            document.getElementById("txt-quiz-module-title").textContent = `Kavram Özel Odak Testi: #${tag} (10 Soru / 7 Doğru Hedefi)`;
+            
+            const btnQuiz = document.getElementById("btn-mode-quiz");
+            const btnRoadmap = document.getElementById("btn-mode-roadmap");
+            const inactiveClass = "flex-grow sm:flex-none px-3.5 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer flex items-center justify-center gap-1 transition-all duration-200";
+            const activeClass = "flex-grow sm:flex-none px-3.5 py-1.5 rounded-md bg-slate-800 text-white shadow-xs cursor-pointer flex items-center justify-center gap-1 transition-all duration-200";
+            
+            if (btnQuiz) btnQuiz.className = activeClass;
+            if (btnRoadmap) btnRoadmap.className = inactiveClass;
+            
+            renderQuiz();
         }
 
         function renderAll() {
@@ -1767,6 +3475,74 @@
             }
             saveStateToStorage();
             
+            // Hatırlatıcı Soruların Değerlendirilmesi ve Çürüme Mekanizması
+            if (activeQ.isReviewQuestion && activeQ.originalConcept) {
+                let concept = activeQ.originalConcept;
+                let reviewScores = JSON.parse(localStorage.getItem('kpss_concept_review_scores')) || {};
+                if (!reviewScores[currentLesson]) reviewScores[currentLesson] = {};
+                if (!reviewScores[currentLesson][concept]) {
+                    reviewScores[currentLesson][concept] = [];
+                }
+                
+                reviewScores[currentLesson][concept].push(isCorrect ? 1 : 0);
+                if (reviewScores[currentLesson][concept].length > 10) {
+                    reviewScores[currentLesson][concept].shift();
+                }
+                localStorage.setItem('kpss_concept_review_scores', JSON.stringify(reviewScores));
+                
+                let history = reviewScores[currentLesson][concept];
+                if (history.length >= 5) {
+                    let correctCount = history.filter(v => v === 1).length;
+                    let accuracy = correctCount / history.length;
+                    
+                    if (accuracy < 0.70) {
+                        let states = JSON.parse(localStorage.getItem('kpss_concept_states')) || {};
+                        if (states[currentLesson] && states[currentLesson][concept] && states[currentLesson][concept].status === 'completed') {
+                            states[currentLesson][concept].quiz_score = { correct: 0, total: 10 }; // Reset/fail their concept quiz score
+                            updateConceptStatus(concept, states); // Recalculate status to transition to incomplete/Eksik Konu
+                            localStorage.setItem('kpss_concept_states', JSON.stringify(states));
+                            
+                            setTimeout(() => {
+                                alert(`⚠️ Hatırlatıcı Analiz Uyarısı!\n'#${concept}' konusundan çözdüğün son hatırlatıcı sorulardaki başarı oranın %${Math.round(accuracy * 100)} seviyesine düştü. Bu konu tekrar 'Eksik Konu' kategorisine alındı!`);
+                                if (currentMode === 'roadmap') renderRoadmapView();
+                            }, 500);
+                        }
+                    }
+                }
+            } else if (!activeQ.isReviewQuestion && tagStr && tagStr !== "#GenelKazanım") {
+                // Organik Soru Bankası tamamlama mekanizması
+                let concept = tagStr.replace('#', '');
+                let organicStats = JSON.parse(localStorage.getItem('kpss_organic_concept_stats')) || {};
+                if (!organicStats[currentLesson]) organicStats[currentLesson] = {};
+                if (!organicStats[currentLesson][concept]) {
+                    organicStats[currentLesson][concept] = { solved: 0, correct: 0 };
+                }
+                organicStats[currentLesson][concept].solved++;
+                if (isCorrect) organicStats[currentLesson][concept].correct++;
+                localStorage.setItem('kpss_organic_concept_stats', JSON.stringify(organicStats));
+                
+                let stats = organicStats[currentLesson][concept];
+                if (stats.solved >= 5 && (stats.correct / stats.solved >= 0.8)) {
+                    let states = JSON.parse(localStorage.getItem('kpss_concept_states')) || {};
+                    if (!states[currentLesson]) states[currentLesson] = {};
+                    if (!states[currentLesson][concept] || states[currentLesson][concept].status !== 'completed') {
+                        if (!states[currentLesson][concept]) {
+                            states[currentLesson][concept] = { read: false, cards_viewed: false, quiz_score: { correct: 0, total: 0 }, status: 'not_started' };
+                        }
+                        states[currentLesson][concept].read = true;
+                        states[currentLesson][concept].cards_viewed = true;
+                        states[currentLesson][concept].quiz_score = { correct: stats.correct, total: stats.solved };
+                        states[currentLesson][concept].status = 'completed';
+                        localStorage.setItem('kpss_concept_states', JSON.stringify(states));
+                        
+                        setTimeout(() => {
+                            alert(`🎉 Organik Kazanım Başarısı!\nSoru Bankasında #${concept} konusundan çözdüğün ${stats.solved} soruda %${Math.round((stats.correct / stats.solved) * 100)} üstün başarı gösterdiğin için bu konu otomatik olarak 'TAMAMLANDI' ilan edildi!`);
+                            if (currentMode === 'roadmap') renderRoadmapView();
+                        }, 600);
+                    }
+                }
+            }
+
             // --- Gamification & analytics stats triggers ---
             recordQuestionSolved(isCorrect);
             
@@ -1805,9 +3581,46 @@
                 if (percentText) percentText.textContent = "100%";
 
                 setTimeout(() => {
-                    alert(`🎉 Tebrikler Furkan! Modülü başarıyla tamamladın.\nSkorun: ${score} / ${activeGroupQuestions.length}`); 
-                    isTaramaTestMode = false; 
-                    switchLesson(currentLesson); 
+                    if (activeRoadmapConceptQuiz) {
+                        let tag = activeRoadmapConceptQuiz;
+                        if (tag === 'tarama') {
+                            alert(`🎉 Tebrikler Furkan! Hafta Sonu Tarama Testini başarıyla tamamladın.\nSkorun: ${score} / ${activeGroupQuestions.length}`); 
+                            markQuestCompleted(activeRoadmapDay, 2);
+                            activeRoadmapConceptQuiz = null;
+                            isTaramaTestMode = false; 
+                            switchLesson(currentLesson); 
+                        } else {
+                            // Concept Quiz Evaluation!
+                            let states = JSON.parse(localStorage.getItem('kpss_concept_states')) || {};
+                            if (!states[currentLesson]) states[currentLesson] = {};
+                            if (!states[currentLesson][tag]) {
+                                states[currentLesson][tag] = { read: false, cards_viewed: false, quiz_score: { correct: 0, total: 0 }, status: 'not_started' };
+                            }
+                            
+                            states[currentLesson][tag].quiz_score = { correct: score, total: activeGroupQuestions.length };
+                            
+                            let passed = score >= 7;
+                            updateConceptStatus(tag, states);
+                            localStorage.setItem('kpss_concept_states', JSON.stringify(states));
+                            
+                            if (passed) {
+                                alert(`🎉 Tebrikler Furkan!\n10 sorudan ${score} doğru yaparak #${tag} konusunu başarıyla tamamladın!`);
+                                markQuestCompleted(activeRoadmapDay, 2);
+                            } else {
+                                alert(`⚠️ Başarı Oranı Yetersiz!\n10 soruda en az 7 doğru yapman gerekiyordu. Skorun: ${score}/10. Bu konu 'Eksik Konu' olarak işaretlendi, tekrar çalışarak testi yeniden çözmelisin.`);
+                            }
+                            
+                            activeRoadmapConceptQuiz = null;
+                            isTaramaTestMode = false;
+                            
+                            // Go back to the roadmap so the user can see their updated progress
+                            switchMode('roadmap');
+                        }
+                    } else {
+                        alert(`🎉 Tebrikler Furkan! Modülü başarıyla tamamladın.\nSkorun: ${score} / ${activeGroupQuestions.length}`); 
+                        isTaramaTestMode = false; 
+                        switchLesson(currentLesson); 
+                    }
                 }, 300);
             } 
         }
@@ -2618,11 +4431,60 @@
             }
         }
         
+        function getConceptForCard(qText, aText) {
+            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
+            let match = null;
+            let maxMatch = 0;
+            
+            activeNoteDb.forEach(unit => {
+                if (unit.kavramlar) {
+                    for (let tag in unit.kavramlar) {
+                        let text = unit.kavramlar[tag].toLowerCase();
+                        // Find match count based on long keywords in question
+                        let qWords = qText.toLowerCase().replace(/[^a-zA-Z0-9\sİıĞğÜüŞşÖöÇç]/g, '').split(/\s+/).filter(w => w.length > 4);
+                        let score = 0;
+                        qWords.forEach(w => {
+                            if (text.includes(w)) score++;
+                        });
+                        if (score > maxMatch) {
+                            maxMatch = score;
+                            match = tag;
+                        }
+                    }
+                }
+            });
+            return match;
+        }
+
         function recordCardReviewed() {
             checkDailyMissionsDate();
             dailyMissions.cards++;
             localStorage.setItem('kpss_daily_missions', JSON.stringify(dailyMissions));
             updateDailyMissionsUI();
+            
+            // Fuzzy match ve Kart aşamasını tamamla
+            if (typeof currentData !== 'undefined' && currentData.length > 0 && currentData[activeUnitIdx]) {
+                const unit = currentData[activeUnitIdx];
+                if (unit && unit.cards && unit.cards[cardIdx]) {
+                    let cardObj = unit.cards[cardIdx];
+                    let matchedConcept = getConceptForCard(cardObj.q, cardObj.a);
+                    if (matchedConcept) {
+                        let states = JSON.parse(localStorage.getItem('kpss_concept_states')) || {};
+                        if (!states[currentLesson]) states[currentLesson] = {};
+                        if (!states[currentLesson][matchedConcept]) {
+                            states[currentLesson][matchedConcept] = { read: false, cards_viewed: false, quiz_score: { correct: 0, total: 0 }, status: 'not_started' };
+                        }
+                        if (!states[currentLesson][matchedConcept].cards_viewed) {
+                            states[currentLesson][matchedConcept].cards_viewed = true;
+                            updateConceptStatus(matchedConcept, states);
+                            localStorage.setItem('kpss_concept_states', JSON.stringify(states));
+                            
+                            showToastNotification(`🎴 #${matchedConcept} kart çalışması başarıyla kaydedildi!`);
+                            if (currentMode === 'roadmap') renderRoadmapView();
+                        }
+                    }
+                }
+            }
         }
         
         function recordNoteRead() {
@@ -3067,6 +4929,9 @@
             dailyStats[today] = (dailyStats[today] || 0) + (correct + wrong);
             localStorage.setItem('kpss_daily_stats', JSON.stringify(dailyStats));
             
+            if (activeRoadmapDay === 7) {
+                markQuestCompleted(7, 2);
+            }
             updateDailyMissionsUI();
             renderWeeklyChart();
         }
@@ -3297,8 +5162,8 @@
             }
 
             const card = wizardCards[wizardCardIdx];
-            document.getElementById("wizard-card-front").textContent = card.q || "Soru bulunamadı.";
-            document.getElementById("wizard-card-back").textContent = card.a || "Açıklama bulunamadı.";
+            document.getElementById("wizard-card-front").innerHTML = card.q || "Soru bulunamadı.";
+            document.getElementById("wizard-card-back").innerHTML = card.a || "Açıklama bulunamadı.";
             document.getElementById("wizard-card-indicator").textContent = `${wizardCardIdx + 1} / ${wizardCards.length}`;
         }
 
@@ -3402,6 +5267,10 @@
             // Remove error tag from Hata Defteri kpssNotebook!
             kpssNotebook = kpssNotebook.filter(item => !(item.lesson === currentLesson && item.tag === currentWizardTag));
             localStorage.setItem('kpss_notebook', JSON.stringify(kpssNotebook));
+            localStorage.setItem('kpss_furkan_notebook', JSON.stringify(kpssNotebook));
+            
+            // Mark Quest 3 completed
+            markQuestCompleted(activeRoadmapDay, 3);
 
             // Congratulation screen inside Step 3 Pane
             const step3Pane = document.getElementById("wizard-step3-pane");
