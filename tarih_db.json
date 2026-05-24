@@ -121,14 +121,6 @@ const tarih_db = [
       {
         "q": "12 Hayvanlı Türk Takvimi'nin bilimsel önemi nedir?",
         "a": "Türklerin güneş yılı esaslı olarak tamamen kendi gözlemleriyle oluşturduğu bir takvimdir. Gelişmiş bir astronomi ve matematik bilgisinin kanıtıdır."
-      },
-      {
-        "q": "Ekstra soru 1 - 1. İslamiyet Öncesi Türk Tarihi",
-        "a": "Bu örnek ekstra sorunun cevabıdır."
-      },
-      {
-        "q": "Ekstra soru 2 - 1. İslamiyet Öncesi Türk Tarihi",
-        "a": "Bu örnek ekstra sorunun cevabıdır."
       }
     ],
     "quiz": [
@@ -2644,14 +2636,6 @@ const tarih_db = [
       {
         "q": "Büyük Selçuklu Devleti'nde askeri davalara bakan özel hakime ne ad verilirdi?",
         "a": "Ordu içindeki adalet işlerinden sorumlu askeri yargıca <b>Kadıasker (Kadı-ı Leşker)</b> adı verilirdi."
-      },
-      {
-        "q": "Ekstra soru 1 - 2. İlk Türk-İslam Devletleri",
-        "a": "Bu örnek ekstra sorunun cevabıdır."
-      },
-      {
-        "q": "Ekstra soru 2 - 2. İlk Türk-İslam Devletleri",
-        "a": "Bu örnek ekstra sorunun cevabıdır."
       }
     ],
     "quiz": [
@@ -3979,14 +3963,6 @@ const tarih_db = [
       {
         "q": "Mengücekliler döneminde Sivas'ta yapılan ve UNESCO Dünya Mirası listesinde yer alan başyapıt hangisidir?",
         "a": "Eşsiz taş işçiliği ve kapılarındaki cennet gölgeleriyle ünlü olan <b>Divriği Ulu Cami ve Darüşşifası</b>'dır."
-      },
-      {
-        "q": "Ekstra soru 1 - 3. Türkiye Tarihi ve Beylikler Dönemi",
-        "a": "Bu örnek ekstra sorunun cevabıdır."
-      },
-      {
-        "q": "Ekstra soru 2 - 3. Türkiye Tarihi ve Beylikler Dönemi",
-        "a": "Bu örnek ekstra sorunun cevabıdır."
       }
     ],
     "quiz": [
@@ -4024,7 +4000,7 @@ const tarih_db = [
         ],
         "correct": 1,
         "rationale": "<b>Doğru Cevap: B şıkkıdır (Narh Sistemi).</b> Narh, tüketicileri ve dürüst esnafı koruyan devlet garantili fiyat sistemidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Gedik, dükkan açma imtiyazı ve ruhsatıdır.<br>• <b>B Şıkkı (Doğru):</b> Narh uygulamasıyla enflasyon ve karaborsacılık kesin olarak önlenir, piyasa dengesi esnaf odaları yardımıyla korunur.<br>• <b>C Şıkkı (Yanlış):</b> Müsadere, devletin haksız kazanç sağlayan veya vefat eden memurların mallarına el koyması usulüdür.<br>• <b>D Şıkkı (Yanlış):</b> İltizam, vergi gelirlerinin ihale usulüyle peşin toplanması sistemidir.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "q": "Soru 4: Anadolu Selçuklu Devleti'nin stratejik bir hata yaparak 1230 yılında Doğu Anadolu egemenliği için savaştığı Harzemşahları Yassıçemen Savaşı'nda yıkıma uğratması, Selçuklu Devleti'nin güvenliği açısından hangi olumsuz sonuca neden olmuştur?",
@@ -4060,7 +4036,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Çaka Bey).</b> Türk donanmasının kuruluşu (1081) kabul edilir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Bizans sarayında esir kaldığı dönemde denizciliği öğrenen Çaka Bey, İzmir'de tersane kurup ilk donanmayı inşa etmiş ve Ege adalarında Bizans'ı dize getirmiştir.<br>• <b>B Şıkkı (Yanlış):</b> Gazi Umur Bey Aydınöğulları'nın en ünlü denizci beyidir ancak ilk denizci değildir.<br>• <b>C Şıkkı (Yanlış):</b> Karasi Bey, Karesioğulları Beyliği'nin kurucusudur (Çaka Bey'den çok sonradır).<br>• <b>D Şıkkı (Yanlış):</b> Süleyman Şah, Anadolu Selçuklu Devleti'nin kurucusudur.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "q": "Soru 7: Anadolu Selçuklu Devleti döneminde uluslararası ticareti geliştirmek, yabancı tüccarları ülkeye çekmek ve ticari yolları cazip kılmak amacıyla dünyada ilk kez uygulanan devlet destekli güvence sistemi aşağıdakilerden hangisidir?",
@@ -4072,7 +4048,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Tüccarların zararlarının karşılanması ilk sigortacılık modelidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Selçuklu yollarında soyulan, malları zarar gören veya kervansaraylarda yangına uğrayan tüm yabancı/yerli tüccarların kayıpları devlet hazinesi tarafından ödenmiştir.<br>• <b>B Şıkkı (Yanlış):</b> İkta sistemi askeri ve tarımsal bir sistemdir, ticari kayıp sigortası ile ilişkisi yoktur.<br>• <b>C Şıkkı (Yanlış):</b> Gedik usulü dükkan açma hakkıdır.<br>• <b>D Şıkkı (Yanlış):</b> Müsadere, kişisel mallara el konulması sistemidir.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "q": "Soru 8: Sivas'ta yer alan, 13. yüzyılda Mengücekliler döneminde inşa edilen, taş oymacılığındaki benzersiz cennet kapısı motifleri ve cami ile darüşşifa mimarisini birleştiren eşsiz yapısı nedeniyle UNESCO Dünya Kültür Mirası listesinde koruma altına alınan başyapıt hangisidir?",
@@ -4084,7 +4060,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Mengücekliler döneminin UNESCO tescilli başyapıtıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Divriği Ulu Cami kapısındaki namaz kılan insan silueti ve inanılmaz taş işçiliği mimarlık tarihinin en nadide eserlerinden biridir.<br>• <b>B Şıkkı (Yanlış):</b> Karatay Medresesi Konya'da yer alır ve Anadolu Selçuklu çini sanatının örneğidir.<br>• <b>C Şıkkı (Yanlış):</b> Çifte Minareli Medrese Erzurum'da yer alır ve Selçuklu medrese mimarisidir.<br>• <b>D Şıkkı (Yanlış):</b> Hunat Hatun Külliyesi Kayseri'de yer alan Selçuklu eseridir.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "q": "Soru 9: Anadolu Selçuklu Devleti'nin askeri ve idari komutanlarının (Emirler, valiler) sarayda aşırı güçlenerek taht üzerinde mutlak kontrol kurmalarını engellemek amacıyla, merkezde sadece sultana bağlı profesyonel kul askerlerinden yetiştirilen askeri sınıf hangisidir?",
@@ -4096,7 +4072,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Gulaman-ı Saray).</b> Saray köleleri askeri okulda yetiştirilerek doğrudan sultana bağlanırdı.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Esir çocuklardan yetiştirilen saray gulamları devletten nakit askeri maaş (Bistegani) alır ve sultanın canını korurlardı.<br>• <b>B Şıkkı (Yanlış):</b> İkta süvarileri eyaletlerde oturur ve ikta gelirleriyle beslenirdi.<br>• <b>C Şıkkı (Yanlış):</b> Tımarlı Sipahiler Osmanlı'nın dirlik sistemi askerleridir.<br>• <b>D Şıkkı (Yanlış):</b> Yaya ve Müsellem Osmanlı'da Orhan Gazi tarafından kurulan ilk düzenli ordu sınıfıdır.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "q": "Soru 10: Anadolu'da kurulan I. Dönem beyliklerinden (Danişmendliler, Saltuklular, Mengücekliler, Artuklular) günümüze kalan ve tıp fakültesi olmasının yanında akıl ve ruh hastalarının su sesi ile tedavi edildiği ilk kurumsal yapı niteliği taşıyan eser hangisidir?",
@@ -4108,7 +4084,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Gevher Nesibe).</b> Kayseri'de 1206'da kurulan ilk kapsamlı Selçuklu darüşşifasıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> I. Gıyaseddin Keyhüsrev kız kardeşinin vasiyetiyle bu tıp medresesini ve şifahanesini yaptırmıştır, tıp eğitimi verilen en eski Türk şifahanesidir.<br>• <b>B Şıkkı (Yanlış):</b> Karatay Medresesi tıp değil, fıkıh ve din eğitimidir.<br>• <b>C Şıkkı (Yanlış):</b> Amasya Sabuncuoğlu Bimarhanesi Osmanlı döneminde cerrahi deneysel çalışmaların yapıldığı yerdir.<br>• <b>D Şıkkı (Yanlış):</b> Edirne II. Bayezid Şifahanesi Osmanlı döneminde mûsikî ile akıl hastalarının tedavi edildiği meşhur yerdir.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "q": "Soru 11: Anadolu Selçuklu Devleti'nde Haçlı Seferleri nedeniyle devlet merkezinin İznik'ten Konya'ya taşınması kararı alan, aynı zamanda I. Haçlı Seferi ordularına karşı İznik önlerinde ve Eskişehir (Dorylaion) ovasında gerilla taktiğiyle kahramanca savaşan Selçuklu sultanı kimdir?",
@@ -4132,7 +4108,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (El-Cezeri).</b> Sibernetiğin kurucusu olan Artuklu mühendisidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Artuklu sarayında 25 yıl başmühendislik yapan El-Cezeri, dişli çarklar yardımıyla çalışan otomatik makineler ve robotlar tasarlamış, bunları 'Kitabü'l-Hiyel' adlı eserinde çizmiştir.<br>• <b>B Şıkkı (Yanlış):</b> İbni Sina tıbbın hükümdarı kabul edilen Karahanlı/Gazneli çağı tıp dehasıdır.<br>• <b>C Şıkkı (Yanlış):</b> Farabi ikinci öğretmen kabul edilen felsefe ve müzik bilginidir.<br>• <b>D Şıkkı (Yanlış):</b> Ali Kuşçu Osmanlı döneminde Fatih'in İstanbul'a getirdiği astronomdur.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "q": "Soru 13: Karamanoğlu Mehmet Bey'in 13. yüzyılda yayınladığı ünlü divan fermanında 'Şimdiden gerü divanda, dergahta, bargahta, mecliste ve meydanda Türkçe'den başka dil konuşulmaya' ifadesini kullanmasının kültürel ve milli açıdan öncelikli hedefi hangisidir?",
@@ -4144,7 +4120,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Türkçe'nin korunması hedeflenmiştir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Dönemin aydınlarının Farsça ve Arapça yazmasından rahatsız olan Karamanoğlu Mehmet Bey, Türk dili bilincini devlet düzeyinde resmi fermana dökerek milli kimliği korumayı amaçlamıştır.<br>• <b>B Şıkkı (Yanlış):</b> Türkçe kararı Bizans'la diplomatik ilişkileri etkilememiştir.<br>• <b>C Şıkkı (Yanlış):</b> Moğol bürokrasisi ile doğrudan bir ilişkisi yoktur.<br>• <b>D Şıkkı (Yanlış):</b> Kararın medrese ders müfredatı ile ilişkisi bulunmamaktadır.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "q": "Soru 14: Karesioğulları Beyliği'nin denizci karakteri ve donanma gücüyle birlikte 1345 yılında Orhan Gazi döneminde savaşsız yollarla Osmanlı topraklarına katılması, Osmanlı Devleti'nin gelişiminde hangi kritik aşamaya geçilmesini doğrudan sağlamıştır?",
@@ -4156,7 +4132,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Osmanlı bu katılımla denizci bir güç haline gelmiştir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Karesioğulları'nın Osmanlı'ya katılmasıyla beyliğin deneyimli denizcileri (Hacı İlbey, Evrenos Bey) ve donanması Osmanlı emrine geçmiş, bu güç Çimpe Kalesi'nin alınarak Rumeli'ye geçilmesinde kilit rol oynamıştır.<br>• <b>B Şıkkı (Yanlış):</b> Karesi katılımı Bizans'a karşı kesin zafer sağlamamıştır.<br>• <b>C Şıkkı (Yanlış):</b> Başkent Edirne'ye I. Murat döneminde taşınmıştır.<br>• <b>D Şıkkı (Yanlış):</b> Siyasi birlik kesin olarak Yavuz Sultan Selim döneminde Turnadağ Savaşı ile tamamlanmıştır.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "q": "Soru 15: Anadolu Selçuklu Devleti'nde hükümdarın emir ve fermanlarını kaleme alan, iç ve dış diplomatik yazışmaları yürüten ve yazışmaların altına devletin resmi mührünü (Tuğra) çeken divan katibine/bakanına ne ad verilirdi?",
@@ -4180,7 +4156,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Kervansaray).</b> Selçuklu ticaretinin en önemli kaleleridir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Kervansaraylar, Selçuklu kervan yollarında 30-40 kilometrelik mesafelerle inşa edilen, nöbetçi askerlerin koruduğu, her türlü insani ihtiyacın ücretsiz karşılandığı ticari istasyonlardır.<br>• <b>B Şıkkı (Yanlış):</b> Ribatlar Karahanlılar döneminde sınır boylarındaki karakollar olup sonradan kervansaraylara dönüştürülmüştür.<br>• <b>C Şıkkı (Yanlış):</b> Bedesten değerli ipek ve kuyum ticareti yapılan kapalı şehir çarşısıdır.<br>• <b>D Şıkkı (Yanlış):</b> Kapan Hanı tek tip gıda maddesinin (un, yağ) şehre girip toptan dağıtıldığı hal binalarıdır.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "q": "Soru 17: Germiyanoğulları Beyliği'nin topraklarının büyük bir kısmını vasiyet yoluyla, çeyiz olarak Osmanlı Devleti'ne bırakması ve Hamitoğulları Beyliği'nin topraklarını 80.000 altın karşılığında Osmanlı'ya satması, Osmanlı Devleti'nin hangi stratejik anlayışla hareket ettiğinin göstergesidir?",
@@ -4192,7 +4168,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Barışçıl yollarla beylik topraklarını kazanma siyasetidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Osmanlı, gaza ve cihadı Bizans'a karşı yaparken, Müslüman beyliklerle kan dökmemek için çeyiz, miras ve satın alma yollarını ustalıkla kullanarak Anadolu birliğini sağlamaya çalışmıştır.<br>• <b>B Şıkkı (Yanlış):</b> Beyliklerle kurulan bu ekonomik bağların Bizans ittifakı ile ilgisi yoktur.<br>• <b>C Şıkkı (Yanlış):</b> Ordu sistemi bu yollarla bozulmamıştır.<br>• <b>D Şıkkı (Yanlış):</b> Gaza ve cihad fikri Osmanlı'nın kuruluş felsefesidir, terk edilmemiştir.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "q": "Soru 18: Osmanlı Devleti'nin beylikten devlete geçiş aşamasında, Germiyanoğulları, Hamitoğulları ve Karesioğulları beyliklerinin toprakları üzerinde tam denetim kurmasının ardından, Anadolu Türk siyasi birliğini 'kesin' ve 'kalıcı' olarak tamamlayan Yavuz Sultan Selim dönemi zaferi hangisidir?",
@@ -4204,7 +4180,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Turnadağ Savaşı - 1515).</b> Siyasi birliği tamamlayan zaferdir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Turnadağ Savaşı'nda Dulkadiroğulları Beyliği yıkılmış ve Anadolu'da bağımsız veya yarı bağımsız hiçbir Türk beyliği kalmayarak Osmanlı egemenliği kesinleşmiştir.<br>• <b>B Şıkkı (Yanlış):</b> Çaldıran Savaşı (1514) Safevi Şah İsmail'e karşı yapılmıştır.<br>• <b>C Şıkkı (Yanlış):</b> Mercidabık Savaşı (1516) Memlüklere karşı Suriye sınırında yapılmıştır.<br>• <b>D Şıkkı (Yanlış):</b> Ridaniye Savaşı (1517) Memlük Devleti'ni yıkan Mısır savaşıdır.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "q": "Soru 19: Moğol (İlhanlı) istilası altında inleyen 13. Yüzyıl Anadolu'sunda halkın umutsuzluğunu kırmak, sevgi, hoşgörü ve hümanizm aşılayarak toplumsal barışı yeniden tesis etmek için ömürlerini tasavvufa adayan büyük bilgeler arasında hangisi yer almaz?",
@@ -4241,7 +4217,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Yağıbasan Medresesi Danişmendlilere aittir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Danişmendliler Sivas merkezli kurulmuş ve eğitime büyük önem vererek ilk Türk medresesini (Yağıbasan) inşa etmişlerdir.<br>• <b>B Şıkkı (Yanlış):</b> Saltuklular Erzurum çevresinde kurulmuştur.<br>• <b>C Şıkkı (Yanlış):</b> Mengücekliler Sivas Divriği çevresinde kurulmuştur.<br>• <b>D Şıkkı (Yanlış):</b> Artuklular Diyarbakır-Mardin çevresinde kurulmuştur.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Artuklular ve El Cezeri",
@@ -4254,7 +4230,7 @@ const tarih_db = [
         ],
         "correct": 1,
         "rationale": "<b>Doğru Cevap: B şıkkıdır.</b> Artuklular döneminde El-Cezeri meşhur robotik tasarımlarını yapmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Danişmendliler Sivas'tadır.<br>• <b>B Şıkkı (Doğru):</b> Artuklular Güneydoğu Anadolu'da kurulmuş, taş köprü (Malabadi) ve medreseler yapmışlardır.<br>• <b>C, D Şıkları (Yanlış):</b> Diğer beyliklerin bu bilimsel çalışmayla ilgisi yoktur.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Çaka Beyliği",
@@ -4267,7 +4243,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Çaka Bey).</b> Donanma kuruluş yılı 1081 kabul edilir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Çaka Bey ilk Türk denizcisi ve donanma komutanıdır.<br>• <b>B Şıkkı (Yanlış):</b> Karesi Bey çok daha sonra Balıkesir'de denizcilik yapmıştır.<br>• <b>C Şıkkı (Yanlış):</b> Umur Bey Aydınoğulları'nın ünlü amiralidir.<br>• <b>D Şıkkı (Yanlış):</b> Yaman Bey Candaroğulları ile ilgilidir.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Karamanoğulları Türkçe",
@@ -4280,7 +4256,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Karamanoğlu Mehmet Bey dil bilincini resmi kanuna dökmüştür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Karamanoğlu Mehmet Bey Konya'yı alıp tahta geçince Türkçe fermanını ilan etmiştir.<br>• <b>B, C, D Şıkları (Yanlış):</b> Bu fermanla ilişkileri bulunmamaktadır.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "topic": "Osmanlı'ya Katılan İlk Denizci Beylik",
@@ -4293,7 +4269,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Karesi Beyliği Osmanlı'ya katılan ilk denizci beyliktir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Karesioğulları'nın donanma gücü Osmanlı'nın Rumeli'ye (Çimpe Kalesi) geçişini kolaylaştırmıştır.<br>• <b>B, C, D Şıkları (Yanlış):</b> Diğer batı Anadolu denizci beylikleri daha sonra katılmıştır.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "topic": "Kervansaray ve Sigortacılık",
@@ -4306,7 +4282,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Devlet sigortacılığı ticareti teşvik eder.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Güvenlik ve sigorta sayesinde yabancı tüccarlar Selçuklu yollarını tercih etmiştir.<br>• <b>B, C, D Şıkları (Yanlış):</b> Bu ticari sigorta sisteminin askeri ordu veya taht kavgalarıyla ilişkisi yoktur.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "topic": "Babailer İsyanı 1240",
@@ -4332,7 +4308,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Narh).</b> Narh, fahiş karların ve enflasyonun önüne geçer.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Narh uygulaması fiyat istikrarını ve kamu yararını korur.<br>• <b>B Şıkkı (Yanlış):</b> Gedik, dükkan açma ruhsatıdır.<br>• <b>C Şıkkı (Yanlış):</b> Müsadere, mala el koymadır.<br>• <b>D Şıkkı (Yanlış):</b> İltizam, vergi toplama ihalesidir.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "topic": "Danişmendliler",
@@ -4345,7 +4321,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Yağıbasan Medresesi Danişmendlilere aittir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Danişmendliler Sivas merkezli kurulmuş ve eğitime büyük önem vererek ilk Türk medresesini (Yağıbasan) inşa etmişlerdir.<br>• <b>B Şıkkı (Yanlış):</b> Saltuklular Erzurum çevresinde kurulmuştur.<br>• <b>C Şıkkı (Yanlış):</b> Mengücekliler Sivas Divriği çevresinde kurulmuştur.<br>• <b>D Şıkkı (Yanlış):</b> Artuklular Diyarbakır-Mardin çevresinde kurulmuştur.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Artuklular ve El Cezeri",
@@ -4358,7 +4334,7 @@ const tarih_db = [
         ],
         "correct": 1,
         "rationale": "<b>Doğru Cevap: B şıkkıdır.</b> Artuklular döneminde El-Cezeri meşhur robotik tasarımlarını yapmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Danişmendliler Sivas'tadır.<br>• <b>B Şıkkı (Doğru):</b> Artuklular Güneydoğu Anadolu'da kurulmuş, taş köprü (Malabadi) ve medreseler yapmışlardır.<br>• <b>C, D Şıkları (Yanlış):</b> Diğer beyliklerin bu bilimsel çalışmayla ilgisi yoktur.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Çaka Beyliği",
@@ -4371,7 +4347,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Çaka Bey).</b> Donanma kuruluş yılı 1081 kabul edilir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Çaka Bey ilk Türk denizcisi ve donanma komutanıdır.<br>• <b>B Şıkkı (Yanlış):</b> Karesi Bey çok daha sonra Balıkesir'de denizcilik yapmıştır.<br>• <b>C Şıkkı (Yanlış):</b> Umur Bey Aydınoğulları'nın ünlü amiralidir.<br>• <b>D Şıkkı (Yanlış):</b> Yaman Bey Candaroğulları ile ilgilidir.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Karamanoğulları Türkçe",
@@ -4384,7 +4360,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Karamanoğlu Mehmet Bey dil bilincini resmi kanuna dökmüştür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Karamanoğlu Mehmet Bey Konya'yı alıp tahta geçince Türkçe fermanını ilan etmiştir.<br>• <b>B, C, D Şıkları (Yanlış):</b> Bu fermanla ilişkileri bulunmamaktadır.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "topic": "Osmanlı'ya Katılan İlk Denizci Beylik",
@@ -4397,7 +4373,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Karesi Beyliği Osmanlı'ya katılan ilk denizci beyliktir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Karesioğulları'nın donanma gücü Osmanlı'nın Rumeli'ye (Çimpe Kalesi) geçişini kolaylaştırmıştır.<br>• <b>B, C, D Şıkları (Yanlış):</b> Diğer batı Anadolu denizci beylikleri daha sonra katılmıştır.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "topic": "Kervansaray ve Sigortacılık",
@@ -4410,7 +4386,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Devlet sigortacılığı ticareti teşvik eder.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Güvenlik ve sigorta sayesinde yabancı tüccarlar Selçuklu yollarını tercih etmiştir.<br>• <b>B, C, D Şıkları (Yanlış):</b> Bu ticari sigorta sisteminin askeri ordu veya taht kavgalarıyla ilişkisi yoktur.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "topic": "Babailer İsyanı 1240",
@@ -4436,7 +4412,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Narh).</b> Narh, fahiş karların ve enflasyonun önüne geçer.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Narh uygulaması fiyat istikrarını ve kamu yararını korur.<br>• <b>B Şıkkı (Yanlış):</b> Gedik, dükkan açma ruhsatıdır.<br>• <b>C Şıkkı (Yanlış):</b> Müsadere, mala el koymadır.<br>• <b>D Şıkkı (Yanlış):</b> İltizam, vergi toplama ihalesidir.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "topic": "Danişmendliler",
@@ -4449,7 +4425,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Yağıbasan Medresesi Danişmendlilere aittir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Danişmendliler Sivas merkezli kurulmuş ve eğitime büyük önem vererek ilk Türk medresesini (Yağıbasan) inşa etmişlerdir.<br>• <b>B Şıkkı (Yanlış):</b> Saltuklular Erzurum çevresinde kurulmuştur.<br>• <b>C Şıkkı (Yanlış):</b> Mengücekliler Sivas Divriği çevresinde kurulmuştur.<br>• <b>D Şıkkı (Yanlış):</b> Artuklular Diyarbakır-Mardin çevresinde kurulmuştur.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Artuklular ve El Cezeri",
@@ -4462,7 +4438,7 @@ const tarih_db = [
         ],
         "correct": 1,
         "rationale": "<b>Doğru Cevap: B şıkkıdır.</b> Artuklular döneminde El-Cezeri meşhur robotik tasarımlarını yapmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Danişmendliler Sivas'tadır.<br>• <b>B Şıkkı (Doğru):</b> Artuklular Güneydoğu Anadolu'da kurulmuş, taş köprü (Malabadi) ve medreseler yapmışlardır.<br>• <b>C, D Şıkları (Yanlış):</b> Diğer beyliklerin bu bilimsel çalışmayla ilgisi yoktur.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Çaka Beyliği",
@@ -4475,7 +4451,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Çaka Bey).</b> Donanma kuruluş yılı 1081 kabul edilir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Çaka Bey ilk Türk denizcisi ve donanma komutanıdır.<br>• <b>B Şıkkı (Yanlış):</b> Karesi Bey çok daha sonra Balıkesir'de denizcilik yapmıştır.<br>• <b>C Şıkkı (Yanlış):</b> Umur Bey Aydınoğulları'nın ünlü amiralidir.<br>• <b>D Şıkkı (Yanlış):</b> Yaman Bey Candaroğulları ile ilgilidir.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Karamanoğulları Türkçe",
@@ -4488,7 +4464,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Karamanoğlu Mehmet Bey dil bilincini resmi kanuna dökmüştür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Karamanoğlu Mehmet Bey Konya'yı alıp tahta geçince Türkçe fermanını ilan etmiştir.<br>• <b>B, C, D Şıkları (Yanlış):</b> Bu fermanla ilişkileri bulunmamaktadır.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "topic": "Osmanlı'ya Katılan İlk Denizci Beylik",
@@ -4501,7 +4477,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Karesi Beyliği Osmanlı'ya katılan ilk denizci beyliktir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Karesioğulları'nın donanma gücü Osmanlı'nın Rumeli'ye (Çimpe Kalesi) geçişini kolaylaştırmıştır.<br>• <b>B, C, D Şıkları (Yanlış):</b> Diğer batı Anadolu denizci beylikleri daha sonra katılmıştır.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "topic": "Kervansaray ve Sigortacılık",
@@ -4514,7 +4490,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Devlet sigortacılığı ticareti teşvik eder.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Güvenlik ve sigorta sayesinde yabancı tüccarlar Selçuklu yollarını tercih etmiştir.<br>• <b>B, C, D Şıkları (Yanlış):</b> Bu ticari sigorta sisteminin askeri ordu veya taht kavgalarıyla ilişkisi yoktur.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "topic": "Babailer İsyanı 1240",
@@ -4540,7 +4516,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Narh).</b> Narh, fahiş karların ve enflasyonun önüne geçer.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Narh uygulaması fiyat istikrarını ve kamu yararını korur.<br>• <b>B Şıkkı (Yanlış):</b> Gedik, dükkan açma ruhsatıdır.<br>• <b>C Şıkkı (Yanlış):</b> Müsadere, mala el koymadır.<br>• <b>D Şıkkı (Yanlış):</b> İltizam, vergi toplama ihalesidir.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "topic": "Danişmendliler",
@@ -4553,7 +4529,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Yağıbasan Medresesi Danişmendlilere aittir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Danişmendliler Sivas merkezli kurulmuş ve eğitime büyük önem vererek ilk Türk medresesini (Yağıbasan) inşa etmişlerdir.<br>• <b>B Şıkkı (Yanlış):</b> Saltuklular Erzurum çevresinde kurulmuştur.<br>• <b>C Şıkkı (Yanlış):</b> Mengücekliler Sivas Divriği çevresinde kurulmuştur.<br>• <b>D Şıkkı (Yanlış):</b> Artuklular Diyarbakır-Mardin çevresinde kurulmuştur.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Artuklular ve El Cezeri",
@@ -4566,7 +4542,7 @@ const tarih_db = [
         ],
         "correct": 1,
         "rationale": "<b>Doğru Cevap: B şıkkıdır.</b> Artuklular döneminde El-Cezeri meşhur robotik tasarımlarını yapmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Danişmendliler Sivas'tadır.<br>• <b>B Şıkkı (Doğru):</b> Artuklular Güneydoğu Anadolu'da kurulmuş, taş köprü (Malabadi) ve medreseler yapmışlardır.<br>• <b>C, D Şıkları (Yanlış):</b> Diğer beyliklerin bu bilimsel çalışmayla ilgisi yoktur.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Çaka Beyliği",
@@ -4579,7 +4555,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Çaka Bey).</b> Donanma kuruluş yılı 1081 kabul edilir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Çaka Bey ilk Türk denizcisi ve donanma komutanıdır.<br>• <b>B Şıkkı (Yanlış):</b> Karesi Bey çok daha sonra Balıkesir'de denizcilik yapmıştır.<br>• <b>C Şıkkı (Yanlış):</b> Umur Bey Aydınoğulları'nın ünlü amiralidir.<br>• <b>D Şıkkı (Yanlış):</b> Yaman Bey Candaroğulları ile ilgilidir.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Karamanoğulları Türkçe",
@@ -4592,7 +4568,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Karamanoğlu Mehmet Bey dil bilincini resmi kanuna dökmüştür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Karamanoğlu Mehmet Bey Konya'yı alıp tahta geçince Türkçe fermanını ilan etmiştir.<br>• <b>B, C, D Şıkları (Yanlış):</b> Bu fermanla ilişkileri bulunmamaktadır.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "topic": "Osmanlı'ya Katılan İlk Denizci Beylik",
@@ -4605,7 +4581,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Karesi Beyliği Osmanlı'ya katılan ilk denizci beyliktir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Karesioğulları'nın donanma gücü Osmanlı'nın Rumeli'ye (Çimpe Kalesi) geçişini kolaylaştırmıştır.<br>• <b>B, C, D Şıkları (Yanlış):</b> Diğer batı Anadolu denizci beylikleri daha sonra katılmıştır.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "topic": "Kervansaray ve Sigortacılık",
@@ -4618,7 +4594,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Devlet sigortacılığı ticareti teşvik eder.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Güvenlik ve sigorta sayesinde yabancı tüccarlar Selçuklu yollarını tercih etmiştir.<br>• <b>B, C, D Şıkları (Yanlış):</b> Bu ticari sigorta sisteminin askeri ordu veya taht kavgalarıyla ilişkisi yoktur.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "topic": "Babailer İsyanı 1240",
@@ -4644,7 +4620,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Narh).</b> Narh, fahiş karların ve enflasyonun önüne geçer.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Narh uygulaması fiyat istikrarını ve kamu yararını korur.<br>• <b>B Şıkkı (Yanlış):</b> Gedik, dükkan açma ruhsatıdır.<br>• <b>C Şıkkı (Yanlış):</b> Müsadere, mala el koymadır.<br>• <b>D Şıkkı (Yanlış):</b> İltizam, vergi toplama ihalesidir.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "topic": "Danişmendliler",
@@ -4657,7 +4633,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Yağıbasan Medresesi Danişmendlilere aittir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Danişmendliler Sivas merkezli kurulmuş ve eğitime büyük önem vererek ilk Türk medresesini (Yağıbasan) inşa etmişlerdir.<br>• <b>B Şıkkı (Yanlış):</b> Saltuklular Erzurum çevresinde kurulmuştur.<br>• <b>C Şıkkı (Yanlış):</b> Mengücekliler Sivas Divriği çevresinde kurulmuştur.<br>• <b>D Şıkkı (Yanlış):</b> Artuklular Diyarbakır-Mardin çevresinde kurulmuştur.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Artuklular ve El Cezeri",
@@ -4670,7 +4646,7 @@ const tarih_db = [
         ],
         "correct": 1,
         "rationale": "<b>Doğru Cevap: B şıkkıdır.</b> Artuklular döneminde El-Cezeri meşhur robotik tasarımlarını yapmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Danişmendliler Sivas'tadır.<br>• <b>B Şıkkı (Doğru):</b> Artuklular Güneydoğu Anadolu'da kurulmuş, taş köprü (Malabadi) ve medreseler yapmışlardır.<br>• <b>C, D Şıkları (Yanlış):</b> Diğer beyliklerin bu bilimsel çalışmayla ilgisi yoktur.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Çaka Beyliği",
@@ -4683,7 +4659,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Çaka Bey).</b> Donanma kuruluş yılı 1081 kabul edilir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Çaka Bey ilk Türk denizcisi ve donanma komutanıdır.<br>• <b>B Şıkkı (Yanlış):</b> Karesi Bey çok daha sonra Balıkesir'de denizcilik yapmıştır.<br>• <b>C Şıkkı (Yanlış):</b> Umur Bey Aydınoğulları'nın ünlü amiralidir.<br>• <b>D Şıkkı (Yanlış):</b> Yaman Bey Candaroğulları ile ilgilidir.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Karamanoğulları Türkçe",
@@ -4696,7 +4672,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Karamanoğlu Mehmet Bey dil bilincini resmi kanuna dökmüştür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Karamanoğlu Mehmet Bey Konya'yı alıp tahta geçince Türkçe fermanını ilan etmiştir.<br>• <b>B, C, D Şıkları (Yanlış):</b> Bu fermanla ilişkileri bulunmamaktadır.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "topic": "Osmanlı'ya Katılan İlk Denizci Beylik",
@@ -4709,7 +4685,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Karesi Beyliği Osmanlı'ya katılan ilk denizci beyliktir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Karesioğulları'nın donanma gücü Osmanlı'nın Rumeli'ye (Çimpe Kalesi) geçişini kolaylaştırmıştır.<br>• <b>B, C, D Şıkları (Yanlış):</b> Diğer batı Anadolu denizci beylikleri daha sonra katılmıştır.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "topic": "Kervansaray ve Sigortacılık",
@@ -4722,7 +4698,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Devlet sigortacılığı ticareti teşvik eder.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Güvenlik ve sigorta sayesinde yabancı tüccarlar Selçuklu yollarını tercih etmiştir.<br>• <b>B, C, D Şıkları (Yanlış):</b> Bu ticari sigorta sisteminin askeri ordu veya taht kavgalarıyla ilişkisi yoktur.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "topic": "Babailer İsyanı 1240",
@@ -4748,7 +4724,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Narh).</b> Narh, fahiş karların ve enflasyonun önüne geçer.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Narh uygulaması fiyat istikrarını ve kamu yararını korur.<br>• <b>B Şıkkı (Yanlış):</b> Gedik, dükkan açma ruhsatıdır.<br>• <b>C Şıkkı (Yanlış):</b> Müsadere, mala el koymadır.<br>• <b>D Şıkkı (Yanlış):</b> İltizam, vergi toplama ihalesidir.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "topic": "Danişmendliler",
@@ -4761,7 +4737,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Yağıbasan Medresesi Danişmendlilere aittir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Danişmendliler Sivas merkezli kurulmuş ve eğitime büyük önem vererek ilk Türk medresesini (Yağıbasan) inşa etmişlerdir.<br>• <b>B Şıkkı (Yanlış):</b> Saltuklular Erzurum çevresinde kurulmuştur.<br>• <b>C Şıkkı (Yanlış):</b> Mengücekliler Sivas Divriği çevresinde kurulmuştur.<br>• <b>D Şıkkı (Yanlış):</b> Artuklular Diyarbakır-Mardin çevresinde kurulmuştur.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Artuklular ve El Cezeri",
@@ -4774,7 +4750,7 @@ const tarih_db = [
         ],
         "correct": 1,
         "rationale": "<b>Doğru Cevap: B şıkkıdır.</b> Artuklular döneminde El-Cezeri meşhur robotik tasarımlarını yapmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Danişmendliler Sivas'tadır.<br>• <b>B Şıkkı (Doğru):</b> Artuklular Güneydoğu Anadolu'da kurulmuş, taş köprü (Malabadi) ve medreseler yapmışlardır.<br>• <b>C, D Şıkları (Yanlış):</b> Diğer beyliklerin bu bilimsel çalışmayla ilgisi yoktur.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Çaka Beyliği",
@@ -4787,7 +4763,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Çaka Bey).</b> Donanma kuruluş yılı 1081 kabul edilir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Çaka Bey ilk Türk denizcisi ve donanma komutanıdır.<br>• <b>B Şıkkı (Yanlış):</b> Karesi Bey çok daha sonra Balıkesir'de denizcilik yapmıştır.<br>• <b>C Şıkkı (Yanlış):</b> Umur Bey Aydınoğulları'nın ünlü amiralidir.<br>• <b>D Şıkkı (Yanlış):</b> Yaman Bey Candaroğulları ile ilgilidir.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Karamanoğulları Türkçe",
@@ -4800,7 +4776,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Karamanoğlu Mehmet Bey dil bilincini resmi kanuna dökmüştür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Karamanoğlu Mehmet Bey Konya'yı alıp tahta geçince Türkçe fermanını ilan etmiştir.<br>• <b>B, C, D Şıkları (Yanlış):</b> Bu fermanla ilişkileri bulunmamaktadır.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "topic": "Osmanlı'ya Katılan İlk Denizci Beylik",
@@ -4813,7 +4789,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Karesi Beyliği Osmanlı'ya katılan ilk denizci beyliktir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Karesioğulları'nın donanma gücü Osmanlı'nın Rumeli'ye (Çimpe Kalesi) geçişini kolaylaştırmıştır.<br>• <b>B, C, D Şıkları (Yanlış):</b> Diğer batı Anadolu denizci beylikleri daha sonra katılmıştır.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "topic": "Kervansaray ve Sigortacılık",
@@ -4826,7 +4802,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Devlet sigortacılığı ticareti teşvik eder.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Güvenlik ve sigorta sayesinde yabancı tüccarlar Selçuklu yollarını tercih etmiştir.<br>• <b>B, C, D Şıkları (Yanlış):</b> Bu ticari sigorta sisteminin askeri ordu veya taht kavgalarıyla ilişkisi yoktur.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "topic": "Babailer İsyanı 1240",
@@ -4852,7 +4828,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Narh).</b> Narh, fahiş karların ve enflasyonun önüne geçer.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Narh uygulaması fiyat istikrarını ve kamu yararını korur.<br>• <b>B Şıkkı (Yanlış):</b> Gedik, dükkan açma ruhsatıdır.<br>• <b>C Şıkkı (Yanlış):</b> Müsadere, mala el koymadır.<br>• <b>D Şıkkı (Yanlış):</b> İltizam, vergi toplama ihalesidir.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "topic": "Danişmendliler",
@@ -4865,7 +4841,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Yağıbasan Medresesi Danişmendlilere aittir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Danişmendliler Sivas merkezli kurulmuş ve eğitime büyük önem vererek ilk Türk medresesini (Yağıbasan) inşa etmişlerdir.<br>• <b>B Şıkkı (Yanlış):</b> Saltuklular Erzurum çevresinde kurulmuştur.<br>• <b>C Şıkkı (Yanlış):</b> Mengücekliler Sivas Divriği çevresinde kurulmuştur.<br>• <b>D Şıkkı (Yanlış):</b> Artuklular Diyarbakır-Mardin çevresinde kurulmuştur.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Artuklular ve El Cezeri",
@@ -4878,7 +4854,7 @@ const tarih_db = [
         ],
         "correct": 1,
         "rationale": "<b>Doğru Cevap: B şıkkıdır.</b> Artuklular döneminde El-Cezeri meşhur robotik tasarımlarını yapmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Danişmendliler Sivas'tadır.<br>• <b>B Şıkkı (Doğru):</b> Artuklular Güneydoğu Anadolu'da kurulmuş, taş köprü (Malabadi) ve medreseler yapmışlardır.<br>• <b>C, D Şıkları (Yanlış):</b> Diğer beyliklerin bu bilimsel çalışmayla ilgisi yoktur.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Çaka Beyliği",
@@ -4891,7 +4867,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Çaka Bey).</b> Donanma kuruluş yılı 1081 kabul edilir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Çaka Bey ilk Türk denizcisi ve donanma komutanıdır.<br>• <b>B Şıkkı (Yanlış):</b> Karesi Bey çok daha sonra Balıkesir'de denizcilik yapmıştır.<br>• <b>C Şıkkı (Yanlış):</b> Umur Bey Aydınoğulları'nın ünlü amiralidir.<br>• <b>D Şıkkı (Yanlış):</b> Yaman Bey Candaroğulları ile ilgilidir.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Karamanoğulları Türkçe",
@@ -4904,7 +4880,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Karamanoğlu Mehmet Bey dil bilincini resmi kanuna dökmüştür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Karamanoğlu Mehmet Bey Konya'yı alıp tahta geçince Türkçe fermanını ilan etmiştir.<br>• <b>B, C, D Şıkları (Yanlış):</b> Bu fermanla ilişkileri bulunmamaktadır.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "topic": "Osmanlı'ya Katılan İlk Denizci Beylik",
@@ -4917,7 +4893,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Karesi Beyliği Osmanlı'ya katılan ilk denizci beyliktir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Karesioğulları'nın donanma gücü Osmanlı'nın Rumeli'ye (Çimpe Kalesi) geçişini kolaylaştırmıştır.<br>• <b>B, C, D Şıkları (Yanlış):</b> Diğer batı Anadolu denizci beylikleri daha sonra katılmıştır.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "topic": "Kervansaray ve Sigortacılık",
@@ -4930,7 +4906,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Devlet sigortacılığı ticareti teşvik eder.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Güvenlik ve sigorta sayesinde yabancı tüccarlar Selçuklu yollarını tercih etmiştir.<br>• <b>B, C, D Şıkları (Yanlış):</b> Bu ticari sigorta sisteminin askeri ordu veya taht kavgalarıyla ilişkisi yoktur.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "topic": "Babailer İsyanı 1240",
@@ -4956,7 +4932,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Narh).</b> Narh, fahiş karların ve enflasyonun önüne geçer.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Narh uygulaması fiyat istikrarını ve kamu yararını korur.<br>• <b>B Şıkkı (Yanlış):</b> Gedik, dükkan açma ruhsatıdır.<br>• <b>C Şıkkı (Yanlış):</b> Müsadere, mala el koymadır.<br>• <b>D Şıkkı (Yanlış):</b> İltizam, vergi toplama ihalesidir.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "topic": "Danişmendliler",
@@ -4969,7 +4945,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Yağıbasan Medresesi Danişmendlilere aittir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Danişmendliler Sivas merkezli kurulmuş ve eğitime büyük önem vererek ilk Türk medresesini (Yağıbasan) inşa etmişlerdir.<br>• <b>B Şıkkı (Yanlış):</b> Saltuklular Erzurum çevresinde kurulmuştur.<br>• <b>C Şıkkı (Yanlış):</b> Mengücekliler Sivas Divriği çevresinde kurulmuştur.<br>• <b>D Şıkkı (Yanlış):</b> Artuklular Diyarbakır-Mardin çevresinde kurulmuştur.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Artuklular ve El Cezeri",
@@ -4982,7 +4958,7 @@ const tarih_db = [
         ],
         "correct": 1,
         "rationale": "<b>Doğru Cevap: B şıkkıdır.</b> Artuklular döneminde El-Cezeri meşhur robotik tasarımlarını yapmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Danişmendliler Sivas'tadır.<br>• <b>B Şıkkı (Doğru):</b> Artuklular Güneydoğu Anadolu'da kurulmuş, taş köprü (Malabadi) ve medreseler yapmışlardır.<br>• <b>C, D Şıkları (Yanlış):</b> Diğer beyliklerin bu bilimsel çalışmayla ilgisi yoktur.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Çaka Beyliği",
@@ -4995,7 +4971,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Çaka Bey).</b> Donanma kuruluş yılı 1081 kabul edilir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Çaka Bey ilk Türk denizcisi ve donanma komutanıdır.<br>• <b>B Şıkkı (Yanlış):</b> Karesi Bey çok daha sonra Balıkesir'de denizcilik yapmıştır.<br>• <b>C Şıkkı (Yanlış):</b> Umur Bey Aydınoğulları'nın ünlü amiralidir.<br>• <b>D Şıkkı (Yanlış):</b> Yaman Bey Candaroğulları ile ilgilidir.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Karamanoğulları Türkçe",
@@ -5008,7 +4984,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Karamanoğlu Mehmet Bey dil bilincini resmi kanuna dökmüştür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Karamanoğlu Mehmet Bey Konya'yı alıp tahta geçince Türkçe fermanını ilan etmiştir.<br>• <b>B, C, D Şıkları (Yanlış):</b> Bu fermanla ilişkileri bulunmamaktadır.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "topic": "Osmanlı'ya Katılan İlk Denizci Beylik",
@@ -5021,7 +4997,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Karesi Beyliği Osmanlı'ya katılan ilk denizci beyliktir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Karesioğulları'nın donanma gücü Osmanlı'nın Rumeli'ye (Çimpe Kalesi) geçişini kolaylaştırmıştır.<br>• <b>B, C, D Şıkları (Yanlış):</b> Diğer batı Anadolu denizci beylikleri daha sonra katılmıştır.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "topic": "Kervansaray ve Sigortacılık",
@@ -5034,7 +5010,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Devlet sigortacılığı ticareti teşvik eder.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Güvenlik ve sigorta sayesinde yabancı tüccarlar Selçuklu yollarını tercih etmiştir.<br>• <b>B, C, D Şıkları (Yanlış):</b> Bu ticari sigorta sisteminin askeri ordu veya taht kavgalarıyla ilişkisi yoktur.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "topic": "Babailer İsyanı 1240",
@@ -5060,7 +5036,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Narh).</b> Narh, fahiş karların ve enflasyonun önüne geçer.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Narh uygulaması fiyat istikrarını ve kamu yararını korur.<br>• <b>B Şıkkı (Yanlış):</b> Gedik, dükkan açma ruhsatıdır.<br>• <b>C Şıkkı (Yanlış):</b> Müsadere, mala el koymadır.<br>• <b>D Şıkkı (Yanlış):</b> İltizam, vergi toplama ihalesidir.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "topic": "Danişmendliler",
@@ -5073,7 +5049,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Yağıbasan Medresesi Danişmendlilere aittir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Danişmendliler Sivas merkezli kurulmuş ve eğitime büyük önem vererek ilk Türk medresesini (Yağıbasan) inşa etmişlerdir.<br>• <b>B Şıkkı (Yanlış):</b> Saltuklular Erzurum çevresinde kurulmuştur.<br>• <b>C Şıkkı (Yanlış):</b> Mengücekliler Sivas Divriği çevresinde kurulmuştur.<br>• <b>D Şıkkı (Yanlış):</b> Artuklular Diyarbakır-Mardin çevresinde kurulmuştur.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Artuklular ve El Cezeri",
@@ -5086,7 +5062,7 @@ const tarih_db = [
         ],
         "correct": 1,
         "rationale": "<b>Doğru Cevap: B şıkkıdır.</b> Artuklular döneminde El-Cezeri meşhur robotik tasarımlarını yapmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Danişmendliler Sivas'tadır.<br>• <b>B Şıkkı (Doğru):</b> Artuklular Güneydoğu Anadolu'da kurulmuş, taş köprü (Malabadi) ve medreseler yapmışlardır.<br>• <b>C, D Şıkları (Yanlış):</b> Diğer beyliklerin bu bilimsel çalışmayla ilgisi yoktur.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Çaka Beyliği",
@@ -5099,7 +5075,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Çaka Bey).</b> Donanma kuruluş yılı 1081 kabul edilir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Çaka Bey ilk Türk denizcisi ve donanma komutanıdır.<br>• <b>B Şıkkı (Yanlış):</b> Karesi Bey çok daha sonra Balıkesir'de denizcilik yapmıştır.<br>• <b>C Şıkkı (Yanlış):</b> Umur Bey Aydınoğulları'nın ünlü amiralidir.<br>• <b>D Şıkkı (Yanlış):</b> Yaman Bey Candaroğulları ile ilgilidir.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Karamanoğulları Türkçe",
@@ -5112,7 +5088,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Karamanoğlu Mehmet Bey dil bilincini resmi kanuna dökmüştür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Karamanoğlu Mehmet Bey Konya'yı alıp tahta geçince Türkçe fermanını ilan etmiştir.<br>• <b>B, C, D Şıkları (Yanlış):</b> Bu fermanla ilişkileri bulunmamaktadır.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "topic": "Osmanlı'ya Katılan İlk Denizci Beylik",
@@ -5125,7 +5101,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Karesi Beyliği Osmanlı'ya katılan ilk denizci beyliktir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Karesioğulları'nın donanma gücü Osmanlı'nın Rumeli'ye (Çimpe Kalesi) geçişini kolaylaştırmıştır.<br>• <b>B, C, D Şıkları (Yanlış):</b> Diğer batı Anadolu denizci beylikleri daha sonra katılmıştır.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "topic": "Kervansaray ve Sigortacılık",
@@ -5138,7 +5114,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Devlet sigortacılığı ticareti teşvik eder.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Güvenlik ve sigorta sayesinde yabancı tüccarlar Selçuklu yollarını tercih etmiştir.<br>• <b>B, C, D Şıkları (Yanlış):</b> Bu ticari sigorta sisteminin askeri ordu veya taht kavgalarıyla ilişkisi yoktur.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "topic": "Babailer İsyanı 1240",
@@ -5164,7 +5140,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Narh).</b> Narh, fahiş karların ve enflasyonun önüne geçer.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Narh uygulaması fiyat istikrarını ve kamu yararını korur.<br>• <b>B Şıkkı (Yanlış):</b> Gedik, dükkan açma ruhsatıdır.<br>• <b>C Şıkkı (Yanlış):</b> Müsadere, mala el koymadır.<br>• <b>D Şıkkı (Yanlış):</b> İltizam, vergi toplama ihalesidir.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "topic": "Danişmendliler",
@@ -5177,7 +5153,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Yağıbasan Medresesi Danişmendlilere aittir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Danişmendliler Sivas merkezli kurulmuş ve eğitime büyük önem vererek ilk Türk medresesini (Yağıbasan) inşa etmişlerdir.<br>• <b>B Şıkkı (Yanlış):</b> Saltuklular Erzurum çevresinde kurulmuştur.<br>• <b>C Şıkkı (Yanlış):</b> Mengücekliler Sivas Divriği çevresinde kurulmuştur.<br>• <b>D Şıkkı (Yanlış):</b> Artuklular Diyarbakır-Mardin çevresinde kurulmuştur.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Artuklular ve El Cezeri",
@@ -5190,7 +5166,7 @@ const tarih_db = [
         ],
         "correct": 1,
         "rationale": "<b>Doğru Cevap: B şıkkıdır.</b> Artuklular döneminde El-Cezeri meşhur robotik tasarımlarını yapmıştır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Danişmendliler Sivas'tadır.<br>• <b>B Şıkkı (Doğru):</b> Artuklular Güneydoğu Anadolu'da kurulmuş, taş köprü (Malabadi) ve medreseler yapmışlardır.<br>• <b>C, D Şıkları (Yanlış):</b> Diğer beyliklerin bu bilimsel çalışmayla ilgisi yoktur.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Çaka Beyliği",
@@ -5203,7 +5179,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Çaka Bey).</b> Donanma kuruluş yılı 1081 kabul edilir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Çaka Bey ilk Türk denizcisi ve donanma komutanıdır.<br>• <b>B Şıkkı (Yanlış):</b> Karesi Bey çok daha sonra Balıkesir'de denizcilik yapmıştır.<br>• <b>C Şıkkı (Yanlış):</b> Umur Bey Aydınoğulları'nın ünlü amiralidir.<br>• <b>D Şıkkı (Yanlış):</b> Yaman Bey Candaroğulları ile ilgilidir.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#BirinciBeylikler"
       },
       {
         "topic": "Karamanoğulları Türkçe",
@@ -5216,7 +5192,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Karamanoğlu Mehmet Bey dil bilincini resmi kanuna dökmüştür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Karamanoğlu Mehmet Bey Konya'yı alıp tahta geçince Türkçe fermanını ilan etmiştir.<br>• <b>B, C, D Şıkları (Yanlış):</b> Bu fermanla ilişkileri bulunmamaktadır.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "topic": "Osmanlı'ya Katılan İlk Denizci Beylik",
@@ -5229,7 +5205,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Karesi Beyliği Osmanlı'ya katılan ilk denizci beyliktir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Karesioğulları'nın donanma gücü Osmanlı'nın Rumeli'ye (Çimpe Kalesi) geçişini kolaylaştırmıştır.<br>• <b>B, C, D Şıkları (Yanlış):</b> Diğer batı Anadolu denizci beylikleri daha sonra katılmıştır.",
-        "tag": "#MiryokefalonSavaşı"
+        "tag": "#İkinciBeylikler"
       },
       {
         "topic": "Kervansaray ve Sigortacılık",
@@ -5242,7 +5218,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Devlet sigortacılığı ticareti teşvik eder.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Güvenlik ve sigorta sayesinde yabancı tüccarlar Selçuklu yollarını tercih etmiştir.<br>• <b>B, C, D Şıkları (Yanlış):</b> Bu ticari sigorta sisteminin askeri ordu veya taht kavgalarıyla ilişkisi yoktur.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       },
       {
         "topic": "Babailer İsyanı 1240",
@@ -5268,7 +5244,7 @@ const tarih_db = [
         ],
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Narh).</b> Narh, fahiş karların ve enflasyonun önüne geçer.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Narh uygulaması fiyat istikrarını ve kamu yararını korur.<br>• <b>B Şıkkı (Yanlış):</b> Gedik, dükkan açma ruhsatıdır.<br>• <b>C Şıkkı (Yanlış):</b> Müsadere, mala el koymadır.<br>• <b>D Şıkkı (Yanlış):</b> İltizam, vergi toplama ihalesidir.",
-        "tag": "#AhilikTeşkilatı"
+        "tag": "#ASDMedeniyeti"
       }
     ]
   },
@@ -5394,14 +5370,6 @@ const tarih_db = [
         ],
         "correct": 0,
         "a": "<b>Devşirme Kadrolaşması:</b> Merkeziyetçi mutlak otoriteyi padişahın elinde toplama stratejisidir."
-      },
-      {
-        "q": "Ekstra soru 1 - 4. Osmanlı Devleti Kuruluş ve Yükselme Dönemleri",
-        "a": "Bu örnek ekstra sorunun cevabıdır."
-      },
-      {
-        "q": "Ekstra soru 2 - 4. Osmanlı Devleti Kuruluş ve Yükselme Dönemleri",
-        "a": "Bu örnek ekstra sorunun cevabıdır."
       }
     ],
     "quiz": [
