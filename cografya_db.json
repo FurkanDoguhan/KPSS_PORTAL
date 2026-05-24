@@ -121,6 +121,22 @@ const cografya_db = [
       {
         "q": "Türkiye Batı saati olarak kaçıncı saat dilimlerini kullanır?",
         "a": "45° Doğu boylamını esas aldığı için uluslararası sistemde <b>+3. Saat Dilimi</b>'ni kalıcı olarak kullanmaktadır."
+      },
+      {
+        "q": "Kuzeyden esen rüzgarların sıcaklığı düşürmesi, güneyden esenlerin ise artırması Türkiye'nin hangi konum özelliğini kanıtlar?",
+        "a": "Kuzey Yarımküre'de (Orta Kuşak) yer aldığını, yani Mutlak (Matematiksel) Konumunu kanıtlar."
+      },
+      {
+        "q": "Türkiye'nin kış saati uygulamasını kaldırarak yıl boyunca ortak saat olarak kullandığı boylam ve ilimiz hangisidir?",
+        "a": "45° Doğu boylamı üzerinde yer alan Iğdır ilinin yerel saatini (+3. saat dilimi) kullanmaktadır."
+      },
+      {
+        "q": "Türkiye'nin Irak ile olan ticaretini sağlayan ve en yüksek ihracat-ithalat hacmine sahip olan en aktif sınır kapımız hangisidir?",
+        "a": "Şırnak'ta bulunan Habur Sınır Kapısı'dır."
+      },
+      {
+        "q": "Azerbaycan doğalgazını Türkiye üzerinden Avrupa'ya ulaştırarak jeopolitik gücümüzü artıran boru hattı projesi hangisidir?",
+        "a": "TANAP (Trans Anadolu Doğalgaz Boru Hattı) projesidir."
       }
     ],
     "quiz": [
@@ -2523,6 +2539,54 @@ const cografya_db = [
         "correct": 0,
         "rationale": "19 meridyen $\times$ 4 dakika = 76 dakikalık yerel saat farkı, Türkiye'nin boylamsal uzantısının doğrudan matematiksel bir sonucudur.",
         "tag": "#ZamanFarkı"
+      },
+      {
+        "q": "Soru 201: Türkiye'de kış aylarında kuzeyden esen rüzgarların sıcaklığı düşürmesi, güneyden esenlerin ise artırması Türkiye'nin hangi mutlak konum özelliğinin doğrudan sonucudur?",
+        "options": [
+          "Başlangıç Meridyeni'nin doğusunda bulunmasının",
+          "Kuzey Yarımküre'de yer almasının",
+          "Üç tarafının denizlerle çevrili olmasının",
+          "Dağların kıyıya paralel uzanmasının"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Ekvatordan (güneyden) esen rüzgarlar sıcak esip ısıyı artırırken, kutup kökenli (kuzeyden) esen rüzgarlar soğuk esip sıcaklığı düşürür, bu da Kuzey Yarımküre kanıtıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Doğu boylamında olmak saatleri etkiler, sıcaklığı etkilemez.<br>• <b>B Şıkkı (Doğru):</b> Kuzey yarımkürede olmak rüzgarların sıcaklık karakterini doğrudan belirleyen mutlak konum sonucudur.<br>• <b>C Şıkkı (Yanlış):</b> Üç tarafı deniz olması göreceli (özel) konumdur.<br>• <b>D Şıkkı (Yanlış):</b> Dağların uzanışı özel konumdur.",
+        "tag": "#MatematikKonumIklim"
+      },
+      {
+        "q": "Soru 202: 2016 yılında alınan kararla kış saati uygulamasını kaldırarak yıl boyunca ortak (ulusal) saat olarak kullandığı Iğdır'ın meridyen derecesi ve uluslararası saat dilimi hangisidir?",
+        "options": [
+          "30° Doğu - +2. Saat Dilimi",
+          "45° Doğu - +3. Saat Dilimi",
+          "26° Doğu - +1. Saat Dilimi",
+          "42° Kuzey - +4. Saat Dilimi"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Türkiye, yıl boyunca 45° Doğu boylamında yer alan Iğdır'ın yerel saatini (+3. saat dilimi) ortak ulusal saat olarak kullanmaktadır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> 30° Doğu (İzmit) kış saati uygulamasıyken kullanılıyordu, artık aktif değildir.<br>• <b>B Şıkkı (Doğru):</b> Iğdır'ın 45° Doğu boylamı ortak saatimizdir, kışın batı illerinde sabah karanlığına yol açar.<br>• <b>C Şıkkı (Yanlış):</b> 26° Doğu Çanakkale'dir.<br>• <b>D Şıkkı (Yanlış):</b> Kuzey enlem olup saatle ilgisi yoktur.",
+        "tag": "#SaatDilimleriTurkiye"
+      },
+      {
+        "q": "Soru 203: Türkiye'nin güney komşusu Irak ile olan kara ticaretinde kullanılan, en yüksek ihracat ve ithalat hacmine sahip olan en aktif sınır kapımız hangisidir?",
+        "options": [
+          "Kapıkule",
+          "Habur",
+          "Sarp",
+          "Gürbulak"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Şırnak Silopi'de bulunan Habur Sınır Kapısı, Irak ile olan ticarette en çok tır geçişi ve ekonomik hacme sahip olan kapımızdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Kapıkule Bulgaristan sınırındadır, yolcu trafiği en yoğundur fakat ihracat hacminde Habur birincidir.<br>• <b>B Şıkkı (Doğru):</b> Habur sınır kapısı, Ortadoğu ticaret kapısı olup ihracat liderimizdir.<br>• <b>C Şıkkı (Yanlış):</b> Sarp Gürcistan kapısıdır.<br>• <b>D Şıkkı (Yanlış):</b> Gürbulak İran kapısıdır.",
+        "tag": "#TurkiyeFizikiSınırKapilari"
+      },
+      {
+        "q": "Soru 204: Azerbaycan doğalgazını Türkiye üzerinden Yunanistan sınırına kadar taşıyarak Avrupa pazarına ulaştıran, Türkiye'nin transit jeopolitik gücünü artıran boru hattı projesi hangisidir?",
+        "options": [
+          "TANAP (Trans Anadolu)",
+          "Bakü-Tiflis-Ceyhan",
+          "Mavi Akım",
+          "TürkAkım"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Trans Anadolu Doğalgaz Boru Hattı (TANAP), Azerbaycan Şah Deniz gazını Türkiye üzerinden Avrupa'ya ulaştıran devasa jeopolitik enerji koridorudur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> TANAP, Türkiye'nin transit doğalgaz taşımacılığındaki en kritik enerji koridoru projesidir.<br>• <b>B Şıkkı (Yanlış):</b> Bakü-Tiflis-Ceyhan petrol boru hattıdır, doğalgaz değildir.<br>• <b>C Şıkkı (Yanlış):</b> Mavi Akım Rus gazını Samsun'a taşır.<br>• <b>D Şıkkı (Yanlış):</b> TürkAkım Rus gazını Trakya'dan Avrupa'ya taşır.",
+        "tag": "#TurkiyeJeopolitikGucu"
       }
     ]
   },
@@ -2648,6 +2712,22 @@ const cografya_db = [
       {
         "q": "Buzul aşınım ve birikim şekillerine ($Sirk gölleri, Hörgüç kaya$) Türkiye'de neden sadece yüksek dağlarda rastlanır?",
         "a": "Türkiye Orta Kuşakta olduğu için buzullar deniz seviyesine inemez, sadece 2200-2500 metrenin üzerindeki yüksek dağ zirvelerinde etkili olabilir ($Matematik-Özel Konum sentezi$)."
+      },
+      {
+        "q": "Fay hatları boyunca oluşan çöküntü alanlarının suyla dolmasıyla oluşan ve Türkiye'de en yaygın görülen göl türü hangisidir?",
+        "a": "Tektonik Göllerdir (Tuz, İznik, Manyas vb.)."
+      },
+      {
+        "q": "Akdeniz Göller Yöresindeki erime çukurlarının suyla dolmasıyla oluşan, berrak sularıyla ünlü karstik gölümüz hangisidir?",
+        "a": "Salda Gölü'dür, karstik erime çanağı özelliğindedir."
+      },
+      {
+        "q": "Erzurum'daki Tortum ve Trabzon'daki Sera gölleri, vadilerin önünün toprak kaymasıyla kapanması sonucu oluşan hangi göl türüdür?",
+        "a": "Heyelan Set Gölleridir, Karadeniz'de yaygındır."
+      },
+      {
+        "q": "Dağların kıyıya paralel uzandığı yerlerde dalga çarpması sonucu oluşan kıyı uçurumlarına (yalıyar) ne ad verilir?",
+        "a": "Falez adı verilir (Antalya ve Karadeniz kıyılarında yaygındır)."
       }
     ],
     "quiz": [
@@ -3850,6 +3930,54 @@ const cografya_db = [
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır.</b> Ege'deki dağlar kırıklıdır (Horst-Graben).<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Alp-Himalaya kıvrımları Ege'de sert tabakalarla karşılaştığı için kıvrılamamış ve kırılarak Horst-Graben sistemlerini oluşturmuştur.<br>• <b>B, C, D Şıkları (Yanlış):</b> Diğer bölgelerde horst-graben değil kıvrımlı veya volkanik dağlar hakimdir.",
         "tag": "#HorstGraben"
+      },
+      {
+        "q": "Soru 101: Türkiye'de fay hatlarının (kırık hatlarının) yaygınlığına bağlı olarak oluşan, çöküntü alanlarının suyla dolmasıyla meydana gelen en yaygın göl oluşum türü hangisidir?",
+        "options": [
+          "Karstik Göller",
+          "Tektonik Göller",
+          "Heyelan Set Gölleri",
+          "Buzul Gölleri"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Türkiye genç oluşumlu olduğu için fay hatları yaygındır ve buna bağlı olarak oluşan Tektonik Göller (Tuz, Beyşehir, İznik vb.) en çok görülen göl türüdür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Karstik göller Akdeniz Göller Yöresindedir, erimeyle oluşur.<br>• <b>B Şıkkı (Doğru):</b> Tektonik göller faylanma hareketleriyle oluşur, sayıca en fazladır.<br>• <b>C Şıkkı (Yanlış):</b> Heyelan set gölleri Karadeniz'dedir, heyelan setleriyle oluşur.<br>• <b>D Şıkkı (Yanlış):</b> Buzul gölleri yüksek dağlardadır.",
+        "tag": "#TurkiyeTektonikGolu"
+      },
+      {
+        "q": "Soru 102: Karstik erime çanaklarının suyla dolmasıyla oluşan, berrak suları ve beyaz magnezyum kumlarıyla ünlü olan, 'Türkiye'nin Maldivleri' lakaplı karstik gölümüz hangisidir?",
+        "options": [
+          "Eğirdir Gölü",
+          "Salda Gölü",
+          "Avlan Gölü",
+          "Kestel Gölü"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Burdur sınırlarında yer alan Salda Gölü, karstik erime çukurunda oluşan, eşsiz turkuaz rengi ve beyaz mineralli kumlarıyla ünlü göldür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Eğirdir karma yapılı (tektonik-karstik) büyük göldür.<br>• <b>B Şıkkı (Doğru):</b> Salda Gölü, korunması gereken hassas ekolojik beyaz kumsallara sahip en ünlü karstik gölümüzdür.<br>• <b>C Şıkkı (Yanlış):</b> Avlan erime gölüdür, küçüktür.<br>• <b>D Şıkkı (Yanlış):</b> Kestel polye erime gölüdür.",
+        "tag": "#TurkiyeKarstikGolu"
+      },
+      {
+        "q": "Soru 103: Eğimin, engebenin ve yağışın bol olduğu Karadeniz yamaçlarında kayan toprak kütlelerinin akarsu vadilerinin önünü kapatmasıyla oluşan Tortum, Sera, Abant gibi göller hangi sınıflandırmaya girer?",
+        "options": [
+          "Buzul gölleri",
+          "Heyelan set gölleri",
+          "Alüvyal set gölleri",
+          "Volkanik set gölleri"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Toprak kaymasının vadileri tıkamasıyla oluşan baraj göllerine Heyelan Set Gölleri denir, Karadeniz'de yaygındır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Buzul gölleri yüksek sirk çukurları gölleridir.<br>• <b>B Şıkkı (Doğru):</b> Tortum, Sera, Abant ve Yedigöller heyelanın vadileri kapatmasıyla oluşan heyelan set gölleridir.<br>• <b>C Şıkkı (Yanlış):</b> Alüvyal set gölleri menderes birikimleridir (örn: Mogan, Bafa).<br>• <b>D Şıkkı (Yanlış):</b> Volkanik set lav akıntılarıdır (örn: Van).",
+        "tag": "#TurkiyeHeyelanSetGolu"
+      },
+      {
+        "q": "Soru 104: Türkiye'nin kıyı şekillenmesinde etkili olan, dağların kıyıya paralel uzandığı yerlerde dalga aşındırmasıyla oluşan dik uçurumlara (yalıyar) ne ad verilir?",
+        "options": [
+          "Tombolo",
+          "Falez (Yalıyar)",
+          "Lagün",
+          "Kıyı seti"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Dalgaların dağ yamaçlarına çarpıp altını oyması ve üst kısmın çökmesiyle oluşan dik kıyı uçurumlarına Falez (yalıyar) denir, Karadeniz ve Antalya'da yaygındır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Tombolo bir adanın kıyı okuyla karaya bağlanması birikim şeklidir.<br>• <b>B Şıkkı (Doğru):</b> Falez kıyı aşınım şeklidir, dağların paralel ve dik indiği yerlerde dalga oyulmasıyla oluşur.<br>• <b>C Şıkkı (Yanlış):</b> Lagün körfez önünün kapanmasıyla oluşan kıyı set gölüdür (birikim).<br>• <b>D Şıkkı (Yanlış):</b> Kıyı seti dalga birikimidir.",
+        "tag": "#TurkiyeKıyıSekilleri"
       }
     ]
   },
@@ -3975,6 +4103,22 @@ const cografya_db = [
       {
         "q": "Halomorfik topraklar neyi ifade eder ve Türkiye'de nerede yaygındır?",
         "a": "Kurak bölgelerde suyun buharlaşmasıyla tuz ve sodanın toprak yüzeyinde birikmesiyle oluşan **tuzlu topraklardır** (Tuz Gölü çevresi)."
+      },
+      {
+        "q": "Türkiye'de kuzeybatıdan esen Karayel ile güneybatıdan esen sıcak ve nemli Lodos hangi rüzgar grubuna girer?",
+        "a": "Yerel Rüzgarlar grubuna girer (Kayıp Sakal şifresiyle ezberlenir)."
+      },
+      {
+        "q": "Eğimli yamaçlarda toprağın eğime dik sürülmesi ve basamaklandırılması (taraçalama) hangi toprak sorununu önlemek içindir?",
+        "a": "Toprak erozyonunu (verimli üst tabakanın süpürülmesini) önlemek içindir."
+      },
+      {
+        "q": "İç Anadolu'nun en çok yağışı ilkbaharda, Karadeniz'in sonbaharda almasını açıklayan pratik harita kuralı hangisidir?",
+        "a": "Harita üzerine çizilen ve yağış mevsimlerini gösteren E-Harfi Kuralı'dır."
+      },
+      {
+        "q": "Akdeniz ikliminin tahrip edilmesiyle oluşan zeytin, zakkum, defne gibi sert yapraklı çalı örtüsüne ne ad verilir?",
+        "a": "Maki bitki örtüsü adı verilir."
       }
     ],
     "quiz": [
@@ -5177,6 +5321,54 @@ const cografya_db = [
         "correct": 0,
         "rationale": "<b>Doğru Cevap: A şıkkıdır (Sığla Ağacı).</b> Şık Analizleri: Sığla Köyceğiz gölü etrafındaki bataklıklarda endemik yaşar, yağı çok değerlidir.",
         "tag": "#EndemikBitkiler"
+      },
+      {
+        "q": "Soru 101: Türkiye'nin iklim koşullarını etkileyen, güneybatıdan sıcak ve nemli eserek kış aylarında karların hızla erimesine, baca zehirlenmelerine yol açan yerel rüzgar hangisidir?",
+        "options": [
+          "Karayel",
+          "Lodos",
+          "Poyraz",
+          "Samyeli"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Güneybatıdan esen Lodos, sıcak denizlerden nem getirir, ılık karakterdedir. Karları eritip sel riski yaratır, baca gazlarının geri tepmesine yol açar.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Karayel kuzeybatı soğuk rüzgardır.<br>• <b>B Şıkkı (Doğru):</b> Lodos nemli, ılık ve tehlikeli baca rüzgarı olarak bilinir.<br>• <b>C Şıkkı (Yanlış):</b> Poyraz kuzeydoğu kuru soğuk rüzgardır.<br>• <b>D Şıkkı (Yanlış):</b> Samyeli güneydoğu kuru sıcak rüzgardır.",
+        "tag": "#TurkiyeRuzgarlari"
+      },
+      {
+        "q": "Soru 102: Toprağın verimli üst tabakasının rüzgarlar ve seller tarafından süpürülmesini (erozyonu) önlemek amacıyla eğimli arazilerde alınması gereken en pratik önlem hangisidir?",
+        "options": [
+          "Yamacı eğim yönünde derin sürmek",
+          "Toprağı eğime dik sürmek ve yamaçları taraçalandırmak",
+          "Tarım alanlarında nadası artırmak",
+          "Anız yakmayı teşvik etmek"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Toprağı eğime dik sürerek basamaklar (taraçalar) oluşturmak, suyun akış hızını keserek toprağın süpürülmesini doğrudan engeller.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Eğim yönünde sürmek suyun akışını hızlandırır ve erozyonu patlatır.<br>• <b>B Şıkkı (Doğru):</b> Eğime dik sürüm ve taraçalama, suyun toprağı süpürme gücünü kesen en temel erozyon önlemidir.<br>• <b>C Şıkkı (Yanlış):</b> Nadas toprağı boş bırakır ve erozyona açık hale getirir.<br>• <b>D Şıkkı (Yanlış):</b> Anız yakmak kökleri yok ederek erozyonu artırır.",
+        "tag": "#TurkiyeFizikiToprakSorunlari"
+      },
+      {
+        "q": "Soru 103: İç Anadolu'nun en çok yağışı ilkbaharda, Karadeniz kıyılarının sonbaharda, Akdeniz ve Ege kıyılarının ise kışın almasını harita üzerinde gösteren pratik kural hangisidir?",
+        "options": [
+          "U-Kuralı",
+          "E-Harfi Kuralı",
+          "Z-Taktisi",
+          "Kayıp Sakal kuralı"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Harita üzerinde İç Anadolu'dan başlanarak çizilen 'E-Harfi', sırasıyla yağış mevsimlerini (ilkbahar, yaz, sonbahar, kış) gösteren pratik coğrafi şifredir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> U-Kuralı rüzgarları göstermez.<br>• <b>B Şıkkı (Doğru):</b> E-Harfi kuralı, iç anadolu ilkbahar, erzurum yaz, karadeniz sonbahar, akdeniz kış yağış sıralamasını veren dahi pratik yöntemdir.<br>• <b>C Şıkkı (Yanlış):</b> Z taktisi askeri bir kavramdır.<br>• <b>D Şıkkı (Yanlış):</b> Kayıp Sakal, yerel rüzgarların yön sıralamasıdır.",
+        "tag": "#TurkiyeIklimTipleriYagis"
+      },
+      {
+        "q": "Soru 104: Akdeniz ikliminin kızılçam ormanlarının tahrip edilmesi sonucu ortaya çıkan zeytin, zakkum, defne, kocayemiş gibi her mevsim yeşil kalan yapraklı çalılık topluluğu hangisidir?",
+        "options": [
+          "Bozkır",
+          "Maki",
+          "Garig",
+          "Psödomaki"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Akdeniz ikliminin karakteristik bitki örtüsü olan maki, kuraklığa dayanıklı tüylü yapraklı çalılardan oluşur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Bozkır karasal iklimin kısa otlarıdır.<br>• <b>B Şıkkı (Doğru):</b> Maki, kızılçam tahribiyle oluşan bodur Akdeniz çalı örtüsüdür.<br>• <b>C Şıkkı (Yanlış):</b> Garig, makilerin de tahrip edildiği aşırı kurak çalı topluluğudur.<br>• <b>D Şıkkı (Yanlış):</b> Psödomaki Karadeniz kıyısındaki yalancı makidir.",
+        "tag": "#TurkiyeMakiTurleri"
       }
     ]
   },
@@ -5302,6 +5494,22 @@ const cografya_db = [
         ],
         "correct": 0,
         "a": "<b>Kırsal Konut Malzemesi:</b> Tamamen iklim ve doğal çevre şartlarının sunduğu malzeme çeşitliliğine bağlıdır."
+      },
+      {
+        "q": "Teke-Taşeli platoları ile Yıldız Dağları yöresinin çok seyrek yerleşime sahip olmasının temel nedenleri sırasıyla nelerdir?",
+        "a": "Teke-Taşeli'de karstik arazi ve engebe; Yıldız Dağları'nda ise ana ulaşım yollarına sapa kalmasıdır."
+      },
+      {
+        "q": "Çatalca-Kocaeli platosu ile kıyı Ege ovalarının Türkiye'de en yoğun nüfuslu yerler olmasının ortak nedeni nedir?",
+        "a": "Sanayileşme, iş imkanları, ticaret ve elverişli iklim koşullarıdır."
+      },
+      {
+        "q": "Kerpiç evlerin İç Anadolu'da, taş evlerin Akdeniz'de ve ahşap evlerin Karadeniz'de yaygın olması kırsalda neyi kanıtlar?",
+        "a": "Konut yapım malzemelerinde doğal çevreye ve iklim şartlarına olan yüksek bağımlılığı kanıtlar."
+      },
+      {
+        "q": "Türkiye'nin güncel nüfus piramidinin tabanının daralması ve üst kısmının genişlemesi neyin doğrudan göstergesidir?",
+        "a": "Doğum oranlarının azaldığının ve yaşlı nüfusun/ortalama ömrün arttığının göstergesidir."
       }
     ],
     "quiz": [
@@ -6504,6 +6712,54 @@ const cografya_db = [
         "correct": 2,
         "rationale": "<b>Doğru Cevap: C Şıkkıdır.</b> Rize ve çevresi (Doğu Karadeniz) çok sarp ve dik dağlık bir yapıya sahiptir. Tarım arazileri son derece dar ve küçük çay bahçeleri halindedir. Bu dar tarım arazilerinde çalışan insan sayısı fazla olduğu için tarımsal nüfus yoğunluğu Türkiye'nin en yüksek seviyesine ulaşır. Konya, Şanlıurfa ve Çukurova ise geniş düzlük tarım ovalarına sahip olduklarından tarımsal yoğunlukları düşüktür.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Şanlıurfa düzdür, araziler geniştir, yoğunluk azdır.<br>• <b>B Şıkkı (Yanlış):</b> Konya Türkiye'nin en büyük düz tarım ovasıdır, yoğunluk düşüktür.<br>• <b>C Şıkkı (Doğru):</b> Dağlık sarp yapı nedeniyle daralan tarım alanı yoğunluğu patlatır (Rize).<br>• <b>D Şıkkı (Yanlış):</b> Çukurova çok geniş alüvyal düzlük ovadır, yoğunluk düşüktür.",
         "tag": "#TarımsalYoğunluk"
+      },
+      {
+        "q": "Soru 101: Türkiye'de Menteşe Yöresi (Muğla) bol yağış almasına rağmen engebe nedeniyle tenga nüfusludur. Benzer şekilde, karstik arazi geçirgenliği ve tarım darlığı nedeniyle tenha olan yörelerimiz hangileridir?",
+        "options": [
+          "Çatalca ve Kocaeli",
+          "Teke ve Taşeli Platoları",
+          "Çukurova ve Adana",
+          "Kıyı Ege ovaları"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Akdeniz'deki Teke ve Taşeli platoları karstik kireçli yapıları nedeniyle yağmur suyunu hızla tabana sızdırır, su darlığı ve engebe nedeniyle nüfusu son derece tenhadır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Çatalca Kocaeli en yoğun nüfusludur.<br>• <b>B Şıkkı (Doğru):</b> Teke ve Taşeli platoları, kireçli karstik arazinin yerleşimi ve tarımı engellediği tenha alanlarımızdır.<br>• <b>C Şıkkı (Yanlış):</b> Çukurova delta tarımından dolayı çok yoğundur.<br>• <b>D Şıkkı (Yanlış):</b> Kıyı Ege nüfus yoğunluğu yüksektir.",
+        "tag": "#TurkiyeTenhaNufus"
+      },
+      {
+        "q": "Soru 102: Doğu Karadeniz kıyı şeridinin dağların hemen arkasında yükselmesi nedeniyle tarım alanlarının çok dar olmasına bağlı olarak, nüfusun dar kıyı şeridinde toplanmasının yarattığı durum hangisidir?",
+        "options": [
+          "Yoğun nüfuslu kıyı şeridi yapısı",
+          "Tenha kıyı yapısı",
+          "Karstik polye ovalarının oluşması",
+          "Sanayinin kıyıya yığılması"
+        ],
+        "correct": 0,
+        "rationale": "<b>Doğru Cevap: A Şıkkıdır.</b> Doğu Karadeniz'de iç kesimler engebeden dolayı tenha iken, kıyı şeridi denizellik ve yaşamsal kolaylıklardan dolayı yoğun nüfusludur.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Doğru):</b> Dar kıyı şeridinde toplanan nüfus, kıyıda nüfus yoğunluğunun aşırı yüksek çıkmasına yol açmıştır.<br>• <b>B Şıkkı (Yanlış):</b> Kıyı tenha değil, tam aksine kalabalıktır.<br>• <b>C Şıkkı (Yanlış):</b> Karstik yapılar Akdeniz'dedir, Karadeniz'de yoktur.<br>• <b>D Şıkkı (Yanlış):</b> Karadeniz kıyısında büyük sanayi yığılması yoktur, geçim tarımdır.",
+        "tag": "#TurkiyeYogunNufus"
+      },
+      {
+        "q": "Soru 103: Kırsal yerleşmelerde konut yapımında kullanılan doğal malzemeler iklimi yansıtır. Karadeniz'de ahşap, İç Anadolu'da kerpiç, Akdeniz'de ise taş evlerin yaygın olması neyi kanıtlar?",
+        "options": [
+          "Kırsalda teknolojik makineleşmenin üst düzeyde olduğunu",
+          "Kırsal konut yapımında doğal çevre koşullarına ve yerel malzemeye olan bağımlılığın yüksek olduğunu",
+          "Kentsel mimarinin kırsalı taklit ettiğini",
+          "Jeolojik fay hatlarının evleri belirlediğini"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Kırsal kesimde evler en ucuz ve en kolay bulunan doğal malzemelerle yapılır. Karadeniz'de ağaç, İç Anadolu'da toprak (kerpiç) evler iklimin doğrudan yansımasıdır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Makineleşmeyle doğal malzeme bağımlılığı azalır, artmaz.<br>• <b>B Şıkkı (Doğru):</b> Yerel malzemenin ev yapımında kullanılması, kırsal yaşamın doğaya olan entegrasyonunu kanıtlayan coğrafi kuraldır.<br>• <b>C Şıkkı (Yanlış):</b> Kentlerde betonarme yaygındır, doğal malzeme kullanılmaz.<br>• <b>D Şıkkı (Yanlış):</b> Fay hatları malzeme türünü doğrudan belirlemez.",
+        "tag": "#TurkiyeKırsalKonutSekilleri"
+      },
+      {
+        "q": "Soru 104: Türkiye'nin güncel nüfus piramidinde tabanın daralması ve üst kısmın genişlemesi, gelecekte demografik yapı üzerinde hangi temel soruna yol açacaktır?",
+        "options": [
+          "Nüfus miktarının aniden sıfırlanmasına",
+          "Genç iş gücü açığının ortaya çıkması ve yaşlı bağımlı nüfusun artması riskine",
+          "Aritmetik nüfus yoğunluğunun aşırı düşmesine",
+          "Kentsel nüfus oranının azalmasına"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Nüfus piramidinin tabanının daralması doğum oranlarının azaldığını, yani gelecekte çalışacak genç nüfus oranının düşerek yaşlı nüfusa bakma yükünün artacağını kanıtlar.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Nüfus sıfırlanmaz, miktar artmaya devam eder.<br>• <b>B Şıkkı (Doğru):</b> Doğurganlığın düşmesi nüfusun yaşlanmasına ve gelecekte aktif nüfus (iş gücü) sıkıntısına yol açan bir gelişmişlik sorunudur.<br>• <b>C Şıkkı (Yanlış):</b> Nüfus artmaya devam ettiği için yoğunluk artar.<br>• <b>D Şıkkı (Yanlış):</b> Kentleşme hızı bağımsız olarak artmaktadır.",
+        "tag": "#TurkiyeNufusPiramilOzellik"
       }
     ]
   },
@@ -6569,6 +6825,22 @@ const cografya_db = [
       {
         "q": "Akdeniz ikliminin sembolü olan zeytin ağacının iç karasal bölgelerde yetişememesinin temel nedeni nedir?",
         "a": "Zeytinin don olaylarına karşı aşırı hassas olması ve kış aylarında mutlaka <b>kış ılıklığı (Akdeniz sıcaklığı)</b> aramasıdır."
+      },
+      {
+        "q": "Dar alandan en yüksek verimi almayı amaçlayan, sulama ve makineleşmenin üst düzey olduğu modern tarım yöntemi hangisidir?",
+        "a": "İntansif (Modern) Tarım yöntemidir."
+      },
+      {
+        "q": "Akdeniz engebeli dağlık alanlarında kıl keçisi, İç Anadolu düzlüklerinde ise koyun yetiştirilmesini belirleyen temel etken nedir?",
+        "a": "Yerşekilleri engebesi ile iklime bağlı bitki örtüsü (bozkır) durumudur."
+      },
+      {
+        "q": "Güneydoğu Anadolu'nun yağış miktarının az olmamasına rağmen orman bakımından en fakir bölgemiz olmasının nedeni nedir?",
+        "a": "Yaz aylarındaki aşırı buharlaşma ve kuraklık şartlarıdır."
+      },
+      {
+        "q": "Türkiye denizlerindeki balık miktarının en çok Karadeniz'de, balık çeşidinin ise en çok Akdeniz'de olmasının nedeni nedir?",
+        "a": "Karadeniz'de oksijen/plankton bolluğu; Akdeniz'de ise sıcaklık ve tuzluluk fazlalığıdır."
       }
     ],
     "quiz": [
@@ -7771,6 +8043,54 @@ const cografya_db = [
         "correct": 1,
         "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Kocaeli'nin Hereke beldesi, dünyaca ünlü yüzde yüz ipek el dokuması Hereke halılarının tarihi merkezidir. Osmanlı saraylarına halı dokuyan bu merkez, günümüzde de Hereke ipek halısıyla dünya markasıdır. İpek iplik ihtiyacının önemli kısmı koza köylerinden gelen doğal ipekle karşılanır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Ürgüp volkanik taş el sanatlarıyla ünlüdür, Hereke ipek halısı kadar tescilli ipek halıcılığı yoktur.<br>• <b>B Şıkkı (Doğru):</b> Hereke, dünya saraylarını süsleyen o meşhur çift düğümlü incecik ipek halıların yegane anavatanıdır.<br>• <b>C Şıkkı (Yanlış):</b> Ödemiş ipek dokuma beziyle ünlüdür ama Hereke düzeyinde devasa bir tescilli halıcılık markası değildir.<br>• <b>D Şıkkı (Yanlış):</b> Harran kerpiç evleriyle ünlüdür.",
         "tag": "#İpekBöcekçiliği"
+      },
+      {
+        "q": "Soru 101: Dar tarım alanlarından sulama, kaliteli gübre ve makineleşme yoluyla en yüksek verimi almayı amaçlayan, iklime bağımlılığı sıfırlayan modern tarım yöntemi hangisidir?",
+        "options": [
+          "Ekstansif tarım",
+          "İntansif (Modern) tarım",
+          "Nadas tarımı",
+          "Kaba tarım"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> İntansif (modern) tarım yönteminde seracılık, sulama, tohum ıslahı uygulanır. İklim ne olursa olsun üretimde süreklilik ve yüksek verim sağlanır.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Ekstansif geleneksel tarımdır, verim düşüktür ve yağışa bağımlıdır.<br>• <b>B Şıkkı (Doğru):</b> İntansif tarımda sulama çözülmüş olup üretimde dalgalanma yaşanmaz. Ege ve Marmara'da yaygındır.<br>• <b>C Şıkkı (Yanlış):</b> Nadas toprağı boş bırakma ilkel yöntemidir.<br>• <b>D Şıkkı (Yanlış):</b> Kaba tarım ekstansifle aynıdır.",
+        "tag": "#TurkiyeModernTarim"
+      },
+      {
+        "q": "Soru 102: İç Anadolu'nun düzlüklerinde kısa boylu bozkır otlarının yaygınlığına bağlı olarak koyun; Akdeniz'in engebeli karstik yamaçlarında ise hangi küçükbaş hayvan türünün yetiştiriciliği devlet kontrolünde yaygındır?",
+        "options": [
+          "Tiftik keçisi",
+          "Kıl keçisi",
+          "Merinos koyunu",
+          "Mera sığırı"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Akdeniz'in engebeli ve kayalık Toroslar yamaçlarında çalılarla beslenebilen kıl keçisi yetiştirilir. Orman filizlerine zarar verdiği için devlet ekim alanlarını denetler.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Tiftik keçisi yünü için Ankara ve çevresinde yetiştirilir.<br>• <b>B Şıkkı (Doğru):</b> Kıl keçisi, Akdeniz karstik engebesine en uyumlu küçükbaş hayvan olup Toros Yörüklerinin geçim kaynağıdır.<br>• <b>C Şıkkı (Yanlış):</b> Merinos koyunu Bursa çevresinde yaygındır.<br>• <b>D Şıkkı (Yanlış):</b> Mera sığırı Doğu Anadolu çayırlarındadır.",
+        "tag": "#TurkiyeKüçükbaşTürleri"
+      },
+      {
+        "q": "Soru 103: Güneydoğu Anadolu Bölgesi'nin yağış miktarının İç Anadolu'dan fazla olmasına rağmen, Türkiye'de orman varlığı bakımından en fakir bölgemiz olmasının temel nedeni hangisidir?",
+        "options": [
+          "Toprakların kireçli olması",
+          "Yaz aylarındaki aşırı buharlaşma ve kuraklık şiddeti",
+          "Nüfus yoğunluğunun ağaçları kesmesi",
+          "Heyelan olaylarının ağaçları sökmesi"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Güneydoğu Anadolu'da sıcaklıktan dolayı yaz buharlaşması çok şiddetlidir. Topraktaki su hızla uçar, bu da ağaç yetişmesini engeller.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Karstik kireç Akdeniz'dedir, orman zenginliği yüksektir.<br>• <b>B Şıkkı (Doğru):</b> Buharlaşmanın yağıştan fazla olması toprağı kurutur, bu yüzden Güneydoğu orman fakiridir.<br>• <b>C Şıkkı (Yanlış):</b> Beşeri etken birinci neden değildir.<br>• <b>D Şıkkı (Yanlış):</b> Güneydoğu düzlüktür, heyelan görülmez.",
+        "tag": "#TurkiyeOrmanDagilisi"
+      },
+      {
+        "q": "Soru 104: Türkiye denizlerindeki balıkçılık faaliyetlerinde, toplam avlanan balık miktarının en yüksek olduğu deniz ile balık türü çeşitliliğinin en zengin olduğu deniz sırasıyla hangileridir?",
+        "options": [
+          "Akdeniz - Karadeniz",
+          "Karadeniz - Akdeniz",
+          "Ege - Marmara",
+          "Marmara - Karadeniz"
+        ],
+        "correct": 1,
+        "rationale": "<b>Doğru Cevap: B Şıkkıdır.</b> Karadeniz soğuk ve oksijen zengini olduğu için balık miktarı (debi) en fazladır (%70). Akdeniz ise sıcaklık ve tuzluluğundan dolayı çeşitlilikte birincidir.<br><br><b>Şık Analizleri:</b><br>• <b>A Şıkkı (Yanlış):</b> Akdeniz miktar olarak en fakir denizimizdir.<br>• <b>B Şıkkı (Doğru):</b> Soğuk su balık miktarını artırır (Karadeniz), sıcak su ise balık çeşitliliğini artırır (Akdeniz). Sınavlarda popüler bir fiziksel coğrafya kuralıdır.<br>• <b>C Şıkkı (Yanlış):</b> Ege ve Marmara geçiş denizleridir.<br>• <b>D Şıkkı (Yanlış):</b> Marmara geçiş miktarına sahiptir.",
+        "tag": "#TurkiyeBalikcilikSorunlar"
       }
     ]
   }
