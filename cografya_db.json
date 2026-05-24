@@ -121,14 +121,6 @@ const cografya_db = [
       {
         "q": "Türkiye Batı saati olarak kaçıncı saat dilimlerini kullanır?",
         "a": "45° Doğu boylamını esas aldığı için uluslararası sistemde <b>+3. Saat Dilimi</b>'ni kalıcı olarak kullanmaktadır."
-      },
-      {
-        "q": "Ekstra soru 1 - 1. Türkiye'nin Coğrafi Konumu",
-        "a": "Bu örnek ekstra sorunun cevabıdır."
-      },
-      {
-        "q": "Ekstra soru 2 - 1. Türkiye'nin Coğrafi Konumu",
-        "a": "Bu örnek ekstra sorunun cevabıdır."
       }
     ],
     "quiz": [
@@ -2656,14 +2648,6 @@ const cografya_db = [
       {
         "q": "Buzul aşınım ve birikim şekillerine ($Sirk gölleri, Hörgüç kaya$) Türkiye'de neden sadece yüksek dağlarda rastlanır?",
         "a": "Türkiye Orta Kuşakta olduğu için buzullar deniz seviyesine inemez, sadece 2200-2500 metrenin üzerindeki yüksek dağ zirvelerinde etkili olabilir ($Matematik-Özel Konum sentezi$)."
-      },
-      {
-        "q": "Ekstra soru 1 - 2. Türkiye'nin Yerşekilleri (Dağ, Ova, Plâto)",
-        "a": "Bu örnek ekstra sorunun cevabıdır."
-      },
-      {
-        "q": "Ekstra soru 2 - 2. Türkiye'nin Yerşekilleri (Dağ, Ova, Plâto)",
-        "a": "Bu örnek ekstra sorunun cevabıdır."
       }
     ],
     "quiz": [
@@ -3991,14 +3975,6 @@ const cografya_db = [
       {
         "q": "Halomorfik topraklar neyi ifade eder ve Türkiye'de nerede yaygındır?",
         "a": "Kurak bölgelerde suyun buharlaşmasıyla tuz ve sodanın toprak yüzeyinde birikmesiyle oluşan **tuzlu topraklardır** (Tuz Gölü çevresi)."
-      },
-      {
-        "q": "Ekstra soru 1 - 3. Türkiye'nin İklimi, Toprak ve Bitki Örtüsü",
-        "a": "Bu örnek ekstra sorunun cevabıdır."
-      },
-      {
-        "q": "Ekstra soru 2 - 3. Türkiye'nin İklimi, Toprak ve Bitki Örtüsü",
-        "a": "Bu örnek ekstra sorunun cevabıdır."
       }
     ],
     "quiz": [
@@ -5326,14 +5302,6 @@ const cografya_db = [
         ],
         "correct": 0,
         "a": "<b>Kırsal Konut Malzemesi:</b> Tamamen iklim ve doğal çevre şartlarının sunduğu malzeme çeşitliliğine bağlıdır."
-      },
-      {
-        "q": "Ekstra soru 1 - 4. Türkiye'nin Beşeri Coğrafyası (Nüfus, Yerleşme, Göç)",
-        "a": "Bu örnek ekstra sorunun cevabıdır."
-      },
-      {
-        "q": "Ekstra soru 2 - 4. Türkiye'nin Beşeri Coğrafyası (Nüfus, Yerleşme, Göç)",
-        "a": "Bu örnek ekstra sorunun cevabıdır."
       }
     ],
     "quiz": [
