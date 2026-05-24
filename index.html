@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .glass-card {
-            background: rgba(15, 23, 42, 0.55);
+            background: rgba(15, 23, 42, 0.65);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(51, 65, 85, 0.45);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(148, 163, 184, 0.08);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
         .flashcard { perspective: 1000px; }
         .flashcard-inner { transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; }
@@ -27,6 +28,28 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.2), 0 8px 10px -6px rgba(99, 102, 241, 0.2);
             border-color: rgba(99, 102, 241, 0.5);
+        }
+        
+        .btn-sidebar {
+            background: rgba(30, 41, 59, 0.35);
+            border: 1px solid rgba(148, 163, 184, 0.08);
+            color: #e2e8f0;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 10px 16px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        .btn-sidebar:hover {
+            background: rgba(30, 41, 59, 0.65);
+            border-color: rgba(99, 102, 241, 0.35);
+            transform: translateY(-1.5px);
+            box-shadow: 0 6px 20px -5px rgba(99, 102, 241, 0.15);
         }
         
         ::-webkit-scrollbar { width: 6px; }
@@ -64,8 +87,10 @@
     </style>
     <script src="tarih_db.json"></script>
     <script src="cografya_db.json"></script>
+    <script src="vatandaslik_db.json"></script>
     <script src="tarih_not_db.json"></script>
     <script src="cografya_not_db.json"></script>
+    <script src="vatandaslik_not_db.json"></script>
 </head>
 <body class="bg-slate-900 text-slate-100 font-sans antialiased transition-colors duration-300">
 
@@ -99,6 +124,7 @@
             <div class="flex bg-slate-900 p-1 rounded-xl border border-slate-800">
                 <button onclick="switchLesson('tarih')" id="btn-tarih" class="px-5 py-2 rounded-lg font-bold text-xs uppercase tracking-wider transition-all bg-amber-500 text-slate-950 shadow-sm cursor-pointer">Tarih</button>
                 <button onclick="switchLesson('cografya')" id="btn-cografya" class="px-5 py-2 rounded-lg font-bold text-xs uppercase tracking-wider transition-all text-slate-400 hover:text-slate-200 cursor-pointer">Coğrafya</button>
+                <button onclick="switchLesson('vatandaslik')" id="btn-vatandaslik" class="px-5 py-2 rounded-lg font-bold text-xs uppercase tracking-wider transition-all text-slate-400 hover:text-slate-200 cursor-pointer">Vatandaşlık</button>
             </div>
         </div>
     </header>
@@ -111,19 +137,19 @@
                 <div id="unit-list" class="space-y-1"></div>
             </div>
 
-            <div class="glass-card p-4 rounded-2xl space-y-2">
-                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 flex items-center gap-1.5"><i class="fa-solid fa-folder-tree text-indigo-400"></i> Kontrol İstasyonu</h3>
+            <div class="glass-card p-4 rounded-2xl space-y-2.5">
+                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2.5 flex items-center gap-1.5"><i class="fa-solid fa-folder-tree text-indigo-400"></i> Kontrol İstasyonu</h3>
                 
-                <button onclick="openNotebookView()" class="w-full py-2 bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 text-slate-300 font-bold text-[11px] rounded-xl transition-all flex justify-start items-center px-4 gap-2.5 cursor-pointer hover-glow">
-                    <i class="fa-solid fa-book-bookmark text-indigo-400"></i> Furkan'ın Hata Defteri (<span id="txt-notebook-count">0</span>)
+                <button onclick="openNotebookView()" class="btn-sidebar">
+                    <i class="fa-solid fa-book-bookmark text-indigo-400 text-xs"></i> Furkan'ın Hata Defteri (<span id="txt-notebook-count">0</span>)
                 </button>
                 
-                <button onclick="openAnalysisCenter()" class="w-full py-2 bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 text-slate-300 font-bold text-[11px] rounded-xl transition-all flex justify-start items-center px-4 gap-2.5 cursor-pointer hover-glow">
-                    <i class="fa-solid fa-chart-pie text-amber-500"></i> AI Analiz Merkezi & Raporlar
+                <button onclick="openAnalysisCenter()" class="btn-sidebar">
+                    <i class="fa-solid fa-chart-pie text-amber-500 text-xs"></i> AI Analiz Merkezi & Raporlar
                 </button>
                 
-                <button onclick="openMapAtlasView()" class="w-full py-2 bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 text-slate-300 font-bold text-[11px] rounded-xl transition-all flex justify-start items-center px-4 gap-2.5 cursor-pointer hover-glow">
-                    <i class="fa-solid fa-map-location-dot text-emerald-400"></i> ÖSYM Coğrafya Harita Atlası
+                <button onclick="openMapAtlasView()" class="btn-sidebar">
+                    <i class="fa-solid fa-map-location-dot text-emerald-400 text-xs"></i> ÖSYM Coğrafya Harita Atlası
                 </button>
             </div>
 
@@ -316,6 +342,24 @@
                                 <div id="bar-time-efficiency" class="bg-amber-500 h-full w-0 transition-all duration-300"></div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- 🎯 COGNITIVE CONCEPT HEATMAP GRID -->
+                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800 space-y-4">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-800 pb-2.5 gap-2">
+                        <h4 class="text-xs font-bold text-indigo-400 uppercase tracking-wider flex items-center gap-1.5">
+                            <i class="fa-solid fa-square-poll-vertical text-indigo-400 text-amber-500"></i> Akademik Kazanım Isı Haritası (Concept Mastery Grid)
+                        </h4>
+                        <div class="flex flex-wrap gap-3 text-[8px] font-black text-slate-400 uppercase tracking-widest">
+                            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-slate-800 border border-slate-700 inline-block"></span> Başlanmadı</span>
+                            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-rose-950/60 border border-rose-500 inline-block shadow-[0_0_8px_rgba(244,63,94,0.3)]"></span> Telafi Gerekli</span>
+                            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-amber-950/60 border border-amber-500 inline-block shadow-[0_0_8px_rgba(245,158,11,0.3)]"></span> Çalışılıyor</span>
+                            <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-emerald-950/60 border border-emerald-500 inline-block shadow-[0_0_8px_rgba(16,185,129,0.3)]"></span> Uzman</span>
+                        </div>
+                    </div>
+                    <div id="grid-concept-heatmap" class="flex flex-wrap gap-2 w-full max-h-56 overflow-y-auto pr-1 scrollbar-thin">
+                        <!-- JS ile dinamik renkli kutular doldurulacak -->
                     </div>
                 </div>
             </div>
@@ -664,6 +708,16 @@
             </div>
 
             <div id="view-cards" class="hidden space-y-6">
+                <!-- 🧠 LEITNER SPACED REPETITION COUNTS DISPLAY -->
+                <div class="flex justify-between items-center max-w-2xl mx-auto text-[9px] font-black text-slate-500 tracking-wider">
+                    <span class="flex items-center gap-1"><i class="fa-solid fa-box-archive text-indigo-400"></i> LEITNER BİLİMSEL BELLEK KUTULARI:</span>
+                    <div class="flex gap-3">
+                        <span class="text-rose-400">Kutu 1 (Zor): <span id="leitner-count-1" class="font-mono bg-rose-950/60 border border-rose-900/40 px-2 py-0.5 rounded text-[8px]">0</span></span>
+                        <span class="text-amber-400">Kutu 2 (Orta): <span id="leitner-count-2" class="font-mono bg-amber-950/60 border border-amber-900/40 px-2 py-0.5 rounded text-[8px]">0</span></span>
+                        <span class="text-emerald-400">Kutu 3 (Kolay): <span id="leitner-count-3" class="font-mono bg-emerald-950/60 border border-emerald-900/40 px-2 py-0.5 rounded text-[8px]">0</span></span>
+                    </div>
+                </div>
+
                 <div class="flex justify-center">
                     <div id="card-container" class="flashcard w-full max-w-2xl h-80 cursor-pointer hover:scale-[1.01] transition-transform duration-300" onclick="this.classList.toggle('flipped')">
                         <div class="flashcard-inner relative w-full h-full duration-300">
@@ -685,6 +739,21 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- 🧠 LEITNER SPACED REPETITION CARD CONTROLS -->
+                <div class="flex justify-center items-center gap-2.5 max-w-2xl mx-auto p-3 bg-slate-900/60 rounded-2xl border border-slate-800/80 backdrop-blur-md no-print">
+                    <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest mr-2"><i class="fa-solid fa-brain text-indigo-400"></i> Kartı Puanla:</span>
+                    <button onclick="rateLeitnerCard('zor')" class="flex-1 px-3 py-2 bg-rose-950/45 hover:bg-rose-900/40 border border-rose-900/60 hover:border-rose-500 text-rose-400 hover:text-white text-[10px] font-black rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1 hover-glow">
+                        <i class="fa-solid fa-skull"></i> ZOR (Kutu 1)
+                    </button>
+                    <button onclick="rateLeitnerCard('orta')" class="flex-1 px-3 py-2 bg-amber-950/45 hover:bg-amber-900/40 border border-amber-900/60 hover:border-amber-500 text-amber-400 hover:text-white text-[10px] font-black rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1 hover-glow">
+                        <i class="fa-solid fa-triangle-exclamation"></i> ORTA (Kutu 2)
+                    </button>
+                    <button onclick="rateLeitnerCard('kolay')" class="flex-1 px-3 py-2 bg-emerald-950/45 hover:bg-emerald-900/40 border border-emerald-900/60 border-emerald-500 text-emerald-400 hover:text-white text-[10px] font-black rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1 hover-glow">
+                        <i class="fa-solid fa-circle-check"></i> KOLAY (Kutu 3)
+                    </button>
+                </div>
+
                 <div class="flex justify-center items-center gap-4">
                     <button onclick="prevCard()" class="w-10 h-10 rounded-xl bg-slate-950 border border-slate-800 hover:bg-slate-900 hover:scale-105 transition-all text-sm cursor-pointer"><i class="fa-solid fa-chevron-left"></i></button>
                     <span id="lbl-card-idx" class="text-xs font-bold text-slate-400 bg-slate-950 border border-slate-800 px-4 py-2 rounded-xl">0 / 0</span>
@@ -765,16 +834,16 @@
                     <div class="space-y-2">
                         <h3 class="text-lg font-black text-white">KPSS Karma Deneme Sınavı</h3>
                         <p class="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">
-                            ÖSYM sınav normlarında, tüm müfredat ünitelerinden rastgele seçilmiş <b>27 Tarih</b> ve <b>18 Coğrafya</b> sorusundan oluşan 45 soruluk karma deneme sınavı.
+                            ÖSYM sınav normlarında, tüm müfredat ünitelerinden rastgele seçilmiş <b>27 Tarih</b>, <b>18 Coğrafya</b> ve <b>9 Vatandaşlık</b> sorusundan oluşan 54 soruluk karma deneme sınavı.
                         </p>
                     </div>
                     <div class="grid grid-cols-3 gap-3 max-w-sm mx-auto text-center text-[10px] font-bold">
                         <div class="p-3 bg-slate-900 rounded-xl border border-slate-850">
-                            <div class="text-amber-400 text-sm font-black">45</div>
+                            <div class="text-amber-400 text-sm font-black">54</div>
                             <div class="text-slate-500 mt-0.5">SORU</div>
                         </div>
                         <div class="p-3 bg-slate-900 rounded-xl border border-slate-850">
-                            <div class="text-indigo-400 text-sm font-black">45 dk</div>
+                            <div class="text-indigo-400 text-sm font-black">54 dk</div>
                             <div class="text-slate-500 mt-0.5">SÜRE</div>
                         </div>
                         <div class="p-3 bg-slate-900 rounded-xl border border-slate-850">
@@ -791,8 +860,8 @@
                 <div id="exam-active-panel" class="hidden space-y-4">
                     <div class="flex justify-between items-center bg-slate-950/80 p-3.5 rounded-xl border border-slate-800 backdrop-blur-md">
                         <div class="flex items-center gap-3">
-                            <span id="lbl-exam-timer" class="font-mono text-xs sm:text-sm font-black text-rose-400 bg-rose-950/30 px-3 py-1.5 rounded-xl border border-rose-900/50 flex items-center gap-1.5"><i class="fa-solid fa-hourglass-half text-xs animate-spin"></i> 45:00</span>
-                            <span id="lbl-exam-progress" class="text-xs font-bold text-slate-400">Soru 1 / 45</span>
+                            <span id="lbl-exam-timer" class="font-mono text-xs sm:text-sm font-black text-rose-400 bg-rose-950/30 px-3 py-1.5 rounded-xl border border-rose-900/50 flex items-center gap-1.5"><i class="fa-solid fa-hourglass-half text-xs animate-spin"></i> 54:00</span>
+                            <span id="lbl-exam-progress" class="text-xs font-bold text-slate-400">Soru 1 / 54</span>
                         </div>
                         <div class="flex gap-2">
                             <button onclick="toggleExamFocusMode()" id="btn-exam-focus" class="px-3 py-1.5 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 font-bold text-[10px] rounded-lg transition-all flex items-center gap-1.5 cursor-pointer" title="Odaklanma Modu (Arayüzü Sadeleştir)">
@@ -1330,7 +1399,7 @@
             if (pureTag === "GenelKazanım") {
                 targetContent = `<b>ÖSYM GENEL KAZANIM REHBERİ</b><br><br>Bu soru, ilgili ünitenin genel müfredat kazanımlarını ve temel kavramlarını ölçmektedir.<br><br><b>Detaylı Analiz:</b> Şıkların tek tek analizini ve sorunun akademik çözümünü görmek için sorunun altındaki <b>Çözüm Rehberini</b> inceleyebilirsiniz.<br><br><b>Çalışma Tavsiyesi:</b> Konuyu pekiştirmek için flaş kartları kaydırmaya devam edebilir ve AI Analiz Paneli'nden gelişim durumunu takip edebilirsin. Başarılar dileriz!`;
             } else {
-                let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
+                let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (currentLesson === 'cografya' ? (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []) : (typeof vatandaslik_not_db !== 'undefined' ? vatandaslik_not_db : []));
                 activeNoteDb.forEach(box => {
                     if(box.kavramlar && box.kavramlar[pureTag]) {
                         targetContent = box.kavramlar[pureTag];
@@ -1648,6 +1717,74 @@
             }
             
             adviceText.innerHTML = `Furkan, analizlerime göre en çok takıldığın alan <b>${worst4[0]}</b> konusu (${hiyerarşi[worst4[0]]} hatalı soru). Sana tavsiyem, "Zayıf Konulardan Yeni Sorularla Tarama" başlatarak eksiklerini gidermendir. Doğru bildiğin sorular otomatik olarak defterden temizlenecektir! ${mapRecommendation}`;
+            
+            // 4. RENDER CONCEPT HEATMAP GRID
+            const heatmapGrid = document.getElementById("grid-concept-heatmap");
+            if (heatmapGrid) {
+                heatmapGrid.innerHTML = "";
+                let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (currentLesson === 'cografya' ? (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []) : (typeof vatandaslik_not_db !== 'undefined' ? vatandaslik_not_db : []));
+                let states = JSON.parse(localStorage.getItem('kpss_concept_states')) || {};
+                
+                activeNoteDb.forEach(unit => {
+                    if (unit.kavramlar) {
+                        Object.keys(unit.kavramlar).forEach(kavram => {
+                            let conceptState = states[currentLesson]?.[kavram] || { status: 'not_started', quiz_score: { correct: 0, total: 0 } };
+                            let status = conceptState.status || 'not_started';
+                            let score = conceptState.quiz_score || { correct: 0, total: 0 };
+                            
+                            let tileClass = "";
+                            let borderClass = "";
+                            let shadowClass = "";
+                            let badgeTitle = "";
+                            let successPercent = score.total > 0 ? Math.round((score.correct / score.total) * 100) : 0;
+                            
+                            if (status === 'completed') {
+                                tileClass = "bg-emerald-950/60 text-emerald-400";
+                                borderClass = "border-emerald-500/70 hover:border-emerald-400";
+                                shadowClass = "shadow-[0_0_8px_rgba(16,185,129,0.15)] hover:shadow-[0_0_12px_rgba(16,185,129,0.3)]";
+                                badgeTitle = `UZMAN (%${successPercent} Başarı)`;
+                            } else if (status === 'needs_remediation' || (score.total > 0 && score.correct / score.total < 0.8)) {
+                                tileClass = "bg-rose-950/60 text-rose-400 animate-pulse";
+                                borderClass = "border-rose-500/70 hover:border-rose-400";
+                                shadowClass = "shadow-[0_0_8px_rgba(244,63,94,0.2)] hover:shadow-[0_0_12px_rgba(244,63,94,0.4)]";
+                                badgeTitle = `TELAFİ GEREKLİ (%${successPercent} Başarı - Tıkla Reçete Uygula!)`;
+                            } else if (score.total > 0) {
+                                tileClass = "bg-amber-950/60 text-amber-400";
+                                borderClass = "border-amber-500/70 hover:border-amber-400";
+                                shadowClass = "shadow-[0_0_8px_rgba(245,158,11,0.15)] hover:shadow-[0_0_12px_rgba(245,158,11,0.3)]";
+                                badgeTitle = `ÇALIŞILIYOR (%${successPercent} Başarı)`;
+                            } else {
+                                tileClass = "bg-slate-900 text-slate-500";
+                                borderClass = "border-slate-800 hover:border-slate-700";
+                                shadowClass = "";
+                                badgeTitle = "BAŞLANMADI";
+                            }
+                            
+                            const tile = document.createElement("button");
+                            tile.className = `px-2 py-1.5 rounded-lg border text-[9px] font-bold ${tileClass} ${borderClass} ${shadowClass} transition-all duration-300 hover:scale-105 cursor-pointer whitespace-nowrap`;
+                            tile.innerHTML = `<i class="fa-solid fa-tag text-[8px] opacity-70"></i> ${kavram}`;
+                            tile.title = `${kavram} - ${badgeTitle}`;
+                            
+                            tile.onclick = () => {
+                                if (status === 'needs_remediation' || (score.total > 0 && score.correct / score.total < 0.8)) {
+                                    applyAcademicPrescription('#' + kavram);
+                                } else {
+                                    switchMode('notes');
+                                    // Set search bar to this concept to filter it
+                                    const searchInput = document.getElementById("search-notes-input");
+                                    if (searchInput) searchInput.value = kavram;
+                                    renderNotesView();
+                                }
+                            };
+                            
+                            heatmapGrid.appendChild(tile);
+                        });
+                    }
+                });
+            }
+            
+            // Refresh Leitner stats when entering analysis
+            updateLeitnerCountsUI();
         } 
 
         function startReviewTaramaTest() {
@@ -1894,7 +2031,56 @@
         function createNoteCardHTML(kavram, noteHtml, unitName) {
             const cleanText = noteHtml.replace(/<\/?[^>]+(>|$)/g, "").toLowerCase();
             const card = document.createElement("div");
-            card.className = "glass-card p-5 rounded-2xl border border-slate-800/80 hover-glow transition-all flex flex-col justify-between space-y-4 animate-fadeIn";
+            
+            // Concept status and heatmap calculations
+            let states = JSON.parse(localStorage.getItem('kpss_concept_states')) || {};
+            let conceptState = states[currentLesson]?.[kavram] || { status: 'not_started', quiz_score: { correct: 0, total: 0 } };
+            
+            let heatmapBadgeHtml = "";
+            let status = conceptState.status || 'not_started';
+            let score = conceptState.quiz_score || { correct: 0, total: 0 };
+            
+            let cardAccentClass = "border-slate-800/80";
+            let remediationBtnHtml = "";
+            
+            if (status === 'completed') {
+                let successPercent = score.total > 0 ? Math.round((score.correct / score.total) * 100) : 100;
+                heatmapBadgeHtml = `
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[8px] font-black tracking-wide border bg-emerald-950/45 text-emerald-400 border-emerald-900/60 ml-2 shadow-[0_0_8px_rgba(16,185,129,0.15)] whitespace-nowrap animate-pulse">
+                        <i class="fa-solid fa-circle-check text-emerald-400"></i> UZMAN (%${successPercent})
+                    </span>
+                `;
+                cardAccentClass = "border-emerald-900/30 hover:border-emerald-500/30";
+            } else if (status === 'needs_remediation' || (score.total > 0 && score.correct / score.total < 0.8)) {
+                let successPercent = score.total > 0 ? Math.round((score.correct / score.total) * 100) : 0;
+                heatmapBadgeHtml = `
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[8px] font-black tracking-wide border bg-rose-950/45 text-rose-400 border-rose-900/60 ml-2 shadow-[0_0_8px_rgba(244,63,94,0.2)] whitespace-nowrap animate-pulse">
+                        <i class="fa-solid fa-triangle-exclamation text-rose-400"></i> TELAFİ (%${successPercent})
+                    </span>
+                `;
+                cardAccentClass = "border-rose-900/40 hover:border-rose-500/40 shadow-[0_0_15px_rgba(244,63,94,0.06)]";
+                remediationBtnHtml = `
+                    <button onclick="applyAcademicPrescription('#${kavram}')" class="px-3 py-2 bg-gradient-to-r from-rose-600 to-pink-600 text-white font-black text-[10px] rounded-xl transition-all cursor-pointer flex justify-center items-center gap-1.5 hover-glow animate-pulse shrink-0">
+                        <i class="fa-solid fa-graduation-cap"></i> REÇETE UYGULA
+                    </button>
+                `;
+            } else if (score.total > 0) {
+                let successPercent = Math.round((score.correct / score.total) * 100);
+                heatmapBadgeHtml = `
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[8px] font-black tracking-wide border bg-amber-950/45 text-amber-400 border-amber-900/60 ml-2 shadow-[0_0_12px_rgba(245,158,11,0.15)] whitespace-nowrap">
+                        <i class="fa-solid fa-circle-info text-amber-400"></i> ÇALIŞILIYOR (%${successPercent})
+                    </span>
+                `;
+                cardAccentClass = "border-amber-900/30 hover:border-amber-500/30";
+            } else {
+                heatmapBadgeHtml = `
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[8px] font-black tracking-wide border bg-slate-900 text-slate-500 border-slate-800 ml-2 whitespace-nowrap">
+                        <i class="fa-regular fa-circle text-slate-600"></i> BAŞLANMADI
+                    </span>
+                `;
+            }
+            
+            card.className = `glass-card p-5 rounded-2xl border ${cardAccentClass} hover-glow transition-all flex flex-col justify-between space-y-4 animate-fadeIn`;
             
             const highlightedTextHtml = processNoteHtmlForHighlighter(kavram, noteHtml);
             
@@ -1911,8 +2097,7 @@
             }
 
             // Çalıp/Okunma Durumu Göstergesi
-            let states = JSON.parse(localStorage.getItem('kpss_concept_states')) || {};
-            let isRead = states[currentLesson]?.[kavram]?.read || false;
+            let isRead = conceptState.read || false;
             
             let readBtnHtml = isRead 
                 ? `<button onclick="toggleConceptRead('${kavram}', false)" class="px-3 py-2 bg-emerald-950/50 border border-emerald-900/50 text-emerald-400 font-black text-[10px] rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1 shrink-0" title="Okundu"><i class="fa-solid fa-circle-check"></i> OKUNDU</button>`
@@ -1923,6 +2108,7 @@
                     <div class="flex justify-between items-center border-b border-slate-800 pb-2">
                         <div class="flex items-center">
                             <span class="text-[10px] font-black text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2 py-0.5 rounded-md uppercase tracking-wider">#${kavram}</span>
+                            ${heatmapBadgeHtml}
                             ${atlasShortcutHtml}
                         </div>
                         <button onclick="speakText('${kavram}. ${cleanText.replace(/'/g, "\\'")}')" class="text-slate-400 hover:text-white hover:scale-105 text-[10px] font-bold bg-slate-900 px-2 py-0.5 rounded border border-slate-800 cursor-pointer transition-all" title="Konuyu Dinle"><i class="fa-solid fa-volume-high text-indigo-400"></i> Dinle</button>
@@ -1931,6 +2117,7 @@
                 </div>
                 <div class="flex gap-2 pt-2 border-t border-slate-900/60 no-print">
                     ${readBtnHtml}
+                    ${remediationBtnHtml}
                     <button onclick="startRoadmapQuiz('${kavram}')" class="flex-grow py-2 bg-indigo-950/40 hover:bg-indigo-900/40 border border-indigo-900/50 text-indigo-300 hover:text-white font-black text-[10px] rounded-xl transition-all cursor-pointer flex justify-center items-center gap-1.5 hover-glow">
                         <i class="fa-solid fa-circle-question"></i> TESTİ ÇÖZ (10 SORU)
                     </button>
@@ -1944,7 +2131,7 @@
             if (!listContainer) return;
             
             listContainer.innerHTML = "";
-            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
+            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (currentLesson === 'cografya' ? (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []) : (typeof vatandaslik_not_db !== 'undefined' ? vatandaslik_not_db : []));
             
             if (activeNoteDb.length === 0) {
                 listContainer.className = "flex justify-center items-center py-16 col-span-2";
@@ -2035,142 +2222,208 @@
             const printWrapper = document.getElementById("print-report-wrapper");
             if (!printWrapper) return;
             
-            // User Profile Configuration (loaded locally to prevent reference errors)
-            let userProfile = JSON.parse(localStorage.getItem('kpss_user_profile')) || {
+            const userProfile = JSON.parse(localStorage.getItem('kpss_user_profile')) || {
                 name: "Furkan Doğuhan",
                 target: "KPSS 2026 - Türkiye Derecesi Hedefi (95+ Puan)",
                 slogan: "İnanç, İstikrar ve Bilimsel Hata Analizi"
             };
             
-            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
-            
+            const activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (currentLesson === 'cografya' ? (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []) : (typeof vatandaslik_not_db !== 'undefined' ? vatandaslik_not_db : []));
             if (activeNoteDb.length === 0) {
-                showNotification("Yazdırılacak ders notu verisi bulunamadı.", "warning");
+                showNotification("Konu anlatım veritabanı boş!", "error");
                 return;
             }
             
-            const lessonTitle = currentLesson === 'tarih' ? "TARİH & İLK TÜRK-İSLAM KÜLTÜRÜ" : "COĞRAFYA & TÜRKİYE FİZİKİ VE BEŞERİ MORFOLOJİSİ";
+            const lessonTitle = currentLesson === 'tarih' ? "KABİLİYET-İ ALİYYE TARİH KİTAPÇIĞI" : (currentLesson === 'cografya' ? "TÜRKİYE FİZİKİ VE BEŞERİ COĞRAFYASI EL KİTABI" : "ÖSYM KPSS VATANDAŞLIK VE HUKUK EL KİTABI");
+            const lessonSubtitle = currentLesson === 'tarih' ? "ÖSYM KPSS TARİH DERS NOTLARI & ANALİTİK SINAV TUZAKLARI" : (currentLesson === 'cografya' ? "ÖSYM KPSS COĞRAFYA AKADEMİK BAŞARI REHBERİ" : "ÖSYM KPSS TEMEL HUKUK VE VATANDAŞLIK BİLGİ KİTAPÇIĞI");
             const today = new Date().toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' });
+            
+            // Helper to count total concepts
+            function countTotalConceptsInNoteDb(db) {
+                let total = 0;
+                db.forEach(u => {
+                    if (u.kavramlar) total += Object.keys(u.kavramlar).length;
+                });
+                return total;
+            }
             
             // Build booklet structure
             let bookletHtml = `
                 <style>
-                    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-                    .print-container { font-family: 'Inter', sans-serif !important; color: #1e293b !important; background: white !important; font-size: 11px; line-height: 1.6; }
-                    .print-text-dark { color: #0f172a !important; }
-                    .print-text-muted { color: #64748b !important; }
-                    .print-card-style { border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px; background: #fafafa; margin-bottom: 12px; }
-                    .print-page-break { page-break-after: always; }
-                    .print-avoid-break { page-break-inside: avoid; }
+                    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap');
                     
+                    .print-container { 
+                        font-family: 'Inter', sans-serif !important; 
+                        color: #0f172a !important; 
+                        background: white !important; 
+                        font-size: 9.5px; 
+                        line-height: 1.5;
+                        padding: 0;
+                        margin: 0;
+                    }
+                    .print-text-dark { color: #0f172a !important; }
+                    .print-text-muted { color: #475569 !important; }
+                    .print-page-break { page-break-after: always; break-after: page; }
+                    .print-avoid-break { page-break-inside: avoid; break-inside: avoid; }
+                    
+                    /* Cover Page Styles */
                     .cover-page {
                         height: 100vh;
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
-                        padding: 40px;
+                        padding: 50px;
                         box-sizing: border-box;
-                        border: 15px double #4f46e5;
-                        background: #fcfcfc;
+                        border: 20px double #4f46e5;
+                        background: #fbfbfd;
+                        text-align: center;
+                        position: relative;
                     }
-                    .cover-header { text-align: center; margin-top: 50px; }
-                    .cover-subtitle { font-size: 10px; font-weight: 800; color: #4f46e5; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 10px; }
-                    .cover-title { font-size: 26px; font-weight: 900; color: #0f172a; line-height: 1.1; margin-bottom: 15px; }
-                    .cover-decoration { width: 100px; height: 3px; background: linear-gradient(to right, #4f46e5, #10b981); margin: 20px auto; }
+                    .cover-header { margin-top: 60px; }
+                    .cover-subtitle { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 900; color: #4f46e5; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 12px; }
+                    .cover-title { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 900; color: #1e1b4b; line-height: 1.2; margin-bottom: 15px; letter-spacing: 1px; }
+                    .cover-tagline { font-family: 'Lora', serif; font-style: italic; font-size: 11px; color: #475569; margin-top: 10px; }
+                    .cover-decoration { width: 140px; height: 3px; background: linear-gradient(to right, #4f46e5, #10b981); margin: 25px auto; }
                     
                     .cover-body {
                         background: #ffffff;
                         border: 1px solid #e2e8f0;
                         border-radius: 16px;
                         padding: 24px;
-                        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-                        max-width: 500px;
+                        max-width: 480px;
                         margin: 0 auto;
-                        text-align: center;
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
                     }
                     .cover-profile-pic {
-                        width: 60px; height: 60px; border-radius: 50%; background: #e0e7ff; display: flex; align-items: center; justify-content: center; border: 2.5px solid #4f46e5; margin: 0 auto 12px;
+                        width: 54px; height: 54px; border-radius: 50%; background: #e0e7ff; display: flex; align-items: center; justify-content: center; border: 2.5px solid #4f46e5; margin: 0 auto 12px;
                     }
                     
-                    .cover-footer { text-align: center; margin-bottom: 30px; }
-                    .cover-footer-text { font-size: 9px; color: #64748b; font-weight: 600; letter-spacing: 1px; }
+                    .cover-footer { margin-bottom: 40px; }
+                    .cover-footer-text { font-size: 9px; color: #64748b; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
                     
-                    .toc-container { padding: 30px; }
-                    .toc-title { font-size: 18px; font-weight: 900; border-bottom: 2px solid #0f172a; padding-bottom: 8px; margin-bottom: 20px; }
-                    .toc-row { display: flex; justify-content: space-between; border-bottom: 1px dashed #e2e8f0; padding: 6px 0; font-size: 11px; }
-                    .toc-dots { flex-grow: 1; border-bottom: 1px dotted #cbd5e1; margin: 0 8px; position: relative; top: -4px; }
+                    /* TOC Styles */
+                    .toc-container { padding: 40px; }
+                    .toc-title { font-family: 'Cinzel', serif; font-size: 18px; font-weight: 900; color: #1e1b4b; border-bottom: 2.5px solid #1e1b4b; padding-bottom: 8px; margin-bottom: 25px; text-align: center; }
+                    .toc-row { display: flex; justify-content: space-between; border-bottom: 1px dashed #cbd5e1; padding: 6px 0; font-size: 10.5px; }
+                    .toc-dots { flex-grow: 1; border-bottom: 1px dotted #94a3b8; margin: 0 8px; position: relative; top: -4px; }
                     
+                    /* Chapter Divider */
                     .chapter-divider {
                         height: 100vh;
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
-                        padding: 40px;
+                        padding: 50px;
                         box-sizing: border-box;
-                        border-left: 10px solid #4f46e5;
+                        border-left: 12px solid #4f46e5;
                         background: #f8fafc;
                         text-align: center;
                     }
-                    .chapter-number { font-size: 14px; font-weight: 900; color: #4f46e5; letter-spacing: 2px; text-transform: uppercase; }
-                    .chapter-title { font-size: 22px; font-weight: 900; color: #0f172a; margin-top: 10px; }
+                    .chapter-number { font-size: 14px; font-weight: 900; color: #4f46e5; letter-spacing: 3px; text-transform: uppercase; }
+                    .chapter-title { font-family: 'Lora', serif; font-size: 24px; font-weight: 900; color: #0f172a; margin-top: 12px; }
                     
+                    /* Content Layout (Two Columns) */
+                    .unit-content-grid {
+                        display: grid;
+                        grid-template-cols: repeat(2, 1fr);
+                        gap: 16px;
+                        padding: 30px;
+                    }
                     .concept-print-card {
                         border: 1px solid #e2e8f0;
-                        border-radius: 12px;
-                        padding: 16px;
+                        border-radius: 10px;
+                        padding: 14px;
                         background: #ffffff;
-                        margin-bottom: 16px;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+                        margin-bottom: 0;
                     }
                     .concept-header-print {
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
-                        border-bottom: 1.5px solid #0f172a;
+                        border-bottom: 1.5px solid #4f46e5;
                         padding-bottom: 4px;
                         margin-bottom: 10px;
                     }
-                    .concept-tag-print { font-size: 9px; font-weight: 900; color: #4f46e5; text-transform: uppercase; letter-spacing: 1px; }
-                    .concept-unit-print { font-size: 8px; font-weight: 700; color: #64748b; }
+                    .concept-tag-print { font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 900; color: #4f46e5; text-transform: uppercase; letter-spacing: 1px; }
+                    .concept-unit-print { font-size: 7.5px; font-weight: 700; color: #64748b; }
+                    
+                    /* ÖSYM Trap Callout Box */
+                    .osym-trap-box {
+                        background-color: #fffbeb !important;
+                        border-left: 4px solid #d97706 !important;
+                        padding: 8px 10px !important;
+                        border-radius: 5px !important;
+                        margin-top: 10px !important;
+                        font-size: 9.2px !important;
+                        line-height: 1.4 !important;
+                        text-align: justify;
+                    }
+                    
                     .print-highlighted-line { background-color: rgba(254, 240, 138, 0.6) !important; border-bottom: 1.5px solid #eab308 !important; padding: 1px 3px !important; border-radius: 3px !important; font-weight: 500 !important; }
+                    
+                    /* Running Header/Footer */
+                    .running-header {
+                        display: flex;
+                        justify-content: space-between;
+                        font-size: 8px;
+                        color: #94a3b8;
+                        border-bottom: 1px solid #e2e8f0;
+                        padding-bottom: 4px;
+                        margin-bottom: 12px;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        font-weight: 600;
+                    }
+                    .running-footer {
+                        display: flex;
+                        justify-content: space-between;
+                        font-size: 8px;
+                        color: #94a3b8;
+                        border-top: 1px solid #e2e8f0;
+                        padding-top: 4px;
+                        margin-top: 12px;
+                        font-weight: 600;
+                    }
                 </style>
                 
                 <div class="print-container">
                     <!-- 1. COVER PAGE -->
                     <div class="cover-page print-page-break">
                         <div class="cover-header">
-                            <div class="cover-subtitle">ÖSYM KPSS DERS ÇALIŞMA ASİSTANI</div>
+                            <div class="cover-subtitle">${lessonSubtitle}</div>
                             <div class="cover-title">${lessonTitle}</div>
-                            <div class="text-[12px] font-bold text-slate-500 uppercase tracking-widest">EKSİKSİZ DERS NOTLARI KİTAPÇIĞI</div>
+                            <div class="cover-tagline">Akademik KPSS Hazırlık ve İleri Hafıza Teknikleri Rehberi</div>
                             <div class="cover-decoration"></div>
                         </div>
                         
                         <div class="cover-body">
                             <div class="cover-profile-pic">
-                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 38px; height: 38px;">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width: 32px; height: 32px;">
                                     <circle cx="50" cy="40" r="20" fill="#4f46e5"/>
                                     <path d="M 20,80 Q 50,55 80,80 Z" fill="#4f46e5"/>
                                 </svg>
                             </div>
-                            <h2 class="text-sm font-black print-text-dark">${userProfile.name}</h2>
-                            <p class="text-[9px] text-indigo-700 font-bold mt-1 uppercase tracking-wider"><i class="fa-solid fa-trophy mr-1"></i> ${userProfile.target}</p>
+                            <h2 class="text-sm font-black print-text-dark" style="font-family: 'Cinzel', serif; letter-spacing: 0.5px;">${userProfile.name}</h2>
+                            <p class="text-[9px] text-indigo-700 font-bold mt-1 uppercase tracking-wider"><i class="fa-solid fa-trophy mr-1"></i> HE-DEF: ${userProfile.target}</p>
                             <div style="background: #f8fafc; border-radius: 8px; padding: 10px; margin-top: 16px; border: 1px solid #e2e8f0;">
                                 <p class="text-[8px] print-text-muted italic">"${userProfile.slogan}"</p>
                             </div>
                             <div style="display: grid; grid-template-cols: repeat(2, 1fr); gap: 10px; margin-top: 16px; text-align: left;">
                                 <div style="border-right: 1px solid #e2e8f0; padding-right: 8px;">
-                                    <span class="text-[8px] print-text-muted uppercase font-bold block">Toplam Ünite</span>
+                                    <span class="text-[8px] print-text-muted uppercase font-bold block">Toplam Kapsam</span>
                                     <span class="text-xs font-black print-text-dark">${activeNoteDb.length} Ünite</span>
                                 </div>
                                 <div style="padding-left: 8px;">
-                                    <span class="text-[8px] print-text-muted uppercase font-bold block">Fosforlu Vurgu</span>
-                                    <span class="text-xs font-black print-text-dark">${countTotalHighlights(currentLesson)} Satır</span>
+                                    <span class="text-[8px] print-text-muted uppercase font-bold block">Kavram Notu</span>
+                                    <span class="text-xs font-black print-text-dark">${countTotalConceptsInNoteDb(activeNoteDb)} Kavram</span>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="cover-footer">
-                            <div class="cover-footer-text">KPSS AKADEMİK GELİŞİM PLATFORMU &copy; 2026</div>
+                            <div class="cover-footer-text">KPSS PORTAL BİLGİ NOTU MOTORU &copy; 2026</div>
                             <div class="text-[8px] text-slate-400 mt-1">${today} tarihinde oluşturuldu.</div>
                         </div>
                     </div>
@@ -2217,6 +2470,7 @@
             
             // 3. CHAPTERS & CONTENT
             activeNoteDb.forEach((unitNote, idx) => {
+                // Chapter page break divider
                 bookletHtml += `
                     <div class="chapter-divider print-page-break">
                         <div class="chapter-number">${idx + 1}. ÜNİTE</div>
@@ -2226,10 +2480,31 @@
                     </div>
                 `;
                 
+                // Content pages formatted in stable grid layout
+                bookletHtml += `
+                    <div class="running-header no-print-element">
+                        <span>${lessonTitle}</span>
+                        <span>${idx + 1}. ÜNİTE: ${unitNote.unite}</span>
+                    </div>
+                    <div class="unit-content-grid print-page-break">
+                `;
+                
                 let concepts = Object.keys(unitNote.kavramlar || {});
                 concepts.forEach(kavram => {
                     const rawHtml = unitNote.kavramlar[kavram];
-                    const lines = rawHtml.split('<br>');
+                    
+                    // Parse out the ÖSYM Tuzağı box to render it beautifully
+                    let mainText = rawHtml;
+                    let trapText = "";
+                    
+                    const trapIndex = rawHtml.indexOf("⚠️");
+                    if (trapIndex !== -1) {
+                        mainText = rawHtml.substring(0, trapIndex).trim();
+                        trapText = rawHtml.substring(trapIndex).trim();
+                    }
+                    
+                    // Apply highlighting
+                    const lines = mainText.split('<br>');
                     const formattedLines = lines.map((line, lIdx) => {
                         if (!line.trim()) return '<br>';
                         const isHighlighted = isConceptLineHighlighted(kavram, lIdx);
@@ -2239,18 +2514,39 @@
                         return line;
                     }).join('<br>');
                     
-                    bookletHtml += `
+                    let cardHtml = `
                         <div class="concept-print-card print-avoid-break">
                             <div class="concept-header-print">
                                 <span class="concept-tag-print">#${kavram}</span>
                                 <span class="concept-unit-print">${unitNote.unite}</span>
                             </div>
-                            <div class="text-[10px] leading-relaxed print-text-dark text-justify" style="color: #1e293b !important;">
+                            <div class="text-[9.5px] leading-relaxed print-text-dark text-justify" style="color: #1e293b !important; font-family: 'Inter', sans-serif;">
                                 ${formattedLines}
                             </div>
+                    `;
+                    
+                    if (trapText) {
+                        cardHtml += `
+                            <div class="osym-trap-box">
+                                ${trapText}
+                            </div>
+                        `;
+                    }
+                    
+                    cardHtml += `
                         </div>
                     `;
+                    
+                    bookletHtml += cardHtml;
                 });
+                
+                bookletHtml += `
+                    </div>
+                    <div class="running-footer no-print-element">
+                        <span>KPSS Akademik Gelişim Platformu &copy; 2026</span>
+                        <span>Ders Notları Kitapçığı</span>
+                    </div>
+                `;
             });
             
             bookletHtml += `
@@ -2281,7 +2577,7 @@
                 return;
             }
             
-            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
+            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (currentLesson === 'cografya' ? (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []) : (typeof vatandaslik_not_db !== 'undefined' ? vatandaslik_not_db : []));
             if (activeNoteDb.length === 0) return;
             
             const isBookletMode = document.getElementById("toggle-booklet-mode")?.checked || false;
@@ -2522,7 +2818,7 @@
         function switchLesson(lesson) {
             if ('speechSynthesis' in window) window.speechSynthesis.cancel();
             currentLesson = lesson; isTaramaTestMode = false;
-            currentData = lesson === 'tarih' ? (typeof tarih_db !== 'undefined' ? tarih_db : []) : (typeof cografya_db !== 'undefined' ? cografya_db : []);
+            currentData = lesson === 'tarih' ? (typeof tarih_db !== 'undefined' ? tarih_db : []) : (lesson === 'cografya' ? (typeof cografya_db !== 'undefined' ? cografya_db : []) : (typeof vatandaslik_db !== 'undefined' ? vatandaslik_db : []));
             activeUnitIdx = 0; activeGroupIdx = 0; cardIdx = 0; quizIdx = 0; score = 0;
             
             // Restore correct main view panels (fixes blank pages when switching lessons from notebook/analysis views)
@@ -2530,6 +2826,7 @@
             
             document.getElementById("btn-tarih").className = lesson === 'tarih' ? "px-5 py-2 rounded-lg font-bold text-xs uppercase bg-amber-500 text-slate-950 shadow-sm cursor-pointer hover:scale-102 transition-transform" : "px-5 py-2 rounded-lg font-bold text-xs uppercase text-slate-400 hover:text-slate-200 cursor-pointer";
             document.getElementById("btn-cografya").className = lesson === 'cografya' ? "px-5 py-2 rounded-lg font-bold text-xs uppercase bg-emerald-500 text-slate-950 shadow-sm cursor-pointer hover:scale-102 transition-transform" : "px-5 py-2 rounded-lg font-bold text-xs uppercase text-slate-400 hover:text-slate-200 cursor-pointer";
+            document.getElementById("btn-vatandaslik").className = lesson === 'vatandaslik' ? "px-5 py-2 rounded-lg font-bold text-xs uppercase bg-indigo-600 text-white shadow-sm cursor-pointer hover:scale-102 transition-transform" : "px-5 py-2 rounded-lg font-bold text-xs uppercase text-slate-400 hover:text-slate-200 cursor-pointer";
 
             buildUnitList(); 
             buildGroupSelector(); 
@@ -2539,9 +2836,19 @@
         function buildUnitList() {
             const container = document.getElementById("unit-list"); container.innerHTML = "";
             if(currentData.length === 0) return;
+            
+            let activeColorClass = "";
+            if (currentLesson === 'tarih') {
+                activeColorClass = "bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 shadow-md shadow-orange-500/20 font-black";
+            } else if (currentLesson === 'cografya') {
+                activeColorClass = "bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 shadow-md shadow-emerald-500/20 font-black";
+            } else {
+                activeColorClass = "bg-gradient-to-r from-indigo-600 to-indigo-700 text-white shadow-md shadow-indigo-500/20 font-black";
+            }
+            
             currentData.forEach((item, index) => {
                 const btn = document.createElement("button");
-                btn.className = `w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold flex justify-between items-center transition-all cursor-pointer ${index === activeUnitIdx && !isTaramaTestMode ? 'bg-gradient-to-r from-indigo-600 to-indigo-700 text-white shadow-md shadow-indigo-500/25 border-indigo-500' : 'text-slate-400 hover:bg-slate-900 border border-transparent hover-glow'}`;
+                btn.className = `w-full text-left px-3 py-2.5 rounded-xl text-xs flex justify-between items-center transition-all cursor-pointer ${index === activeUnitIdx && !isTaramaTestMode ? activeColorClass : 'text-slate-400 hover:bg-slate-900/60 border border-transparent hover-glow font-bold'}`;
                 btn.onclick = () => { isTaramaTestMode = false; activeUnitIdx = index; cardIdx = 0; quizIdx = 0; score = 0; switchMode(currentMode); buildUnitList(); buildGroupSelector(); renderAll(); };
                 btn.innerHTML = `<span class="truncate pr-2">${item.unite}</span><i class="fa-solid fa-chevron-right text-[9px] opacity-40"></i>`;
                 container.appendChild(btn);
@@ -2592,9 +2899,19 @@
             document.getElementById("view-map-atlas").classList.add("hidden");
             document.getElementById("box-group-selector").classList.add("hidden");
 
+            // Dynamic Active tab styling depending on lesson color brand
+            let activeColorClass = "bg-slate-800 text-white";
+            if (currentLesson === 'tarih') {
+                activeColorClass = "bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 shadow-md shadow-orange-500/10 font-black";
+            } else if (currentLesson === 'cografya') {
+                activeColorClass = "bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 shadow-md shadow-emerald-500/10 font-black";
+            } else {
+                activeColorClass = "bg-gradient-to-r from-indigo-600 to-indigo-750 text-white shadow-md shadow-indigo-600/20 font-black";
+            }
+
             // Reset tab styles
-            const inactiveClass = "flex-grow sm:flex-none px-3.5 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer flex items-center justify-center gap-1 transition-all duration-200";
-            const activeClass = "flex-grow sm:flex-none px-3.5 py-1.5 rounded-md bg-slate-800 text-white shadow-xs cursor-pointer flex items-center justify-center gap-1 transition-all duration-200";
+            const inactiveClass = "flex-grow sm:flex-none px-3.5 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer flex items-center justify-center gap-1 transition-all duration-200 font-bold";
+            const activeClass = `flex-grow sm:flex-none px-3.5 py-1.5 rounded-md ${activeColorClass} cursor-pointer flex items-center justify-center gap-1 transition-all duration-200`;
 
             if (btnRoadmap) btnRoadmap.className = inactiveClass;
             if (btnCards) btnCards.className = inactiveClass;
@@ -2612,6 +2929,7 @@
                 document.getElementById("view-cards").classList.remove("hidden");
                 if (btnCards) btnCards.className = activeClass;
                 buildUnitList();
+                renderAll();
             } else if (mode === 'quiz') {
                 document.getElementById("view-quiz").classList.remove("hidden");
                 if (btnQuiz) btnQuiz.className = activeClass;
@@ -2694,12 +3012,12 @@
             updateConceptStatus(kavram, states);
             localStorage.setItem('kpss_concept_states', JSON.stringify(states));
             
-            showToastNotification(`📖 #${kavram} konusu ${isReadState ? 'çalışıldı (okundu)' : 'çalışılmadı'} olarak işaretlendi!`);
+            showNotification(`#${kavram} konusu ${isReadState ? 'çalışıldı (okundu)' : 'çalışılmadı'} olarak işaretlendi!`, 'success');
             
             // Eğer aktif yol haritası gününün hedefiyse Görev 1'i tamamla
-            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
-            if (activeRoadmapDay <= 5) {
-                let keys = Object.keys(activeNoteDb[activeRoadmapDay - 1].kavramlar);
+            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (currentLesson === 'cografya' ? (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []) : (typeof vatandaslik_not_db !== 'undefined' ? vatandaslik_not_db : []));
+            if (activeRoadmapDay <= 5 && activeNoteDb[activeRoadmapDay - 1]) {
+                let keys = Object.keys(activeNoteDb[activeRoadmapDay - 1].kavramlar || {});
                 let target = getFirstIncompleteConcept(activeRoadmapDay - 1) || keys[0];
                 if (target === kavram && isReadState) {
                     markQuestCompleted(activeRoadmapDay, 1);
@@ -2714,10 +3032,11 @@
             
             renderNotesView();
             if (currentMode === 'roadmap') renderRoadmapView();
+            updateDailyMissionsUI(); // Instantly update active progress trackers
         }
 
         function getFirstIncompleteConcept(unitIdx) {
-            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
+            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (currentLesson === 'cografya' ? (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []) : (typeof vatandaslik_not_db !== 'undefined' ? vatandaslik_not_db : []));
             const unitNotes = activeNoteDb[unitIdx];
             if (!unitNotes || !unitNotes.kavramlar) return null;
             
@@ -2792,10 +3111,11 @@
                     }
                     
                     if (isActive) {
-                        borderClass = "border-indigo-500/80 ring-1 ring-indigo-500/30";
+                        let brandColor = currentLesson === 'tarih' ? 'amber-500' : (currentLesson === 'cografya' ? 'emerald-500' : 'indigo-500');
+                        borderClass = `border-${brandColor}/80 ring-1 ring-${brandColor}/30`;
                         bgClass = "bg-slate-950";
                         textClass = "text-white";
-                        glowEl = `<span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-indigo-500 rounded-full animate-ping"></span>`;
+                        glowEl = `<span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-${brandColor} rounded-full animate-ping"></span>`;
                     }
                     
                     const dayCard = document.createElement("div");
@@ -2805,9 +3125,10 @@
                         renderRoadmapView();
                     };
                     
+                    let brandTextClass = currentLesson === 'tarih' ? 'text-amber-400' : (currentLesson === 'cografya' ? 'text-emerald-400' : 'text-indigo-400');
                     dayCard.innerHTML = `
                         ${glowEl}
-                        <span class="text-[8px] font-black uppercase tracking-wider ${isActive ? 'text-indigo-400' : 'text-slate-500'}">${dayNames[i-1]}</span>
+                        <span class="text-[8px] font-black uppercase tracking-wider ${isActive ? brandTextClass : 'text-slate-500'}">${dayNames[i-1]}</span>
                         <span class="text-xs font-black my-1 ${textClass}">${dayShorts[i-1]}</span>
                         <span class="text-[7px] text-slate-500 font-bold uppercase truncate max-w-full">${focusText}</span>
                         ${isCompleted ? '<i class="fa-solid fa-circle-check text-[9px] text-emerald-400 mt-1"></i>' : ''}
@@ -2818,7 +3139,7 @@
             }
 
             // 3. Görev İstasyonu İçeriğini Dinamik Belirle
-            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
+            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (currentLesson === 'cografya' ? (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []) : (typeof vatandaslik_not_db !== 'undefined' ? vatandaslik_not_db : []));
             let states = JSON.parse(localStorage.getItem('kpss_concept_states')) || {};
             let conceptTag = "";
             let conceptTitle = "";
@@ -3017,7 +3338,7 @@
 
             // 7. YENİ: KPSS Müfredat İzleyici & Analiz Dashboard'unu Çiz
             const trackerLessonTitle = document.getElementById("roadmap-tracker-lesson-title");
-            if (trackerLessonTitle) trackerLessonTitle.textContent = currentLesson === 'tarih' ? 'Tarih' : 'Coğrafya';
+            if (trackerLessonTitle) trackerLessonTitle.textContent = currentLesson === 'tarih' ? 'Tarih' : (currentLesson === 'cografya' ? 'Coğrafya' : 'Vatandaşlık');
             
             const trackerGrid = document.getElementById("roadmap-curriculum-tracker");
             if (trackerGrid) {
@@ -3106,7 +3427,7 @@
 
         function executeQuest(questIdx) {
             checkDailyMissionsDate();
-            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
+            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (currentLesson === 'cografya' ? (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []) : (typeof vatandaslik_not_db !== 'undefined' ? vatandaslik_not_db : []));
             let key = currentLesson + "_" + activeRoadmapDay;
             
             if (activeRoadmapDay <= 5) {
@@ -3244,7 +3565,7 @@
             let pureTag = tag.replace('#', '').toLowerCase();
             
             // Dynamic Unit Index Resolution to prevent cross-unit quiz mismatches
-            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
+            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (currentLesson === 'cografya' ? (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []) : (typeof vatandaslik_not_db !== 'undefined' ? vatandaslik_not_db : []));
             let foundUnitIdx = -1;
             for (let i = 0; i < activeNoteDb.length; i++) {
                 if (activeNoteDb[i].kavramlar && activeNoteDb[i].kavramlar[tag]) {
@@ -3388,6 +3709,12 @@
                     speakText(unit.cards[cardIdx].q);
                 }
             }
+            
+            if (currentMode === 'cards') {
+                updateLeitnerCountsUI();
+                return; // Bypasses heavy notes & quiz re-rendering, fixing flashcard switching lag completely!
+            }
+            
             prepareGroupQuestions(); 
             if (currentMode === 'notes') {
                 renderNotesView();
@@ -3490,22 +3817,57 @@
                 }
                 localStorage.setItem('kpss_concept_review_scores', JSON.stringify(reviewScores));
                 
-                let history = reviewScores[currentLesson][concept];
-                if (history.length >= 5) {
-                    let correctCount = history.filter(v => v === 1).length;
-                    let accuracy = correctCount / history.length;
+                // USER'S NEW STRICT RULE: IF WRONG, INSTANT DECAY & PUSH TO MISTAKE NOTEBOOK / PRESCRIPTION!
+                if (!isCorrect) {
+                    let states = JSON.parse(localStorage.getItem('kpss_concept_states')) || {};
+                    if (!states[currentLesson]) states[currentLesson] = {};
+                    if (!states[currentLesson][concept]) {
+                        states[currentLesson][concept] = { read: false, cards_viewed: false, quiz_score: { correct: 0, total: 0 }, status: 'not_started' };
+                    }
                     
-                    if (accuracy < 0.70) {
-                        let states = JSON.parse(localStorage.getItem('kpss_concept_states')) || {};
-                        if (states[currentLesson] && states[currentLesson][concept] && states[currentLesson][concept].status === 'completed') {
-                            states[currentLesson][concept].quiz_score = { correct: 0, total: 10 }; // Reset/fail their concept quiz score
-                            updateConceptStatus(concept, states); // Recalculate status to transition to incomplete/Eksik Konu
-                            localStorage.setItem('kpss_concept_states', JSON.stringify(states));
-                            
-                            setTimeout(() => {
-                                alert(`⚠️ Hatırlatıcı Analiz Uyarısı!\n'#${concept}' konusundan çözdüğün son hatırlatıcı sorulardaki başarı oranın %${Math.round(accuracy * 100)} seviyesine düştü. Bu konu tekrar 'Eksik Konu' kategorisine alındı!`);
-                                if (currentMode === 'roadmap') renderRoadmapView();
-                            }, 500);
+                    states[currentLesson][concept].quiz_score = { correct: 0, total: 10 }; // Reset quiz score
+                    updateConceptStatus(concept, states); // Recycle back to 'incomplete' / Eksik Konu
+                    localStorage.setItem('kpss_concept_states', JSON.stringify(states));
+                    
+                    // Add to Mistake Notebook
+                    let rawQ = activeQ.q.replace("[HATIRLATICI] ", "");
+                    if (!kpssNotebook.some(n => n.q === rawQ)) {
+                        kpssNotebook.push({
+                            lesson: currentLesson,
+                            unit: "Sistemik Hatırlatıcı",
+                            q: rawQ,
+                            options: activeQ.options,
+                            correct: activeQ.correct,
+                            rationale: `<b>SİSTEMİK HATIRLATMA UYARISI:</b> Furkan bu konuyu daha önce tamamlamıştı fakat hatırlatıcı soruda yanlış yaptı. #${concept} konusuna acilen göz atılmalıdır.`,
+                            tag: `#${concept}`
+                        });
+                        localStorage.setItem('kpss_notebook', JSON.stringify(kpssNotebook));
+                        localStorage.setItem('kpss_furkan_notebook', JSON.stringify(kpssNotebook));
+                    }
+                    
+                    setTimeout(() => {
+                        alert(`⚠️ Unutma Analizi Uyarısı!\n'#${concept}' konusuna ait hatırlatıcı soruda hata yaptın! Bu konu acilen çalışılması için 'Eksik Konu' olarak Hata Defterine ve Akademik Reçeteye eklendi.`);
+                        if (currentMode === 'roadmap') renderRoadmapView();
+                    }, 500);
+                } else {
+                    // Normal rolling check if correct
+                    let history = reviewScores[currentLesson][concept];
+                    if (history.length >= 5) {
+                        let correctCount = history.filter(v => v === 1).length;
+                        let accuracy = correctCount / history.length;
+                        
+                        if (accuracy < 0.70) {
+                            let states = JSON.parse(localStorage.getItem('kpss_concept_states')) || {};
+                            if (states[currentLesson] && states[currentLesson][concept] && states[currentLesson][concept].status === 'completed') {
+                                states[currentLesson][concept].quiz_score = { correct: 0, total: 10 };
+                                updateConceptStatus(concept, states);
+                                localStorage.setItem('kpss_concept_states', JSON.stringify(states));
+                                
+                                setTimeout(() => {
+                                    alert(`⚠️ Hatırlatıcı Analiz Uyarısı!\n'#${concept}' konusundan çözdüğün son hatırlatıcı sorulardaki başarı oranın %${Math.round(accuracy * 100)} seviyesine düştü. Bu konu tekrar 'Eksik Konu' kategorisine alındı!`);
+                                    if (currentMode === 'roadmap') renderRoadmapView();
+                                }, 500);
+                            }
                         }
                     }
                 }
@@ -3658,18 +4020,129 @@
 
         function deleteFromNotebook(q) { kpssNotebook = kpssNotebook.filter(n => n.q !== q); saveStateToStorage(); openNotebookView(); }
         
+        // --- 🧠 LEITNER SPACED REPETITION SYSTEM ENGINE (v22.0) ---
+        function getLeitnerState() {
+            return JSON.parse(localStorage.getItem('kpss_leitner_cards')) || {};
+        }
+
+        function changeCardWithTransition(newIdx) {
+            const cardContainer = document.getElementById("card-container");
+            const isFlipped = cardContainer && cardContainer.classList.contains("flipped");
+            
+            if (isFlipped) {
+                cardContainer.classList.remove("flipped");
+                setTimeout(() => {
+                    cardIdx = newIdx;
+                    recordCardReviewed();
+                    renderAll();
+                }, 200); // Wait 200ms (smooth mid-flip swap)
+            } else {
+                cardIdx = newIdx;
+                recordCardReviewed();
+                renderAll();
+            }
+        }
+
+        function rateLeitnerCard(rating) {
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+            
+            const unitCards = currentData[activeUnitIdx]?.cards || [];
+            if (unitCards.length === 0) return;
+            
+            const card = unitCards[cardIdx];
+            const cardKey = `${currentLesson}_${card.q}`;
+            
+            let leitner = getLeitnerState();
+            let box = 1;
+            if (rating === 'zor') box = 1;
+            else if (rating === 'orta') box = 2;
+            else if (rating === 'kolay') box = 3;
+            
+            leitner[cardKey] = {
+                box: box,
+                last_reviewed: Date.now(),
+                q: card.q,
+                a: card.a,
+                lesson: currentLesson,
+                unit: currentData[activeUnitIdx].unite
+            };
+            
+            localStorage.setItem('kpss_leitner_cards', JSON.stringify(leitner));
+            showNotification(`Kart Kutu ${box}'e Kaydedildi! (${rating.toUpperCase()})`);
+            
+            let newIdx = (cardIdx < unitCards.length - 1) ? cardIdx + 1 : 0;
+            changeCardWithTransition(newIdx);
+        }
+
+        function updateLeitnerCountsUI() {
+            const unitCards = currentData[activeUnitIdx]?.cards || [];
+            let leitner = getLeitnerState();
+            
+            let c1 = 0, c2 = 0, c3 = 0;
+            unitCards.forEach(card => {
+                const cardKey = `${currentLesson}_${card.q}`;
+                let box = leitner[cardKey]?.box || 1; // default Box 1
+                if (box === 1) c1++;
+                else if (box === 2) c2++;
+                else if (box === 3) c3++;
+            });
+            
+            const e1 = document.getElementById("leitner-count-1");
+            const e2 = document.getElementById("leitner-count-2");
+            const e3 = document.getElementById("leitner-count-3");
+            
+            if (e1) e1.textContent = c1;
+            if (e2) e2.textContent = c2;
+            if (e3) e3.textContent = c3;
+        }
+
+        function nextLeitnerCard() {
+            const unitCards = currentData[activeUnitIdx]?.cards || [];
+            if (unitCards.length === 0) return;
+            
+            let leitner = getLeitnerState();
+            let box1Cards = [];
+            let box2Cards = [];
+            let box3Cards = [];
+            
+            unitCards.forEach((card, idx) => {
+                const cardKey = `${currentLesson}_${card.q}`;
+                let box = leitner[cardKey]?.box || 1;
+                if (box === 1) box1Cards.push(idx);
+                else if (box === 2) box2Cards.push(idx);
+                else if (box === 3) box3Cards.push(idx);
+            });
+            
+            let rand = Math.random();
+            let chosenIdx = 0;
+            
+            if (rand < 0.60 && box1Cards.length > 0) {
+                chosenIdx = box1Cards[Math.floor(Math.random() * box1Cards.length)];
+            } else if (rand < 0.90 && box2Cards.length > 0) {
+                chosenIdx = box2Cards[Math.floor(Math.random() * box2Cards.length)];
+            } else if (box3Cards.length > 0) {
+                chosenIdx = box3Cards[Math.floor(Math.random() * box3Cards.length)];
+            } else {
+                chosenIdx = (cardIdx + 1) % unitCards.length;
+            }
+            
+            changeCardWithTransition(chosenIdx);
+        }
+
         function nextCard() { 
             if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-            cardIdx = (cardIdx < currentData[activeUnitIdx].cards.length - 1) ? cardIdx + 1 : 0; 
-            recordCardReviewed();
-            renderAll(); 
+            const unitCards = currentData[activeUnitIdx]?.cards || [];
+            if (unitCards.length === 0) return;
+            let newIdx = (cardIdx < unitCards.length - 1) ? cardIdx + 1 : 0; 
+            changeCardWithTransition(newIdx);
         }
 
         function prevCard() { 
             if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-            cardIdx = (cardIdx > 0) ? cardIdx - 1 : currentData[activeUnitIdx].cards.length - 1; 
-            recordCardReviewed();
-            renderAll(); 
+            const unitCards = currentData[activeUnitIdx]?.cards || [];
+            if (unitCards.length === 0) return;
+            let newIdx = (cardIdx > 0) ? cardIdx - 1 : unitCards.length - 1; 
+            changeCardWithTransition(newIdx);
         }
 
         // --- PREMIUM MAP ATLAS ENGINE ---
@@ -4267,7 +4740,7 @@
                 topicErrorBarsHtml += `</div>`;
             }
 
-            const lessonTitle = currentLesson === 'tarih' ? "Tarih & İlk Türk-İslam Kültürü" : "Coğrafya & Türkiye Fiziki Morfolojisi";
+            const lessonTitle = currentLesson === 'tarih' ? "Tarih & İlk Türk-İslam Kültürü" : (currentLesson === 'cografya' ? "Coğrafya & Türkiye Fiziki Morfolojisi" : "Vatandaşlık & Temel Hukuk Düzeni");
             const speedCoach = avgTime < 30 ? "Mükemmel Hız (ÖSYM Sınav Ritmine Tam Uyumlu)" : (avgTime <= 60 ? "İdeal Hız (Süreyi Dengeli ve Verimli Kullanma)" : "Biraz Hızlanmalı (Soru pratikleriyle hızlanma tavsiye edilir)");
 
             printWrapper.innerHTML = `
@@ -4432,7 +4905,7 @@
         }
         
         function getConceptForCard(qText, aText) {
-            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []);
+            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (currentLesson === 'cografya' ? (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []) : (typeof vatandaslik_not_db !== 'undefined' ? vatandaslik_not_db : []));
             let match = null;
             let maxMatch = 0;
             
@@ -4479,7 +4952,7 @@
                             updateConceptStatus(matchedConcept, states);
                             localStorage.setItem('kpss_concept_states', JSON.stringify(states));
                             
-                            showToastNotification(`🎴 #${matchedConcept} kart çalışması başarıyla kaydedildi!`);
+                            showNotification(`#${matchedConcept} kart çalışması başarıyla kaydedildi!`, 'success');
                             if (currentMode === 'roadmap') renderRoadmapView();
                         }
                     }
@@ -4706,6 +5179,7 @@
             
             let allTarihQ = [];
             let allCografyaQ = [];
+            let allVatandaslikQ = [];
             
             const tDb = typeof tarih_db !== 'undefined' ? tarih_db : [];
             tDb.forEach(unit => {
@@ -4715,20 +5189,25 @@
             cDb.forEach(unit => {
                 if (unit.quiz) allCografyaQ.push(...unit.quiz);
             });
+            const vDb = typeof vatandaslik_db !== 'undefined' ? vatandaslik_db : [];
+            vDb.forEach(unit => {
+                if (unit.quiz) allVatandaslikQ.push(...unit.quiz);
+            });
             
-            if (allTarihQ.length < 27 || allCografyaQ.length < 18) {
+            if (allTarihQ.length < 27 || allCografyaQ.length < 18 || allVatandaslikQ.length < 9) {
                 alert("ℹ️ Deneme sınavı başlatmak için soru veritabanı boyutu yetersiz.");
                 return;
             }
             
             let selectedTarih = allTarihQ.sort(() => 0.5 - Math.random()).slice(0, 27).map(q => { return {...q, lesson: 'tarih'}; });
             let selectedCografya = allCografyaQ.sort(() => 0.5 - Math.random()).slice(0, 18).map(q => { return {...q, lesson: 'cografya'}; });
+            let selectedVatandaslik = allVatandaslikQ.sort(() => 0.5 - Math.random()).slice(0, 9).map(q => { return {...q, lesson: 'vatandaslik'}; });
             
-            examQuestions = [...selectedTarih, ...selectedCografya];
-            examAnswers = new Array(45).fill(null);
+            examQuestions = [...selectedTarih, ...selectedCografya, ...selectedVatandaslik];
+            examAnswers = new Array(examQuestions.length).fill(null);
             
             examIdx = 0;
-            examTimerSeconds = 2700;
+            examTimerSeconds = 3240;
             isExamMode = true;
             
             document.getElementById("exam-start-panel").classList.add("hidden");
@@ -4767,7 +5246,7 @@
             if (examQuestions.length === 0) return;
             const q = examQuestions[examIdx];
             
-            document.getElementById("lbl-exam-progress").textContent = `Soru ${examIdx + 1} / 45`;
+            document.getElementById("lbl-exam-progress").textContent = `Soru ${examIdx + 1} / ${examQuestions.length}`;
             document.getElementById("lbl-exam-question-tag").textContent = q.tag || "#GenelKazanım";
             document.getElementById("txt-exam-q").textContent = q.q;
             
@@ -4776,9 +5255,12 @@
                 if (q.lesson === 'tarih') {
                     badge.textContent = "TARİH";
                     badge.className = "px-2.5 py-0.5 rounded bg-amber-950/40 border border-amber-900/40 text-amber-400 text-[9px] font-black tracking-wider";
-                } else {
+                } else if (q.lesson === 'cografya') {
                     badge.textContent = "COĞRAFYA";
                     badge.className = "px-2.5 py-0.5 rounded bg-emerald-950/40 border border-emerald-900/40 text-emerald-400 text-[9px] font-black tracking-wider";
+                } else {
+                    badge.textContent = "VATANDAŞLIK";
+                    badge.className = "px-2.5 py-0.5 rounded bg-indigo-950/40 border border-indigo-900/40 text-indigo-400 text-[9px] font-black tracking-wider";
                 }
             }
             
@@ -4834,7 +5316,7 @@
                 navContainer.appendChild(midLabel);
                 
                 const nextBtn = document.createElement("button");
-                if (examIdx === 44) {
+                if (examIdx === examQuestions.length - 1) {
                     nextBtn.textContent = "Sınavı Bitir";
                     nextBtn.className = "px-4 py-2 bg-gradient-to-r from-rose-600 to-red-600 text-white rounded-xl text-xs font-bold flex items-center gap-2 cursor-pointer hover:from-rose-500 hover:to-red-500 shadow-md hover-glow";
                     nextBtn.onclick = () => finishExamEarly();
@@ -4962,6 +5444,30 @@
             isWizardCardFlipped = false;
             selectedWizardAnswer = null;
 
+            // Restore original HTML structure of Step 3 Pane to clean up after any previous runs
+            const step3Pane = document.getElementById("wizard-step3-pane");
+            if (step3Pane) {
+                step3Pane.innerHTML = `
+                    <div class="p-3 bg-slate-950/40 border border-slate-850 rounded-xl flex justify-between items-center text-[10px]">
+                        <span class="text-slate-400 font-bold uppercase tracking-wider"><i class="fa-solid fa-bolt text-indigo-400"></i> Zayıf Konu Değerlendirme Sınavı</span>
+                        <span id="wizard-quiz-indicator" class="px-2.5 py-0.5 bg-rose-950/40 text-rose-400 border border-rose-900/50 rounded font-black font-mono">SORU: 1 / 5</span>
+                    </div>
+                    
+                    <!-- Soru Alanı -->
+                    <div class="p-4 bg-slate-950/80 border border-slate-850 rounded-xl space-y-4">
+                        <p id="wizard-question-text" class="text-xs font-bold text-slate-200 leading-relaxed">Soru yükleniyor...</p>
+                        <div id="wizard-options-container" class="grid grid-cols-1 gap-2.5">
+                            <!-- Seçenekler buraya eklenecek -->
+                        </div>
+                    </div>
+                    
+                    <!-- Soru Raporu Açıklama Kutusu -->
+                    <div id="wizard-explanation-box" class="hidden p-3 bg-slate-950 border border-slate-800 rounded-xl text-[10px] leading-relaxed text-slate-400 max-h-36 overflow-y-auto">
+                        <!-- Gerekçe buraya eklenecek -->
+                    </div>
+                `;
+            }
+
             // Reset CSS card classes
             const cardContainer = document.getElementById("wizard-flashcard-container");
             if (cardContainer) cardContainer.classList.remove("flipped");
@@ -4976,7 +5482,7 @@
             // Step 1: Load Concept Summary
             let pureTag = tag.replace('#', '');
             let foundNote = null;
-            let notDb = currentLesson === 'tarih' ? tarih_not_db : cografya_not_db;
+            let notDb = currentLesson === 'tarih' ? tarih_not_db : (currentLesson === 'cografya' ? cografya_not_db : vatandaslik_not_db);
             for (let u of notDb) {
                 if (u.kavramlar && u.kavramlar[pureTag]) {
                     foundNote = u.kavramlar[pureTag];
@@ -5038,7 +5544,7 @@
                 // Find matching flashcards or fallback
                 let matchedItem = kpssNotebook.find(n => n.tag === currentWizardTag);
                 let unitName = matchedItem ? matchedItem.unit : "";
-                let db = currentLesson === 'tarih' ? tarih_db : cografya_db;
+                let db = currentLesson === 'tarih' ? tarih_db : (currentLesson === 'cografya' ? cografya_db : vatandaslik_db);
                 let foundUnit = db.find(u => u.unite === unitName) || db[3]; // Fallback to unit 4
                 
                 wizardCards = foundUnit.cards || [];
@@ -5054,35 +5560,45 @@
                 // Move to Step 3: Sınav
                 showWizardStep(3);
                 
-                let db = currentLesson === 'tarih' ? tarih_db : cografya_db;
+                let db = currentLesson === 'tarih' ? tarih_db : (currentLesson === 'cografya' ? cografya_db : vatandaslik_db);
                 let tagFiltered = [];
+                let pureWTag = currentWizardTag.replace('#', '').trim().toLowerCase();
+                
+                // 1. Gather all questions matching the target concept tag
                 db.forEach(u => {
                     if (u.quiz) {
                         u.quiz.forEach(q => {
-                            if (q.tag === currentWizardTag) {
+                            let qTag = (q.tag || '').replace('#', '').trim().toLowerCase();
+                            if (qTag === pureWTag) {
                                 tagFiltered.push(q);
                             }
                         });
                     }
                 });
                 
-                // If we don't have enough questions with this tag, fallback to unit questions
-                if (tagFiltered.length < 5) {
-                    let matchedItem = kpssNotebook.find(n => n.tag === currentWizardTag);
-                    let unitName = matchedItem ? matchedItem.unit : "";
-                    db.forEach(u => {
-                        if (u.unite === unitName && u.quiz) {
-                            u.quiz.forEach(q => {
-                                if (!tagFiltered.includes(q)) {
-                                    tagFiltered.push(q);
-                                }
-                            });
+                // 2. Find which unit contains this concept tag in the database
+                let foundUnit = null;
+                db.forEach(u => {
+                    if (u.quiz) {
+                        let hasTag = u.quiz.some(q => (q.tag || '').replace('#', '').trim().toLowerCase() === pureWTag);
+                        if (hasTag) {
+                            foundUnit = u;
+                        }
+                    }
+                });
+                
+                // 3. If fewer than 5 questions exist for the concept, pad with other questions from the same unit
+                if (tagFiltered.length < 5 && foundUnit && foundUnit.quiz) {
+                    foundUnit.quiz.forEach(q => {
+                        if (!tagFiltered.includes(q)) {
+                            tagFiltered.push(q);
                         }
                     });
                 }
                 
                 wizardQuestions = tagFiltered.slice(0, 5);
-                // In case of absolute fallback, take questions from anywhere in lesson
+                
+                // 4. Absolute fallback - in case the tag is not found anywhere, fetch from the first available unit
                 if (wizardQuestions.length === 0) {
                     db.forEach(u => {
                         if (u.quiz) {
@@ -5264,54 +5780,95 @@
         }
 
         function completeWizardPrescription() {
-            // Remove error tag from Hata Defteri kpssNotebook!
-            kpssNotebook = kpssNotebook.filter(item => !(item.lesson === currentLesson && item.tag === currentWizardTag));
-            localStorage.setItem('kpss_notebook', JSON.stringify(kpssNotebook));
-            localStorage.setItem('kpss_furkan_notebook', JSON.stringify(kpssNotebook));
+            let pureTag = currentWizardTag.replace('#', '');
+            let states = JSON.parse(localStorage.getItem('kpss_concept_states')) || {};
+            if (!states[currentLesson]) states[currentLesson] = {};
+            if (!states[currentLesson][pureTag]) {
+                states[currentLesson][pureTag] = { read: false, cards_viewed: false, quiz_score: { correct: 0, total: 0 }, status: 'not_started' };
+            }
             
-            // Mark Quest 3 completed
-            markQuestCompleted(activeRoadmapDay, 3);
-
-            // Congratulation screen inside Step 3 Pane
             const step3Pane = document.getElementById("wizard-step3-pane");
             
-            let resultFeedback = "";
             if (wizardScore >= 4) {
-                resultFeedback = "<p class='text-emerald-400 font-bold'><i class='fa-solid fa-circle-check'></i> MÜKEMMEL SKOR! Bu etiket Hata Defteri'nden kalıcı olarak silindi ve AI Analiz Verilerin başarıyla güncellendi!</p>";
+                // SUCCESS BRANCH
+                // Remove error tag from Hata Defteri kpssNotebook!
+                kpssNotebook = kpssNotebook.filter(item => !(item.lesson === currentLesson && item.tag === currentWizardTag));
+                localStorage.setItem('kpss_notebook', JSON.stringify(kpssNotebook));
+                localStorage.setItem('kpss_furkan_notebook', JSON.stringify(kpssNotebook));
+                
+                // Mark Quest 3 completed
+                markQuestCompleted(activeRoadmapDay, 3);
+                
+                // Reçete başarılı tamamlandıysa konuyu tamamlandı olarak işaretle!
+                states[currentLesson][pureTag].read = true;
+                states[currentLesson][pureTag].cards_viewed = true;
+                states[currentLesson][pureTag].quiz_score = { correct: wizardScore, total: 5 };
+                states[currentLesson][pureTag].status = 'completed';
+                
+                updateConceptStatus(pureTag, states);
+                localStorage.setItem('kpss_concept_states', JSON.stringify(states));
+                
+                let resultFeedback = "<p class='text-emerald-400 font-bold'><i class='fa-solid fa-circle-check'></i> MÜKEMMEL SKOR! Bu etiket Hata Defteri'nden kalıcı olarak silindi ve AI Analiz Verilerin başarıyla güncellendi!</p>";
+                
+                step3Pane.innerHTML = `
+                    <div class="text-center py-6 space-y-3 animate-fade-in">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-950/60 border-2 border-emerald-500 text-emerald-400 text-xl shadow-lg shadow-emerald-950/50 animate-bounce">
+                            <i class="fa-solid fa-medal"></i>
+                        </div>
+                        <div class="space-y-0.5">
+                            <h4 class="text-xs font-black text-white uppercase tracking-wider">TEBRİKLER, REÇETE BAŞARIYLA TAMAMLANDI!</h4>
+                            <p class="text-[8px] text-slate-500 uppercase tracking-widest font-mono">Academic Prescription Strategy Executed</p>
+                        </div>
+                        <div class="p-4 bg-slate-950/60 border border-slate-800/80 rounded-xl max-w-md mx-auto space-y-2 text-[10px] leading-relaxed text-slate-350">
+                            <p>Furkan, <b>"${currentWizardTag}"</b> konusuna ait ders notu çalışmasını bitirdin, flaş kartlarla pekiştirdin ve zayıf konu sınavında <b>5 soruda ${wizardScore} doğru</b> yaparak üstün başarı sağladın!</p>
+                            ${resultFeedback}
+                        </div>
+                    </div>
+                `;
             } else {
-                resultFeedback = "<p class='text-amber-400 font-bold'><i class='fa-solid fa-circle-info'></i> BAŞARIYLA TAMAMLANDI! Eksikleriniz giderildi, etiket hata defterinden silindi. Kendinizi geliştirmeye devam edin!</p>";
+                // FAILURE / RETRY BRANCH
+                states[currentLesson][pureTag].quiz_score = { correct: wizardScore, total: 5 };
+                if (states[currentLesson][pureTag].status !== 'completed') {
+                    states[currentLesson][pureTag].status = 'needs_remediation';
+                }
+                localStorage.setItem('kpss_concept_states', JSON.stringify(states));
+                
+                let resultFeedback = "<p class='text-rose-400 font-bold'><i class='fa-solid fa-triangle-exclamation'></i> BAŞARISIZ! Konu hata defterinde kalmaya devam edecek. Lütfen eksiklerinizi iyice çalışıp tekrar deneyin.</p>";
+                
+                step3Pane.innerHTML = `
+                    <div class="text-center py-6 space-y-3 animate-fade-in">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-rose-950/60 border-2 border-rose-500 text-rose-400 text-xl shadow-lg shadow-rose-950/50 animate-pulse">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                        </div>
+                        <div class="space-y-0.5">
+                            <h4 class="text-xs font-black text-rose-400 uppercase tracking-wider">REÇETE BAŞARISIZ! YENİDEN DENEMELİSİNİZ</h4>
+                            <p class="text-[8px] text-slate-500 uppercase tracking-widest font-mono">Academic Prescription Failed - Remediate Required</p>
+                        </div>
+                        <div class="p-4 bg-slate-950/60 border border-slate-800/80 rounded-xl max-w-md mx-auto space-y-2 text-[10px] leading-relaxed text-slate-350">
+                            <p>Furkan, <b>"${currentWizardTag}"</b> konusuna ait zayıf konu sınavında <b>5 soruda ${wizardScore} doğru</b> yaptın. Bu konuyu başarıyla tamamlamak ve hata defterinden silmek için <b>en az 4 doğru</b> yapmalısın.</p>
+                            ${resultFeedback}
+                        </div>
+                    </div>
+                `;
             }
-
-            step3Pane.innerHTML = `
-                <div class="text-center py-6 space-y-3 animate-fade-in">
-                    <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-950/60 border-2 border-emerald-500 text-emerald-400 text-xl shadow-lg shadow-emerald-950/50 animate-bounce">
-                        <i class="fa-solid fa-medal"></i>
-                    </div>
-                    <div class="space-y-0.5">
-                        <h4 class="text-xs font-black text-white uppercase tracking-wider">TEBRİKLER, KAZANIM TAMAMLANDI!</h4>
-                        <p class="text-[8px] text-slate-500 uppercase tracking-widest font-mono">Academic Prescription Strategy Executed</p>
-                    </div>
-                    <div class="p-4 bg-slate-950/60 border border-slate-800/80 rounded-xl max-w-md mx-auto space-y-2 text-[10px] leading-relaxed text-slate-350">
-                        <p>Furkan, <b>"${currentWizardTag}"</b> konusuna ait ders notu çalışmasını bitirdin, flaş kartlarla pekiştirdin ve zayıf konu sınavında <b>5 soruda ${wizardScore} doğru</b> yaparak üstün başarı sağladın!</p>
-                        ${resultFeedback}
-                    </div>
-                </div>
-            `;
 
             // Footers updates
             const btnPrev = document.getElementById("btn-wizard-prev");
-            btnPrev.classList.add("hidden");
+            if (btnPrev) btnPrev.classList.add("hidden");
             
             const btnNext = document.getElementById("btn-wizard-next");
-            btnNext.innerHTML = 'İSTASYONDAN ÇIK <i class="fa-solid fa-arrow-right-from-bracket ml-1"></i>';
-            btnNext.className = "px-5 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 text-[10px] font-black rounded-xl transition-all cursor-pointer";
-            btnNext.onclick = () => {
-                closePrescriptionWizard();
-                openAnalysisCenter();
-                updateSidebarStats();
-            };
+            if (btnNext) {
+                btnNext.innerHTML = 'İSTASYONDAN ÇIK <i class="fa-solid fa-arrow-right-from-bracket ml-1"></i>';
+                btnNext.className = "px-5 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 text-[10px] font-black rounded-xl transition-all cursor-pointer";
+                btnNext.onclick = () => {
+                    closePrescriptionWizard();
+                    openAnalysisCenter();
+                    updateSidebarStats();
+                };
+            }
         }
 
+        
         // MÜKEMMEL DOM VE DB OKUMA BAĞLANTISI (v17.0 GÜVENCESİ)
         document.addEventListener("DOMContentLoaded", () => {
             updateSidebarStats();
@@ -5322,7 +5879,7 @@
             updateTimeEfficiencyUI();
             
             let checkDB = setInterval(() => {
-                if (typeof tarih_db !== 'undefined' && typeof cografya_db !== 'undefined') {
+                if (typeof tarih_db !== 'undefined' && typeof cografya_db !== 'undefined' && typeof vatandaslik_db !== 'undefined') {
                     clearInterval(checkDB);
                     switchLesson('tarih');
                 }
