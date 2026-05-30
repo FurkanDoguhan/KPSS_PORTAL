@@ -204,6 +204,10 @@
                 <button onclick="switchMode('guide')" class="btn-sidebar">
                     <i class="fa-solid fa-compass text-indigo-400 text-xs animate-spin-slow"></i> KPSS Portal Kullanım Kılavuzu
                 </button>
+                
+                <button id="btn-sidebar-content-test" onclick="openContentTestCenter()" class="btn-sidebar">
+                    <i class="fa-solid fa-microscope text-rose-500 text-xs"></i> ÖSYM Sınav İçerik Analiz Testi
+                </button>
             </div>
 
             <div class="glass-card p-4 rounded-2xl space-y-3">
@@ -351,6 +355,29 @@
                             </div>
                             <span id="txt-notebook-capacity" class="text-[10px] text-slate-400 font-mono mt-1 block">0 Soru</span>
                         </div>
+                    </div>
+                </div>
+
+                <!-- 🧠 EBBINGHAUS DURUM ÖZET KARTI (ANALİZ MERKEZİ) -->
+                <div id="analysis-ebbinghaus-card" class="p-4 bg-gradient-to-r from-amber-950/40 via-slate-900 to-slate-900 rounded-xl border border-amber-800/30 space-y-2" style="display:none;">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-brain text-amber-400 text-lg animate-pulse"></i>
+                            <div>
+                                <h4 class="text-xs font-black text-amber-300 uppercase tracking-wider">Unutma Eğrisi Uyarısı</h4>
+                                <p class="text-[9px] text-slate-500 mt-0.5">Ebbinghaus spaced repetition motoru</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span id="analysis-ebb-count" class="text-2xl font-black text-amber-400">0</span>
+                            <span class="text-[9px] text-amber-500/70 font-bold uppercase">konu<br>tekrar<br>bekliyor</span>
+                            <button onclick="switchMode('roadmap')" class="text-[9px] font-bold text-amber-300 bg-amber-950/60 hover:bg-amber-900/60 border border-amber-800/40 px-3 py-1.5 rounded-lg transition-all cursor-pointer">
+                                <i class="fa-solid fa-route mr-1"></i> Yol Haritasına Git
+                            </button>
+                        </div>
+                    </div>
+                    <div id="analysis-ebb-tags" class="flex flex-wrap gap-1.5 mt-1">
+                        <!-- JS ile tekrar bekleyen kavram etiketleri basılacak -->
                     </div>
                 </div>
 
@@ -585,6 +612,71 @@
                 </div>
             </div>
 
+            <!-- 🔍 ÖSYM SINAV İÇERİK TEST & ANALİZ MERKEZİ -->
+            <div id="view-content-test" class="hidden bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-6 animate-fadeIn">
+                <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                    <h3 class="text-base font-black text-white flex items-center gap-2">
+                        <i class="fa-solid fa-microscope text-rose-500"></i> ÖSYM Sınav İçerik Analiz Test & Eşleştirme Merkezi
+                    </h3>
+                    <button onclick="switchMode('roadmap')" class="text-xs text-slate-400 hover:text-slate-200 ml-2 cursor-pointer">Kapat</button>
+                </div>
+
+                <div class="p-4 bg-slate-900 rounded-xl border border-slate-800 space-y-2">
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Bu merkez, yüklediğiniz veya yapıştırdığınız dış kaynak coğrafya sorularının **KPSS Portal veritabanımızdaki (Ders Notları, Flaş Kartlar, Çözümlü Sorular)** bilgiler ile çözülüp çözülemeyeceğini gelişmiş bir kelime/kavram eşleştirme algoritmasıyla test eder. Çözülebilir sorular için **kesin referans kanıtını** (not bloğunu) kesip karşınıza çıkartır!
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800 border-dashed border-2 flex flex-col justify-center items-center text-center p-6 space-y-4 hover:border-indigo-500/60 transition-all duration-300 group">
+                        <i class="fa-solid fa-file-arrow-up text-3xl text-indigo-400 group-hover:scale-110 transition-transform duration-300"></i>
+                        <div>
+                            <h5 class="text-xs font-bold text-slate-200">Sınav Dosyası Yükleyin (.txt veya .json)</h5>
+                            <p class="text-[10px] text-slate-500 mt-1">Metin belgesi içindeki sorular otomatik olarak ayrıştırılacaktır.</p>
+                        </div>
+                        <input type="file" id="content-test-file-input" accept=".txt,.json" class="hidden" onchange="handleContentTestFileUpload(event)">
+                        <button onclick="document.getElementById('content-test-file-input').click()" class="px-4 py-2 bg-indigo-950/60 hover:bg-indigo-900/60 border border-indigo-800/40 text-indigo-400 hover:text-indigo-300 text-[10px] font-black rounded-lg cursor-pointer transition-all shadow-md">
+                            DOSYA SEÇİNİZ
+                        </button>
+                        <span id="content-test-file-name" class="text-[9px] text-slate-400 font-mono italic">Dosya seçilmedi</span>
+                    </div>
+
+                    <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800 flex flex-col space-y-3">
+                        <h5 class="text-xs font-bold text-slate-200 flex items-center gap-1.5">
+                            <i class="fa-solid fa-keyboard text-slate-400"></i> Soruları Doğrudan Buraya Yapıştırın
+                        </h5>
+                        <textarea id="content-test-textarea" placeholder="Örn:&#10;Soru 1: Türkiye'de en zengin toryum yatakları hangi ilimizdedir?&#10;A) Eskişehir B) Yozgat C) Sivas D) Malatya" class="flex-grow min-h-32 bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs text-slate-300 focus:outline-none focus:border-indigo-500 font-normal leading-relaxed"></textarea>
+                        <button onclick="analyzePastedQuestions()" class="w-full py-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-slate-950 font-black text-[10px] rounded-lg shadow-lg cursor-pointer transition-all hover-glow">
+                            METNİ ANALİZ ET
+                        </button>
+                    </div>
+                </div>
+
+                <div id="content-test-results-panel" class="hidden space-y-5 animate-fadeIn">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 text-center flex flex-col justify-center items-center">
+                            <span class="text-[9px] text-slate-500 font-black uppercase tracking-wider">Toplam Analiz Edilen Soru</span>
+                            <span id="content-test-total-count" class="text-2xl font-black text-white mt-1">0</span>
+                        </div>
+                        <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 text-center flex flex-col justify-center items-center border-l-4 border-l-emerald-500">
+                            <span class="text-[9px] text-slate-500 font-black uppercase tracking-wider">Çözülebilir Soru Sayısı</span>
+                            <span id="content-test-solved-count" class="text-2xl font-black text-emerald-400 mt-1">0</span>
+                        </div>
+                        <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 text-center flex flex-col justify-center items-center border-l-4 border-l-rose-500">
+                            <span class="text-[9px] text-slate-500 font-black uppercase tracking-wider">Kapsama / Başarı Oranı</span>
+                            <span id="content-test-coverage-rate" class="text-2xl font-black text-indigo-400 mt-1">0%</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="text-xs font-bold text-slate-300 flex items-center gap-1.5">
+                            <i class="fa-solid fa-list-check text-indigo-400"></i> Akademik Eşleşme Kanıtları Raporu
+                        </h4>
+                        <div id="content-test-results-list" class="space-y-4 max-h-120 overflow-y-auto pr-2"></div>
+                    </div>
+                </div>
+            </div>
+
             <div id="view-notebook" class="hidden bg-slate-950 p-6 rounded-2xl border-2 border-indigo-500/30 space-y-4">
                 <div class="flex justify-between items-center border-b border-slate-800 pb-3">
                     <h3 class="text-base font-black text-white flex items-center gap-2"><i class="fa-solid fa-book-bookmark text-indigo-400"></i> Furkan'ın Hata Defteri</h3>
@@ -791,6 +883,23 @@
                             <span class="text-[8px] text-slate-500 font-mono">KPSS AI Coach Engine v1.0</span>
                             <span class="text-[9px] font-bold text-emerald-400 bg-emerald-950/40 px-2 py-0.5 rounded border border-emerald-900/40 uppercase">Analiz Güncel</span>
                         </div>
+                    </div>
+                </div>
+                <!-- 🧠 EBBINGHAUS UNUTMA EĞRİSİ TEKRARl PANELI -->
+                <div id="ebbinghaus-panel" class="bg-gradient-to-br from-amber-950/40 via-slate-950/80 to-rose-950/30 p-5 rounded-2xl border border-amber-800/40 shadow-xl space-y-3" style="display:none;">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-xs font-black text-amber-300 uppercase tracking-wider flex items-center gap-1.5">
+                            <i class="fa-solid fa-brain text-amber-400 animate-pulse"></i> Ebbinghaus Tekrar Zamanı
+                        </h4>
+                        <span id="ebbinghaus-due-count" class="text-[10px] font-black text-amber-400 bg-amber-950/60 border border-amber-800/50 px-2 py-0.5 rounded-lg flex items-center gap-1">
+                            <i class="fa-solid fa-clock-rotate-left text-amber-500"></i> <span>0</span> konu
+                        </span>
+                    </div>
+                    <p class="text-[10px] text-slate-400 leading-relaxed">
+                        Aşağıdaki konuları en son çalıştığından beri kritik unutma eşikleri geçilmiş. Tekrar etmezsen bellekte kalma oranı düşecek!
+                    </p>
+                    <div id="ebbinghaus-review-list" class="space-y-2 max-h-[240px] overflow-y-auto pr-1">
+                        <!-- JS ile doldurulacak -->
                     </div>
                 </div>
 
@@ -1700,6 +1809,37 @@
             // Draw Charts
             renderWeeklyChart();
             renderMasteryChart();
+
+            // 🧠 Ebbinghaus: Analiz Merkezi Özet Kartını Güncelle
+            const analysisEbbCard = document.getElementById("analysis-ebbinghaus-card");
+            const analysisEbbCount = document.getElementById("analysis-ebb-count");
+            const analysisEbbTags = document.getElementById("analysis-ebb-tags");
+            if (analysisEbbCard) {
+                let dueConcepts = getEbbinghausDueConcepts();
+                if (dueConcepts.length > 0) {
+                    analysisEbbCard.style.display = "block";
+                    if (analysisEbbCount) analysisEbbCount.textContent = dueConcepts.length;
+                    if (analysisEbbTags) {
+                        analysisEbbTags.innerHTML = "";
+                        dueConcepts.slice(0, 8).forEach(c => {
+                            let urgColors = ["text-amber-400 bg-amber-950/50 border-amber-800/40", "text-orange-400 bg-orange-950/50 border-orange-800/40", "text-red-400 bg-red-950/50 border-red-800/40", "text-rose-400 bg-rose-950/50 border-rose-800/40"];
+                            let colorClass = urgColors[Math.min(c.urgency, 3)];
+                            let tag = document.createElement("span");
+                            tag.className = `text-[9px] font-bold px-2 py-0.5 rounded-lg border ${colorClass}`;
+                            tag.textContent = `#${c.tag} (${c.daysSince}g)`;
+                            analysisEbbTags.appendChild(tag);
+                        });
+                        if (dueConcepts.length > 8) {
+                            let more = document.createElement("span");
+                            more.className = "text-[9px] text-slate-500 font-bold px-2 py-0.5";
+                            more.textContent = `+${dueConcepts.length - 8} daha...`;
+                            analysisEbbTags.appendChild(more);
+                        }
+                    }
+                } else {
+                    analysisEbbCard.style.display = "none";
+                }
+            }
             
             // Dinamik Tablo, SVG Grafik ve AI Yorum Seçicileri
             const worstTbody = document.getElementById("table-worst-tbody");
@@ -2363,6 +2503,12 @@
                 }
             }
 
+            let zoomShortcutHtml = `
+                <button onclick="openNoteZoomModal('${kavram}')" class="text-indigo-400 hover:text-indigo-300 hover:scale-105 text-[10px] font-bold bg-indigo-950/20 px-2 py-0.5 rounded border border-indigo-900/35 cursor-pointer transition-all ml-1.5" title="Notu Tam Ekran Oku">
+                    <i class="fa-solid fa-expand text-[8px]"></i> Tam Ekran
+                </button>
+            `;
+
             // Çalıp/Okunma Durumu Göstergesi
             let isRead = conceptState.read || false;
             
@@ -2377,6 +2523,7 @@
                             <span class="text-[10px] font-black text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2 py-0.5 rounded-md uppercase tracking-wider">#${kavram}</span>
                             ${heatmapBadgeHtml}
                             ${atlasShortcutHtml}
+                            ${zoomShortcutHtml}
                         </div>
                         <button onclick="speakText('${kavram}. ${cleanText.replace(/'/g, "\\'")}')" class="text-slate-400 hover:text-white hover:scale-105 text-[10px] font-bold bg-slate-900 px-2 py-0.5 rounded border border-slate-800 cursor-pointer transition-all" title="Konuyu Dinle"><i class="fa-solid fa-volume-high text-indigo-400"></i> Dinle</button>
                     </div>
@@ -3147,6 +3294,17 @@
         function switchMode(mode) {
             if ('speechSynthesis' in window) window.speechSynthesis.cancel();
             currentMode = mode;
+            
+            // Dynamically set currentData based on mode to support differing notes (5-unit) vs cards/quiz (8-unit) counts (specifically for geography)
+            if (mode === 'notes') {
+                currentData = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (currentLesson === 'cografya' ? (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []) : (typeof vatandaslik_not_db !== 'undefined' ? vatandaslik_not_db : []));
+            } else {
+                currentData = currentLesson === 'tarih' ? (typeof tarih_db !== 'undefined' ? tarih_db : []) : (currentLesson === 'cografya' ? (typeof cografya_db !== 'undefined' ? cografya_db : []) : (typeof vatandaslik_db !== 'undefined' ? vatandaslik_db : []));
+            }
+            if (activeUnitIdx >= currentData.length) {
+                activeUnitIdx = Math.max(0, currentData.length - 1);
+            }
+
             document.getElementById("view-notebook").classList.add("hidden");
             document.getElementById("view-analysis-center").classList.add("hidden");
             document.getElementById("box-top-navbar").classList.remove("hidden");
@@ -3161,6 +3319,7 @@
 
             // Hide all active main panels first
             if (document.getElementById("view-roadmap")) document.getElementById("view-roadmap").classList.add("hidden");
+            if (document.getElementById("view-content-test")) document.getElementById("view-content-test").classList.add("hidden");
             document.getElementById("view-cards").classList.add("hidden");
             document.getElementById("view-quiz").classList.add("hidden");
             document.getElementById("view-notes").classList.add("hidden");
@@ -3204,6 +3363,7 @@
             } else if (mode === 'quiz') {
                 document.getElementById("view-quiz").classList.remove("hidden");
                 if (btnQuiz) btnQuiz.className = activeClass;
+                buildUnitList();
                 buildGroupSelector();
                 prepareGroupQuestions();
                 renderQuiz();
@@ -3211,6 +3371,7 @@
                 isTaramaTestMode = false;
                 document.getElementById("view-notes").classList.remove("hidden");
                 if (btnNotes) btnNotes.className = activeClass;
+                buildUnitList();
                 renderNotesView();
             } else if (mode === 'exam') {
                 isTaramaTestMode = false;
@@ -3237,6 +3398,10 @@
                 document.getElementById("view-notebook").classList.remove("hidden");
                 document.getElementById("box-top-navbar").classList.add("hidden");
                 renderNotebookData();
+            } else if (mode === 'content-test') {
+                isTaramaTestMode = false;
+                document.getElementById("view-content-test").classList.remove("hidden");
+                document.getElementById("box-top-navbar").classList.add("hidden");
             }
         }
 
@@ -3284,6 +3449,14 @@
             } else {
                 cState.status = 'not_started';
             }
+
+            // 🧠 Ebbinghaus: Aktif çalışma yapıldığında son çalışma tarihini damgala
+            if (cState.status !== 'not_started') {
+                let today = new Date().toISOString().split('T')[0];
+                if (!cState.last_studied_date) {
+                    cState.last_studied_date = today;
+                }
+            }
         }
 
         function toggleConceptRead(kavram, isReadState) {
@@ -3294,6 +3467,13 @@
             }
             
             states[currentLesson][kavram].read = isReadState;
+            // 🧠 Ebbinghaus: Konu okunduğunda son çalışma tarihini güncelle
+            if (isReadState) {
+                let today = new Date().toISOString().split('T')[0];
+                states[currentLesson][kavram].last_studied_date = today;
+                // Eski ebbinghaus bayraklarını sıfırla (yeni döngü başlasın)
+                [1, 3, 7, 21].forEach(iv => { delete states[currentLesson][kavram][`ebbinghaus_${iv}d`]; });
+            }
             updateConceptStatus(kavram, states);
             localStorage.setItem('kpss_concept_states', JSON.stringify(states));
             
@@ -3323,6 +3503,9 @@
             let states = JSON.parse(localStorage.getItem('kpss_concept_states')) || {};
             let currentStates = states[currentLesson] || {};
 
+            // 🧠 Ebbinghaus: Tekrarı gereken kavramları önce topla
+            let ebbinghausDue = getEbbinghausDueConcepts();
+
             let allConcepts = [];
             activeNoteDb.forEach(u => {
                 if (u.kavramlar) {
@@ -3340,7 +3523,22 @@
                 weakConcepts.push(...otherConcepts);
             }
 
-            let conceptObj = weakConcepts[day - 1];
+            // Ebbinghaus tekrar kavramlarını listenin başına interleave et (her 2 yeni konudan sonra 1 tekrar)
+            let merged = [];
+            let eIdx = 0, wIdx = 0;
+            let ebbTags = new Set(ebbinghausDue.map(e => e.tag));
+            // Ebbinghaus kavramlarını weakConcepts'ten çıkar (duplikasyon önleme)
+            weakConcepts = weakConcepts.filter(c => !ebbTags.has(c.tag));
+
+            while (eIdx < ebbinghausDue.length || wIdx < weakConcepts.length) {
+                // Her 2 yeni/zayıf kavramdan sonra 1 Ebbinghaus tekrar kavramı
+                if (wIdx < weakConcepts.length) merged.push(weakConcepts[wIdx++]);
+                if (wIdx < weakConcepts.length) merged.push(weakConcepts[wIdx++]);
+                if (eIdx < ebbinghausDue.length) merged.push({ tag: ebbinghausDue[eIdx].tag, title: ebbinghausDue[eIdx].title, status: 'ebbinghaus_review' });
+                eIdx++;
+            }
+
+            let conceptObj = merged[day - 1];
             return conceptObj ? conceptObj.tag : null;
         }
 
@@ -3352,6 +3550,101 @@
                 }
             }
             return 0;
+        }
+
+        // --- 🧠 EBBINGHAUS UNUTMA EĞRİSİ MOTORU (Spaced Repetition Reminder) ---
+        function getEbbinghausDueConcepts() {
+            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (currentLesson === 'cografya' ? (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []) : (typeof vatandaslik_not_db !== 'undefined' ? vatandaslik_not_db : []));
+            let states = JSON.parse(localStorage.getItem('kpss_concept_states')) || {};
+            let currentStates = states[currentLesson] || {};
+            const now = new Date();
+            const todayStr = now.toISOString().split('T')[0];
+            const ebbinghausIntervals = [1, 3, 7, 21]; // gün cinsinden tekrar aralıkları
+
+            let dueConcepts = [];
+            activeNoteDb.forEach(u => {
+                if (u.kavramlar) {
+                    Object.keys(u.kavramlar).forEach(kKey => {
+                        let cState = currentStates[kKey];
+                        if (!cState || !cState.last_studied_date) return; // hiç çalışılmamış
+                        if (cState.status === 'not_started') return; // başlanmamış
+
+                        let lastDate = new Date(cState.last_studied_date);
+                        let daysSince = Math.floor((now - lastDate) / (1000 * 60 * 60 * 24));
+
+                        // Ebbinghaus aralıklarından birine denk geliyorsa veya geçmişse tekrar gerekli
+                        let needsReview = false;
+                        let urgency = 0; // 0=düşük, 1=orta, 2=yüksek, 3=kritik
+                        for (let i = ebbinghausIntervals.length - 1; i >= 0; i--) {
+                            if (daysSince >= ebbinghausIntervals[i]) {
+                                // Bu aralığı geçmiş, tekrar zamanı gelmiş demektir
+                                let reviewKey = `ebbinghaus_${ebbinghausIntervals[i]}d`;
+                                if (!cState[reviewKey]) {
+                                    needsReview = true;
+                                    urgency = i; // 0=1gün, 1=3gün, 2=7gün, 3=21gün
+                                }
+                                break;
+                            }
+                        }
+
+                        if (needsReview) {
+                            let title = u.kavramlar[kKey].match(/<b>(.*?)<\/b>/)?.[1] || kKey;
+                            dueConcepts.push({
+                                tag: kKey,
+                                title: title,
+                                daysSince: daysSince,
+                                urgency: urgency,
+                                status: cState.status
+                            });
+                        }
+                    });
+                }
+            });
+
+            // En acil olanları önce sırala (yüksek urgency + en eski tarih)
+            dueConcepts.sort((a, b) => b.urgency - a.urgency || b.daysSince - a.daysSince);
+            return dueConcepts;
+        }
+
+        function markEbbinghausReviewed(kavram) {
+            let states = JSON.parse(localStorage.getItem('kpss_concept_states')) || {};
+            if (!states[currentLesson] || !states[currentLesson][kavram]) return;
+
+            let cState = states[currentLesson][kavram];
+            let lastDate = new Date(cState.last_studied_date);
+            let daysSince = Math.floor((new Date() - lastDate) / (1000 * 60 * 60 * 24));
+            const intervals = [1, 3, 7, 21];
+
+            for (let i = intervals.length - 1; i >= 0; i--) {
+                if (daysSince >= intervals[i]) {
+                    cState[`ebbinghaus_${intervals[i]}d`] = true;
+                    break;
+                }
+            }
+
+            // Son çalışma tarihini güncelle (yeni döngü başlasın)
+            cState.last_studied_date = new Date().toISOString().split('T')[0];
+            // Eski ebbinghaus bayraklarını sıfırla (yeni döngü)
+            intervals.forEach(iv => { delete cState[`ebbinghaus_${iv}d`]; });
+
+            localStorage.setItem('kpss_concept_states', JSON.stringify(states));
+        }
+
+        function ebbinghausGoToReview(kavramTag) {
+            // Kavramı içeren üniteyi bul ve oraya git
+            let unitIdx = findUnitIndexForConcept(kavramTag);
+            selectedUnit = unitIdx;
+            switchMode('notes');
+            
+            // Ebbinghaus döngüsünü yenile (yeni zamanlama başlasın)
+            markEbbinghausReviewed(kavramTag);
+            
+            showNotification(`🧠 Ebbinghaus Tekrarı: #${kavramTag} konusuna gidiliyor. Tekrar zamanı sıfırlandı!`, 'success');
+            
+            // Roadmap'e dönüldüğünde paneli güncelle
+            setTimeout(() => {
+                if (currentMode === 'roadmap') renderRoadmapView();
+            }, 200);
         }
 
         function getFirstIncompleteConcept(unitIdx) {
@@ -3671,8 +3964,12 @@
                 let averageTime = JSON.parse(localStorage.getItem('kpss_total_solved_time')) || 0;
                 let solvedCount = JSON.parse(localStorage.getItem('kpss_total_solved_count')) || 0;
                 let avgSpeed = solvedCount > 0 ? Math.round(averageTime / solvedCount) : 45;
-                
-                if (activeErrors > 3) {
+
+                // 🧠 Ebbinghaus: En yüksek öncelik — tekrar edilmesi gereken konular varsa uyar
+                let ebbDue = getEbbinghausDueConcepts();
+                if (ebbDue.length >= 3) {
+                    coachAdvice.textContent = `"Furkan, Ebbinghaus unutma eğrisi motoruna göre ${ebbDue.length} konu kritik tekrar eşiğini geçmiş! En acil tekrar: #${ebbDue[0].tag} (${ebbDue[0].daysSince} gün önce çalışıldı). Aşağıdaki Tekrar Panelinden hemen başla, yoksa öğrendiklerin %80 oranında silinecek!"`;
+                } else if (activeErrors > 3) {
                     let weakestObj = getWeakestTag();
                     coachAdvice.textContent = `"Furkan, yaptığım analizlere göre en çok zorlandığın konu ${weakestObj ? weakestObj.tag : 'tarih'}. Görev 3'te yer alan Akademik Reçete'yi uygulayarak bu konudaki netlerini anında 1 net yükseltebilirsin! Süre yönetimini ihmal etme."`;
                 } else if (avgSpeed > 50) {
@@ -3684,7 +3981,53 @@
                 }
             }
 
-            // 7. YENİ: KPSS Müfredat İzleyici & Analiz Dashboard'unu Çiz
+            // 🧠 7. EBBINGHAUS UNUTMA EĞRİSİ PANELİNİ GÜNCELLE
+            const ebbPanel = document.getElementById("ebbinghaus-panel");
+            const ebbList = document.getElementById("ebbinghaus-review-list");
+            const ebbCount = document.getElementById("ebbinghaus-due-count");
+            if (ebbPanel && ebbList) {
+                let dueConcepts = getEbbinghausDueConcepts();
+                if (dueConcepts.length > 0) {
+                    ebbPanel.style.display = "block";
+                    if (ebbCount) ebbCount.querySelector("span").textContent = dueConcepts.length;
+                    ebbList.innerHTML = "";
+
+                    const urgencyLabels = ["1 gün", "3 gün", "7 gün", "21 gün"];
+                    const urgencyColors = [
+                        { border: "border-amber-700/50", bg: "bg-amber-950/30", text: "text-amber-400", badge: "bg-amber-900/60 text-amber-300" },
+                        { border: "border-orange-700/50", bg: "bg-orange-950/30", text: "text-orange-400", badge: "bg-orange-900/60 text-orange-300" },
+                        { border: "border-red-700/50", bg: "bg-red-950/30", text: "text-red-400", badge: "bg-red-900/60 text-red-300" },
+                        { border: "border-rose-700/50", bg: "bg-rose-950/30", text: "text-rose-400", badge: "bg-rose-900/60 text-rose-300" }
+                    ];
+
+                    dueConcepts.forEach(concept => {
+                        let colors = urgencyColors[Math.min(concept.urgency, 3)];
+                        let urgLabel = urgencyLabels[Math.min(concept.urgency, 3)];
+                        let card = document.createElement("div");
+                        card.className = `flex items-center justify-between p-3 rounded-xl ${colors.border} border ${colors.bg} transition-all hover:scale-[1.01]`;
+                        card.innerHTML = `
+                            <div class="flex items-center gap-2.5 flex-1 min-w-0">
+                                <i class="fa-solid fa-rotate-right ${colors.text} text-sm flex-shrink-0"></i>
+                                <div class="min-w-0">
+                                    <div class="text-[11px] font-bold text-white truncate">#${concept.tag}</div>
+                                    <div class="text-[9px] text-slate-500">${concept.daysSince} gün önce çalışıldı</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 flex-shrink-0">
+                                <span class="text-[8px] font-black px-1.5 py-0.5 rounded ${colors.badge} uppercase">${urgLabel}+ tekrar</span>
+                                <button onclick="ebbinghausGoToReview('${concept.tag}')" class="text-[9px] font-bold text-emerald-400 bg-emerald-950/60 hover:bg-emerald-900/60 border border-emerald-800/40 px-2 py-1 rounded-lg transition-all cursor-pointer whitespace-nowrap">
+                                    <i class="fa-solid fa-book-open-reader mr-0.5"></i> Tekrar Et
+                                </button>
+                            </div>
+                        `;
+                        ebbList.appendChild(card);
+                    });
+                } else {
+                    ebbPanel.style.display = "none";
+                }
+            }
+
+            // 8. YENİ: KPSS Müfredat İzleyici & Analiz Dashboard'unu Çiz
             const trackerLessonTitle = document.getElementById("roadmap-tracker-lesson-title");
             if (trackerLessonTitle) trackerLessonTitle.textContent = currentLesson === 'tarih' ? 'Tarih' : (currentLesson === 'cografya' ? 'Coğrafya' : 'Vatandaşlık');
             
@@ -4071,12 +4414,12 @@
         function renderQuiz() {
             document.getElementById("box-rationale").classList.add("hidden"); document.getElementById("box-embedded-note").classList.add("hidden"); answered = false;
             questionStartTime = Date.now();
-            if(activeGroupQuestions.length === 0) { document.getElementById("txt-quiz-q").textContent = "Soru bulunamadı."; document.getElementById("quiz-options-box").innerHTML = ""; return; }
+            if(activeGroupQuestions.length === 0) { document.getElementById("txt-quiz-q").innerHTML = "Soru bulunamadı."; document.getElementById("quiz-options-box").innerHTML = ""; return; }
             
             const activeQ = activeGroupQuestions[quizIdx];
             document.getElementById("lbl-quiz-idx").textContent = `Soru ${quizIdx + 1} / ${activeGroupQuestions.length}`;
             document.getElementById("lbl-score").textContent = `Skor: ${score} / ${activeGroupQuestions.length}`;
-            document.getElementById("txt-quiz-q").textContent = activeQ.q;
+            document.getElementById("txt-quiz-q").innerHTML = activeQ.q;
 
             // Dinamik Modül İlerleme Çubuğu Güncellemesi
             const progressPercent = activeGroupQuestions.length > 0 ? Math.round((quizIdx / activeGroupQuestions.length) * 100) : 0;
@@ -4771,7 +5114,7 @@
                 "colors": {"deprem":"#ef4444","karstik":"#3b82f6","delta":"#f43f5e","kıyı":"#14b8a6","nüfus":"#f97316","iklim":"#f59e0b","toprak":"#b91c1c","maden":"#eab308","sanayi":"#94a3b8","afet":"#e11d48"}
             },
             "tuz-golu": {
-                "name": "Tuz Gölü Havzası",
+                "name": "Tuz Gölü Havzası (Konya-Aksaray-Ankara)",
                 "deprem": "<b>⚠️ Deprem Riskleri:</b> Kırıklı fay hatlarına nispeten uzak, genç dolgu çanağı olmasına rağmen deprem riski görece düşüktür.",
                 "karstik": "<b>⚠️ Karstik Yapı:</b> Jips (alçıtaşı) ve kaya tuzu erime şekilleri yaygındır. Konya Karapınar çevresindeki yer altı çöküntüleriyle oluşan <b>Obruklar</b> çok ünlüdür.",
                 "delta": "<b>⚠️ Delta Oluşumu:</b> Tamamen karasal iç kapalı havza olduğundan kıyı birikimi veya delta ovası bulunmaz.",
@@ -4799,7 +5142,7 @@
                 "colors": {"deprem":"#ef4444","karstik":"#94a3b8","delta":"#f43f5e","kıyı":"#94a3b8","nüfus":"#f97316","iklim":"#4f46e5","toprak":"#1e293b","maden":"#eab308","sanayi":"#94a3b8","afet":"#e11d48"}
             },
             "catalca-kocaeli": {
-                "name": "Çatalca-Kocaeli Platosu",
+                "name": "Çatalca-Kocaeli Platosu (İstanbul-Kocaeli)",
                 "deprem": "<b>⚠️ Deprem Riskleri:</b> KAF hattının hemen kuzey sınırındadır. Nüfus ve sanayi yoğunluğundan dolayı sismik hassasiyeti en yüksek yerdir.",
                 "karstik": "<b>⚠️ Karstik Yapı:</b> Geniş karstik erimeler yoktur, aşınım düzlüğü killi tortulları yaygındır.",
                 "delta": "<b>⚠️ Delta Oluşumu:</b> Belirgin bir delta ovası olmasa da kıta sahanlığı geniştir, sığ kıyı birikimleri mevcuttur.",
@@ -4939,7 +5282,7 @@
                 "colors": {"deprem":"#f59e0b","karstik":"#3b82f6","delta":"#f43f5e","kıyı":"#94a3b8","nüfus":"#f97316","iklim":"#d97706","toprak":"#b45309","maden":"#eab308","sanayi":"#94a3b8","afet":"#ef4444"}
             },
             "iskenderun": {
-                "name": "İskenderun Körfezi Yöresi",
+                "name": "İskenderun Körfezi Yöresi (Hatay)",
                 "deprem": "<b>⚠️ Deprem Riskleri:</b> Doğu Anadolu Fay (DAF) hattının Akdeniz'e inen kırık hatlarına çok yakındır; deprem riski ve sismik hassasiyet **çok yüksektir**.",
                 "karstik": "<b>⚠️ Karstik Özellikler:</b> Amanos Dağları'nın batı eteklerinde yerel karstik kalkerler bulunsa da düzlük zemin alüvyal dolgudur.",
                 "delta": "<b>⚠️ Delta Oluşumu:</b> Körfezin doğusunda Amanos dağlarının dikliği nedeniyle kıta sahanlığı dardır ancak hemen batısında Çukurova deltasının uzantıları yer alır.",
@@ -5599,7 +5942,7 @@
             
             document.getElementById("lbl-exam-progress").textContent = `Soru ${examIdx + 1} / ${examQuestions.length}`;
             document.getElementById("lbl-exam-question-tag").textContent = q.tag || "#GenelKazanım";
-            document.getElementById("txt-exam-q").textContent = q.q;
+            document.getElementById("txt-exam-q").innerHTML = q.q;
             
             const badge = document.getElementById("lbl-exam-lesson-badge");
             if (badge) {
@@ -6055,7 +6398,7 @@
             btnNext.classList.add("opacity-45", "pointer-events-none"); // Lock next step button until answered!
             
             if (wizardQuestions.length === 0) {
-                document.getElementById("wizard-question-text").textContent = "Soru bulunamadı.";
+                document.getElementById("wizard-question-text").innerHTML = "Soru bulunamadı.";
                 document.getElementById("wizard-options-container").innerHTML = "";
                 return;
             }
@@ -6065,7 +6408,7 @@
             
             // Clean Question Text
             const cleanText = q.q.replace(/^Soru \d+:\s*/i, "");
-            document.getElementById("wizard-question-text").textContent = cleanText;
+            document.getElementById("wizard-question-text").innerHTML = cleanText;
 
             const optionsContainer = document.getElementById("wizard-options-container");
             optionsContainer.innerHTML = "";
@@ -6315,7 +6658,149 @@
             if (elAdvice) elAdvice.textContent = advice;
         }
 
+        // 🔍 HARİTA BÜYÜTME (ZOOM) MODAL FONKSİYONLARI
+        window.openMapZoomModal = function(svgHtml) {
+            const modal = document.getElementById("modal-map-zoom");
+            const content = document.getElementById("map-zoom-content");
+            if (modal && content) {
+                // Remove the zoom button inside the modal to keep it clean
+                let temp = document.createElement("div");
+                temp.innerHTML = svgHtml.trim();
+                let btn = temp.querySelector("button");
+                if (btn) btn.remove();
+                content.innerHTML = temp.innerHTML;
+                modal.classList.remove("hidden");
+            }
+        };
 
+        window.openNoteZoomModal = function(kavram) {
+            let activeNoteDb = currentLesson === 'tarih' ? (typeof tarih_not_db !== 'undefined' ? tarih_not_db : []) : (currentLesson === 'cografya' ? (typeof cografya_not_db !== 'undefined' ? cografya_not_db : []) : (typeof vatandaslik_not_db !== 'undefined' ? vatandaslik_not_db : []));
+            let noteHtml = "";
+            let unitName = "";
+            activeNoteDb.forEach(unit => {
+                if (unit.kavramlar && unit.kavramlar[kavram]) {
+                    noteHtml = unit.kavramlar[kavram];
+                    unitName = unit.unite;
+                }
+            });
+            
+            if (!noteHtml) return;
+            
+            const modal = document.getElementById("modal-map-zoom");
+            const content = document.getElementById("map-zoom-content");
+            if (modal && content) {
+                let mapHtml = "";
+                let textHtml = noteHtml;
+                
+                // Clean up zoom/remedy buttons to keep it clean
+                textHtml = textHtml.replace(/<button[^>]*>.*?<\/button>/g, "");
+                
+                // Extract map SVG wrapper if present
+                const mapStartIdx = textHtml.indexOf('<div class="relative group');
+                if (mapStartIdx !== -1) {
+                    const mapEndIdx = textHtml.indexOf('</div>', mapStartIdx);
+                    if (mapEndIdx !== -1) {
+                        mapHtml = textHtml.substring(mapStartIdx, mapEndIdx + 6);
+                        textHtml = textHtml.substring(0, mapStartIdx) + textHtml.substring(mapEndIdx + 6);
+                    }
+                }
+                
+                // Clean remaining break lines and whitespace
+                textHtml = textHtml.replace(/^(<br\s*\/?>)+|(<br\s*\/?>)+$/gi, "").trim();
+                
+                let container = document.createElement("div");
+                container.className = "w-full text-slate-300 leading-relaxed text-left select-text";
+                
+                if (mapHtml) {
+                    // Strip the max-w-[360px] wrapper and let it expand to full container width
+                    let largeMapHtml = mapHtml.replace('max-w-[360px]', 'max-w-none w-full');
+                    
+                    container.innerHTML = `
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full items-center">
+                            <!-- Sol Sütun: Harita Paneli (Genişletilmiş 7 Sütun) -->
+                            <div class="lg:col-span-7 flex flex-col items-center justify-center bg-slate-950/40 border border-slate-800/80 rounded-2xl p-4 shadow-inner">
+                                <div class="text-[9px] font-black text-emerald-400 bg-emerald-950/30 border border-emerald-900/40 px-2.5 py-0.5 rounded-lg uppercase tracking-wider mb-3 flex items-center gap-1">
+                                    <i class="fa-solid fa-map-location-dot animate-pulse"></i> DETAYLI COĞRAFİ DAĞILIŞ ATLASI
+                                </div>
+                                <div class="w-full flex justify-center items-center [&>div]:w-full [&>div]:max-w-none [&>svg]:w-full [&>svg]:h-auto [&>svg]:max-h-[62vh] [&>svg]:shadow-none [&>svg]:bg-transparent [&>svg]:border-none">
+                                    ${largeMapHtml}
+                                </div>
+                            </div>
+                            <!-- Sağ Sütun: Ders Notu Metni (5 Sütun) -->
+                            <div class="lg:col-span-5 space-y-4 max-h-[70vh] overflow-y-auto pr-2 scrollbar-thin">
+                                <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
+                                    <span class="text-xs font-black text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2.5 py-0.5 rounded-md uppercase tracking-wider">#${kavram}</span>
+                                    <span class="text-[9px] font-black text-slate-500 bg-slate-950 px-2 py-0.5 rounded border border-slate-900 uppercase">${unitName}</span>
+                                </div>
+                                <div class="text-xs sm:text-sm font-normal leading-relaxed text-slate-200 whitespace-normal">
+                                    ${textHtml}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    container.innerHTML = `
+                        <div class="w-full max-w-2xl mx-auto space-y-4 max-h-[70vh] overflow-y-auto pr-2 scrollbar-thin">
+                            <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
+                                <span class="text-xs font-black text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2.5 py-0.5 rounded-md uppercase tracking-wider">#${kavram}</span>
+                                <span class="text-[9px] font-black text-slate-500 bg-slate-950 px-2 py-0.5 rounded border border-slate-900 uppercase">${unitName}</span>
+                            </div>
+                            <div class="text-xs sm:text-sm font-normal leading-relaxed text-slate-200 whitespace-normal">
+                                ${textHtml}
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                content.innerHTML = "";
+                content.appendChild(container);
+                modal.classList.remove("hidden");
+            }
+        };
+
+        window.closeMapZoomModal = function() {
+            const modal = document.getElementById("modal-map-zoom");
+            if (modal) {
+                modal.classList.add("hidden");
+            }
+        };
+
+        function preprocessDatabases() {
+            const dbs = [
+                typeof tarih_db !== 'undefined' ? tarih_db : [],
+                typeof cografya_db !== 'undefined' ? cografya_db : [],
+                typeof vatandaslik_db !== 'undefined' ? vatandaslik_db : []
+            ];
+            dbs.forEach(db => {
+                db.forEach(unit => {
+                    if (unit.quiz) {
+                        unit.quiz.forEach(q => {
+                            if (!q.options && q.a && q.b && q.c && q.d && q.e) {
+                                q.options = [q.a, q.b, q.c, q.d, q.e];
+                            }
+                            if (typeof q.correct === 'string') {
+                                const letter = q.correct.toUpperCase();
+                                if (letter === 'A') q.correct = 0;
+                                else if (letter === 'B') q.correct = 1;
+                                else if (letter === 'C') q.correct = 2;
+                                else if (letter === 'D') q.correct = 3;
+                                else if (letter === 'E') q.correct = 4;
+                            }
+                            if (q.q && q.q.includes('<svg')) {
+                                q.q = q.q
+                                    .replace(/fill="#10b981"/g, 'fill="#f59e0b"')
+                                    .replace(/fill="#334155"/g, 'fill="#f59e0b"')
+                                    .replace(/stroke="#1e293b"/g, 'stroke="#ffffff"')
+                                    .replace(/opacity="0\.3"/g, 'opacity="1.0"')
+                                    .replace(/r="7\.5"/g, 'r="8.5"')
+                                    .replace(/r="9\.5"/g, 'r="8.5"')
+                                    .replace(/fill="#64748b"/g, 'fill="#ffffff"');
+                            }
+                        });
+                    }
+                });
+            });
+        }
 
         // MÜKEMMEL DOM VE DB OKUMA BAĞLANTISI (v17.0 GÜVENCESİ)
         document.addEventListener("DOMContentLoaded", () => {
@@ -6335,10 +6820,218 @@
             let checkDB = setInterval(() => {
                 if (typeof tarih_db !== 'undefined' && typeof cografya_db !== 'undefined' && typeof vatandaslik_db !== 'undefined') {
                     clearInterval(checkDB);
+                    preprocessDatabases();
                     switchLesson('tarih');
                 }
             }, 15);
         });
+
+        // --- 🔍 ÖSYM SINAV İÇERİK ANALİZ VE EŞLEŞTİRME MOTORU ---
+        function openContentTestCenter() {
+            switchMode('content-test');
+        }
+
+        function handleContentTestFileUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            document.getElementById("content-test-file-name").textContent = file.name;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const text = e.target.result;
+                document.getElementById("content-test-textarea").value = text;
+                analyzePastedQuestions();
+            };
+            reader.readAsText(file);
+        }
+
+        function analyzePastedQuestions() {
+            const text = document.getElementById("content-test-textarea").value.trim();
+            if (!text) {
+                showNotification("Lütfen analiz etmek için soru metni giriniz veya dosya yükleyiniz!", "rose");
+                return;
+            }
+
+            let rawQArray = [];
+            try {
+                const parsed = JSON.parse(text);
+                if (Array.isArray(parsed)) {
+                    rawQArray = parsed.map(item => typeof item === 'object' ? (item.q || item.question || JSON.stringify(item)) : item);
+                } else if (parsed && parsed.quiz) {
+                    rawQArray = parsed.quiz.map(q => q.q);
+                }
+            } catch (e) {
+                // Parse plain text: split questions by standard question indicators
+                let splitQ = text.split(/(?=Soru\s*\d+\s*:|Soru\s*\d+\s*\.|\d+\s*[\.\)])/i);
+                if (splitQ.length <= 1) {
+                    splitQ = text.split(/\n\n+/);
+                }
+                rawQArray = splitQ.map(q => q.trim()).filter(q => q.length > 10);
+            }
+
+            if (rawQArray.length === 0) {
+                showNotification("Soru metni ayrıştırılamadı. Lütfen standart soru formatında yazın.", "amber");
+                return;
+            }
+
+            showNotification(`${rawQArray.length} adet soru ayrıştırıldı. Analiz ediliyor...`, "indigo");
+
+            let solvedCount = 0;
+            const resultsList = document.getElementById("content-test-results-list");
+            resultsList.innerHTML = "";
+
+            // Gather all knowledge items from cografya_not_db
+            let kb = [];
+            if (typeof cografya_not_db !== 'undefined') {
+                cografya_not_db.forEach(unit => {
+                    for (let key in unit.kavramlar) {
+                        let content = unit.kavramlar[key];
+                        let textContent = content.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+                        kb.push({
+                            type: 'Ders Notu',
+                            unit: unit.unite,
+                            concept: key,
+                            html: content,
+                            text: textContent
+                        });
+                    }
+                });
+            }
+
+            // Gather flashcards and quizzes
+            if (typeof cografya_db !== 'undefined') {
+                cografya_db.forEach(unit => {
+                    if (unit.cards) {
+                        unit.cards.forEach((card, idx) => {
+                            kb.push({
+                                type: 'Flaş Kart',
+                                unit: unit.unite,
+                                concept: `Kart #${idx+1}`,
+                                html: `<b>Kart Sorusu:</b> ${card.q}<br><br><b>Kart Cevabı:</b> ${card.a}`,
+                                text: `${card.q} ${card.a}`
+                            });
+                        });
+                    }
+                    if (unit.quiz) {
+                        unit.quiz.forEach((q, idx) => {
+                            kb.push({
+                                type: 'Çözümlü Soru',
+                                unit: unit.unite,
+                                concept: `Soru #${idx+1}`,
+                                html: `<b>Soru:</b> ${q.q}<br><br><b>Doğru Cevap Açıklaması:</b> ${q.rationale}`,
+                                text: `${q.q} ${q.rationale}`
+                            });
+                        });
+                    }
+                });
+            }
+
+            rawQArray.forEach((qText, qIdx) => {
+                let bestMatch = null;
+                let bestScore = 0;
+
+                let cleanQ = qText.toLowerCase().replace(/<[^>]*>/g, " ").replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?]/g,"");
+                let words = cleanQ.split(/\s+/).filter(w => w.length > 3);
+
+                kb.forEach(item => {
+                    let score = 0;
+                    let matchedWords = [];
+                    words.forEach(word => {
+                        if (item.text.toLowerCase().includes(word)) {
+                            let val = 1;
+                            if (["toryum", "uranyum", "dalaman", "hinterland", "geçit", "mavi tünel", "akkuyu", "sivrihisar", "sorgun", "dolgu", "ordu-giresun", "rize-artvin"].includes(word)) {
+                                val = 5;
+                            }
+                            score += val;
+                            matchedWords.push(word);
+                        }
+                    });
+                    
+                    let finalScore = score / Math.max(1, words.length);
+                    if (finalScore > bestScore) {
+                        bestScore = finalScore;
+                        bestMatch = {
+                            item: item,
+                            score: Math.min(100, Math.round(finalScore * 100 * 2.5)),
+                            matchedWords: matchedWords
+                        };
+                    }
+                });
+
+                const isSolvable = bestScore > 0.08 && bestMatch && bestMatch.score > 25;
+                if (isSolvable) solvedCount++;
+
+                const qCard = document.createElement("div");
+                qCard.className = `p-4.5 bg-slate-900 border ${isSolvable ? 'border-emerald-950/60' : 'border-rose-950/60'} rounded-xl space-y-3 transition-all duration-300`;
+                
+                let matchingHtml = "";
+                if (isSolvable && bestMatch) {
+                    matchingHtml = `
+                        <div class="mt-3 p-3 bg-slate-950 border border-emerald-900/20 rounded-lg space-y-2">
+                            <div class="flex justify-between items-center text-[9px] font-bold">
+                                <span class="text-emerald-400 flex items-center gap-1">
+                                    <i class="fa-solid fa-circle-check"></i> EŞLEŞEN REFERANS BİLGİ KAYNAĞI (${bestMatch.item.type})
+                                </span>
+                                <span class="text-slate-500 font-mono">Eşleşme Oranı: %${bestMatch.score}</span>
+                            </div>
+                            <div class="text-[10px] text-slate-400 font-mono uppercase tracking-wider flex items-center gap-1">
+                                <i class="fa-solid fa-tag text-indigo-400"></i> ${bestMatch.item.unit} &raquo; ${bestMatch.item.concept}
+                            </div>
+                            <div class="text-xs text-slate-300 leading-relaxed max-h-40 overflow-y-auto border-t border-slate-900 pt-2 pr-1 font-normal whitespace-normal break-words">
+                                ${bestMatch.item.html}
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    matchingHtml = `
+                        <div class="mt-3 p-3 bg-slate-950 border border-rose-900/20 rounded-lg">
+                            <div class="flex items-center gap-1 text-[9px] font-bold text-rose-400">
+                                <i class="fa-solid fa-triangle-exclamation"></i> PORTALDA BU SORUYU TAM KAPSAYACAK BİLGİ DOĞRULANAMADI
+                            </div>
+                            <p class="text-[10px] text-slate-500 mt-1 leading-relaxed">
+                                Bu soruyu çözmek için gerekli olan kavramların Coğrafya ders notları veya soru havuzuna entegre edilmesi önerilmektedir.
+                            </p>
+                        </div>
+                    `;
+                }
+
+                qCard.innerHTML = `
+                    <div class="flex justify-between items-start gap-4">
+                        <div class="space-y-1">
+                            <span class="text-[9px] text-slate-500 font-bold uppercase tracking-wider">Soru #${qIdx+1}</span>
+                            <p class="text-xs font-bold text-slate-200 leading-relaxed whitespace-pre-wrap">${qText}</p>
+                        </div>
+                        <span class="px-2.5 py-0.5 rounded text-[8px] font-black tracking-wider flex-none uppercase ${isSolvable ? 'bg-emerald-950/60 text-emerald-400 border border-emerald-900/40' : 'bg-rose-950/60 text-rose-400 border border-rose-900/40'}">
+                            ${isSolvable ? 'Çözülebilir' : 'Portal Dışı'}
+                        </span>
+                    </div>
+                    ${matchingHtml}
+                `;
+                resultsList.appendChild(qCard);
+            });
+
+            const totalCount = rawQArray.length;
+            const rate = Math.round((solvedCount / totalCount) * 100);
+
+            document.getElementById("content-test-total-count").textContent = totalCount;
+            document.getElementById("content-test-solved-count").textContent = solvedCount;
+            document.getElementById("content-test-coverage-rate").textContent = `${rate}%`;
+
+            document.getElementById("content-test-results-panel").classList.remove("hidden");
+            document.getElementById("content-test-results-panel").scrollIntoView({ behavior: 'smooth' });
+        }
     </script>
+    
+    <!-- 🔍 HARİTA BÜYÜTME (ZOOM) MODALI -->
+    <div id="modal-map-zoom" class="hidden fixed inset-0 z-[60] flex items-center justify-center bg-slate-950/90 backdrop-blur-md p-4 transition-all duration-300" onclick="closeMapZoomModal()">
+        <div class="relative w-full max-w-4xl bg-slate-900/60 border border-slate-800 rounded-3xl p-6 shadow-2xl flex flex-col items-center justify-center animate-fade-in" onclick="event.stopPropagation()">
+            <button onclick="closeMapZoomModal()" class="absolute top-4 right-4 bg-slate-950 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-slate-200 cursor-pointer transition-colors p-2.5 rounded-full shadow-lg">
+                <i class="fa-solid fa-xmark text-sm"></i>
+            </button>
+            <div id="map-zoom-content" class="w-full max-h-[75vh] flex items-center justify-center p-2 overflow-auto [&>svg]:max-w-full [&>svg]:max-h-[70vh] [&>svg]:h-auto [&>svg]:w-auto [&>svg]:bg-transparent [&>svg]:border-none [&>svg]:shadow-none [&>svg]:p-0">
+                <!-- SVG Harita buraya yüklenecek -->
+            </div>
+            <p class="text-[10px] text-slate-500 font-bold tracking-wider mt-4"><i class="fa-solid fa-circle-info text-indigo-400 animate-pulse"></i> Kapatmak için dışarıya veya X işaretine tıklayabilirsiniz.</p>
+        </div>
+    </div>
 </body>
 </html>
