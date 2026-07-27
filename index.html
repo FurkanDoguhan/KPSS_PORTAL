@@ -268,7 +268,8 @@
                     <button onclick="switchMode('cards')" id="btn-mode-cards" class="flex-grow sm:flex-none px-3.5 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer flex items-center justify-center gap-1 transition-all duration-200"><i class="fa-solid fa-clone"></i> Kartlar</button>
                     <button onclick="switchMode('quiz')" id="btn-mode-quiz" class="flex-grow sm:flex-none px-3.5 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer flex items-center justify-center gap-1 transition-all duration-200"><i class="fa-solid fa-circle-question"></i> Soru Bankası</button>
                     <button onclick="switchMode('notes')" id="btn-mode-notes" class="flex-grow sm:flex-none px-3.5 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer flex items-center justify-center gap-1 transition-all duration-200"><i class="fa-solid fa-book"></i> Konu Özetleri</button>
-                    <button onclick="switchMode('exam')" id="btn-mode-exam" class="flex-grow sm:flex-none px-3.5 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer flex items-center justify-center gap-1 transition-all duration-200"><i class="fa-solid fa-graduation-cap"></i> Deneme Sınavı</button>
+                    <!-- Deneme Sınavı tab is removed as requested -->
+                    <button onclick="switchMode('exam')" id="btn-mode-exam" class="hidden"></button>
                 </div>
             </div>
 
@@ -3283,6 +3284,20 @@
                 btn.onclick = () => { activeGroupIdx = i; quizIdx = 0; score = 0; prepareGroupQuestions(); buildGroupSelector(); renderQuiz(); };
                 container.appendChild(btn);
             }
+            
+            // Add Ünite Deneme Sınavı button
+            const examBtn = document.createElement("button");
+            const qCount = currentLesson === 'tarih' ? 27 : (currentLesson === 'cografya' ? 18 : 9);
+            let btnColorClass = "bg-rose-600 hover:bg-rose-500";
+            if (currentLesson === 'cografya') {
+                btnColorClass = "bg-emerald-600 hover:bg-emerald-500";
+            } else if (currentLesson === 'vatandaslik') {
+                btnColorClass = "bg-indigo-600 hover:bg-indigo-500";
+            }
+            examBtn.className = `px-3 py-1 ${btnColorClass} text-white text-[10px] font-black rounded-md shadow-md cursor-pointer ml-auto hover-glow flex items-center gap-1 transition-all hover:scale-105`;
+            examBtn.innerHTML = `<i class="fa-solid fa-graduation-cap animate-pulse"></i> ÜNİTE DENEMESİ (${qCount} SORU)`;
+            examBtn.onclick = () => { switchMode('exam'); };
+            container.appendChild(examBtn);
         }
 
         function prepareGroupQuestions() {
@@ -3375,6 +3390,7 @@
                 renderNotesView();
             } else if (mode === 'exam') {
                 isTaramaTestMode = false;
+                prepareUnitCumulativeExam();
                 document.getElementById("view-exam").classList.remove("hidden");
                 document.getElementById("exam-start-panel").classList.remove("hidden");
                 document.getElementById("exam-active-panel").classList.add("hidden");
@@ -5869,41 +5885,76 @@
         }
 
         function startDenemeExam() {
-            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+            prepareUnitCumulativeExam();
+            runUnitCumulativeExam();
+        }
+
+        function prepareUnitCumulativeExam() {
+            const qCount = currentLesson === 'tarih' ? 27 : (currentLesson === 'cografya' ? 18 : 9);
             
-            let allTarihQ = [];
-            let allCografyaQ = [];
-            let allVatandaslikQ = [];
+            let pool = [];
+            // Gather all questions from unit index 0 up to activeUnitIdx
+            for (let i = 0; i <= activeUnitIdx; i++) {
+                if (currentData[i] && currentData[i].quiz) {
+                    pool.push(...currentData[i].quiz.map(q => { return {...q, lesson: currentLesson}; }));
+                }
+            }
             
-            const tDb = typeof tarih_db !== 'undefined' ? tarih_db : [];
-            tDb.forEach(unit => {
-                if (unit.quiz) allTarihQ.push(...unit.quiz);
-            });
-            const cDb = typeof cografya_db !== 'undefined' ? cografya_db : [];
-            cDb.forEach(unit => {
-                if (unit.quiz) allCografyaQ.push(...unit.quiz);
-            });
-            const vDb = typeof vatandaslik_db !== 'undefined' ? vatandaslik_db : [];
-            vDb.forEach(unit => {
-                if (unit.quiz) allVatandaslikQ.push(...unit.quiz);
-            });
-            
-            if (allTarihQ.length < 27 || allCografyaQ.length < 18 || allVatandaslikQ.length < 9) {
-                alert("ℹ️ Deneme sınavı başlatmak için soru veritabanı boyutu yetersiz.");
+            if (pool.length === 0) {
                 return;
             }
             
-            let selectedTarih = allTarihQ.sort(() => 0.5 - Math.random()).slice(0, 27).map(q => { return {...q, lesson: 'tarih'}; });
-            let selectedCografya = allCografyaQ.sort(() => 0.5 - Math.random()).slice(0, 18).map(q => { return {...q, lesson: 'cografya'}; });
-            let selectedVatandaslik = allVatandaslikQ.sort(() => 0.5 - Math.random()).slice(0, 9).map(q => { return {...q, lesson: 'vatandaslik'}; });
-            
-            examQuestions = [...selectedTarih, ...selectedCografya, ...selectedVatandaslik];
+            // Shuffle pool and select questions
+            const shuffled = pool.sort(() => 0.5 - Math.random());
+            examQuestions = shuffled.slice(0, Math.min(pool.length, qCount));
             examAnswers = new Array(examQuestions.length).fill(null);
             
             examIdx = 0;
-            examTimerSeconds = 3240;
+            examTimerSeconds = examQuestions.length * 60; // 1 minute per question
             isExamMode = true;
             
+            const unitName = currentData[activeUnitIdx]?.unite || "Seçili Ünite";
+            const startPanel = document.getElementById("exam-start-panel");
+            if (startPanel) {
+                let badgeColor = "from-rose-500 to-orange-500 shadow-rose-500/20";
+                if (currentLesson === 'cografya') {
+                    badgeColor = "from-emerald-500 to-teal-500 shadow-emerald-500/20";
+                } else if (currentLesson === 'vatandaslik') {
+                    badgeColor = "from-indigo-500 to-purple-500 shadow-indigo-500/20";
+                }
+                
+                startPanel.innerHTML = `
+                    <div class="w-16 h-16 bg-gradient-to-tr ${badgeColor} rounded-2xl flex items-center justify-center text-slate-950 text-2xl mx-auto shadow-lg">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="text-lg font-black text-white">${unitName} Kümülatif Deneme Sınavı</h3>
+                        <p class="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">
+                            Bu sınav, 1. üniteden başlayarak aktif çalıştığınız <b>${unitName}</b> konusuna kadar olan tüm müfredatı kapsamaktadır. Sınavda toplam <b>${examQuestions.length}</b> adet özgün ÖSYM tarzı soru yer almaktadır.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3 max-w-sm mx-auto text-center text-[10px] font-bold">
+                        <div class="p-3 bg-slate-900 rounded-xl border border-slate-800">
+                            <div class="text-amber-400 text-sm font-black">${examQuestions.length}</div>
+                            <div class="text-slate-500 mt-0.5">SORU</div>
+                        </div>
+                        <div class="p-3 bg-slate-900 rounded-xl border border-slate-800">
+                            <div class="text-indigo-400 text-sm font-black">${Math.ceil(examTimerSeconds / 60)} dk</div>
+                            <div class="text-slate-500 mt-0.5">SÜRE</div>
+                        </div>
+                        <div class="p-3 bg-slate-900 rounded-xl border border-slate-800">
+                            <div class="text-emerald-400 text-sm font-black">-0.25</div>
+                            <div class="text-slate-500 mt-0.5">NET KATSAYISI</div>
+                        </div>
+                    </div>
+                    <div class="pt-2">
+                        <button onclick="runUnitCumulativeExam()" class="px-8 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-black text-xs rounded-xl shadow-lg cursor-pointer hover:scale-102 transition-all hover-glow">DENEMEYİ BAŞLAT</button>
+                    </div>
+                `;
+            }
+        }
+
+        function runUnitCumulativeExam() {
             document.getElementById("exam-start-panel").classList.add("hidden");
             document.getElementById("exam-result-panel").classList.add("hidden");
             document.getElementById("exam-active-panel").classList.remove("hidden");
@@ -6694,14 +6745,15 @@
                 
                 // Clean up zoom/remedy buttons to keep it clean
                 textHtml = textHtml.replace(/<button[^>]*>.*?<\/button>/g, "");
+                textHtml = textHtml.replace(/<div class="relative group[^>]*>\s*<\/div>/g, "");
                 
-                // Extract map SVG wrapper if present
-                const mapStartIdx = textHtml.indexOf('<div class="relative group');
-                if (mapStartIdx !== -1) {
-                    const mapEndIdx = textHtml.indexOf('</div>', mapStartIdx);
-                    if (mapEndIdx !== -1) {
-                        mapHtml = textHtml.substring(mapStartIdx, mapEndIdx + 6);
-                        textHtml = textHtml.substring(0, mapStartIdx) + textHtml.substring(mapEndIdx + 6);
+                // Extract map SVG if present
+                const svgStartIdx = textHtml.indexOf('<svg');
+                if (svgStartIdx !== -1) {
+                    const svgEndIdx = textHtml.indexOf('</svg>', svgStartIdx);
+                    if (svgEndIdx !== -1) {
+                        mapHtml = textHtml.substring(svgStartIdx, svgEndIdx + 6);
+                        textHtml = textHtml.substring(0, svgStartIdx) + textHtml.substring(svgEndIdx + 6);
                     }
                 }
                 
@@ -6717,17 +6769,17 @@
                     
                     container.innerHTML = `
                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full items-center">
-                            <!-- Sol Sütun: Harita Paneli (Genişletilmiş 7 Sütun) -->
-                            <div class="lg:col-span-7 flex flex-col items-center justify-center bg-slate-950/40 border border-slate-800/80 rounded-2xl p-4 shadow-inner">
+                            <!-- Sol Sütun: Harita Paneli (Genişletilmiş 8 Sütun) - Mobilde Altta -->
+                            <div class="lg:col-span-8 order-last lg:order-first flex flex-col items-center justify-center bg-slate-950/40 border border-slate-800/80 rounded-2xl p-4 shadow-inner">
                                 <div class="text-[9px] font-black text-emerald-400 bg-emerald-950/30 border border-emerald-900/40 px-2.5 py-0.5 rounded-lg uppercase tracking-wider mb-3 flex items-center gap-1">
                                     <i class="fa-solid fa-map-location-dot animate-pulse"></i> DETAYLI COĞRAFİ DAĞILIŞ ATLASI
                                 </div>
-                                <div class="w-full flex justify-center items-center [&>div]:w-full [&>div]:max-w-none [&>svg]:w-full [&>svg]:h-auto [&>svg]:max-h-[62vh] [&>svg]:shadow-none [&>svg]:bg-transparent [&>svg]:border-none">
+                                <div class="w-full flex justify-center items-center [&_div]:w-full [&_div]:max-w-none [&_svg]:w-full [&_svg]:h-auto [&_svg]:max-h-[76vh] [&_svg]:shadow-none [&_svg]:bg-transparent [&_svg]:border-none [&_button]:hidden [&>svg]:shadow-none [&>svg]:bg-transparent [&>svg]:border-none">
                                     ${largeMapHtml}
                                 </div>
                             </div>
-                            <!-- Sağ Sütun: Ders Notu Metni (5 Sütun) -->
-                            <div class="lg:col-span-5 space-y-4 max-h-[70vh] overflow-y-auto pr-2 scrollbar-thin">
+                            <!-- Sağ Sütun: Ders Notu Metni (4 Sütun) - Mobilde Üstte -->
+                            <div class="lg:col-span-4 order-first lg:order-last space-y-4 max-h-[70vh] overflow-y-auto pr-2 scrollbar-thin">
                                 <div class="border-b border-slate-800 pb-3 flex items-center justify-between">
                                     <span class="text-xs font-black text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2.5 py-0.5 rounded-md uppercase tracking-wider">#${kavram}</span>
                                     <span class="text-[9px] font-black text-slate-500 bg-slate-950 px-2 py-0.5 rounded border border-slate-900 uppercase">${unitName}</span>
@@ -7023,11 +7075,11 @@
     
     <!-- 🔍 HARİTA BÜYÜTME (ZOOM) MODALI -->
     <div id="modal-map-zoom" class="hidden fixed inset-0 z-[60] flex items-center justify-center bg-slate-950/90 backdrop-blur-md p-4 transition-all duration-300" onclick="closeMapZoomModal()">
-        <div class="relative w-full max-w-4xl bg-slate-900/60 border border-slate-800 rounded-3xl p-6 shadow-2xl flex flex-col items-center justify-center animate-fade-in" onclick="event.stopPropagation()">
+        <div class="relative w-full max-w-[95vw] w-[95vw] lg:max-w-[90vw] lg:w-[90vw] bg-slate-900/80 border border-slate-800 rounded-3xl p-6 shadow-2xl flex flex-col items-center justify-center animate-fade-in" onclick="event.stopPropagation()">
             <button onclick="closeMapZoomModal()" class="absolute top-4 right-4 bg-slate-950 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-slate-200 cursor-pointer transition-colors p-2.5 rounded-full shadow-lg">
                 <i class="fa-solid fa-xmark text-sm"></i>
             </button>
-            <div id="map-zoom-content" class="w-full max-h-[75vh] flex items-center justify-center p-2 overflow-auto [&>svg]:max-w-full [&>svg]:max-h-[70vh] [&>svg]:h-auto [&>svg]:w-auto [&>svg]:bg-transparent [&>svg]:border-none [&>svg]:shadow-none [&>svg]:p-0">
+            <div id="map-zoom-content" class="w-full max-h-[85vh] flex items-center justify-center p-2 overflow-auto [&_svg]:max-w-full [&_svg]:max-h-[80vh] [&_svg]:h-auto [&_svg]:w-auto [&>svg]:max-w-full [&>svg]:max-h-[80vh] [&>svg]:h-auto [&>svg]:w-auto [&>svg]:bg-transparent [&>svg]:border-none [&>svg]:shadow-none [&>svg]:p-0">
                 <!-- SVG Harita buraya yüklenecek -->
             </div>
             <p class="text-[10px] text-slate-500 font-bold tracking-wider mt-4"><i class="fa-solid fa-circle-info text-indigo-400 animate-pulse"></i> Kapatmak için dışarıya veya X işaretine tıklayabilirsiniz.</p>
