@@ -173,6 +173,7 @@
             <div class="flex bg-slate-900 p-1 rounded-xl border border-slate-800">
                 <button onclick="switchLesson('tarih')" id="btn-tarih" class="px-5 py-2 rounded-lg font-bold text-xs uppercase tracking-wider transition-all bg-amber-500 text-slate-950 shadow-sm cursor-pointer">Tarih</button>
                 <button onclick="switchLesson('cografya')" id="btn-cografya" class="px-5 py-2 rounded-lg font-bold text-xs uppercase tracking-wider transition-all text-slate-400 hover:text-slate-200 cursor-pointer">Coğrafya</button>
+                <button onclick="openMadenGame()" id="btn-maden-game" class="px-5 py-2 rounded-lg font-bold text-xs uppercase tracking-wider transition-all text-slate-400 hover:text-slate-200 cursor-pointer"><i class="fa-solid fa-gem text-amber-400"></i> Maden Uygulaması</button>
                 <button onclick="switchLesson('vatandaslik')" id="btn-vatandaslik" class="px-5 py-2 rounded-lg font-bold text-xs uppercase tracking-wider transition-all text-slate-400 hover:text-slate-200 cursor-pointer">Vatandaşlık</button>
             </div>
         </div>
@@ -257,6 +258,8 @@
         </div>
 
         <div class="lg:col-span-3 space-y-6">
+
+
             
             <div id="box-top-navbar" class="bg-slate-950 p-4 rounded-2xl border border-slate-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div class="max-w-full sm:max-w-[60%]">
@@ -268,7 +271,7 @@
                     <button onclick="switchMode('cards')" id="btn-mode-cards" class="flex-grow sm:flex-none px-3.5 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer flex items-center justify-center gap-1 transition-all duration-200"><i class="fa-solid fa-clone"></i> Kartlar</button>
                     <button onclick="switchMode('quiz')" id="btn-mode-quiz" class="flex-grow sm:flex-none px-3.5 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer flex items-center justify-center gap-1 transition-all duration-200"><i class="fa-solid fa-circle-question"></i> Soru Bankası</button>
                     <button onclick="switchMode('notes')" id="btn-mode-notes" class="flex-grow sm:flex-none px-3.5 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer flex items-center justify-center gap-1 transition-all duration-200"><i class="fa-solid fa-book"></i> Konu Özetleri</button>
-                    <!-- Deneme Sınavı tab is removed as requested -->
+                    <button onclick="switchMode('timeline')" id="btn-mode-timeline" class="flex-grow sm:flex-none px-3.5 py-1.5 rounded-md text-slate-400 hover:text-white cursor-pointer flex items-center justify-center gap-1 transition-all duration-200"><i class="fa-solid fa-clock-rotate-left"></i> Zaman Çizelgesi</button>
                     <button onclick="switchMode('exam')" id="btn-mode-exam" class="hidden"></button>
                 </div>
             </div>
@@ -737,6 +740,140 @@
                 </div>
                 
                 <div id="box-notes-list" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+            </div>
+
+            <!-- 📜 Tam Ekran Osmanlı İnfografik Zaman Tüneli -->
+            <div id="view-timeline" class="hidden space-y-6 animate-fadeIn">
+                <!-- Üst Dashboard: Bilgilendirme ve Dönem Seçici -->
+                <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 space-y-4 shadow-xl">
+                    <div class="flex flex-col lg:flex-row justify-between lg:items-center gap-4">
+                        <div>
+                            <h3 class="text-sm font-black text-white flex items-center gap-2">
+                                <i class="fa-solid fa-clock-rotate-left text-amber-500 animate-pulse"></i>
+                                OSMANLI İMPARATORLUĞU İNTERAKTİF ZAMAN TÜNELİ
+                            </h3>
+                            <p class="text-[10px] text-slate-400 mt-1">Seçilen döneme ait tüm padişahların askeri, siyasi ve kültürel gelişmelerini tek bir kronolojik çizelge üzerinde detaylı olarak inceleyin.</p>
+                        </div>
+                        <!-- Dönem Hızlı Filtresi -->
+                        <div class="flex flex-wrap gap-1.5" id="timeline-period-tabs">
+                            <!-- JS ile doldurulacak -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alt Dashboard: Dönem Özet Kartı & Dikey Zaman Çizelgesi -->
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                    <!-- Sol Sütun: Dönem Özet Kartı ve İstatistikler -->
+                    <div class="lg:col-span-1 space-y-4">
+                        <div id="timeline-sultan-profile-card" class="bg-slate-950 p-5 rounded-2xl border border-slate-800 space-y-4 shadow-lg text-center relative overflow-hidden">
+                            <!-- Dinamik Dönem/Padişah Bilgileri ve SVG Çizelge -->
+                        </div>
+                    </div>
+
+                    <!-- Sağ Sütun: Dikey Görsel Zaman Çizelgesi Aksı -->
+                    <div class="lg:col-span-3 bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-6 shadow-xl relative overflow-hidden">
+                        <div class="flex justify-between items-center border-b border-slate-900 pb-3">
+                            <h4 class="text-xs font-black text-white uppercase tracking-wider flex items-center gap-1.5">
+                                <i class="fa-solid fa-timeline text-amber-500"></i> KRONOLOJİK AKIŞ VE GELİŞMELER
+                            </h4>
+                            <div class="flex gap-2 text-[9px] font-bold">
+                                <span class="flex items-center gap-1 text-sky-400 bg-sky-950/40 border border-sky-900/60 px-2 py-0.5 rounded-md"><i class="fa-solid fa-swords"></i> Siyasi / Askeri</span>
+                                <span class="flex items-center gap-1 text-emerald-400 bg-emerald-950/40 border border-emerald-900/60 px-2 py-0.5 rounded-md"><i class="fa-solid fa-scroll"></i> Islahat / Kültür</span>
+                            </div>
+                        </div>
+
+                        <!-- İnfografik Dikey Zaman Çizelgesi Alanı -->
+                        <div class="relative w-full max-h-[650px] overflow-y-auto pr-2 scrollbar-thin select-none timeline-container-3d" id="vertical-timeline-container" style="scrollbar-width: thin; scrollbar-color: rgba(245,158,11,0.3) transparent; perspective: 1500px;">
+                            <!-- Olaylar Dikey Konteyneri -->
+                            <div id="infographic-timeline-events-vertical" class="relative space-y-4 py-4 w-full timeline-events-3d-wrapper" style="transform-style: preserve-3d; transform: rotateX(6deg) rotateY(-4deg); transition: transform 0.15s ease-out;">
+                                <svg id="zigzag-svg-overlay" class="absolute inset-0 w-full h-full pointer-events-none z-0" style="min-height: 100%;"></svg>
+                                <!-- Olay Kartları ve Padişah Medalyonları JS ile dikey olarak render edilecek -->
+                            </div>
+                        </div></div>
+                </div>
+            </div>
+
+            
+            <!-- 💎 MADEN HARİTASI BULMACA UYGULAMASI V2 -->
+            <div id="view-maden-game" class="hidden bg-slate-950/90 p-6 rounded-3xl border border-slate-800 shadow-2xl backdrop-blur-md animate-fadeIn">
+                <!-- Header -->
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-800/50 pb-4 mb-6">
+                    <div>
+                        <h3 class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500 flex items-center gap-2"><i class="fa-solid fa-gem text-teal-400"></i> Maden Uygulaması V2</h3>
+                        <p id="maden-instruction-text" class="text-xs text-slate-400 font-medium mt-1">Haritadaki noktaların hangi madene ait olduğunu seçeneklerden bulun.</p>
+                    </div>
+                    <div class="flex gap-2 bg-slate-900/50 p-1 rounded-xl border border-slate-800">
+                        <button id="btn-maden-mode-1" onclick="switchMadenMode(1)" class="px-4 py-2 rounded-lg text-xs font-bold transition-all bg-emerald-500/20 text-emerald-400 shadow-sm border border-emerald-500/30">Mod 1: Madeni Bul</button>
+                        <button id="btn-maden-mode-2" onclick="switchMadenMode(2)" class="px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-slate-200">Mod 2: Konumu İşaretle</button>
+                    </div>
+                </div>
+
+                <!-- Layout -->
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 relative">
+                    <!-- Map Area -->
+                    <div class="lg:col-span-3 bg-slate-900/40 rounded-2xl border border-slate-700/50 p-2 relative shadow-inner">
+                        <!-- Question banner for Mode 2 -->
+                        <div id="maden-mode2-question" class="absolute top-4 left-1/2 -translate-x-1/2 z-40 bg-slate-900/95 border border-indigo-500/50 text-indigo-100 px-6 py-3 rounded-2xl shadow-xl backdrop-blur items-center gap-3" style="display: none;">
+                            <i class="fa-solid fa-circle-question text-indigo-400 text-xl animate-pulse"></i>
+                            <span id="maden-mode2-text" class="text-sm font-black tracking-wide"></span>
+                        </div>
+
+                        <!-- Map Container -->
+                        <div class="w-full relative rounded-xl overflow-hidden border border-slate-800" style="aspect-ratio: 2/1; background-image: url('maden_harita.png'); background-size: 100% 100%; background-position: center; box-shadow: inset 0 0 80px rgba(0,0,0,0.8);">
+                            <div id="maden-map-points" class="absolute inset-0 pointer-events-none"></div>
+                        </div>
+                        
+                        <!-- Legend -->
+                        <div class="absolute bottom-4 left-4 bg-slate-950/90 backdrop-blur-md border border-slate-700 p-3 rounded-xl flex flex-col gap-2 shadow-xl z-10">
+                            <span class="text-[10px] font-bold text-slate-200 flex items-center gap-2"><span class="w-3.5 h-3.5 rounded-full bg-rose-500 border border-rose-300 shadow-[0_0_10px_rgba(243,24,66,0.8)]"></span> Çıkarım Yeri</span>
+                            <span class="text-[10px] font-bold text-slate-200 flex items-center gap-2"><span class="w-3.5 h-3.5 rounded bg-amber-400 border border-amber-200 shadow-[0_0_10px_rgba(251,191,36,0.8)]"></span> İşleme Tesisi</span>
+                        </div>
+                        
+                        <!-- Feedback -->
+                        <div id="maden-feedback" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-950/95 border-2 p-6 rounded-3xl shadow-[0_0_50px_rgba(0,0,0,0.8)] flex-col items-center gap-4 hidden z-50 min-w-[280px]">
+                            <div id="maden-feedback-icon-container" class="w-16 h-16 rounded-full flex items-center justify-center mb-1">
+                                <i id="maden-feedback-icon" class="fa-solid fa-circle-check text-4xl"></i>
+                            </div>
+                            <h4 id="maden-feedback-title" class="text-xl font-black uppercase tracking-widest text-center">Tebrikler!</h4>
+                            <p id="maden-feedback-desc" class="text-xs text-slate-300 text-center font-medium max-w-[240px] leading-relaxed"></p>
+                            <button onclick="nextMadenRound()" class="mt-2 px-8 py-3 rounded-xl font-black text-xs bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 text-white shadow-lg transition-transform hover:scale-105 uppercase tracking-wider">Devam Et <i class="fa-solid fa-arrow-right ml-2"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Right Panel: Options & Score -->
+                    <div class="lg:col-span-1 flex flex-col gap-4">
+                        <!-- Mode 1 Options -->
+                        <div id="maden-mode1-panel" class="bg-slate-900/40 rounded-2xl border border-slate-700/50 p-4 flex-grow flex flex-col shadow-inner max-h-[400px] overflow-y-auto scrollbar-thin">
+                            <div class="text-xs font-black text-slate-400 uppercase tracking-widest mb-4 border-b border-slate-800 pb-3 text-center"><i class="fa-solid fa-list-ul mr-1"></i> Madeni Seç</div>
+                            <div id="maden-options" class="grid grid-cols-2 gap-2">
+                                <!-- JS fills this -->
+                            </div>
+                        </div>
+
+                        <!-- Mode 2 Info (Hidden in mode 1) -->
+                        <div id="maden-mode2-panel" class="hidden bg-slate-900/40 rounded-2xl border border-slate-700/50 p-6 flex-grow flex flex-col items-center justify-center shadow-inner text-center space-y-4">
+                            <div class="w-16 h-16 rounded-2xl bg-indigo-500/20 flex items-center justify-center text-indigo-400 border border-indigo-500/30">
+                                <i class="fa-solid fa-hand-pointer text-3xl animate-bounce"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-black text-white uppercase tracking-wider">Yerini Bul</h4>
+                                <p class="text-[11px] text-slate-400 mt-2 font-medium leading-relaxed">Harita üzerinde gösterilen <span class="text-rose-400 font-bold">5 noktadan</span> hangisinin istenen madene ait olduğunu tıklayarak seçin.</p>
+                            </div>
+                        </div>
+
+                        <!-- Scoreboard -->
+                        <div class="bg-slate-900/60 rounded-2xl border border-slate-700/50 p-4 shadow-xl">
+                            <div class="flex justify-between items-center bg-slate-950/80 p-3 rounded-xl border border-slate-800 mb-2">
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-500"></i> Doğru</span>
+                                <span id="maden-score-correct" class="text-emerald-400 font-black text-lg">0</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-slate-950/80 p-3 rounded-xl border border-slate-800">
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-xmark text-rose-500"></i> Yanlış</span>
+                                <span id="maden-score-wrong" class="text-rose-400 font-black text-lg">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- YAPAY ZEKA AKILLI YOL HARİTASI PANELİ -->
@@ -3233,6 +3370,9 @@
         function switchLesson(lesson) {
             if ('speechSynthesis' in window) window.speechSynthesis.cancel();
             currentLesson = lesson; isTaramaTestMode = false;
+            if (lesson !== 'tarih' && currentMode === 'timeline') {
+                currentMode = 'roadmap';
+            }
             currentData = lesson === 'tarih' ? (typeof tarih_db !== 'undefined' ? tarih_db : []) : (lesson === 'cografya' ? (typeof cografya_db !== 'undefined' ? cografya_db : []) : (typeof vatandaslik_db !== 'undefined' ? vatandaslik_db : []));
             activeUnitIdx = 0; activeGroupIdx = 0; cardIdx = 0; quizIdx = 0; score = 0;
             
@@ -3331,8 +3471,10 @@
             const btnNotes = document.getElementById("btn-mode-notes");
             const btnExam = document.getElementById("btn-mode-exam");
             const btnGuide = document.getElementById("btn-mode-guide");
+            const btnTimeline = document.getElementById("btn-mode-timeline");
 
             // Hide all active main panels first
+            if (document.getElementById("view-maden-game")) document.getElementById("view-maden-game").classList.add("hidden");
             if (document.getElementById("view-roadmap")) document.getElementById("view-roadmap").classList.add("hidden");
             if (document.getElementById("view-content-test")) document.getElementById("view-content-test").classList.add("hidden");
             document.getElementById("view-cards").classList.add("hidden");
@@ -3341,6 +3483,7 @@
             document.getElementById("view-exam").classList.add("hidden");
             document.getElementById("view-map-atlas").classList.add("hidden");
             document.getElementById("view-guide").classList.add("hidden");
+            if (document.getElementById("view-timeline")) document.getElementById("view-timeline").classList.add("hidden");
             document.getElementById("box-group-selector").classList.add("hidden");
 
             // Dynamic Active tab styling depending on lesson color brand
@@ -3363,6 +3506,7 @@
             if (btnNotes) btnNotes.className = inactiveClass;
             if (btnExam) btnExam.className = inactiveClass;
             if (btnGuide) btnGuide.className = inactiveClass;
+            if (btnTimeline) btnTimeline.className = inactiveClass;
 
             if (mode === 'roadmap') {
                 isTaramaTestMode = false;
@@ -3418,6 +3562,16 @@
                 isTaramaTestMode = false;
                 document.getElementById("view-content-test").classList.remove("hidden");
                 document.getElementById("box-top-navbar").classList.add("hidden");
+            } else if (mode === 'timeline') {
+                isTaramaTestMode = false;
+                if (document.getElementById("view-timeline")) document.getElementById("view-timeline").classList.remove("hidden");
+                if (btnTimeline) btnTimeline.className = activeClass;
+                if (typeof renderOttomanInfographicTimeline !== 'undefined') {
+                    renderOttomanInfographicTimeline();
+                }
+            }
+            if (typeof handleTimelineVisibility !== 'undefined') {
+                handleTimelineVisibility();
             }
         }
 
@@ -4382,6 +4536,7 @@
             answered = false;
             activeRoadmapConceptQuiz = tag;
             
+            if (document.getElementById("view-maden-game")) document.getElementById("view-maden-game").classList.add("hidden");
             if (document.getElementById("view-roadmap")) document.getElementById("view-roadmap").classList.add("hidden");
             document.getElementById("view-quiz").classList.remove("hidden");
             document.getElementById("txt-quiz-module-title").textContent = `Kavram Özel Odak Testi: #${tag} (10 Soru / 7 Doğru Hedefi)`;
@@ -6854,31 +7009,1194 @@
             });
         }
 
-        // MÜKEMMEL DOM VE DB OKUMA BAĞLANTISI (v17.0 GÜVENCESİ)
-        document.addEventListener("DOMContentLoaded", () => {
-            // Apply premium theme on load
-            changeTheme(localStorage.getItem('kpss_portal_theme') || 'obsidian');
+        // --- 📜 OSMANLI TARİHİ İNTERAKTİF ZAMAN ÇİZGESİ MOTORU ---
+        const ottomanTimelineData = [
+            {
+                id: "osman-bey",
+                name: "Osman Bey",
+                reign: "1299 - 1326",
+                period: "Kuruluş",
+                status: "Devletleşme Aşaması",
+                kpssLevel: "⭐⭐⭐⭐",
+                territory: 16000,
+                achievements: [
+                    "Aşiretten beyliğe geçiş sağlandı.",
+                    "İlk Osmanlı bakır parası (Mangır) bastırıldı.",
+                    "İlk kez kadı ataması (Dursun Fakıh - Karacahisar) yapıldı.",
+                    "Fahrüddin unvanı ile bilinir."
+                ],
+                events: [
+                    { year: 1299, title: "Beyliğin Bağımsızlığı (Söğüt ve Domaniç)", type: "siyasi", icon: "fa-crown", desc: "Osman Gazi önderliğinde Söğüt ve Domaniç çevresinde Selçuklu tabiiyetinden çıkılarak bağımsızlık ilan edildi.", importance: "Osmanlı Devleti'nin resmi kuruluş yılı kabul edilir. Sınavda beyliğin ilk merkezleri (Söğüt/Domaniç) ve kurucusu Osman Bey sıklıkla sorulur." },
+                    { year: 1302, title: "Koyunhisar (Bapheus) Savaşı", type: "siyasi", icon: "fa-sword", desc: "Bizans ile yapılan ilk askeri çarpışmadır. Bizans tekfurlarının ittifakı mağlup edildi.", importance: "Bizans İmparatorluğu ile yapılan ilk savaştır, rüşt ispat edilmiş ve beyliğin prestiji artmıştır." },
+                    { year: 1306, title: "İlk Bakır Para (Mangır) & Vergi (Bac)", type: "kultur", icon: "fa-coins", desc: "İlk bakır para (Mangır) bastırıldı ve ilk pazar vergisi (Bac) uygulanmaya başlandı.", importance: "Ekonomik bağımsızlığın ve mali teşkilatlanmanın ilk somut adımıdır. Osmanlı'da alınan ilk vergi 'Bac' vergisidir." },
+                    { year: 1324, title: "İlk Kadı Ataması (Dursun Fakıh)", type: "kultur", icon: "fa-gavel", desc: "Karacahisar'a Dursun Fakıh ilk Osmanlı kadısı olarak atandı.", importance: "Osmanlı hukuk sisteminin kurulduğunun ve adli teşkilatlanmanın başladığının kanıtıdır." }
+                ]
+            },
+            {
+                id: "orhan-bey",
+                name: "Orhan Bey",
+                reign: "1326 - 1362",
+                period: "Kuruluş",
+                status: "Teşkilatlanma Aşaması",
+                kpssLevel: "⭐⭐⭐⭐⭐",
+                territory: 95000,
+                achievements: [
+                    "Beylikten devlete geçiş tamamlandı.",
+                    "İlk düzenli ordu (Yaya ve Müsellem) kuruldu.",
+                    "Divan teşkilatı kuruldu ve vezir atandı.",
+                    "İlk Osmanlı medresesi İznik'te açıldı."
+                ],
+                events: [
+                    { year: 1326, title: "Bursa'nın Fethi & Başkent Yapılması", type: "siyasi", icon: "fa-map-pin", desc: "Uzun süren kuşatmanın ardından Bursa Bizans'tan alınarak başkent yapıldı. Osman Bey'in vasiyeti ('Gümüşlü Kümbet') yerine getirildi.", importance: "Stratejik bir ticaret merkezi fethedilmiş ve yeni idari merkez olmuştur." },
+                    { year: 1329, title: "Palekanon (Maltepe) Savaşı", type: "siyasi", icon: "fa-sword", desc: "İznik'i kurtarmak isteyen Bizans İmparatorluk ordusu bozguna uğratıldı.", importance: "Bizans'ın Kocaeli yarımadasındaki varlığı tamamen sona ermiş ve İznik'in fethi kolaylaşmıştır." },
+                    { year: 1331, title: "İlk Medrese (İznik Süleyman Paşa Medresesi)", type: "kultur", icon: "fa-graduation-cap", desc: "İznik Süleyman Paşa Medresesi açıldı. İlk müderris olarak Davud-ı Kayseri atandı.", importance: "Eğitim alanındaki ilk kurumsallaşmadır. KPSS'de ilk müderris (Davud-ı Kayseri) sorulma değeri yüksek bir bilgidir." },
+                    { year: 1345, title: "Karesioğullarının İlhakı (Denizciliğin Başlaması)", type: "siyasi", icon: "fa-ship", desc: "Balıkesir ve Çanakkale çevresindeki Karesi Beyliği iç karışıklıklarından faydalanılarak savaşsız ele geçirildi.", importance: "Anadolu Türk Birliği için atılan ilk adımdır. Karesi donanması Osmanlı donanmasının temelini oluşturmuştur. Evrenos Bey, Hacı İlbeyi gibi komutanlar Osmanlı hizmetine girmiştir." },
+                    { year: 1353, title: "Çimpe Kalesi'nin Alınması (Rumeli'ye Geçiş)", type: "siyasi", icon: "fa-fort-awesome", desc: "Bizans iç karışıklıklarında taht kavgasına (Kantakuzen'e) yardım karşılığı Çimpe Kalesi askeri üs olarak alındı.", importance: "Rumeli'ye geçişteki ilk askeri üssümüzdür. Balkan fetihlerinin kapısını açmıştır." },
+                    { year: 1360, title: "İlk Düzenli Ordu & Teşkilatlanma", type: "kultur", icon: "fa-users-cog", desc: "Yaya ve Müsellem adıyla ilk düzenli ordu kuruldu. Divan teşkilatı açıldı, ilk vezir (Alaeddin Paşa) atandı.", importance: "Beylikten devlet teşkilatına geçişin en kesin kanıtlarıdır. Divan-ı Hümayun ve düzenli ordu bu dönemde kurulmuştur." }
+                ]
+            },
+            {
+                id: "i-murad",
+                name: "I. Murad",
+                reign: "1362 - 1389",
+                period: "Kuruluş",
+                status: "Balkanlarda Yayılma",
+                kpssLevel: "⭐⭐⭐⭐⭐",
+                territory: 290000,
+                achievements: [
+                    "Edirne fethedilip başkent yapıldı.",
+                    "Yeniçeri Ocağı ve Pençik sistemi kuruldu.",
+                    "Rumeli Beylerbeyliği kuruldu.",
+                    "Hüdavendigar unvanıyla bilinir."
+                ],
+                events: [
+                    { year: 1363, title: "Sazlıdere Savaşı & Edirne'nin Başkent Oluşu", type: "siyasi", icon: "fa-map-pin", desc: "Bizans ve Bulgar güçleri yenilerek Edirne fethedildi ve hemen ardından yeni başkent yapıldı.", importance: "Balkan fetihleri için kalıcı yönetim merkezi kurulmuş, Bizans'ın Avrupa ile kara bağlantısı kesilmiştir." },
+                    { year: 1364, title: "Sırpsındığı Savaşı (İlk Haçlı Savaşı)", type: "siyasi", icon: "fa-sword", desc: "Balkan ittifakı ve Haçlı ordusu Hacı İlbeyi önderliğinde ani bir gece baskınıyla yok edildi.", importance: "Osmanlı ile Haçlılar arasındaki ilk savaştır. Macar üstünlüğü kırılmıştır." },
+                    { year: 1365, title: "Kapıkulu Ocağı, Pençik & Rumeli Beylerbeyliği", type: "kultur", icon: "fa-users", desc: "Çandarlı Halil Paşa'nın önerisiyle Pençik (beşte bir esir) sistemiyle Yeniçeri Ocağı kuruldu. Rumeli Beylerbeyliği kuruldu (Lala Şahin Paşa).", importance: "Sınırların genişlemesiyle idari ve askeri teşkilatlanma hızlanmıştır. Rumeli Beylerbeyliği merkezinin Manastır olması sınav sorusudur." },
+                    { year: 1385, title: "Veraset Değişikliği (Otorite Güçlendirme)", type: "kultur", icon: "fa-gavel", desc: "Veraset kuralı 'Ülke hanedanın ortak malıdır' yerine 'Ülke padişah ve oğullarınındır' şeklinde değiştirildi.", importance: "Merkezi otoriteyi güçlendirmeyi amaçlayan ilk veraset reformudur. Taht kavgaları sınırlandırılmıştır." },
+                    { year: 1389, title: "I. Kosova Savaşı", type: "siyasi", icon: "fa-sword", desc: "Büyük Haçlı ittifakı yenildi. I. Murad savaş alanını gezerken bir Sırp askeri (Milos Obilic) tarafından şehit edildi.", importance: "İlk kez savaşta top (sesinden korkutma amaçlı) kullanılmıştır. Savaş alanında şehit düşen tek Osmanlı padişahıdır." }
+                ]
+            },
+            {
+                id: "yildirim-bayezid",
+                name: "Yıldırım Bayezid",
+                reign: "1389 - 1402",
+                period: "Kuruluş",
+                status: "Merkeziyetçi İmparatorluk",
+                kpssLevel: "⭐⭐⭐⭐",
+                territory: 942000,
+                achievements: [
+                    "Anadolu Türk siyasi birliğini büyük ölçüde sağladı.",
+                    "İstanbul'u ilk kez kuşatan padişahtır.",
+                    "Anadolu Beylerbeyliği kuruldu.",
+                    "Sultan-ı İklim-i Rum unvanını aldı."
+                ],
+                events: [
+                    { year: 1391, title: "İstanbul Kuşatması & Anadolu Hisarı", type: "siyasi", icon: "fa-shield", desc: "İstanbul ilk kez kuşatıldı. Kuşatmaya yardımcı olması için Anadolu Hisarı (Güzelcehisar) yaptırıldı.", importance: "Osmanlı tarihinde İstanbul'un ilk sistemli kuşatmasıdır. Bizans ile yapılan antlaşmayla İstanbul'da Türk mahallesi kurulmuştur." },
+                    { year: 1396, title: "Niğbolu Savaşı (Haçlı Zaferi)", type: "siyasi", icon: "fa-sword", desc: "Büyük Haçlı ordusu Tuna nehrinin kıyısındaki Niğbolu Kalesi önünde imha edildi. Abbasi halifesi Yıldırım'a 'Sultan-ı İklim-i Rum' unvanını verdi.", importance: "Osmanlı'nın İslam dünyasındaki saygınlığı zirveye ulaşmış, Bulgaristan tamamen Osmanlı topraklarına katılmıştır." },
+                    { year: 1402, title: "Ankara Savaşı & Fetret Devri", type: "siyasi", icon: "fa-skull-crossbones", desc: "Timur İmparatorluğu ile yapılan savaşta yenilgi alındı. Yıldırım Bayezid esir düştü.", importance: "11 yıl sürecek Fetret Devri başlamış, Anadolu beylikleri yeniden kurulmuş ve Bizans'ın fethi 50 yıl gecikmiştir." }
+                ]
+            },
+            {
+                id: "i-mehmed",
+                name: "I. Mehmed (Çelebi)",
+                reign: "1413 - 1421",
+                period: "Kuruluş",
+                status: "Restorasyon Dönemi",
+                kpssLevel: "⭐⭐⭐⭐",
+                territory: 858000,
+                achievements: [
+                    "Fetret Devri kargaşasını sonlandırdı.",
+                    "Devletin ikinci kurucusu kabul edilir.",
+                    "Devşirme sistemini kanunlaştırmaya başladı.",
+                    "İlk deniz savaşını Venedik ile yaptı."
+                ],
+                events: [
+                    { year: 1413, title: "Fetret Devri'nin Sonu", type: "siyasi", icon: "fa-crown", desc: "Kardeşleriyle (İsa, Musa, Süleyman) yaptığı taht mücadelelerini kazanarak tek hükümdar oldu.", importance: "Devletin parçalanmasını önlediği için 'Devletin İkinci Kurucusu' olarak anılır." },
+                    { year: 1416, title: "Çalı Bey Savaşı (İlk Deniz Savaşı)", type: "siyasi", icon: "fa-ship", desc: "Ege denizinde Venedik donanması karşısında Çalı Bey komutasındaki Osmanlı donanması mağlup oldu.", importance: "Osmanlı tarihinin ilk deniz savaşıdır. Deniz gücünün henüz Venedik seviyesine gelmediği görülmüştür." },
+                    { year: 1420, title: "Şeyh Bedreddin İsyanı", type: "siyasi", icon: "fa-exclamation-triangle", desc: "Fetret dönemi krizlerinden beslenen dini, sosyal ve ekonomik içerikli büyük halk isyanı bastırıldı.", importance: "Osmanlı devletindeki ilk dini ve sosyo-ekonomik nitelikli isyandır." }
+                ]
+            },
+            {
+                id: "ii-murad",
+                name: "II. Murad",
+                reign: "1421 - 1451",
+                period: "Kuruluş",
+                status: "Balkanlarda Kesinleşme",
+                kpssLevel: "⭐⭐⭐⭐",
+                territory: 980000,
+                achievements: [
+                    "Ebu'l Hayrat unvanıyla bilinir.",
+                    "Balkan ittifaklarını kesin bozguna uğrattı.",
+                    "Devşirme kanununu yasalaştırdı.",
+                    "Tahtı kendi rızasıyla oğluna bırakan tek padişahtır."
+                ],
+                events: [
+                    { year: 1444, title: "Edirne-Segedin Antlaşması", type: "siyasi", icon: "fa-scroll", desc: "Haçlılarla imzalanan 10 yıl süreli ilk barış antlaşmasıdır. Sonrasında II. Murad tahtı 12 yaşındaki oğlu II. Mehmed'e bıraktı.", importance: "Batı ile imzalanan sınırları belirleyen ilk resmi barış antlaşmasıdır. Türklerin Balkanlardaki gücü onaylanmıştır." },
+                    { year: 1444, title: "Varna Savaşı (Haçlı Bozgunu)", type: "siyasi", icon: "fa-sword", desc: "Taht değişikliğini fırsat bilen Haçlı ordusu tahta tekrar geçen II. Murad tarafından Varna'da imha edildi.", importance: "Avrupa'nın Balkanlar'dan Türkleri atma umutları kırılmış, II. Mehmed'in gelecekteki tahtı güvenceye alınmıştır." },
+                    { year: 1448, title: "II. Kosova Savaşı (Balkanların Türk Yurdu Oluşu)", type: "siyasi", icon: "fa-sword", desc: "Balkanlardan Türkleri tamamen atmak için yapılan son büyük Haçlı taarruzu püskürtüldü.", importance: "Balkanların kesin olarak Türk yurdu olduğu kanıtlanmış, Avrupalılar savunmaya, Osmanlı taarruza geçmiştir." }
+                ]
+            },
+            {
+                id: "fatih-sultan-mehmed",
+                name: "Fatih Sultan Mehmed",
+                reign: "1451 - 1481",
+                period: "Yükselme",
+                status: "Cihan İmparatorluğu",
+                kpssLevel: "⭐⭐⭐⭐⭐",
+                territory: 2214000,
+                achievements: [
+                    "İstanbul'u fethederek Doğu Roma'yı yıktı.",
+                    "İlk anayasal nitelikli kanunnameyi (Kanunname-i Ali Osman) çıkardı.",
+                    "Kardeş katlini devlet bekası için yasallaştırdı.",
+                    "Sadrazamı Divan başkanı yaparak merkezi otoriteyi mutlaklaştırdı."
+                ],
+                events: [
+                    { year: 1452, title: "Rumeli Hisarı'nın (Boğazkesen) İnşası", type: "kultur", icon: "fa-fort-awesome", desc: "İstanbul kuşatması öncesinde Karadeniz'den Bizans'a gelecek yardımları engellemek amacıyla Anadolu Hisarı'nın karşısına inşa edildi.", importance: "Kuşatma hazırlıklarının en önemli askeri mimari adımıdır." },
+                    { year: 1453, title: "İSTANBUL'UN FETHİ (Doğu Roma'nın Yıkılışı)", type: "siyasi", icon: "fa-map", desc: "53 günlük kuşatmanın ardından 29 Mayıs 1453'te Bizans başkenti fethedildi. Şahi topları döküldü, gemiler karadan yürütüldü.", importance: "Orta Çağ kapandı, Yeni Çağ başladı. İpek Yolu kontrolü Osmanlı'ya geçti ve Avrupalılar Coğrafi Keşifler'e yönelmek zorunda kaldı. Bizans İmparatorluğu tarihe gömülmüştür." },
+                    { year: 1461, title: "Trabzon Rum İmparatorluğu'na Son Verilmesi", type: "siyasi", icon: "fa-shield", desc: "Trabzon Rum İmparatorluğu fethedilerek Bizans'ı yeniden diriltme umutları tamamen yok edildi.", importance: "Mora ve Trabzon'un fetihleri Bizans'ın tekrar kurulma ihtimalini ortadan kaldırmıştır." },
+                    { year: 1473, title: "Otlukbeli Savaşı (Doğu Anadolu Sınırı)", type: "siyasi", icon: "fa-sword", desc: "Akkoyunlu Uzun Hasan ile Doğu Anadolu egemenliği için savaşıldı ve büyük bir ateşli silah üstünlüğüyle kazanıldı.", importance: "Doğu sınırlarının güvenliği sağlanmış, Akkoyunlu Devleti yıkılma sürecine girmiştir." },
+                    { year: 1475, title: "Kırım'ın Fethi (Karadeniz Türk Gölü)", type: "siyasi", icon: "fa-anchor", desc: "Gedik Ahmet Paşa komutasındaki donanma Ceneviz kolonilerini alarak Kırım'ı Osmanlı'ya bağlı bir hanlık yaptı.", importance: "Karadeniz tamamen bir Türk gölü haline gelmiş, İpek Yolu'nun kuzey kanadı güvenceye alınmıştır." },
+                    { year: 1478, title: "Kanunname-i Ali Osman & İlk Altın Para", type: "kultur", icon: "fa-gavel", desc: "Devlet kuralları yazılı hale getirildi, ilk altın para (Sultani) basıldı. Kardeş katli, müsadere sistemi ve cülus bahşişi yasalaştı.", importance: "Mutlak monarşi kurumsallaşmıştır. Devletin bekası için kardeş katline ilk kez izin verilmiştir." }
+                ]
+            },
+            {
+                id: "yavuz-sultan-selim",
+                name: "Yavuz Sultan Selim",
+                reign: "1512 - 1520",
+                period: "Yükselme",
+                status: "Doğu Siyaseti ve Halifelik",
+                kpssLevel: "⭐⭐⭐⭐⭐",
+                territory: 6557000,
+                achievements: [
+                    "Osmanlı hazinesini tamamen dolduran tek padişahtır.",
+                    "Memlük Devleti'ne son vererek Halifeliği aldı.",
+                    "Mukaddes Emanetleri İstanbul'a getirdi.",
+                    "Hadimü'l Haremeyni'ş Şerifeyn unvanını kullandı."
+                ],
+                events: [
+                    { year: 1514, title: "Çaldıran Savaşı (Safevi Tehlikesi)", type: "siyasi", icon: "fa-sword", desc: "Safevi Şah İsmail'in Anadolu'daki Şii propagandası askeri harekatla engellendi.", importance: "Doğu Anadolu sınır güvenliği sağlanmış, Şii kökenli isyan tehlikeleri durdurulmuştur." },
+                    { year: 1515, title: "Turnadağ Savaşı (Anadolu Türk Birliği)", type: "siyasi", icon: "fa-flag", desc: "Maraş Dulkadiroğulları Beyliği ortadan kaldırılarak Osmanlı'ya bağlandı.", importance: "Anadolu Türk siyasi birliği kesin ve kalıcı olarak sağlanmıştır. Sınavda ATSB'yi kesin sağlayan savaş olarak sorulur." },
+                    { year: 1517, title: "Mercidabık & Ridaniye Savaşları (Mısır'ın Fethi)", type: "siyasi", icon: "fa-crown", desc: "Memlük orduları mağlup edildi, Kahire ele geçirildi. Baharat yolu Osmanlı'ya geçti.", importance: "Halifelik Osmanlı hanedanına geçmiş, teokratik devlet yapısı kurulmuş, kutsal emanetler İstanbul'a getirilmiştir." }
+                ]
+            },
+            {
+                id: "kanuni-sultan-suleyman",
+                name: "Kanuni Sultan Süleyman",
+                reign: "1520 - 1566",
+                period: "Yükselme",
+                status: "Muhteşem Yüzyıl (Zirve)",
+                kpssLevel: "⭐⭐⭐⭐⭐",
+                territory: 14893000,
+                achievements: [
+                    "46 yıl ile en uzun süre tahtta kalan Osmanlı padişahıdır.",
+                    "Preveze Deniz Zaferi ile Akdeniz'i Türk gölü yaptı.",
+                    "Avusturya karşısında mutlak diplomatik üstünlük sağladı.",
+                    "I. Muhteşem Süleyman olarak bilinir."
+                ],
+                events: [
+                    { year: 1521, title: "Belgrad'ın Fethi", type: "siyasi", icon: "fa-map-pin", desc: "Sırbistan'ın kilit noktası Belgrad fethedildi.", importance: "Avrupa içlerine yapılacak fetih hareketleri için stratejik bir askeri üs kazanılmıştır." },
+                    { year: 1526, title: "Mohaç Meydan Muharebesi", type: "siyasi", icon: "fa-sword", desc: "Macar ordusu 2 saat gibi kısa bir sürede imha edildi. Budin fethedildi.", importance: "Tarihin en kısa sürede kazanılan meydan muharebelerinden biridir. Macaristan Osmanlı korumasına girmiştir." },
+                    { year: 1533, title: "İstanbul (İbrahim Paşa) Antlaşması", type: "siyasi", icon: "fa-scroll", desc: "Avusturya Arşidükü'nün Osmanlı sadrazamına protokolde denk sayılması kabul edildi.", importance: "Osmanlı'nın Avrupa karşısındaki mutlak siyasi ve askeri üstünlüğünün belgesidir. Bu üstünlük 1606 Zitvatorok ile kaybedilecektir." },
+                    { year: 1538, title: "Preveze Deniz Zaferi (Akdeniz Türk Gölü)", type: "siyasi", icon: "fa-ship", desc: "Barbaros Hayreddin Paşa komutasındaki donanma, Andrea Doria komutasındaki Haçlı filosunu yendi.", importance: "Akdeniz bir Türk gölü haline gelmiştir. Barbaros'un zafer günü (28 Eylül) Donanma Günü kabul edilir." },
+                    { year: 1555, title: "Amasya Antlaşması (İran ile İlk Antlaşma)", type: "siyasi", icon: "fa-scroll", desc: "İran Safevi Devleti ile yapılan seferler sonrası ilk resmi sınır antlaşması imzalandı.", importance: "Osmanlı Devleti ile İran arasındaki ilk resmi antlaşmadır." },
+                    { year: 1566, title: "Zigetvar Seferi ve Kanuni'nin Vefatı", type: "siyasi", icon: "fa-hourglass-end", desc: "Padişahın çıktığı son seferdir. Kale alınmadan bir gün önce çadırında vefat etmiştir.", importance: "En uzun süre hüküm süren cihan imparatorunun vefatıyla yükselme dönemi zirvesi tamamlenmiştir." }
+                ]
+            },
+            {
+                id: "i-ahmet",
+                name: "I. Ahmet",
+                reign: "1603 - 1617",
+                period: "Duraklama",
+                status: "Veraset ve İç Düzen",
+                kpssLevel: "⭐⭐⭐⭐",
+                territory: 19500000,
+                achievements: [
+                    "Ekber ve Erşed veraset sistemini getirdi.",
+                    "Kafes usulünü (Şehzadelerin sancak yerine sarayda eğitilmesi) başlattı.",
+                    "Sultanahmet Camii'ni (Mavi Cami - Sedefkar Mehmet Ağa) yaptırdı."
+                ],
+                events: [
+                    { year: 1603, title: "Ekber ve Erşed Sistemi", type: "kultur", icon: "fa-gavel", desc: "Tahta hanedanın en yaşlı ve en olgun (aklı başında) üyesinin geçmesi kuralı yasalaştı.", importance: "Taht kavgalarını önlemeyi amaçlamış ancak kafes usulüyle sancağa çıkmayan tecrübesiz padişahlar dönemini açmıştır." },
+                    { year: 1606, title: "Zitvatorok Antlaşması (Eşitlik Dönemi)", type: "siyasi", icon: "fa-scroll", desc: "Avusturya ile imzalandı. Avusturya Kralı artık Osmanlı sadrazamına değil, padişaha denk sayıldı.", importance: "1533 İstanbul Antlaşması ile elde edilen diplomatik ve siyasi üstünlük Avusturya karşısında son bulmuştur. Mütekabiliyet esası gelmiştir." },
+                    { year: 1609, title: "Sultanahmet Camii İnşası", type: "kultur", icon: "fa-mosque", desc: "İstanbul'un en önemli simgelerinden 6 minareli ilk cami ibadete açıldı. Sedefkar Mehmet Ağa mimarıdır.", importance: "Klasik dönem Osmanlı mimarisinin son büyük ve ihtişamlı eseridir. Avrupalılarca 'Mavi Cami' olarak bilinir." }
+                ]
+            },
+            {
+                id: "ii-osman",
+                name: "II. Osman (Genç Osman)",
+                reign: "1618 - 1622",
+                period: "Duraklama",
+                status: "Radikal Reform Arayışı",
+                kpssLevel: "⭐⭐⭐⭐⭐",
+                territory: 19800000,
+                achievements: [
+                    "Osmanlı tarihinde ilk ciddi ıslahat girişimini başlatan padişahtır.",
+                    "Saray dışı evlilik yaparak sarayı halka açtı.",
+                    "Yeniçeri Ocağı'nı kaldırmayı düşünen ilk hükümdardır."
+                ],
+                events: [
+                    { year: 1621, title: "Hotin Seferi ve Yeniçeri İsteksizliği", type: "siyasi", icon: "fa-sword", desc: "Lehistan üzerine sefere çıkıldı. Yeniçerilerin isteksizliği nedeniyle kale alınamadı ve barış yapıldı.", importance: "Yeniçeri Ocağı'nın bozulduğunu bizzat gören padişah, ocağı kaldırma fikrini ilk kez geliştirmiştir." },
+                    { year: 1622, title: "Genç Osman'ın Katledilmesi (Harem ve Ocak Direnci)", type: "siyasi", icon: "fa-skull-crossbones", desc: "Yeniçeri Ocağı'nı kaldırma ve saray reformu planlarının duyulması üzerine Yeniçeriler isyan ederek padişahı Yedikule Zindanları'nda şehit etti.", importance: "Yeniçerilerin merkezi otoriteye indirdiği en büyük darbedir. Islahatların önünü kesmiştir." }
+                ]
+            },
+            {
+                id: "iv-murad",
+                name: "IV. Murad",
+                reign: "1623 - 1640",
+                period: "Duraklama",
+                status: "Mutlakiyet ve Disiplin",
+                kpssLevel: "⭐⭐⭐⭐⭐",
+                territory: 19902000,
+                achievements: [
+                    "Bağdat Fatihi unvanıyla anılır.",
+                    "Zamanında içki, tütün ve gece sokağa çıkma yasakları uyguladı.",
+                    "Koçi Bey ve Katip Çelebi'ye devletin bozulma nedenlerini içeren raporlar (risale) hazırlattı."
+                ],
+                events: [
+                    { year: 1635, title: "Revan Seferi & Baskı Rejimi", type: "siyasi", icon: "fa-sword", desc: "İran Safeviler üzerine sefere çıkılarak Revan geri alındı. İstanbul'da tütün ve alkol yasağı sert şekilde uygulandı.", importance: "Duraklama döneminde bizzat sefere çıkan az sayıdaki güçlü padişahtan biridir. Asayişi sağlamak için şiddet kullanmıştır." },
+                    { year: 1638, title: "Bağdat Seferi (Bağdat Fatihi)", type: "siyasi", icon: "fa-shield", desc: "Safevilerin elindeki Bağdat kalesi kuşatılarak geri alındı. Bu zafer sonrası Bağdat Fatihi unvanını aldı.", importance: "Osmanlı'nın doğuda kazandığı son büyük kale kuşatmalarındandır." },
+                    { year: 1639, title: "Kasr-ı Şirin Antlaşması (Bugünkü İran Sınırı)", type: "siyasi", icon: "fa-scroll", desc: "Safeviler ile imzalandı. Bağdat Osmanlı'da, Revan ise Safevilerde kaldı. Zagros Dağları sınır kabul edildi.", importance: "Günümüz Türkiye-İran sınırını büyük ölçüde belirleyen ve günümüze kadar değişmeyen antlaşmadır." }
+                ]
+            },
+            {
+                id: "iii-ahmet",
+                name: "III. Ahmet",
+                reign: "1703 - 1730",
+                period: "Gerileme",
+                status: "Lale Devri Yenileşmesi",
+                kpssLevel: "⭐⭐⭐⭐⭐",
+                territory: 14000000,
+                achievements: [
+                    "Lale Devri padişahıdır (Sadrazam Nevşehirli Damat İbrahim Paşa).",
+                    "Batı tarzı ıslahatların yapıldığı ilk dönemdir.",
+                    "İlk kez geçici elçilikler ve matbaa kurulmuştur."
+                ],
+                events: [
+                    { year: 1718, title: "Pasarofça Antlaşması & Lale Devri Başlangıcı", type: "siyasi", icon: "fa-scroll", desc: "Avusturya ve Venedik ile imzalandı. Belgrad kaybedildi ancak Batı'nın üstünlüğü kabul edilerek Lale Devri (barış dönemi) başlatıldı.", importance: "Osmanlı'nın Batı'yı askeri ve teknik olarak üstün kabul ettiği ve barış politikasına yöneldiği ilk dönemin başlangıcıdır." },
+                    { year: 1727, title: "İlk Özel Matbaa (İbrahim Müteferrika)", type: "kultur", icon: "fa-print", desc: "İbrahim Müteferrika ve Sait Efendi tarafından ilk sivil matbaa kuruldu. Vankulu Lügati ilk basılan eserdir.", importance: "Kültür alanında Batı'dan alınan ilk teknik araçtır. Hattatların tepkisinden dolayı dini kitap basımı yasaklanmıştır." },
+                    { year: 1730, title: "Patrona Halil İsyanı & Lale Devri Sonu", type: "siyasi", icon: "fa-fire", desc: "Lale devrindeki lüks ve israfa karşı çıkan ayaklanmadır. Nevşehirli Damat İbrahim öldürüldü, Şair Nedim öldü.", importance: "Lale Devri'ni sonlandıran isyandır. Yeniliklere karşı yapılmış olsa da matbaaya dokunulmamıştır." }
+                ]
+            },
+            {
+                id: "iii-selim",
+                name: "III. Selim",
+                reign: "1789 - 1807",
+                period: "Gerileme",
+                status: "Nizam-ı Cedit (Köklü Yenilik)",
+                kpssLevel: "⭐⭐⭐⭐⭐",
+                territory: 11000000,
+                achievements: [
+                    "Nizam-ı Cedit ordusunu kurdu.",
+                    "Yenilikler için İrad-ı Cedit hazinesini kurdu.",
+                    "Avrupa'da ilk kez daimi elçilikleri açtı (Londra - Yusuf Agah Efendi).",
+                    "İlhami mahlasıyla şiir yazan bestekâr padişahtır."
+                ],
+                events: [
+                    { year: 1793, title: "Nizam-ı Cedit Ordusu & İlk Daimi Elçilik", type: "kultur", icon: "fa-users", desc: "Batı tarzında eğitim alan modern ordu kuruldu. Avrupa'da ilk kez daimi elçilikler açıldı (Londra - Yusuf Agah Efendi).", importance: "Yeniçeri Ocağı'na alternatif olarak kurulan ilk Batı tarzı askeri teşkilattır. Daimi elçilikler Avrupa diplomasisini yakından takip etmeyi sağlamıştır." },
+                    { year: 1798, title: "Fransa'nın Mısır'ı İşgali & Cezzar Ahmet Paşa", type: "siyasi", icon: "fa-shield-cross", desc: "Napolyon komutasındaki Fransız ordusu Akka Kalesi önünde Nizam-ı Cedit ordusu tarafından mağlup edildi (Cezzar Ahmet Paşa).", importance: "Denge siyaseti ilk kez uygulanmış (İngiltere ve Rusya desteğiyle) ve Nizam-ı Cedit ordusunun ilk askeri başarısıdır." },
+                    { year: 1807, title: "Kabakçı Mustafa İsyanı", type: "siyasi", icon: "fa-skull-crossbones", desc: "Yeniliklere karşı çıkan Yeniçerilerin önderliğindeki isyandır. III. Selim tahttan indirilip yerine IV. Mustafa getirilmiş, sonrasında öldürülmüştür.", importance: "Nizam-ı Cedit dönemini tamamen sonlandıran askeri ayaklanmadır." }
+                ]
+            },
+            {
+                id: "ii-mahmut",
+                name: "II. Mahmut",
+                reign: "1808 - 1839",
+                period: "Dağılma",
+                status: "En Uzun Yüzyıl (Mutlak Reform)",
+                kpssLevel: "⭐⭐⭐⭐⭐",
+                territory: 6000000,
+                achievements: [
+                    "Sened-i İttifak'ı imzalayarak ayanlarla yetki paylaştı.",
+                    "Yeniçeri Ocağı'nı kaldırarak (Vaka-i Hayriye) askeri vesayeti bitirdi.",
+                    "Divan-ı Hümayun'u kaldırıp yerine Nazırlıklar (Bakanlıklar) kurdu.",
+                    "Osmanlı'nın II. Kurucusu / Islahatçı Devrimci olarak bilinir."
+                ],
+                events: [
+                    { year: 1808, title: "Sened-i İttifak (İlk Yetki Sınırlandırması)", type: "kultur", icon: "fa-scroll", desc: "Tahta çıkmasına yardım eden Ayan Alemdar Mustafa Paşa aracılığıyla Ayanlarla yetki paylaşım sözleşmesi yapıldı.", importance: "Padişahın yetkilerini kendi isteğiyle sınırlandırdığı ilk belgedir (Magna Carta benzetmesi yapılır)." },
+                    { year: 1826, title: "Vaka-i Hayriye (Yeniçeri Ocağı'nın Kaldırılması)", type: "kultur", icon: "fa-bomb", desc: "Halkın desteği ve topçuların gücüyle Yeniçeri Ocağı kaldırıldı. Yerine Asakir-i Mansure-i Muhammediye kuruldu.", importance: "Padişahın önündeki askeri engel kalkmış, merkezi otorite güçlenmiş ve ıslahatların önü tamamen açılmıştır." },
+                    { year: 1829, title: "Edirne Antlaşması (Yunanistan'ın Bağımsızlığı)", type: "siyasi", icon: "fa-flag", desc: "Rusya ile yapılan savaş sonrası imzalandı.", importance: "Yunanistan bağımsız oldu. Osmanlı'dan ayrılarak bağımsızlık kazanan İLK azınlıktır." },
+                    { year: 1831, title: "İlk Nüfus Sayımı & Resmi Gazete", type: "kultur", icon: "fa-newspaper", desc: "Sadece erkekler ve hayvanların sayıldığı ilk askeri amaçlı nüfus sayımı yapıldı. Takvim-i Vekayi resmi gazetesi basıldı.", importance: "Askeri ve vergi potansiyeli belirlenmiş, ilk kez devlet haberleşmesi resmi gazeteyle yayılmıştır." },
+                    { year: 1838, title: "Balta Limanı Ticaret Antlaşması", type: "siyasi", icon: "fa-handshake", desc: "İngiltere ile imzalandı. Osmanlı iç gümrükleri kaldırıldı, yabancı tüccarlar imtiyaz kazandı.", importance: "Osmanlı açık pazar haline gelmiş, ekonomik olarak Avrupalıların sömürgesine dönüşmüştür." }
+                ]
+            },
+            {
+                id: "abdulmecid",
+                name: "Abdülmecid",
+                reign: "1839 - 1861",
+                period: "Dağılma",
+                status: "Tanzimat Dönemi",
+                kpssLevel: "⭐⭐⭐⭐⭐",
+                territory: 5500000,
+                achievements: [
+                    "Tanzimat ve Islahat fermanlarını ilan etti.",
+                    "Kanun üstünlüğünü ve anayasal süreci başlattı.",
+                    "İlk kağıt parayı (Kaime) bastırdı.",
+                    "İlk dış borcu aldı."
+                ],
+                events: [
+                    { year: 1839, title: "Tanzimat Fermanı (Hukukun Üstünlüğü)", type: "kultur", icon: "fa-scroll", desc: "Mustafa Reşid Paşa tarafından Gülhane Parkı'nda okundu. Hukuk üstünlüğü ve can-mal güvenliği teminat altına alındı.", importance: "Padişah kanun gücünü kendi gücünden üstün görmüştür. Anayasalcılığın başlangıcıdır." },
+                    { year: 1854, title: "İlk Dış Borç (Kırım Savaşı)", type: "siyasi", icon: "fa-coins", desc: "Kırım Savaşı masraflarını karşılamak üzere İngiltere'den ilk kez borç para alındı.", importance: "Mali çöküşün başlangıcıdır, borçlar ödenemeyip ilerleyen süreçte Duyun-u Umumiye'ye yol açacaktır." },
+                    { year: 1856, title: "Paris Antlaşması & Islahat Fermanı", type: "siyasi", icon: "fa-handshake", desc: "Osmanlı bir Avrupa devleti kabul edildi. Azınlıklara geniş haklar veren Islahat Fermanı yayınlandı.", importance: "Azınlıklara haklar verilerek devletin toprak bütünlüğünün korunması hedeflenmiştir." }
+                ]
+            },
+            {
+                id: "ii-abdulhamid",
+                name: "II. Abdülhamid",
+                reign: "1876 - 1909",
+                period: "Dağılma",
+                status: "Meşrutiyet ve İstibdat",
+                kpssLevel: "⭐⭐⭐⭐⭐",
+                territory: 3400000,
+                achievements: [
+                    "İlk Osmanlı anayasasını (Kanun-i Esasi) ilan etti.",
+                    "Halkı yönetime ilk kez ortak etti (Meşrutiyet).",
+                    "Duyun-u Umumiye kurulmasına neden olan Muharrem Kararnamesi'ni imzaladı.",
+                    "Ziraat Bankası'nı (1888) kurdurdu."
+                ],
+                events: [
+                    { year: 1876, title: "Kanun-i Esasi & I. Meşrutiyet'in İlanı", type: "kultur", icon: "fa-balance-scale", desc: "Tarihin ilk Türk anayasası ilan edildi, parlamento açıldı.", importance: "Mutlakiyetten meşruti monarşiye geçilmiş, halk ilk defa seçme seçilme hakkıyla meclise girmiştir." },
+                    { year: 1878, title: "93 Harbi & Berlin Antlaşması", type: "siyasi", icon: "fa-skull-crossbones", desc: "Ağır yenilgi sonrası Ayastefanos iptal edilip Berlin Antlaşması imzalandı. Kars, Ardahan, Batum kaybedildi.", importance: "Sırbistan, Karadağ, Romanya bağımsız oldu. Ermeni meselesi uluslararası boyut kazandı." },
+                    { year: 1881, title: "Duyun-u Umumiye (Muharrem Kararnamesi)", type: "kultur", icon: "fa-university", desc: "Osmanlı borçlarını ödeyemeyeceğini ilan edince alacaklı devletler gelir kaynaklarına el koydu.", importance: "Devletin ekonomik bağımsızlığı tamamen fiilen sona ermiştir." },
+                    { year: 1908, title: "II. Meşrutiyet'in İlanı", type: "siyasi", icon: "fa-users", desc: "İttihat ve Terakki subaylarının baskısıyla anayasa tekrar yürürlüğe girdi.", importance: "Türk tarihinde ilk kez çok partili siyasi hayata geçilmiştir." },
+                    { year: 1909, title: "31 Mart Vakası & Tahttan İndirilme", type: "siyasi", icon: "fa-exclamation-circle", desc: "Meşrutiyete karşı çıkan gerici isyan bastırıldı ve II. Abdülhamid meclis kararıyla tahttan indirildi.", importance: "Meclis kararıyla tahttan indirilen ilk Osmanlı padişahıdır. Rejime yönelik ilk isyandır." }
+                ]
+            }
+        ];
+
+        const sultanColors = {
+            "osman-bey": { color: "#10b981", name: "emerald" },
+            "orhan-bey": { color: "#0ea5e9", name: "sky" },
+            "i-murad": { color: "#6366f1", name: "indigo" },
+            "yildirim-bayezid": { color: "#06b6d4", name: "cyan" },
+            "i-mehmed": { color: "#8b5cf6", name: "violet" },
+            "ii-murad": { color: "#a855f7", name: "purple" },
+            "fatih-sultan-mehmed": { color: "#f59e0b", name: "amber" },
+            "yavuz-sultan-selim": { color: "#f97316", name: "orange" },
+            "kanuni-sultan-suleyman": { color: "#ef4444", name: "red" },
+            "i-ahmet": { color: "#f43f5e", name: "rose" },
+            "ii-osman": { color: "#14b8a6", name: "teal" },
+            "iv-murad": { color: "#d946ef", name: "fuchsia" },
+            "iii-ahmet": { color: "#84cc16", name: "lime" },
+            "iii-selim": { color: "#eab308", name: "yellow" },
+            "ii-mahmut": { color: "#ec4899", name: "pink" },
+            "abdulmecid": { color: "#10b981", name: "emerald" },
+            "ii-abdulhamid": { color: "#a855f7", name: "purple" }
+        };
+
+        const sultanMonograms = {
+            "osman-bey": "OB",
+            "orhan-bey": "ORH",
+            "i-murad": "M.I",
+            "yildirim-bayezid": "YB",
+            "i-mehmed": "M.Ç",
+            "ii-murad": "M.II",
+            "fatih-sultan-mehmed": "FSM",
+            "yavuz-sultan-selim": "YSS",
+            "kanuni-sultan-suleyman": "KSS",
+            "i-ahmet": "A.I",
+            "ii-osman": "G.O",
+            "iv-murad": "M.IV",
+            "iii-ahmet": "A.III",
+            "iii-selim": "S.III",
+            "ii-mahmut": "M.II",
+            "abdulmecid": "ABD",
+            "ii-abdulhamid": "AH.II"
+        };
+
+        let selectedTimelinePeriod = 'all';
+
+        function handleTimelineVisibility() {
+            const btnTimeline = document.getElementById("btn-mode-timeline");
+            if (!btnTimeline) return;
+            if (typeof currentLesson !== 'undefined' && currentLesson === 'tarih') {
+                btnTimeline.classList.remove("hidden");
+            } else {
+                btnTimeline.classList.add("hidden");
+            }
+        }
+
+        window.renderOttomanInfographicTimeline = function() {
+            const container = document.getElementById("view-timeline");
+            if (!container || container.classList.contains("hidden")) return;
+
+            // 0. Inject 3D Styles dynamically
+            if (!document.getElementById("timeline-3d-styles")) {
+                const styleEl = document.createElement("style");
+                styleEl.id = "timeline-3d-styles";
+                styleEl.innerHTML = `
+                    .timeline-container-3d {
+                        perspective: 1500px;
+                        perspective-origin: 50% 25%;
+                    }
+                    .timeline-events-3d-wrapper {
+                        transform-style: preserve-3d;
+                    }
+                    .timeline-card-3d {
+                        transform-style: preserve-3d;
+                        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s, box-shadow 0.4s;
+                    }
+                    .timeline-card-3d:hover {
+                        transform: translateZ(45px) rotateX(3deg) rotateY(-3deg) scale(1.025);
+                    }
+                    .timeline-dot {
+                        transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s;
+                    }
+                    .timeline-dot:hover {
+                        transform: scale(1.3) translateZ(20px);
+                    }
+                    .transform-3d {
+                        transform-style: preserve-3d;
+                        transform: translateZ(30px);
+                    }
+                `;
+                document.head.appendChild(styleEl);
+            }
+
+            // 1. Render Period Tabs
+            const periodTabs = document.getElementById("timeline-period-tabs");
+            if (periodTabs) {
+                const periods = ['all', 'Kuruluş', 'Yükselme', 'Duraklama', 'Gerileme', 'Dağılma'];
+                periodTabs.innerHTML = periods.map(p => {
+                    const label = p === 'all' ? 'TÜM DÖNEMLER' : p.toUpperCase();
+                    const active = selectedTimelinePeriod === p;
+                    return `
+                        <button onclick="filterTimelinePeriod('${p}')" class="px-2.5 py-1 text-[9px] font-black tracking-wider rounded-md border transition-all cursor-pointer ${
+                            active 
+                            ? 'bg-amber-600 border-amber-500 text-white shadow-lg' 
+                            : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-slate-200'
+                        }">${label}</button>
+                    `;
+                }).join('');
+            }
+
+            // 2. Extract and Sort Events
+            let events = [];
+            const filteredSultans = selectedTimelinePeriod === 'all'
+                ? ottomanTimelineData
+                : ottomanTimelineData.filter(s => s.period === selectedTimelinePeriod);
             
-            updateSidebarStats();
-            updateVoiceAssistantUI();
-            updateTimerDisplay();
-            updateDailyMissionsUI();
-            renderWeeklyChart();
-            updateTimeEfficiencyUI();
-            
-            // Calculate initial AI Net prediction
-            calculateAINetPrediction();
-            
-            let checkDB = setInterval(() => {
-                if (typeof tarih_db !== 'undefined' && typeof cografya_db !== 'undefined' && typeof vatandaslik_db !== 'undefined') {
-                    clearInterval(checkDB);
-                    preprocessDatabases();
-                    switchLesson('tarih');
+            filteredSultans.forEach(s => {
+                s.events.forEach(e => {
+                    events.push({
+                        sultanId: s.id,
+                        sultanName: s.name,
+                        sultanReign: s.reign,
+                        periodName: s.period,
+                        ...e
+                    });
+                });
+            });
+
+            events.sort((a, b) => a.year - b.year);
+
+            // 3. Render Period Summary Card (Left Panel)
+            const profileCard = document.getElementById("timeline-sultan-profile-card");
+            if (profileCard) {
+                let periodTitle = "Tüm Osmanlı Tarihi";
+                let periodSub = "1299 - 1909 Dönemi";
+                let periodDesc = "Kuruluş'tan Dağılma'ya imparatorluğun tüm askeri, idari ve kültürel gelişim çizgisi.";
+                let territoryTxt = "20.000.000 km² (Zirve)";
+                
+                if (selectedTimelinePeriod === 'Kuruluş') {
+                    periodTitle = "Kuruluş Dönemi";
+                    periodSub = "1299 - 1451";
+                    periodDesc = "Aşiretten beyliğe, beylikten devlete geçiş ve Balkanlarda yayılma teşkilat aşamaları.";
+                    territoryTxt = "980.000 km²";
+                } else if (selectedTimelinePeriod === 'Yükselme') {
+                    periodTitle = "Yükselme Dönemi";
+                    periodSub = "1451 - 1579";
+                    periodDesc = "İstanbul'un fethinden cihan imparatorluğuna geçiş ve Akdeniz'in Türk gölü oluşu.";
+                    territoryTxt = "14.893.000 km²";
+                } else if (selectedTimelinePeriod === 'Duraklama') {
+                    periodTitle = "Duraklama Dönemi";
+                    periodSub = "1579 - 1699";
+                    periodDesc = "Doğal sınırlara ulaşılması, saray entrikaları ve ilk radikal ıslahat denemeleri.";
+                    territoryTxt = "19.902.000 km²";
+                } else if (selectedTimelinePeriod === 'Gerileme') {
+                    periodTitle = "Gerileme Dönemi";
+                    periodSub = "1699 - 1792";
+                    periodDesc = "Kayıp toprakları geri alma çabaları ve Batı tarzı askeri/teknik yeniliklerin başlangıcı.";
+                    territoryTxt = "14.000.000 km²";
+                } else if (selectedTimelinePeriod === 'Dağılma') {
+                    periodTitle = "Dağılma Dönemi";
+                    periodSub = "1792 - 1922";
+                    periodDesc = "Denge siyaseti, milliyetçilik isyanları, anayasal süreçler ve mutlak yenileşme.";
+                    territoryTxt = "3.400.000 km²";
                 }
-            }, 15);
+
+                // Sultans in this period
+                const sultansListHTML = filteredSultans.map(s => {
+                    const colorObj = sultanColors[s.id] || { color: '#f59e0b' };
+                    return `
+                        <div class="flex justify-between items-center bg-slate-900/40 border border-slate-800/60 p-2 rounded-lg text-[9px]">
+                            <span class="font-black text-slate-200 flex items-center gap-1"><i class="fa-solid fa-crown text-[8px]" style="color: ${colorObj.color};"></i> ${s.name}</span>
+                            <span class="text-slate-400 font-mono font-bold">${s.reign}</span>
+                        </div>
+                    `;
+                }).join('');
+
+                profileCard.innerHTML = `
+                    <div class="absolute -right-8 -top-8 w-24 h-24 rounded-full bg-amber-500/5 blur-2xl"></div>
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-600 to-orange-400 text-slate-950 font-black text-sm flex items-center justify-center mx-auto shadow-lg shadow-amber-500/10 border-2 border-slate-900">
+                        <i class="fa-solid fa-landmark"></i>
+                    </div>
+
+                    <div class="space-y-1 mt-2">
+                        <h4 class="text-xs font-black text-white tracking-wide uppercase">${periodTitle}</h4>
+                        <span class="text-[9px] text-amber-500 font-bold bg-amber-950/40 border border-amber-900/40 px-2 py-0.5 rounded inline-block font-mono">${periodSub}</span>
+                    </div>
+
+                    <p class="text-[9px] text-slate-400 text-left mt-2 leading-relaxed bg-slate-900/40 p-2.5 rounded-lg border border-slate-850">${periodDesc}</p>
+
+                    <!-- İstatistikler -->
+                    <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-800/80 space-y-2 mt-3 text-left">
+                        <div class="flex justify-between items-center text-[9px]">
+                            <span class="text-slate-400 font-bold"><i class="fa-solid fa-map-location text-amber-500"></i> Toprak Büyüklüğü:</span>
+                            <span class="text-white font-mono font-black">${territoryTxt}</span>
+                        </div>
+                        <div class="flex justify-between items-center text-[9px] border-t border-slate-850/60 pt-2">
+                            <span class="text-slate-400 font-bold"><i class="fa-solid fa-calendar-check text-amber-500"></i> Kayıtlı Olay Sayısı:</span>
+                            <span class="text-white font-mono font-black">${events.length}</span>
+                        </div>
+                    </div>
+
+                    <!-- Padişah Listesi -->
+                    <div class="text-left space-y-2 mt-4">
+                        <span class="text-[8px] font-black text-slate-500 uppercase tracking-wider block border-b border-slate-900 pb-1">DÖNEMİN PADİŞAHLARI</span>
+                        <div class="space-y-1.5 max-h-[180px] overflow-y-auto pr-1 scrollbar-thin">
+                            ${sultansListHTML}
+                        </div>
+                    </div>
+
+                    <!-- KPSS İpucu -->
+                    <div class="p-2.5 bg-amber-950/20 border border-amber-900/20 rounded-xl text-left mt-3">
+                        <span class="text-[8px] font-black text-amber-400 uppercase tracking-wider flex items-center gap-1">
+                            <i class="fa-solid fa-lightbulb"></i> KPSS REHBERİ:
+                        </span>
+                        <p class="text-[9px] text-slate-300 leading-relaxed mt-1 font-medium">Bu dönem ÖSYM sınavlarında kronolojik gelişmeler, öncüller ve sebep-sonuç ilişkileri yönünden kritik soru potansiyeline sahiptir.</p>
+                    </div>
+                `;
+            }
+
+            // 4. Render timeline events (Vertical Alternating Grid with 3D Zigzag Lines)
+            const timelineEvents = document.getElementById("infographic-timeline-events-vertical");
+            if (timelineEvents) {
+                if (events.length === 0) {
+                    timelineEvents.innerHTML = `
+                        <svg id="zigzag-svg-overlay" class="absolute inset-0 w-full h-full pointer-events-none z-0" style="min-height: 100%;"></svg>
+                        <div class="text-center py-12 text-slate-500 text-xs font-bold">
+                            <i class="fa-solid fa-folder-open text-xl mb-2 block opacity-40"></i>
+                            Bu filtreye uygun olay kaydı bulunamadı.
+                        </div>
+                    `;
+                } else {
+                    let lastSultanId = null;
+                    let htmlContent = `<svg id="zigzag-svg-overlay" class="absolute inset-0 w-full h-full pointer-events-none z-0" style="min-height: 100%;"></svg>`;
+
+                    events.forEach((e, index) => {
+                        const isSiyasi = e.type === 'siyasi';
+                        const colorObj = sultanColors[e.sultanId] || { color: '#f59e0b', name: 'amber' };
+                        const sultanColor = colorObj.color;
+                        const monogram = sultanMonograms[e.sultanId] || "PAD";
+                        const isFeth = e.year === 1453;
+
+                        // 4.1 Sultan Transition Medallion (Check if sultan has changed)
+                        if (e.sultanId !== lastSultanId) {
+                            lastSultanId = e.sultanId;
+                            htmlContent += `
+                                <div class="flex flex-col items-center justify-center w-full my-6 relative z-10 transform-3d select-none">
+                                    <div class="timeline-medallion-dot w-14 h-14 rounded-full bg-gradient-to-tr from-yellow-500 via-amber-400 to-yellow-600 border-4 border-slate-950 flex items-center justify-center text-slate-950 text-sm font-black uppercase tracking-wider relative cursor-pointer hover:scale-115 transition-transform duration-300 shadow-[0_0_15px_rgba(245,158,11,0.5)]" data-sultan-id="${e.sultanId}" style="transform: translateZ(20px);">
+                                        ${monogram}
+                                    </div>
+                                    <div class="bg-slate-900/90 border border-slate-800/80 px-4 py-1 rounded-full text-[9px] font-black text-slate-200 mt-2 uppercase tracking-wider shadow-md flex items-center gap-1.5" style="border-color: ${sultanColor}50;">
+                                        <span style="color: ${sultanColor};"><i class="fa-solid fa-crown text-[8px]"></i> ${e.sultanName} DÖNEMİ</span> 
+                                        <span class="text-slate-400 font-mono text-[8px]">(${e.sultanReign})</span>
+                                    </div>
+                                </div>
+                            `;
+                        }
+
+                        // 4.2 Left or Right Card Alternating Structure
+                        const isLeft = index % 2 === 0;
+                        const cardHighlightClass = isFeth
+                            ? 'border-amber-500 bg-gradient-to-br from-amber-950/20 to-slate-900/90 shadow-[0_0_15px_rgba(245,158,11,0.25)]'
+                            : 'border-slate-800 hover:border-slate-700/80 bg-slate-900/60 hover:bg-slate-900/90';
+
+                        const icon = e.icon || (isSiyasi ? 'fa-sword' : 'fa-scroll');
+                        const typeBadgeColor = isSiyasi 
+                            ? 'bg-sky-500/10 text-sky-400 border-sky-500/20' 
+                            : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20';
+
+                        const cardHTML = `
+                            <div class="p-4 rounded-xl border transition-all duration-300 space-y-2.5 timeline-card-3d cursor-pointer w-full max-w-sm md:max-w-none ${cardHighlightClass}" onclick="showTimelineDetailModal(${index}, '${e.sultanId}')" style="box-shadow: 0 4px 20px rgba(0,0,0,0.3); border-left: 4px solid ${sultanColor};">
+                                <div class="flex flex-wrap justify-between items-center gap-2">
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-xs font-black font-mono text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-2 py-0.5 rounded shadow-sm">${e.year}</span>
+                                        <span class="text-[8px] font-black bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2 py-0.5 rounded-full uppercase tracking-wider">${e.sultanName}</span>
+                                    </div>
+                                    <span class="px-2 py-0.5 rounded-full border text-[8px] font-black uppercase tracking-wider ${typeBadgeColor}">${isSiyasi ? 'SİYASİ / ASKERİ' : 'ISLAHAT / KÜLTÜR'}</span>
+                                </div>
+
+                                <div class="translate-z-10">
+                                    <h4 class="text-xs font-black text-slate-100 flex items-center gap-1.5 hover:text-amber-400 transition-colors">
+                                        ${e.title}
+                                    </h4>
+                                    <p class="text-[10px] text-slate-400 font-normal leading-relaxed mt-1">${e.desc}</p>
+                                </div>
+
+                                <div class="text-[9px] font-medium text-amber-300/90 bg-amber-950/15 border border-amber-900/20 px-2 py-1 rounded border-l-2 translate-z-20" style="border-l-color: ${sultanColor};">
+                                    <span class="font-bold text-amber-400"><i class="fa-solid fa-lightbulb"></i> Sınav Önemi:</span> ${e.importance}
+                                </div>
+                            </div>
+                        `;
+
+                        // Alternating Grid Layout (Left side Card or Right side Card)
+                        if (isLeft) {
+                            htmlContent += `
+                                <div class="flex flex-col md:flex-row w-full justify-between items-center relative my-3">
+                                    <div class="w-full md:w-[45%] pr-0 md:pr-4 flex justify-center md:justify-end z-10">
+                                        ${cardHTML}
+                                    </div>
+                                    <div class="w-full md:w-[10%] flex justify-center z-20 my-2 md:my-0">
+                                        <div class="timeline-dot w-6 h-6 rounded-full bg-slate-950 border-4 flex items-center justify-center cursor-pointer" data-sultan-id="${e.sultanId}" data-index="${index}" style="border-color: ${sultanColor}; box-shadow: 0 0 10px ${sultanColor}80;">
+                                            <i class="fa-solid ${icon} text-[7px] text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div class="w-full md:w-[45%] hidden md:block"></div>
+                                </div>
+                            `;
+                        } else {
+                            htmlContent += `
+                                <div class="flex flex-col md:flex-row w-full justify-between items-center relative my-3">
+                                    <div class="w-full md:w-[45%] hidden md:block"></div>
+                                    <div class="w-full md:w-[10%] flex justify-center z-20 my-2 md:my-0">
+                                        <div class="timeline-dot w-6 h-6 rounded-full bg-slate-950 border-4 flex items-center justify-center cursor-pointer" data-sultan-id="${e.sultanId}" data-index="${index}" style="border-color: ${sultanColor}; box-shadow: 0 0 10px ${sultanColor}80;">
+                                            <i class="fa-solid ${icon} text-[7px] text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div class="w-full md:w-[45%] pl-0 md:pl-4 flex justify-center md:justify-start z-10">
+                                        ${cardHTML}
+                                    </div>
+                                </div>
+                            `;
+                        }
+                    });
+
+                    timelineEvents.innerHTML = htmlContent;
+
+                    // Delay SVG compilation until after HTML structure has been formatted by browser layout engine
+                    setTimeout(window.drawZigzagTimelinePath, 150);
+                }
+            }
+        };
+
+        window.drawZigzagTimelinePath = function() {
+            const svgOverlay = document.getElementById("zigzag-svg-overlay");
+            if (!svgOverlay) return;
+
+            // Clear previous line definitions
+            svgOverlay.innerHTML = '';
+
+            const parent = document.getElementById("infographic-timeline-events-vertical");
+            if (!parent) return;
+
+            const parentRect = parent.getBoundingClientRect();
+
+            // Find all dots and medallions inside the scrollable container in DOM order
+            const nodes = parent.querySelectorAll(".timeline-dot, .timeline-medallion-dot");
+            if (nodes.length < 2) return;
+
+            let points = [];
+            nodes.forEach(node => {
+                const rect = node.getBoundingClientRect();
+                const x = rect.left - parentRect.left + (rect.width / 2);
+                const y = rect.top - parentRect.top + (rect.height / 2);
+                points.push({
+                    x,
+                    y,
+                    sultanId: node.getAttribute("data-sultan-id")
+                });
+            });
+
+            // Draw glowing 3D color-coded pipeline segments between consecutive dots
+            for (let i = 0; i < points.length - 1; i++) {
+                const p1 = points[i];
+                const p2 = points[i + 1];
+
+                const color1 = sultanColors[p1.sultanId]?.color || "#f59e0b";
+                const color2 = sultanColors[p2.sultanId]?.color || color1;
+
+                const line = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                line.setAttribute("d", `M ${p1.x} ${p1.y} L ${p2.x} ${p2.y}`);
+
+                if (p1.sultanId === p2.sultanId) {
+                    line.setAttribute("stroke", color1);
+                } else {
+                    // Create gradient segment for transition between two different Sultans
+                    const gradId = `grad-${p1.sultanId}-to-${p2.sultanId}-${i}`;
+                    let defs = svgOverlay.querySelector("defs");
+                    if (!defs) {
+                        defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+                        svgOverlay.appendChild(defs);
+                    }
+
+                    const grad = document.createElementNS("http://www.w3.org/2000/svg", "linearGradient");
+                    grad.setAttribute("id", gradId);
+                    grad.setAttribute("x1", "0%");
+                    grad.setAttribute("y1", "0%");
+                    grad.setAttribute("x2", "0%");
+                    grad.setAttribute("y2", "100%");
+
+                    const stop1 = document.createElementNS("http://www.w3.org/2000/svg", "stop");
+                    stop1.setAttribute("offset", "0%");
+                    stop1.setAttribute("stop-color", color1);
+
+                    const stop2 = document.createElementNS("http://www.w3.org/2000/svg", "stop");
+                    stop2.setAttribute("offset", "100%");
+                    stop2.setAttribute("stop-color", color2);
+
+                    grad.appendChild(stop1);
+                    grad.appendChild(stop2);
+                    defs.appendChild(grad);
+
+                    line.setAttribute("stroke", `url(#${gradId})`);
+                }
+
+                line.setAttribute("stroke-width", "4");
+                line.setAttribute("fill", "none");
+                line.setAttribute("stroke-linecap", "round");
+                line.setAttribute("opacity", "0.85");
+
+                // Layer a thick blur line behind the main line to create a 3D isometric cylinder light glow
+                const glowLine = line.cloneNode(true);
+                glowLine.setAttribute("stroke-width", "10");
+                glowLine.setAttribute("opacity", "0.3");
+                glowLine.setAttribute("filter", "blur(4px)");
+
+                svgOverlay.appendChild(glowLine);
+                svgOverlay.appendChild(line);
+            }
+        };
+
+        // Track window changes to keep SVG zigzag path aligned with responsive dots
+        window.addEventListener('resize', () => {
+            if (typeof drawZigzagTimelinePath !== 'undefined') {
+                drawZigzagTimelinePath();
+            }
         });
 
-        // --- 🔍 ÖSYM SINAV İÇERİK ANALİZ VE EŞLEŞTİRME MOTORU ---
+        // 3D Parallax Mouse Tracking Effect
+        document.addEventListener("DOMContentLoaded", () => {
+            const timelineContainer = document.getElementById("vertical-timeline-container");
+            if (timelineContainer) {
+                timelineContainer.addEventListener("mousemove", (e) => {
+                    const rect = timelineContainer.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    // Normalize to range -0.5 to 0.5
+                    const normX = (x / rect.width) - 0.5;
+                    const normY = (y / rect.height) - 0.5;
+
+                    // Apply slight 3D rotation based on mouse coordinate offsets
+                    const rotateY = normX * 10; 
+                    const rotateX = -(normY * 10) + 4; // default baseline tilt included
+
+                    const wrapper = document.getElementById("infographic-timeline-events-vertical");
+                    if (wrapper) {
+                        wrapper.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                    }
+                });
+
+                timelineContainer.addEventListener("mouseleave", () => {
+                    const wrapper = document.getElementById("infographic-timeline-events-vertical");
+                    if (wrapper) {
+                        wrapper.style.transform = `rotateX(6deg) rotateY(-4deg)`;
+                    }
+                });
+            }
+        });
+
+        window.filterTimelinePeriod = function(period) {
+            selectedTimelinePeriod = period;
+            renderOttomanInfographicTimeline();
+        };
+
+        window.showTimelineDetailModal = function(index, sultanId) {
+            const sultan = ottomanTimelineData.find(s => s.id === sultanId);
+            if (!sultan || !sultan.events || index >= sultan.events.length) {
+                // Search index directly from current sorted event list
+                // Find matching event
+                let events = [];
+                ottomanTimelineData.forEach(s => {
+                    s.events.forEach(e => {
+                        events.push({ sultanId: s.id, ...e });
+                    });
+                });
+                events.sort((a, b) => a.year - b.year);
+                // Filter by current period
+                let currentPeriodEvents = selectedTimelinePeriod === 'all'
+                    ? events
+                    : events.filter(e => {
+                        const s = ottomanTimelineData.find(st => st.id === e.sultanId);
+                        return s && s.period === selectedTimelinePeriod;
+                    });
+                
+                if (index < currentPeriodEvents.length) {
+                    const e = currentPeriodEvents[index];
+                    const activeSultan = ottomanTimelineData.find(s => s.id === e.sultanId);
+                    if (activeSultan) {
+                        renderModalForEvent(e, activeSultan);
+                    }
+                }
+            } else {
+                const e = sultan.events[index];
+                renderModalForEvent(e, sultan);
+            }
+        };
+
+        function renderModalForEvent(e, sultan) {
+            let modal = document.getElementById("timeline-detail-modal");
+            if (!modal) {
+                modal = document.createElement("div");
+                modal.id = "timeline-detail-modal";
+                modal.className = "fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/80 backdrop-blur-md p-4 transition-all duration-300";
+                modal.onclick = closeTimelineEventDetail;
+                document.body.appendChild(modal);
+            }
+
+            const isSiyasi = e.type === 'siyasi';
+            const typeBadgeColor = isSiyasi
+                ? 'bg-sky-500/10 text-sky-400 border-sky-500/20'
+                : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20';
+            const colorObj = sultanColors[sultan.id] || { color: '#f59e0b' };
+            const sultanColor = colorObj.color;
+
+            modal.innerHTML = `
+                <div class="relative w-full max-w-md bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-2xl flex flex-col space-y-4 animate-scaleIn" onclick="event.stopPropagation()" style="border-top: 4px solid ${sultanColor};">
+                    <button onclick="closeTimelineEventDetail()" class="absolute top-4 right-4 bg-slate-950 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-slate-200 cursor-pointer transition-colors p-2 rounded-full shadow-lg">
+                        <i class="fa-solid fa-xmark text-xs"></i>
+                    </button>
+                    
+                    <div class="flex justify-between items-center mt-2">
+                        <span class="text-sm font-black font-mono text-indigo-400 bg-indigo-950/40 border border-indigo-900/40 px-3 py-1 rounded shadow-sm">${e.year} Yılı</span>
+                        <span class="text-[9px] font-black border px-2.5 py-0.5 rounded-full uppercase tracking-wider ${typeBadgeColor}">
+                            ${isSiyasi ? 'SİYASİ TARİH / ASKERİ' : 'ISLAHAT / KÜLTÜR / TEŞKİLAT'}
+                        </span>
+                    </div>
+
+                    <div class="space-y-1">
+                        <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Hükümdar / Padişah:</span>
+                        <p class="text-xs font-black text-slate-100 flex items-center gap-1.5">
+                            <i class="fa-solid fa-crown text-amber-400 animate-bounce" style="color: ${sultanColor};"></i> ${sultan.name} (${sultan.reign})
+                        </p>
+                    </div>
+
+                    <div class="space-y-1.5 border-t border-slate-800 pt-3">
+                        <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Gelişme Detayı:</span>
+                        <h4 class="text-sm font-black text-white leading-snug flex items-center gap-1.5">
+                            <i class="fa-solid ${e.icon || 'fa-scroll'}" style="color: ${sultanColor};"></i> ${e.title}
+                        </h4>
+                        <p class="text-xs text-slate-300 font-normal leading-relaxed whitespace-normal break-words">${e.desc}</p>
+                    </div>
+
+                    <div class="p-3 bg-amber-950/20 border border-amber-900/30 rounded-xl space-y-1 border-l-3" style="border-l-color: ${sultanColor};">
+                        <span class="text-[9px] font-black text-amber-400 uppercase tracking-wider flex items-center gap-1" style="color: ${sultanColor};">
+                            <i class="fa-solid fa-lightbulb"></i> KPSS Sınav Analizi / ÖSYM Sorulma Detayı:
+                        </span>
+                        <p class="text-[11px] text-slate-200 leading-relaxed font-semibold">${e.importance}</p>
+                    </div>
+
+                    <button onclick="closeTimelineEventDetail()" class="w-full py-2 bg-slate-950 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white font-bold text-xs rounded-xl cursor-pointer transition-all">Kapat</button>
+                </div>
+            `;
+            modal.classList.remove("hidden");
+        }
+
+        window.closeTimelineEventDetail = function() {
+            const modal = document.getElementById("timeline-detail-modal");
+            if (modal) modal.classList.add("hidden");
+        };
+// --- 💎 MADEN BULMACA UYGULAMASI V2 ---
+const madenListesi = [
+    { id: "demir", name: "Demir", info: "Ağır sanayinin temelidir. Sivas (Divriği) en önemli çıkarım alanıyken, Karabük ve İskenderun'da işlenir.", points: [ { type: "cikarim", x: 67, y: 39, label: "Sivas (Divriği)" }, { type: "cikarim", x: 72, y: 55, label: "Malatya (Hekimhan)" }, { type: "cikarim", x: 18, y: 35, label: "Balıkesir (Eymir)" }, { type: "isleme", x: 42, y: 19, label: "Karabük (Erdemir)" }, { type: "isleme", x: 62, y: 83, label: "İskenderun (İsdemir)" } ] },
+    { id: "bakir", name: "Bakır", info: "Elektrik-elektronikte kullanılır. Artvin, Kastamonu ve Elazığ'da çıkarılır.", points: [ { type: "cikarim", x: 88, y: 16, label: "Artvin (Murgul)" }, { type: "cikarim", x: 50, y: 16, label: "Kastamonu (Küre)" }, { type: "cikarim", x: 77, y: 54, label: "Elazığ (Maden)" }, { type: "cikarim", x: 83, y: 18, label: "Rize (Çayeli)" }, { type: "isleme", x: 58, y: 15, label: "Samsun" }, { type: "isleme", x: 77, y: 57, label: "Elazığ" } ] },
+    { id: "boksit", name: "Boksit (Alüminyum)", info: "Uçak yapımında kullanılır. Seydişehir (Konya) ve Akseki (Antalya) en önemli rezervleridir.", points: [ { type: "cikarim", x: 44, y: 65, label: "Konya (Seydişehir)" }, { type: "cikarim", x: 38, y: 73, label: "Antalya (Akseki)" }, { type: "cikarim", x: 20, y: 76, label: "Muğla (Milas)" }, { type: "isleme", x: 44, y: 68, label: "Konya (Seydişehir)" } ] },
+    { id: "krom", name: "Krom", info: "Paslanmaz çelik üretiminde kullanılır. Guleman (Elazığ) ve Köyceğiz (Muğla) önemlidir.", points: [ { type: "cikarim", x: 76, y: 55, label: "Elazığ (Guleman)" }, { type: "cikarim", x: 22, y: 76, label: "Muğla (Köyceğiz)" }, { type: "cikarim", x: 25, y: 66, label: "Denizli (Acıpayam)" }, { type: "cikarim", x: 26, y: 32, label: "Bursa (Orhaneli)" }, { type: "isleme", x: 35, y: 75, label: "Antalya (Ferrokrom)" }, { type: "isleme", x: 76, y: 58, label: "Elazığ (Ferrokrom)" } ] },
+    { id: "barit", name: "Barit", info: "Petrol sondajlarında kullanılır. Antalya (Alanya) ve Kahramanmaraş çevresinde çıkarılır.", points: [ { type: "cikarim", x: 40, y: 77, label: "Antalya (Alanya)" }, { type: "cikarim", x: 67, y: 64, label: "K.Maraş (Elbistan)" }, { type: "cikarim", x: 86, y: 51, label: "Muş" }, { type: "isleme", x: 35, y: 77, label: "Antalya" }, { type: "isleme", x: 12, y: 55, label: "İzmir" } ] },
+    { id: "bor", name: "Bor Mineralleri", info: "Dünya rezervlerinin %70'inden fazlası Türkiye'dedir. Susurluk, Kırka, Emet havzası.", points: [ { type: "cikarim", x: 18, y: 33, label: "Balıkesir (Susurluk)" }, { type: "cikarim", x: 35, y: 40, label: "Eskişehir (Kırka)" }, { type: "cikarim", x: 28, y: 41, label: "Kütahya (Emet)" }, { type: "isleme", x: 18, y: 28, label: "Balıkesir (Bandırma)" }, { type: "isleme", x: 35, y: 43, label: "Eskişehir (Kırka)" } ] },
+    { id: "mermer", name: "Mermer", info: "İhracatta en çok gelir getiren madenimizdir. Afyon, Balıkesir ve Denizli öne çıkar.", points: [ { type: "cikarim", x: 32, y: 51, label: "Afyonkarahisar" }, { type: "cikarim", x: 15, y: 24, label: "Balıkesir (M. Adası)" }, { type: "cikarim", x: 25, y: 67, label: "Denizli" }, { type: "cikarim", x: 21, y: 74, label: "Muğla" } ] },
+    { id: "fosfat", name: "Fosfat", info: "Suni gübre yapımında kullanılır. Türkiye'de en çok Mardin (Mazıdağı) çevresinde çıkarılır ve işlenir.", points: [ { type: "cikarim", x: 82, y: 76, label: "Mardin (Mazıdağı)" }, { type: "cikarim", x: 74, y: 64, label: "Adıyaman" }, { type: "isleme", x: 82, y: 79, label: "Mardin (Mazıdağı)" } ] },
+    { id: "asbest", name: "Asbest", info: "Isıya dayanıklı, kanserojen özelliği nedeniyle kullanımı kısıtlanmıştır.", points: [ { type: "cikarim", x: 26, y: 34, label: "Bursa" }, { type: "cikarim", x: 36, y: 38, label: "Eskişehir" }, { type: "cikarim", x: 68, y: 41, label: "Sivas" } ] },
+    { id: "trona", name: "Trona", info: "Cam ve kimya sanayisinde kullanılır. Ankara Beypazarı en önemli rezervlerdendir.", points: [ { type: "cikarim", x: 40, y: 35, label: "Ankara (Beypazarı)" }, { type: "isleme", x: 40, y: 38, label: "Ankara" } ] },
+    { id: "altin", name: "Altın", info: "İzmir (Bergama), Artvin (Cerattepe), Erzincan (İliç) önemli yataklarıdır.", points: [ { type: "cikarim", x: 12, y: 48, label: "İzmir (Bergama)" }, { type: "cikarim", x: 88, y: 14, label: "Artvin (Cerattepe)" }, { type: "cikarim", x: 78, y: 36, label: "Erzincan (İliç)" }, { type: "cikarim", x: 22, y: 50, label: "Uşak (Eşme)" } ] },
+    { id: "uranyum", name: "Uranyum", info: "Nükleer enerji hammaddesidir. Yozgat (Sorgun) en önemli yataklarındandır.", points: [ { type: "cikarim", x: 55, y: 40, label: "Yozgat (Sorgun)" }, { type: "cikarim", x: 23, y: 52, label: "Uşak" }, { type: "cikarim", x: 16, y: 64, label: "Aydın (Koçarlı)" } ] },
+    { id: "toryum", name: "Toryum", info: "Geleceğin nükleer yakıtı olarak görülür. Eskişehir (Sivrihisar) havzası öne çıkar.", points: [ { type: "cikarim", x: 39, y: 42, label: "Eskişehir (Sivrihisar)" } ] },
+    { id: "civa", name: "Civa", info: "Sıvı halde bulunan tek madendir. Konya (Sarayönü) ve İzmir (Ödemiş) bilinir.", points: [ { type: "cikarim", x: 45, y: 56, label: "Konya (Sarayönü)" }, { type: "cikarim", x: 14, y: 55, label: "İzmir (Ödemiş)" }, { type: "isleme", x: 45, y: 59, label: "Konya (Sarayönü)" } ] },
+    { id: "tuz", name: "Tuz", info: "Denizden (İzmir), gölden (Tuz Gölü) ve kayalardan (Çankırı) elde edilir.", points: [ { type: "cikarim", x: 48, y: 53, label: "Tuz Gölü" }, { type: "cikarim", x: 10, y: 53, label: "İzmir (Çamaltı)" }, { type: "cikarim", x: 50, y: 25, label: "Çankırı" } ] },
+    { id: "ponza", name: "Ponza (Bims)", info: "Volkanik kökenli süngerimsi taştır. Nevşehir ve Bitlis çevresi.", points: [ { type: "cikarim", x: 55, y: 55, label: "Nevşehir" }, { type: "cikarim", x: 57, y: 54, label: "Kayseri" }, { type: "cikarim", x: 89, y: 54, label: "Bitlis" } ] },
+    { id: "kukurt", name: "Kükürt", info: "Isparta (Keçiborlu) en sembolik çıkarım ve işleme tesisidir.", points: [ { type: "cikarim", x: 32, y: 63, label: "Isparta (Keçiborlu)" }, { type: "isleme", x: 32, y: 66, label: "Isparta" } ] },
+    { id: "manganez", name: "Manganez", info: "Çeliği sertleştirmek için kullanılır. Zonguldak, Artvin, Denizli.", points: [ { type: "cikarim", x: 37, y: 16, label: "Zonguldak (Ereğli)" }, { type: "cikarim", x: 87, y: 14, label: "Artvin (Borçka)" }, { type: "cikarim", x: 26, y: 66, label: "Denizli" } ] },
+    { id: "volfram", name: "Volfram", info: "Uzay sanayisinde kullanılır. Bursa (Uludağ) en ünlü yatağıdır.", points: [ { type: "cikarim", x: 26, y: 31, label: "Bursa (Uludağ)" } ] }
+];
+
+let currentMadenMode = 1; 
+let activeMaden = null;
+let madenCorrect = 0;
+let madenWrong = 0;
+let mode2CorrectPoint = null;
+let mode2DecoyPoints = [];
+
+function openMadenGame() {
+    switchMode("none");
+    if (document.getElementById("view-map-atlas")) document.getElementById("view-map-atlas").classList.add("hidden");
+    
+    const btnGame = document.getElementById("btn-maden-game");
+    if(btnGame) {
+        document.querySelectorAll('.flex.bg-slate-900 > button').forEach(b => {
+            b.classList.remove('bg-amber-500', 'bg-emerald-500', 'text-slate-950', 'shadow-sm');
+            b.classList.add('text-slate-400');
+        });
+        btnGame.classList.remove('text-slate-400');
+        btnGame.classList.add('bg-emerald-500', 'text-slate-950', 'shadow-sm');
+    }
+    document.getElementById("view-maden-game").classList.remove("hidden");
+    
+    initMadenGameUI();
+    switchMadenMode(1);
+}
+
+function initMadenGameUI() {
+    const optionsContainer = document.getElementById("maden-options");
+    optionsContainer.innerHTML = madenListesi.map(m => `
+        <button onclick="guessMadenMode1('${m.id}')" id="btn-maden-${m.id}" class="maden-guess-btn px-2 py-2 rounded-lg border border-slate-700 bg-slate-800/80 text-slate-300 font-bold text-[9px] hover:bg-slate-700 hover:text-white transition-colors uppercase tracking-wider text-center cursor-pointer shadow-sm">
+            ${m.name}
+        </button>
+    `).join('');
+}
+
+function switchMadenMode(mode) {
+    currentMadenMode = mode;
+    
+    const btn1 = document.getElementById('btn-maden-mode-1');
+    const btn2 = document.getElementById('btn-maden-mode-2');
+    const panel1 = document.getElementById('maden-mode1-panel');
+    const panel2 = document.getElementById('maden-mode2-panel');
+    const instruction = document.getElementById('maden-instruction-text');
+    const questionBanner = document.getElementById('maden-mode2-question');
+    
+    if (mode === 1) {
+        btn1.className = "px-4 py-2 rounded-lg text-xs font-bold transition-all bg-emerald-500/20 text-emerald-400 shadow-sm border border-emerald-500/30";
+        btn2.className = "px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-slate-200 bg-slate-900/50 cursor-pointer";
+        panel1.classList.remove('hidden');
+        panel2.classList.add('hidden');
+        questionBanner.style.display = 'none';
+        instruction.textContent = "Haritadaki noktaların hangi madene ait olduğunu seçeneklerden bulun.";
+    } else {
+        btn2.className = "px-4 py-2 rounded-lg text-xs font-bold transition-all bg-indigo-500/20 text-indigo-400 shadow-sm border border-indigo-500/30";
+        btn1.className = "px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-slate-200 bg-slate-900/50 cursor-pointer";
+        panel1.classList.add('hidden');
+        panel2.classList.remove('hidden');
+        questionBanner.style.display = 'flex';
+        instruction.textContent = "Size verilen madenin yerini haritadaki 5 nokta arasından doğru tıklayarak işaretleyin.";
+    }
+    
+    nextMadenRound();
+}
+
+function renderMadenMap(pointsToRender, isMode2 = false) {
+    const mapContainer = document.getElementById("maden-map-points");
+    mapContainer.innerHTML = '';
+    
+    if (isMode2) {
+        mapContainer.style.pointerEvents = "auto";
+    } else {
+        mapContainer.style.pointerEvents = "none";
+    }
+    
+    pointsToRender.forEach((pt, index) => {
+        const marker = document.createElement("div");
+        marker.className = `absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group pointer-events-auto ${isMode2 ? 'cursor-pointer' : 'cursor-help'} animate-scaleIn`;
+        marker.style.left = pt.x + '%';
+        marker.style.top = pt.y + '%';
+        
+        if (isMode2) {
+            marker.onclick = (e) => {
+                e.stopPropagation(); // prevent map bubbling if any
+                guessMadenMode2(pt);
+            };
+        }
+        
+        const isCikarim = pt.type === "cikarim";
+        const dotColorClass = isCikarim ? "bg-rose-500 border-rose-300" : "bg-amber-400 border-amber-200";
+        const shadowClass = isCikarim ? "shadow-[0_0_12px_rgba(243,24,66,0.9)]" : "shadow-[0_0_12px_rgba(251,191,36,0.9)]";
+        const shapeClass = isCikarim ? "w-4 h-4 rounded-full" : "w-4 h-4 rounded";
+        
+        marker.innerHTML = `
+            <div id="marker-pt-${index}" class="${shapeClass} ${dotColorClass} ${shadowClass} border-2 flex items-center justify-center relative hover:scale-125 transition-transform duration-300">
+                ${isMode2 ? '<span class="absolute -top-1 -right-1 flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span></span>' : ''}
+                ${!isMode2 ? `
+                <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 w-max max-w-[120px] bg-slate-900 border border-slate-700 text-white text-[9px] px-2 py-1 rounded shadow-xl opacity-0 group-hover:opacity-100 transition-opacity z-50 text-center pointer-events-none">
+                    <span class="${isCikarim ? 'text-rose-400' : 'text-amber-400'} block font-black uppercase text-[8px]">${isCikarim ? 'Çıkarım' : 'İşleme'}</span>
+                    ${pt.label}
+                </div>` : ''}
+            </div>
+        `;
+        
+        pt.domId = `marker-pt-${index}`;
+        mapContainer.appendChild(marker);
+    });
+}
+
+function nextMadenRound() {
+    document.getElementById("maden-feedback").classList.add("hidden");
+    const randomIndex = Math.floor(Math.random() * madenListesi.length);
+    activeMaden = madenListesi[randomIndex];
+    
+    if (currentMadenMode === 1) {
+        document.querySelectorAll(".maden-guess-btn").forEach(btn => {
+            btn.classList.remove("bg-emerald-600", "border-emerald-500", "text-white", "bg-rose-600", "border-rose-500", "opacity-50");
+            btn.classList.add("bg-slate-800/80", "border-slate-700", "text-slate-300");
+            btn.disabled = false;
+        });
+        renderMadenMap(activeMaden.points, false);
+    } else {
+        const correctPt = activeMaden.points[Math.floor(Math.random() * activeMaden.points.length)];
+        mode2CorrectPoint = { ...correctPt, isCorrect: true };
+        
+        const actionText = correctPt.type === "cikarim" ? "Çıkarım Yeri" : "İşleme Tesisi";
+        document.getElementById("maden-mode2-text").innerHTML = `<span class="text-white">${activeMaden.name}</span> <span class="text-slate-400 font-normal">madeninin</span> <span class="text-amber-400">${actionText}</span> <span class="text-slate-400 font-normal">hangisidir?</span>`;
+        
+        mode2DecoyPoints = [];
+        let attempts = 0;
+        while(mode2DecoyPoints.length < 4 && attempts < 100) {
+            attempts++;
+            const randMine = madenListesi[Math.floor(Math.random() * madenListesi.length)];
+            if (randMine.id === activeMaden.id) continue;
+            
+            const randPt = randMine.points[Math.floor(Math.random() * randMine.points.length)];
+            const isTooClose = [mode2CorrectPoint, ...mode2DecoyPoints].some(p => Math.hypot(p.x - randPt.x, p.y - randPt.y) < 3);
+            
+            if (!isTooClose) {
+                mode2DecoyPoints.push({ ...randPt, type: correctPt.type, isCorrect: false });
+            }
+        }
+        
+        const allPoints = [mode2CorrectPoint, ...mode2DecoyPoints].sort(() => Math.random() - 0.5);
+        renderMadenMap(allPoints, true);
+    }
+}
+
+function guessMadenMode1(id) {
+    if (!activeMaden) return;
+    
+    const isCorrect = id === activeMaden.id;
+    const btn = document.getElementById(`btn-maden-${id}`);
+    
+    if (isCorrect) {
+        madenCorrect++;
+        document.getElementById("maden-score-correct").textContent = madenCorrect;
+        btn.classList.replace("bg-slate-800/80", "bg-emerald-600");
+        btn.classList.replace("border-slate-700", "border-emerald-500");
+        btn.classList.replace("text-slate-300", "text-white");
+        showMadenFeedback(true);
+    } else {
+        madenWrong++;
+        document.getElementById("maden-score-wrong").textContent = madenWrong;
+        btn.classList.replace("bg-slate-800/80", "bg-rose-600");
+        btn.classList.replace("border-slate-700", "border-rose-500");
+        btn.classList.replace("text-slate-300", "text-white");
+        
+        const correctBtn = document.getElementById(`btn-maden-${activeMaden.id}`);
+        correctBtn.classList.replace("bg-slate-800/80", "bg-emerald-600");
+        correctBtn.classList.replace("border-slate-700", "border-emerald-500");
+        correctBtn.classList.replace("text-slate-300", "text-white");
+        
+        showMadenFeedback(false);
+    }
+    
+    document.querySelectorAll(".maden-guess-btn").forEach(b => {
+        b.disabled = true;
+        if (b.id !== `btn-maden-${id}` && b.id !== `btn-maden-${activeMaden.id}`) {
+            b.classList.add("opacity-50");
+        }
+    });
+}
+
+function guessMadenMode2(clickedPoint) {
+    document.getElementById("maden-map-points").style.pointerEvents = "none"; // disable further clicks
+    
+    if (clickedPoint.isCorrect) {
+        madenCorrect++;
+        document.getElementById("maden-score-correct").textContent = madenCorrect;
+        
+        const ptEl = document.getElementById(clickedPoint.domId);
+        if(ptEl) {
+            ptEl.innerHTML = '<i class="fa-solid fa-check text-white text-xs"></i>';
+            ptEl.classList.replace(clickedPoint.type === "cikarim" ? "bg-rose-500" : "bg-amber-400", "bg-emerald-500");
+            ptEl.classList.replace(clickedPoint.type === "cikarim" ? "border-rose-300" : "border-amber-200", "border-emerald-300");
+            ptEl.style.boxShadow = "0 0 20px rgba(16, 185, 129, 0.9)";
+            ptEl.classList.add("scale-125");
+        }
+        showMadenFeedback(true);
+    } else {
+        madenWrong++;
+        document.getElementById("maden-score-wrong").textContent = madenWrong;
+        
+        const clickedEl = document.getElementById(clickedPoint.domId);
+        if(clickedEl) {
+            clickedEl.innerHTML = '<i class="fa-solid fa-xmark text-white text-xs"></i>';
+            clickedEl.classList.replace(clickedPoint.type === "cikarim" ? "bg-rose-500" : "bg-amber-400", "bg-rose-600");
+            clickedEl.classList.replace(clickedPoint.type === "cikarim" ? "border-rose-300" : "border-amber-200", "border-rose-300");
+            clickedEl.classList.add("scale-110");
+        }
+        
+        const correctEl = document.getElementById(mode2CorrectPoint.domId);
+        if(correctEl) {
+            correctEl.innerHTML = '<i class="fa-solid fa-check text-white text-xs animate-bounce"></i>';
+            correctEl.classList.replace(mode2CorrectPoint.type === "cikarim" ? "bg-rose-500" : "bg-amber-400", "bg-emerald-500");
+            correctEl.classList.replace(mode2CorrectPoint.type === "cikarim" ? "border-rose-300" : "border-amber-200", "border-emerald-300");
+            correctEl.style.boxShadow = "0 0 20px rgba(16, 185, 129, 0.9)";
+            correctEl.classList.add("scale-150");
+        }
+        showMadenFeedback(false);
+    }
+}
+
+function showMadenFeedback(isCorrect) {
+    const fb = document.getElementById("maden-feedback");
+    const iconContainer = document.getElementById("maden-feedback-icon-container");
+    const icon = document.getElementById("maden-feedback-icon");
+    const title = document.getElementById("maden-feedback-title");
+    const desc = document.getElementById("maden-feedback-desc");
+    
+    fb.classList.remove("hidden");
+    
+    if (isCorrect) {
+        fb.classList.replace("border-rose-500/50", "border-emerald-500/50");
+        if (!fb.classList.contains("border-emerald-500/50")) fb.classList.add("border-emerald-500/50");
+        iconContainer.className = "w-16 h-16 rounded-full flex items-center justify-center mb-1 bg-emerald-500/20 border border-emerald-500/50";
+        icon.className = "fa-solid fa-check text-3xl text-emerald-400 animate-bounce";
+        title.className = "text-xl font-black uppercase tracking-widest text-center text-emerald-400";
+        title.textContent = "TEBRİKLER!";
+    } else {
+        fb.classList.replace("border-emerald-500/50", "border-rose-500/50");
+        if (!fb.classList.contains("border-rose-500/50")) fb.classList.add("border-rose-500/50");
+        iconContainer.className = "w-16 h-16 rounded-full flex items-center justify-center mb-1 bg-rose-500/20 border border-rose-500/50";
+        icon.className = "fa-solid fa-xmark text-3xl text-rose-400 animate-shake";
+        title.className = "text-xl font-black uppercase tracking-widest text-center text-rose-400";
+        title.textContent = "YANLIŞ CEVAP!";
+    }
+    
+    if (currentMadenMode === 1) {
+        desc.innerHTML = `Bu harita <b>${activeMaden.name}</b> madenine aitti.<br><br><span class="text-slate-400">${activeMaden.info}</span>`;
+    } else {
+        const placeName = mode2CorrectPoint.label;
+        desc.innerHTML = `Doğru cevap <b>${placeName}</b> olmalıydı.<br><br><span class="text-slate-400">${activeMaden.info}</span>`;
+    }
+}
+// --- 🔍 ÖSYM SINAV İÇERİK ANALİZ VE EŞLEŞTİRME MOTORU ---
         function openContentTestCenter() {
             switchMode('content-test');
         }
