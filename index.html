@@ -805,6 +805,7 @@
                     <div class="flex gap-2 bg-slate-900/50 p-1 rounded-xl border border-slate-800">
                         <button id="btn-maden-mode-1" onclick="switchMadenMode(1)" class="px-4 py-2 rounded-lg text-xs font-bold transition-all bg-emerald-500/20 text-emerald-400 shadow-sm border border-emerald-500/30">Mod 1: Madeni Bul</button>
                         <button id="btn-maden-mode-2" onclick="switchMadenMode(2)" class="px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-slate-200">Mod 2: Konumu İşaretle</button>
+                        <button id="btn-maden-mode-3" onclick="switchMadenMode(3)" class="px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-slate-200 bg-slate-900/50">Mod 3: Keşif</button>
                     </div>
                 </div>
 
@@ -830,12 +831,12 @@
                         </div>
                         
                         <!-- Feedback -->
-                        <div id="maden-feedback" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-950/95 border-2 p-6 rounded-3xl shadow-[0_0_50px_rgba(0,0,0,0.8)] flex-col items-center gap-4 hidden z-50 min-w-[280px]">
+                        <div id="maden-feedback" class="bg-slate-950/95 border-2 border-slate-800 p-6 rounded-3xl shadow-lg flex-col items-center gap-3 hidden w-full mt-4 transition-all animate-fadeIn">
                             <div id="maden-feedback-icon-container" class="w-16 h-16 rounded-full flex items-center justify-center mb-1">
                                 <i id="maden-feedback-icon" class="fa-solid fa-circle-check text-4xl"></i>
                             </div>
                             <h4 id="maden-feedback-title" class="text-xl font-black uppercase tracking-widest text-center">Tebrikler!</h4>
-                            <p id="maden-feedback-desc" class="text-xs text-slate-300 text-center font-medium max-w-[240px] leading-relaxed"></p>
+                            <p id="maden-feedback-desc" class="text-xs text-slate-300 text-center font-medium leading-relaxed max-w-2xl"></p>
                             <button onclick="nextMadenRound()" class="mt-2 px-8 py-3 rounded-xl font-black text-xs bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 text-white shadow-lg transition-transform hover:scale-105 uppercase tracking-wider">Devam Et <i class="fa-solid fa-arrow-right ml-2"></i></button>
                         </div>
                     </div>
@@ -858,6 +859,13 @@
                             <div>
                                 <h4 class="text-sm font-black text-white uppercase tracking-wider">Yerini Bul</h4>
                                 <p class="text-[11px] text-slate-400 mt-2 font-medium leading-relaxed">Harita üzerinde gösterilen <span class="text-rose-400 font-bold">5 noktadan</span> hangisinin istenen madene ait olduğunu tıklayarak seçin.</p>
+                            </div>
+                        </div>
+                        <!-- Mode 3 Info (Hidden normally) -->
+                        <div id="maden-mode3-panel" class="hidden bg-slate-900/40 rounded-2xl border border-slate-700/50 p-6 flex-grow flex flex-col items-center shadow-inner max-h-[400px] overflow-y-auto scrollbar-thin">
+                            <div class="text-xs font-black text-amber-400 uppercase tracking-widest mb-4 border-b border-slate-800 pb-3 text-center w-full"><i class="fa-solid fa-map-location-dot mr-1"></i> İncelemek İstediğiniz Madeni Seçin</div>
+                            <div id="maden-options-mode3" class="grid grid-cols-2 gap-2 w-full">
+                                <!-- JS fills this -->
                             </div>
                         </div>
 
@@ -7920,25 +7928,29 @@
         };
 // --- 💎 MADEN BULMACA UYGULAMASI V2 ---
 const madenListesi = [
-    { id: "demir", name: "Demir", info: "Ağır sanayinin temelidir. Sivas (Divriği) en önemli çıkarım alanıyken, Karabük ve İskenderun'da işlenir.", points: [ { type: "cikarim", x: 67, y: 39, label: "Sivas (Divriği)" }, { type: "cikarim", x: 72, y: 55, label: "Malatya (Hekimhan)" }, { type: "cikarim", x: 18, y: 35, label: "Balıkesir (Eymir)" }, { type: "isleme", x: 42, y: 19, label: "Karabük (Erdemir)" }, { type: "isleme", x: 62, y: 83, label: "İskenderun (İsdemir)" } ] },
-    { id: "bakir", name: "Bakır", info: "Elektrik-elektronikte kullanılır. Artvin, Kastamonu ve Elazığ'da çıkarılır.", points: [ { type: "cikarim", x: 88, y: 16, label: "Artvin (Murgul)" }, { type: "cikarim", x: 50, y: 16, label: "Kastamonu (Küre)" }, { type: "cikarim", x: 77, y: 54, label: "Elazığ (Maden)" }, { type: "cikarim", x: 83, y: 18, label: "Rize (Çayeli)" }, { type: "isleme", x: 58, y: 15, label: "Samsun" }, { type: "isleme", x: 77, y: 57, label: "Elazığ" } ] },
-    { id: "boksit", name: "Boksit (Alüminyum)", info: "Uçak yapımında kullanılır. Seydişehir (Konya) ve Akseki (Antalya) en önemli rezervleridir.", points: [ { type: "cikarim", x: 44, y: 65, label: "Konya (Seydişehir)" }, { type: "cikarim", x: 38, y: 73, label: "Antalya (Akseki)" }, { type: "cikarim", x: 20, y: 76, label: "Muğla (Milas)" }, { type: "isleme", x: 44, y: 68, label: "Konya (Seydişehir)" } ] },
-    { id: "krom", name: "Krom", info: "Paslanmaz çelik üretiminde kullanılır. Guleman (Elazığ) ve Köyceğiz (Muğla) önemlidir.", points: [ { type: "cikarim", x: 76, y: 55, label: "Elazığ (Guleman)" }, { type: "cikarim", x: 22, y: 76, label: "Muğla (Köyceğiz)" }, { type: "cikarim", x: 25, y: 66, label: "Denizli (Acıpayam)" }, { type: "cikarim", x: 26, y: 32, label: "Bursa (Orhaneli)" }, { type: "isleme", x: 35, y: 75, label: "Antalya (Ferrokrom)" }, { type: "isleme", x: 76, y: 58, label: "Elazığ (Ferrokrom)" } ] },
-    { id: "barit", name: "Barit", info: "Petrol sondajlarında kullanılır. Antalya (Alanya) ve Kahramanmaraş çevresinde çıkarılır.", points: [ { type: "cikarim", x: 40, y: 77, label: "Antalya (Alanya)" }, { type: "cikarim", x: 67, y: 64, label: "K.Maraş (Elbistan)" }, { type: "cikarim", x: 86, y: 51, label: "Muş" }, { type: "isleme", x: 35, y: 77, label: "Antalya" }, { type: "isleme", x: 12, y: 55, label: "İzmir" } ] },
-    { id: "bor", name: "Bor Mineralleri", info: "Dünya rezervlerinin %70'inden fazlası Türkiye'dedir. Susurluk, Kırka, Emet havzası.", points: [ { type: "cikarim", x: 18, y: 33, label: "Balıkesir (Susurluk)" }, { type: "cikarim", x: 35, y: 40, label: "Eskişehir (Kırka)" }, { type: "cikarim", x: 28, y: 41, label: "Kütahya (Emet)" }, { type: "isleme", x: 18, y: 28, label: "Balıkesir (Bandırma)" }, { type: "isleme", x: 35, y: 43, label: "Eskişehir (Kırka)" } ] },
-    { id: "mermer", name: "Mermer", info: "İhracatta en çok gelir getiren madenimizdir. Afyon, Balıkesir ve Denizli öne çıkar.", points: [ { type: "cikarim", x: 32, y: 51, label: "Afyonkarahisar" }, { type: "cikarim", x: 15, y: 24, label: "Balıkesir (M. Adası)" }, { type: "cikarim", x: 25, y: 67, label: "Denizli" }, { type: "cikarim", x: 21, y: 74, label: "Muğla" } ] },
-    { id: "fosfat", name: "Fosfat", info: "Suni gübre yapımında kullanılır. Türkiye'de en çok Mardin (Mazıdağı) çevresinde çıkarılır ve işlenir.", points: [ { type: "cikarim", x: 82, y: 76, label: "Mardin (Mazıdağı)" }, { type: "cikarim", x: 74, y: 64, label: "Adıyaman" }, { type: "isleme", x: 82, y: 79, label: "Mardin (Mazıdağı)" } ] },
-    { id: "asbest", name: "Asbest", info: "Isıya dayanıklı, kanserojen özelliği nedeniyle kullanımı kısıtlanmıştır.", points: [ { type: "cikarim", x: 26, y: 34, label: "Bursa" }, { type: "cikarim", x: 36, y: 38, label: "Eskişehir" }, { type: "cikarim", x: 68, y: 41, label: "Sivas" } ] },
-    { id: "trona", name: "Trona", info: "Cam ve kimya sanayisinde kullanılır. Ankara Beypazarı en önemli rezervlerdendir.", points: [ { type: "cikarim", x: 40, y: 35, label: "Ankara (Beypazarı)" }, { type: "isleme", x: 40, y: 38, label: "Ankara" } ] },
-    { id: "altin", name: "Altın", info: "İzmir (Bergama), Artvin (Cerattepe), Erzincan (İliç) önemli yataklarıdır.", points: [ { type: "cikarim", x: 12, y: 48, label: "İzmir (Bergama)" }, { type: "cikarim", x: 88, y: 14, label: "Artvin (Cerattepe)" }, { type: "cikarim", x: 78, y: 36, label: "Erzincan (İliç)" }, { type: "cikarim", x: 22, y: 50, label: "Uşak (Eşme)" } ] },
-    { id: "uranyum", name: "Uranyum", info: "Nükleer enerji hammaddesidir. Yozgat (Sorgun) en önemli yataklarındandır.", points: [ { type: "cikarim", x: 55, y: 40, label: "Yozgat (Sorgun)" }, { type: "cikarim", x: 23, y: 52, label: "Uşak" }, { type: "cikarim", x: 16, y: 64, label: "Aydın (Koçarlı)" } ] },
-    { id: "toryum", name: "Toryum", info: "Geleceğin nükleer yakıtı olarak görülür. Eskişehir (Sivrihisar) havzası öne çıkar.", points: [ { type: "cikarim", x: 39, y: 42, label: "Eskişehir (Sivrihisar)" } ] },
-    { id: "civa", name: "Civa", info: "Sıvı halde bulunan tek madendir. Konya (Sarayönü) ve İzmir (Ödemiş) bilinir.", points: [ { type: "cikarim", x: 45, y: 56, label: "Konya (Sarayönü)" }, { type: "cikarim", x: 14, y: 55, label: "İzmir (Ödemiş)" }, { type: "isleme", x: 45, y: 59, label: "Konya (Sarayönü)" } ] },
-    { id: "tuz", name: "Tuz", info: "Denizden (İzmir), gölden (Tuz Gölü) ve kayalardan (Çankırı) elde edilir.", points: [ { type: "cikarim", x: 48, y: 53, label: "Tuz Gölü" }, { type: "cikarim", x: 10, y: 53, label: "İzmir (Çamaltı)" }, { type: "cikarim", x: 50, y: 25, label: "Çankırı" } ] },
-    { id: "ponza", name: "Ponza (Bims)", info: "Volkanik kökenli süngerimsi taştır. Nevşehir ve Bitlis çevresi.", points: [ { type: "cikarim", x: 55, y: 55, label: "Nevşehir" }, { type: "cikarim", x: 57, y: 54, label: "Kayseri" }, { type: "cikarim", x: 89, y: 54, label: "Bitlis" } ] },
-    { id: "kukurt", name: "Kükürt", info: "Isparta (Keçiborlu) en sembolik çıkarım ve işleme tesisidir.", points: [ { type: "cikarim", x: 32, y: 63, label: "Isparta (Keçiborlu)" }, { type: "isleme", x: 32, y: 66, label: "Isparta" } ] },
-    { id: "manganez", name: "Manganez", info: "Çeliği sertleştirmek için kullanılır. Zonguldak, Artvin, Denizli.", points: [ { type: "cikarim", x: 37, y: 16, label: "Zonguldak (Ereğli)" }, { type: "cikarim", x: 87, y: 14, label: "Artvin (Borçka)" }, { type: "cikarim", x: 26, y: 66, label: "Denizli" } ] },
-    { id: "volfram", name: "Volfram", info: "Uzay sanayisinde kullanılır. Bursa (Uludağ) en ünlü yatağıdır.", points: [ { type: "cikarim", x: 26, y: 31, label: "Bursa (Uludağ)" } ] }
+    { id: "demir", name: "Demir", info: "Ağır sanayinin temelidir. Sivas (Divriği, Hasançelebi), Malatya (Hekimhan, Hasançelebi) en önemli çıkarım alanlarıdır. Karabük (Erdemir), Zonguldak (Ereğli) ve İskenderun'da (İsdemir) işlenir (Taşkömürü ve liman faktörü).", points: [ { type: "cikarim", x: 67, y: 39, label: "Sivas (Divriği)" }, { type: "cikarim", x: 65, y: 38, label: "Sivas (Hasançelebi)" }, { type: "cikarim", x: 72, y: 55, label: "Malatya (Hekimhan)" }, { type: "cikarim", x: 18, y: 35, label: "Balıkesir (Eymir)" }, { type: "cikarim", x: 12, y: 46, label: "İzmir (Torbalı)" }, { type: "isleme", x: 42, y: 19, label: "Karabük (Kardemir)" }, { type: "isleme", x: 37, y: 16, label: "Zonguldak (Erdemir)" }, { type: "isleme", x: 62, y: 83, label: "İskenderun (İsdemir)" } ] },
+    { id: "bakir", name: "Bakır", info: "İletkenliği yüksek olduğu için elektrik-elektronikte kullanılır. Artvin (Murgul), Kastamonu (Küre), Elazığ (Maden), Rize (Çayeli) ve Diyarbakır (Ergani)'de çıkarılır. Samsun (Liman) ve Artvin'de işlenir.", points: [ { type: "cikarim", x: 88, y: 16, label: "Artvin (Murgul)" }, { type: "cikarim", x: 50, y: 16, label: "Kastamonu (Küre)" }, { type: "cikarim", x: 77, y: 54, label: "Elazığ (Maden)" }, { type: "cikarim", x: 83, y: 18, label: "Rize (Çayeli)" }, { type: "cikarim", x: 78, y: 64, label: "Diyarbakır (Ergani)" }, { type: "isleme", x: 58, y: 15, label: "Samsun (İzabe)" }, { type: "isleme", x: 88, y: 18, label: "Artvin (Murgul)" }, { type: "isleme", x: 77, y: 57, label: "Elazığ (Maden)" } ] },
+    { id: "boksit", name: "Boksit (Alüminyum)", info: "Hafif olduğu için uçak ve otomotiv sanayisinde kullanılır. Seydişehir (Konya), Akseki (Antalya), Milas (Muğla), İslahiye (Gaziantep)'de çıkarılır. Sadece Seydişehir'de işlenir.", points: [ { type: "cikarim", x: 44, y: 65, label: "Konya (Seydişehir)" }, { type: "cikarim", x: 38, y: 73, label: "Antalya (Akseki)" }, { type: "cikarim", x: 20, y: 76, label: "Muğla (Milas)" }, { type: "cikarim", x: 66, y: 74, label: "Gaziantep (İslahiye)" }, { type: "isleme", x: 44, y: 68, label: "Konya (Seydişehir Tesisleri)" } ] },
+    { id: "krom", name: "Krom", info: "Çeliğe sertlik verir, paslanmaz çelik üretiminde kullanılır. Türkiye ihracatta ön sıralardadır. Guleman (Elazığ), Köyceğiz/Fethiye (Muğla), Acıpayam (Denizli)'de çıkarılır. Antalya ve Elazığ'da (Ferrokrom) işlenir.", points: [ { type: "cikarim", x: 76, y: 55, label: "Elazığ (Guleman)" }, { type: "cikarim", x: 22, y: 76, label: "Muğla (Köyceğiz)" }, { type: "cikarim", x: 23, y: 80, label: "Muğla (Fethiye)" }, { type: "cikarim", x: 25, y: 66, label: "Denizli (Acıpayam)" }, { type: "cikarim", x: 26, y: 32, label: "Bursa (Orhaneli)" }, { type: "isleme", x: 35, y: 75, label: "Antalya (Ferrokrom T.)" }, { type: "isleme", x: 76, y: 58, label: "Elazığ (Ferrokrom T.)" } ] },
+    { id: "barit", name: "Barit", info: "Suda erimeyen ağır bir madendir. Petrol sondajlarında, cam ve boya sanayisinde kullanılır. Alanya, Gazipaşa, Elbistan ve Muş'ta çıkarılır.", points: [ { type: "cikarim", x: 40, y: 77, label: "Antalya (Alanya)" }, { type: "cikarim", x: 42, y: 79, label: "Antalya (Gazipaşa)" }, { type: "cikarim", x: 67, y: 64, label: "K.Maraş (Elbistan)" }, { type: "cikarim", x: 86, y: 51, label: "Muş" }, { type: "isleme", x: 35, y: 77, label: "Antalya" }, { type: "isleme", x: 12, y: 55, label: "İzmir" }, { type: "isleme", x: 29, y: 22, label: "Kocaeli (İzmit)" } ] },
+    { id: "bor", name: "Bor Mineralleri", info: "Dünya rezervlerinin %73'ü Türkiye'dedir. Susurluk, Bigadiç (Balıkesir), Kırka (Eskişehir), Emet (Kütahya) havzasında çıkarılır. Roket yakıtı, cam, deterjan yapımında kullanılır.", points: [ { type: "cikarim", x: 18, y: 33, label: "Balıkesir (Susurluk)" }, { type: "cikarim", x: 18, y: 38, label: "Balıkesir (Bigadiç)" }, { type: "cikarim", x: 35, y: 40, label: "Eskişehir (Kırka)" }, { type: "cikarim", x: 28, y: 41, label: "Kütahya (Emet)" }, { type: "cikarim", x: 24, y: 34, label: "Bursa (M.Kemalpaşa)" }, { type: "isleme", x: 18, y: 28, label: "Balıkesir (Bandırma T.)" }, { type: "isleme", x: 35, y: 43, label: "Eskişehir (Kırka T.)" } ] },
+    { id: "mermer", name: "Mermer", info: "Kalkerin başkalaşmasıyla oluşur. İhracatta en çok gelir getiren madenimizdir. Afyon, Balıkesir (M. Adası), Denizli, Muğla, Bilecik öne çıkar.", points: [ { type: "cikarim", x: 32, y: 51, label: "Afyonkarahisar" }, { type: "cikarim", x: 15, y: 24, label: "Balıkesir (M. Adası)" }, { type: "cikarim", x: 25, y: 67, label: "Denizli" }, { type: "cikarim", x: 21, y: 74, label: "Muğla" }, { type: "cikarim", x: 32, y: 32, label: "Bilecik" } ] },
+    { id: "fosfat", name: "Fosfat", info: "Suni gübre (petrokimya) yapımında kullanılır. Çoğunluğu ithal edilir. Mardin (Mazıdağı), Adıyaman, Bingöl, Bitlis'te çıkarılır.", points: [ { type: "cikarim", x: 82, y: 76, label: "Mardin (Mazıdağı)" }, { type: "cikarim", x: 74, y: 64, label: "Adıyaman" }, { type: "cikarim", x: 83, y: 46, label: "Bingöl" }, { type: "cikarim", x: 89, y: 56, label: "Bitlis" }, { type: "isleme", x: 82, y: 79, label: "Mardin (Mazıdağı)" } ] },
+    { id: "asbest", name: "Asbest (Amyant)", info: "Isıya çok dayanıklı lifli bir yapıdadır (İtfaiyeci elbiseleri). Kanserojen olduğu için üretimi ve kullanımı kısıtlanmıştır/yasaktır. Bursa, Eskişehir, Sivas.", points: [ { type: "cikarim", x: 26, y: 34, label: "Bursa" }, { type: "cikarim", x: 36, y: 38, label: "Eskişehir" }, { type: "cikarim", x: 68, y: 41, label: "Sivas" }, { type: "cikarim", x: 61, y: 79, label: "Hatay" } ] },
+    { id: "trona", name: "Trona", info: "Doğal sodadır. Cam ve kimya sanayisinde kullanılır. Ankara (Beypazarı, Kazan) en önemli rezervlerdendir (Dünyada 2. sırada).", points: [ { type: "cikarim", x: 40, y: 35, label: "Ankara (Beypazarı)" }, { type: "cikarim", x: 44, y: 35, label: "Ankara (Kazan)" }, { type: "isleme", x: 40, y: 38, label: "Ankara Tesisleri" } ] },
+    { id: "altin", name: "Altın", info: "İzmir (Bergama-Ovacık), Artvin (Cerattepe), Erzincan (İliç), Uşak (Eşme), Balıkesir (Havran) önemli altın madenleridir.", points: [ { type: "cikarim", x: 12, y: 48, label: "İzmir (Bergama)" }, { type: "cikarim", x: 88, y: 14, label: "Artvin (Cerattepe)" }, { type: "cikarim", x: 78, y: 36, label: "Erzincan (İliç)" }, { type: "cikarim", x: 22, y: 50, label: "Uşak (Eşme)" }, { type: "cikarim", x: 16, y: 36, label: "Balıkesir (Havran)" } ] },
+    { id: "uranyum", name: "Uranyum", info: "Nükleer enerji hammaddesidir (Radyoaktif). Yozgat (Sorgun), Uşak (Eşme), Aydın (Koçarlı), Manisa (Salihli) öne çıkar.", points: [ { type: "cikarim", x: 55, y: 40, label: "Yozgat (Sorgun)" }, { type: "cikarim", x: 23, y: 52, label: "Uşak (Eşme)" }, { type: "cikarim", x: 16, y: 64, label: "Aydın (Koçarlı)" }, { type: "cikarim", x: 17, y: 46, label: "Manisa (Salihli)" } ] },
+    { id: "toryum", name: "Toryum", info: "Geleceğin nükleer yakıtı olarak görülür (Uranyumdan daha temiz). Türkiye rezervlerinde dünyada ön sıralardadır. Eskişehir (Sivrihisar).", points: [ { type: "cikarim", x: 39, y: 42, label: "Eskişehir (Sivrihisar)" } ] },
+    { id: "civa", name: "Cıva", info: "Oda sıcaklığında sıvı halde bulunan tek madendir. Konya (Sarayönü), İzmir (Ödemiş, Karaburun), Niğde çevresinde çıkarılır.", points: [ { type: "cikarim", x: 45, y: 56, label: "Konya (Sarayönü)" }, { type: "cikarim", x: 14, y: 55, label: "İzmir (Ödemiş)" }, { type: "cikarim", x: 8, y: 48, label: "İzmir (Karaburun)" }, { type: "cikarim", x: 53, y: 59, label: "Niğde" }, { type: "isleme", x: 45, y: 59, label: "Konya (Sarayönü)" } ] },
+    { id: "tuz", name: "Tuz", info: "Denizden (İzmir Çamaltı), gölden (Tuz Gölü) ve kayalardan (Çankırı, Yozgat, Nevşehir, Kırşehir, Erzurum) elde edilir.", points: [ { type: "cikarim", x: 48, y: 53, label: "Tuz Gölü" }, { type: "cikarim", x: 10, y: 53, label: "İzmir (Çamaltı)" }, { type: "cikarim", x: 50, y: 25, label: "Çankırı (Kaya Tuzu)" }, { type: "cikarim", x: 56, y: 42, label: "Yozgat (Kaya Tuzu)" }, { type: "cikarim", x: 52, y: 46, label: "Kırşehir (Kaya Tuzu)" }, { type: "cikarim", x: 88, y: 31, label: "Erzurum" } ] },
+    { id: "ponza", name: "Ponza (Bims Taşı)", info: "Volkanik kökenli, gözenekli ve hafif bir taştır (Suda batmaz). Yalıtım ve inşaatta kullanılır. Nevşehir, Bitlis, Kayseri, Van.", points: [ { type: "cikarim", x: 55, y: 55, label: "Nevşehir" }, { type: "cikarim", x: 57, y: 54, label: "Kayseri" }, { type: "cikarim", x: 89, y: 54, label: "Bitlis" }, { type: "cikarim", x: 96, y: 50, label: "Van" } ] },
+    { id: "kukurt", name: "Kükürt", info: "Kimya, gübre ve ilaç sanayisinde kullanılır. Isparta (Keçiborlu) en sembolik çıkarım ve işleme tesisidir, Muğla (Milas)'da da bulunur.", points: [ { type: "cikarim", x: 32, y: 63, label: "Isparta (Keçiborlu)" }, { type: "cikarim", x: 21, y: 77, label: "Muğla (Milas)" }, { type: "isleme", x: 32, y: 66, label: "Isparta (Keçiborlu Fab.)" } ] },
+    { id: "manganez", name: "Manganez", info: "Çeliği sertleştirmek ve direncini artırmak için kullanılır. Zonguldak (Ereğli), Artvin (Borçka), Denizli, Adana (Ceyhan).", points: [ { type: "cikarim", x: 37, y: 16, label: "Zonguldak (Ereğli)" }, { type: "cikarim", x: 87, y: 14, label: "Artvin (Borçka)" }, { type: "cikarim", x: 26, y: 66, label: "Denizli" }, { type: "cikarim", x: 60, y: 70, label: "Adana (Ceyhan)" } ] },
+    { id: "volfram", name: "Volfram (Tungsten)", info: "Isıya çok dayanıklıdır, uzay-havacılık ve ampul telinde kullanılır. Bursa (Uludağ) en ünlü yatağıdır (Ancak aktif üretim azdır).", points: [ { type: "cikarim", x: 26, y: 31, label: "Bursa (Uludağ)" } ] },
+    { id: "antimon", name: "Antimon", info: "Kurşunla karıştırılarak cephane ve akü yapımında kullanılır. Tokat (Turhal), Balıkesir, Kütahya, İzmir, Niğde.", points: [ { type: "cikarim", x: 62, y: 25, label: "Tokat (Turhal)" }, { type: "cikarim", x: 19, y: 37, label: "Balıkesir" }, { type: "cikarim", x: 27, y: 44, label: "Kütahya" } ] },
+    { id: "luletasi", name: "Lületaşı", info: "Süs eşyası ve pipo yapımında kullanılır. Dünyadaki en önemli yatakları Eskişehir'dedir.", points: [ { type: "cikarim", x: 36, y: 36, label: "Eskişehir" } ] },
+    { id: "oltutasi", name: "Oltutaşı", info: "Tespih ve takı yapımında kullanılan siyah renkli kıymetli bir taştır. Erzurum (Oltu) ile özdeşleşmiştir.", points: [ { type: "cikarim", x: 89, y: 25, label: "Erzurum (Oltu)" } ] },
+    { id: "zimpara", name: "Zımpara Taşı", info: "Aşındırıcı olarak kullanılır. Ege Bölgesinde yaygındır: İzmir, Muğla, Aydın, Denizli.", points: [ { type: "cikarim", x: 14, y: 52, label: "İzmir" }, { type: "cikarim", x: 18, y: 62, label: "Aydın" }, { type: "cikarim", x: 23, y: 72, label: "Muğla" }, { type: "cikarim", x: 25, y: 65, label: "Denizli" } ] }
 ];
 
 let currentMadenMode = 1; 
@@ -7969,11 +7981,22 @@ function openMadenGame() {
 
 function initMadenGameUI() {
     const optionsContainer = document.getElementById("maden-options");
-    optionsContainer.innerHTML = madenListesi.map(m => `
+    const optionsContainer3 = document.getElementById("maden-options-mode3");
+    
+    const htmlContent = madenListesi.map(m => `
         <button onclick="guessMadenMode1('${m.id}')" id="btn-maden-${m.id}" class="maden-guess-btn px-2 py-2 rounded-lg border border-slate-700 bg-slate-800/80 text-slate-300 font-bold text-[9px] hover:bg-slate-700 hover:text-white transition-colors uppercase tracking-wider text-center cursor-pointer shadow-sm">
             ${m.name}
         </button>
     `).join('');
+    
+    const htmlContent3 = madenListesi.map(m => `
+        <button onclick="exploreMadenMode3('${m.id}')" id="btn-explore-${m.id}" class="maden-explore-btn px-2 py-2 rounded-lg border border-slate-700 bg-slate-800/80 text-slate-300 font-bold text-[9px] hover:bg-slate-700 hover:text-white transition-colors uppercase tracking-wider text-center cursor-pointer shadow-sm">
+            ${m.name}
+        </button>
+    `).join('');
+    
+    if(optionsContainer) optionsContainer.innerHTML = htmlContent;
+    if(optionsContainer3) optionsContainer3.innerHTML = htmlContent3;
 }
 
 function switchMadenMode(mode) {
@@ -7981,35 +8004,98 @@ function switchMadenMode(mode) {
     
     const btn1 = document.getElementById('btn-maden-mode-1');
     const btn2 = document.getElementById('btn-maden-mode-2');
+    const btn3 = document.getElementById('btn-maden-mode-3');
     const panel1 = document.getElementById('maden-mode1-panel');
     const panel2 = document.getElementById('maden-mode2-panel');
+    const panel3 = document.getElementById('maden-mode3-panel');
     const instruction = document.getElementById('maden-instruction-text');
     const questionBanner = document.getElementById('maden-mode2-question');
     
-    if (mode === 1) {
-        btn1.className = "px-4 py-2 rounded-lg text-xs font-bold transition-all bg-emerald-500/20 text-emerald-400 shadow-sm border border-emerald-500/30";
-        btn2.className = "px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-slate-200 bg-slate-900/50 cursor-pointer";
-        panel1.classList.remove('hidden');
-        panel2.classList.add('hidden');
-        questionBanner.style.display = 'none';
-        instruction.textContent = "Haritadaki noktaların hangi madene ait olduğunu seçeneklerden bulun.";
-    } else {
-        btn2.className = "px-4 py-2 rounded-lg text-xs font-bold transition-all bg-indigo-500/20 text-indigo-400 shadow-sm border border-indigo-500/30";
-        btn1.className = "px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-slate-200 bg-slate-900/50 cursor-pointer";
-        panel1.classList.add('hidden');
-        panel2.classList.remove('hidden');
-        questionBanner.style.display = 'flex';
-        instruction.textContent = "Size verilen madenin yerini haritadaki 5 nokta arasından doğru tıklayarak işaretleyin.";
-    }
+    // Reset buttons
+    [btn1, btn2, btn3].forEach(b => {
+        if(!b) return;
+        b.className = "px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-slate-200 bg-slate-900/50 cursor-pointer border border-transparent";
+    });
     
-    nextMadenRound();
+    // Reset panels
+    [panel1, panel2, panel3].forEach(p => { if(p) p.classList.add('hidden'); });
+    
+    if (mode === 1) {
+        if(btn1) btn1.className = "px-4 py-2 rounded-lg text-xs font-bold transition-all bg-emerald-500/20 text-emerald-400 shadow-sm border border-emerald-500/30";
+        if(panel1) panel1.classList.remove('hidden');
+        if(questionBanner) questionBanner.style.display = 'none';
+        if(instruction) instruction.textContent = "Haritadaki noktaların hangi madene ait olduğunu seçeneklerden bulun.";
+        nextMadenRound();
+    } else if (mode === 2) {
+        if(btn2) btn2.className = "px-4 py-2 rounded-lg text-xs font-bold transition-all bg-indigo-500/20 text-indigo-400 shadow-sm border border-indigo-500/30";
+        if(panel2) panel2.classList.remove('hidden');
+        if(questionBanner) questionBanner.style.display = 'flex';
+        if(instruction) instruction.textContent = "Size verilen madenin yerini haritadaki 5 nokta arasından doğru tıklayarak işaretleyin.";
+        nextMadenRound();
+    } else if (mode === 3) {
+        if(btn3) btn3.className = "px-4 py-2 rounded-lg text-xs font-bold transition-all bg-amber-500/20 text-amber-400 shadow-sm border border-amber-500/30";
+        if(panel3) panel3.classList.remove('hidden');
+        if(questionBanner) {
+            questionBanner.style.display = 'flex';
+            questionBanner.innerHTML = '<i class="fa-solid fa-map-location-dot text-amber-400 text-xl animate-pulse"></i><span id="maden-mode3-text" class="text-sm font-black tracking-wide text-amber-100">Serbest Keşif ve Öğrenme Modu</span>';
+        }
+        if(instruction) instruction.textContent = "Listeden bir maden seçin, haritadaki çıkarım ve işleme tesislerini serbestçe inceleyin.";
+        
+        // Clear map and reset explore buttons
+        document.getElementById("maden-map-points").innerHTML = '';
+        document.querySelectorAll(".maden-explore-btn").forEach(btn => {
+            btn.classList.replace("bg-amber-600", "bg-slate-800/80");
+            btn.classList.replace("border-amber-500", "border-slate-700");
+            btn.classList.replace("text-white", "text-slate-300");
+        });
+        document.getElementById("maden-feedback").classList.add("hidden");
+    }
 }
 
-function renderMadenMap(pointsToRender, isMode2 = false) {
+function exploreMadenMode3(id) {
+    const selectedMaden = madenListesi.find(m => m.id === id);
+    if (!selectedMaden) return;
+    
+    // Highlight button
+    document.querySelectorAll(".maden-explore-btn").forEach(btn => {
+        btn.classList.replace("bg-amber-600", "bg-slate-800/80");
+        btn.classList.replace("border-amber-500", "border-slate-700");
+        btn.classList.replace("text-white", "text-slate-300");
+    });
+    const activeBtn = document.getElementById(`btn-explore-${id}`);
+    if(activeBtn) {
+        activeBtn.classList.replace("bg-slate-800/80", "bg-amber-600");
+        activeBtn.classList.replace("border-slate-700", "border-amber-500");
+        activeBtn.classList.replace("text-slate-300", "text-white");
+    }
+    
+    // Render points (Mode 3 renders like Mode 1 but with pointer-events-auto for tooltips)
+    renderMadenMap(selectedMaden.points, false, true); // 3rd param is for mode 3
+    
+    // Show info panel bottom center or use feedback panel just for info
+    const fb = document.getElementById("maden-feedback");
+    fb.classList.remove("hidden");
+    fb.classList.replace("border-rose-500/50", "border-slate-700/50");
+    fb.classList.replace("border-emerald-500/50", "border-slate-700/50");
+    if (!fb.classList.contains("border-amber-500/50")) fb.classList.add("border-amber-500/50");
+    
+    document.getElementById("maden-feedback-icon-container").className = "w-16 h-16 rounded-full flex items-center justify-center mb-1 bg-amber-500/20 border border-amber-500/50";
+    document.getElementById("maden-feedback-icon").className = "fa-solid fa-book-open text-3xl text-amber-400";
+    document.getElementById("maden-feedback-title").className = "text-xl font-black uppercase tracking-widest text-center text-amber-400";
+    document.getElementById("maden-feedback-title").textContent = selectedMaden.name;
+    
+    document.getElementById("maden-feedback-desc").innerHTML = `<span class="text-slate-200">${selectedMaden.info}</span>`;
+    
+    // Hide 'Devam Et' button in mode 3
+    const nextBtn = fb.querySelector("button");
+    if(nextBtn) nextBtn.style.display = "none";
+}
+
+function renderMadenMap(pointsToRender, isMode2 = false, isMode3 = false) {
     const mapContainer = document.getElementById("maden-map-points");
     mapContainer.innerHTML = '';
     
-    if (isMode2) {
+    if (isMode2 || isMode3) {
         mapContainer.style.pointerEvents = "auto";
     } else {
         mapContainer.style.pointerEvents = "none";
@@ -8023,7 +8109,7 @@ function renderMadenMap(pointsToRender, isMode2 = false) {
         
         if (isMode2) {
             marker.onclick = (e) => {
-                e.stopPropagation(); // prevent map bubbling if any
+                e.stopPropagation();
                 guessMadenMode2(pt);
             };
         }
@@ -8036,7 +8122,7 @@ function renderMadenMap(pointsToRender, isMode2 = false) {
         marker.innerHTML = `
             <div id="marker-pt-${index}" class="${shapeClass} ${dotColorClass} ${shadowClass} border-2 flex items-center justify-center relative hover:scale-125 transition-transform duration-300">
                 ${isMode2 ? '<span class="absolute -top-1 -right-1 flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span></span>' : ''}
-                ${!isMode2 ? `
+                ${(!isMode2 || isMode3) ? `
                 <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 w-max max-w-[120px] bg-slate-900 border border-slate-700 text-white text-[9px] px-2 py-1 rounded shadow-xl opacity-0 group-hover:opacity-100 transition-opacity z-50 text-center pointer-events-none">
                     <span class="${isCikarim ? 'text-rose-400' : 'text-amber-400'} block font-black uppercase text-[8px]">${isCikarim ? 'Çıkarım' : 'İşleme'}</span>
                     ${pt.label}
@@ -8050,7 +8136,13 @@ function renderMadenMap(pointsToRender, isMode2 = false) {
 }
 
 function nextMadenRound() {
-    document.getElementById("maden-feedback").classList.add("hidden");
+    const fb = document.getElementById("maden-feedback");
+    fb.classList.add("hidden");
+    
+    // Ensure next button is visible for mode 1/2
+    const nextBtn = fb.querySelector("button");
+    if(nextBtn) nextBtn.style.display = "block";
+    
     const randomIndex = Math.floor(Math.random() * madenListesi.length);
     activeMaden = madenListesi[randomIndex];
     
@@ -8061,7 +8153,7 @@ function nextMadenRound() {
             btn.disabled = false;
         });
         renderMadenMap(activeMaden.points, false);
-    } else {
+    } else if (currentMadenMode === 2) {
         const correctPt = activeMaden.points[Math.floor(Math.random() * activeMaden.points.length)];
         mode2CorrectPoint = { ...correctPt, isCorrect: true };
         
@@ -8109,9 +8201,11 @@ function guessMadenMode1(id) {
         btn.classList.replace("text-slate-300", "text-white");
         
         const correctBtn = document.getElementById(`btn-maden-${activeMaden.id}`);
-        correctBtn.classList.replace("bg-slate-800/80", "bg-emerald-600");
-        correctBtn.classList.replace("border-slate-700", "border-emerald-500");
-        correctBtn.classList.replace("text-slate-300", "text-white");
+        if(correctBtn) {
+            correctBtn.classList.replace("bg-slate-800/80", "bg-emerald-600");
+            correctBtn.classList.replace("border-slate-700", "border-emerald-500");
+            correctBtn.classList.replace("text-slate-300", "text-white");
+        }
         
         showMadenFeedback(false);
     }
@@ -8125,7 +8219,7 @@ function guessMadenMode1(id) {
 }
 
 function guessMadenMode2(clickedPoint) {
-    document.getElementById("maden-map-points").style.pointerEvents = "none"; // disable further clicks
+    document.getElementById("maden-map-points").style.pointerEvents = "none";
     
     if (clickedPoint.isCorrect) {
         madenCorrect++;
@@ -8172,6 +8266,7 @@ function showMadenFeedback(isCorrect) {
     const desc = document.getElementById("maden-feedback-desc");
     
     fb.classList.remove("hidden");
+    fb.classList.remove("border-amber-500/50");
     
     if (isCorrect) {
         fb.classList.replace("border-rose-500/50", "border-emerald-500/50");
@@ -8190,10 +8285,10 @@ function showMadenFeedback(isCorrect) {
     }
     
     if (currentMadenMode === 1) {
-        desc.innerHTML = `Bu harita <b>${activeMaden.name}</b> madenine aitti.<br><br><span class="text-slate-400">${activeMaden.info}</span>`;
-    } else {
+        desc.innerHTML = `Bu harita <b>${activeMaden.name}</b> madenine aitti.<br><br><span class="text-slate-400 text-[10px] leading-relaxed">${activeMaden.info}</span>`;
+    } else if (currentMadenMode === 2) {
         const placeName = mode2CorrectPoint.label;
-        desc.innerHTML = `Doğru cevap <b>${placeName}</b> olmalıydı.<br><br><span class="text-slate-400">${activeMaden.info}</span>`;
+        desc.innerHTML = `Doğru cevap <b>${placeName}</b> olmalıydı.<br><br><span class="text-slate-400 text-[10px] leading-relaxed">${activeMaden.info}</span>`;
     }
 }
 // --- 🔍 ÖSYM SINAV İÇERİK ANALİZ VE EŞLEŞTİRME MOTORU ---
